@@ -213,26 +213,27 @@ def _parse_entry(entry, domain: str) -> dict | None:
 
 # ── PDF downloader ─────────────────────────────────────────────────────────────
 
+_PDF_HEADERS = {
+    # Identify as a research archiver so arXiv doesn't treat us as an anonymous bot
+    'User-Agent': 'arxiv-loader/1.0 (https://github.com/p0ch1n/arxiv-loader; automated research archiver)',
+}
+
 def download_pdf(arxiv_id: str) -> bytes | None:
     """Stream-download a PDF from arXiv.  Returns bytes only if ≤ 25 MB."""
     url = f'https://arxiv.org/pdf/{arxiv_id}'
     try:
-        r = requests.get(url, timeout=60, stream=True)
+        r = requests.get(url, timeout=60, stream=True, headers=_PDF_HEADERS)
         r.raise_for_status()
 
-        # Reject non-PDF responses (arXiv occasionally returns HTML error pages)
         content_type = r.headers.get('Content-Type', '')
-        if 'pdf' not in content_type and 'octet-stream' not in content_type:
-            print(f'[PDF] {arxiv_id} skipped: unexpected Content-Type={content_type}')
-            return None
+        declared     = int(r.headers.get('Content-Length', 0) or 0)
+        print(f'[PDF] {arxiv_id} status={r.status_code} ct={content_type!r} declared={declared}')
 
-        # Check declared size before downloading
-        declared = int(r.headers.get('Content-Length', 0))
         if declared and declared > PDF_MAX_SIZE:
             print(f'[PDF] {arxiv_id} skipped: declared {declared / 1e6:.1f} MB > 25 MB')
             return None
 
-        # Stream in 512 KB chunks, abort if size limit exceeded mid-download
+        # Stream in 512 KB chunks, abort if size limit is exceeded mid-download
         buf = bytearray()
         for chunk in r.iter_content(chunk_size=512 * 1024):
             buf.extend(chunk)
@@ -240,7 +241,12 @@ def download_pdf(arxiv_id: str) -> bytes | None:
                 print(f'[PDF] {arxiv_id} skipped: exceeded 25 MB during download')
                 return None
 
-        print(f'[PDF] {arxiv_id} downloaded {len(buf) / 1e6:.1f} MB')
+        # Verify PDF magic bytes — guards against HTML error pages sneaking through
+        if not buf[:4] == b'%PDF':
+            print(f'[PDF] {arxiv_id} skipped: not a PDF (got {bytes(buf[:20])!r})')
+            return None
+
+        print(f'[PDF] {arxiv_id} OK — {len(buf) / 1e6:.2f} MB')
         return bytes(buf)
 
     except requests.RequestException as e:
