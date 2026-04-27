@@ -25,13 +25,14 @@ DOMAINS: dict[str, list[str]] = {
 
 # ── Constants ──────────────────────────────────────────────────────────────────
 
-ARXIV_API  = 'https://export.arxiv.org/api/query'
-GITHUB_API = 'https://api.github.com'
-DEDUP_PATH = 'paper_index.json'
-BASE_BRANCH = 'main'
-MAX_RESULTS = 30
-ATOM_NS    = '{http://www.w3.org/2005/Atom}'
-ARXIV_NS   = '{http://arxiv.org/schemas/atom}'
+ARXIV_API    = 'https://export.arxiv.org/api/query'
+GITHUB_API   = 'https://api.github.com'
+DEDUP_PATH   = 'paper_index.json'
+BASE_BRANCH  = 'main'
+MAX_RESULTS  = 30
+PDF_MAX_SIZE = 25 * 1024 * 1024   # 25 MB
+ATOM_NS      = '{http://www.w3.org/2005/Atom}'
+ARXIV_NS     = '{http://arxiv.org/schemas/atom}'
 
 # ── GitHub client ──────────────────────────────────────────────────────────────
 
@@ -77,6 +78,7 @@ class GitHub:
 
     def put_file(self, path: str, content: str, message: str,
                  branch: str, sha: str | None = None) -> None:
+        """Create or update a text file via the Contents API (≤ 1 MB)."""
         body: dict = {
             'message': message,
             'content': base64.b64encode(content.encode()).decode(),
@@ -87,7 +89,59 @@ class GitHub:
         r = self._s.put(self._url(f'/contents/{path}'), json=body)
         r.raise_for_status()
 
-# ── arXiv fetcher ──────────────────────────────────────────────────────────────
+    def push_blobs(self, files: list[tuple[str, bytes]], message: str, branch: str) -> None:
+        """Commit multiple binary files in one git commit via the Git Data API.
+
+        Uses blob → tree → commit → ref-update flow, which handles files of
+        any size and avoids the 1 MB Contents-API limit.
+        """
+        if not files:
+            return
+
+        # 1. Create a blob for every file
+        tree_entries = []
+        for path, data in files:
+            r = self._s.post(self._url('/git/blobs'), json={
+                'content':  base64.b64encode(data).decode(),
+                'encoding': 'base64',
+            })
+            r.raise_for_status()
+            tree_entries.append({
+                'path': path,
+                'mode': '100644',
+                'type': 'blob',
+                'sha':  r.json()['sha'],
+            })
+            time.sleep(0.3)
+
+        # 2. Get current commit's tree SHA
+        branch_sha = self.branch_sha(branch)
+        commit_r = self._s.get(self._url(f'/git/commits/{branch_sha}'))
+        commit_r.raise_for_status()
+        base_tree = commit_r.json()['tree']['sha']
+
+        # 3. Create new tree on top of the base
+        tree_r = self._s.post(self._url('/git/trees'), json={
+            'base_tree': base_tree,
+            'tree':      tree_entries,
+        })
+        tree_r.raise_for_status()
+
+        # 4. Create the commit
+        new_commit_r = self._s.post(self._url('/git/commits'), json={
+            'message': message,
+            'tree':    tree_r.json()['sha'],
+            'parents': [branch_sha],
+        })
+        new_commit_r.raise_for_status()
+
+        # 5. Advance the branch ref
+        update_r = self._s.patch(self._url(f'/git/refs/heads/{branch}'), json={
+            'sha': new_commit_r.json()['sha'],
+        })
+        update_r.raise_for_status()
+
+# ── arXiv metadata fetcher ─────────────────────────────────────────────────────
 
 def fetch_papers(domain: str, categories: list[str]) -> list[dict]:
     query = ' OR '.join(f'cat:{c}' for c in categories)
@@ -153,7 +207,59 @@ def _parse_entry(entry, domain: str) -> dict | None:
         'categories':       categories,
         'tags':             sorted(set(categories)),
         'domain':           domain,
+        'pdf_downloaded':   False,
+        'pdf_size_bytes':   None,
     }
+
+# ── PDF downloader ─────────────────────────────────────────────────────────────
+
+def download_pdf(arxiv_id: str) -> bytes | None:
+    """Stream-download a PDF from arXiv.  Returns bytes only if ≤ 25 MB."""
+    url = f'https://arxiv.org/pdf/{arxiv_id}'
+    try:
+        r = requests.get(url, timeout=60, stream=True)
+        r.raise_for_status()
+
+        # Reject non-PDF responses (arXiv occasionally returns HTML error pages)
+        content_type = r.headers.get('Content-Type', '')
+        if 'pdf' not in content_type and 'octet-stream' not in content_type:
+            print(f'[PDF] {arxiv_id} skipped: unexpected Content-Type={content_type}')
+            return None
+
+        # Check declared size before downloading
+        declared = int(r.headers.get('Content-Length', 0))
+        if declared and declared > PDF_MAX_SIZE:
+            print(f'[PDF] {arxiv_id} skipped: declared {declared / 1e6:.1f} MB > 25 MB')
+            return None
+
+        # Stream in 512 KB chunks, abort if size limit exceeded mid-download
+        buf = bytearray()
+        for chunk in r.iter_content(chunk_size=512 * 1024):
+            buf.extend(chunk)
+            if len(buf) > PDF_MAX_SIZE:
+                print(f'[PDF] {arxiv_id} skipped: exceeded 25 MB during download')
+                return None
+
+        print(f'[PDF] {arxiv_id} downloaded {len(buf) / 1e6:.1f} MB')
+        return bytes(buf)
+
+    except requests.RequestException as e:
+        print(f'[PDF] {arxiv_id} error: {e}', file=sys.stderr)
+        return None
+
+
+def download_pdfs(papers: list[dict], branch: str) -> list[tuple[str, bytes]]:
+    """Download PDFs for all papers. Returns (repo_path, bytes) pairs."""
+    results: list[tuple[str, bytes]] = []
+    for paper in papers:
+        arxiv_id = paper['id']
+        data = download_pdf(arxiv_id)
+        if data:
+            paper['pdf_downloaded'] = True
+            paper['pdf_size_bytes'] = len(data)
+            results.append((f'{branch}/pdfs/{arxiv_id}.pdf', data))
+        time.sleep(2)   # polite delay between arXiv PDF requests
+    return results
 
 # ── Dedup ──────────────────────────────────────────────────────────────────────
 
@@ -209,11 +315,11 @@ def push_domain_files(gh: GitHub, papers: list[dict], branch: str) -> None:
 
 
 def push_summary(gh: GitHub, papers: list[dict], branch: str, stats: dict) -> None:
-    card_keys = ('id', 'title', 'authors', 'url', 'pdf_url',
-                 'published', 'primary_category', 'tags', 'domain')
-    cards     = [{k: p[k] for k in card_keys} for p in papers]
-    path      = f'{branch}/summary.json'
-    existing  = gh.get_file(path, branch)
+    card_keys = ('id', 'title', 'authors', 'url', 'pdf_url', 'published',
+                 'primary_category', 'tags', 'domain', 'pdf_downloaded', 'pdf_size_bytes')
+    cards    = [{k: p[k] for k in card_keys} for p in papers]
+    path     = f'{branch}/summary.json'
+    existing = gh.get_file(path, branch)
     gh.put_file(
         path,
         json.dumps({
@@ -252,25 +358,44 @@ def main() -> None:
     all_new: list[dict] = []
     stats: dict[str, dict] = {}
 
+    # Phase 1: fetch metadata for all domains
     for domain, categories in DOMAINS.items():
-        print(f'[{domain}] Fetching...')
+        print(f'[{domain}] Fetching metadata...')
         fetched = fetch_papers(domain, categories)
         fresh   = [p for p in fetched if p['id'] not in existing_ids]
         existing_ids.update(p['id'] for p in fresh)
         all_new.extend(fresh)
         stats[domain] = {'fetched': len(fetched), 'new': len(fresh)}
         print(f'[{domain}] fetched={len(fetched)} new={len(fresh)}')
-        time.sleep(3)   # polite arXiv rate limit
+        time.sleep(3)
 
     if not all_new:
         print('No new papers today — nothing pushed.')
         return
 
+    # Phase 2: download PDFs (≤ 25 MB each)
+    print(f'\nDownloading PDFs for {len(all_new)} new papers...')
+    pdf_files = download_pdfs(all_new, today)
+    downloaded = sum(1 for p in all_new if p['pdf_downloaded'])
+    print(f'PDFs downloaded: {downloaded}/{len(all_new)}')
+
+    # Phase 3: push metadata + PDFs to today's branch
     push_domain_files(gh, all_new, today)
     push_summary(gh, all_new, today, stats)
+
+    if pdf_files:
+        print(f'\nPushing {len(pdf_files)} PDFs to branch {today}...')
+        gh.push_blobs(
+            pdf_files,
+            f'feat: add {len(pdf_files)} PDFs [{today}]',
+            today,
+        )
+        print(f'[Push] {len(pdf_files)} PDFs → {today}/pdfs/')
+
+    # Phase 4: update dedup index on main
     save_index(gh, all_new, index_raw, index_sha)
 
-    print(f'=== Done: {len(all_new)} new papers pushed to branch {today} ===')
+    print(f'\n=== Done: {len(all_new)} papers, {len(pdf_files)} PDFs → branch {today} ===')
 
 
 if __name__ == '__main__':
