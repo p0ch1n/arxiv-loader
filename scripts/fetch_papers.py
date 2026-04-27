@@ -261,9 +261,11 @@ def download_pdfs(papers: list[dict], branch: str) -> list[tuple[str, bytes]]:
         arxiv_id = paper['id']
         data = download_pdf(arxiv_id)
         if data:
+            domain_dir = paper['domain'].lower()
             paper['pdf_downloaded'] = True
             paper['pdf_size_bytes'] = len(data)
-            results.append((f'{branch}/pdfs/{arxiv_id}.pdf', data))
+            paper['pdf_path']       = f'{branch}/{domain_dir}/{arxiv_id}.pdf'
+            results.append((paper['pdf_path'], data))
         time.sleep(2)   # polite delay between arXiv PDF requests
     return results
 
@@ -322,7 +324,8 @@ def push_domain_files(gh: GitHub, papers: list[dict], branch: str) -> None:
 
 def push_summary(gh: GitHub, papers: list[dict], branch: str, stats: dict) -> None:
     card_keys = ('id', 'title', 'authors', 'url', 'pdf_url', 'published',
-                 'primary_category', 'tags', 'domain', 'pdf_downloaded', 'pdf_size_bytes')
+                 'primary_category', 'tags', 'domain',
+                 'pdf_downloaded', 'pdf_size_bytes', 'pdf_path')
     cards    = [{k: p[k] for k in card_keys} for p in papers]
     path     = f'{branch}/summary.json'
     existing = gh.get_file(path, branch)
