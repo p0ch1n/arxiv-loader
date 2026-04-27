@@ -1,0 +1,31 @@
+name: Daily arXiv Fetch
+
+on:
+  schedule:
+    - cron: '0 6 * * *'   # 06:00 UTC daily (14:00 台灣時間)
+  workflow_dispatch:        # 可手動觸發
+
+jobs:
+  fetch:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write       # 建 branch、寫檔案
+
+    steps:
+      - name: Checkout repo
+        uses: actions/checkout@v4
+
+      - name: Setup Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+          cache: pip
+
+      - name: Install dependencies
+        run: pip install -r requirements.txt
+
+      - name: Fetch arXiv papers
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          GITHUB_REPOSITORY: ${{ github.repository }}
+        run: python scripts/fetch_papers.py
