@@ -394,13 +394,20 @@ def main() -> None:
     push_summary(gh, all_new, today, stats)
 
     if pdf_files:
-        print(f'\nPushing {len(pdf_files)} PDFs to branch {today}...')
-        gh.push_blobs(
-            pdf_files,
-            f'feat: add {len(pdf_files)} PDFs [{today}]',
-            today,
-        )
-        print(f'[Push] {len(pdf_files)} PDFs → {today}/pdfs/')
+        # Group by domain (path format: {date}/{domain}/{id}.pdf)
+        pdfs_by_domain: dict[str, list] = {}
+        for path, data in pdf_files:
+            domain = path.split('/')[1]
+            pdfs_by_domain.setdefault(domain, []).append((path, data))
+
+        for domain, batch in pdfs_by_domain.items():
+            print(f'\nPushing {len(batch)} {domain} PDFs...')
+            gh.push_blobs(
+                batch,
+                f'feat({domain}): add {len(batch)} PDFs [{today}]',
+                today,
+            )
+            print(f'[Push] {domain} PDFs → {today}/{domain}/ ({len(batch)} files)')
 
     # Phase 4: update dedup index on main
     save_index(gh, all_new, index_raw, index_sha)
