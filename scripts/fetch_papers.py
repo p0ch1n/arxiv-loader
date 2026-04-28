@@ -209,6 +209,7 @@ def _parse_entry(entry, domain: str) -> dict | None:
         'domain':           domain,
         'pdf_downloaded':   False,
         'pdf_size_bytes':   None,
+        'pdf_path':         None,
     }
 
 # ── PDF downloader ─────────────────────────────────────────────────────────────
