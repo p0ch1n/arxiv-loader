@@ -1,0 +1,853 @@
+{
+  "domain": "Agent",
+  "date": "2026-04-28",
+  "count": 29,
+  "papers": [
+    {
+      "id": "2604.24707",
+      "title": "Passage-Aware Structural Mapping for RGB-D Visual SLAM",
+      "abstract": "Doorways and passages are critical structural elements for indoor robot navigation, yet they remain underexplored in modern Visual SLAM (VSLAM) frameworks. This paper presents a passage-aware structural mapping approach for RGB-D VSLAM that detects doors and traversable openings by jointly fusing geometric, semantic, and topological cues. Doors are modeled as planar entities embedded within walls and classified as traversable or non-traversable based on their coplanarity with the supporting wall. Passages are inferred through two complementary strategies: traversal evidence accumulated from camera-wall interactions across consecutive keyframes, and geometric opening validation based on discontinuities in the mapped wall geometry. The proposed method is integrated into vS-Graphs as a proof of concept, enriching its scene graph with passage-level abstractions and improving room connectivity modeling. Qualitative evaluations on indoor office sequences demonstrate reliable doorway detection, and the framework lays the foundation for exploiting these elements in BIM-informed VSLAM. The source code is publicly available at https://github.com/snt-arg/visual_sgraphs/tree/doorway_integration.",
+      "authors": [
+        "Ali Tourani",
+        "Miguel Fernandez-Cortizas",
+        "Saad Ejaz",
+        "David P\u00e9rez Saura",
+        "Asier Bikandi-Noya",
+        "Jose Luis Sanchez-Lopez",
+        "Holger Voos"
+      ],
+      "published": "2026-04-27T17:17:17Z",
+      "updated": "2026-04-27T17:17:17Z",
+      "url": "https://arxiv.org/abs/2604.24707",
+      "pdf_url": "https://arxiv.org/pdf/2604.24707.pdf",
+      "primary_category": "cs.RO",
+      "categories": [
+        "cs.RO"
+      ],
+      "tags": [
+        "cs.RO"
+      ],
+      "domain": "Agent",
+      "pdf_downloaded": true,
+      "pdf_size_bytes": 4698001,
+      "pdf_path": "2026-04-28/agent/2604.24707.pdf"
+    },
+    {
+      "id": "2604.24681",
+      "title": "Learning Human-Intention Priors from Large-Scale Human Demonstrations for Robotic Manipulation",
+      "abstract": "Human videos contain rich manipulation priors, but using them for robot learning remains difficult because raw observations entangle scene understanding, human motion, and embodiment-specific action. We introduce MoT-HRA, a hierarchical vision-language-action framework that learns human-intention priors from large-scale human demonstrations. We first curate HA-2.2M, a 2.2M-episode action-language dataset reconstructed from heterogeneous human videos through hand-centric filtering, spatial reconstruction, temporal segmentation, and language alignment. On top of this dataset, MoT-HRA factorizes manipulation into three coupled experts: a vision-language expert predicts an embodiment-agnostic 3D trajectory, an intention expert models MANO-style hand motion as a latent human-motion prior, and a fine expert maps the intention-aware representation to robot action chunks. A shared-attention trunk and read-only key-value transfer allow downstream control to use human priors while limiting interference with upstream representations. Experiments on hand motion generation, simulated manipulation, and real-world robot tasks show that MoT-HRA improves motion plausibility and robust control under distribution shift.",
+      "authors": [
+        "Yifan Xie",
+        "YuAn Wang",
+        "Guangyu Chen",
+        "Jinkun Liu",
+        "Yu Sun",
+        "Wenbo Ding"
+      ],
+      "published": "2026-04-27T16:42:18Z",
+      "updated": "2026-04-27T16:42:18Z",
+      "url": "https://arxiv.org/abs/2604.24681",
+      "pdf_url": "https://arxiv.org/pdf/2604.24681.pdf",
+      "primary_category": "cs.RO",
+      "categories": [
+        "cs.RO"
+      ],
+      "tags": [
+        "cs.RO"
+      ],
+      "domain": "Agent",
+      "pdf_downloaded": true,
+      "pdf_size_bytes": 2557975,
+      "pdf_path": "2026-04-28/agent/2604.24681.pdf"
+    },
+    {
+      "id": "2604.24674",
+      "title": "Pushing Radar Odometry Beyond the Pavement: Current Capabilities and Challenges",
+      "abstract": "Radar offers unique advantages for localization in unstructured environments, including robustness to weather, lighting, and airborne particulates. While most prior work has studied radar odometry in urban, largely planar settings, its performance in off-road environments remains less understood. In this paper, we investigate the potential of radar for off-road odometry estimation and identify key challenges that arise from full $SE(3)$ vehicle motion, terrain-induced ground returns, and sparse or unstable features. To address these issues, we introduce two simple baselines: Radar-KISSICP, which applies motion compensation to generate 3D-aware radar pointclouds, and Radar-IMU, which leverages IMU preintegration to stabilize scan matching. Experiments on the Great Outdoors (GO) dataset demonstrate that these baselines improve trajectory estimation in challenging routes and provide a reference point for future development of radar odometry in off-road robotics.",
+      "authors": [
+        "Shaunak Kolhe",
+        "Peng Jiang",
+        "Maggie Wigness",
+        "Philip Osteen",
+        "Timothy Overbye",
+        "Chrisitan Ellis",
+        "Srikanth Saripalli"
+      ],
+      "published": "2026-04-27T16:34:18Z",
+      "updated": "2026-04-27T16:34:18Z",
+      "url": "https://arxiv.org/abs/2604.24674",
+      "pdf_url": "https://arxiv.org/pdf/2604.24674.pdf",
+      "primary_category": "cs.RO",
+      "categories": [
+        "cs.RO"
+      ],
+      "tags": [
+        "cs.RO"
+      ],
+      "domain": "Agent",
+      "pdf_downloaded": true,
+      "pdf_size_bytes": 17813559,
+      "pdf_path": "2026-04-28/agent/2604.24674.pdf"
+    },
+    {
+      "id": "2604.24661",
+      "title": "Agent-Centric Visual Reinforcement Learning under Dynamic Perturbations",
+      "abstract": "Visual reinforcement learning aims to empower an agent to learn policies from visual observations, yet it remains vulnerable to dynamic visual perturbations, such as unpredictable shifts in corruption types. To systematically study this, we introduce the Visual Degraded Control Suite (VDCS), a benchmark extending DeepMind Control Suite with Markov-switching degradations to simulate non-stationary real-world perturbations. Experiments on VDCS reveal severe performance degradation in existing methods. We theoretically prove via information-theoretic analysis that this failure stems from reconstruction-based objectives inevitably entangling perturbation artifacts into latent representations. To mitigate this negative impact, we propose Agent-Centric Observations with Mixture-of-Experts (ACO-MoE) to robustify visual RL against perturbations. The proposed framework leverages unique agent-centric restoration experts, achieving restoration from corruptions and task-relevant foreground extraction, thereby decoupling perception from perturbation before being processed by the RL agent. Extensive experiments on VDCS show our ACO-MoE outperforms strong baselines, recovering 95.3% of clean performance under challenging Markov-switching corruptions. Moreover, it achieves SOTA results on DMControl Generalization with random-color and video-background perturbations, demonstrating a high level of robustness.",
+      "authors": [
+        "Zhengru Fang",
+        "Yu Guo",
+        "Fei Liu",
+        "Yuang Zhang",
+        "Yihang Tao",
+        "Senkang Hu",
+        "Wenbo Ding",
+        "Yuguang Fang"
+      ],
+      "published": "2026-04-27T16:24:40Z",
+      "updated": "2026-04-27T16:24:40Z",
+      "url": "https://arxiv.org/abs/2604.24661",
+      "pdf_url": "https://arxiv.org/pdf/2604.24661.pdf",
+      "primary_category": "cs.RO",
+      "categories": [
+        "cs.RO"
+      ],
+      "tags": [
+        "cs.RO"
+      ],
+      "domain": "Agent",
+      "pdf_downloaded": true,
+      "pdf_size_bytes": 5639228,
+      "pdf_path": "2026-04-28/agent/2604.24661.pdf"
+    },
+    {
+      "id": "2604.24648",
+      "title": "Computational Design and Co-Robotic Fabrication for Material Reuse in Architecture",
+      "abstract": "Climate change and resource depletion demand a shift from the dominant linear \"take-make-use-dispose\" paradigm of construction toward circular, low-waste practices. Material reuse offers a promising pathway by reducing raw material extraction, mitigating waste, and extending the service lifespan of carbon-sequestering materials such as timber. Realizing this potential, however, requires addressing technical and logistical challenges across both design and construction for accommodating heterogeneous, reclaimed material inventories. This paper presents an integrated framework that couples data-driven computational design with feedback-driven adaptive human-robot collaborative (co-robotic) fabrication and assembly to enable the realization of nonstandard structures made from reclaimed timber of varying length and geometries, supplemented with new off-the-shelf timber when necessary. The framework is validated through Timbrelyn, a built case-study installation that demonstrates how timber reuse can inform and enhance architectural expression. This work contributes to the development of integrated design-to-fabrication workflows that advance adaptive, feedback-driven methods to handle inventory constraints and reclaimed material uncertainties, facilitating material reuse in the design and construction of new buildings and structures.",
+      "authors": [
+        "Arash Adel",
+        "Daniel Ruan",
+        "Ruxin Xie"
+      ],
+      "published": "2026-04-27T16:16:15Z",
+      "updated": "2026-04-27T16:16:15Z",
+      "url": "https://arxiv.org/abs/2604.24648",
+      "pdf_url": "https://arxiv.org/pdf/2604.24648.pdf",
+      "primary_category": "cs.RO",
+      "categories": [
+        "cs.RO"
+      ],
+      "tags": [
+        "cs.RO"
+      ],
+      "domain": "Agent",
+      "pdf_downloaded": true,
+      "pdf_size_bytes": 7996955,
+      "pdf_path": "2026-04-28/agent/2604.24648.pdf"
+    },
+    {
+      "id": "2604.24628",
+      "title": "Real-time windrow detection from onboard tractor sensors for automated following",
+      "abstract": "Proprietary design in commercial windrow-detection systems restricts transparency and limits progress in open autonomous forage-harvesting research. We present a multi-modal dataset combining stereo vision and LiDAR from tractor-mounted sensors during real baling operations. The dataset includes synchronized sensor data with GNSS trajectories, partly released as ROS2 Humble bags on Zenodo, with additional data available on request. Using this dataset, we implement a real-time (>20 Hz) centroid-based windrow-following method on an NVIDIA Jetson AGX Orin. Across the critical 4-10 m guidance range, stereo and LiDAR depth measurements show strong agreement (0.965 +/- 0.021), indicating that low-cost stereo sensors can approach LiDAR performance. Our open-source ROS 2 pipeline provides a reproducible benchmark for GPS-free windrow detection and supports development of practical autonomous forage-harvesting systems. Dataset: https://zenodo.org/records/17486318",
+      "authors": [
+        "Lorenz Gunreben",
+        "Nico Heider",
+        "Sebastian Z\u00fcrner",
+        "Martin Schieck",
+        "Bogdan Franczyk"
+      ],
+      "published": "2026-04-27T15:55:02Z",
+      "updated": "2026-04-27T15:55:02Z",
+      "url": "https://arxiv.org/abs/2604.24628",
+      "pdf_url": "https://arxiv.org/pdf/2604.24628.pdf",
+      "primary_category": "cs.RO",
+      "categories": [
+        "cs.RO"
+      ],
+      "tags": [
+        "cs.RO"
+      ],
+      "domain": "Agent",
+      "pdf_downloaded": true,
+      "pdf_size_bytes": 445773,
+      "pdf_path": "2026-04-28/agent/2604.24628.pdf"
+    },
+    {
+      "id": "2604.24606",
+      "title": "Hybrid A*-Based Reverse Path-Planning of a Vehicle with Trailer System",
+      "abstract": "Reverse parking maneuvering of a vehicle with trailer system is a difficult task to complete for human drivers due to the multi-body nature of the system and the unintuitive controls required to orientate the trailer properly. The problem is complicated with the presence of other vehicles that the trailer and its connected vehicle must avoid during the reverse parking maneuver. While path planning methods in reverse motion for vehicles with trailers exist, there is a lack of results that also offer collision avoidance as part of the algorithm. This paper hence proposes a modified Hybrid A*-based algorithm that can accommodate the vehicle-trailer system as well as collision avoidance considerations with the other vehicles and obstacles in the parking environment. One of the novelties of this proposed approach is its adaptability to the vehicle with trailer system, where limits of usable steering input that prevent the occurrence of jackknife incidents vary with respect to system configuration. The other contribution is the addition of the collision avoidance functionality which the standard Hybrid A* algorithm lacks. The method is developed and presented first, followed by simulation case studies to demonstrate the efficacy of the proposed approach.",
+      "authors": [
+        "Xincheng Cao",
+        "Haochong Chen",
+        "Bilin Aksun-Guvenc",
+        "Levent Guvenc",
+        "Brian Link",
+        "Peter J Richmond",
+        "Dokyung Yim",
+        "Shihong Fan",
+        "John Harber"
+      ],
+      "published": "2026-04-27T15:32:05Z",
+      "updated": "2026-04-27T15:32:05Z",
+      "url": "https://arxiv.org/abs/2604.24606",
+      "pdf_url": "https://arxiv.org/pdf/2604.24606.pdf",
+      "primary_category": "cs.RO",
+      "categories": [
+        "cs.RO",
+        "eess.SY"
+      ],
+      "tags": [
+        "cs.RO",
+        "eess.SY"
+      ],
+      "domain": "Agent",
+      "pdf_downloaded": true,
+      "pdf_size_bytes": 1505802,
+      "pdf_path": "2026-04-28/agent/2604.24606.pdf"
+    },
+    {
+      "id": "2604.24572",
+      "title": "FastOMOP: A Foundational Architecture for Reliable Agentic Real-World Evidence Generation on OMOP CDM data",
+      "abstract": "The Observational Medical Outcomes Partnership Common Data Model (OMOP CDM), maintained by the Observational Health Data Sciences and Informatics (OHDSI) collaboration, enabled the harmonisation of electronic health records data of nearly one billion patients in 83 countries. Yet generating real-world evidence (RWE) from these repositories remains a manual process requiring clinical, epidemiological and technical expertise. LLMs and multi-agent systems have shown promise for clinical tasks, but RWE automation exposes a fundamental challenge: agentic systems introduce emergent behaviours, coordination failures and safety risks that existing approaches fail to govern. No infrastructure exists to ensure agentic RWE generation is flexible, safe and auditable across the lifecycle. We introduce FastOMOP, an open-source multi-agent architecture that addresses this gap by separating three infrastructure layers, governance, observability and orchestration, from pluggable agent-teams. Governance is enforced at the process boundary through deterministic validation independent of agent reasoning, ensuring no compromised or hallucinating agent can bypass safety controls. Agent teams for phenotyping, study design and statistical analysis inherit these guarantees through controlled tool exposure. We validated FastOMOP using a natural-language-to-SQL agent team across three OMOP CDM datasets: synthetic data from Synthea, MIMIC-IV and a real-world NHS dataset from Lancashire Teaching Hospitals (IDRIL). FastOMOP achieved reliability scores of 0.84-0.94 with perfect adversarial and out-of-scope block rates, demonstrating process-boundary governance delivers safety guarantees independent of model choice. These results indicate that the reliability gap in RWE deployment is architectural rather than model capability, and establish FastOMOP as a governed architecture for progressive RWE automation.",
+      "authors": [
+        "Niko Moeller-Grell",
+        "Shihao Shenzhang",
+        "Zhangshu Joshua Jiang",
+        "Richard JB Dobson",
+        "Vishnu V Chandrabalan"
+      ],
+      "published": "2026-04-27T15:02:02Z",
+      "updated": "2026-04-27T15:02:02Z",
+      "url": "https://arxiv.org/abs/2604.24572",
+      "pdf_url": "https://arxiv.org/pdf/2604.24572.pdf",
+      "primary_category": "cs.AI",
+      "categories": [
+        "cs.AI",
+        "cs.MA"
+      ],
+      "tags": [
+        "cs.AI",
+        "cs.MA"
+      ],
+      "domain": "Agent",
+      "pdf_downloaded": true,
+      "pdf_size_bytes": 1580578,
+      "pdf_path": "2026-04-28/agent/2604.24572.pdf"
+    },
+    {
+      "id": "2604.24518",
+      "title": "Sliding Mode Control for Safe Trajectory Tracking with Moving Obstacles Avoidance: Experimental Validation on Planar Robots",
+      "abstract": "This paper presents a unified control framework for robust trajectory tracking and moving obstacle avoidance applicable to a broad class of mobile robots. By formulating a generalized kinematic transformation, we convert diverse vehicle dynamics into a strict feedback form, facilitating the design of a Sliding Mode Control (SMC) strategy for precise and robust reference tracking. To ensure operational safety in dynamic environments, the tracking controller is integrated with a Collision Cone Control Barrier Function (C3BF) based safety filter. The proposed architecture guarantees asymptotic tracking in the presence of external disturbances while strictly enforcing collision avoidance constraints. The novelty of this work lies in designing a sliding mode controller for ground robots like the Ackermann drive, which has not been done before. The efficacy and versatility of the approach are validated through numerical simulations and extensive real-world experiments on three distinct platforms: an Ackermann-steered vehicle, a differential drive robot, and a quadrotor drone. Video of the experiments are available at https://youtu.be/dWcxwum96vk",
+      "authors": [
+        "Shubham Sawarkar",
+        "P Sangeerth",
+        "S Saharsh",
+        "Pushpak Jagtap"
+      ],
+      "published": "2026-04-27T14:20:10Z",
+      "updated": "2026-04-27T14:20:10Z",
+      "url": "https://arxiv.org/abs/2604.24518",
+      "pdf_url": "https://arxiv.org/pdf/2604.24518.pdf",
+      "primary_category": "eess.SY",
+      "categories": [
+        "eess.SY",
+        "cs.RO",
+        "math.OC"
+      ],
+      "tags": [
+        "cs.RO",
+        "eess.SY",
+        "math.OC"
+      ],
+      "domain": "Agent",
+      "pdf_downloaded": true,
+      "pdf_size_bytes": 919622,
+      "pdf_path": "2026-04-28/agent/2604.24518.pdf"
+    },
+    {
+      "id": "2604.24487",
+      "title": "Guiding Vector Field Generation via Score-based Diffusion Model",
+      "abstract": "Guiding Vector Fields (GVFs) are a powerful tool for robotic path following. However, classical methods assume smooth, ordered curves and fail when paths are unordered, multi-branch, or generated by probabilistic models. We propose a unified framework, termed the Score-Induced Guiding Vector Field (SGVF), which leverages score-based generative modeling to construct vector fields directly from data distributions. SGVF learns tangent fields from point clouds with unit-norm, orthogonality, and directional-consistency losses, ensuring geometric fidelity and control feasibility. This approach removes the reliance on ad-hoc path segmentation and enables guidance along complex topologies such as branching and pseudo-manifolds. The study establishes a correspondence between score vanishing in diffusion models and GVF singularities and highlights representational capacity near sharp path curvatures. Experiments on robotic navigation in planar environments demonstrate that SGVF achieves reliable path following in scenarios where classical GVFs fail, underscoring its potential as a bridge between generative modeling and geometric control. Code and experiment video are available at https://github.com/czr-gif/Guiding-Vector-Field-Generation-via-Score-based-Diffusion-Model.",
+      "authors": [
+        "Zirui Chen",
+        "Shiliang Guo",
+        "Shiyu Zhao"
+      ],
+      "published": "2026-04-27T13:55:42Z",
+      "updated": "2026-04-27T13:55:42Z",
+      "url": "https://arxiv.org/abs/2604.24487",
+      "pdf_url": "https://arxiv.org/pdf/2604.24487.pdf",
+      "primary_category": "cs.RO",
+      "categories": [
+        "cs.RO"
+      ],
+      "tags": [
+        "cs.RO"
+      ],
+      "domain": "Agent",
+      "pdf_downloaded": true,
+      "pdf_size_bytes": 5516464,
+      "pdf_path": "2026-04-28/agent/2604.24487.pdf"
+    },
+    {
+      "id": "2604.24449",
+      "title": "SPLIT: Separating Physical-Contact via Latent Arithmetic in Image-Based Tactile Sensors",
+      "abstract": "Training machine learning models for robotic tactile sensing requires vast amounts of data, yet obtaining realistic interaction data remains a challenge due to physical complexity and variability. Simulating tactile sensors is thus a crucial step in accelerating progress. This paper presents SPLIT, a novel method for simulating image-based tactile sensors, with a primary focus on the DIGIT sensor. Central to our approach is a latent space arithmetic strategy that explicitly disentangles contact geometry from sensor-specific optical properties. Unlike methods that require recalibration for every new unit, this disentanglement allows SPLIT to adapt to diverse DIGIT backgrounds and even transfer data to distinct sensors like the GelSight R1.5 without full model retraining. Beyond this adaptability, our approach achieves faster inference speeds than existing alternatives. Furthermore, we provide a calibrated finite element method (FEM) soft-body mesh simulation with variable resolution, offering a tunable trade-off between speed and fidelity. Additionally, our algorithm supports bidirectional simulation, allowing for both the generation of realistic images from deformation meshes and the reconstruction of meshes from tactile images. This versatility makes SPLIT a valuable tool for accelerating progress in robotic tactile sensing research.",
+      "authors": [
+        "Wadhah Zai El Amri",
+        "Nicol\u00e1s Navarro-Guerrero"
+      ],
+      "published": "2026-04-27T13:13:58Z",
+      "updated": "2026-04-27T13:13:58Z",
+      "url": "https://arxiv.org/abs/2604.24449",
+      "pdf_url": "https://arxiv.org/pdf/2604.24449.pdf",
+      "primary_category": "cs.RO",
+      "categories": [
+        "cs.RO",
+        "cs.AI",
+        "cs.LG"
+      ],
+      "tags": [
+        "cs.AI",
+        "cs.LG",
+        "cs.RO"
+      ],
+      "domain": "Agent",
+      "pdf_downloaded": false,
+      "pdf_size_bytes": null,
+      "pdf_path": null
+    },
+    {
+      "id": "2604.24447",
+      "title": "Characterizing Vision-Language-Action Models across XPUs: Constraints and Acceleration for On-Robot Deployment",
+      "abstract": "Vision-Language-Action (VLA) models are promising for generalist robot control, but on-robot deployment is bottlenecked by real-time inference under tight cost and energy budgets. Most prior evaluations rely on desktop-grade GPUs, obscuring the trade-offs and opportunities offered by heterogeneous edge accelerators (GPUs/XPUs/NPUs). We present a systematic analysis for low-cost VLA deployment via model-hardware co-characterization. First, we build a cross-accelerator leaderboard and evaluate model-hardware pairs under CET (Cost, Energy, Time), showing that right-sized edge devices can be more cost-/energy-efficient than flagship GPUs while meeting control-rate constraints. Second, using in-depth profiling, we uncover a consistent two-phase inference pattern: a compute-bound VLM backbone followed by a memory-bound Action Expert, which induces phase-dependent underutilization and hardware inefficiency. Finally, guided by these insights, we propose DP-Cache and V-AEFusion to reduce diffusion redundancy and enable asynchronous pipeline parallelism, achieving up to 2.9x speedup on GPUs and 6x on edge NPUs with only marginal success degradation. The example leaderboard website is available at: https://vla-leaderboard-01.vercel.app/.",
+      "authors": [
+        "Kaijun Zhou",
+        "Qiwei Chen",
+        "Da Peng",
+        "Zhiyang Li",
+        "Xijun Li",
+        "Jinyu Gu"
+      ],
+      "published": "2026-04-27T13:12:16Z",
+      "updated": "2026-04-27T13:12:16Z",
+      "url": "https://arxiv.org/abs/2604.24447",
+      "pdf_url": "https://arxiv.org/pdf/2604.24447.pdf",
+      "primary_category": "cs.RO",
+      "categories": [
+        "cs.RO",
+        "cs.AI"
+      ],
+      "tags": [
+        "cs.AI",
+        "cs.RO"
+      ],
+      "domain": "Agent",
+      "pdf_downloaded": true,
+      "pdf_size_bytes": 7541552,
+      "pdf_path": "2026-04-28/agent/2604.24447.pdf"
+    },
+    {
+      "id": "2604.24403",
+      "title": "An Automatic Ground Collision Avoidance System with Reinforcement Learning",
+      "abstract": "This article evaluates an artificial intelligence (AI)-based Automatic Ground Collision Avoidance System (AGCAS) designed for advanced jet trainers to enhance operational effectiveness. In the continuously evolving field of aerospace engineering, the integration of AI is crucial for advancing operations with improved timing constraints and efficiency. Our study explores the design process of an AI-driven AGCAS, specifically tailored for advanced jet trainers, focusing on addressing the AGCAS problem within a limited observation space. The system utilizes line-of-sight queries on a terrain server to ensure precise and efficient collision avoidance. This approach aims to significantly improve the safety and operational capabilities of advanced jet trainers.",
+      "authors": [
+        "Seyyid Osman Sevgili",
+        "Atahan Cilan",
+        "Mahir Demir",
+        "\u00d6zg\u00fcn Can Y\u00fcr\u00fctken",
+        "\u00dcmit Can Bekar"
+      ],
+      "published": "2026-04-27T12:27:08Z",
+      "updated": "2026-04-27T12:27:08Z",
+      "url": "https://arxiv.org/abs/2604.24403",
+      "pdf_url": "https://arxiv.org/pdf/2604.24403.pdf",
+      "primary_category": "cs.LG",
+      "categories": [
+        "cs.LG",
+        "cs.RO"
+      ],
+      "tags": [
+        "cs.LG",
+        "cs.RO"
+      ],
+      "domain": "Agent",
+      "pdf_downloaded": true,
+      "pdf_size_bytes": 1713247,
+      "pdf_path": "2026-04-28/agent/2604.24403.pdf"
+    },
+    {
+      "id": "2604.24391",
+      "title": "FreqCache: Accelerating Embodied VLN Models with Adaptive Frequency-Guided Token Caching",
+      "abstract": "Vision-Language-Navigation (VLN) models exhibit excellent navigation accuracy but incur high computational overhead. Token caching has emerged as a promising training-free strategy to reduce this cost by reusing token computation results; however, existing token caching approaches rely on visual domain methods for cacheable token selection, leading to challenges when adapted to VLN models. 1) Visual domain methods become invalid when there is viewpoint migration. 2) Visual domain methods neglect critical edge information without the aid of additional algorithms. 3) Visual domain methods overlook the temporal variation of scenarios and lack adjustability in cache budgets. In this paper, we develop detailed analyses and find that the impacts of these challenges exhibit invariance and analyzability in the frequency domain. Based on these, we propose a frequency-guided token caching framework, called FreqCache. Utilizing the inherent properties of the frequency domain, FreqCache achieves optimal token cache establishment, refreshment, and adaptive adjustment. Experiments show that FreqCache achieves 1.59x speedup with ignorable overhead, showing the effect of integrating frequency domain methods in VLN token caching.",
+      "authors": [
+        "Zihao Zheng",
+        "Xingyue Zhou",
+        "Zhihao Mao",
+        "Songyu Sun",
+        "Lingyue Zhang",
+        "Yulong Ao",
+        "Yupu Feng",
+        "Qiongqiong Zhang",
+        "Yonghua Lin",
+        "Xiang Chen"
+      ],
+      "published": "2026-04-27T12:20:53Z",
+      "updated": "2026-04-27T12:20:53Z",
+      "url": "https://arxiv.org/abs/2604.24391",
+      "pdf_url": "https://arxiv.org/pdf/2604.24391.pdf",
+      "primary_category": "cs.RO",
+      "categories": [
+        "cs.RO"
+      ],
+      "tags": [
+        "cs.RO"
+      ],
+      "domain": "Agent",
+      "pdf_downloaded": true,
+      "pdf_size_bytes": 2009614,
+      "pdf_path": "2026-04-28/agent/2604.24391.pdf"
+    },
+    {
+      "id": "2604.24384",
+      "title": "Pedestrians play chicken with an autonomous vehicle",
+      "abstract": "Automated vehicles (AVs) are commonly programmed to yield unconditionally to pedestrians in the interest of safety. However, this design choice can give rise to the Freezing Robot Problem in which pedestrians learn to assert priority at every interaction, causing vehicles to stall and make no progress. The game theoretic Sequential Chicken model has shown that, like human drivers, AVs can resolve this problem by trading credible threats of very small risks of collision or larger risks of less severe invasion of personal space against the value of time due to yielding delays. This paper presents the first demonstration and evaluation of this approach using a real AV with human subjects and shows that pedestrian behavior under experimentally constrained safety conditions can be well fitted by Sequential Chicken, with a low time value of collision, suggestive of their planning to avoid proxemic personal space penalties as well as actual collisions.",
+      "authors": [
+        "Rakshit Soni",
+        "Charles Fox"
+      ],
+      "published": "2026-04-27T12:16:00Z",
+      "updated": "2026-04-27T12:16:00Z",
+      "url": "https://arxiv.org/abs/2604.24384",
+      "pdf_url": "https://arxiv.org/pdf/2604.24384.pdf",
+      "primary_category": "cs.RO",
+      "categories": [
+        "cs.RO"
+      ],
+      "tags": [
+        "cs.RO"
+      ],
+      "domain": "Agent",
+      "pdf_downloaded": true,
+      "pdf_size_bytes": 1693283,
+      "pdf_path": "2026-04-28/agent/2604.24384.pdf"
+    },
+    {
+      "id": "2604.24353",
+      "title": "ARETE: Attention-based Rasterized Encoding for Topology Estimation using HSV-transformed Crowdsourced Vehicle Fleet Data",
+      "abstract": "The continuous advancement of autonomous driving (AD) introduces challenges across multiple disciplines to ensure safe and efficient driving. One such challenge is the generation of High-Definition (HD) maps, which must remain up to date and highly accurate for downstream automotive tasks. One promising approach is the use of crowdsourced data from a vehicle fleet, representing road topology and lane-level features. This work focuses on the generation of centerlines and lane dividers from crowdsourced vehicle trajectories. We adopt a Detection Transformer (DETR)-based approach, where a rasterized representation of vehicle trajectories is used as input to predict vectorized lane representations. Each lane consists of a centerline with an associated direction and corresponding lane dividers that are geometrically constrained by the centerline. Our method includes the extraction of local tiles, from which crowdsourced vehicle trajectories are aggregated. Each tile undergoes a transformation into a rasterized representation encoding both the presence and direction of each trajectory, enabling the prediction of vectorized directed lanes. Experiments are conducted on an internal dataset as well as on the public datasets nuScenes and nuPlan.",
+      "authors": [
+        "Daniel Fritz",
+        "Dimitrios Lagamtzis",
+        "Michael Mink",
+        "Markus Enzweiler",
+        "Steffen Schober"
+      ],
+      "published": "2026-04-27T11:47:16Z",
+      "updated": "2026-04-27T11:47:16Z",
+      "url": "https://arxiv.org/abs/2604.24353",
+      "pdf_url": "https://arxiv.org/pdf/2604.24353.pdf",
+      "primary_category": "cs.CV",
+      "categories": [
+        "cs.CV",
+        "cs.AI",
+        "cs.LG",
+        "cs.RO"
+      ],
+      "tags": [
+        "cs.AI",
+        "cs.CV",
+        "cs.LG",
+        "cs.RO"
+      ],
+      "domain": "Agent",
+      "pdf_downloaded": true,
+      "pdf_size_bytes": 6828484,
+      "pdf_path": "2026-04-28/agent/2604.24353.pdf"
+    },
+    {
+      "id": "2604.24295",
+      "title": "Projected Attainable Speed Space: A Driving Efficiency Metric Connecting Instantaneous Evaluation to Travel Time",
+      "abstract": "Inefficient driving behaviors, such as overly conservative yielding, remain a key obstacle to deployment of autonomous vehicles (AVs). Instantaneous driving efficiency metrics are crucial for self-driving decision-making because they affect real-time performance evaluation and control optimization. However, commonly used indicators, including speed, relative speed, and inter-vehicle distance, are limited in capturing traffic context and in ensuring consistency between instantaneous outputs and travel-level outcomes. This study proposes the Projected Attainable Speed Space (PASS) model, a unified framework for driving efficiency assessment across instantaneous and travel-level analyses by integrating kinematic and spatial traffic information. PASS characterizes instantaneous driving efficiency with two coupled elements: potential for speed improvement (available acceleration space) and response to that potential (utilization of available acceleration space). Available acceleration space is referenced to projected attainable speed, derived from an idealized catch-up maneuver using relative speed and spacing to the leading vehicle; utilization is represented by the temporal change in available acceleration space. To ensure cross-scale consistency, time-aggregated PASS is defined as a travel-level efficiency metric. Trajectory data from a driving simulation experiment are used for parameter calibration to maximize agreement between time-aggregated PASS and observed travel times. Across 10 lane-change events, results show strong consistency, with an average coefficient of determination of 0.913, validating PASS for consistent efficiency evaluation across instantaneous and travel-level temporal scales. This study provides a unified, physically grounded framework that supports real-time decision-making and long-term performance analysis in autonomous driving.",
+      "authors": [
+        "Xiaohua Zhao",
+        "Zhaowei Huang",
+        "Chen Chen",
+        "Haiyi Yang"
+      ],
+      "published": "2026-04-27T10:34:23Z",
+      "updated": "2026-04-27T10:34:23Z",
+      "url": "https://arxiv.org/abs/2604.24295",
+      "pdf_url": "https://arxiv.org/pdf/2604.24295.pdf",
+      "primary_category": "cs.RO",
+      "categories": [
+        "cs.RO"
+      ],
+      "tags": [
+        "cs.RO"
+      ],
+      "domain": "Agent",
+      "pdf_downloaded": true,
+      "pdf_size_bytes": 759867,
+      "pdf_path": "2026-04-28/agent/2604.24295.pdf"
+    },
+    {
+      "id": "2604.24242",
+      "title": "OpenPodcar2: a robust, ROS2 vehicle for self-driving research",
+      "abstract": "OpenPodcar2 is a robust, ROS2-interfaced, low-cost, open source hardware and software, autonomous vehicle platform based on an off-the-shelf, hard-canopy, mobility scooter donor vehicle. It is a modification of the previous OpenPodcar design, which extends it with robust electronics and ROS2 interfacing, to enable both research and also potential deployment use cases. The platform consists of (a) hardware components: documented as a bill of materials and build instructions; (b) integration to the general purpose OSH R4 mechatronics board and a Gazebo simulation of the vehicle, both presenting a common ROS2 interface (c) higher-level ROS2 software implementations and configurations of standard robot autonomous planning and control, including the nav2 stack which performs SLAM and enacts commands to drive the vehicle from a current to a desired pose around obstacles. OpenPodcar2 can transport a human passenger or similar load at speeds up to 15km/h, for example for use as a last-mile autonomous taxi service or to transport delivery containers similarly around a city center. It is small and safe enough to be parked in a standard research lab robust enough for some deployment cases. Total build cost was around 7,000USD from new components, or 2,000USD with a used Donor Vehicle. OpenPodcar2 thus provides a research balance between real world utility, safety, cost and robustness.",
+      "authors": [
+        "Rakshit Soni",
+        "Chris Waltham",
+        "Md Umar Ibrahim",
+        "Mark Crampton",
+        "Charles Fox"
+      ],
+      "published": "2026-04-27T09:52:14Z",
+      "updated": "2026-04-27T09:52:14Z",
+      "url": "https://arxiv.org/abs/2604.24242",
+      "pdf_url": "https://arxiv.org/pdf/2604.24242.pdf",
+      "primary_category": "cs.RO",
+      "categories": [
+        "cs.RO"
+      ],
+      "tags": [
+        "cs.RO"
+      ],
+      "domain": "Agent",
+      "pdf_downloaded": true,
+      "pdf_size_bytes": 3361100,
+      "pdf_path": "2026-04-28/agent/2604.24242.pdf"
+    },
+    {
+      "id": "2604.24203",
+      "title": "Agentic Witnessing: Pragmatic and Scalable TEE-Enabled Privacy-Preserving Auditing",
+      "abstract": "Auditing the semantic properties of proprietary data creates a fundamental tension: verification requires transparent access, while proprietary rights demand confidentiality. While Zero-Knowledge Proofs (ZKPs) ensure privacy, they are typically limited to precise algebraic constraints and are ill-suited for verifying qualitative, unstructured properties, such as the logic within a codebase. We propose {\\em Agentic Witnessing}, a framework that moves verification from attested execution to {\\em attested reasoning}. The system is composed of three agents: a Verifier (who wants to check properties of a dataset), a Prover (who owns the dataset) and an Auditor (that inspects the dataset). The Verifier is allowed to ask a limited number of simple binary true/false questions to the auditor. By isolating an LLM-based Auditor within a Trusted Execution Environment (TEE), the system enables the Verifier to query a Prover's private data via simple Boolean queries, without exposing the raw dataset. The Auditor uses the Model Context Protocol (MCP) to dynamically inspect the target dataset, producing a yes/no verdict accompanied by a cryptographic transcript: a signed hash chain binding the reasoning trace to both the original dataset and the TEE's hardware root of trust. We demonstrate this architecture by automating the artifact evaluation process for 21 peer-reviewed computer science papers with released codebases on GitHub (e.g. Does the codebase implement the system described in the paper?). We verified five high-level properties of these codebases described in the corresponding publications, treating the source code as private. Our results show that TEE-enabled agentic auditing provides a mechanism for privacy-preserving oversight, effectively decoupling qualitative verification from the need for data disclosure.",
+      "authors": [
+        "Antony Rowstron"
+      ],
+      "published": "2026-04-27T09:07:15Z",
+      "updated": "2026-04-27T09:07:15Z",
+      "url": "https://arxiv.org/abs/2604.24203",
+      "pdf_url": "https://arxiv.org/pdf/2604.24203.pdf",
+      "primary_category": "cs.CR",
+      "categories": [
+        "cs.CR",
+        "cs.AI",
+        "cs.ET",
+        "cs.MA"
+      ],
+      "tags": [
+        "cs.AI",
+        "cs.CR",
+        "cs.ET",
+        "cs.MA"
+      ],
+      "domain": "Agent",
+      "pdf_downloaded": true,
+      "pdf_size_bytes": 683568,
+      "pdf_path": "2026-04-28/agent/2604.24203.pdf"
+    },
+    {
+      "id": "2604.24198",
+      "title": "Rewarding the Scientific Process: Process-Level Reward Modeling for Agentic Data Analysis",
+      "abstract": "Process Reward Models (PRMs) have achieved remarkable success in augmenting the reasoning capabilities of Large Language Models (LLMs) within static domains such as mathematics. However, their potential in dynamic data analysis tasks remains underexplored. In this work, we first present a empirical study revealing that general-domain PRMs struggle to supervise data analysis agents. Specifically, they fail to detect silent errors, logical flaws that yield incorrect results without triggering interpreter exceptions, and erroneously penalize exploratory actions, mistaking necessary trial-and-error exploration for grounding failures. To bridge this gap, we introduce DataPRM, a novel environment-aware generative process reward model that (1) can serve as an active verifier, autonomously interacting with the environment to probe intermediate execution states and uncover silent errors, and (2) employs a reflection-aware ternary reward strategy that distinguishes between correctable grounding errors and irrecoverable mistakes. We design a scalable pipeline to construct over 8K high-quality training instances for DataPRM via diversity-driven trajectory generation and knowledge-augmented step-level annotation. Experimental results demonstrate that DataPRM improves downstream policy LLMs by 7.21% on ScienceAgentBench and 11.28% on DABStep using Best-of-N inference. Notably, with only 4B parameters, DataPRM outperforms strong baselines, and exhibits robust generalizability across diverse Test-Time Scaling strategies. Furthermore, integrating DataPRM into Reinforcement Learning yields substantial gains over outcome-reward baselines, achieving 78.73% on DABench and 64.84% on TableBench, validating the effectiveness of process reward supervision. Code is available at https://github.com/zjunlp/DataMind.",
+      "authors": [
+        "Zhisong Qiu",
+        "Shuofei Qiao",
+        "Kewei Xu",
+        "Yuqi Zhu",
+        "Lun Du",
+        "Ningyu Zhang",
+        "Huajun Chen"
+      ],
+      "published": "2026-04-27T09:00:30Z",
+      "updated": "2026-04-27T09:00:30Z",
+      "url": "https://arxiv.org/abs/2604.24198",
+      "pdf_url": "https://arxiv.org/pdf/2604.24198.pdf",
+      "primary_category": "cs.CL",
+      "categories": [
+        "cs.CL",
+        "cs.AI",
+        "cs.CE",
+        "cs.LG",
+        "cs.MA"
+      ],
+      "tags": [
+        "cs.AI",
+        "cs.CE",
+        "cs.CL",
+        "cs.LG",
+        "cs.MA"
+      ],
+      "domain": "Agent",
+      "pdf_downloaded": true,
+      "pdf_size_bytes": 4056684,
+      "pdf_path": "2026-04-28/agent/2604.24198.pdf"
+    },
+    {
+      "id": "2604.24188",
+      "title": "Generalizable Friction Coefficient Estimation via Material Embedding and Proxy Interaction Modeling",
+      "abstract": "Accurately estimating friction coefficients between arbitrary material pairs is critical for robotics, digital fabrication, and physics-based simulation, but exhaustive pairwise testing scales quadratically with the number of materials. We introduce a proxy-based modeling framework that approximates any pairwise friction $f(A,B)$ from a small, fixed set of proxy materials $C=[c_1,\\dots,c_k]$ by learning a per-material embedding $z_A = g(f(A,c1),\\dots,f(A,ck))$ and a fusion function $p$ such that $f(A,B)\\approx p\\big(z_A,z_B\\big)$. We present deterministic and probabilistic realizations of $g$ and $p$, procedures for selecting diverse proxy sets, and mechanisms for handling missing or noisy proxy measurements. The learned embeddings are compact, interpretable, and enable calibrated uncertainty estimates for downstream decision making. On simulated and measured friction datasets, our approach achieves high predictive accuracy, robust performance with partial observations, and substantial experimental savings by significantly reducing pairwise testing.",
+      "authors": [
+        "Zhendong Wang",
+        "Huamin Wang"
+      ],
+      "published": "2026-04-27T08:49:27Z",
+      "updated": "2026-04-27T08:49:27Z",
+      "url": "https://arxiv.org/abs/2604.24188",
+      "pdf_url": "https://arxiv.org/pdf/2604.24188.pdf",
+      "primary_category": "cs.RO",
+      "categories": [
+        "cs.RO",
+        "cs.GR"
+      ],
+      "tags": [
+        "cs.GR",
+        "cs.RO"
+      ],
+      "domain": "Agent",
+      "pdf_downloaded": true,
+      "pdf_size_bytes": 9302359,
+      "pdf_path": "2026-04-28/agent/2604.24188.pdf"
+    },
+    {
+      "id": "2604.24182",
+      "title": "$M^2$-VLA: Boosting Vision-Language Models for Generalizable Manipulation via Layer Mixture and Meta-Skills",
+      "abstract": "Current Vision-Language-Action (VLA) models predominantly rely on end-to-end fine-tuning. While effective, this paradigm compromises the inherent generalization capabilities of Vision-Language Models (VLMs) and incurs catastrophic forgetting. To address these limitations, we propose $M^2$-VLA, which demonstrates that a generalized VLM is able to serve as a powerful backbone for robotic manipulation directly. However, it remains a key challenge to bridge the gap between the high-level semantic understanding of VLMs and the precise requirements of robotic control. To overcome this, we introduce the Mixture of Layers (MoL) strategy that selectively extracts task-critical information from dense semantic features. Furthermore, to facilitate efficient trajectory learning under constrained model capacity, we propose a Meta Skill Module (MSM) that integrates strong inductive biases. Extensive experiments in both simulated and real-world environments demonstrate the effectiveness of our approach. Furthermore, generalization and ablation studies validate the architecture's zero-shot capabilities and confirm the contribution of each key component. Our code and pre-trained models will be made publicly available.",
+      "authors": [
+        "Siyao Xiao",
+        "Yuhong Zhang",
+        "Zhifang Liu",
+        "Zihan Gao",
+        "Jingye Zhang",
+        "Sinwai Choo",
+        "Dake Zhong",
+        "Mengzhe Wang",
+        "Xiao Lin",
+        "Xianfeng Zhou",
+        "Jia Jia",
+        "Haoqian Wang"
+      ],
+      "published": "2026-04-27T08:44:12Z",
+      "updated": "2026-04-27T08:44:12Z",
+      "url": "https://arxiv.org/abs/2604.24182",
+      "pdf_url": "https://arxiv.org/pdf/2604.24182.pdf",
+      "primary_category": "cs.RO",
+      "categories": [
+        "cs.RO"
+      ],
+      "tags": [
+        "cs.RO"
+      ],
+      "domain": "Agent",
+      "pdf_downloaded": true,
+      "pdf_size_bytes": 2906994,
+      "pdf_path": "2026-04-28/agent/2604.24182.pdf"
+    },
+    {
+      "id": "2604.24086",
+      "title": "AsyncShield: A Plug-and-Play Edge Adapter for Asynchronous Cloud-based VLA Navigation",
+      "abstract": "While Vision-Language-Action (VLA) models have been demonstrated possessing strong zero-shot generalization for robot control, their massive parameter sizes typically necessitate cloud-based deployment. However, cloud deployment introduces network jitter and inference latency, which can induce severe spatiotemporal misalignment in mobile navigation under continuous displacement, so that the stale intents expressed in past ego frames may become spatially incorrect in the current frame and lead to collisions. To address this issue, we propose AsyncShield, a plug-and-play asynchronous control framework. AsyncShield discards traditional black-box time-series prediction in favor of a deterministic physical white-box spatial mapping. By maintaining a temporal pose buffer and utilizing kinematic transformations, the system accurately converts temporal lag into spatial pose offsets to restore the VLA's original geometric intent. To balance intent restoration fidelity and physical safety, the edge adaptation is formulated as a constrained Markov decision process (CMDP). Solved via the PPO-Lagrangian algorithm, a reinforcement learning adapter dynamically trades off between tracking the VLA intent and responding to high-frequency LiDAR obstacle avoidance hard constraints. Furthermore, benefiting from a standardized universal sub-goal interface, domain randomization, and perception-level adaptation via Collision Radius Inflation, AsyncShield operates as a lightweight, plug-and-play module. Simulation and real-world experiments demonstrate that, without fine-tuning any cloud-based foundation models, the framework exhibits zero-shot and robust generalization capabilities, effectively improving the success rate and physical safety of asynchronous navigation.",
+      "authors": [
+        "Kai Yang",
+        "Zedong Chu",
+        "Yingnan Guo",
+        "Zhengbo Wang",
+        "Shichao Xie",
+        "Yanfen Shen",
+        "Xiaolong Wu",
+        "Xing Li",
+        "Mu Xu"
+      ],
+      "published": "2026-04-27T06:20:15Z",
+      "updated": "2026-04-27T06:20:15Z",
+      "url": "https://arxiv.org/abs/2604.24086",
+      "pdf_url": "https://arxiv.org/pdf/2604.24086.pdf",
+      "primary_category": "cs.RO",
+      "categories": [
+        "cs.RO",
+        "cs.AI"
+      ],
+      "tags": [
+        "cs.AI",
+        "cs.RO"
+      ],
+      "domain": "Agent",
+      "pdf_downloaded": true,
+      "pdf_size_bytes": 4068719,
+      "pdf_path": "2026-04-28/agent/2604.24086.pdf"
+    },
+    {
+      "id": "2604.24064",
+      "title": "Trajectory Planning for an Articulated Commercial Vehicle using Model Predictive Contouring Control",
+      "abstract": "This paper presents a trajectory planning method for articulated commercial vehicles, specifically tractor-semitrailers, based on Model Predictive Contouring Control (MPCC). Although MPCC has proven effective for passenger cars, it is generally ill-suited for tractor-semitrailers. These vehicles are significantly larger, the semitrailer follows a different path than the tractor, and reversing maneuvers are unstable and prone to jackknifing. Furthermore, practical driving scenarios often require scenario-dependent prioritization of different vehicle `anchor points', e.g., prioritizing the semitrailer position during docking or the tractor position when parking to charge. Therefore, we extend MPCC to enable scenario-dependent weighting of these anchor points and incorporate explicit road-boundary constraints for the front and rear tractor axles and the semitrailer axle, thereby ensuring that all considered wheels remain within the drivable area. The simulation results demonstrate the successful navigation of a representative logistic scenario in both forward and reverse direction. Furthermore, the influence of the optimization parameters on the trajectories is analyzed, providing insights into controlling the vehicle behavior. Finally, first tests using a full-scale prototype vehicle show the practical applicability of the approach.",
+      "authors": [
+        "A. J. Aertssen",
+        "R. G. M. Huisman",
+        "I. J. M. Besselink",
+        "J. Elfring",
+        "M. J. G. van de Molengraft"
+      ],
+      "published": "2026-04-27T05:40:01Z",
+      "updated": "2026-04-27T05:40:01Z",
+      "url": "https://arxiv.org/abs/2604.24064",
+      "pdf_url": "https://arxiv.org/pdf/2604.24064.pdf",
+      "primary_category": "cs.RO",
+      "categories": [
+        "cs.RO"
+      ],
+      "tags": [
+        "cs.RO"
+      ],
+      "domain": "Agent",
+      "pdf_downloaded": true,
+      "pdf_size_bytes": 4221558,
+      "pdf_path": "2026-04-28/agent/2604.24064.pdf"
+    },
+    {
+      "id": "2604.24033",
+      "title": "Event-based SLAM Benchmark for High-Speed Maneuvers",
+      "abstract": "Event-based cameras are bio-inspired sensors with pixels that independently and asynchronously respond to brightness changes at microsecond resolution, offering the potential to handle visual tasks in high-speed maneuvering scenarios. Existing event-based approaches, although successful in mitigating motion blur caused by high-speed maneuvers, suffer from many limitations. Some of them highlight a success of pose tracking for a fronto-parallel fast shaking camera closed to the structure, while others assume pure (optionally aggressive) three-degree-of-freedom rotations. The former requires persistent local map visibility within the field of view (FOV), whereas the latter fails to generalize to six-degree-of-freedom (6-DoF) motions where both linear and angular velocities may be large. Consequently, current successes do not fully demonstrate that event-based state estimation under arbitrary aggressive maneuvers is a fully solved problem. To quantitatively assess the extent to which the potential of event cameras has been unlocked, we conduct a thorough analysis of state-of-the-art (SOTA) event-based visual odometry (VO)/visual-inertial odometry (VIO) methods and report shortcomings in current public datasets. Furthermore, we introduce a benchmarking framework for event-based state estimation, called EvSLAM, characterized by sufficient variation in data collection platforms, diverse extreme lighting scenarios, and a wide scope of challenging motion patterns under a clear and rigorous definition of high-speed maneuvers for mobile robots, along with a novel evaluation metric designed to fairly assess the operational limits of event-based solutions. This framework benchmarks state-of-the-art methods, yielding insights into optimal architectures and persistent challenges.",
+      "authors": [
+        "Sheng Zhong",
+        "Junkai Niu",
+        "Guillermo Gallego",
+        "Kaizhen Sun",
+        "Yang Yi",
+        "Zhiqiang Miao",
+        "Dewen Hu",
+        "Yaonan Wang",
+        "Davide Scaramuzza",
+        "Yi Zhou"
+      ],
+      "published": "2026-04-27T04:36:41Z",
+      "updated": "2026-04-27T04:36:41Z",
+      "url": "https://arxiv.org/abs/2604.24033",
+      "pdf_url": "https://arxiv.org/pdf/2604.24033.pdf",
+      "primary_category": "cs.RO",
+      "categories": [
+        "cs.RO"
+      ],
+      "tags": [
+        "cs.RO"
+      ],
+      "domain": "Agent",
+      "pdf_downloaded": true,
+      "pdf_size_bytes": 15857186,
+      "pdf_path": "2026-04-28/agent/2604.24033.pdf"
+    },
+    {
+      "id": "2604.24018",
+      "title": "Betting for Sim-to-Real Performance Evaluation",
+      "abstract": "This paper studies the problem of robot performance evaluation, focusing on how to obtain accurate and efficient estimates of real-world behavior under severe constraints on physical experimentation. Such estimates are essential for benchmarking algorithms, comparing design alternatives, validating controllers, and supporting certification or regulatory decision-making, yet real-world testing with physical robots is often expensive, time-consuming, and safety-limited. To mitigate the scarcity of real-world trials, sim-to-real methodologies are commonly employed, using low-cost simulators to inform, supplement, or prioritize physical experiments. Departing from (and complementary to) existing approaches in variance reduction (e.g., importance-sampling variants) or bias-correction (e.g., through prediction-powered inference or learned control variates), we examine this performance-evaluation problem through the lens of betting. We establish theoretical conditions under which a betting mechanism can yield accurate and efficient estimates (provably outperforming the Monte Carlo estimator) and we characterize how such bets should be constructed. We further develop theoretically grounded yet practically implementable approximations of the ideal bet, and we provide concrete decision rules that diagnose when these approximate betting strategies are working as intended. We demonstrate the effectiveness of the proposed methods using both synthetic examples and cross-fidelity computational simulators. Notably, we also showcase an illustrative case in which a group of synthetic distributions are used to infer the real-world pick-and-place accuracy of a robotic manipulator, a seemingly unconventional sim-to-real transfer that becomes natural and feasible under the proposed betting perspective. Programs for reproducing empirical results are available at https://github.com/ISUSAIL/Bet4Sim2Real.",
+      "authors": [
+        "Zaid Mahboob",
+        "Yujia Chen",
+        "Bowen Weng"
+      ],
+      "published": "2026-04-27T03:58:50Z",
+      "updated": "2026-04-27T03:58:50Z",
+      "url": "https://arxiv.org/abs/2604.24018",
+      "pdf_url": "https://arxiv.org/pdf/2604.24018.pdf",
+      "primary_category": "cs.RO",
+      "categories": [
+        "cs.RO"
+      ],
+      "tags": [
+        "cs.RO"
+      ],
+      "domain": "Agent",
+      "pdf_downloaded": true,
+      "pdf_size_bytes": 6026708,
+      "pdf_path": "2026-04-28/agent/2604.24018.pdf"
+    },
+    {
+      "id": "2604.23993",
+      "title": "EPM-RL: Reinforcement Learning for On-Premise Product Mapping in E-Commerce",
+      "abstract": "Product mapping, the task of deciding whether two e-commerce listings refer to the same product, is a core problem for price monitoring and channel visibility. In real marketplaces, however, sellers frequently inject promotional keywords, platform-specific tags, and bundle descriptions into titles, causing the same product to appear under many different names. Recent LLM-based and multi-agent frameworks improve robustness and interpretability on such hard cases, but they often rely on expensive external APIs, repeated retrieval, and complex inference-time orchestration, making large-scale deployment costly and difficult in privacy-sensitive enterprise settings. To address these issues, we present EPM-RL, a reinforcement-learning-based framework for building an accurate and efficient on-premise e-commerce product mapping model. Our central idea is to distill high-cost agentic reasoning into a trainable in-house model. Starting from a curated set of product pairs with LLM-generated rationales and human verification, we first perform parameter-efficient fine-tuning (PEFT) on a small student model using structured reasoning outputs. We then further optimize the model with Reinforcement Learning (RL) using an agent-based reward that jointly evaluates output-format compliance, label correctness, reasoning--preference scores from specially designed judge models. Preliminary results show that EPM-RL consistently improves over PEFT-only training and offers a stronger quality--cost trade-off than commercial API-based baselines, while enabling private deployment and lower operational cost. These findings suggest that reinforcement learning can turn product mapping from a high-latency agentic pipeline into a scalable, inspectable, and production-ready in-house system.",
+      "authors": [
+        "Minhyeong Yu",
+        "Wonduk Seo"
+      ],
+      "published": "2026-04-27T03:18:00Z",
+      "updated": "2026-04-27T03:18:00Z",
+      "url": "https://arxiv.org/abs/2604.23993",
+      "pdf_url": "https://arxiv.org/pdf/2604.23993.pdf",
+      "primary_category": "cs.CL",
+      "categories": [
+        "cs.CL",
+        "cs.AI",
+        "cs.DB",
+        "cs.LG",
+        "cs.MA"
+      ],
+      "tags": [
+        "cs.AI",
+        "cs.CL",
+        "cs.DB",
+        "cs.LG",
+        "cs.MA"
+      ],
+      "domain": "Agent",
+      "pdf_downloaded": true,
+      "pdf_size_bytes": 627638,
+      "pdf_path": "2026-04-28/agent/2604.23993.pdf"
+    },
+    {
+      "id": "2604.23978",
+      "title": "Supporting Family-School Partnerships with Robot-Facilitated Home-Based Activities",
+      "abstract": "Family-school partnerships (FSP) are critical to children's development, yet families often face barriers such as time constraints, fragmented communication, and limited opportunities for meaningful engagement. As a step toward facilitating broader family-school partnerships, we explore a novel approach that integrates a social robot into family settings, specifically supporting home-based activities. Through interviews and co-design sessions, we designed and developed a robotic system informed by both parents and children, that supported, among other interactions, family communication about school topics. We evaluated the robot in a week-long, in-home study with 10 families. Our findings show how families integrated the robot into daily life, how parental facilitation styles shaped use, and how families perceived both the helpfulness and challenges of the robot. We contribute empirical insights, a modular system, and design implications for family- and child-robot interactions. We discuss ethical and privacy considerations, and broaden the design space for technologies supporting family-school partnerships.",
+      "authors": [
+        "Michael F Xu",
+        "Qiyao Yang",
+        "Heather Kirkorian",
+        "Bilge Mutlu"
+      ],
+      "published": "2026-04-27T02:42:58Z",
+      "updated": "2026-04-27T02:42:58Z",
+      "url": "https://arxiv.org/abs/2604.23978",
+      "pdf_url": "https://arxiv.org/pdf/2604.23978.pdf",
+      "primary_category": "cs.RO",
+      "categories": [
+        "cs.RO",
+        "cs.HC"
+      ],
+      "tags": [
+        "cs.HC",
+        "cs.RO"
+      ],
+      "domain": "Agent",
+      "pdf_downloaded": true,
+      "pdf_size_bytes": 4331162,
+      "pdf_path": "2026-04-28/agent/2604.23978.pdf"
+    },
+    {
+      "id": "2604.23976",
+      "title": "Designing Robots to Support Parent-Child Connections: Opportunities Through Robot-Mediated Communication",
+      "abstract": "The sense of family connectedness may support positive outcomes including individual well-being, resilience, and healthy family functioning. However, as technologies advance, they often replace human-human interactions instead of nurturing them. In this work, we investigate how robot-facilitated communication tools might instead create new opportunities for family connection. We conducted two studies with families with children aged 5-12. We first explored the design space through in-home technology probe sessions with six families. These probes inspired us to explore two key interaction design dimensions: the robot's behavior strategy (passive, reactive, proactive) and the mode of communication (synchronous, asynchronous). We then conducted a laboratory study with 20 families to examine how the two dimensions shaped parent-child interaction and connection. Our findings characterize how parents and children appropriated robot-mediated exchanges, the tensions they experienced around initiative, timing, and privacy, and the opportunities they envisioned for supporting everyday connectedness.",
+      "authors": [
+        "Michael F Xu",
+        "Bengisu Cagiltay",
+        "Yaxin Hu",
+        "Anjun Zhu",
+        "Bilge Mutlu"
+      ],
+      "published": "2026-04-27T02:39:42Z",
+      "updated": "2026-04-27T02:39:42Z",
+      "url": "https://arxiv.org/abs/2604.23976",
+      "pdf_url": "https://arxiv.org/pdf/2604.23976.pdf",
+      "primary_category": "cs.RO",
+      "categories": [
+        "cs.RO",
+        "cs.HC"
+      ],
+      "tags": [
+        "cs.HC",
+        "cs.RO"
+      ],
+      "domain": "Agent",
+      "pdf_downloaded": true,
+      "pdf_size_bytes": 1610075,
+      "pdf_path": "2026-04-28/agent/2604.23976.pdf"
+    }
+  ]
+}
