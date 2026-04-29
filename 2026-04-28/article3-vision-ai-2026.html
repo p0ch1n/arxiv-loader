@@ -1,0 +1,1323 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>2026 AI 視覺前沿：LLM影像異常偵測 × 跨模態弱監督學習</title>
+  <style>
+    :root {
+      --bg:            oklch(10% 0.01 255);
+      --surface:       oklch(13% 0.015 255);
+      --surface-hi:    oklch(16% 0.02 255);
+      --surface-card:  oklch(14% 0.018 255);
+      --border:        oklch(25% 0.025 255);
+      --border-subtle: oklch(20% 0.02 255);
+
+      --text:          oklch(93% 0.008 255);
+      --text-sec:      oklch(68% 0.01 255);
+      --text-muted:    oklch(48% 0.01 255);
+
+      --blue:   oklch(72% 0.21 255);
+      --amber:  oklch(80% 0.17 68);
+      --green:  oklch(72% 0.18 155);
+      --rose:   oklch(68% 0.21 15);
+      --violet: oklch(70% 0.19 290);
+      --cyan:   oklch(75% 0.16 205);
+
+      --blue-dim:   oklch(72% 0.21 255 / 0.12);
+      --amber-dim:  oklch(80% 0.17 68  / 0.12);
+      --green-dim:  oklch(72% 0.18 155 / 0.12);
+      --rose-dim:   oklch(68% 0.21 15  / 0.12);
+      --violet-dim: oklch(70% 0.19 290 / 0.12);
+      --cyan-dim:   oklch(75% 0.16 205 / 0.12);
+
+      --text-xs:   clamp(0.7rem,  0.65rem + 0.25vw, 0.8rem);
+      --text-sm:   clamp(0.85rem, 0.8rem  + 0.25vw, 0.95rem);
+      --text-base: clamp(0.95rem, 0.9rem  + 0.35vw, 1.075rem);
+      --text-lg:   clamp(1.1rem,  1rem    + 0.55vw, 1.3rem);
+      --text-xl:   clamp(1.25rem, 1.1rem  + 0.9vw,  1.65rem);
+      --text-2xl:  clamp(1.6rem,  1.25rem + 2vw,    2.5rem);
+      --text-hero: clamp(2rem,    1rem    + 5vw,     3.75rem);
+
+      --r-sm: 6px;
+      --r-md: 12px;
+      --r-lg: 20px;
+    }
+
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; }
+
+    body {
+      background: var(--bg);
+      color: var(--text);
+      font-family: 'Noto Sans TC', -apple-system, BlinkMacSystemFont, 'Segoe UI', system-ui, sans-serif;
+      font-size: var(--text-base);
+      line-height: 1.8;
+    }
+
+    /* ── HEADER ───────────────────────────────────────────── */
+    .site-header {
+      position: sticky; top: 0; z-index: 100;
+      background: oklch(10% 0.01 255 / 0.92);
+      backdrop-filter: blur(12px);
+      border-bottom: 1px solid var(--border-subtle);
+      padding: 0.7rem 2rem;
+      display: flex; align-items: center; gap: 1rem;
+    }
+    .brand {
+      font-size: var(--text-xs); font-weight: 700;
+      text-transform: uppercase; letter-spacing: 0.1em;
+      color: var(--blue); text-decoration: none;
+    }
+    .sep { color: var(--border); }
+    .nav-links { display: flex; gap: 1.25rem; margin-left: auto; }
+    .nav-links a {
+      font-size: var(--text-xs); color: var(--text-sec);
+      text-decoration: none; letter-spacing: 0.04em;
+      transition: color 0.2s;
+    }
+    .nav-links a:hover { color: var(--text); }
+
+    /* ── HERO ─────────────────────────────────────────────── */
+    .hero {
+      background:
+        radial-gradient(ellipse 70% 50% at 15% 50%, oklch(60% 0.22 265 / 0.18) 0%, transparent 65%),
+        radial-gradient(ellipse 55% 60% at 85% 30%, oklch(70% 0.19 290 / 0.12) 0%, transparent 60%),
+        radial-gradient(ellipse 40% 70% at 70% 80%, oklch(72% 0.17 155 / 0.08) 0%, transparent 55%),
+        linear-gradient(170deg, oklch(14% 0.04 260) 0%, oklch(10% 0.01 255) 100%);
+      padding: clamp(4rem, 3rem + 5vw, 9rem) 2rem clamp(3rem, 2rem + 4vw, 6rem);
+      position: relative; overflow: hidden;
+    }
+    .hero::before {
+      content: '';
+      position: absolute; inset: 0;
+      background: url("data:image/svg+xml,%3Csvg width='80' height='80' viewBox='0 0 80 80' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23ffffff' fill-opacity='0.018'%3E%3Ccircle cx='40' cy='40' r='1.2'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+      pointer-events: none;
+    }
+    .hero-inner { max-width: 900px; margin: 0 auto; position: relative; }
+    .hero-badge {
+      display: inline-flex; align-items: center; gap: 0.5rem;
+      font-size: var(--text-xs); font-weight: 600;
+      text-transform: uppercase; letter-spacing: 0.12em;
+      color: var(--blue);
+      border: 1px solid oklch(72% 0.21 255 / 0.45);
+      background: oklch(72% 0.21 255 / 0.08);
+      padding: 0.35rem 1rem; border-radius: 100px;
+      margin-bottom: 1.5rem;
+      font-family: 'SF Mono', 'Consolas', monospace;
+    }
+    .hero h1 {
+      font-size: var(--text-hero);
+      font-weight: 800; line-height: 1.2;
+      letter-spacing: -0.02em;
+      color: var(--text);
+      margin-bottom: 1rem;
+    }
+    .hero h1 .accent-blue  { color: var(--blue); }
+    .hero h1 .accent-amber { color: var(--amber); }
+    .hero-sub {
+      font-size: var(--text-lg); color: var(--text-sec);
+      max-width: 700px; margin-bottom: 2rem; line-height: 1.65;
+    }
+    .hero-meta {
+      display: flex; flex-wrap: wrap; gap: 1.5rem;
+      font-size: var(--text-xs); color: var(--text-muted);
+      font-family: 'SF Mono', 'Consolas', monospace;
+      letter-spacing: 0.04em;
+    }
+    .hero-meta span { display: flex; align-items: center; gap: 0.4rem; }
+
+    /* ── TOC ──────────────────────────────────────────────── */
+    .toc-wrap {
+      background: var(--surface); border-bottom: 1px solid var(--border-subtle);
+      padding: 1.5rem 2rem;
+    }
+    .toc-inner {
+      max-width: 900px; margin: 0 auto;
+      display: flex; align-items: flex-start; gap: 2rem; flex-wrap: wrap;
+    }
+    .toc-label {
+      font-size: var(--text-xs); font-weight: 700;
+      text-transform: uppercase; letter-spacing: 0.1em;
+      color: var(--text-muted); white-space: nowrap;
+      padding-top: 0.15rem;
+    }
+    .toc-links { display: flex; flex-wrap: wrap; gap: 0.5rem; }
+    .toc-links a {
+      font-size: var(--text-xs); color: var(--text-sec);
+      text-decoration: none; padding: 0.3rem 0.75rem;
+      border-radius: var(--r-sm);
+      border: 1px solid var(--border-subtle);
+      background: var(--surface-hi);
+      transition: all 0.2s;
+    }
+    .toc-links a:hover { border-color: var(--blue); color: var(--blue); }
+
+    /* ── LAYOUT ───────────────────────────────────────────── */
+    .content-wrap { max-width: 900px; margin: 0 auto; padding: 0 2rem; }
+    .section-block { padding: clamp(3rem, 2rem + 4vw, 6rem) 0; }
+    .section-block + .section-block {
+      border-top: 1px solid var(--border-subtle);
+    }
+
+    /* ── SECTION HEADER ───────────────────────────────────── */
+    .section-label {
+      display: inline-flex; align-items: center; gap: 0.5rem;
+      font-size: var(--text-xs); font-weight: 700;
+      text-transform: uppercase; letter-spacing: 0.12em;
+      margin-bottom: 1.25rem;
+      font-family: 'SF Mono', 'Consolas', monospace;
+    }
+    .section-label.blue   { color: var(--blue); }
+    .section-label.amber  { color: var(--amber); }
+    .section-label.green  { color: var(--green); }
+    .section-label.violet { color: var(--violet); }
+    .section-label.cyan   { color: var(--cyan); }
+
+    .section-block h2 {
+      font-size: var(--text-2xl); font-weight: 800;
+      line-height: 1.25; letter-spacing: -0.02em;
+      margin-bottom: 1rem;
+    }
+    .section-block h3 {
+      font-size: var(--text-xl); font-weight: 700;
+      margin-top: 2.5rem; margin-bottom: 0.75rem;
+      letter-spacing: -0.015em;
+    }
+    .section-block h4 {
+      font-size: var(--text-lg); font-weight: 600;
+      margin-top: 1.75rem; margin-bottom: 0.5rem;
+      color: var(--text-sec);
+    }
+    .section-block p { margin-bottom: 1rem; color: var(--text-sec); }
+    .section-block p strong { color: var(--text); }
+    .section-block ul, .section-block ol {
+      margin: 0.5rem 0 1rem 1.5rem; color: var(--text-sec);
+    }
+    .section-block li { margin-bottom: 0.35rem; }
+    .section-block li strong { color: var(--text); }
+
+    /* ── LEAD TEXT ────────────────────────────────────────── */
+    .lead {
+      font-size: var(--text-lg); color: var(--text-sec);
+      margin-bottom: 2rem; line-height: 1.75;
+      border-left: 3px solid var(--blue);
+      padding-left: 1.25rem;
+    }
+
+    /* ── CARDS ────────────────────────────────────────────── */
+    .card-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 1rem; margin: 1.5rem 0;
+    }
+    .card {
+      background: var(--surface-card);
+      border: 1px solid var(--border);
+      border-radius: var(--r-md);
+      padding: 1.25rem 1.5rem;
+      transition: border-color 0.2s, background 0.2s;
+    }
+    .card:hover { border-color: var(--blue); background: var(--surface-hi); }
+    .card-icon {
+      font-size: 1.5rem; margin-bottom: 0.75rem; display: block;
+    }
+    .card-title {
+      font-size: var(--text-sm); font-weight: 700;
+      letter-spacing: -0.01em; margin-bottom: 0.4rem;
+    }
+    .card-body { font-size: var(--text-sm); color: var(--text-sec); line-height: 1.6; }
+    .card-tag {
+      display: inline-block; margin-top: 0.6rem;
+      font-size: 0.7rem; font-weight: 700;
+      text-transform: uppercase; letter-spacing: 0.08em;
+      padding: 0.2rem 0.6rem; border-radius: 100px;
+      font-family: 'SF Mono', 'Consolas', monospace;
+    }
+    .tag-blue   { background: var(--blue-dim);   color: var(--blue); }
+    .tag-amber  { background: var(--amber-dim);  color: var(--amber); }
+    .tag-green  { background: var(--green-dim);  color: var(--green); }
+    .tag-violet { background: var(--violet-dim); color: var(--violet); }
+    .tag-rose   { background: var(--rose-dim);   color: var(--rose); }
+    .tag-cyan   { background: var(--cyan-dim);   color: var(--cyan); }
+
+    /* ── TABLE ────────────────────────────────────────────── */
+    .table-wrap { overflow-x: auto; margin: 1.5rem 0; border-radius: var(--r-md); border: 1px solid var(--border); }
+    table { width: 100%; border-collapse: collapse; font-size: var(--text-sm); }
+    thead { background: var(--surface-hi); }
+    th {
+      text-align: left; padding: 0.75rem 1rem;
+      font-size: var(--text-xs); font-weight: 700;
+      text-transform: uppercase; letter-spacing: 0.08em;
+      color: var(--text-muted); white-space: nowrap;
+      border-bottom: 1px solid var(--border);
+    }
+    td {
+      padding: 0.7rem 1rem; border-bottom: 1px solid var(--border-subtle);
+      color: var(--text-sec); vertical-align: top;
+    }
+    tr:last-child td { border-bottom: none; }
+    tr:hover td { background: var(--surface-hi); }
+    td strong { color: var(--text); }
+    .good  { color: var(--green); font-weight: 600; }
+    .ok    { color: var(--amber); font-weight: 600; }
+    .warn  { color: var(--rose);  font-weight: 600; }
+
+    /* ── CALLOUT ──────────────────────────────────────────── */
+    .callout {
+      border-radius: var(--r-md); padding: 1.25rem 1.5rem;
+      margin: 1.5rem 0; font-size: var(--text-sm); line-height: 1.7;
+    }
+    .callout-title {
+      font-weight: 700; margin-bottom: 0.4rem; font-size: var(--text-sm);
+      display: flex; align-items: center; gap: 0.5rem;
+    }
+    .callout p, .callout ul { margin-bottom: 0.4rem; }
+    .callout.blue   { background: var(--blue-dim);   border-left: 3px solid var(--blue);   }
+    .callout.amber  { background: var(--amber-dim);  border-left: 3px solid var(--amber);  }
+    .callout.green  { background: var(--green-dim);  border-left: 3px solid var(--green);  }
+    .callout.rose   { background: var(--rose-dim);   border-left: 3px solid var(--rose);   }
+    .callout.violet { background: var(--violet-dim); border-left: 3px solid var(--violet); }
+    .callout.blue   .callout-title { color: var(--blue); }
+    .callout.amber  .callout-title { color: var(--amber); }
+    .callout.green  .callout-title { color: var(--green); }
+    .callout.rose   .callout-title { color: var(--rose); }
+    .callout.violet .callout-title { color: var(--violet); }
+
+    /* ── PIPELINE ─────────────────────────────────────────── */
+    .pipeline {
+      display: flex; flex-wrap: wrap; gap: 0;
+      margin: 1.5rem 0; align-items: stretch;
+    }
+    .pipe-step {
+      flex: 1; min-width: 120px;
+      background: var(--surface-card);
+      border: 1px solid var(--border);
+      border-right: none;
+      padding: 1rem 1.25rem;
+      position: relative;
+    }
+    .pipe-step:last-child { border-right: 1px solid var(--border); border-radius: 0 var(--r-md) var(--r-md) 0; }
+    .pipe-step:first-child { border-radius: var(--r-md) 0 0 var(--r-md); }
+    .pipe-step::after {
+      content: '→';
+      position: absolute; right: -14px; top: 50%;
+      transform: translateY(-50%);
+      color: var(--text-muted); font-size: 1.1rem; z-index: 1;
+    }
+    .pipe-step:last-child::after { display: none; }
+    .pipe-num {
+      font-size: var(--text-xs); font-weight: 700;
+      font-family: 'SF Mono', monospace; margin-bottom: 0.3rem;
+    }
+    .pipe-name { font-size: var(--text-sm); font-weight: 600; line-height: 1.4; }
+    .pipe-desc { font-size: var(--text-xs); color: var(--text-muted); margin-top: 0.25rem; line-height: 1.5; }
+
+    /* ── ARCH DIAGRAM ─────────────────────────────────────── */
+    .arch-box {
+      background: var(--surface-card);
+      border: 1px solid var(--border);
+      border-radius: var(--r-lg);
+      padding: 2rem; margin: 1.5rem 0;
+      font-family: 'SF Mono', 'Consolas', monospace;
+      font-size: var(--text-xs);
+    }
+    .arch-row {
+      display: flex; gap: 1rem; align-items: center;
+      justify-content: center; flex-wrap: wrap; margin-bottom: 0.75rem;
+    }
+    .arch-node {
+      padding: 0.5rem 1rem;
+      border-radius: var(--r-sm);
+      border: 1.5px solid;
+      font-size: var(--text-xs); font-weight: 600;
+      text-align: center; white-space: nowrap;
+    }
+    .arch-node.blue   { border-color: var(--blue);   color: var(--blue);   background: var(--blue-dim); }
+    .arch-node.amber  { border-color: var(--amber);  color: var(--amber);  background: var(--amber-dim); }
+    .arch-node.green  { border-color: var(--green);  color: var(--green);  background: var(--green-dim); }
+    .arch-node.violet { border-color: var(--violet); color: var(--violet); background: var(--violet-dim); }
+    .arch-node.cyan   { border-color: var(--cyan);   color: var(--cyan);   background: var(--cyan-dim); }
+    .arch-node.muted  { border-color: var(--border); color: var(--text-muted); background: var(--surface-hi); }
+    .arch-arrow { color: var(--text-muted); font-size: 1rem; }
+    .arch-label {
+      text-align: center; font-size: var(--text-xs);
+      color: var(--text-muted); margin: 0.25rem 0 0.75rem;
+    }
+
+    /* ── CODE BLOCK ───────────────────────────────────────── */
+    pre {
+      background: var(--surface-hi);
+      border: 1px solid var(--border);
+      border-radius: var(--r-md);
+      padding: 1.25rem 1.5rem;
+      overflow-x: auto; margin: 1rem 0;
+      font-size: var(--text-xs); line-height: 1.7;
+      font-family: 'SF Mono', 'Consolas', 'Monaco', monospace;
+      color: var(--text-sec);
+    }
+    code {
+      font-family: 'SF Mono', 'Consolas', 'Monaco', monospace;
+      font-size: 0.88em;
+      background: var(--surface-hi);
+      border: 1px solid var(--border-subtle);
+      padding: 0.1em 0.4em; border-radius: 4px;
+      color: var(--cyan);
+    }
+    pre code { background: none; border: none; padding: 0; font-size: inherit; color: inherit; }
+
+    /* ── HIGHLIGHT ROW ────────────────────────────────────── */
+    .highlight-row {
+      display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 1rem; margin: 1.5rem 0;
+    }
+    .highlight-item {
+      background: var(--surface-hi);
+      border: 1px solid var(--border);
+      border-radius: var(--r-md);
+      padding: 1.25rem;
+    }
+    .highlight-val {
+      font-size: var(--text-2xl); font-weight: 800;
+      letter-spacing: -0.03em; margin-bottom: 0.25rem;
+    }
+    .highlight-desc { font-size: var(--text-sm); color: var(--text-muted); line-height: 1.5; }
+
+    /* ── DIVIDER ──────────────────────────────────────────── */
+    .divider {
+      height: 1px; background: var(--border-subtle);
+      margin: 2rem 0;
+    }
+
+    /* ── BADGE INLINE ─────────────────────────────────────── */
+    .badge {
+      display: inline-block; font-size: 0.7rem; font-weight: 700;
+      text-transform: uppercase; letter-spacing: 0.06em;
+      padding: 0.15rem 0.5rem; border-radius: 4px;
+      vertical-align: middle; margin-left: 0.3rem;
+      font-family: 'SF Mono', monospace;
+    }
+    .badge.new   { background: var(--green-dim);  color: var(--green); }
+    .badge.sota  { background: var(--amber-dim);  color: var(--amber); }
+    .badge.eff   { background: var(--blue-dim);   color: var(--blue); }
+    .badge.heavy { background: var(--violet-dim); color: var(--violet); }
+
+    /* ── FOOTER ───────────────────────────────────────────── */
+    .site-footer {
+      border-top: 1px solid var(--border-subtle);
+      padding: 2.5rem 2rem;
+      text-align: center;
+      font-size: var(--text-xs);
+      color: var(--text-muted);
+    }
+
+    /* ── RESPONSIVE ───────────────────────────────────────── */
+    @media (max-width: 640px) {
+      .hero { padding: 3rem 1.25rem 2.5rem; }
+      .content-wrap { padding: 0 1.25rem; }
+      .toc-wrap { padding: 1.25rem; }
+      .pipeline { flex-direction: column; }
+      .pipe-step { border-right: 1px solid var(--border); border-bottom: none; border-radius: 0; }
+      .pipe-step:first-child { border-radius: var(--r-md) var(--r-md) 0 0; }
+      .pipe-step:last-child { border-radius: 0 0 var(--r-md) var(--r-md); border-bottom: 1px solid var(--border); }
+      .pipe-step::after { content: '↓'; right: auto; top: auto; bottom: -14px; left: 50%; }
+    }
+  </style>
+</head>
+<body>
+
+<!-- ── HEADER ──────────────────────────────────────────────── -->
+<header class="site-header">
+  <a class="brand" href="#">AI Research</a>
+  <span class="sep">／</span>
+  <span style="font-size:var(--text-xs);color:var(--text-muted)">2026 Vision Intelligence</span>
+  <nav class="nav-links">
+    <a href="#part1">LLM 影像分析</a>
+    <a href="#part2">跨模態學習</a>
+  </nav>
+</header>
+
+<!-- ── HERO ────────────────────────────────────────────────── -->
+<section class="hero">
+  <div class="hero-inner">
+    <div class="hero-badge">◈ 2026 深度研究報告</div>
+    <h1>
+      <span class="accent-blue">LLM 視覺智慧</span> ×<br>
+      <span class="accent-amber">跨模態弱監督</span>
+    </h1>
+    <p class="hero-sub">
+      從 Open Source 多模態 LLM 的影像異常偵測，到電子束與光學相機的跨模態標籤遷移與雜訊標籤學習——2026 年最前沿的解決方案全解析。
+    </p>
+    <div class="hero-meta">
+      <span>📅 2026-04</span>
+      <span>🔬 半導體 / 工業視覺</span>
+      <span>🧠 Multimodal LLM</span>
+      <span>⚡ 10nm 奈米製程</span>
+    </div>
+  </div>
+</section>
+
+<!-- ── TOC ──────────────────────────────────────────────────── -->
+<div class="toc-wrap">
+  <div class="toc-inner">
+    <span class="toc-label">目錄</span>
+    <div class="toc-links">
+      <a href="#part1-models">主流開源模型</a>
+      <a href="#part1-anomaly">異常偵測框架</a>
+      <a href="#part1-video">Video 理解</a>
+      <a href="#part1-deploy">算力 vs 準度</a>
+      <a href="#part2-problem">問題定義</a>
+      <a href="#part2-noisy">雜訊標籤學習</a>
+      <a href="#part2-cross">跨模態蒸餾</a>
+      <a href="#part2-pipeline">推薦 Pipeline</a>
+    </div>
+  </div>
+</div>
+
+
+<!-- ════════════════════════════════════════════════════════════
+     PART 1: Open Source LLM for Video/Image Anomaly Detection
+     ════════════════════════════════════════════════════════════ -->
+<div class="content-wrap">
+
+<section class="section-block" id="part1">
+  <div class="section-label blue">◈ Part 1</div>
+  <h2>Open Source LLM 影像 / 影片<br>異常偵測與描述生成</h2>
+  <p class="lead">
+    2025–2026 年多模態 LLM 進入工業落地拐點：7B 參數模型在單張消費級 GPU 即可完成影像異常描述；視頻理解從逐幀 caption 演進到原生時序建模。本節剖析當前最佳選擇與部署策略。
+  </p>
+
+
+  <!-- ── 1.1 Model Landscape ─────────────────────────────── -->
+  <h3 id="part1-models">1.1 2026 主流開源多模態模型</h3>
+  <p>截至 2026 年初，下列模型形成工業應用的主要選擇：</p>
+
+  <div class="card-grid">
+
+    <div class="card">
+      <span class="card-icon">🏆</span>
+      <div class="card-title">Qwen2.5-VL</div>
+      <div class="card-body">
+        Alibaba 出品。7B / 32B / 72B 規格，原生支援影片輸入（任意解析度、任意長寬比），視覺 grounding 能力強，中文理解優秀。工業異常描述首選。
+      </div>
+      <span class="card-tag tag-sota">SOTA 綜合</span>
+    </div>
+
+    <div class="card">
+      <span class="card-icon">🔬</span>
+      <div class="card-title">InternVL2.5</div>
+      <div class="card-body">
+        上海 AI Lab。1B–78B 多規格，多圖像輸入表現業界領先，在 OCR + 高解析度局部理解上超越 GPT-4V 系列。適合高解析圖面異常定位。
+      </div>
+      <span class="card-tag tag-sota">高解析強</span>
+    </div>
+
+    <div class="card">
+      <span class="card-icon">🦙</span>
+      <div class="card-title">Llama 3.2 Vision</div>
+      <div class="card-body">
+        Meta。11B / 90B，Apache 2.0 授權，企業可商用。instruction-following 極佳，適合需要精確 structured output 的異常報告場景。
+      </div>
+      <span class="card-tag tag-blue">商用友善</span>
+    </div>
+
+    <div class="card">
+      <span class="card-icon">💡</span>
+      <div class="card-title">MiniCPM-V 2.6</div>
+      <div class="card-body">
+        清華 / 面壁。8B 但效能比肩 GPT-4V，端側部署最佳選擇，支援影片多幀，記憶體佔用低。適合算力受限的邊緣部署。
+      </div>
+      <span class="card-tag tag-green">邊緣部署</span>
+    </div>
+
+    <div class="card">
+      <span class="card-icon">⚡</span>
+      <div class="card-title">SmolVLM 2</div>
+      <div class="card-body">
+        HuggingFace。256M–2.2B，極致輕量，可在 CPU 或樹莓派執行。用於快速 triage：先篩選可疑幀，再交大模型深度分析。
+      </div>
+      <span class="card-tag tag-green">超輕量</span>
+    </div>
+
+    <div class="card">
+      <span class="card-icon">🎬</span>
+      <div class="card-title">Video-LLaMA3</div>
+      <div class="card-body">
+        專門針對長影片設計，整合時序 memory 機制，能理解數分鐘影片中的事件前後脈絡，適合監控場景的異常事件序列描述。
+      </div>
+      <span class="card-tag tag-amber">時序建模</span>
+    </div>
+
+    <div class="card">
+      <span class="card-icon">🌊</span>
+      <div class="card-title">Gemma 3 Vision</div>
+      <div class="card-body">
+        Google。2B / 12B / 27B，完全開放。27B 在多項 benchmark 超越 GPT-4o mini，適合需要 Google 生態整合的場景。
+      </div>
+      <span class="card-tag tag-blue">Google 生態</span>
+    </div>
+
+    <div class="card">
+      <span class="card-icon">🔷</span>
+      <div class="card-title">Phi-3.5 Vision</div>
+      <div class="card-body">
+        Microsoft。4.2B，支援多幀輸入，推理速度快，適合需要極低延遲的即時偵測場景（如機台即時告警）。
+      </div>
+      <span class="card-tag tag-green">低延遲</span>
+    </div>
+
+  </div>
+
+  <div class="callout blue">
+    <div class="callout-title">🔍 2026 推薦選型邏輯</div>
+    <p><strong>單幀高精度異常描述</strong>：Qwen2.5-VL-72B 或 InternVL2.5-78B（需多 GPU）</p>
+    <p><strong>單卡 24GB 部署</strong>：Qwen2.5-VL-7B AWQ 量化（~8GB VRAM），品質僅降 3–5%</p>
+    <p><strong>邊緣 / 即時</strong>：SmolVLM 做初篩 + MiniCPM-V 做確認，串聯兩階段</p>
+    <p><strong>長影片事件分析</strong>：Video-LLaMA3 搭配關鍵幀抽取</p>
+  </div>
+
+
+  <!-- ── 1.2 Anomaly Detection Framework ─────────────────── -->
+  <h3 id="part1-anomaly">1.2 異常偵測框架：從傳統到 LLM 整合</h3>
+
+  <p>純 LLM 並非萬能——最佳方案是<strong>傳統異常偵測 + LLM 描述生成</strong>的兩階段架構：</p>
+
+  <!-- Stage 1 -->
+  <h4>Stage 1：高效異常定位（傳統方法）</h4>
+
+  <div class="card-grid">
+    <div class="card">
+      <span class="card-icon">🎯</span>
+      <div class="card-title">AnomalyCLIP <span class="badge new">NEW</span></div>
+      <div class="card-body">
+        利用 CLIP 的 text-image 對齊能力做 zero-shot 異常偵測。輸入文字描述「正常外觀」即可偵測偏差，無需額外訓練。適合初期缺乏標注資料的場景。
+      </div>
+    </div>
+    <div class="card">
+      <span class="card-icon">🪟</span>
+      <div class="card-title">WinCLIP / WinCLIP+</div>
+      <div class="card-body">
+        滑動視窗 + CLIP 的 zero/few-shot 工業異常偵測，2023–2024 年 MVTec 榜首。Few-shot 只需 1–4 張正常樣本即可啟動。
+      </div>
+    </div>
+    <div class="card">
+      <span class="card-icon">🔍</span>
+      <div class="card-title">PatchCore</div>
+      <div class="card-body">
+        Memory bank + 近鄰搜尋，無需訓練，推理時直接比對特徵距離。工業界最廣泛部署的基線方法，速度快、解釋性好。
+      </div>
+    </div>
+    <div class="card">
+      <span class="card-icon">🌀</span>
+      <div class="card-title">RealNet / UniFormaly</div>
+      <div class="card-body">
+        2024–2025 新方法，統一架構同時支援 texture / structural 異常，單一模型覆蓋多品類缺陷。
+      </div>
+    </div>
+  </div>
+
+  <!-- Stage 2 -->
+  <h4>Stage 2：LLM 深度描述與根因分析</h4>
+
+  <p>將 Stage 1 的異常 mask / bounding box 作為視覺 prompt 送入 LLM，要求模型：</p>
+  <ul>
+    <li>描述異常的<strong>位置、形態、嚴重程度</strong></li>
+    <li>比對已知缺陷類型資料庫，給出<strong>缺陷類別推測</strong></li>
+    <li>生成<strong>自然語言報告</strong>供人工審查</li>
+    <li>評估<strong>誤報可能性</strong>（模型不確定性）</li>
+  </ul>
+
+  <!-- Architecture -->
+  <div class="arch-box">
+    <div style="text-align:center;color:var(--text-muted);margin-bottom:1rem;font-weight:700;">▌ 兩階段異常偵測架構</div>
+
+    <div class="arch-row">
+      <div class="arch-node blue">影像 / 影片輸入</div>
+      <div class="arch-arrow">→</div>
+      <div class="arch-node green">前處理<br>(去噪 / 正規化)</div>
+      <div class="arch-arrow">→</div>
+      <div class="arch-node amber">Stage 1<br>AnomalyCLIP / PatchCore</div>
+    </div>
+    <div class="arch-label">↓ 輸出：異常分數 + 位置 mask</div>
+    <div class="arch-row">
+      <div class="arch-node muted">若分數 &lt; 閾值 → PASS</div>
+      <div class="arch-arrow"> </div>
+      <div class="arch-node amber">若分數 ≥ 閾值</div>
+      <div class="arch-arrow">→</div>
+      <div class="arch-node violet">Stage 2<br>Qwen2.5-VL / InternVL2.5</div>
+    </div>
+    <div class="arch-label">↓ LLM 輸出：結構化異常報告</div>
+    <div class="arch-row">
+      <div class="arch-node cyan">缺陷類別</div>
+      <div class="arch-node cyan">嚴重程度</div>
+      <div class="arch-node cyan">位置描述</div>
+      <div class="arch-node cyan">處置建議</div>
+    </div>
+  </div>
+
+  <div class="callout amber">
+    <div class="callout-title">⚠️ 為何不直接用 LLM 做 Stage 1？</div>
+    <p>LLM 視覺理解的<strong>定位精度</strong>（pixel-level）遠不如專用異常偵測模型；且 LLM 推理成本高（每次推理 0.5–5 秒），無法負擔全量影幀掃描。正確策略是：Stage 1 快速篩選可疑幀（毫秒級）→ Stage 2 深度分析（秒級）。</p>
+  </div>
+
+
+  <!-- ── 1.3 Video Understanding ─────────────────────────── -->
+  <h3 id="part1-video">1.3 Video 時序異常理解</h3>
+
+  <h4>關鍵幀抽取策略</h4>
+  <p>原生影片往往 30fps，LLM 無法處理全部幀。主流策略：</p>
+
+  <div class="table-wrap">
+    <table>
+      <thead>
+        <tr>
+          <th>策略</th>
+          <th>方法</th>
+          <th>適用場景</th>
+          <th>代價</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><strong>均勻抽幀</strong></td>
+          <td>每 N 幀取 1 幀</td>
+          <td>靜態場景、慢速事件</td>
+          <td class="good">極低</td>
+        </tr>
+        <tr>
+          <td><strong>場景變化偵測</strong></td>
+          <td>相鄰幀差異 > 閾值才抽取</td>
+          <td>事件稀疏的監控影片</td>
+          <td class="good">低</td>
+        </tr>
+        <tr>
+          <td><strong>光流異常觸發</strong></td>
+          <td>RAFT / FlowNet 計算運動異常</td>
+          <td>動態製程監控</td>
+          <td class="ok">中</td>
+        </tr>
+        <tr>
+          <td><strong>Stage 1 觸發抽幀</strong></td>
+          <td>PatchCore 異常分數 ≥ 閾值才送 LLM</td>
+          <td>高效率工業流水線</td>
+          <td class="good">低</td>
+        </tr>
+        <tr>
+          <td><strong>原生 Video Token</strong></td>
+          <td>Qwen2.5-VL 的 3D-RoPE 直接吃影片</td>
+          <td>需理解完整時序關係</td>
+          <td class="warn">高</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <h4>LLM Video Prompt 設計範例</h4>
+  <pre>System: 你是一名半導體製程視覺檢測專家。
+       請分析影片中的異常區域，輸出 JSON 格式報告。
+
+User: [VIDEO_FRAMES: 8 frames × 640×480]
+      [ANOMALY_MASK: frame 4, region (120,80)-(200,160)]
+
+      請描述：
+      1. 異常類型（scratch / particle / void / delamination / other）
+      2. 異常位置與面積估計
+      3. 與前後幀的時序變化
+      4. 嚴重程度評估（1-5 scale）
+      5. 建議處置
+
+Output: {
+  "defect_type": "particle",
+  "location": "center-right region, ~80×80 pixel area",
+  "temporal": "particle appears at frame 3, expands at frame 4-5",
+  "severity": 4,
+  "recommendation": "immediate line stop, contamination source investigation"
+}</pre>
+
+
+  <!-- ── 1.4 Compute vs Accuracy ──────────────────────────── -->
+  <h3 id="part1-deploy">1.4 算力 vs 準度：部署決策矩陣</h3>
+
+  <div class="highlight-row">
+    <div class="highlight-item">
+      <div class="highlight-val" style="color:var(--green)">7B</div>
+      <div class="highlight-desc">Qwen2.5-VL-7B AWQ，單 RTX 4090 (24GB)，每幀 ~0.8s，適合低吞吐量場景</div>
+    </div>
+    <div class="highlight-item">
+      <div class="highlight-val" style="color:var(--amber)">32B</div>
+      <div class="highlight-desc">需 2×A100 (80GB) 或 4×3090，每幀 ~2.5s，品質顯著提升，適合高價值缺陷確認</div>
+    </div>
+    <div class="highlight-item">
+      <div class="highlight-val" style="color:var(--rose)">72B</div>
+      <div class="highlight-desc">需 4×A100，每幀 ~8s，接近人類專家級描述，僅適合離線深度分析</div>
+    </div>
+    <div class="highlight-item">
+      <div class="highlight-val" style="color:var(--blue)">2-Stage</div>
+      <div class="highlight-desc">SmolVLM 初篩 + 7B 確認，整體吞吐提升 10× ，成本降低 90%</div>
+    </div>
+  </div>
+
+  <div class="table-wrap">
+    <table>
+      <thead>
+        <tr>
+          <th>模型規格</th>
+          <th>VRAM</th>
+          <th>吞吐 (幀/分鐘)</th>
+          <th>異常描述品質</th>
+          <th>量化選項</th>
+          <th>推薦場景</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><strong>SmolVLM-2.2B</strong></td>
+          <td>~4GB</td>
+          <td class="good">200+</td>
+          <td class="warn">基礎篩選</td>
+          <td>INT8</td>
+          <td>初篩 triage</td>
+        </tr>
+        <tr>
+          <td><strong>Qwen2.5-VL-7B</strong></td>
+          <td>~8GB</td>
+          <td class="good">75</td>
+          <td class="ok">良好</td>
+          <td>AWQ / GPTQ</td>
+          <td>生產線即時</td>
+        </tr>
+        <tr>
+          <td><strong>InternVL2.5-8B</strong></td>
+          <td>~10GB</td>
+          <td class="ok">60</td>
+          <td class="ok">良好</td>
+          <td>INT4/INT8</td>
+          <td>高解析局部分析</td>
+        </tr>
+        <tr>
+          <td><strong>Qwen2.5-VL-32B</strong></td>
+          <td>~40GB</td>
+          <td class="ok">24</td>
+          <td class="good">優秀</td>
+          <td>AWQ</td>
+          <td>離線品管確認</td>
+        </tr>
+        <tr>
+          <td><strong>InternVL2.5-78B</strong></td>
+          <td>~90GB</td>
+          <td class="warn">8</td>
+          <td class="good">頂尖</td>
+          <td>AWQ</td>
+          <td>研發 / 根因分析</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div class="callout green">
+    <div class="callout-title">✅ 工業部署推薦策略（2026）</div>
+    <ul>
+      <li><strong>即時流水線</strong>：Stage 1 PatchCore（CPU 可跑）→ 異常幀送 Qwen2.5-VL-7B AWQ（單 4090）</li>
+      <li><strong>批量夜間審查</strong>：全日可疑幀集中送 32B 模型深度分析，生成日報</li>
+      <li><strong>零樣本啟動</strong>：AnomalyCLIP 文字描述正常品外觀，1 天內上線，無需標注</li>
+      <li><strong>量化工具</strong>：llama.cpp (GGUF)、AutoAWQ、vLLM 均已穩定支援上述模型</li>
+    </ul>
+  </div>
+
+</section>
+
+
+<!-- ════════════════════════════════════════════════════════════
+     PART 2: Cross-Modal Weak Supervision & Noisy Labels
+     ════════════════════════════════════════════════════════════ -->
+<section class="section-block" id="part2">
+  <div class="section-label amber">◈ Part 2</div>
+  <h2>電子束 × 光學跨模態學習<br>與雜訊標籤處理</h2>
+  <p class="lead">
+    以電子束相機（EB，512×512）的標記作為光學相機（32×32）的監督信號，在奈米尺度下訓練缺陷偵測模型。這是一個同時涉及<strong>跨模態域遷移、解析度鴻溝、物理不可見性標籤</strong>的複合難題。
+  </p>
+
+  <!-- ── 2.1 Problem Formulation ──────────────────────────── -->
+  <h3 id="part2-problem">2.1 問題精確定義</h3>
+
+  <div class="arch-box">
+    <div style="text-align:center;color:var(--text-muted);margin-bottom:1rem;font-weight:700;">▌ 問題結構圖</div>
+    <div class="arch-row">
+      <div>
+        <div class="arch-node blue" style="margin-bottom:0.5rem">電子束相機 (EB)</div>
+        <div style="color:var(--text-muted);font-size:0.7rem;text-align:center">512×512<br>~10nm / px 等效<br>清晰缺陷標記</div>
+      </div>
+      <div class="arch-arrow" style="font-size:1.5rem">⟶</div>
+      <div>
+        <div class="arch-node amber" style="margin-bottom:0.5rem">標籤遷移</div>
+        <div style="color:var(--text-muted);font-size:0.7rem;text-align:center">位置對齊 (Registration)<br>座標映射<br>標籤壓縮</div>
+      </div>
+      <div class="arch-arrow" style="font-size:1.5rem">⟶</div>
+      <div>
+        <div class="arch-node rose" style="margin-bottom:0.5rem">光學相機 (Optical)</div>
+        <div style="color:var(--text-muted);font-size:0.7rem;text-align:center">32×32<br>~160nm / px 等效<br>部分缺陷不可見</div>
+      </div>
+    </div>
+    <div style="text-align:center;margin:1rem 0;color:var(--rose);font-weight:600">
+      ⚠️ 核心問題：EB 可見缺陷 ⊃ 光學可見缺陷<br>
+      <span style="font-size:0.8rem;color:var(--text-muted)">EB 標記的部分缺陷在 32×32 光學圖中根本無法被感知</span>
+    </div>
+  </div>
+
+  <div class="callout rose">
+    <div class="callout-title">🔬 物理根因：這不是普通的雜訊標籤</div>
+    <p>光學繞射極限約 200–400nm。對於 10nm 以下的特徵，32×32 像素的光學圖在空間頻域上<strong>根本無法編碼</strong>對應的缺陷資訊。這類標籤不是「錯誤標注」，而是「物理不可見標籤」——它的存在對光學模型是真實的雜訊。</p>
+    <p><strong>但這不代表模型無法學習</strong>：光學圖中可能存在缺陷的<strong>間接相關特徵</strong>（周邊材質應力、整體圖案形變等），模型可學習這些代理特徵（proxy features）。</p>
+  </div>
+
+  <h4>雜訊類型分類</h4>
+  <div class="table-wrap">
+    <table>
+      <thead>
+        <tr><th>雜訊類型</th><th>成因</th><th>佔比估計</th><th>處理策略</th></tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><strong>物理不可見標籤</strong></td>
+          <td>缺陷尺寸 &lt; 光學解析度極限</td>
+          <td class="warn">20–50%</td>
+          <td>實例重加權 / 樣本剔除</td>
+        </tr>
+        <tr>
+          <td><strong>配準誤差雜訊</strong></td>
+          <td>EB↔光學座標對齊不完美</td>
+          <td class="ok">5–15%</td>
+          <td>軟標籤 / 空間模糊化</td>
+        </tr>
+        <tr>
+          <td><strong>EB 誤標注</strong></td>
+          <td>EB 自身的假陽性</td>
+          <td class="good">1–5%</td>
+          <td>Confident Learning 識別</td>
+        </tr>
+        <tr>
+          <td><strong>跨模態域偏移</strong></td>
+          <td>兩台相機材質對比度差異</td>
+          <td>全域影響</td>
+          <td>跨模態域適應</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+
+  <!-- ── 2.2 Noisy Label Learning ─────────────────────────── -->
+  <h3 id="part2-noisy">2.2 雜訊標籤學習方法</h3>
+
+  <p>大型訓練集 + 雜訊標籤的核心挑戰：模型會記憶雜訊（memorization effect）。2024–2026 年最有效的方法：</p>
+
+  <div class="card-grid">
+
+    <div class="card">
+      <span class="card-icon">🧹</span>
+      <div class="card-title">Confident Learning <span class="badge sota">cleanlab</span></div>
+      <div class="card-body">
+        估計每個樣本的「標籤正確機率」，識別出高置信度的雜訊樣本。<code>cleanlab</code> 庫已有完整 PyTorch 整合。<br><br>
+        <strong>優勢</strong>：不需改架構，直接對現有資料集做清洗；對物理不可見標籤有較好識別能力（模型損失持續高的樣本）。
+      </div>
+      <span class="card-tag tag-blue">離線清洗</span>
+    </div>
+
+    <div class="card">
+      <span class="card-icon">🤝</span>
+      <div class="card-title">DivideMix <span class="badge sota">ICLR 2020</span></div>
+      <div class="card-body">
+        將訓練集動態分為「乾淨」和「雜訊」兩組，混合使用監督 + 半監督訓練。雜訊樣本以 soft pseudo-label 參與訓練而非丟棄。<br><br>
+        <strong>優勢</strong>：雜訊率達 80% 仍有效；特別適合本場景中大比例物理不可見標籤。
+      </div>
+      <span class="card-tag tag-amber">訓練時動態</span>
+    </div>
+
+    <div class="card">
+      <span class="card-icon">📊</span>
+      <div class="card-title">CORES² / SOP</div>
+      <div class="card-body">
+        Self-paced co-training：兩個獨立網路互相監督，僅在雙方一致時才更新標籤。<br><br>
+        <strong>優勢</strong>：計算成本低於 DivideMix，適合訓練資源受限的場景。
+      </div>
+      <span class="card-tag tag-green">輕量共訓練</span>
+    </div>
+
+    <div class="card">
+      <span class="card-icon">🎓</span>
+      <div class="card-title">Curriculum Learning</div>
+      <div class="card-body">
+        先用高置信度（低損失）樣本訓練，逐步加入困難 / 不確定樣本。<br><br>
+        <strong>在本場景的意義</strong>：先用 EB 可見且光學也可能可見的大缺陷訓練，再逐步加入小缺陷標籤，讓模型先建立穩健的特徵基礎。
+      </div>
+      <span class="card-tag tag-violet">訓練策略</span>
+    </div>
+
+    <div class="card">
+      <span class="card-icon">🏷️</span>
+      <div class="card-title">Label Smoothing + Soft Labels</div>
+      <div class="card-body">
+        不要使用 hard 0/1 標籤。根據缺陷尺寸相對於光學解析度的比值，計算「可見機率」作為 soft label。<br><br>
+        例：缺陷 5nm，光學極限 200nm → 可見機率 ≈ 0.1，標籤為 0.1 而非 1.0。
+      </div>
+      <span class="card-tag tag-cyan">標籤工程</span>
+    </div>
+
+    <div class="card">
+      <span class="card-icon">🎲</span>
+      <div class="card-title">Mixup + AugMix</div>
+      <div class="card-body">
+        對光學圖像做大量資料增強（旋轉、色偏、高斯噪聲、CutMix），使模型對圖像擾動更健壯，間接降低雜訊標籤的影響。與其他方法組合使用效果最佳。
+      </div>
+      <span class="card-tag tag-green">增強正則</span>
+    </div>
+
+  </div>
+
+  <div class="callout violet">
+    <div class="callout-title">💡 針對「物理不可見標籤」的特殊處理</div>
+    <p>傳統雜訊標籤方法假設雜訊是隨機的；本場景的雜訊是<strong>系統性的</strong>（小缺陷 = 高雜訊）。建議：</p>
+    <ul>
+      <li>1. 用 EB 圖計算每個缺陷的<strong>實際尺寸</strong>，轉換為「光學可見機率」</li>
+      <li>2. 以此機率作為 instance weight 或 soft label</li>
+      <li>3. 尺寸 &lt; 某閾值的樣本直接從訓練集移除（或降權至 0.05 以下）</li>
+    </ul>
+  </div>
+
+
+  <!-- ── 2.3 Cross-Modal Distillation ────────────────────── -->
+  <h3 id="part2-cross">2.3 跨模態知識蒸餾策略</h3>
+
+  <p>
+    核心思路：讓 EB 訓練的<strong>教師模型</strong>（高品質）引導光學<strong>學生模型</strong>（低解析度）學習有意義的特徵。
+  </p>
+
+  <div class="arch-box">
+    <div style="text-align:center;color:var(--text-muted);margin-bottom:1rem;font-weight:700;">▌ 跨模態蒸餾架構</div>
+
+    <div class="arch-row">
+      <div>
+        <div class="arch-node blue" style="margin-bottom:0.4rem">EB 圖 (512×512)</div>
+      </div>
+      <div class="arch-arrow">→</div>
+      <div>
+        <div class="arch-node blue" style="margin-bottom:0.4rem">EB Teacher Encoder<br><span style="font-size:0.65rem">(CNN / ViT，凍結)</span></div>
+      </div>
+      <div class="arch-arrow">→</div>
+      <div>
+        <div class="arch-node blue" style="margin-bottom:0.4rem">Teacher Features<br>Z_T ∈ ℝ^d</div>
+      </div>
+    </div>
+
+    <div style="text-align:center;color:var(--text-muted);margin:0.25rem 0">↕ 對齊損失 L_align = ‖Z_S − proj(Z_T)‖²</div>
+
+    <div class="arch-row">
+      <div>
+        <div class="arch-node amber" style="margin-bottom:0.4rem">光學圖 (32×32)</div>
+      </div>
+      <div class="arch-arrow">→</div>
+      <div>
+        <div class="arch-node amber" style="margin-bottom:0.4rem">Optical Student Encoder<br><span style="font-size:0.65rem">(輕量 CNN，可訓練)</span></div>
+      </div>
+      <div class="arch-arrow">→</div>
+      <div>
+        <div class="arch-node amber" style="margin-bottom:0.4rem">Student Features<br>Z_S ∈ ℝ^d</div>
+      </div>
+    </div>
+
+    <div style="text-align:center;margin:0.75rem 0;color:var(--text-muted);font-size:0.75rem">
+      總損失 = L_task（分類）+ λ₁ · L_align（特徵蒸餾）+ λ₂ · L_contrast（跨模態對比）
+    </div>
+  </div>
+
+  <h4>具體實作：三種蒸餾目標</h4>
+
+  <div class="card-grid">
+    <div class="card">
+      <span class="card-icon">📐</span>
+      <div class="card-title">Feature Alignment（特徵對齊）</div>
+      <div class="card-body">
+        在共享嵌入空間中，要求同一元件的 EB 特徵與光學特徵接近。使用 projection head 橋接維度差異。
+        <br><br>損失：<code>MSE(Z_S, proj(Z_T.detach()))</code>
+      </div>
+    </div>
+    <div class="card">
+      <span class="card-icon">🔗</span>
+      <div class="card-title">Contrastive Cross-Modal</div>
+      <div class="card-body">
+        正樣本對：同一元件的 EB + 光學圖。<br>
+        負樣本對：不同元件。<br>
+        使用 InfoNCE loss（類似 CLIP）學習模態不變表示。
+      </div>
+    </div>
+    <div class="card">
+      <span class="card-icon">🎭</span>
+      <div class="card-title">Soft Prediction Distillation</div>
+      <div class="card-body">
+        教師模型的 logit 分佈（softmax 前）作為學生的監督目標，比 hard label 包含更多「排名資訊」，在雜訊場景下更穩健。
+        <br><br>損失：<code>KL(p_S ‖ p_T)</code>
+      </div>
+    </div>
+  </div>
+
+  <h4>EB-to-Optical 影像翻譯（輔助工具）</h4>
+  <p>
+    訓練一個 <strong>Pix2Pix / CycleGAN</strong>，將 EB 圖降解析度翻譯為模擬光學圖。用途：
+  </p>
+  <ul>
+    <li><strong>可見性預測</strong>：觀察翻譯後圖像中缺陷是否仍可見，自動計算「可見機率」</li>
+    <li><strong>資料增強</strong>：EB 圖翻譯後增加光學訓練樣本數量</li>
+    <li><strong>教師輔助</strong>：教師模型同時在 EB 和模擬光學圖上訓練，學生更好對齊</li>
+  </ul>
+
+  <div class="callout green">
+    <div class="callout-title">✅ 關鍵洞察：學習「代理特徵」</div>
+    <p>
+      即使缺陷在 32×32 光學圖中不可直接觀察，訓練資料量足夠大時，模型可學習<strong>統計代理信號</strong>：
+    </p>
+    <ul>
+      <li>缺陷周圍的整體圖案形變或對稱性破壞</li>
+      <li>特定位置的局部亮度分佈異常</li>
+      <li>鄰近結構的幾何偏差</li>
+    </ul>
+    <p>這些代理特徵在 32×32 解析度下是存在的，只是需要大量樣本讓模型發現規律。<strong>這正是大訓練集的價值所在</strong>。</p>
+  </div>
+
+
+  <!-- ── 2.4 Recommended Pipeline ────────────────────────── -->
+  <h3 id="part2-pipeline">2.4 完整推薦 Pipeline</h3>
+
+  <div class="pipeline">
+    <div class="pipe-step" style="border-left:3px solid var(--blue)">
+      <div class="pipe-num" style="color:var(--blue)">Phase 1</div>
+      <div class="pipe-name">資料清洗</div>
+      <div class="pipe-desc">Confident Learning 識別雜訊；計算缺陷可見機率</div>
+    </div>
+    <div class="pipe-step" style="border-top:3px solid var(--amber)">
+      <div class="pipe-num" style="color:var(--amber)">Phase 2</div>
+      <div class="pipe-name">EB 教師預訓練</div>
+      <div class="pipe-desc">在完整 EB 512×512 資料集上訓練高品質教師</div>
+    </div>
+    <div class="pipe-step" style="border-top:3px solid var(--violet)">
+      <div class="pipe-num" style="color:var(--violet)">Phase 3</div>
+      <div class="pipe-name">跨模態蒸餾</div>
+      <div class="pipe-desc">以教師引導光學學生，同時用 Soft Label 訓練</div>
+    </div>
+    <div class="pipe-step" style="border-top:3px solid var(--green)">
+      <div class="pipe-num" style="color:var(--green)">Phase 4</div>
+      <div class="pipe-name">DivideMix 精調</div>
+      <div class="pipe-desc">動態分離乾淨 / 雜訊樣本，半監督精調學生</div>
+    </div>
+    <div class="pipe-step" style="border-top:3px solid var(--cyan)">
+      <div class="pipe-num" style="color:var(--cyan)">Phase 5</div>
+      <div class="pipe-name">Curriculum 強化</div>
+      <div class="pipe-desc">從大缺陷到小缺陷逐步加入困難樣本</div>
+    </div>
+  </div>
+
+  <h4>Phase 1：資料清洗詳解</h4>
+  <pre>import cleanlab
+from cleanlab.filter import find_label_issues
+
+# 用初步訓練好的光學模型預測
+pred_probs = optical_model.predict_proba(optical_images)  # (N, num_classes)
+labels = eb_derived_labels  # EB 標記轉換來的標籤
+
+# Confident Learning 找出雜訊樣本
+label_issues = find_label_issues(
+    labels=labels,
+    pred_probs=pred_probs,
+    return_indices_ranked_by="self_confidence",
+    filter_by="prune_by_noise_rate",
+)
+
+# 計算缺陷可見機率（基於 EB 物理尺寸）
+def visibility_prob(defect_size_nm, optical_resolution_nm=160):
+    """sigmoid 型可見性模型"""
+    ratio = defect_size_nm / optical_resolution_nm
+    return float(1 / (1 + np.exp(-5 * (ratio - 0.5))))
+
+# 建立 soft label
+soft_labels = np.array([
+    visibility_prob(size) if label == 1 else 1 - visibility_prob(size) * 0.1
+    for size, label in zip(defect_sizes_nm, labels)
+])</pre>
+
+  <h4>Phase 3：跨模態蒸餾訓練迴圈</h4>
+  <pre>class CrossModalDistillLoss(nn.Module):
+    def __init__(self, alpha=0.5, beta=0.3, temperature=4.0):
+        super().__init__()
+        self.alpha = alpha   # feature alignment weight
+        self.beta = beta     # soft prediction weight
+        self.T = temperature
+
+    def forward(self, student_feat, teacher_feat,
+                student_logits, teacher_logits, soft_labels):
+        # 1. 任務損失（Soft Label BCE）
+        task_loss = F.binary_cross_entropy(
+            student_logits.sigmoid(), soft_labels
+        )
+        # 2. 特徵對齊損失
+        align_loss = F.mse_loss(student_feat, teacher_feat.detach())
+
+        # 3. Soft prediction KD
+        soft_student = F.log_softmax(student_logits / self.T, dim=-1)
+        soft_teacher = F.softmax(teacher_logits.detach() / self.T, dim=-1)
+        kd_loss = F.kl_div(soft_student, soft_teacher, reduction='batchmean')
+        kd_loss *= self.T ** 2
+
+        return task_loss + self.alpha * align_loss + self.beta * kd_loss</pre>
+
+  <h4>模型架構選擇</h4>
+
+  <div class="table-wrap">
+    <table>
+      <thead>
+        <tr><th>角色</th><th>推薦架構</th><th>輸入</th><th>理由</th></tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><strong>EB 教師</strong></td>
+          <td>ResNet-50 / ViT-S</td>
+          <td>512×512</td>
+          <td>高解析度特徵提取，預訓練 ImageNet 權重可直接 fine-tune</td>
+        </tr>
+        <tr>
+          <td><strong>光學學生</strong></td>
+          <td>MobileNetV4 / EfficientNet-B0</td>
+          <td>32×32</td>
+          <td>32×32 輸入非常輕量，參數量控制在 1–3M 即可</td>
+        </tr>
+        <tr>
+          <td><strong>Projection Head</strong></td>
+          <td>2-layer MLP</td>
+          <td>—</td>
+          <td>橋接師生特徵維度差異</td>
+        </tr>
+        <tr>
+          <td><strong>GAN 翻譯器</strong></td>
+          <td>Pix2Pix (UNet)</td>
+          <td>512×512→32×32</td>
+          <td>輔助生成模擬光學圖，用於可見性估計</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div class="callout blue">
+    <div class="callout-title">📌 大訓練集 + 高雜訊率的最佳實踐</div>
+    <ul>
+      <li><strong>不要一次性全量訓練</strong>：先用 Confident Learning 清出高置信度子集（約 30–50%），在此子集上做初步訓練建立 warm start</li>
+      <li><strong>動態 hard negative mining</strong>：訓練中監控每個樣本的損失，損失持續偏高的很可能是雜訊或困難樣本，可動態降低其 weight</li>
+      <li><strong>Exponential Moving Average（EMA）</strong>：維護模型的 EMA 版本，雜訊場景下 EMA 模型穩定性顯著優於即時模型</li>
+      <li><strong>驗證集必須用 EB 標記重新確認</strong>：測試集只用 EB 可直接確認為可見的缺陷，確保評估指標的可靠性</li>
+    </ul>
+  </div>
+
+  <h4>進階：Self-Supervised Pre-training 降低雜訊依賴</h4>
+  <p>
+    在送入監督訓練之前，用光學圖像做<strong>自監督預訓練</strong>（不需標籤），讓模型學習通用的光學域特徵表示。推薦方法：
+  </p>
+  <ul>
+    <li><strong>DINO / DINOv2</strong>：自蒸餾 ViT，特別適合無標籤的工業圖像</li>
+    <li><strong>MAE（Masked Autoencoder）</strong>：在 32×32 圖上做 patch masking，學習重建，適合紋理豐富的半導體圖像</li>
+    <li><strong>SimCLR</strong>：對比學習，同一元件不同裁剪作為正樣本對</li>
+  </ul>
+  <p>
+    自監督預訓練後，模型對雜訊標籤的抵抗力顯著提升（已有良好特徵基礎，不需靠標籤來學習表示）。
+  </p>
+
+  <div class="divider"></div>
+
+  <h3>2.5 小結：方法選擇決策樹</h3>
+
+  <div class="table-wrap">
+    <table>
+      <thead>
+        <tr><th>情境</th><th>首選方法</th><th>輔助方法</th><th>預期效果</th></tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><strong>雜訊率 &lt; 20%</strong></td>
+          <td>Confident Learning 清洗</td>
+          <td>Label Smoothing</td>
+          <td class="good">接近乾淨標籤效能</td>
+        </tr>
+        <tr>
+          <td><strong>雜訊率 20–60%</strong></td>
+          <td>DivideMix</td>
+          <td>Soft Labels + EMA</td>
+          <td class="ok">顯著優於標準訓練</td>
+        </tr>
+        <tr>
+          <td><strong>雜訊率 &gt; 60%</strong></td>
+          <td>SSL 預訓練 + 跨模態蒸餾</td>
+          <td>剔除高雜訊樣本 + DivideMix</td>
+          <td class="ok">可行但上限受限</td>
+        </tr>
+        <tr>
+          <td><strong>EB 與光學配對充足</strong></td>
+          <td>跨模態對比蒸餾</td>
+          <td>EB→Optical GAN 翻譯</td>
+          <td class="good">最佳方案</td>
+        </tr>
+        <tr>
+          <td><strong>配對資料稀少</strong></td>
+          <td>AnomalyCLIP zero-shot</td>
+          <td>Curriculum + 主動學習</td>
+          <td class="ok">低資料起點</td>
+        </tr>
+        <tr>
+          <td><strong>本場景（10nm / 32×32）</strong></td>
+          <td>Phase 1–5 完整 Pipeline</td>
+          <td>可見性 Soft Label + DivideMix</td>
+          <td class="good">業界最佳實踐</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+</section>
+
+
+<!-- ── CLOSING ─────────────────────────────────────────────── -->
+<section class="section-block">
+  <div class="section-label cyan">◈ 總結</div>
+  <h2>核心結論</h2>
+
+  <div class="card-grid">
+    <div class="card" style="border-color:var(--blue)">
+      <span class="card-icon">🤖</span>
+      <div class="card-title">Part 1 要點</div>
+      <div class="card-body">
+        2026 年最佳策略：Stage 1 PatchCore / AnomalyCLIP 快速篩選 + Stage 2 Qwen2.5-VL-7B AWQ 深度描述。不要直接用 LLM 做 pixel-level 偵測，成本過高且精度不足。
+      </div>
+    </div>
+    <div class="card" style="border-color:var(--amber)">
+      <span class="card-icon">⚗️</span>
+      <div class="card-title">Part 2 要點</div>
+      <div class="card-body">
+        物理不可見標籤 ≠ 普通雜訊，需要<strong>可見性 Soft Label</strong> 而非直接剔除。跨模態蒸餾 + DivideMix + 自監督預訓練的組合在大規模雜訊資料集上效果最佳。
+      </div>
+    </div>
+    <div class="card" style="border-color:var(--green)">
+      <span class="card-icon">🔑</span>
+      <div class="card-title">最關鍵洞察</div>
+      <div class="card-body">
+        光學模型學習的是「統計代理特徵」而非缺陷本身——這在物理上合理且可行，需要大量訓練資料讓模型發現這些隱性規律。驗證集必須排除物理不可見樣本才能評估真實效能。
+      </div>
+    </div>
+  </div>
+
+</section>
+
+</div><!-- /.content-wrap -->
+
+
+<footer class="site-footer">
+  <p style="margin-bottom:0.5rem">2026 AI Vision Intelligence Report · 深度研究專欄</p>
+  <p style="color:var(--text-muted)">涵蓋：Open Source VLM · Video Anomaly Detection · Cross-Modal Distillation · Noisy Label Learning</p>
+</footer>
+
+</body>
+</html>
