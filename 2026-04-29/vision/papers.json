@@ -1,0 +1,818 @@
+{
+  "domain": "Vision",
+  "date": "2026-04-29",
+  "count": 27,
+  "papers": [
+    {
+      "id": "2604.25889",
+      "title": "Robust Deepfake Detection: Mitigating Spatial Attention Drift via Calibrated Complementary Ensembles",
+      "abstract": "Current deepfake detection models achieve state-of-the-art performance on pristine academic datasets but suffer severe spatial attention drift under real-world compound degradations, such as blurring and severe lossy compression. To address this vulnerability, we propose a foundation-driven forensic framework that integrates an extreme compound degradation engine with a structurally constrained, multi-stream architecture. During training, our degradation pipeline systematically destroys high-frequency artifacts, optimizing the DINOv2-Giant backbone to extract invariant geometric and semantic priors. We then process images through three specialized pathways: a Global Texture stream, a Localized Facial stream, and a Hybrid Semantic Fusion stream incorporating CLIP. Through analyzing spatial attribution via Score-CAM and feature stability using Cosine Similarity, we quantitatively demonstrate that these streams extract non-redundant, complementary feature representations and stabilize attention entropy. By aggregating these predictions via a calibrated, discretized voting mechanism, our ensemble successfully suppresses background attention drift while acting as a robust geometric anchor. Our approach yields highly stable zero-shot generalization, achieving Fourth Place in the NTIRE 2026 Robust Deepfake Detection Challenge at CVPR. Code is available at https://github.com/khoalephanminh/ntire26-deepfake-challenge.",
+      "authors": [
+        "Minh-Khoa Le-Phan",
+        "Minh-Hoang Le",
+        "Trong-Le Do",
+        "Minh-Triet Tran"
+      ],
+      "published": "2026-04-28T17:32:48Z",
+      "updated": "2026-04-28T17:32:48Z",
+      "url": "https://arxiv.org/abs/2604.25889",
+      "pdf_url": "https://arxiv.org/pdf/2604.25889.pdf",
+      "primary_category": "cs.CV",
+      "categories": [
+        "cs.CV"
+      ],
+      "tags": [
+        "cs.CV"
+      ],
+      "domain": "Vision",
+      "pdf_downloaded": true,
+      "pdf_size_bytes": 8252284,
+      "pdf_path": "2026-04-29/vision/2604.25889.pdf"
+    },
+    {
+      "id": "2604.25884",
+      "title": "QCalEval: Benchmarking Vision-Language Models for Quantum Calibration Plot Understanding",
+      "abstract": "Quantum computing calibration depends on interpreting experimental data, and calibration plots provide the most universal human-readable representation for this task, yet no systematic evaluation exists of how well vision-language models (VLMs) interpret them. We introduce QCalEval, the first VLM benchmark for quantum calibration plots: 243 samples across 87 scenario types from 22 experiment families, spanning superconducting qubits and neutral atoms, evaluated on six question types in both zero-shot and in-context learning settings. The best general-purpose zero-shot model reaches a mean score of 72.3, and many open-weight models degrade under multi-image in-context learning, whereas frontier closed models improve substantially. A supervised fine-tuning ablation at the 9-billion-parameter scale shows that SFT improves zero-shot performance but cannot close the multimodal in-context learning gap. As a reference case study, we release NVIDIA Ising Calibration 1, an open-weight model based on Qwen3.5-35B-A3B that reaches 74.7 zero-shot average score.",
+      "authors": [
+        "Shuxiang Cao",
+        "Zijian Zhang",
+        "Abhishek Agarwal",
+        "Grace Bratrud",
+        "Niyaz R. Beysengulov",
+        "Daniel C. Cole",
+        "Alejandro G\u00f3mez Frieiro",
+        "Elena O. Glen",
+        "Hao Hsu",
+        "Gang Huang",
+        "Raymond Jow",
+        "Greshma Shaji",
+        "Tom Lubowe",
+        "Ligeng Zhu",
+        "Luis Mantilla Calder\u00f3n",
+        "Nicola Pancotti",
+        "Joel Pendleton",
+        "Brandon Severin",
+        "Charles Etienne Staub",
+        "Sara Sussman",
+        "Antti Veps\u00e4l\u00e4inen",
+        "Neel Rajeshbhai Vora",
+        "Yilun Xu",
+        "Varinia Bernales",
+        "Daniel Bowring",
+        "Elica Kyoseva",
+        "Ivan Rungger",
+        "Giulia Semeghini",
+        "Sam Stanwyck",
+        "Timothy Costa",
+        "Al\u00e1n Aspuru-Guzik",
+        "Krysta Svore"
+      ],
+      "published": "2026-04-28T17:28:33Z",
+      "updated": "2026-04-28T17:28:33Z",
+      "url": "https://arxiv.org/abs/2604.25884",
+      "pdf_url": "https://arxiv.org/pdf/2604.25884.pdf",
+      "primary_category": "quant-ph",
+      "categories": [
+        "quant-ph",
+        "cs.CV"
+      ],
+      "tags": [
+        "cs.CV",
+        "quant-ph"
+      ],
+      "domain": "Vision",
+      "pdf_downloaded": true,
+      "pdf_size_bytes": 3759455,
+      "pdf_path": "2026-04-29/vision/2604.25884.pdf"
+    },
+    {
+      "id": "2604.25819",
+      "title": "Mutual Forcing: Dual-Mode Self-Evolution for Fast Autoregressive Audio-Video Character Generation",
+      "abstract": "In this work, we propose Mutual Forcing, a framework for fast autoregressive audio-video generation with long-horizon audio-video synchronization. Our approach addresses two key challenges: joint audio-video modeling and fast autoregressive generation. To ease joint audio-video optimization, we adopt a two-stage training strategy: we first train uni-modal generators and then couple them into a unified audio-video model for joint training on paired data. For streaming generation, we ask whether a native fast causal audio-video model can be trained directly, instead of following existing streaming distillation pipelines that typically train a bidirectional model first and then convert it into a causal generator through multiple distillation stages. Our answer is Mutual Forcing, which builds directly on native autoregressive model and integrates few-step and multi-step generation within a single weight-shared model, enabling self-distillation and improved training-inference consistency. The multi-step mode improves the few-step mode via self-distillation, while the few-step mode generates historical context during training to improve training-inference consistency; because the two modes share parameters, these two effects reinforce each other within a single model. Compared with prior approaches such as Self-Forcing, Mutual Forcing removes the need for an additional bidirectional teacher model, supports more flexible training sequence lengths, reduces training overhead, and allows the model to improve directly from real paired data rather than a fixed teacher. Experiments show that Mutual Forcing matches or surpasses strong baselines that require around 50 sampling steps while using only 4 to 8 steps, demonstrating substantial advantages in both efficiency and quality. The project page is available at https://mutualforcing.github.io.",
+      "authors": [
+        "Yupeng Zhou",
+        "Lianghua Huang",
+        "Zhifan Wu",
+        "Jiabao Wang",
+        "Yupeng Shi",
+        "Biao Jiang",
+        "Daquan Zhou",
+        "Yu Liu",
+        "Ming-Ming Cheng",
+        "Qibin Hou"
+      ],
+      "published": "2026-04-28T16:28:05Z",
+      "updated": "2026-04-28T16:28:05Z",
+      "url": "https://arxiv.org/abs/2604.25819",
+      "pdf_url": "https://arxiv.org/pdf/2604.25819.pdf",
+      "primary_category": "cs.CV",
+      "categories": [
+        "cs.CV",
+        "cs.SD"
+      ],
+      "tags": [
+        "cs.CV",
+        "cs.SD"
+      ],
+      "domain": "Vision",
+      "pdf_downloaded": true,
+      "pdf_size_bytes": 1882420,
+      "pdf_path": "2026-04-29/vision/2604.25819.pdf"
+    },
+    {
+      "id": "2604.25809",
+      "title": "Instruction-Evidence Contrastive Dual-Stream Decoding for Grounded Vision-Language Reasoning",
+      "abstract": "Vision-Language Models (VLMs) exhibit strong performance in instruction following and open-ended vision-language reasoning, yet they frequently generate fluent outputs that are weakly grounded in visual evidence. Prior works have shown that instruction prompting further worsens this issue by amplifying language priors, especially when the visual signal is uncertain or ambiguous. To address this challenge, we propose a decoding framework that explicitly balances linguistic informativeness and visual faithfulness during generation. Our method, Instruction-Evidence Contrastive Dual-Stream Decoding (IECD2), maintains two parallel probability distributions of tokens at each decoding step: an instruction-driven stream that promotes expressive and informative responses, and an evidence-driven stream that enforces strict grounding in the image. These two streams are adaptively fused using a symmetric KL-based contrast-based gate, which suppresses tokens favored by language priors but unsupported by visual evidence, while preserving them when both distributions agree. We evaluate IECD2 on multiple datasets spanning various generative vision-language reasoning tasks such as captioning and visual question answering, including POPE, MME, VQAv2, AMBER, MS-COCO, and LLaVA-Bench. IECD2 demonstrates consistent improvements in task accuracy and reasoning performance, alongside a substantial reduction in hallucination across all evaluation metrics compared to state-of-the-art decoding approaches.",
+      "authors": [
+        "Yashwant Pravinrao Bangde",
+        "Debaditya Roy"
+      ],
+      "published": "2026-04-28T16:18:31Z",
+      "updated": "2026-04-28T16:18:31Z",
+      "url": "https://arxiv.org/abs/2604.25809",
+      "pdf_url": "https://arxiv.org/pdf/2604.25809.pdf",
+      "primary_category": "cs.CV",
+      "categories": [
+        "cs.CV"
+      ],
+      "tags": [
+        "cs.CV"
+      ],
+      "domain": "Vision",
+      "pdf_downloaded": true,
+      "pdf_size_bytes": 3019439,
+      "pdf_path": "2026-04-29/vision/2604.25809.pdf"
+    },
+    {
+      "id": "2604.25795",
+      "title": "Improving Diversity in Black-box Few-shot Knowledge Distillation",
+      "abstract": "Knowledge distillation (KD) is a well-known technique to effectively compress a large network (teacher) to a smaller network (student) with little sacrifice in performance. However, most KD methods require a large training set and internal access to the teacher, which are rarely available due to various restrictions. These challenges have originated a more practical setting known as black-box few-shot KD, where the student is trained with few images and a black-box teacher. Recent approaches typically generate additional synthetic images but lack an active strategy to promote their diversity, a crucial factor for student learning. To address these problems, we propose a novel training scheme for generative adversarial networks, where we adaptively select high-confidence images under the teacher's supervision and introduce them to the adversarial learning on-the-fly. Our approach helps expand and improve the diversity of the distillation set, significantly boosting student accuracy. Through extensive experiments, we achieve state-of-the-art results among other few-shot KD methods on seven image datasets. The code is available at https://github.com/votrinhan88/divbfkd.",
+      "authors": [
+        "Tri-Nhan Vo",
+        "Dang Nguyen",
+        "Kien Do",
+        "Sunil Gupta"
+      ],
+      "published": "2026-04-28T16:03:07Z",
+      "updated": "2026-04-28T16:03:07Z",
+      "url": "https://arxiv.org/abs/2604.25795",
+      "pdf_url": "https://arxiv.org/pdf/2604.25795.pdf",
+      "primary_category": "cs.CV",
+      "categories": [
+        "cs.CV",
+        "cs.LG"
+      ],
+      "tags": [
+        "cs.CV",
+        "cs.LG"
+      ],
+      "domain": "Vision",
+      "pdf_downloaded": true,
+      "pdf_size_bytes": 4694908,
+      "pdf_path": "2026-04-29/vision/2604.25795.pdf"
+    },
+    {
+      "id": "2604.25794",
+      "title": "Diverse Image Priors for Black-box Data-free Knowledge Distillation",
+      "abstract": "Knowledge distillation (KD) represents a vital mechanism to transfer expertise from complex teacher networks to efficient student models. However, in decentralized or secure AI ecosystems, privacy regulations and proprietary interests often restrict access to the teacher's interface and original datasets. These constraints define a challenging black-box data-free KD scenario where only top-1 predictions and no training data are available. While recent approaches utilize synthetic data, they still face limitations in data diversity and distillation signals. We propose Diverse Image Priors Knowledge Distillation (DIP-KD), a framework that addresses these challenges through a three-phase collaborative pipeline: (1) Synthesis of image priors to capture diverse visual patterns and semantics; (2) Contrast to enhance the collective distinction between synthetic samples via contrastive learning; and (3) Distillation via a novel primer student that enables soft-probability KD. Our evaluation across 12 benchmarks shows that DIP-KD achieves state-of-the-art performance, with ablations confirming data diversity as critical for knowledge acquisition in restricted AI environments.",
+      "authors": [
+        "Tri-Nhan Vo",
+        "Dang Nguyen",
+        "Trung Le",
+        "Kien Do",
+        "Sunil Gupta"
+      ],
+      "published": "2026-04-28T16:02:27Z",
+      "updated": "2026-04-28T16:02:27Z",
+      "url": "https://arxiv.org/abs/2604.25794",
+      "pdf_url": "https://arxiv.org/pdf/2604.25794.pdf",
+      "primary_category": "cs.LG",
+      "categories": [
+        "cs.LG",
+        "cs.CV"
+      ],
+      "tags": [
+        "cs.CV",
+        "cs.LG"
+      ],
+      "domain": "Vision",
+      "pdf_downloaded": true,
+      "pdf_size_bytes": 5384870,
+      "pdf_path": "2026-04-29/vision/2604.25794.pdf"
+    },
+    {
+      "id": "2604.25781",
+      "title": "Sketch2Arti: Sketch-based Articulation Modeling of CAD Objects",
+      "abstract": "Articulation modeling aims to infer movable parts and their motion parameters for a 3D object, enabling interactive animation, simulation, and shape editing. In this paper, we present Sketch2Arti, the first sketch-based articulation modeling system for CAD objects. Our key observation is that designers naturally communicate articulation intent through lightweight sketches (e.g., arrows and strokes) that indicate how parts should move, yet translating such sketches into articulated 3D models remains largely manual. Sketch2Arti bridges this gap by enabling users to specify articulation through simple 2D sketches drawn from a chosen viewpoint. Given a CAD model and user sketches, our approach automatically discovers the corresponding movable parts and predicts their motion parameters, allowing iterative modeling of multiple articulations on complex objects with fine-grained control. Importantly, Sketch2Arti is trained in a category-agnostic manner without requiring object category information, leading to strong generalization to diverse objects beyond existing articulation datasets. Moreover, for shell models lacking interior structures, Sketch2Arti supports controllable internal completion guided by user sketches, generating plausible internal components consistent with the existing geometry and predicted motion constraints. Comprehensive experiments and user evaluations demonstrate the effectiveness, controllability, and generalization of Sketch2Arti. The code, dataset, and the prototype system are at https://arlo-yang.github.io/Sketch2Arti.",
+      "authors": [
+        "Yi Yang",
+        "Hao Pan",
+        "Yijing Cui",
+        "Alla Sheffer",
+        "Changjian Li"
+      ],
+      "published": "2026-04-28T15:47:30Z",
+      "updated": "2026-04-28T15:47:30Z",
+      "url": "https://arxiv.org/abs/2604.25781",
+      "pdf_url": "https://arxiv.org/pdf/2604.25781.pdf",
+      "primary_category": "cs.CV",
+      "categories": [
+        "cs.CV",
+        "cs.GR"
+      ],
+      "tags": [
+        "cs.CV",
+        "cs.GR"
+      ],
+      "domain": "Vision",
+      "pdf_downloaded": false,
+      "pdf_size_bytes": null,
+      "pdf_path": null
+    },
+    {
+      "id": "2604.25755",
+      "title": "Quantum-Inspired Robust and Scalable SAR Object Classification",
+      "abstract": "SAR image classification naturally has to deal with huge noise and a high dynamic range particularly requiring robust classification models. Additionally, the deployment of these models on edge devices, such as drones and military aircraft, requires a careful balance between model size and classification accuracy. This study explores the potential of tensor networks to meet these robustness requirements, specifically evaluating their resilience to data poisoning. Unlike previous works that concentrated on conventional neural networks for SAR object detection, this research focuses on the robustness and model reduction capabilities of tensor networks in object classification. Our findings indicate that tensor networks are adept at addressing both the challenges of robustness and the need for model efficiency, thereby contributing valuable insights to the ongoing discourse in radar applications and deep learning methodologies in general.",
+      "authors": [
+        "Maximilian Scharf",
+        "Marco Trenti",
+        "Felix Bock",
+        "Padraig Davidson",
+        "Tobias Brosch",
+        "Benjamin Rodrigues de Miranda",
+        "Sigurd Huber",
+        "Timo Felser"
+      ],
+      "published": "2026-04-28T15:18:42Z",
+      "updated": "2026-04-28T15:18:42Z",
+      "url": "https://arxiv.org/abs/2604.25755",
+      "pdf_url": "https://arxiv.org/pdf/2604.25755.pdf",
+      "primary_category": "quant-ph",
+      "categories": [
+        "quant-ph",
+        "cs.CV",
+        "physics.comp-ph"
+      ],
+      "tags": [
+        "cs.CV",
+        "physics.comp-ph",
+        "quant-ph"
+      ],
+      "domain": "Vision",
+      "pdf_downloaded": true,
+      "pdf_size_bytes": 727128,
+      "pdf_path": "2026-04-29/vision/2604.25755.pdf"
+    },
+    {
+      "id": "2604.25720",
+      "title": "Toward Multimodal Conversational AI for Age-Related Macular Degeneration",
+      "abstract": "Despite strong performance of deep learning models in retinal disease detection, most systems produce static predictions without clinical reasoning or interactive explanation. Recent advances in multimodal large language models (MLLMs) integrate diagnostic predictions with clinically meaningful dialogue to support clinical decision-making and patient counseling. In this study, OcularChat, an MLLM, was fine-tuned from Qwen2.5-VL using simulated patient-physician dialogues to diagnose age-related macular degeneration (AMD) through visual question answering on color fundus photographs (CFPs). A total of 705,850 simulated dialogues paired with 46,167 CFPs were generated to train OcularChat to identify key AMD features and produce reasoned predictions. OcularChat demonstrated strong classification performance in AREDS, achieving accuracies of 0.954, 0.849, and 0.678 for the three diagnostic tasks: advanced AMD, pigmentary abnormalities, and drusen size, significantly outperforming existing MLLMs. On AREDS2, OcularChat remained the top-performing method on all tasks. Across three independent ophthalmologist graders, OcularChat achieved higher mean scores than a strong baseline model for advanced AMD (3.503 vs. 2.833), pigmentary abnormalities (3.272 vs. 2.828), drusen size (3.064 vs. 2.433), and overall impression (2.978 vs. 2.464) on a 5-point clinical grading rubric. Beyond strong objective performance in AMD severity classification, OcularChat demonstrated the ability to provide diagnostic reasoning, clinically relevant explanations, and interactive dialogue, with high performance in subjective ophthalmologist evaluation. These findings suggest that MLLMs may enable accurate, interpretable, and clinically useful image-based diagnosis and classification of AMD.",
+      "authors": [
+        "Ran Gu",
+        "Benjamin Hou",
+        "M\u00e9lanie H\u00e9bert",
+        "Asmita Indurkar",
+        "Yifan Yang",
+        "Emily Y. Chew",
+        "Tiarn\u00e1n D. L. Keenan",
+        "Zhiyong Lu"
+      ],
+      "published": "2026-04-28T14:46:29Z",
+      "updated": "2026-04-28T14:46:29Z",
+      "url": "https://arxiv.org/abs/2604.25720",
+      "pdf_url": "https://arxiv.org/pdf/2604.25720.pdf",
+      "primary_category": "cs.CV",
+      "categories": [
+        "cs.CV",
+        "cs.CL"
+      ],
+      "tags": [
+        "cs.CL",
+        "cs.CV"
+      ],
+      "domain": "Vision",
+      "pdf_downloaded": true,
+      "pdf_size_bytes": 789677,
+      "pdf_path": "2026-04-29/vision/2604.25720.pdf"
+    },
+    {
+      "id": "2604.25688",
+      "title": "QB-LIF: Learnable-Scale Quantized Burst Neurons for Efficient SNNs",
+      "abstract": "Binary spike coding enables sparse and event-driven computation in spiking neural networks (SNNs), yet its 1-bit-per-timestep representation fundamentally limits information throughput. This bottleneck becomes increasingly restrictive in deep architectures under short simulation horizons. We propose the Quantized Burst-LIF (QB-LIF) neuron, which reformulates burst spiking as a saturated uniform quantization of membrane potentials with a learnable scale. Instead of relying on predefined multi-threshold structures, QB-LIF treats the quantization scale as a trainable parameter, allowing each layer to autonomously adapt its spiking resolution to the underlying membrane-potential statistics. To preserve hardware efficiency, we introduce an absorbable scale strategy that folds the learned quantized scale into synaptic weights during inference, maintaining a strict accumulate-only (AC) execution paradigm. To enable stable optimization in the discrete multi-level space, we further design ReLSG-ET, a rectified-linear surrogate gradient with exponential tails that sustains gradient flow across burst intervals. Extensive experiments on static (CIFAR-10/100, ImageNet) and event-driven (CIFAR10-DVS, DVS128-Gesture) benchmarks demonstrate that QB-LIF consistently outperforms binary and fixed-burst SNNs, achieving higher accuracy under ultra-low latency while preserving neuromorphic compatibility.",
+      "authors": [
+        "Dewei Bai",
+        "Hongxiang Peng",
+        "Jiajun Mei",
+        "Yang Ren",
+        "Hong Qu",
+        "Dawen Xia",
+        "Zhang Yi"
+      ],
+      "published": "2026-04-28T14:18:53Z",
+      "updated": "2026-04-28T14:18:53Z",
+      "url": "https://arxiv.org/abs/2604.25688",
+      "pdf_url": "https://arxiv.org/pdf/2604.25688.pdf",
+      "primary_category": "cs.CV",
+      "categories": [
+        "cs.CV"
+      ],
+      "tags": [
+        "cs.CV"
+      ],
+      "domain": "Vision",
+      "pdf_downloaded": true,
+      "pdf_size_bytes": 1259238,
+      "pdf_path": "2026-04-29/vision/2604.25688.pdf"
+    },
+    {
+      "id": "2604.25685",
+      "title": "Robustness Evaluation of a Foundation Segmentation Model Under Simulated Domain Shifts in Abdominal CT: Implications for Health Digital Twin Deployment",
+      "abstract": "Foundation segmentation models such as the Segment Anything Model (SAM) have demonstrated strong generalization across natural images; however, their robustness under clinically realistic medical imaging domain shifts remains insufficiently quantified. We present a systematic slice-level robustness audit of SAM (ViT-B) for spleen segmentation in abdominal CT using 1,051 nonempty slices from 41 volumes in the Medical Segmentation Decathlon. A standardized ground-truth-derived bounding-box protocol was used to isolate encoder robustness from prompt uncertainty. Controlled perturbations simulating inter-scanner variability, including Gaussian noise, blur, contrast scaling, gamma correction, and resolution mismatch, were applied across ten conditions. The clean baseline achieved a mean Dice score of 0.9145 (95% CI: [0.909, 0.919]) with a failure rate of 0.67%. Across all perturbations, the absolute mean \u0394Dice remained below 0.01. Paired Wilcoxon signed-rank tests with Benjamini-Hochberg false discovery rate correction identified statistically significant but small-magnitude changes under selected conditions, while McNemar analysis showed no significant increase in failure probability. These findings indicate that SAM exhibits stable segmentation behavior under moderate CT domain shifts, supporting its role as a robust foundation baseline for medical image segmentation research. As health digital twins increasingly incorporate foundation segmentation models for anatomical modeling and organ-level monitoring, formal characterization of robustness under real-world imaging variability is a necessary step toward trustworthy deployment.",
+      "authors": [
+        "Sanghati Basu"
+      ],
+      "published": "2026-04-28T14:16:20Z",
+      "updated": "2026-04-28T14:16:20Z",
+      "url": "https://arxiv.org/abs/2604.25685",
+      "pdf_url": "https://arxiv.org/pdf/2604.25685.pdf",
+      "primary_category": "eess.IV",
+      "categories": [
+        "eess.IV",
+        "cs.CV"
+      ],
+      "tags": [
+        "cs.CV",
+        "eess.IV"
+      ],
+      "domain": "Vision",
+      "pdf_downloaded": true,
+      "pdf_size_bytes": 530082,
+      "pdf_path": "2026-04-29/vision/2604.25685.pdf"
+    },
+    {
+      "id": "2604.25680",
+      "title": "Exploring Remote Photoplethysmography for Neonatal Pain Detection from Facial Videos",
+      "abstract": "Unaddressed pain in neonates can lead to adverse effects, including delayed development and slower weight gain, emphasising the need for more objective and reliable pain assessment methods. Hence, automated methods using behavioural and physiological pain indicators have been developed to aid healthcare professionals in the Neonatal ICU. Traditional contact-based methods for physiological parameter estimation are unsuitable for long-term monitoring and increase the risk of spreading diseases like COVID-19. We introduce a novel approach using remote photoplethysmography (rPPG) to estimate pulse signals in a non-contact manner and employ them for neonatal pain detection. The temporal signals acquired from regions-of-interest (ROIs) affected by skin deformations may exhibit lower quality and provide erroneous rPPG signals. Therefore, we incorporated a quality parameter to select the temporal signals obtained from ROIs that are least affected by skin deformations. Further, we employed signal-to-noise ratio as a fitness parameter to extract the rPPG signal corresponding to the clip that is least affected by noise. Experimental findings demonstrate that the rPPG signals provide useful information for neonatal pain detection, and signals extracted from the blue colour channel outperform those extracted from other colour channels. We also show that combining rPPG and audio features provides better results than individual modalities.",
+      "authors": [
+        "Ashutosh Dhamaniya",
+        "Anup Kumar Gupta",
+        "Trishna Saikia",
+        "Puneet Gupta"
+      ],
+      "published": "2026-04-28T14:09:54Z",
+      "updated": "2026-04-28T14:09:54Z",
+      "url": "https://arxiv.org/abs/2604.25680",
+      "pdf_url": "https://arxiv.org/pdf/2604.25680.pdf",
+      "primary_category": "cs.CV",
+      "categories": [
+        "cs.CV",
+        "eess.IV"
+      ],
+      "tags": [
+        "cs.CV",
+        "eess.IV"
+      ],
+      "domain": "Vision",
+      "pdf_downloaded": true,
+      "pdf_size_bytes": 2573660,
+      "pdf_path": "2026-04-29/vision/2604.25680.pdf"
+    },
+    {
+      "id": "2604.25646",
+      "title": "SAMe: A Semantic Anatomy Mapping Engine for Robotic Ultrasound",
+      "abstract": "Robotic ultrasound has advanced local image-driven control, contact regulation, and view optimization, yet current systems lack the anatomical understanding needed to determine what to scan, where to begin, and how to adapt to individual patient anatomy. These gaps make systems still reliant on expert intervention to initiate scanning. Here we present SAMe, a semantic anatomy mapping engine that provides robotic ultrasound with an explicit anatomical prior layer. SAMe addresses scan initiation as a target-to-anatomy-to-action process: it grounds under-specified clinical complaints into structured target organs, instantiates a patient-specific anatomical representation for the grounded targets from a single external body image, and translates this representation into control-facing 6-DoF probe initialization states without any additional registration using preoperative CT or MRI. The anatomical representation maintained by SAMe is explicit, lightweight (single-organ inference in 0.08s), and compatible with downstream control by design. Across semantic grounding, anatomical instantiation, and real-robot evaluation, SAMe shows strong performance across the full initialization pipeline. In real-robot experiments, SAMe achieved overall organ-hit rates of 97.3% for liver initialization and 81.7% for kidney initialization across the evaluated target sets. Even when restricted to the centroid target, SAMe outperformed the surface-heuristic baseline for both liver and kidney initialization. These results establish an explicit anatomical prior layer that addresses scan initialization and is designed to support broader downstream autonomous scanning pipelines, providing the anatomical foundation for complaint-driven, anatomically informed robotic ultrasonography.",
+      "authors": [
+        "Jing Zhang",
+        "Duojie Chen",
+        "Wentao Jiang",
+        "Zihan Lou",
+        "Jianxin Liu",
+        "Xinwu Cui",
+        "Qinghong Zhao",
+        "Bo Du",
+        "Christoph F. Dietrich",
+        "Dacheng Tao"
+      ],
+      "published": "2026-04-28T13:44:09Z",
+      "updated": "2026-04-28T13:44:09Z",
+      "url": "https://arxiv.org/abs/2604.25646",
+      "pdf_url": "https://arxiv.org/pdf/2604.25646.pdf",
+      "primary_category": "cs.CV",
+      "categories": [
+        "cs.CV",
+        "cs.RO"
+      ],
+      "tags": [
+        "cs.CV",
+        "cs.RO"
+      ],
+      "domain": "Vision",
+      "pdf_downloaded": true,
+      "pdf_size_bytes": 11908510,
+      "pdf_path": "2026-04-29/vision/2604.25646.pdf"
+    },
+    {
+      "id": "2604.25642",
+      "title": "Prefill-Time Intervention for Mitigating Hallucination in Large Vision-Language Models",
+      "abstract": "Large Vision-Language Models (LVLMs) have achieved remarkable progress in visual-textual understanding, yet their reliability is critically undermined by hallucinations, i.e., the generation of factually incorrect or inconsistent responses. While recent studies using steering vectors demonstrated promise in reducing hallucinations, a notable challenge remains: they inadvertently amplify the severity of residual hallucinations. We attribute this to their exclusive focus on the decoding stage, where errors accumulate autoregressively and progressively worsen subsequent hallucinatory outputs. To address this, we propose Prefill-Time Intervention (PTI), a novel steering paradigm that intervenes only once during the prefill stage, enhancing the initial Key-Value (KV) cache before error accumulation occurs. Specifically, PTI is modality-aware, deriving distinct directions for visual and textual representations. This intervention is decoupled to steer keys toward visually-grounded objects and values to filter background noise, correcting hallucination-prone representations at their source. Extensive experiments demonstrate PTI's significant performance in mitigating hallucinations and its generalizability across diverse decoding strategies, LVLMs, and benchmarks. Moreover, PTI is orthogonal to existing decoding-stage methods, enabling plug-and-play integration and further boosting performance. Code is available at: https://github.com/huaiyi66/PTI.",
+      "authors": [
+        "Chengsheng Zhang",
+        "Chenghao Sun",
+        "Xinyan Jiang",
+        "Wei Li",
+        "Xinmei Tian"
+      ],
+      "published": "2026-04-28T13:42:27Z",
+      "updated": "2026-04-28T13:42:27Z",
+      "url": "https://arxiv.org/abs/2604.25642",
+      "pdf_url": "https://arxiv.org/pdf/2604.25642.pdf",
+      "primary_category": "cs.CV",
+      "categories": [
+        "cs.CV",
+        "cs.AI"
+      ],
+      "tags": [
+        "cs.AI",
+        "cs.CV"
+      ],
+      "domain": "Vision",
+      "pdf_downloaded": true,
+      "pdf_size_bytes": 13640756,
+      "pdf_path": "2026-04-29/vision/2604.25642.pdf"
+    },
+    {
+      "id": "2604.25636",
+      "title": "Refinement via Regeneration: Enlarging Modification Space Boosts Image Refinement in Unified Multimodal Models",
+      "abstract": "Unified multimodal models (UMMs) integrate visual understanding and generation within a single framework. For text-to-image (T2I) tasks, this unified capability allows UMMs to refine outputs after their initial generation, potentially extending the performance upper bound. Current UMM-based refinement methods primarily follow a refinement-via-editing (RvE) paradigm, where UMMs produce editing instructions to modify misaligned regions while preserving aligned content. However, editing instructions often describe prompt-image misalignment only coarsely, leading to incomplete refinement. Moreover, pixel-level preservation, though necessary for editing, unnecessarily restricts the effective modification space for refinement. To address these limitations, we propose Refinement via Regeneration (RvR), a novel framework that reformulates refinement as conditional image regeneration rather than editing. Instead of relying on editing instructions and enforcing strict content preservation, RvR regenerates images conditioned on the target prompt and the semantic tokens of the initial image, enabling more complete semantic alignment with a larger modification space. Extensive experiments demonstrate the effectiveness of RvR, improving Geneval from 0.78 to 0.91, DPGBench from 84.02 to 87.21, and UniGenBench++ from 61.53 to 77.41.",
+      "authors": [
+        "Jiayi Guo",
+        "Linqing Wang",
+        "Jiangshan Wang",
+        "Yang Yue",
+        "Zeyu Liu",
+        "Zhiyuan Zhao",
+        "Qinglin Lu",
+        "Gao Huang",
+        "Chunyu Wang"
+      ],
+      "published": "2026-04-28T13:36:03Z",
+      "updated": "2026-04-28T13:36:03Z",
+      "url": "https://arxiv.org/abs/2604.25636",
+      "pdf_url": "https://arxiv.org/pdf/2604.25636.pdf",
+      "primary_category": "cs.CV",
+      "categories": [
+        "cs.CV"
+      ],
+      "tags": [
+        "cs.CV"
+      ],
+      "domain": "Vision",
+      "pdf_downloaded": true,
+      "pdf_size_bytes": 26147055,
+      "pdf_path": "2026-04-29/vision/2604.25636.pdf"
+    },
+    {
+      "id": "2604.25574",
+      "title": "Control Your Queries: Heterogeneous Query Interaction for Camera-Radar Fusion",
+      "abstract": "In autonomous driving, camera-radar fusion offers complementary sensing and low deployment cost. Existing methods perform fusion through input mixing, feature map mixing, or query-based feature sampling. We propose a new fusion paradigm, termed heterogeneous query interaction, and present ConFusion, a camera-radar 3D object detector. ConFusion combines image queries, radar queries, and learnable world queries distributed in 3D space to improve query initialization and object coverage. To encourage cross-type interaction among heterogeneous queries, we introduce heterogeneous query mixing (QMix), which performs dedicated cross-type attention after feature sampling to consolidate complementary object evidence. We further propose interactive query swap sampling (QSwap), which improves feature sampling by allowing related queries to exchange informative feature tokens under attention and geometric constraints. Experiments on the nuScenes dataset show that ConFusion achieves state-of-the-art performance, reaching 59.1 mAP and 65.6 NDS on the validation set, and 61.6 mAP and 67.9 NDS on the test set.",
+      "authors": [
+        "Jialong Wu",
+        "Yihan Wang",
+        "Matthias Rottmann"
+      ],
+      "published": "2026-04-28T12:41:56Z",
+      "updated": "2026-04-28T12:41:56Z",
+      "url": "https://arxiv.org/abs/2604.25574",
+      "pdf_url": "https://arxiv.org/pdf/2604.25574.pdf",
+      "primary_category": "cs.CV",
+      "categories": [
+        "cs.CV"
+      ],
+      "tags": [
+        "cs.CV"
+      ],
+      "domain": "Vision",
+      "pdf_downloaded": true,
+      "pdf_size_bytes": 6636979,
+      "pdf_path": "2026-04-29/vision/2604.25574.pdf"
+    },
+    {
+      "id": "2604.25570",
+      "title": "Vision SmolMamba: Spike-Guided Token Pruning for Energy-Efficient Spiking State-Space Vision Models",
+      "abstract": "Spiking Transformers have shown strong potential for long-range visual modeling through spike-driven self-attention. However, their quadratic token interactions remain fundamentally misaligned with the sparse and event-driven nature of spiking neural computation. To address this limitation, we propose Vision SmolMamba, an energy-efficient spiking state-space architecture that integrates spike-driven dynamics with linear-time selective recurrence. The key idea is a Spike-Guided Spatio-Temporal Token Pruner (SST-TP), which estimates token importance using both spike activation strength and first-spike latency. This mechanism progressively removes redundant tokens while preserving salient spatio-temporal information, enabling efficient scaling with token sparsity. Based on this mechanism, the proposed SmolMamba block incorporates spike events directly into bidirectional state-space recurrence, forming a spiking state-space vision backbone for efficient long-range modeling. Extensive experiments on both static and event-based benchmarks, including ImageNet-1K, CIFAR10/100, CIFAR10-DVS, and DVS128 Gesture, demonstrate that Vision SmolMamba consistently achieves superior accuracy-efficiency trade-offs. In particular, it reduces the estimated energy cost by at least 1.5x compared with prior spiking Transformer baselines and a Spiking Mamba variant while maintaining competitive or improved accuracy. These results demonstrate that combining spike-guided token sparsity with state-space modeling offers a scalable and energy-efficient paradigm for spiking vision systems.",
+      "authors": [
+        "Dewei Bai",
+        "Hongxiang Peng",
+        "Yunyun Zeng",
+        "Ziyu Zhang",
+        "Hong Qu",
+        "Yi Zhang"
+      ],
+      "published": "2026-04-28T12:40:03Z",
+      "updated": "2026-04-28T12:40:03Z",
+      "url": "https://arxiv.org/abs/2604.25570",
+      "pdf_url": "https://arxiv.org/pdf/2604.25570.pdf",
+      "primary_category": "cs.CV",
+      "categories": [
+        "cs.CV"
+      ],
+      "tags": [
+        "cs.CV"
+      ],
+      "domain": "Vision",
+      "pdf_downloaded": true,
+      "pdf_size_bytes": 15225150,
+      "pdf_path": "2026-04-29/vision/2604.25570.pdf"
+    },
+    {
+      "id": "2604.25545",
+      "title": "TopoMamba: Topology-Aware Scanning and Fusion for Segmenting Heterogeneous Medical Visual Media",
+      "abstract": "Visual state-space models (SSMs) have shown strong potential for medical image segmentation, yet their effectiveness is often limited by two practical issues: axis-biased scan ordering weakens the modeling of oblique and curved structures, and naive multi-branch fusion tends to amplify redundant responses. We present TopoMamba, a topology-aware scan-and-fuse framework for segmenting heterogeneous medical visual media. The method combines a diagonal/anti-diagonal TopoA-Scan branch with the standard Cross-Scan branch to provide complementary structural priors, and introduces ScanCache, a device-aware caching mechanism that amortizes explicit scan-index construction across recurring resolutions. To fuse heterogeneous scan features efficiently, we further propose a lightweight HSIC Gate that regulates branch interaction using a dependence-aware scalar gating rule. We also instantiate a volumetric TopoMamba-3D for practical 3D clinical segmentation. Experiments on Synapse CT, ISIC 2017 dermoscopy, and CVC-ClinicDB endoscopy show that TopoMamba consistently improves segmentation quality over strong CNN, Transformer, and SSM baselines, with particularly clear gains on thin or curved targets such as the pancreas and gallbladder, while maintaining favorable deployment efficiency under dynamic input resolutions. These results suggest that topology-aware scan ordering and lightweight dependence-aware fusion form an effective and practical design for medical multimedia segmentation. The code will be made publicly available.",
+      "authors": [
+        "Fuchen Zheng",
+        "Chengpei Xu",
+        "Long Ma",
+        "Weixuan Li",
+        "Junhua Zhou",
+        "Xuhang Chen",
+        "Weihuang Liu",
+        "Haolun Li",
+        "Quanjun Li",
+        "Zhenxi Zhang",
+        "Lei Zhao",
+        "Chi-Man Pun",
+        "Shoujun Zhou"
+      ],
+      "published": "2026-04-28T12:11:58Z",
+      "updated": "2026-04-28T12:11:58Z",
+      "url": "https://arxiv.org/abs/2604.25545",
+      "pdf_url": "https://arxiv.org/pdf/2604.25545.pdf",
+      "primary_category": "cs.CV",
+      "categories": [
+        "cs.CV"
+      ],
+      "tags": [
+        "cs.CV"
+      ],
+      "domain": "Vision",
+      "pdf_downloaded": true,
+      "pdf_size_bytes": 23358780,
+      "pdf_path": "2026-04-29/vision/2604.25545.pdf"
+    },
+    {
+      "id": "2604.25533",
+      "title": "DualGeo: A Dual-View Framework for Worldwide Image Geo-localization",
+      "abstract": "Worldwide image geo-localization aims to infer the geographic location of an image captured anywhere on Earth, spanning street, city, regional, national, and continental scales. Existing methods rely on visual features that are sensitive to environmental variations (e.g., lighting, season, and weather) and lack effective post-processing to filter outlier candidates, limiting localization accuracy. To address these limitations, we propose DualGeo, a two-stage framework for worldwide image geo-localization. First, it establishes a geo-representational foundation by fusing image and semantic segmentation features via bidirectional cross-attention. The fused features are then aligned with GPS coordinates through dual-view contrastive learning to build a global retrieval database. Second, it performs geo-cognitive refinement by re-ranking retrieved candidates using geographic clustering. It then feeds them into large multimodal models (LMMs) for final coordinate prediction. Experiments on IM2GPS, IM2GPS3k, and YFCC4k show that DualGeo outperforms state-of-the-art methods, improving street-level (<1 km) and city-level (<25 km) localization accuracy by 3.6%-16.58% and 1.29%-8.77%, respectively. Our code and datasets are available : https://github.com/CJ310177/DualGeo.",
+      "authors": [
+        "Junchao Cui",
+        "Wenqi Shi",
+        "Shaoyong Du",
+        "Hang He",
+        "Xuanzi Ma",
+        "Hao Tang",
+        "Xiangyang Luo"
+      ],
+      "published": "2026-04-28T12:00:04Z",
+      "updated": "2026-04-28T12:00:04Z",
+      "url": "https://arxiv.org/abs/2604.25533",
+      "pdf_url": "https://arxiv.org/pdf/2604.25533.pdf",
+      "primary_category": "cs.CV",
+      "categories": [
+        "cs.CV"
+      ],
+      "tags": [
+        "cs.CV"
+      ],
+      "domain": "Vision",
+      "pdf_downloaded": true,
+      "pdf_size_bytes": 2442634,
+      "pdf_path": "2026-04-29/vision/2604.25533.pdf"
+    },
+    {
+      "id": "2604.25530",
+      "title": "The Surprising Effectiveness of Canonical Knowledge Distillation for Semantic Segmentation",
+      "abstract": "Recent knowledge distillation (KD) methods for semantic segmentation introduce increasingly complex hand-crafted objectives, yet are typically evaluated under fixed iteration schedules. These objectives substantially increase per-iteration cost, meaning equal iteration counts do not correspond to equal training budgets. It is therefore unclear whether reported gains reflect stronger distillation signals or simply greater compute. We show that iteration-based comparisons are misleading: when wall-clock compute is matched, \\textit{canonical} logit- and feature-based KD outperform recent segmentation-specific methods. Under extended training, feature-based distillation achieves state-of-the-art ResNet-18 performance on Cityscapes and ADE20K. A PSPNet ResNet-18 student closely approaches its ResNet-101 teacher despite using only one quarter of the parameters, reaching 99\\% of the teacher's mIoU on Cityscapes (79.0 vs.\\ 79.8) and 92\\% on ADE20K. Our results challenge the prevailing assumption that KD for segmentation requires task-specific mechanisms and suggest that scaling, rather than complex hand-crafted objectives, should guide future method design.",
+      "authors": [
+        "Muhammad Ali",
+        "Kevin Alexander Laube",
+        "Madan Ravi Ganesh",
+        "Lukas Schott",
+        "Niclas Popp",
+        "Thomas Brox"
+      ],
+      "published": "2026-04-28T11:57:57Z",
+      "updated": "2026-04-28T11:57:57Z",
+      "url": "https://arxiv.org/abs/2604.25530",
+      "pdf_url": "https://arxiv.org/pdf/2604.25530.pdf",
+      "primary_category": "cs.CV",
+      "categories": [
+        "cs.CV",
+        "cs.AI"
+      ],
+      "tags": [
+        "cs.AI",
+        "cs.CV"
+      ],
+      "domain": "Vision",
+      "pdf_downloaded": true,
+      "pdf_size_bytes": 325526,
+      "pdf_path": "2026-04-29/vision/2604.25530.pdf"
+    },
+    {
+      "id": "2604.25491",
+      "title": "The Forensic Cost of Watermark Removal",
+      "abstract": "Current watermark removal methods are evaluated on two axes: attack success rate and perceptual quality. We show this is insufficient. While state-of-the-art attacks successfully degrade the watermark signal without visible distortion, they leave distinct statistical artifacts that betray the removal attempt. We name this overlooked axis Watermark Removal Detection (WRD) and demonstrate that a modern classifier trained on these artifacts achieves state-of-the-art detection rates at $10^{-3}$ FPR across every removal method tested. No existing attack accounts for this forensic leakage. We benchmark leading watermarking schemes against standard removal pipelines under the extended evaluation triple of attack success, perceptual quality, and forensic detectability, and find that no current method balances all three. Our results establish forensic stealthiness as a necessary requirement for watermark removal.",
+      "authors": [
+        "Gautier Evennou",
+        "Ewa Kijak"
+      ],
+      "published": "2026-04-28T10:47:21Z",
+      "updated": "2026-04-28T10:47:21Z",
+      "url": "https://arxiv.org/abs/2604.25491",
+      "pdf_url": "https://arxiv.org/pdf/2604.25491.pdf",
+      "primary_category": "cs.CV",
+      "categories": [
+        "cs.CV",
+        "cs.AI"
+      ],
+      "tags": [
+        "cs.AI",
+        "cs.CV"
+      ],
+      "domain": "Vision",
+      "pdf_downloaded": true,
+      "pdf_size_bytes": 4758179,
+      "pdf_path": "2026-04-29/vision/2604.25491.pdf"
+    },
+    {
+      "id": "2604.25477",
+      "title": "DDA-Thinker: Decoupled Dual-Atomic Reinforcement Learning for Reasoning-Driven Image Editing",
+      "abstract": "Recent image editing models have achieved strong visual fidelity but often struggle with tasks requiring complex reasoning. To investigate and enhance the reasoning-grounded planning for image editing, we propose DDA-Thinker, a Thinker-centric framework designed for the independent optimization of a planning module (Thinker) over a fixed generative model (Editor). This decoupled Thinker-centric paradigm facilitates a controlled analysis of the planning module and makes its contribution under a fixed Editor easier to assess. To effectively guide this Thinker, we introduce a dual-atomic reinforcement learning framework. This framework decomposes feedback into two distinct atomic rewards implemented through verifiable checklists: a cognitive-atomic reward to directly assess the quality of the Thinker's executable plan, which serves as the actionable outcome of the Thinker's reasoning, and a visual-atomic reward to assess the final image quality. To improve checklist quality, our checklist synthesis is grounded not only in the source image and user instruction but also in a rational reference description of the ideal post-edit scene. To support this training, we further develop a two-stage data curation pipeline that first synthesizes a diverse and reasoning-focused dataset, then applies difficulty-aware refinement to curate an effective training curriculum for reinforcement learning. Extensive experiments on reasoning-driven image editing benchmarks, including RISE-Bench and KRIS-Bench, demonstrate that our approach substantially improves overall performance. Our method enables a community model to achieve results competitive with strong proprietary models, highlighting the practical potential of Thinker-centric optimization under a fixed-editor setting.",
+      "authors": [
+        "Hanqing Yang",
+        "Qiang Zhou",
+        "Yongchao Du",
+        "Sashuai Zhou",
+        "Zhibin Wang",
+        "Jun Song",
+        "Tiezheng Ge",
+        "Cheng Yu",
+        "Bo Zheng"
+      ],
+      "published": "2026-04-28T10:30:01Z",
+      "updated": "2026-04-28T10:30:01Z",
+      "url": "https://arxiv.org/abs/2604.25477",
+      "pdf_url": "https://arxiv.org/pdf/2604.25477.pdf",
+      "primary_category": "cs.CV",
+      "categories": [
+        "cs.CV",
+        "cs.AI"
+      ],
+      "tags": [
+        "cs.AI",
+        "cs.CV"
+      ],
+      "domain": "Vision",
+      "pdf_downloaded": true,
+      "pdf_size_bytes": 2766127,
+      "pdf_path": "2026-04-29/vision/2604.25477.pdf"
+    },
+    {
+      "id": "2604.25466",
+      "title": "Generalizable Human Gaussian Splatting via Multi-view Semantic Consistency",
+      "abstract": "Recently, generalizable human Gaussian splatting from sparse-view inputs has been actively studied for the photorealistic human rendering. Most existing methods rely on explicit geometric constraints or predefined structural representations to accurately position 3D Gaussians. Although these approaches have shown the remarkable progress in this field, they still suffer from inconsistent feature representations across multi-view inputs due to complex articulations of the human body and limited overlaps between different views. To address this problem, we propose a novel method to accurately localize 3D Gaussians and ultimately improve the quality of human rendering. The key idea is to unproject latent embeddings encoded from each viewpoint into a shared 3D space through predicted depth maps and recalibrate them belonging to the same body part based on cross-view attention. This helps the model resolve the spatial ambiguity occurring in highly textured regions as well as occluded body parts, thus leading to the accurate localization of 3D Gaussians. Experimental results on benchmark datasets show that the proposed method efficiently improves the performance of generalizable human Gaussian splatting from sparse-view inputs.",
+      "authors": [
+        "Jingi Kim",
+        "Wonjun Kim"
+      ],
+      "published": "2026-04-28T10:12:28Z",
+      "updated": "2026-04-28T10:12:28Z",
+      "url": "https://arxiv.org/abs/2604.25466",
+      "pdf_url": "https://arxiv.org/pdf/2604.25466.pdf",
+      "primary_category": "cs.CV",
+      "categories": [
+        "cs.CV"
+      ],
+      "tags": [
+        "cs.CV"
+      ],
+      "domain": "Vision",
+      "pdf_downloaded": true,
+      "pdf_size_bytes": 5606889,
+      "pdf_path": "2026-04-29/vision/2604.25466.pdf"
+    },
+    {
+      "id": "2604.25464",
+      "title": "Image Compression with Bubble-Aware Frame Rate Adaptation for Energy-Efficient Video Capsule Endoscopy",
+      "abstract": "Video Capsule Endoscopy (VCE) is a promising method for improving the medical examination of the small intestine in the gastrointestinal tract. A key challenge is their limited size, resulting in a short battery lifetime which conflicts with high energy consumption for image capturing and transmission to an on-body device. Thus, we propose an image compression pipeline that substantially reduces the transmitted data while preserving diagnostic image quality. Furthermore, we exploit characteristics of the compression process to identify frames with low diagnostic value mainly caused by bubbles, without requiring additional image analysis. For low-visibility frames, a dynamic bubble-aware frame rate adaptation strategy reduces image acquisition and transmission during these phases while preserving sensitivity to potential anomalies. The proposed compression and frame rate adaptation are evaluated on a RISC-V platform using the Kvasir-Capsule and Galar datasets. The compression method achieves a compression ratio of 5.748 (82.6%) at a peak signal-to-noise ratio of 40.3 dB, indicating negligible loss of visual quality. The compression accomplished a mean energy reduction of the whole system by 20.58%. Additionally, the proposed bubble-aware frame rate adaptation reduced the energy consumption by up to 40%. These results demonstrate the potential of our method to increase the applicability of VCE.",
+      "authors": [
+        "Oliver Bause",
+        "J\u00f6rg Gammerdinger",
+        "Julia Werner"
+      ],
+      "published": "2026-04-28T10:09:01Z",
+      "updated": "2026-04-28T10:09:01Z",
+      "url": "https://arxiv.org/abs/2604.25464",
+      "pdf_url": "https://arxiv.org/pdf/2604.25464.pdf",
+      "primary_category": "cs.CV",
+      "categories": [
+        "cs.CV"
+      ],
+      "tags": [
+        "cs.CV"
+      ],
+      "domain": "Vision",
+      "pdf_downloaded": true,
+      "pdf_size_bytes": 12534801,
+      "pdf_path": "2026-04-29/vision/2604.25464.pdf"
+    },
+    {
+      "id": "2604.25457",
+      "title": "GramSR: Visual Feature Conditioning for Diffusion-Based Super-Resolution",
+      "abstract": "Despite recent advances, single-image super-resolution (SR) remains challenging, especially in real-world scenarios with complex degradations. Diffusion-based SR methods, particularly those built on Stable Diffusion, leverage strong generative priors but commonly rely on text conditioning derived from semantic captioning. Such textual descriptions provide only high-level semantics and lack the spatially aligned visual information required for faithful restoration, leading to a representation gap between abstract semantics and spatially aligned visual details. To address this limitation, we propose GramSR, a one-step diffusion-based SR framework that replaces text conditioning with dense visual features extracted from the low-resolution input using a pre-trained DINOv3 encoder. GramSR adopts a three-stage LoRA architecture, where pixel-level, semantic-level, and texture-level LoRA modules are trained sequentially. The pixel-level module focuses on degradation removal using $\\ell_2$ loss, the semantic-level module enhances perceptual details via LPIPS and CSD losses, and the texture-level module enforces feature correlation consistency through a Gram matrix loss computed from DINOv3 features. At inference, independent guidance scales enable flexible control over degradation removal, semantic enhancement, and texture preservation. Extensive experiments on standard SR benchmarks demonstrate that GramSR consistently outperforms existing one-step diffusion-based methods, achieving superior structural fidelity and texture realism. The code for this work is available at: https://github.com/aimagelab/GramSR.",
+      "authors": [
+        "Fabio D'Oronzio",
+        "Federico Putamorsi",
+        "Leonardo Zini",
+        "Marcella Cornia",
+        "Lorenzo Baraldi"
+      ],
+      "published": "2026-04-28T10:05:27Z",
+      "updated": "2026-04-28T10:05:27Z",
+      "url": "https://arxiv.org/abs/2604.25457",
+      "pdf_url": "https://arxiv.org/pdf/2604.25457.pdf",
+      "primary_category": "cs.CV",
+      "categories": [
+        "cs.CV"
+      ],
+      "tags": [
+        "cs.CV"
+      ],
+      "domain": "Vision",
+      "pdf_downloaded": true,
+      "pdf_size_bytes": 6589180,
+      "pdf_path": "2026-04-29/vision/2604.25457.pdf"
+    },
+    {
+      "id": "2604.25432",
+      "title": "SARU: A Shadow-Aware and Removal Unified Framework for Remote Sensing Images with New Benchmarks",
+      "abstract": "Shadows are a prevalent problem in remote sensing imagery (RSI), degrading visual quality and severely limiting the performance of downstream tasks like object detection and semantic segmentation. Most prior works treat shadow detection and removal as separate, cascaded tasks, which can lead to cumbersome process and error accumulation. Furthermore, many deep learning methods rely on paired shadow and non-shadow images for training, which are often unavailable in practice. To address these challenges, we propose Shadow-Aware and Removal Unified (SARU) Framework , a cohesive two-stage framework. First, its dual-branch detection module (DBCSF-Net) fuses multi-color space and semantic features to generate high-fidelity shadow masks, effectively distinguishing shadows from dark objects. Then, leveraging these masks, a novel, training-free physical algorithm (N$^2$SGSR) restores illumination by transferring properties from adjacent non-shadow regions within the single input image. To facilitate rigorous evaluation and foster future work, we also introduce two new benchmark datasets: the RSI Shadow Detection (RSISD) dataset and the Single-image Shadow Removal Benchmark (SiSRB). Extensive experiments demonstrate that SARU achieves state-of-the-art performance on both the public AISD dataset and our newly introduced benchmarks. By holistically integrating shadow detection and removal to mitigate error propagation and eliminating the dependency on paired training data, SARU establishes a robust, practical framework for real-world RSI analysis. The source code and datasets are publicly available at: https://github.com/AeroVILab-AHU/SARU-Framework.",
+      "authors": [
+        "Zi-Yang Bo",
+        "Wei Lu",
+        "Hongruixuan Chen",
+        "Si-Bao Chen",
+        "Bin Luo"
+      ],
+      "published": "2026-04-28T09:38:02Z",
+      "updated": "2026-04-28T09:38:02Z",
+      "url": "https://arxiv.org/abs/2604.25432",
+      "pdf_url": "https://arxiv.org/pdf/2604.25432.pdf",
+      "primary_category": "cs.CV",
+      "categories": [
+        "cs.CV"
+      ],
+      "tags": [
+        "cs.CV"
+      ],
+      "domain": "Vision",
+      "pdf_downloaded": true,
+      "pdf_size_bytes": 15411689,
+      "pdf_path": "2026-04-29/vision/2604.25432.pdf"
+    },
+    {
+      "id": "2604.25427",
+      "title": "A Systematic Post-Train Framework for Video Generation",
+      "abstract": "While large-scale video diffusion models have demonstrated impressive capabilities in generating high-resolution and semantically rich content, a significant gap remains between their pretraining performance and real-world deployment requirements due to critical issues such as prompt sensitivity, temporal inconsistency, and prohibitive inference costs. To bridge this gap, we propose a comprehensive post-training framework that systematically aligns pretrained models with user intentions through four synergistic stages: we first employ Supervised Fine-Tuning (SFT) to transform the base model into a stable instruction-following policy, followed by a Reinforcement Learning from Human Feedback (RLHF) stage that utilizes a novel Group Relative Policy Optimization (GRPO) method tailored for video diffusion to enhance perceptual quality and temporal coherence; subsequently, we integrate Prompt Enhancement via a specialized language model to refine user inputs, and finally address system efficiency through Inference Optimization. Together, these components provide a systematic approach to improving visual quality, temporal coherence, and instruction following, while preserving the controllability learned during pretraining. The result is a practical blueprint for building scalable post-training pipelines that are stable, adaptable, and effective in real-world deployment. Extensive experiments demonstrate that this unified pipeline effectively mitigates common artifacts and significantly improves controllability and visual aesthetics while adhering to strict sampling cost constraints.",
+      "authors": [
+        "Zeyue Xue",
+        "Siming Fu",
+        "Jie Huang",
+        "Shuai Lu",
+        "Haoran Li",
+        "Yijun Liu",
+        "Yuming Li",
+        "Xiaoxuan He",
+        "Mengzhao Chen",
+        "Haoyang Huang",
+        "Nan Duan",
+        "Ping Luo"
+      ],
+      "published": "2026-04-28T09:34:51Z",
+      "updated": "2026-04-28T09:34:51Z",
+      "url": "https://arxiv.org/abs/2604.25427",
+      "pdf_url": "https://arxiv.org/pdf/2604.25427.pdf",
+      "primary_category": "cs.CV",
+      "categories": [
+        "cs.CV"
+      ],
+      "tags": [
+        "cs.CV"
+      ],
+      "domain": "Vision",
+      "pdf_downloaded": true,
+      "pdf_size_bytes": 3211076,
+      "pdf_path": "2026-04-29/vision/2604.25427.pdf"
+    }
+  ]
+}
