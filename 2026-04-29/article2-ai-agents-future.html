@@ -1,0 +1,1221 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>從「養龍蝦」到「駕取AI代理人」：重新定義技能與工作模式的未來</title>
+  <style>
+    :root {
+      --color-bg: oklch(97% 0.008 45);
+      --color-surface: oklch(100% 0 0);
+      --color-surface-alt: oklch(96% 0.01 40);
+      --color-border: oklch(88% 0.015 40);
+      --color-text: oklch(16% 0.01 40);
+      --color-text-muted: oklch(48% 0.01 40);
+      --color-accent: oklch(58% 0.22 32);
+      --color-accent-light: oklch(96% 0.05 32);
+      --color-accent-dark: oklch(42% 0.2 32);
+      --color-teal: oklch(58% 0.18 192);
+      --color-teal-light: oklch(95% 0.05 192);
+      --color-gold: oklch(72% 0.16 68);
+      --color-gold-light: oklch(96% 0.06 68);
+      --color-success: oklch(58% 0.18 145);
+      --color-danger: oklch(56% 0.22 25);
+
+      --text-xs: clamp(0.7rem, 0.65rem + 0.25vw, 0.8rem);
+      --text-sm: clamp(0.85rem, 0.8rem + 0.25vw, 0.95rem);
+      --text-base: clamp(1rem, 0.92rem + 0.4vw, 1.125rem);
+      --text-lg: clamp(1.125rem, 1rem + 0.6vw, 1.35rem);
+      --text-xl: clamp(1.3rem, 1.1rem + 1vw, 1.75rem);
+      --text-2xl: clamp(1.75rem, 1.3rem + 2.25vw, 2.75rem);
+      --text-hero: clamp(2rem, 1rem + 5vw, 3.8rem);
+
+      --space-xs: 0.5rem;
+      --space-sm: 1rem;
+      --space-md: 1.75rem;
+      --space-lg: 3rem;
+      --space-xl: 5rem;
+      --space-section: clamp(3rem, 2rem + 5vw, 7rem);
+
+      --radius-sm: 6px;
+      --radius-md: 12px;
+      --radius-lg: 20px;
+
+      --shadow-sm: 0 1px 3px oklch(0% 0 0 / 7%), 0 1px 2px oklch(0% 0 0 / 4%);
+      --shadow-md: 0 4px 16px oklch(0% 0 0 / 10%), 0 2px 6px oklch(0% 0 0 / 5%);
+    }
+
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; }
+    body {
+      font-family: 'Noto Serif TC', 'Georgia', 'Times New Roman', serif;
+      background: var(--color-bg);
+      color: var(--color-text);
+      line-height: 1.9;
+      font-size: var(--text-base);
+    }
+
+    /* ── Header ── */
+    .site-header {
+      background: var(--color-surface);
+      border-bottom: 1px solid var(--color-border);
+      padding: 0.75rem 2rem;
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+    }
+    .brand {
+      font-size: var(--text-sm);
+      font-weight: 700;
+      color: var(--color-accent);
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      text-decoration: none;
+    }
+    .sep { color: var(--color-border); }
+
+    /* ── Hero ── */
+    .hero {
+      background:
+        radial-gradient(ellipse 70% 60% at 15% 50%, oklch(58% 0.22 32 / 0.15) 0%, transparent 60%),
+        radial-gradient(ellipse 50% 80% at 85% 40%, oklch(68% 0.16 68 / 0.1) 0%, transparent 60%),
+        linear-gradient(155deg, oklch(18% 0.06 30) 0%, oklch(10% 0.03 25) 100%);
+      color: oklch(94% 0.02 40);
+      padding: clamp(4rem, 3rem + 5vw, 8rem) 2rem clamp(3rem, 2rem + 4vw, 6rem);
+      position: relative;
+      overflow: hidden;
+    }
+    .hero::after {
+      content: '';
+      position: absolute;
+      right: -5%;
+      top: 50%;
+      transform: translateY(-50%);
+      width: clamp(200px, 30vw, 380px);
+      height: clamp(200px, 30vw, 380px);
+      background: radial-gradient(circle, oklch(58% 0.22 32 / 0.12) 0%, transparent 70%);
+      border-radius: 50%;
+      pointer-events: none;
+    }
+    .hero-inner {
+      max-width: 860px;
+      margin: 0 auto;
+      position: relative;
+    }
+    .hero-tag {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      font-size: var(--text-xs);
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.12em;
+      color: oklch(72% 0.18 32);
+      border: 1px solid oklch(72% 0.18 32 / 0.45);
+      padding: 0.35rem 0.9rem;
+      border-radius: 100px;
+      margin-bottom: 1.5rem;
+      font-family: 'SF Mono', 'Consolas', monospace;
+    }
+    .hero h1 {
+      font-size: var(--text-hero);
+      font-weight: 800;
+      line-height: 1.2;
+      letter-spacing: -0.02em;
+      margin-bottom: 1.5rem;
+    }
+    .hero h1 .quote-mark {
+      color: oklch(72% 0.18 32);
+    }
+    .hero h1 em {
+      font-style: normal;
+      color: var(--color-gold);
+    }
+    .hero-meta {
+      display: flex;
+      gap: 2rem;
+      font-size: var(--text-sm);
+      color: oklch(65% 0.04 40);
+      margin-bottom: 2rem;
+    }
+    .hero-lead {
+      font-size: var(--text-lg);
+      line-height: 1.75;
+      color: oklch(80% 0.04 40);
+      max-width: 700px;
+    }
+    .hero-stats {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(130px, 1fr));
+      gap: 1rem;
+      margin-top: 3rem;
+      padding-top: 2.5rem;
+      border-top: 1px solid oklch(100% 0 0 / 0.1);
+    }
+    .hero-stat-num {
+      font-size: var(--text-2xl);
+      font-weight: 900;
+      line-height: 1;
+      color: oklch(72% 0.18 32);
+      margin-bottom: 0.3rem;
+    }
+    .hero-stat-label {
+      font-size: var(--text-xs);
+      color: oklch(62% 0.04 40);
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+    }
+
+    /* ── Layout ── */
+    .container { max-width: 860px; margin: 0 auto; padding: 0 1.5rem; }
+    .article-body { padding: var(--space-section) 1.5rem; }
+    .article-body > * + * { margin-top: var(--space-md); }
+
+    /* ── Typography ── */
+    h2 {
+      font-size: var(--text-xl);
+      font-weight: 800;
+      line-height: 1.3;
+      letter-spacing: -0.015em;
+      color: var(--color-text);
+      margin-top: var(--space-lg);
+      margin-bottom: var(--space-sm);
+      padding-bottom: 0.6rem;
+      border-bottom: 2px solid var(--color-accent-light);
+      position: relative;
+    }
+    h2::before {
+      content: '';
+      position: absolute;
+      bottom: -2px; left: 0;
+      width: 3rem; height: 2px;
+      background: var(--color-accent);
+    }
+    h3 {
+      font-size: var(--text-lg);
+      font-weight: 700;
+      line-height: 1.4;
+      color: var(--color-text);
+      margin-top: var(--space-md);
+      margin-bottom: 0.75rem;
+    }
+    p { margin-bottom: 1.1rem; }
+    p:last-child { margin-bottom: 0; }
+    strong { font-weight: 700; color: var(--color-accent-dark); }
+
+    .lead {
+      font-size: var(--text-lg);
+      line-height: 1.8;
+      color: oklch(28% 0.01 40);
+      border-left: 3px solid var(--color-accent);
+      padding-left: 1.25rem;
+      margin-bottom: 2rem;
+    }
+
+    /* ── Metaphor block ── */
+    .metaphor-grid {
+      display: grid;
+      grid-template-columns: 1fr auto 1fr;
+      gap: 1.5rem;
+      align-items: stretch;
+      margin: 2rem 0;
+    }
+    .metaphor-card {
+      border-radius: var(--radius-lg);
+      padding: 1.75rem;
+      box-shadow: var(--shadow-sm);
+    }
+    .metaphor-card.old {
+      background: oklch(96% 0.02 40);
+      border: 1px solid var(--color-border);
+      opacity: 0.85;
+    }
+    .metaphor-card.new {
+      background: linear-gradient(135deg, oklch(96% 0.05 32) 0%, oklch(95% 0.04 32) 100%);
+      border: 1px solid oklch(80% 0.1 32 / 0.4);
+    }
+    .metaphor-label {
+      font-size: var(--text-xs);
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+      margin-bottom: 0.6rem;
+      font-family: 'SF Mono', monospace;
+    }
+    .metaphor-card.old .metaphor-label { color: var(--color-text-muted); }
+    .metaphor-card.new .metaphor-label { color: var(--color-accent); }
+    .metaphor-icon {
+      font-size: 2.5rem;
+      line-height: 1;
+      margin-bottom: 0.75rem;
+    }
+    .metaphor-title {
+      font-size: var(--text-lg);
+      font-weight: 700;
+      margin-bottom: 0.6rem;
+    }
+    .metaphor-desc {
+      font-size: var(--text-sm);
+      color: var(--color-text-muted);
+      line-height: 1.7;
+    }
+    .metaphor-divider {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.5rem;
+      color: var(--color-text-muted);
+      font-weight: 300;
+    }
+
+    /* ── Callouts ── */
+    .callout {
+      background: var(--color-accent-light);
+      border: 1px solid oklch(78% 0.1 32 / 0.3);
+      border-left: 4px solid var(--color-accent);
+      border-radius: var(--radius-md);
+      padding: 1.25rem 1.5rem;
+      margin: 1.75rem 0;
+    }
+    .callout-label {
+      font-size: var(--text-xs);
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+      color: var(--color-accent);
+      margin-bottom: 0.5rem;
+      font-family: 'SF Mono', monospace;
+    }
+    .callout p { color: oklch(22% 0.02 35); margin-bottom: 0.6rem; }
+    .callout p:last-child { margin-bottom: 0; }
+
+    .callout.teal {
+      background: var(--color-teal-light);
+      border-left-color: var(--color-teal);
+      border-color: oklch(78% 0.1 192 / 0.3);
+    }
+    .callout.teal .callout-label { color: oklch(42% 0.18 192); }
+    .callout.teal p { color: oklch(22% 0.02 192); }
+
+    .callout.gold {
+      background: var(--color-gold-light);
+      border-left-color: var(--color-gold);
+      border-color: oklch(78% 0.1 68 / 0.3);
+    }
+    .callout.gold .callout-label { color: oklch(48% 0.18 68); }
+    .callout.gold p { color: oklch(22% 0.02 60); }
+
+    /* ── Tables ── */
+    .table-wrap {
+      overflow-x: auto;
+      margin: 1.75rem 0;
+      border-radius: var(--radius-md);
+      box-shadow: var(--shadow-sm);
+    }
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      font-size: var(--text-sm);
+      background: var(--color-surface);
+    }
+    thead th {
+      background: oklch(18% 0.05 30);
+      color: oklch(92% 0.03 40);
+      font-weight: 700;
+      text-align: left;
+      padding: 0.75rem 1rem;
+      font-size: var(--text-xs);
+      text-transform: uppercase;
+      letter-spacing: 0.06em;
+      white-space: nowrap;
+    }
+    tbody tr:nth-child(even) { background: var(--color-surface-alt); }
+    tbody tr:hover { background: var(--color-accent-light); }
+    tbody td {
+      padding: 0.65rem 1rem;
+      border-bottom: 1px solid var(--color-border);
+      vertical-align: top;
+    }
+    .td-num { font-family: 'SF Mono', monospace; font-size: var(--text-xs); text-align: right; }
+    .td-up { color: var(--color-success); font-weight: 700; }
+    .td-down { color: var(--color-danger); font-weight: 700; }
+    .td-accent { font-weight: 700; color: var(--color-accent-dark); }
+
+    .badge {
+      display: inline-block;
+      padding: 0.2rem 0.55rem;
+      border-radius: 100px;
+      font-size: 0.65rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.06em;
+    }
+    .badge-green { background: oklch(92% 0.08 145); color: oklch(38% 0.16 145); }
+    .badge-red { background: oklch(93% 0.08 25); color: oklch(38% 0.2 25); }
+    .badge-orange { background: oklch(94% 0.08 65); color: oklch(44% 0.18 65); }
+    .badge-teal { background: oklch(92% 0.08 192); color: oklch(35% 0.18 192); }
+
+    /* ── Stat cards ── */
+    .stat-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 1rem;
+      margin: 1.75rem 0;
+    }
+    .stat-card {
+      background: var(--color-surface);
+      border: 1px solid var(--color-border);
+      border-radius: var(--radius-lg);
+      padding: 1.5rem;
+      text-align: center;
+      box-shadow: var(--shadow-sm);
+      position: relative;
+      overflow: hidden;
+    }
+    .stat-card::before {
+      content: '';
+      position: absolute;
+      top: 0; left: 0; right: 0;
+      height: 3px;
+      background: var(--stat-color, var(--color-accent));
+    }
+    .stat-num {
+      font-size: var(--text-2xl);
+      font-weight: 900;
+      line-height: 1.1;
+      color: var(--stat-color, var(--color-accent));
+      margin-bottom: 0.4rem;
+    }
+    .stat-label {
+      font-size: var(--text-xs);
+      color: var(--color-text-muted);
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      line-height: 1.5;
+    }
+    .stat-source {
+      font-size: 0.6rem;
+      color: oklch(68% 0.02 40);
+      margin-top: 0.4rem;
+      font-family: 'SF Mono', monospace;
+    }
+
+    /* ── Skill cards ── */
+    .skill-compare {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 1.25rem;
+      margin: 1.75rem 0;
+    }
+    .skill-col {
+      border-radius: var(--radius-lg);
+      padding: 1.5rem;
+      box-shadow: var(--shadow-sm);
+    }
+    .skill-col.declining {
+      background: oklch(97% 0.02 25);
+      border: 1px solid oklch(88% 0.06 25);
+    }
+    .skill-col.rising {
+      background: oklch(97% 0.02 145);
+      border: 1px solid oklch(88% 0.06 145);
+    }
+    .skill-col-title {
+      font-size: var(--text-base);
+      font-weight: 700;
+      margin-bottom: 1rem;
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+    }
+    .skill-col.declining .skill-col-title { color: var(--color-danger); }
+    .skill-col.rising .skill-col-title { color: var(--color-success); }
+    .skill-item {
+      display: flex;
+      align-items: flex-start;
+      gap: 0.5rem;
+      margin-bottom: 0.6rem;
+      font-size: var(--text-sm);
+    }
+    .skill-item::before { margin-top: 0.2rem; flex-shrink: 0; }
+    .skill-col.declining .skill-item::before { content: '↓'; color: var(--color-danger); font-weight: 700; }
+    .skill-col.rising .skill-item::before { content: '↑'; color: var(--color-success); font-weight: 700; }
+
+    /* ── A-Shape model ── */
+    .a-shape {
+      background: linear-gradient(135deg, oklch(18% 0.06 30) 0%, oklch(14% 0.04 25) 100%);
+      border-radius: var(--radius-lg);
+      padding: 2.5rem;
+      margin: 2rem 0;
+      color: oklch(92% 0.03 40);
+      box-shadow: var(--shadow-md);
+    }
+    .a-shape-title {
+      font-size: var(--text-xl);
+      font-weight: 800;
+      color: oklch(92% 0.03 40);
+      margin-bottom: 0.5rem;
+    }
+    .a-shape-subtitle {
+      font-size: var(--text-sm);
+      color: oklch(62% 0.04 40);
+      margin-bottom: 2rem;
+    }
+    .a-layers {
+      display: flex;
+      flex-direction: column;
+      gap: 0.75rem;
+    }
+    .a-layer {
+      display: grid;
+      grid-template-columns: auto 1fr;
+      gap: 1rem;
+      align-items: center;
+      background: oklch(100% 0 0 / 0.05);
+      border: 1px solid oklch(100% 0 0 / 0.08);
+      border-radius: var(--radius-md);
+      padding: 1rem 1.25rem;
+      transition: background 200ms;
+    }
+    .a-layer:hover { background: oklch(100% 0 0 / 0.09); }
+    .a-layer-num {
+      font-size: 1.6rem;
+      font-weight: 900;
+      color: var(--layer-color, oklch(72% 0.18 32));
+      font-family: 'SF Mono', monospace;
+      min-width: 2rem;
+      text-align: center;
+    }
+    .a-layer-title {
+      font-size: var(--text-base);
+      font-weight: 700;
+      color: oklch(90% 0.03 40);
+      margin-bottom: 0.2rem;
+    }
+    .a-layer-desc {
+      font-size: var(--text-sm);
+      color: oklch(65% 0.04 40);
+      line-height: 1.6;
+    }
+
+    /* ── Case study cards ── */
+    .case-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 1.25rem;
+      margin: 1.75rem 0;
+    }
+    .case-card {
+      background: var(--color-surface);
+      border: 1px solid var(--color-border);
+      border-radius: var(--radius-lg);
+      padding: 1.5rem;
+      box-shadow: var(--shadow-sm);
+      transition: transform 200ms, box-shadow 200ms;
+    }
+    .case-card:hover { transform: translateY(-2px); box-shadow: var(--shadow-md); }
+    .case-org {
+      font-size: var(--text-xs);
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+      color: var(--color-accent);
+      font-family: 'SF Mono', monospace;
+      margin-bottom: 0.5rem;
+    }
+    .case-metric {
+      font-size: var(--text-2xl);
+      font-weight: 900;
+      color: var(--color-text);
+      line-height: 1;
+      margin-bottom: 0.3rem;
+    }
+    .case-metric span { color: var(--color-accent); }
+    .case-desc {
+      font-size: var(--text-sm);
+      color: var(--color-text-muted);
+      line-height: 1.65;
+    }
+
+    /* ── Blockquote ── */
+    blockquote {
+      background: linear-gradient(135deg, oklch(18% 0.06 30) 0%, oklch(22% 0.08 35) 100%);
+      color: oklch(92% 0.04 40);
+      padding: 2rem 2.5rem;
+      border-radius: var(--radius-lg);
+      margin: 2.5rem 0;
+      position: relative;
+      box-shadow: var(--shadow-md);
+    }
+    blockquote::before {
+      content: '"';
+      position: absolute;
+      top: 0.5rem; left: 1.5rem;
+      font-size: 5rem; line-height: 1;
+      color: oklch(72% 0.18 32 / 0.35);
+      font-family: Georgia, serif;
+    }
+    blockquote p {
+      font-size: var(--text-lg);
+      line-height: 1.7;
+      font-style: italic;
+      color: oklch(90% 0.04 40);
+      position: relative;
+      margin-bottom: 0.75rem;
+    }
+    blockquote cite {
+      display: block;
+      font-size: var(--text-sm);
+      color: oklch(62% 0.06 32);
+      font-style: normal;
+      position: relative;
+    }
+
+    /* ── Section divider ── */
+    .section-divider {
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+      margin: var(--space-lg) 0;
+      color: var(--color-text-muted);
+      font-size: var(--text-xs);
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+    }
+    .section-divider::before, .section-divider::after {
+      content: '';
+      flex: 1;
+      height: 1px;
+      background: var(--color-border);
+    }
+
+    /* ── Timeline ── */
+    .timeline {
+      border-left: 2px solid var(--color-border);
+      padding-left: 2rem;
+      margin: 1.75rem 0;
+      display: flex;
+      flex-direction: column;
+      gap: 1.5rem;
+    }
+    .tl-item { position: relative; }
+    .tl-item::before {
+      content: '';
+      position: absolute;
+      left: -2.6rem;
+      top: 0.35rem;
+      width: 12px; height: 12px;
+      border-radius: 50%;
+      background: var(--color-accent);
+      border: 2px solid var(--color-bg);
+    }
+    .tl-date {
+      font-size: var(--text-xs);
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+      color: var(--color-accent);
+      font-family: 'SF Mono', monospace;
+      margin-bottom: 0.3rem;
+    }
+    .tl-title { font-size: var(--text-base); font-weight: 700; margin-bottom: 0.3rem; }
+    .tl-body { font-size: var(--text-sm); color: var(--color-text-muted); line-height: 1.65; }
+
+    /* ── Action list ── */
+    .action-list {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 0.9rem;
+      margin: 1.25rem 0;
+    }
+    .action-list li {
+      display: grid;
+      grid-template-columns: 1.75rem 1fr;
+      gap: 0.6rem;
+      align-items: start;
+    }
+    .action-list li::before {
+      content: '›';
+      color: var(--color-accent);
+      font-size: 1.2rem;
+      font-weight: 700;
+      line-height: 1.5;
+    }
+
+    /* ── Human skills ── */
+    .human-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 1rem;
+      margin: 1.75rem 0;
+    }
+    .human-card {
+      background: var(--color-surface);
+      border: 1px solid var(--color-border);
+      border-radius: var(--radius-lg);
+      padding: 1.4rem;
+      box-shadow: var(--shadow-sm);
+    }
+    .human-card-icon { font-size: 1.8rem; margin-bottom: 0.6rem; line-height: 1; }
+    .human-card-title { font-size: var(--text-base); font-weight: 700; margin-bottom: 0.4rem; }
+    .human-card-desc { font-size: var(--text-sm); color: var(--color-text-muted); line-height: 1.65; }
+
+    /* ── Footer ── */
+    footer {
+      background: oklch(14% 0.04 30);
+      color: oklch(68% 0.04 40);
+      padding: 3rem 2rem;
+      margin-top: var(--space-xl);
+    }
+    footer .container { max-width: 860px; margin: 0 auto; }
+    .footer-title { font-size: var(--text-lg); font-weight: 700; color: oklch(90% 0.04 40); margin-bottom: 0.5rem; }
+    .sources-list { list-style: none; display: flex; flex-direction: column; gap: 0.4rem; margin-top: 1rem; }
+    .sources-list li { font-size: var(--text-xs); font-family: 'SF Mono', monospace; color: oklch(54% 0.04 40); }
+    .sources-list li::before { content: '› '; color: var(--color-accent); }
+
+    @media (max-width: 640px) {
+      .metaphor-grid { grid-template-columns: 1fr; }
+      .metaphor-divider { display: none; }
+      .skill-compare { grid-template-columns: 1fr; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- ── Header ── -->
+  <header class="site-header">
+    <a class="brand" href="#">AI技術專欄</a>
+    <span class="sep">›</span>
+    <span style="font-size:var(--text-sm);color:var(--color-text-muted)">未來工作與技能</span>
+  </header>
+
+  <!-- ── Hero ── -->
+  <section class="hero">
+    <div class="hero-inner">
+      <div class="hero-tag">&#9670; 深度觀察 · 2025</div>
+      <h1>從<span class="quote-mark">「</span>養龍蝦<span class="quote-mark">」</span>到<br><em>「駕取AI代理人」</em></h1>
+      <div class="hero-meta">
+        <span>2025年4月</span>
+        <span>閱讀時間 約20分鐘</span>
+      </div>
+      <p class="hero-lead">
+        養一隻龍蝦要花三到五年；過去的專業技能也是如此——漫長的培育期換來的是稀缺的市場價值。AI代理人正在打破這個規律。問題不再是「你會什麼」，而是「你能指揮什麼」。
+      </p>
+      <div class="hero-stats">
+        <div class="hero-stat">
+          <div class="hero-stat-num">170M</div>
+          <div class="hero-stat-label">2030年新增職位</div>
+        </div>
+        <div class="hero-stat">
+          <div class="hero-stat-num">985%</div>
+          <div class="hero-stat-label">代理人工程師職缺成長</div>
+        </div>
+        <div class="hero-stat">
+          <div class="hero-stat-num">80%+</div>
+          <div class="hero-stat-label">頂尖代理人解決真實GitHub問題</div>
+        </div>
+        <div class="hero-stat">
+          <div class="hero-stat-num">126%</div>
+          <div class="hero-stat-label">AI輔助下的程式設計生產力提升</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── Article Body ── -->
+  <main>
+    <div class="container article-body">
+
+      <!-- 引言 -->
+      <p class="lead">
+        在台灣東北角的漁港，養龍蝦是一門考驗耐心的技藝。每隻蝦從幼苗到成品需要三到五年，期間的水質管理、餵食節律、疾病防治，全憑養殖者積累的知識與手感。這種「慢工出細活」的專業，過去就是知識工作者的寫照：法律人花十年精進判例分析，工程師用無數個夜晚鍛鍊架構直覺，資料科學家靠反覆實驗建立模型品味。
+        <br><br>
+        2025年，AI代理人（AI Agent）的大規模商業部署正在改寫這套邏輯。不是取消養殖業，而是讓一個人能同時管理一百座龍蝦池。
+      </p>
+
+      <!-- ─── Section 1：比喻解析 ─── -->
+      <h2>一、兩個時代的對照：養龍蝦 vs 駕取AI代理人</h2>
+
+      <div class="metaphor-grid">
+        <div class="metaphor-card old">
+          <div class="metaphor-label">舊典範</div>
+          <div class="metaphor-icon">🦞</div>
+          <div class="metaphor-title">養龍蝦</div>
+          <p class="metaphor-desc">
+            個人必須掌握全流程——育苗、投餵、水質監控、採收。深度專業化，難以規模化；技能累積耗時3–10年；單人能力天花板明確；每增加一個池子，成本和精力等比例增加。
+          </p>
+        </div>
+        <div class="metaphor-divider">→</div>
+        <div class="metaphor-card new">
+          <div class="metaphor-label">新典範</div>
+          <div class="metaphor-icon">🤖</div>
+          <div class="metaphor-title">駕取AI代理人</div>
+          <p class="metaphor-desc">
+            人類定義目標、設計流程、驗收成果。AI代理人執行具體操作——同時並行、不知疲倦。技能重心從「手藝」轉向「判斷力」；一個人能督導數十個並行任務流；進入門檻從「能做什麼」轉向「知道什麼是好成果」。
+          </p>
+        </div>
+      </div>
+
+      <div class="callout gold">
+        <div class="callout-label">關鍵洞察</div>
+        <p>Anthropic在代理人編程研究中發現：AI輔助工作中，有<strong>相當比例是沒有AI就根本不會嘗試的任務</strong>——不是加速完成舊工作，而是打開了新的可能性邊疆。這是「生產力提升」和「能力邊界擴張」的本質差異。</p>
+      </div>
+
+      <!-- ─── Section 2：AI代理人的崛起 ─── -->
+      <div class="section-divider">市場數據</div>
+      <h2>二、AI代理人的崛起：從概念到兆元市場</h2>
+
+      <p>AI代理人不再是概念驗證（POC）的展示品。2024至2025年，它已全面進入企業生產環境，並在關鍵指標上取得了令人眩目的突破。</p>
+
+      <div class="stat-grid">
+        <div class="stat-card" style="--stat-color: oklch(58% 0.22 32)">
+          <div class="stat-num">$52.6B</div>
+          <div class="stat-label">AI代理人市場規模預測（2030）</div>
+          <div class="stat-source">MarketsandMarkets</div>
+        </div>
+        <div class="stat-card" style="--stat-color: oklch(68% 0.16 68)">
+          <div class="stat-num">46.3%</div>
+          <div class="stat-label">AI代理人市場年複合成長率<br>（2024–2030 CAGR）</div>
+          <div class="stat-source">MarketsandMarkets</div>
+        </div>
+        <div class="stat-card" style="--stat-color: oklch(58% 0.18 192)">
+          <div class="stat-num">79%</div>
+          <div class="stat-label">企業已部署某種形式的<br>Agentic AI</div>
+          <div class="stat-source">2025行業調查</div>
+        </div>
+        <div class="stat-card" style="--stat-color: oklch(58% 0.18 145)">
+          <div class="stat-num">171%</div>
+          <div class="stat-label">Agentic AI平均ROI<br>（美國企業達192%）</div>
+          <div class="stat-source">企業部署研究</div>
+        </div>
+      </div>
+
+      <h3>主流框架快速縱覽</h3>
+
+      <div class="table-wrap">
+        <table>
+          <thead>
+            <tr>
+              <th>框架</th>
+              <th>主要特色</th>
+              <th>2025年狀態</th>
+              <th>代表用戶</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><strong>LangGraph</strong></td>
+              <td>狀態圖式Agent循環、最適複雜工作流</td>
+              <td><span class="badge badge-green">生產主流</span></td>
+              <td>LinkedIn、Uber</td>
+            </tr>
+            <tr>
+              <td><strong>CrewAI</strong></td>
+              <td>角色式多代理團隊協作</td>
+              <td><span class="badge badge-green">$18M A輪</span></td>
+              <td>財富500大 60%</td>
+            </tr>
+            <tr>
+              <td><strong>Microsoft Agent Framework</strong></td>
+              <td>AutoGen+Semantic Kernel合併，企業級</td>
+              <td><span class="badge badge-orange">GA Q1 2026</span></td>
+              <td>Azure生態系</td>
+            </tr>
+            <tr>
+              <td><strong>OpenAI Agents SDK</strong></td>
+              <td>沙盒執行環境、工具調用標準化</td>
+              <td><span class="badge badge-green">持續迭代</span></td>
+              <td>醫療、金融企業</td>
+            </tr>
+            <tr>
+              <td><strong>Claude Agent SDK</strong></td>
+              <td>與Claude Code共用底層、Python/TS雙語</td>
+              <td><span class="badge badge-green">2025年9月發布</span></td>
+              <td>Netflix、Spotify、PwC</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <div class="callout teal">
+        <div class="callout-label">MCP：代理人互聯的新標準</div>
+        <p>由Anthropic開發的<strong>Model Context Protocol（MCP）</strong>正在成為代理人與工具連接的開放標準，已獲Claude、OpenAI、Google採用。它是AI代理人生態系的「HTTP協議」——定義了代理人如何與外部工具、資料庫、API建立標準化連接。</p>
+      </div>
+
+      <!-- ─── Section 3：代理人的性能突破 ─── -->
+      <h2>三、代理人的性能突破：從4%到80%+</h2>
+
+      <p>衡量AI代理人實際工程能力的標準基準是<strong>SWE-bench Verified</strong>——要求AI解決來自真實GitHub專案的程式問題，而非精心設計的考題。這個指標的進化軌跡，是理解「新典範」的最佳視窗。</p>
+
+      <div class="timeline">
+        <div class="tl-item">
+          <div class="tl-date">2023</div>
+          <div class="tl-title">AI代理人解決4.4%的真實GitHub問題</div>
+          <div class="tl-body">早期系統還在實驗室階段，只能處理最簡單的孤立問題，複雜的代碼庫交互幾乎無從下手。</div>
+        </div>
+        <div class="tl-item">
+          <div class="tl-date">2024</div>
+          <div class="tl-title">跳升至71.7%——一年之內</div>
+          <div class="tl-body">工具調用、代碼執行沙盒、上下文管理的成熟化，讓代理人開始能處理多文件、多步驟的真實工程任務。</div>
+        </div>
+        <div class="tl-item">
+          <div class="tl-date">2026年4月</div>
+          <div class="tl-title">頂尖代理人系統突破<strong style="color:var(--color-accent)">80%+</strong>大關</div>
+          <div class="tl-body">多個前沿代理人系統在SWE-bench Verified上超過80%分數線，覆蓋複雜的多文件重構、跨模組回歸修復等任務。但在需要端到端工程判斷的開放性問題上，AI仍顯著落後有經驗的人類工程師——這正是領域判斷力的護城河所在。</div>
+        </div>
+      </div>
+
+      <!-- ─── Section 4：現實中的部署案例 ─── -->
+      <div class="section-divider">現實案例</div>
+      <h2>四、現實中的AI代理人：真實數字，不是概念故事</h2>
+
+      <h3>軟體工程</h3>
+      <div class="case-grid">
+        <div class="case-card">
+          <div class="case-org">Devin（Cognition AI）</div>
+          <div class="case-metric"><span>$73M</span> ARR</div>
+          <p class="case-desc">2024年9月$1M → 2025年6月$73M ARR。PR合併率從34%提升到67%。2024年初Series B估值約20億美元，為當時AI代理人新創中估值最高之一。</p>
+        </div>
+        <div class="case-card">
+          <div class="case-org">Anthropic × Rakuten</div>
+          <div class="case-metric"><span>12.5M</span> 行代碼庫</div>
+          <p class="case-desc">Claude Code自主完成vLLM代碼庫的激活向量提取任務，原計劃4–8個月，Claude用7小時完成，精度99.9%。</p>
+        </div>
+        <div class="case-card">
+          <div class="case-org">TELUS</div>
+          <div class="case-metric"><span>500,000+</span> 小時</div>
+          <p class="case-desc">使用Claude Code Agentic工作流節省的工程師工時，已記錄在Anthropic 2026報告中。</p>
+        </div>
+        <div class="case-card">
+          <div class="case-org">GitHub Copilot</div>
+          <div class="case-metric"><span>55%</span> 更快</div>
+          <p class="case-desc">1,500萬+開發者使用，財富百大90%普及。任務完成時間從2h41m → 1h11m。在啟用Copilot的儲存庫中，AI生成代碼佔比達46%。</p>
+        </div>
+      </div>
+
+      <h3>醫療領域</h3>
+      <div class="case-grid">
+        <div class="case-card">
+          <div class="case-org">Cleveland Clinic</div>
+          <div class="case-metric"><span>1.5</span> 分鐘</div>
+          <p class="case-desc">自主醫療編碼可在1.5分鐘內處理100+份文件；每份臨床文件讀取時間不到2秒。</p>
+        </div>
+        <div class="case-card">
+          <div class="case-org">Metro Health System</div>
+          <div class="case-metric"><span>85%</span> 縮短</div>
+          <p class="case-desc">病患等待時間從52分鐘降至8分鐘以下，90天內達成。醫療AI ROI：每投入$1平均回收$3.20。</p>
+        </div>
+      </div>
+
+      <h3>法律與金融</h3>
+
+      <div class="table-wrap">
+        <table>
+          <thead>
+            <tr><th>組織</th><th>應用場景</th><th>量化成果</th></tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><strong>BakerHostetler</strong>（法律事務所）</td>
+              <td>AI法律研究工具</td>
+              <td class="td-up">↓ 60% 研究相關工時</td>
+            </tr>
+            <tr>
+              <td><strong>Salesforce</strong></td>
+              <td>Agentic客服系統</td>
+              <td class="td-up">宣佈以AI代理人承接大量客服工作量，削減客服部門規模</td>
+            </tr>
+            <tr>
+              <td>保險業平均</td>
+              <td>理賠處理、保單發行</td>
+              <td class="td-up">↓ 30% 營運成本</td>
+            </tr>
+            <tr>
+              <td>法律行業整體</td>
+              <td>GenAI採用率</td>
+              <td class="td-up">14%（2024）→ 26%（2025）</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <!-- ─── Section 5：技能地圖重繪 ─── -->
+      <div class="section-divider">技能地圖</div>
+      <h2>五、技能地圖的重繪：哪些在消退，哪些在崛起</h2>
+
+      <div class="skill-compare">
+        <div class="skill-col declining">
+          <div class="skill-col-title">↓ 消退中的技能</div>
+          <div class="skill-item">獨立式Prompt Engineering（已成基礎素養）</div>
+          <div class="skill-item">例行數據處理與清洗（69%可自動化）</div>
+          <div class="skill-item">基礎客服處理（80%自動化率）</div>
+          <div class="skill-item">初級合約審查與法律研究</div>
+          <div class="skill-item">手動軟體測試與Bug回報</div>
+          <div class="skill-item">資料輸入（7.5M職位面臨消失）</div>
+        </div>
+        <div class="skill-col rising">
+          <div class="skill-col-title">↑ 崛起中的技能</div>
+          <div class="skill-item">AI代理人設計與編排工程</div>
+          <div class="skill-item">AI倫理與治理框架設計</div>
+          <div class="skill-item">模型風險驗證（Model Risk Validation）</div>
+          <div class="skill-item">人機協作工作流設計</div>
+          <div class="skill-item">向量資料庫與RAG架構</div>
+          <div class="skill-item">「Killswitch Engineer」——AI緊急介入專家</div>
+        </div>
+      </div>
+
+      <div class="callout">
+        <div class="callout-label">Prompt Engineering的命運</div>
+        <p>2024至2025年間，獨立Prompt Engineer職缺<strong>下降40%</strong>。Fortune直接稱其「六位數職位已然過時」，Fast Company標題更說「AI正在吃掉自己：Prompt Engineering快速滅絕」。</p>
+        <p>這不代表Prompt技能無用——而是它已降格為<strong>基礎素養</strong>，就像「會用Excel」曾是專業技能，現在不過是辦公室標配。真正稀缺的是：知道用什麼Prompt來建造整個代理人系統。</p>
+      </div>
+
+      <h3>新興職位的薪酬行情</h3>
+
+      <div class="table-wrap">
+        <table>
+          <thead>
+            <tr><th>職位</th><th>核心技能要求</th><th>美國市場薪酬（年薪）</th></tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><strong>Agentic AI Engineer</strong></td>
+              <td>LangGraph / CrewAI、RAG、向量DB、CI/CD for ML</td>
+              <td class="td-num td-accent">$120K–$400K+</td>
+            </tr>
+            <tr>
+              <td><strong>Staff-level Agentic AI</strong></td>
+              <td>多代理系統架構、自愈工作流、沙盒設計</td>
+              <td class="td-num td-accent">$250K–$300K + 股權</td>
+            </tr>
+            <tr>
+              <td><strong>Senior Agentic AI（頂尖）</strong></td>
+              <td>跨組織代理人基礎設施、安全性設計</td>
+              <td class="td-num td-accent">$500K+ 總報酬</td>
+            </tr>
+            <tr>
+              <td><strong>AI Governance Specialist</strong></td>
+              <td>法規遵循、偏差審計、可解釋性</td>
+              <td class="td-num">$90K–$180K</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <p>2024年，「Agentic AI」相關職缺<strong>成長了985%</strong>。但這個市場還有個結構性悖論：這些高薪職位需要資深背景，恰恰是那些被AI從初階工作取代的人<strong>最難直接轉入</strong>的崗位。技能升級不是一條順暢的電梯，而是一段需要刻意設計的攀登路徑。</p>
+
+      <!-- ─── Section 6：A型人才模型 ─── -->
+      <div class="section-divider">新技能模型</div>
+      <h2>六、「A型人才」：AI時代的技能金字塔</h2>
+
+      <p>過去的「T型人才」概念（一門深度＋多門廣度）在AI時代需要更新。新的模型或可稱為<strong>「A型人才」</strong>：頂端是AI槓桿能力，支撐起更寬廣的行動能力。</p>
+
+      <div class="a-shape">
+        <div class="a-shape-title">A型人才技能架構</div>
+        <div class="a-shape-subtitle">從頂端（最新增、最緊缺）到底部（持久護城河）</div>
+        <div class="a-layers">
+          <div class="a-layer" style="--layer-color: oklch(72% 0.18 32)">
+            <div class="a-layer-num">①</div>
+            <div>
+              <div class="a-layer-title">AI編排力（Orchestration Thinking）</div>
+              <div class="a-layer-desc">系統層設計思維——定義目標、設置護欄、設計交接點與驗證循環。這是現在最緊缺的能力，也是AI本身無法自我提供的。</div>
+            </div>
+          </div>
+          <div class="a-layer" style="--layer-color: oklch(72% 0.18 68)">
+            <div class="a-layer-num">②</div>
+            <div>
+              <div class="a-layer-title">AI素養（AI Fluency）</div>
+              <div class="a-layer-desc">理解AI系統的能力邊界、適當的信任校準、快速辨別幻覺輸出。已成所有知識工作者的基礎門票。</div>
+            </div>
+          </div>
+          <div class="a-layer" style="--layer-color: oklch(62% 0.18 192)">
+            <div class="a-layer-num">③</div>
+            <div>
+              <div class="a-layer-title">領域判斷力（Domain Judgment）</div>
+              <div class="a-layer-desc">知道「好成果」是什麼樣子——這是駕取代理人的永久護城河。AI生成內容；人類判斷哪個是對的。沒有這個，代理人的輸出就只是高速廢話。</div>
+            </div>
+          </div>
+          <div class="a-layer" style="--layer-color: oklch(62% 0.18 145)">
+            <div class="a-layer-num">④</div>
+            <div>
+              <div class="a-layer-title">人類稀缺技能（Human Premium Skills）</div>
+              <div class="a-layer-desc">批判性思維、倫理判斷、情感智商、跨文化溝通——AI設計上就不具備的能力。83%的員工認為AI會讓這些技能更重要而非更不重要。</div>
+            </div>
+          </div>
+          <div class="a-layer" style="--layer-color: oklch(62% 0.16 300)">
+            <div class="a-layer-num">⑤</div>
+            <div>
+              <div class="a-layer-title">持續學習意志（Learning Velocity）</div>
+              <div class="a-layer-desc">AI相關領域技能的半衰期現約為6個月（Deloitte，2026）。快速再學習的能力本身，就是一項核心競爭力。</div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <blockquote>
+        <p>2026年的工程師花更少時間寫基礎代碼，更多時間<strong>編排一個動態的AI代理人組合</strong>、可重用組件和外部服務。價值在於設計整體系統架構、定義精確的目標和護欄，以及嚴格驗證最終輸出。</p>
+        <cite>— McKinsey「六個轉變：建立Agentic組織的未來」，2025</cite>
+      </blockquote>
+
+      <!-- ─── Section 7：人類不可取代的核心 ─── -->
+      <div class="section-divider">人類的護城河</div>
+      <h2>七、人類不可取代的五個核心</h2>
+
+      <p>在代理人自主性快速擴張的背景下，多個研究機構識別出<strong>人類維持決定性優勢的五個領域</strong>。這些不是過渡期的殘留位置，而是AI設計哲學上的本質局限。</p>
+
+      <div class="human-grid">
+        <div class="human-card">
+          <div class="human-card-icon">⚖️</div>
+          <div class="human-card-title">情境倫理判斷</div>
+          <p class="human-card-desc">涉及道德權重的決策——雇用、信貸、安全關鍵系統——需要人類問責。「AI應增強而非取代人類判斷」是2025–2026年主流治理框架的共識。</p>
+        </div>
+        <div class="human-card">
+          <div class="human-card-icon">🌫️</div>
+          <div class="human-card-title">模糊需求解讀</div>
+          <p class="human-card-desc">Devin的2025年度回顧坦承：「最適合處理清晰需求，無法像資深工程師那樣獨立應對模糊的項目端到端。」解讀未說出口的需求，是資深人才的核心差異化。</p>
+        </div>
+        <div class="human-card">
+          <div class="human-card-icon">🤝</div>
+          <div class="human-card-title">真實關係與信任</div>
+          <p class="human-card-desc">客戶情緒管理、複雜談判、組織變革領導——需要無法被人工複製的共情。「AI不是同事，是工具」（IDC）的論點，正是建立在這個基礎上。</p>
+        </div>
+        <div class="human-card">
+          <div class="human-card-icon">🎨</div>
+          <div class="human-card-title">創意方向設定</div>
+          <p class="human-card-desc">AI生成內容，人類決定要生成什麼方向。創意簡報、美學判斷、文化適切性——這些選擇至今仍是人類的主場。83%的人相信AI會強化而非取代人類的創意。</p>
+        </div>
+        <div class="human-card">
+          <div class="human-card-icon">🔍</div>
+          <div class="human-card-title">對抗性監督（紅隊）</div>
+          <p class="human-card-desc">發現AI錯誤需要對「正確」的深刻理解。當AI處理的工作越多，能夠識別其失誤的專家就越稀缺也越有價值。</p>
+        </div>
+      </div>
+
+      <!-- ─── Section 8：宏觀數字 ─── -->
+      <div class="section-divider">宏觀影響</div>
+      <h2>八、工作市場的宏觀影響：新工作是否能填補缺口？</h2>
+
+      <div class="table-wrap">
+        <table>
+          <thead>
+            <tr><th>指標</th><th>數據</th><th>來源</th></tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>2030年新創造職位</td>
+              <td class="td-up td-num">1.7億個</td>
+              <td>WEF Future of Jobs 2025</td>
+            </tr>
+            <tr>
+              <td>2030年消失職位</td>
+              <td class="td-down td-num">9,200萬個</td>
+              <td>WEF Future of Jobs 2025</td>
+            </tr>
+            <tr>
+              <td>2030年前技能組合需更新比例</td>
+              <td class="td-down td-num">39%</td>
+              <td>WEF Future of Jobs 2025</td>
+            </tr>
+            <tr>
+              <td>2024年已使用AI的員工比例</td>
+              <td class="td-up td-num">76%</td>
+              <td>McKinsey Superagency 2025</td>
+            </tr>
+            <tr>
+              <td>企業正確估計AI使用率（主管認為4%，實際13%）</td>
+              <td class="td-num">低估3.25倍</td>
+              <td>McKinsey Superagency 2025</td>
+            </tr>
+            <tr>
+              <td>計劃增加AI投資的企業</td>
+              <td class="td-up td-num">92%</td>
+              <td>McKinsey 2025</td>
+            </tr>
+            <tr>
+              <td>已達到AI成熟度的企業</td>
+              <td class="td-down td-num">僅1%</td>
+              <td>McKinsey 2025</td>
+            </tr>
+            <tr>
+              <td>2024年企業AI投資總額</td>
+              <td class="td-up td-num">$2,523億</td>
+              <td>Stanford HAI AI Index 2025</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <div class="callout">
+        <div class="callout-label">結構性悖論：「瓶頸悖論」</div>
+        <p>WEF與Deloitte均識別出這個張力：AI新職位（AI Orchestrator、Killswitch Engineer、Model Risk Validator）高度專業且要求資深背景——<strong>恰好是從初階職位被取代的那群人最難直接跨入的崗位</strong>。</p>
+        <p>這不是一個「培訓一下就能解決」的問題，而需要系統性、資金充足、持續數年的勞動力轉型計畫。這是2025年之後政策制定者最重要的人力資本挑戰。</p>
+      </div>
+
+      <!-- ─── Section 9：行動指南 ─── -->
+      <div class="section-divider">行動指南</div>
+      <h2>九、個人與組織的行動指南</h2>
+
+      <h3>對個人知識工作者</h3>
+      <ul class="action-list">
+        <li>立即建立一個「個人代理人實驗室」：選定LangChain/CrewAI或n8n，用自己的真實工作任務做第一個Agent。理解不是靠閱讀，是靠動手。</li>
+        <li>深化領域判斷力，而非追逐執行技能。你在行業中的「什麼是好成果」的直覺，是AI短期內最難複製的東西。</li>
+        <li>學習評估AI輸出的批判性框架——不是盲目信任，也不是反射性排斥，而是理解在哪些條件下AI輸出可靠，在哪些條件下需要深度驗證。</li>
+        <li>關注技能的「監督半徑」：目前你能有效監督幾個並行的AI工作流？把這個數字從1提升到5，就是生產力的幾何增長。</li>
+        <li>接受技能半衰期6個月的現實，把「學會如何快速學習AI工具」列為年度優先事項。</li>
+      </ul>
+
+      <h3>對企業與組織領導人</h3>
+      <ul class="action-list">
+        <li>修正「AI成熟度」的自我評估：McKinsey數據顯示，主管對員工AI使用率的估計平均低估3倍以上。先做真實的AI使用盤點，再決策。</li>
+        <li>從「工具採購」思維轉向「工作流重設計」思維——問「哪些流程可以被代理人完全接管」，而不只是「哪裡可以加速」。</li>
+        <li>優先投資人機協作工作流設計師這個新角色：知道在哪裡保留人類判斷點，是代理人系統可靠性的關鍵。</li>
+        <li>建立AI治理框架，特別是對高風險決策（雇用、信貸、醫療）設立強制的人類審查節點，這既是倫理要求，也是日益嚴格的監管要求。</li>
+        <li>接受這個新平衡：AI處理更多工作≠裁員，而應當＝人均能完成的範疇大幅擴張。前者讓組織節省成本，後者讓組織建立競爭優勢。</li>
+      </ul>
+
+      <!-- ─── 結語 ─── -->
+      <div class="section-divider">結語</div>
+      <h2>十、重新定義「技能」這個詞</h2>
+
+      <p>龍蝦農場的比喻終有其局限。龍蝦是靜態商品，知識工作的成果永遠有品質維度。正因如此，「知道什麼是好成果」才是駕取AI代理人最不可或缺的能力——也是最難被複製的護城河。</p>
+
+      <p>這個時代的技能觀，不再只是「你能做什麼」，而是<strong>「你能讓什麼發生」</strong>。一個能清晰定義目標、設置有意義的護欄、嚴格驗收成果的人，在AI代理人的加持下，其影響力可以比過去擴大10倍、100倍。</p>
+
+      <p>過去的稀缺性來自「能執行」。未來的稀缺性來自「知道要執行什麼，以及如何判斷執行得好不好」。養龍蝦的農夫不會消失——他們會成為管理數百個AI養殖池的艦隊指揮官。問題只是：你準備好在甲板上了嗎？</p>
+
+      <blockquote>
+        <p>我們不是在討論一個技術趨勢，而是在目睹知識工作「槓桿率」的根本性躍升。對個人而言，這是一個讓勤奮者與智慧者差距拉大的時代；對組織而言，這是重新定義競爭優勢的視窗期。窗口不會永遠開著。</p>
+      </blockquote>
+
+    </div>
+  </main>
+
+  <!-- ── Footer ── -->
+  <footer>
+    <div class="container">
+      <div class="footer-title">資料來源與延伸閱讀</div>
+      <p style="font-size:var(--text-sm);margin-bottom:1rem">本文統計數據均來自公開研究報告，已標注原始出處。部分前瞻數字為分析師預測，實際結果可能有所不同。</p>
+      <ul class="sources-list">
+        <li>Anthropic Agentic Coding Research — resources.anthropic.com</li>
+        <li>World Economic Forum Future of Jobs Report 2025 — weforum.org</li>
+        <li>McKinsey Superagency in the Workplace 2025 — mckinsey.com</li>
+        <li>McKinsey Six Shifts to Build the Agentic Organization — mckinsey.com</li>
+        <li>Stanford HAI AI Index Report 2025 — hai.stanford.edu</li>
+        <li>Deloitte State of AI in the Enterprise 2026</li>
+        <li>Gartner AI Agent Market Inquiry Data Q2 2025</li>
+        <li>Cognition AI Devin Annual Performance Review 2025 — cognition.ai</li>
+        <li>GitHub Copilot Statistics 2026 — getpanto.ai</li>
+        <li>SWE-bench Leaderboard — swebench.com</li>
+        <li>IDC: The Future of Work: AI Agents as Instruments, Not Co-Workers — idc.com</li>
+        <li>WEF How We Can Elevate Uniquely Human Skills in the Age of AI — weforum.org</li>
+        <li>MarketsandMarkets AI Agents Market Report 2024 — prnewswire.com</li>
+        <li>Fortune: The Six-Figure Role That's Already Obsolete — fortune.com</li>
+        <li>Fast Company: AI Is Eating Its Own — fastcompany.com</li>
+        <li>PwC and Anthropic: AI-Native Finance &amp; Life Sciences Agents — pwc.com</li>
+      </ul>
+    </div>
+  </footer>
+
+</body>
+</html>

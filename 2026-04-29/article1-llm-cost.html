@@ -1,0 +1,1116 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>LLM成本終極攻略：揭秘Token經濟學，打造高效的AI應用生態</title>
+  <style>
+    :root {
+      --color-bg: oklch(97% 0.005 250);
+      --color-surface: oklch(100% 0 0);
+      --color-surface-alt: oklch(95% 0.01 240);
+      --color-border: oklch(88% 0.01 240);
+      --color-text: oklch(18% 0.01 250);
+      --color-text-muted: oklch(50% 0.01 250);
+      --color-accent: oklch(55% 0.22 265);
+      --color-accent-light: oklch(95% 0.04 265);
+      --color-accent-dark: oklch(40% 0.22 265);
+      --color-success: oklch(58% 0.18 145);
+      --color-warning: oklch(68% 0.18 65);
+      --color-danger: oklch(58% 0.22 25);
+      --color-gold: oklch(72% 0.16 70);
+
+      --text-xs: clamp(0.7rem, 0.65rem + 0.25vw, 0.8rem);
+      --text-sm: clamp(0.85rem, 0.8rem + 0.25vw, 0.95rem);
+      --text-base: clamp(1rem, 0.92rem + 0.4vw, 1.125rem);
+      --text-lg: clamp(1.125rem, 1rem + 0.6vw, 1.35rem);
+      --text-xl: clamp(1.3rem, 1.1rem + 1vw, 1.75rem);
+      --text-2xl: clamp(1.75rem, 1.3rem + 2.25vw, 2.75rem);
+      --text-hero: clamp(2.2rem, 1.2rem + 5vw, 4rem);
+
+      --space-xs: 0.5rem;
+      --space-sm: 1rem;
+      --space-md: 1.75rem;
+      --space-lg: 3rem;
+      --space-xl: 5rem;
+      --space-section: clamp(3rem, 2rem + 5vw, 7rem);
+
+      --radius-sm: 6px;
+      --radius-md: 12px;
+      --radius-lg: 20px;
+
+      --shadow-sm: 0 1px 3px oklch(0% 0 0 / 8%), 0 1px 2px oklch(0% 0 0 / 4%);
+      --shadow-md: 0 4px 16px oklch(0% 0 0 / 10%), 0 2px 6px oklch(0% 0 0 / 6%);
+      --shadow-lg: 0 12px 40px oklch(0% 0 0 / 14%);
+    }
+
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      font-family: 'Noto Serif TC', 'Georgia', 'Times New Roman', serif;
+      background: var(--color-bg);
+      color: var(--color-text);
+      line-height: 1.85;
+      font-size: var(--text-base);
+    }
+
+    /* ── Header ──────────────────────────────────────── */
+    .site-header {
+      background: var(--color-surface);
+      border-bottom: 1px solid var(--color-border);
+      padding: 0.75rem 2rem;
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+    }
+    .site-header .brand {
+      font-size: var(--text-sm);
+      font-weight: 600;
+      color: var(--color-accent);
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      text-decoration: none;
+    }
+    .site-header .sep { color: var(--color-border); }
+
+    /* ── Hero ────────────────────────────────────────── */
+    .hero {
+      background:
+        radial-gradient(ellipse 80% 60% at 10% 40%, oklch(72% 0.14 265 / 0.12) 0%, transparent 60%),
+        radial-gradient(ellipse 60% 80% at 90% 60%, oklch(68% 0.18 200 / 0.08) 0%, transparent 60%),
+        linear-gradient(160deg, oklch(20% 0.08 260) 0%, oklch(12% 0.04 250) 100%);
+      color: oklch(95% 0.02 250);
+      padding: clamp(4rem, 3rem + 5vw, 8rem) 2rem clamp(3rem, 2rem + 4vw, 6rem);
+      position: relative;
+      overflow: hidden;
+    }
+    .hero::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23ffffff' fill-opacity='0.015'%3E%3Ccircle cx='30' cy='30' r='1'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+      pointer-events: none;
+    }
+    .hero-inner {
+      max-width: 860px;
+      margin: 0 auto;
+      position: relative;
+    }
+    .hero-tag {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      font-size: var(--text-xs);
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.12em;
+      color: oklch(78% 0.16 265);
+      border: 1px solid oklch(78% 0.16 265 / 0.4);
+      padding: 0.35rem 0.9rem;
+      border-radius: 100px;
+      margin-bottom: 1.5rem;
+      font-family: 'SF Mono', 'Consolas', monospace;
+    }
+    .hero h1 {
+      font-size: var(--text-hero);
+      font-weight: 800;
+      line-height: 1.2;
+      letter-spacing: -0.02em;
+      margin-bottom: 1.5rem;
+    }
+    .hero h1 em {
+      font-style: normal;
+      color: oklch(78% 0.2 265);
+    }
+    .hero-meta {
+      display: flex;
+      gap: 2rem;
+      font-size: var(--text-sm);
+      color: oklch(70% 0.04 250);
+      margin-bottom: 2rem;
+    }
+    .hero-lead {
+      font-size: var(--text-lg);
+      line-height: 1.7;
+      color: oklch(82% 0.04 250);
+      max-width: 700px;
+    }
+    .hero-stats {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+      gap: 1rem;
+      margin-top: 3rem;
+      padding-top: 2.5rem;
+      border-top: 1px solid oklch(100% 0 0 / 0.1);
+    }
+    .hero-stat {
+      text-align: center;
+    }
+    .hero-stat-num {
+      font-size: var(--text-2xl);
+      font-weight: 800;
+      color: oklch(78% 0.2 265);
+      line-height: 1;
+      margin-bottom: 0.3rem;
+    }
+    .hero-stat-label {
+      font-size: var(--text-xs);
+      color: oklch(65% 0.04 250);
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+    }
+
+    /* ── Layout ──────────────────────────────────────── */
+    .container {
+      max-width: 860px;
+      margin: 0 auto;
+      padding: 0 1.5rem;
+    }
+    .article-body {
+      padding: var(--space-section) 1.5rem;
+    }
+    .article-body > * + * { margin-top: var(--space-md); }
+
+    /* ── Typography ──────────────────────────────────── */
+    h2 {
+      font-size: var(--text-xl);
+      font-weight: 800;
+      line-height: 1.3;
+      letter-spacing: -0.015em;
+      color: var(--color-text);
+      margin-top: var(--space-lg);
+      margin-bottom: var(--space-sm);
+      padding-bottom: 0.6rem;
+      border-bottom: 2px solid var(--color-accent-light);
+      position: relative;
+    }
+    h2::before {
+      content: '';
+      position: absolute;
+      bottom: -2px;
+      left: 0;
+      width: 3rem;
+      height: 2px;
+      background: var(--color-accent);
+    }
+    h3 {
+      font-size: var(--text-lg);
+      font-weight: 700;
+      line-height: 1.4;
+      color: var(--color-text);
+      margin-top: var(--space-md);
+      margin-bottom: 0.75rem;
+    }
+    p { margin-bottom: 1.1rem; }
+    p:last-child { margin-bottom: 0; }
+    strong { font-weight: 700; color: var(--color-accent-dark); }
+    em { font-style: italic; color: var(--color-text-muted); }
+
+    .lead {
+      font-size: var(--text-lg);
+      line-height: 1.75;
+      color: oklch(30% 0.01 250);
+      border-left: 3px solid var(--color-accent);
+      padding-left: 1.25rem;
+      margin-bottom: 2rem;
+    }
+
+    /* ── Callout boxes ───────────────────────────────── */
+    .callout {
+      background: var(--color-accent-light);
+      border: 1px solid oklch(78% 0.1 265 / 0.3);
+      border-left: 4px solid var(--color-accent);
+      border-radius: var(--radius-md);
+      padding: 1.25rem 1.5rem;
+      margin: 1.75rem 0;
+    }
+    .callout-label {
+      font-size: var(--text-xs);
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+      color: var(--color-accent);
+      margin-bottom: 0.5rem;
+      font-family: 'SF Mono', 'Consolas', monospace;
+    }
+    .callout p { color: oklch(25% 0.02 260); }
+
+    .callout.warning {
+      background: oklch(97% 0.04 65);
+      border-color: oklch(78% 0.14 65 / 0.3);
+      border-left-color: var(--color-warning);
+    }
+    .callout.warning .callout-label { color: oklch(52% 0.18 65); }
+    .callout.warning p { color: oklch(28% 0.04 60); }
+
+    .callout.success {
+      background: oklch(97% 0.04 145);
+      border-color: oklch(78% 0.14 145 / 0.3);
+      border-left-color: var(--color-success);
+    }
+    .callout.success .callout-label { color: oklch(42% 0.18 145); }
+
+    /* ── Tables ──────────────────────────────────────── */
+    .table-wrap {
+      overflow-x: auto;
+      margin: 1.75rem 0;
+      border-radius: var(--radius-md);
+      box-shadow: var(--shadow-sm);
+    }
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      font-size: var(--text-sm);
+      background: var(--color-surface);
+    }
+    thead th {
+      background: oklch(20% 0.06 260);
+      color: oklch(92% 0.04 250);
+      font-weight: 700;
+      text-align: left;
+      padding: 0.75rem 1rem;
+      font-size: var(--text-xs);
+      text-transform: uppercase;
+      letter-spacing: 0.06em;
+      white-space: nowrap;
+    }
+    tbody tr:nth-child(even) { background: var(--color-surface-alt); }
+    tbody tr:hover { background: var(--color-accent-light); }
+    tbody td {
+      padding: 0.65rem 1rem;
+      border-bottom: 1px solid var(--color-border);
+      vertical-align: middle;
+    }
+    .td-num {
+      font-family: 'SF Mono', 'Consolas', monospace;
+      font-size: var(--text-xs);
+      text-align: right;
+      white-space: nowrap;
+    }
+    .td-highlight {
+      font-weight: 700;
+      color: var(--color-accent);
+    }
+    .badge {
+      display: inline-block;
+      padding: 0.2rem 0.55rem;
+      border-radius: 100px;
+      font-size: 0.65rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.06em;
+    }
+    .badge-green { background: oklch(92% 0.08 145); color: oklch(38% 0.16 145); }
+    .badge-blue { background: oklch(92% 0.08 265); color: oklch(35% 0.18 265); }
+    .badge-orange { background: oklch(94% 0.08 65); color: oklch(44% 0.18 65); }
+    .badge-red { background: oklch(93% 0.08 25); color: oklch(42% 0.2 25); }
+
+    /* ── Strategy cards ──────────────────────────────── */
+    .strategy-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 1.25rem;
+      margin: 1.75rem 0;
+    }
+    .strategy-card {
+      background: var(--color-surface);
+      border: 1px solid var(--color-border);
+      border-radius: var(--radius-lg);
+      padding: 1.5rem;
+      box-shadow: var(--shadow-sm);
+      transition: transform 200ms, box-shadow 200ms;
+      position: relative;
+      overflow: hidden;
+    }
+    .strategy-card::before {
+      content: '';
+      position: absolute;
+      top: 0; left: 0; right: 0;
+      height: 3px;
+      background: var(--card-accent, var(--color-accent));
+    }
+    .strategy-card:hover {
+      transform: translateY(-2px);
+      box-shadow: var(--shadow-md);
+    }
+    .card-num {
+      font-size: 2.5rem;
+      font-weight: 900;
+      line-height: 1;
+      color: var(--card-accent, var(--color-accent));
+      opacity: 0.18;
+      margin-bottom: 0.5rem;
+      font-family: 'SF Mono', monospace;
+    }
+    .card-title {
+      font-size: var(--text-lg);
+      font-weight: 700;
+      color: var(--color-text);
+      margin-bottom: 0.6rem;
+    }
+    .card-saving {
+      display: inline-block;
+      font-size: var(--text-xs);
+      font-weight: 700;
+      font-family: monospace;
+      color: var(--color-success);
+      background: oklch(92% 0.08 145);
+      padding: 0.2rem 0.6rem;
+      border-radius: 100px;
+      margin-bottom: 0.75rem;
+    }
+    .card-body { font-size: var(--text-sm); color: var(--color-text-muted); line-height: 1.7; }
+
+    /* ── Cost comparison ─────────────────────────────── */
+    .cost-compare {
+      display: grid;
+      grid-template-columns: 1fr auto 1fr;
+      gap: 1rem;
+      align-items: center;
+      background: var(--color-surface);
+      border: 1px solid var(--color-border);
+      border-radius: var(--radius-lg);
+      padding: 2rem;
+      margin: 1.75rem 0;
+      box-shadow: var(--shadow-sm);
+    }
+    .cost-box { text-align: center; }
+    .cost-label { font-size: var(--text-xs); text-transform: uppercase; letter-spacing: 0.1em; color: var(--color-text-muted); margin-bottom: 0.5rem; }
+    .cost-value { font-size: var(--text-2xl); font-weight: 900; line-height: 1; }
+    .cost-value.before { color: var(--color-danger); }
+    .cost-value.after { color: var(--color-success); }
+    .cost-arrow { font-size: 1.5rem; color: var(--color-text-muted); }
+    .cost-saving { text-align: center; font-size: var(--text-sm); font-weight: 700; color: var(--color-success); margin-top: 0.4rem; }
+
+    /* ── Pull quote ──────────────────────────────────── */
+    blockquote {
+      border-left: none;
+      background: linear-gradient(135deg, oklch(20% 0.08 260) 0%, oklch(25% 0.1 280) 100%);
+      color: oklch(92% 0.04 250);
+      padding: 2rem 2.5rem;
+      border-radius: var(--radius-lg);
+      margin: 2.5rem 0;
+      position: relative;
+      box-shadow: var(--shadow-md);
+    }
+    blockquote::before {
+      content: '"';
+      position: absolute;
+      top: 0.5rem;
+      left: 1.5rem;
+      font-size: 5rem;
+      line-height: 1;
+      color: oklch(78% 0.2 265 / 0.4);
+      font-family: Georgia, serif;
+    }
+    blockquote p {
+      font-size: var(--text-lg);
+      line-height: 1.7;
+      font-style: italic;
+      color: oklch(90% 0.04 250);
+      position: relative;
+    }
+    blockquote cite {
+      display: block;
+      margin-top: 0.75rem;
+      font-size: var(--text-sm);
+      color: oklch(65% 0.08 265);
+      font-style: normal;
+      position: relative;
+    }
+
+    /* ── Code / formula ──────────────────────────────── */
+    .formula-box {
+      background: oklch(14% 0.03 260);
+      color: oklch(82% 0.06 265);
+      border-radius: var(--radius-md);
+      padding: 1.5rem;
+      font-family: 'SF Mono', 'Consolas', 'Courier New', monospace;
+      font-size: var(--text-sm);
+      line-height: 1.9;
+      margin: 1.75rem 0;
+      overflow-x: auto;
+    }
+    .formula-box .comment { color: oklch(56% 0.04 250); }
+    .formula-box .highlight { color: oklch(78% 0.2 265); font-weight: 700; }
+    .formula-box .num { color: oklch(72% 0.18 145); }
+
+    /* ── Trend line ──────────────────────────────────── */
+    .trend-bar {
+      display: flex;
+      flex-direction: column;
+      gap: 0.75rem;
+      margin: 1.75rem 0;
+    }
+    .trend-row {
+      display: grid;
+      grid-template-columns: 100px 1fr auto;
+      align-items: center;
+      gap: 1rem;
+    }
+    .trend-label { font-size: var(--text-sm); color: var(--color-text-muted); }
+    .trend-track { background: var(--color-border); border-radius: 100px; height: 10px; overflow: hidden; }
+    .trend-fill { height: 100%; border-radius: 100px; transition: width 600ms; }
+    .trend-val { font-size: var(--text-sm); font-weight: 700; font-family: monospace; white-space: nowrap; }
+
+    /* ── ROI table ───────────────────────────────────── */
+    .roi-table { border-top: 2px solid var(--color-accent); }
+    .roi-table tfoot td {
+      font-weight: 700;
+      font-size: var(--text-base);
+      background: var(--color-accent-light);
+      color: var(--color-accent-dark);
+      border-top: 2px solid var(--color-accent);
+    }
+
+    /* ── Tip list ────────────────────────────────────── */
+    .tip-list {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 0.8rem;
+      margin: 1.25rem 0;
+    }
+    .tip-list li {
+      display: grid;
+      grid-template-columns: 1.5rem 1fr;
+      gap: 0.6rem;
+      align-items: start;
+    }
+    .tip-list li::before {
+      content: '→';
+      color: var(--color-accent);
+      font-weight: 700;
+      margin-top: 0.15rem;
+    }
+
+    /* ── Section divider ─────────────────────────────── */
+    .section-divider {
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+      margin: var(--space-lg) 0;
+      color: var(--color-text-muted);
+      font-size: var(--text-xs);
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+    }
+    .section-divider::before,
+    .section-divider::after {
+      content: '';
+      flex: 1;
+      height: 1px;
+      background: var(--color-border);
+    }
+
+    /* ── Footer ──────────────────────────────────────── */
+    footer {
+      background: oklch(16% 0.04 260);
+      color: oklch(70% 0.04 250);
+      padding: 3rem 2rem;
+      margin-top: var(--space-xl);
+    }
+    footer .container { max-width: 860px; margin: 0 auto; }
+    .footer-title {
+      font-size: var(--text-lg);
+      font-weight: 700;
+      color: oklch(90% 0.04 250);
+      margin-bottom: 0.5rem;
+    }
+    .sources-list {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 0.4rem;
+      margin-top: 1rem;
+    }
+    .sources-list li {
+      font-size: var(--text-xs);
+      font-family: 'SF Mono', monospace;
+      color: oklch(55% 0.04 250);
+    }
+    .sources-list li::before { content: '› '; color: var(--color-accent); }
+
+    /* ── Responsive ──────────────────────────────────── */
+    @media (max-width: 640px) {
+      .hero-stats { grid-template-columns: repeat(2, 1fr); }
+      .cost-compare { grid-template-columns: 1fr; }
+      .cost-arrow { transform: rotate(90deg); }
+      .trend-row { grid-template-columns: 80px 1fr auto; gap: 0.5rem; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- ── Header ── -->
+  <header class="site-header">
+    <a class="brand" href="#">AI技術專欄</a>
+    <span class="sep">›</span>
+    <span style="font-size:var(--text-sm);color:var(--color-text-muted)">LLM成本工程</span>
+  </header>
+
+  <!-- ── Hero ── -->
+  <section class="hero">
+    <div class="hero-inner">
+      <div class="hero-tag">&#9670; 深度技術分析 · 2025</div>
+      <h1>LLM成本<em>終極攻略</em><br>揭秘Token經濟學</h1>
+      <div class="hero-meta">
+        <span>2025年4月</span>
+        <span>閱讀時間 約18分鐘</span>
+      </div>
+      <p class="hero-lead">
+        三年內推理成本暴跌1,000倍。你的AI帳單卻還在燒錢？本文系統性拆解Token計費邏輯、五大優化槓桿與ROI計算框架，幫你把每一塊錢花在刀口上。
+      </p>
+      <div class="hero-stats">
+        <div class="hero-stat">
+          <div class="hero-stat-num">1000×</div>
+          <div class="hero-stat-label">3年成本跌幅</div>
+        </div>
+        <div class="hero-stat">
+          <div class="hero-stat-num">95%</div>
+          <div class="hero-stat-label">快取+批量最大節省</div>
+        </div>
+        <div class="hero-stat">
+          <div class="hero-stat-num">90%</div>
+          <div class="hero-stat-label">Claude快取命中折扣</div>
+        </div>
+        <div class="hero-stat">
+          <div class="hero-stat-num">7200%</div>
+          <div class="hero-stat-label">客服機器人年化ROI</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── Article Body ── -->
+  <main>
+    <div class="container article-body">
+
+      <!-- 引言 -->
+      <p class="lead">
+        Epoch AI的研究顯示，達到GPT-4同等效能的推理成本，從2022年底的每百萬Token 20美元，跌至2025年的0.40美元——三年50倍。若以GPT-3等級效能計算（2021年底$60/M至2025年Llama小模型$0.06/M），跌幅甚至高達1,000倍。自2024年1月起，每年降幅高達200倍。
+        但成本曲線下滑不代表帳單自動降低。架構選擇的差距，可以讓同一個應用的月費差到100倍。
+      </p>
+
+      <!-- ─── Section 1 ─── -->
+      <h2>一、什麼是Token？理解計費的最小單位</h2>
+
+      <p>Token是LLM處理文字的基本單位，也是所有費用的根源。理解Token，才能精準掌控成本。</p>
+
+      <h3>Token的本質</h3>
+      <p>現代LLM幾乎全部使用<strong>Byte Pair Encoding（BPE）</strong>或其變體進行分詞。算法從字符層級出發，反覆合併高頻相鄰字符對，最終形成包含30,000至100,000個詞彙的Token表。</p>
+
+      <div class="callout">
+        <div class="callout-label">核心換算公式</div>
+        <p><strong>英文：</strong>1 Token ≈ 4個字元 ≈ 0.75個英文單字<br>
+        <strong>1,000個英文單字</strong>約等於 1,300–1,500 Token<br>
+        <strong>程式碼：</strong>因縮排與符號，密度較低，1.5–2× Token/詞<br>
+        <strong>繁/簡體中文：</strong>等量資訊需要2–8倍英文Token數量</p>
+      </div>
+
+      <h3>CJK語言的成本隱患</h3>
+      <p>繁體中文用戶需要特別注意一個關鍵事實：<strong>中文Token消耗量是英文的2至8倍</strong>。1,000個漢字在GPT-4o的tokenizer下可能消耗1,500至4,000個Token，而等量資訊的英文版本只需約250個Token。這不是可以忽略的邊際差異，而是數倍的成本倍增器。</p>
+
+      <div class="callout warning">
+        <div class="callout-label">⚠ 中文開發者必讀</div>
+        <p>以中文為主要語言的AI應用，在相同規模下，Token消耗量可能是英文應用的3至6倍。不同模型使用不同的Tokenizer，同一段中文文字在OpenAI vs Claude vs Gemini下的Token數量可能差異顯著。<strong>請務必用目標模型的官方計算器預測實際成本。</strong></p>
+      </div>
+
+      <h3>上下文窗口的真相：數字≠可用性</h3>
+      <p>各主流模型的上下文窗口持續擴張，但「窗口大小」並不等於「有效利用率」。</p>
+
+      <div class="table-wrap">
+        <table>
+          <thead>
+            <tr>
+              <th>模型</th>
+              <th>上下文窗口</th>
+              <th>輸入價格 ($/百萬Token)</th>
+              <th>輸出價格 ($/百萬Token)</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Gemini 2.5 Pro</td>
+              <td class="td-num">2,000,000</td>
+              <td class="td-num">$1.25 / $2.50</td>
+              <td class="td-num">$10–$15</td>
+            </tr>
+            <tr>
+              <td>Claude Opus 4.6 / Sonnet 4.6</td>
+              <td class="td-num">1,000,000</td>
+              <td class="td-num">$5 / $3</td>
+              <td class="td-num">$25 / $15</td>
+            </tr>
+            <tr>
+              <td>GPT-4o</td>
+              <td class="td-num">128,000</td>
+              <td class="td-num">$2.50</td>
+              <td class="td-num">$10</td>
+            </tr>
+            <tr>
+              <td>Claude Haiku 4.5</td>
+              <td class="td-num">200,000</td>
+              <td class="td-num">$1.00</td>
+              <td class="td-num">$5.00</td>
+            </tr>
+            <tr>
+              <td>Llama 3.3 70B</td>
+              <td class="td-num">128,000</td>
+              <td class="td-num">~免費（部分平台）</td>
+              <td class="td-num">—</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <div class="callout warning">
+        <div class="callout-label">「Lost in the Middle」現象</div>
+        <p>研究證明，LLM對上下文<strong>中段內容</strong>的注意力可下降30%以上。放在開頭和結尾的資訊效果最佳。廣告100K Token的上下文窗口，並不保證100K Token的有效理解。長上下文≠高質量推理。</p>
+      </div>
+
+      <h3>為什麼輸出Token比輸入貴？</h3>
+      <p>Token處理分為兩個階段：<strong>預填充（Prefill）</strong>階段並行處理所有輸入Token，相對高效；<strong>解碼（Decoding）</strong>階段則逐個生成輸出Token，每個Token需要數到數十毫秒。這個非對稱性解釋了為什麼輸出Token定價普遍比輸入高3至5倍——Claude Sonnet的比例是5:1（$3 vs $15）。</p>
+
+      <!-- ─── Section 2 ─── -->
+      <div class="section-divider">主流定價全景</div>
+      <h2>二、2025年主流LLM定價：從昂貴到白菜</h2>
+
+      <p>市場上已形成清晰的<strong>三層定價梯隊</strong>，從旗艦到經濟款，成本差距可達50倍以上。</p>
+
+      <div class="table-wrap">
+        <table>
+          <thead>
+            <tr>
+              <th>模型</th>
+              <th>等級</th>
+              <th>輸入 ($/M)</th>
+              <th>輸出 ($/M)</th>
+              <th>快取讀取</th>
+              <th>批量API</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><strong>Claude Opus 4.6</strong></td>
+              <td><span class="badge badge-red">旗艦</span></td>
+              <td class="td-num">$5.00</td>
+              <td class="td-num">$25.00</td>
+              <td class="td-num">$0.50</td>
+              <td class="td-num">50% off</td>
+            </tr>
+            <tr>
+              <td><strong>OpenAI o3</strong></td>
+              <td><span class="badge badge-red">旗艦</span></td>
+              <td class="td-num">$10.00</td>
+              <td class="td-num">$40.00</td>
+              <td class="td-num">—</td>
+              <td class="td-num">Flex 50%</td>
+            </tr>
+            <tr>
+              <td><strong>Claude Sonnet 4.6</strong></td>
+              <td><span class="badge badge-blue">標準</span></td>
+              <td class="td-num">$3.00</td>
+              <td class="td-num">$15.00</td>
+              <td class="td-num">$0.30</td>
+              <td class="td-num">50% off</td>
+            </tr>
+            <tr>
+              <td><strong>GPT-4o</strong></td>
+              <td><span class="badge badge-blue">標準</span></td>
+              <td class="td-num">$2.50</td>
+              <td class="td-num">$10.00</td>
+              <td class="td-num">$1.25</td>
+              <td class="td-num">50% off</td>
+            </tr>
+            <tr>
+              <td><strong>Gemini 2.5 Flash</strong></td>
+              <td><span class="badge badge-orange">輕量</span></td>
+              <td class="td-num">$0.30</td>
+              <td class="td-num">$2.50</td>
+              <td class="td-num">~10%</td>
+              <td class="td-num">—</td>
+            </tr>
+            <tr>
+              <td><strong>Claude Haiku 4.5</strong></td>
+              <td><span class="badge badge-orange">輕量</span></td>
+              <td class="td-num">$1.00</td>
+              <td class="td-num">$5.00</td>
+              <td class="td-num">$0.10</td>
+              <td class="td-num">50% off</td>
+            </tr>
+            <tr>
+              <td><strong>GPT-4o mini</strong></td>
+              <td><span class="badge badge-orange">輕量</span></td>
+              <td class="td-num">$0.15</td>
+              <td class="td-num">$0.60</td>
+              <td class="td-num">$0.075</td>
+              <td class="td-num">50% off</td>
+            </tr>
+            <tr>
+              <td><strong>DeepSeek V3</strong></td>
+              <td><span class="badge badge-green">超低成本</span></td>
+              <td class="td-num">$0.27</td>
+              <td class="td-num">$1.10</td>
+              <td class="td-num">有</td>
+              <td class="td-num">—</td>
+            </tr>
+            <tr>
+              <td><strong>Mistral Small 3.1</strong></td>
+              <td><span class="badge badge-green">超低成本</span></td>
+              <td class="td-num">$0.10</td>
+              <td class="td-num">$0.30</td>
+              <td class="td-num">—</td>
+              <td class="td-num">—</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <blockquote>
+        <p>從GPT-3等級效能的計費基準看，LLM推理成本在三年內下降了逾1,000倍；即使以GPT-4等級效能衡量，也下降超過50倍。這種速度在電腦歷史上幾乎前所未有——連摩爾定律都望塵莫及。</p>
+        <cite>— Epoch AI 推理成本趨勢分析報告，2025</cite>
+      </blockquote>
+
+      <p>DeepSeek V3靠<strong>混合專家（MoE）</strong>架構實現了這個奇蹟：671B總參數，但每次前向傳播只激活約37B個參數，實際推理成本等同於37B的稠密模型。GPT-4o的輸入價格是它的9倍以上。</p>
+
+      <!-- ─── Section 3 ─── -->
+      <div class="section-divider">五大優化槓桿</div>
+      <h2>三、成本優化的五大槓桿</h2>
+
+      <p>系統性地疊加以下五個優化策略，可以將成本削減<strong>84%至91%</strong>。每個槓桿都有獨立的節省空間，且效果可以複合疊加。</p>
+
+      <div class="strategy-grid">
+        <div class="strategy-card" style="--card-accent: oklch(55% 0.22 265)">
+          <div class="card-num">01</div>
+          <div class="card-title">模型分層路由</div>
+          <div class="card-saving">節省 60–70%</div>
+          <p class="card-body">用輕量分類器判斷任務複雜度，將80%的簡單查詢路由到Haiku/Flash，10%的複雜任務才使用Opus。研究顯示，精心設計的級聯系統可實現87%的成本削減。</p>
+        </div>
+        <div class="strategy-card" style="--card-accent: oklch(58% 0.18 145)">
+          <div class="card-num">02</div>
+          <div class="card-title">Prompt Caching</div>
+          <div class="card-saving">節省 60–90%</div>
+          <p class="card-body">儲存重複系統提示的KV計算結果。Claude快取命中折扣90%（僅需$0.30/M vs $3/M），OpenAI自動快取折扣50%。每日10萬次相同系統提示，每日可節省逾$2,600。</p>
+        </div>
+        <div class="strategy-card" style="--card-accent: oklch(68% 0.18 65)">
+          <div class="card-num">03</div>
+          <div class="card-title">Batch API</div>
+          <div class="card-saving">節省 50%（固定）</div>
+          <p class="card-body">非即時任務改用批量API，OpenAI與Anthropic均提供50%固定折扣，結果24小時內返回。文件處理、內容審核、夜間分析的最佳選擇。</p>
+        </div>
+        <div class="strategy-card" style="--card-accent: oklch(58% 0.22 25)">
+          <div class="card-num">04</div>
+          <div class="card-title">上下文壓縮</div>
+          <div class="card-saving">節省 50–70%</div>
+          <p class="card-body">在注入主提示前先萃取/摘要檢索內容。LLMLingua等工具可實現5至20倍壓縮同時保持或提升準確率。RAG系統的必備優化。</p>
+        </div>
+        <div class="strategy-card" style="--card-accent: oklch(60% 0.16 300)">
+          <div class="card-num">05</div>
+          <div class="card-title">輸出長度控制</div>
+          <div class="card-saving">節省 20–30%</div>
+          <p class="card-body">設定max_tokens限制，要求JSON結構化輸出而非散文。結構化輸出比等量文字描述少30–50%的Token，消除「當然，以下是您要求的分析……」式的廢話前綴。</p>
+        </div>
+      </div>
+
+      <!-- ─── Section 4：Prompt Caching Deep Dive ─── -->
+      <h2>四、Prompt Caching深度解剖</h2>
+
+      <h3>KV快取的工作原理</h3>
+      <p>每次LLM請求都要對輸入Token做注意力計算，生成鍵值對（KV pairs）。Prompt Caching將這些計算結果存起來，後續相同前綴的請求直接讀取快取，跳過重新計算。</p>
+
+      <h3>Claude vs OpenAI快取機制對比</h3>
+
+      <div class="table-wrap">
+        <table>
+          <thead>
+            <tr>
+              <th>特性</th>
+              <th>Claude Prompt Caching</th>
+              <th>OpenAI Prompt Caching</th>
+              <th>Gemini Context Caching</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>啟用方式</td>
+              <td>手動標記 cache_control</td>
+              <td>自動，無需代碼修改</td>
+              <td>手動建立Cache物件</td>
+            </tr>
+            <tr>
+              <td>最小快取長度</td>
+              <td>1,024 Token</td>
+              <td>1,024 Token（128-token粒度）</td>
+              <td>32,768 Token</td>
+            </tr>
+            <tr>
+              <td>快取命中折扣</td>
+              <td class="td-highlight">90%（僅付10%原價）</td>
+              <td>50%（付50%原價）</td>
+              <td>~90%（付~10%原價）</td>
+            </tr>
+            <tr>
+              <td>快取寫入成本</td>
+              <td>1.25× 或 2× 原始輸入價</td>
+              <td>無額外費用</td>
+              <td>有儲存費用（$/M Token/小時）</td>
+            </tr>
+            <tr>
+              <td>TTL選項</td>
+              <td>5分鐘 或 1小時</td>
+              <td>~5–10分鐘（自動管理）</td>
+              <td>自訂（分鐘至小時）</td>
+            </tr>
+            <tr>
+              <td>延遲改善</td>
+              <td>TTFT減少50–85%</td>
+              <td>TTFT減少50–85%</td>
+              <td>類似</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <h3>實際案例計算</h3>
+      <p>假設一個10,000 Token的系統提示，每天發送10萬次請求（使用Claude Sonnet 4.6）：</p>
+
+      <div class="formula-box">
+        <span class="comment">── 未使用快取 ──────────────────────────────────</span><br>
+        每日成本 = 100,000 次 × 10,000 Token × $3.00/M<br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; = <span class="highlight">$3,000 / 天</span><br>
+        <br>
+        <span class="comment">── 使用快取（90% 命中率）───────────────────────</span><br>
+        快取寫入（5分鐘TTL） = 10,000 Token × $3.75/M = <span class="num">$0.0375</span><br>
+        快取命中  = 90,000 次 × 10,000 Token × $0.30/M = <span class="num">$27.00</span><br>
+        快取未命中 = 10,000 次 × 10,000 Token × $3.00/M = <span class="num">$300.00</span><br>
+        每日成本合計 ≈ <span class="highlight">$327.04 / 天</span><br>
+        <br>
+        <span class="comment">── 節省：~89%（*假設流量集中於同一TTL窗口內）───</span>
+      </div>
+
+      <div class="callout success">
+        <div class="callout-label">真實案例</div>
+        <p>Anthropic的Claude Code本身在生產環境達到<strong>92%快取命中率</strong>，實現<strong>81%成本降低</strong>。快取+批量疊加使用，可將Claude Sonnet的有效輸入成本從$3.00/M壓縮到<strong>$0.15/M</strong>（原始定價的5%）。</p>
+      </div>
+
+      <!-- ─── Section 5：語義快取 ─── -->
+      <h2>五、進階策略：應用層語義快取</h2>
+
+      <p>除了API層的Prompt Caching，應用層還有一個強力武器：<strong>語義快取（Semantic Caching）</strong>。它使用向量相似度，對語義等價的查詢返回快取結果，即使措辭不同也能命中。</p>
+
+      <div class="trend-bar">
+        <div class="trend-row">
+          <div class="trend-label">完全相同查詢</div>
+          <div class="trend-track"><div class="trend-fill" style="width:18%;background:var(--color-danger)"></div></div>
+          <div class="trend-val">18% 命中</div>
+        </div>
+        <div class="trend-row">
+          <div class="trend-label">FAQ問答機器人</div>
+          <div class="trend-track"><div class="trend-fill" style="width:67%;background:var(--color-warning)"></div></div>
+          <div class="trend-val">61–68% 命中</div>
+        </div>
+        <div class="trend-row">
+          <div class="trend-label">混合工作負載</div>
+          <div class="trend-track"><div class="trend-fill" style="width:35%;background:var(--color-accent)"></div></div>
+          <div class="trend-val">20–45% 命中</div>
+        </div>
+      </div>
+
+      <p>一個生產案例（VentureBeat報導）：67%的語義快取命中率帶來了<strong>73%的成本削減</strong>，最高案例更達86%。延遲也從秒級（LLM推理）降至毫秒級（快取查詢），最高提升100倍。</p>
+
+      <!-- ─── Section 6：自建 vs 雲端 ─── -->
+      <h2>六、自建模型 vs 雲端API：成本平衡點分析</h2>
+
+      <p>當月度API費用突破某個門檻，自建推理基礎設施開始有成本優勢。但這道算術題比看起來複雜得多。</p>
+
+      <div class="table-wrap">
+        <table>
+          <thead>
+            <tr>
+              <th>規模</th>
+              <th>自建門檻</th>
+              <th>硬體成本/月</th>
+              <th>關鍵隱藏成本</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>小型（7B–13B）</td>
+              <td class="td-num">&gt; 2M Token/天</td>
+              <td class="td-num">$600–$3,000</td>
+              <td>GPU租金 + 運維人力</td>
+            </tr>
+            <tr>
+              <td>中型（30B–70B）</td>
+              <td class="td-num">&gt; 8,000 對話/天</td>
+              <td class="td-num">$15,000–$40,000</td>
+              <td>冷卻（佔電力成本40–54%）</td>
+            </tr>
+            <tr>
+              <td>企業級（100B+）</td>
+              <td class="td-num">&gt; $50,000/月 API費</td>
+              <td class="td-num">$50,000–$150,000+</td>
+              <td>人力成本佔TCO 70–80%</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <div class="callout warning">
+        <div class="callout-label">⚠ 自建的隱藏成本陷阱</div>
+        <p>研究顯示，自建LLM推理的人力成本（SRE、MLOps、模型更新）佔總擁有成本的<strong>70–80%</strong>。單純比較GPU費用 vs API費用的算法是嚴重低估了自建的真實成本。在沒有專職AI平台工程師的團隊，自建往往比看起來昂貴得多。</p>
+      </div>
+
+      <!-- ─── Section 7：ROI框架 ─── -->
+      <h2>七、ROI計算框架</h2>
+
+      <h3>基礎公式</h3>
+
+      <div class="formula-box">
+        <span class="comment">── 每月Token成本估算 ─────────────────────────</span><br>
+        月成本 = (平均輸入Token × 月請求量 × 輸入價格/M / 1,000,000)<br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;+ (平均輸出Token × 月請求量 × 輸出價格/M / 1,000,000)<br>
+        <br>
+        <span class="comment">── 加上快取後 ───────────────────────────────</span><br>
+        月成本 = (新鮮輸入Token × 月請求量 × 標準輸入價格/M / 1M)<br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;+ (快取命中Token × 月請求量 × 快取讀取價格/M / 1M)<br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;+ (平均輸出Token × 月請求量 × 輸出價格/M / 1M)<br>
+        <br>
+        <span class="comment">── 實際預算乘數：× 1.7（含成長、基礎設施、實驗緩衝）</span>
+      </div>
+
+      <h3>客服機器人完整ROI範例</h3>
+      <p>場景：每日10,000次查詢，替代第一線客服人員，使用Claude Haiku 4.5優化配置。</p>
+
+      <div class="table-wrap">
+        <table class="roi-table">
+          <thead>
+            <tr><th>費用項目</th><th>計算方式</th><th>月度金額</th></tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>LLM API費用（已優化）</td>
+              <td>10K次/天 × $0.0015 × 30天</td>
+              <td class="td-num">$450</td>
+            </tr>
+            <tr>
+              <td>基礎設施開銷</td>
+              <td>$450 × 30% 加成</td>
+              <td class="td-num">$135</td>
+            </tr>
+            <tr>
+              <td>監控/日誌</td>
+              <td>固定費用</td>
+              <td class="td-num">$100</td>
+            </tr>
+            <tr>
+              <td><strong>AI總月成本</strong></td>
+              <td></td>
+              <td class="td-num td-highlight"><strong>$685</strong></td>
+            </tr>
+            <tr>
+              <td>節省的人工時間</td>
+              <td>2,000小時 × $25/小時</td>
+              <td class="td-num" style="color:var(--color-success)">−$50,000節省</td>
+            </tr>
+          </tbody>
+          <tfoot>
+            <tr>
+              <td colspan="2">年化ROI</td>
+              <td class="td-num">7,200%</td>
+            </tr>
+          </tfoot>
+        </table>
+      </div>
+
+      <!-- ─── Section 8：複合疊加 ─── -->
+      <h2>八、優化槓桿的複合效應</h2>
+
+      <p>五個槓桿並非加法效果，而是乘法疊加。下表展示一個初始每次會話22.50美元的Agent應用，逐步優化後的軌跡：</p>
+
+      <div class="cost-compare">
+        <div class="cost-box">
+          <div class="cost-label">未優化基線</div>
+          <div class="cost-value before">$22.50</div>
+          <div class="cost-saving" style="color:var(--color-text-muted)">每次Agent會話</div>
+        </div>
+        <div class="cost-arrow">→</div>
+        <div class="cost-box">
+          <div class="cost-label">五槓桿全部啟用</div>
+          <div class="cost-value after">$2–3.50</div>
+          <div class="cost-saving">節省 84–91%</div>
+        </div>
+      </div>
+
+      <div class="table-wrap">
+        <table>
+          <thead>
+            <tr><th>優化步驟</th><th>個別節省</th><th>累計成本/會話</th></tr>
+          </thead>
+          <tbody>
+            <tr><td>基線</td><td>—</td><td class="td-num">$22.50</td></tr>
+            <tr><td>+ 模型分層路由</td><td>60–69%</td><td class="td-num">$7–9</td></tr>
+            <tr><td>+ 上下文壓縮</td><td>再降44–50%</td><td class="td-num">$3.50–5</td></tr>
+            <tr><td>+ Prompt Caching</td><td>再降30–40%</td><td class="td-num">$2.50–4</td></tr>
+            <tr><td>+ 批量API</td><td>再降50%（非即時部分）</td><td class="td-num">$2–3.50</td></tr>
+            <tr><td>+ 語義快取</td><td>依命中率</td><td class="td-num td-highlight">$1–2（命中率高時）</td></tr>
+          </tbody>
+        </table>
+      </div>
+
+      <!-- ─── Section 9：MoE與推測解碼 ─── -->
+      <h2>九、降價加速器：MoE與推測解碼</h2>
+
+      <h3>混合專家（MoE）架構的成本意涵</h3>
+      <p>DeepSeek V3證明了MoE的威力：671B總參數，每次前向傳播只激活~37B個參數。推理成本等同於37B稠密模型，但效果媲美GPT-4o。這已開始迫使所有主要供應商加速自家的效率工程。</p>
+
+      <h3>推測解碼（Speculative Decoding）</h3>
+      <p>小型「草稿模型」並行提議多個Token，大型「驗證模型」一次確認或拒絕，接受的Token無需順序生成。2025年，推測解碼已從研究轉為生產標準。vLLM和TensorRT-LLM均原生支持。NVIDIA在H200 GPU上展示了<strong>3.6倍吞吐量提升</strong>——對自建推理用戶而言，等效降低50–67%的每Token成本。</p>
+
+      <!-- ─── 結語 ─── -->
+      <div class="section-divider">結語</div>
+      <h2>十、行動清單：下週就能做的優化</h2>
+
+      <ul class="tip-list">
+        <li>盤點當前API帳單結構，確認輸入/輸出Token各佔多少</li>
+        <li>檢查系統提示長度——若超過1,000 Token且高頻重複，立即啟用Prompt Caching</li>
+        <li>評估查詢複雜度分布，是否80%的請求可以降級到輕量模型</li>
+        <li>將非即時任務（文件處理、批次分析）遷移到Batch API</li>
+        <li>在RAG應用中加入上下文壓縮層，目標削減30–50%的檢索Token</li>
+        <li>所有API輸出改為結構化JSON，消除散文廢話，節省20–30%輸出Token</li>
+        <li>在FAQ/分類場景評估語義快取，高命中率場景ROI極高</li>
+        <li>建立Token成本監控儀表板，每日追蹤各接口消耗趨勢</li>
+      </ul>
+
+      <blockquote>
+        <p>LLM成本管理不是一次性配置，而是持續的系統工程。隨著推理成本持續下降，今日的奢侈在明日可能是常態——但不懂得優化的團隊，永遠在為低效率付費。</p>
+      </blockquote>
+
+    </div>
+  </main>
+
+  <!-- ── Footer ── -->
+  <footer>
+    <div class="container">
+      <div class="footer-title">資料來源與延伸閱讀</div>
+      <p style="font-size:var(--text-sm);margin-bottom:1rem">本文所有定價數據截至2025年第一季，已通過官方文件交叉驗證。</p>
+      <ul class="sources-list">
+        <li>Anthropic API Pricing — platform.claude.com/docs/en/about-claude/pricing</li>
+        <li>OpenAI API Pricing — openai.com/api/pricing/</li>
+        <li>Google Gemini Pricing — ai.google.dev/gemini-api/docs/pricing</li>
+        <li>Epoch AI LLM Inference Price Trends — epoch.ai/data-insights/llm-inference-price-trends</li>
+        <li>Anthropic Prompt Caching Docs — platform.claude.com/docs/en/build-with-claude/prompt-caching</li>
+        <li>LLM Cost Optimization: 5 Levers — morphllm.com/llm-cost-optimization</li>
+        <li>Semantic Caching: 73% Cost Reduction — VentureBeat, 2024</li>
+        <li>LLMflation: LLM Inference Cost — a16z, 2024</li>
+        <li>Speculative Decoding Guide 2025 — introl.com/blog/speculative-decoding</li>
+        <li>DeepSeek Inference Cost Explained — intuitionlabs.ai</li>
+      </ul>
+    </div>
+  </footer>
+
+</body>
+</html>
