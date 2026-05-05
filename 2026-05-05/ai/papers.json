@@ -1,0 +1,879 @@
+{
+  "domain": "AI",
+  "date": "2026-05-05",
+  "count": 30,
+  "papers": [
+    {
+      "id": "2605.02888",
+      "title": "SpecKV: Adaptive Speculative Decoding with Compression-Aware Gamma Selection",
+      "abstract": "Speculative decoding accelerates large language model (LLM) inference by using a small draft model to propose candidate tokens that a larger target model verifies. A critical hyperparameter in this process is the speculation length~$\u03b3$, which determines how many tokens the draft model proposes per step. Nearly all existing systems use a fixed~$\u03b3$ (typically~4), yet empirical evidence suggests that the optimal value varies across task types and, crucially, depends on the compression level applied to the target model. In this paper, we present \\textbf{SpecKV}, a lightweight adaptive controller that selects~$\u03b3$ per speculation step using signals extracted from the draft model itself. We profile speculative decoding across 4~task categories, 4~speculation lengths, and 3~compression levels (FP16, INT8, NF4), collecting 5,112 step-level records with per-step acceptance rates, draft entropy, and draft confidence. We demonstrate that the optimal~$\u03b3$ shifts across compression regimes and that draft model confidence and entropy are strong predictors of acceptance rate (correlation~$\\approx 0.56$). SpecKV uses a small MLP trained on these signals to maximize expected tokens per speculation step, achieving a 56.0\\% improvement over the fixed-$\u03b3$=4 baseline with only 0.34\\,ms overhead per decision ($<$0.5\\% of step time). The improvement is statistically significant ($p < 0.001$, paired bootstrap test). We release all profiling data, trained models, and notebooks as open-source artifacts.",
+      "authors": [
+        "Shikhar Shukla"
+      ],
+      "published": "2026-05-04T17:55:05Z",
+      "updated": "2026-05-04T17:55:05Z",
+      "url": "https://arxiv.org/abs/2605.02888",
+      "pdf_url": "https://arxiv.org/pdf/2605.02888.pdf",
+      "primary_category": "cs.LG",
+      "categories": [
+        "cs.LG",
+        "cs.AI",
+        "cs.CL",
+        "cs.DC",
+        "eess.SY"
+      ],
+      "tags": [
+        "cs.AI",
+        "cs.CL",
+        "cs.DC",
+        "cs.LG",
+        "eess.SY"
+      ],
+      "domain": "AI",
+      "pdf_downloaded": true,
+      "pdf_size_bytes": 1104788,
+      "pdf_path": "2026-05-05/ai/2605.02888.pdf"
+    },
+    {
+      "id": "2605.02884",
+      "title": "Unsupervised Machine Learning for Detecting Structural Anomalies in European Regional Statistics",
+      "abstract": "Ensuring the coherence of regional socio-economic statistics is a central task for national statistical institutes. Traditional validation tools, such as range edits, ratio checks, or univariate outlier detection, are effective for identifying extreme values in individual series but are less suited for detecting unusual combinations of indicators in high-dimensional settings. This paper proposes an unsupervised machine learning framework for identifying structurally atypical regional profiles within Europe using publicly available Eurostat data. We construct a cross-sectional dataset of NUTS2 regions (2022) covering four key indicators: GDP per capita in PPS, unemployment rate, tertiary educational attainment, and population density. We apply and compare five anomaly detection techniques, univariate z-scores, Mahalanobis distance, Isolation Forest, Local Outlier Factor, and One-Class SVM, and classify a region as a structural anomaly if it is flagged by at least three of the five methods. The findings show that machine learning methods identify a consistent set of regions whose multivariate profiles diverge substantially from the EU-wide pattern. These include both highly developed metropolitan economies (Brussels, Vienna, Berlin, Prague) and regions with persistent socio-economic disadvantages (Central and Western Slovakia, Northern Hungary, Castilla-La Mancha, Extremadura), as well as Istanbul, whose profile differs markedly from EU capital regions. Importantly, these anomalies do not necessarily signal data quality issues; rather, they reflect meaningful structural divergence that warrants analytical or policy attention. The proposed framework is fully reproducible, scalable, and compatible with existing validation workflows, offering a flexible tool for early detection of unusual regional configurations within the European Statistical System.",
+      "authors": [
+        "Bogdan Oancea"
+      ],
+      "published": "2026-05-04T17:54:36Z",
+      "updated": "2026-05-04T17:54:36Z",
+      "url": "https://arxiv.org/abs/2605.02884",
+      "pdf_url": "https://arxiv.org/pdf/2605.02884.pdf",
+      "primary_category": "cs.LG",
+      "categories": [
+        "cs.LG"
+      ],
+      "tags": [
+        "cs.LG"
+      ],
+      "domain": "AI",
+      "pdf_downloaded": true,
+      "pdf_size_bytes": 549251,
+      "pdf_path": "2026-05-05/ai/2605.02884.pdf"
+    },
+    {
+      "id": "2605.02871",
+      "title": "Multi-fidelity surrogates for mechanics of composites: from co-kriging to multi-fidelity neural networks",
+      "abstract": "Composite materials exhibit strongly hierarchical and anisotropic properties governed by coupled mechanisms spanning constituents, plies, laminates, structures, and manufacturing history. This intrinsic complexity makes predictive modeling of composites expensive, because repeated experiments and high-fidelity simulations are needed to cover large design spaces of material, structure, and manufacturing. Multi-fidelity surrogate modeling addresses this challenge by combining abundant, less expensive data with limited high-accuracy data to recover reliable high-fidelity predictions. This review presents a structured overview of multi-fidelity modeling for composite mechanics, covering Gaussian-process or Kriging-based methods, including co-Kriging, coregionalization models, autoregressive formulations, nonlinear autoregressive Gaussian processes, multi-fidelity deep Gaussian processes, and multi-fidelity neural networks. Their distinctions are examined in terms of cross-fidelity correlation, discrepancy representation, uncertainty quantification, and scalability. Selected examples of their applications to composites are introduced according to the roles that multi-fidelity surrogates play in engineering problems, including forward prediction for rapid exploration of material design spaces, inverse optimization for composite parameter identification and design search under limited high-fidelity access, and workflow integration, where heterogeneous data sources, constraints, and validation requirements determine model utility. Open question discussions highlight recurring challenges specific to composites, such as regime-dependent fidelity gaps associated with nonlinear damage and manufacturing history, mismatches between simulations and experiments, and uncertainty propagation across multi-fidelity models.",
+      "authors": [
+        "Haizhou Wen",
+        "Elham Kiyani",
+        "Gang Li",
+        "Srikanth Pilla",
+        "George Em Karniadakis",
+        "Zhen Li"
+      ],
+      "published": "2026-05-04T17:45:47Z",
+      "updated": "2026-05-04T17:45:47Z",
+      "url": "https://arxiv.org/abs/2605.02871",
+      "pdf_url": "https://arxiv.org/pdf/2605.02871.pdf",
+      "primary_category": "physics.comp-ph",
+      "categories": [
+        "physics.comp-ph",
+        "cs.LG"
+      ],
+      "tags": [
+        "cs.LG",
+        "physics.comp-ph"
+      ],
+      "domain": "AI",
+      "pdf_downloaded": false,
+      "pdf_size_bytes": null,
+      "pdf_path": null
+    },
+    {
+      "id": "2605.02867",
+      "title": "Enhancing RL Generalizability in Robotics through SHAP Analysis of Algorithms and Hyperparameters",
+      "abstract": "Despite significant advances in Reinforcement Learning (RL), model performance remains highly sensitive to algorithm and hyperparameter configurations, while generalization gaps across environments complicate real-world deployment. Although prior work has studied RL generalization, the relative contribution of specific configurations to the generalization gap has not been quantitatively decomposed and systematically leveraged for configuration selection. To address this limitation, we propose an explainable framework that evaluates RL performance across robotic environments using SHapley Additive exPlanations (SHAP) to quantify configuration impacts. We establish a theoretical foundation connecting Shapley values to generalizability, empirically analyze configuration impact patterns, and introduce SHAP-guided configuration selection to enhance generalization. Our results reveal distinct patterns across algorithms and hyperparameters, with consistent configuration impacts across diverse tasks and environments. By applying these insights to configuration selection, we achieve improved RL generalizability and provide actionable guidance for practitioners.",
+      "authors": [
+        "Lingxiao Kong",
+        "Cong Yang",
+        "Oya Deniz Beyan",
+        "Zeyd Boukhers"
+      ],
+      "published": "2026-05-04T17:41:04Z",
+      "updated": "2026-05-04T17:41:04Z",
+      "url": "https://arxiv.org/abs/2605.02867",
+      "pdf_url": "https://arxiv.org/pdf/2605.02867.pdf",
+      "primary_category": "cs.LG",
+      "categories": [
+        "cs.LG",
+        "cs.AI",
+        "cs.RO"
+      ],
+      "tags": [
+        "cs.AI",
+        "cs.LG",
+        "cs.RO"
+      ],
+      "domain": "AI",
+      "pdf_downloaded": true,
+      "pdf_size_bytes": 2310194,
+      "pdf_path": "2026-05-05/ai/2605.02867.pdf"
+    },
+    {
+      "id": "2605.02860",
+      "title": "Standing on the Shoulders of Giants: Stabilized Knowledge Distillation for Cross--Language Code Clone Detection",
+      "abstract": "Cross-language code clone detection (X-CCD) is challenging because semantically equivalent programs written in different languages often share little surface similarity. Although large language models (LLMs) have shown promise for semantic clone detection, their use as black-box systems raises concerns about cost, reproducibility, privacy, and unreliable output formatting. In particular, compact open-source models often struggle to follow reasoning-oriented prompts and to produce outputs that can be consistently mapped to binary clone labels. To address these limitations, we propose a knowledge distillation framework that transfers reasoning capabilities from DeepSeek-R1 into compact open-source student models for X-CCD. Using cross-language code pairs derived from Project CodeNet, we construct reasoning-oriented synthetic training data and fine-tune Phi3 and Qwen-Coder with LoRA adapters. We further introduce response stabilization methods, including forced conclusion prompting, a binary classification head, and a contrastive classification head, and evaluate model behavior using both predictive metrics and response rate. Experiments on Python--Java, Rust--Java, Rust--Python, and Rust--Ruby show that knowledge distillation consistently improves the reliability of compact models and often improves predictive performance, especially under distribution shift. In addition, classification-head variants substantially reduce inference time compared to generation-based inference. Overall, our results show that reasoning-oriented distillation combined with response stabilization makes compact open-source models more practical and reliable for X-CCD detection.",
+      "authors": [
+        "Mohamad Khajezade",
+        "Fatemeh H. Fard",
+        "Mohamed Sami Shehata"
+      ],
+      "published": "2026-05-04T17:37:16Z",
+      "updated": "2026-05-04T17:37:16Z",
+      "url": "https://arxiv.org/abs/2605.02860",
+      "pdf_url": "https://arxiv.org/pdf/2605.02860.pdf",
+      "primary_category": "cs.AI",
+      "categories": [
+        "cs.AI",
+        "cs.LG",
+        "cs.SE"
+      ],
+      "tags": [
+        "cs.AI",
+        "cs.LG",
+        "cs.SE"
+      ],
+      "domain": "AI",
+      "pdf_downloaded": true,
+      "pdf_size_bytes": 2335558,
+      "pdf_path": "2026-05-05/ai/2605.02860.pdf"
+    },
+    {
+      "id": "2605.02859",
+      "title": "From Sensors to Insight: Rapid, Edge-to-Core Application Development for Sensor-Driven Applications",
+      "abstract": "Scientists increasingly rely on sensor-based data, yet transforming raw streams into insights across the edge-to-cloud continuum remains difficult. Provisioning heterogeneous infrastructure and managing execution on emerging platforms like Data Processing Units typically requires cross-domain expertise, creating significant barriers to rapid prototyping. This paper introduces an experience-driven methodology for the rapid development of sensor-driven applications. By combining pattern-based workflow engineering with AI-assisted development-implemented via Pegasus on the FABRIC testbed - we utilize an existing Orcasound hydrophone workflow as a reusable template. We introduce a pattern-based engineering methodology to generate and refine workflows for air quality, earthquake, and soil moisture monitoring. Furthermore, we show how these abstract structures are extended to edge resources through modular configuration and placement. Our evaluation focuses on user productivity and practical lessons rather than peak performance. Through these case studies, we illustrate how AI-assisted, pattern-based development lowers the entry barrier for non-experts and enables iterative exploration of sensor-driven applications across distributed infrastructures.",
+      "authors": [
+        "Komal Thareja",
+        "Anirban Mandal",
+        "Ewa Deelman"
+      ],
+      "published": "2026-05-04T17:36:42Z",
+      "updated": "2026-05-04T17:36:42Z",
+      "url": "https://arxiv.org/abs/2605.02859",
+      "pdf_url": "https://arxiv.org/pdf/2605.02859.pdf",
+      "primary_category": "cs.DC",
+      "categories": [
+        "cs.DC",
+        "cs.AI",
+        "cs.SE"
+      ],
+      "tags": [
+        "cs.AI",
+        "cs.DC",
+        "cs.SE"
+      ],
+      "domain": "AI",
+      "pdf_downloaded": true,
+      "pdf_size_bytes": 5805214,
+      "pdf_path": "2026-05-05/ai/2605.02859.pdf"
+    },
+    {
+      "id": "2605.02853",
+      "title": "Trust, but Verify: Peeling Low-Bit Transformer Networks for Training Monitoring",
+      "abstract": "Understanding whether deep neural networks are effectively optimized remains challenging, as training occurs in highly nonconvex landscapes and standard metrics provide limited visibility into layer-wise learning quality. This challenge is particularly acute for transformer-based language models, where training is expensive, models are often reused in frozen form, and poorly optimized layers can silently degrade performance. We propose a layer-wise peeling framework for monitoring training dynamics, in which each transformer layer is locally optimized against intermediate representations of the trained model. By constructing lightweight, layer-specific reference solutions and projecting layers onto multiple intermediate outputs via different permutations, we obtain achievable baselines that enable fine-grained diagnosis of under-optimized layers. Experiments on decoder-only transformer models show that these layer-wise reference bounds can match or even surpass the trained model at various stages of training, exposing inefficiencies that remain hidden in aggregate loss curves. We further demonstrate that this analysis remains effective under binarization and quantized settings, where training dynamics are particularly fragile. Across all numerical results, the proposed bounds consistently separate apparent convergence from effective optimality, highlighting optimization opportunities that are invisible when relying on training loss alone.",
+      "authors": [
+        "Arian Eamaz",
+        "Farhang Yeganegi",
+        "Mojtaba Soltanalian"
+      ],
+      "published": "2026-05-04T17:30:50Z",
+      "updated": "2026-05-04T17:30:50Z",
+      "url": "https://arxiv.org/abs/2605.02853",
+      "pdf_url": "https://arxiv.org/pdf/2605.02853.pdf",
+      "primary_category": "cs.LG",
+      "categories": [
+        "cs.LG"
+      ],
+      "tags": [
+        "cs.LG"
+      ],
+      "domain": "AI",
+      "pdf_downloaded": true,
+      "pdf_size_bytes": 924070,
+      "pdf_path": "2026-05-05/ai/2605.02853.pdf"
+    },
+    {
+      "id": "2605.02844",
+      "title": "(POSTER) From Sensors to Insight: Rapid, Edge-to-Core Application Development for Sensor-Driven Applications",
+      "abstract": "Scientists increasingly rely on sensor-based data; however transforming raw streams into insights across the edge-to-cloud continuum remains difficult due to the breadth of expertise required to coordinate the necessary data and computation flow. This paper introduces a pattern-based, AI-assisted methodology for rapid development of sensor-driven applications. Using Pegasus workflows executing on the FABRIC testbed, we demonstrate a 5-step development loop that shifts workflow construction and deployment from code-first to intent-first design. Starting from an existing Orcasound hydrophone workflow as a reusable template, we generate and refine workflows for air quality, earthquake, and soil moisture monitoring applications. We further show how these workflows extend to edge resources-including BlueField-3 DPUs and Raspberry Pis-through configuration and placement rather than workflow redesign. Our evaluation, from the perspective of a novice Pegasus user, shows that AI-assisted pattern reuse compresses multi-stage workflow development to 1-1.5 days per workflow while preserving the rigor and portability of workflow-based execution.",
+      "authors": [
+        "Komal Thareja",
+        "Anirban Mandal",
+        "Ewa Deelman"
+      ],
+      "published": "2026-05-04T17:21:37Z",
+      "updated": "2026-05-04T17:21:37Z",
+      "url": "https://arxiv.org/abs/2605.02844",
+      "pdf_url": "https://arxiv.org/pdf/2605.02844.pdf",
+      "primary_category": "cs.DC",
+      "categories": [
+        "cs.DC",
+        "cs.AI",
+        "cs.SE"
+      ],
+      "tags": [
+        "cs.AI",
+        "cs.DC",
+        "cs.SE"
+      ],
+      "domain": "AI",
+      "pdf_downloaded": true,
+      "pdf_size_bytes": 2887865,
+      "pdf_path": "2026-05-05/ai/2605.02844.pdf"
+    },
+    {
+      "id": "2605.02838",
+      "title": "A second-order method on the Stiefel manifold via Newton$\\unicode{x2013}$Schulz",
+      "abstract": "Retraction-free approaches offer attractive low-cost alternatives to Riemannian methods on the Stiefel manifold, but they are often first-order, which may limit the efficiency under high-accuracy requirements. To this end, we propose a second-order method landing on the Stiefel manifold without invoking retractions, which is proved to enjoy local quadratic (or superlinear for its inexact variant) convergence. The update consists of the sum of (i) a component tangent to the level set of the constraint-defining function that aims to reduce the objective and (ii) a component normal to the same level set that reduces the infeasibility. Specifically, we construct the normal component via Newton$\\unicode{x2013}$Schulz, a fixed-point iteration for orthogonalization. Moreover, we establish a geometric connection between the Newton$\\unicode{x2013}$Schulz iteration and Stiefel manifolds, in which Newton$\\unicode{x2013}$Schulz moves along the normal space. For the tangent component, we formulate a modified Newton equation that incorporates Newton$\\unicode{x2013}$Schulz. Numerical experiments on the orthogonal Procrustes problem, principal component analysis, and real-data independent component analysis illustrate that the proposed method performs better than the existing methods.",
+      "authors": [
+        "Xinhui Xiong",
+        "Bin Gao",
+        "P. -A. Absil"
+      ],
+      "published": "2026-05-04T17:18:11Z",
+      "updated": "2026-05-04T17:18:11Z",
+      "url": "https://arxiv.org/abs/2605.02838",
+      "pdf_url": "https://arxiv.org/pdf/2605.02838.pdf",
+      "primary_category": "math.OC",
+      "categories": [
+        "math.OC",
+        "cs.AI",
+        "cs.LG",
+        "math.NA"
+      ],
+      "tags": [
+        "cs.AI",
+        "cs.LG",
+        "math.NA",
+        "math.OC"
+      ],
+      "domain": "AI",
+      "pdf_downloaded": true,
+      "pdf_size_bytes": 840272,
+      "pdf_path": "2026-05-05/ai/2605.02838.pdf"
+    },
+    {
+      "id": "2605.02836",
+      "title": "A Closed-Form Persistence-Landmark Pipeline for Certified Point-Cloud and Graph Classification",
+      "abstract": "We introduce PLACE (Persistence-Landmark Analytic Classification Engine), a closed-form pipeline for classifying point clouds and graphs through their persistent-homology signatures. Three quantitative guarantees -- a margin-based excess-risk rate, a closed-form descriptor-selection rule, and a per-prediction certificate -- are derived from training labels alone, with no learned weights or held-out calibration. The embedding sums Mitra-Virk single-point coordinate functions over a sparse landmark grid; closed-form weights maximize a structural distortion constant $\u03bb(\u03bd)$ (a Lipschitz lower bound on $\\mathcal{D}_n$ under non-interference). (i) An $O(kR/(\u0394\\sqrt{m_{\\min}}))$ margin bound, driven by class-mean separation $\u0394$ and embedding radius $R$, matched by a sample-starved minimax lower bound. (ii) The Mahalanobis margin under Ledoit-Wolf-shrunk covariance is the strongest closed-form descriptor selector on a heterogeneous 64-descriptor chemical-graph pool (mean Spearman $\u03c1\\approx +0.54$ across 10 benchmarks, positive on 9 of 10); the isotropic surrogate $\u0394/\\sqrt\\ell$ admits a closed-form selection-consistency rate on homogeneous (14-15 descriptor) protein/social pools. (iii) A training-time-decided certificate with no per-prediction overhead, in non-asymptotic Pinelis and asymptotic Gaussian plug-in forms. Empirically, PLACE is the strongest diagram-based method on Orbit5k and matches the strongest topology-based baseline within statistical noise on MUTAG and COX2. The remaining gaps fall into two diagnosable regimes: descriptor blindness on NCI1/NCI109, and pool-coverage limits elsewhere. Both radii exceed the firing threshold $\\hat\u0394/2$ on every benchmark at our training-set sizes, dominated by the $\\sqrt\\ell$ scaling of the multivariate-norm bound; the per-prediction certificate is constructive but not yet operational at these sizes.",
+      "authors": [
+        "Sushovan Majhi",
+        "Atish Mitra",
+        "\u017diga Virk",
+        "Pramita Bagchi"
+      ],
+      "published": "2026-05-04T17:15:01Z",
+      "updated": "2026-05-04T17:15:01Z",
+      "url": "https://arxiv.org/abs/2605.02836",
+      "pdf_url": "https://arxiv.org/pdf/2605.02836.pdf",
+      "primary_category": "cs.LG",
+      "categories": [
+        "cs.LG",
+        "math.AT"
+      ],
+      "tags": [
+        "cs.LG",
+        "math.AT"
+      ],
+      "domain": "AI",
+      "pdf_downloaded": true,
+      "pdf_size_bytes": 1069388,
+      "pdf_path": "2026-05-05/ai/2605.02836.pdf"
+    },
+    {
+      "id": "2605.02834",
+      "title": "VideoNet: A Large-Scale Dataset for Domain-Specific Action Recognition",
+      "abstract": "Videos are unique in their ability to capture actions which transcend multiple frames. Accordingly, for many years action recognition was the quintessential task for video understanding. Unfortunately, due to a lack of sufficiently diverse and challenging data, modern vision-language models (VLMs) are no longer evaluated on their action recognition capabilities. To revitalize action recognition in the era of VLMs, we advocate for a returned focus on domain-specific actions. To this end, we introduce VideoNet, a domain-specific action recognition benchmark covering 1,000 distinct actions from 37 domains. We begin with a multiple-choice evaluation setting, where the difference between closed and open models is stark: Gemini 3.1 Pro attains 69.9% accuracy while Qwen3-VL-8B gets a mere 45.0%. To understand why VLMs struggle on VideoNet, we relax the questions into a binary setting, where random chance is 50%. Still, Qwen achieves only 59.2% accuracy. Further relaxing the evaluation setup, we provide $k\\in\\{1,2,3\\}$ in-context examples of the action. Some models excel in the few-shot setting, while others falter; Qwen improves $+7.0\\%$, while Gemini declines $-4.8\\%$. Notably, these gains fall short of the $+13.6\\%$ improvement in non-expert humans when given few-shot examples. Finding that VLMs struggle to fully exploit in-context examples, we shift from test-time improvements to the training side. We collect the first large-scale training dataset for domain-specific actions, totaling nearly 500k video question-answer pairs. Fine-tuning a Molmo2-4B model on our data, we surpass all open-weight 8B models on the VideoNet benchmark.",
+      "authors": [
+        "Tanush Yadav",
+        "Mohammadreza Salehi",
+        "Jae Sung Park",
+        "Vivek Ramanujan",
+        "Hannaneh Hajishirzi",
+        "Yejin Choi",
+        "Ali Farhadi",
+        "Rohun Tripathi",
+        "Ranjay Krishna"
+      ],
+      "published": "2026-05-04T17:11:16Z",
+      "updated": "2026-05-04T17:11:16Z",
+      "url": "https://arxiv.org/abs/2605.02834",
+      "pdf_url": "https://arxiv.org/pdf/2605.02834.pdf",
+      "primary_category": "cs.CV",
+      "categories": [
+        "cs.CV",
+        "cs.LG"
+      ],
+      "tags": [
+        "cs.CV",
+        "cs.LG"
+      ],
+      "domain": "AI",
+      "pdf_downloaded": false,
+      "pdf_size_bytes": null,
+      "pdf_path": null
+    },
+    {
+      "id": "2605.02832",
+      "title": "HAAS: A Policy-Aware Framework for Adaptive Task Allocation Between Humans and Artificial Intelligence Systems",
+      "abstract": "Deciding how to distribute work between humans and AI systems is a central challenge in organisational design. Most approaches treat this as a binary choice, yet the operational reality is richer: humans and AI routinely share tasks or take complementary roles depending on context, fatigue, and the stakes involved. Governing that distribution -- balancing efficiency, oversight, and human capability -- remains an open problem. This paper presents Human-AI Adaptive Symbiosis (HAAS), an implemented framework for adaptive task allocation in software engineering and manufacturing. HAAS combines two coupled components: a rule-based expert system that enforces governance constraints before any learning occurs, and a contextual-bandit learner that selects among feasible collaboration modes from outcome feedback. Task-agent fit is represented through five auditable cognitive dimensions and a five-mode autonomy spectrum -- from human-only to fully autonomous -- embedded in a reproducible benchmark spanning both domains. Three empirical findings emerge. First, governance is not a binary switch but a tunable design variable: tighter constraints predictably convert autonomous AI assignments into supervised collaborations, with domain-specific costs and benefits. Second, in manufacturing, stronger governance can improve operational performance and reduce fatigue simultaneously -- a workload-buffering effect that contradicts the usual framing of governance as pure overhead. Third, no single governance setting dominates across all contexts; moderate governance becomes increasingly competitive as the learner accumulates experience within the governed action space. Together, these findings position HAAS as a pre-deployment workbench for comparing and inspecting human--AI allocation policies before organisational commitment.",
+      "authors": [
+        "Vicente Pelechanoa",
+        "Antoni Mestre",
+        "Manoli Albert",
+        "Miriam Gil"
+      ],
+      "published": "2026-05-04T17:09:21Z",
+      "updated": "2026-05-04T17:09:21Z",
+      "url": "https://arxiv.org/abs/2605.02832",
+      "pdf_url": "https://arxiv.org/pdf/2605.02832.pdf",
+      "primary_category": "cs.AI",
+      "categories": [
+        "cs.AI",
+        "cs.HC",
+        "cs.SE"
+      ],
+      "tags": [
+        "cs.AI",
+        "cs.HC",
+        "cs.SE"
+      ],
+      "domain": "AI",
+      "pdf_downloaded": true,
+      "pdf_size_bytes": 2451592,
+      "pdf_path": "2026-05-05/ai/2605.02832.pdf"
+    },
+    {
+      "id": "2605.02829",
+      "title": "Compress Then Adapt? No, Do It Together via Task-aware Union of Subspaces",
+      "abstract": "Adapting large pretrained models to diverse tasks is now routine, yet the two dominant strategies of parameter-efficient fine-tuning (PEFT) and low-rank compression are typically composed in sequence. This decoupled practice first compresses and then fine-tunes adapters, potentially misaligning the compressed subspace with downstream objectives and squandering a global parameter budget. To overcome this limitation, we introduce JACTUS (Joint Adaptation and Compression with a Task-aware Union of Subspaces), a single framework that unifies compression and adaptation. From a small calibration set, JACTUS estimates input and pre-activation gradient covariances, forms their orthogonal union with the pretrained weight subspace, performs a projected low-rank approximation inside this union, allocates rank globally by marginal gain per parameter, and trains only a compact core matrix. This explicitly mitigates the potential misalignment between the compressed subspace and downstream objectives by coupling the directions preserved for compression with those required for adaptation, yielding a deployable low-rank model that avoids retaining full frozen weights while enabling fast and robust tuning. On vision, JACTUS attains an average 89.2% accuracy on ViT-Base across eight datasets at 80% retained parameters, surpassing strong 100% PEFT baselines (e.g., DoRA 87.9%). On language, JACTUS achieves an 80.9% average on Llama2-7B commonsense QA at the same 80% retained-parameter budget, outperforming 100% PEFT (e.g., DoRA 79.7%) and exceeding prior compress-then-finetune pipelines under the same ratained-parameter budget. We will release code.",
+      "authors": [
+        "Jingze Ge",
+        "Yun Liu",
+        "Xue Geng",
+        "Wanqi Dong",
+        "Wang Zhe Mark",
+        "Min Wu",
+        "Xulei Yang"
+      ],
+      "published": "2026-05-04T17:05:45Z",
+      "updated": "2026-05-04T17:05:45Z",
+      "url": "https://arxiv.org/abs/2605.02829",
+      "pdf_url": "https://arxiv.org/pdf/2605.02829.pdf",
+      "primary_category": "cs.AI",
+      "categories": [
+        "cs.AI"
+      ],
+      "tags": [
+        "cs.AI"
+      ],
+      "domain": "AI",
+      "pdf_downloaded": true,
+      "pdf_size_bytes": 2170165,
+      "pdf_path": "2026-05-05/ai/2605.02829.pdf"
+    },
+    {
+      "id": "2605.02827",
+      "title": "First-Order Efficiency for Probabilistic Value Estimation via A Statistical Viewpoint",
+      "abstract": "Probabilistic values, including Shapley values and semivalues, provide a model-agnostic framework to attribute the behavior of a black-box model to data points or features, with a wide range of applications including explainable artificial intelligence and data valuation. However, their exact computation requires utility evaluations over exponentially many coalitions, making Monte Carlo approximation essential in modern machine learning applications. Existing estimators are often developed through different identification strategies, including weighted averages, self-normalized weighting, regression adjustment, and weighted least squares. Our key observation is that these seemingly distinct constructions share a common first-order error structure, in which the leading term is an augmented inverse-probability weighted influence term determined by the sampling law and a working surrogate function. This first-order representation yields an explicit expression for the leading mean squared error (MSE), which characterizes how the sampling law and the surrogate jointly determine statistical efficiency. Guided by this criterion, we propose an Efficiency-Aware Surrogate-adjusted Estimator (EASE) that directly chooses the sampling law and surrogate to minimize the first-order MSE. We demonstrate that EASE consistently outperforms state-of-the-art estimators for various probabilistic values.",
+      "authors": [
+        "Ziqi Liu",
+        "Kiljae Lee",
+        "Yuan Zhang",
+        "Weijing Tang"
+      ],
+      "published": "2026-05-04T17:02:17Z",
+      "updated": "2026-05-04T17:02:17Z",
+      "url": "https://arxiv.org/abs/2605.02827",
+      "pdf_url": "https://arxiv.org/pdf/2605.02827.pdf",
+      "primary_category": "cs.AI",
+      "categories": [
+        "cs.AI",
+        "stat.ME",
+        "stat.ML"
+      ],
+      "tags": [
+        "cs.AI",
+        "stat.ME",
+        "stat.ML"
+      ],
+      "domain": "AI",
+      "pdf_downloaded": true,
+      "pdf_size_bytes": 2102711,
+      "pdf_path": "2026-05-05/ai/2605.02827.pdf"
+    },
+    {
+      "id": "2605.02825",
+      "title": "The Bayesian Reflex: Online Learning as the Autonomic Nervous System of Modern and Future AI",
+      "abstract": "This chapter introduces the Bayesian reflex -- an analogy with the autonomic nervous system -- as a unifying framework for online learning in AI. Bayesian online algorithms automatically maintain equilibrium in dynamic environments via three mechanisms: belief maintenance through probabilistic representations, sequential updating via Bayes' theorem, and uncertainty-driven action balancing exploration and exploitation. We survey online Bayesian methods, highlighting two computational principles: the look-up table principle for sequential inference in function space, and the ellipsoidal decomposition framework for nearly exact i.i.d. sampling from arbitrary posteriors. These principles are generalized across dynamic emulation, nonparametric state-space models, circular time series, inverse regression for climate model evaluation, and deep architectures via Recursive Gaussian Processes. Decision-making is explored via Thompson sampling and restless bandits. We extend the framework to assess infinite series convergence (applied to climate dynamics and the Riemann Hypothesis), model prime number distributions leading to the discovery of 184 strong Mersenne prime candidates, detect stationarity, and characterize point processes. The Bayesian reflex provides a foundational infrastructure for adaptive AI that continuously learns in a complex world.",
+      "authors": [
+        "Durba Bhattacharya",
+        "Sucharita Roy",
+        "Sourabh Bhattacharya"
+      ],
+      "published": "2026-05-04T17:01:49Z",
+      "updated": "2026-05-04T17:01:49Z",
+      "url": "https://arxiv.org/abs/2605.02825",
+      "pdf_url": "https://arxiv.org/pdf/2605.02825.pdf",
+      "primary_category": "stat.ME",
+      "categories": [
+        "stat.ME",
+        "stat.ML"
+      ],
+      "tags": [
+        "stat.ME",
+        "stat.ML"
+      ],
+      "domain": "AI",
+      "pdf_downloaded": true,
+      "pdf_size_bytes": 975113,
+      "pdf_path": "2026-05-05/ai/2605.02825.pdf"
+    },
+    {
+      "id": "2605.02819",
+      "title": "SCPRM: A Schema-aware Cumulative Process Reward Model for Knowledge Graph Question Answering",
+      "abstract": "Large language models excel at complex reasoning, yet evaluating their intermediate steps remains challenging. Although process reward models provide step-wise supervision, they often suffer from a risk compensation effect, where incorrect steps are offset by later correct ones, assigning high rewards to flawed reasoning paths. This issue is further exacerbated in knowledge graph (KG) reasoning, as there may exist multiple paths between the start and end entities in the KGs, and a risky step can make the reasoning path flawed. Those limitations are problematic in risk-sensitive tasks such as medical and legal KG reasoning. To address the issues, we propose a Schema-aware Cumulative Process Reward Model (SCPRM) that evaluates reasoning paths by conditioning on the reasoning prefix , and incorporating schema distance between current reasoning step and the implicit target parsed from the query, which provides cumulative and future rewards to guide the path explorations. We further integrate SCPRM into Monte Carlo Tree Search (MCTS) as SCPRM-MCTS to conduct multi-hop reasoning on KGs for question answering (QA) tasks. Across medical and legal KGQA and CWQ, SCPRM-MCTS improves the performance of Hits@k by an average of 1.18% over strong baselines, demonstrating more accurate and risk-sensitive reasoning evaluation.",
+      "authors": [
+        "Jiujiu Chen",
+        "Yazheng Liu",
+        "Sihong Xie",
+        "Hui Xiong"
+      ],
+      "published": "2026-05-04T16:56:01Z",
+      "updated": "2026-05-04T16:56:01Z",
+      "url": "https://arxiv.org/abs/2605.02819",
+      "pdf_url": "https://arxiv.org/pdf/2605.02819.pdf",
+      "primary_category": "cs.AI",
+      "categories": [
+        "cs.AI"
+      ],
+      "tags": [
+        "cs.AI"
+      ],
+      "domain": "AI",
+      "pdf_downloaded": true,
+      "pdf_size_bytes": 681121,
+      "pdf_path": "2026-05-05/ai/2605.02819.pdf"
+    },
+    {
+      "id": "2605.02814",
+      "title": "IConFace: Identity-Structure Asymmetric Conditioning for Unified Reference-Aware Face Restoration",
+      "abstract": "Blind face restoration is highly ill-posed under severe degradation, where identity-critical details may be missing from the degraded input. Same-identity references reduce this ambiguity, but mismatched pose, expression, illumination, age, makeup, or local facial states can lead to overuse of reference appearance. We propose \\textbf{IConFace}, a unified reference-aware and no-reference framework with identity--structure asymmetric conditioning. References are distilled into a norm-weighted global AdaFace identity anchor for image-only modulation, while the degraded image is reinforced as the spatial structure anchor through low-rank residuals and block-wise degraded cross-attention with two-route memory. The resulting single checkpoint exploits references when available and falls back to no-reference restoration when absent, improving identity consistency, fine-detail recovery, and degraded-only restoration quality in a unified model.",
+      "authors": [
+        "Axi Niu",
+        "Jinyang Zhang",
+        "Senyan Qing"
+      ],
+      "published": "2026-05-04T16:49:51Z",
+      "updated": "2026-05-04T16:49:51Z",
+      "url": "https://arxiv.org/abs/2605.02814",
+      "pdf_url": "https://arxiv.org/pdf/2605.02814.pdf",
+      "primary_category": "cs.CV",
+      "categories": [
+        "cs.CV",
+        "cs.AI"
+      ],
+      "tags": [
+        "cs.AI",
+        "cs.CV"
+      ],
+      "domain": "AI",
+      "pdf_downloaded": false,
+      "pdf_size_bytes": null,
+      "pdf_path": null
+    },
+    {
+      "id": "2605.02810",
+      "title": "AIs and Humans with Agency",
+      "abstract": "This paper compares agency in humans with potential agency in AI programs. Human agency takes many years to develop, as the frontal lobe is activated. Early attempts to endow LLMs agency have met serious obstacles. Progress requires a new architecture where actions and plans are formulated jointly with the human actors in each real world setting.",
+      "authors": [
+        "David Mumford"
+      ],
+      "published": "2026-05-04T16:48:43Z",
+      "updated": "2026-05-04T16:48:43Z",
+      "url": "https://arxiv.org/abs/2605.02810",
+      "pdf_url": "https://arxiv.org/pdf/2605.02810.pdf",
+      "primary_category": "cs.AI",
+      "categories": [
+        "cs.AI"
+      ],
+      "tags": [
+        "cs.AI"
+      ],
+      "domain": "AI",
+      "pdf_downloaded": true,
+      "pdf_size_bytes": 3298856,
+      "pdf_path": "2026-05-05/ai/2605.02810.pdf"
+    },
+    {
+      "id": "2605.02787",
+      "title": "Static Analysis of Recursive SHACL",
+      "abstract": "SHACL (Shapes Constraint Language) expresses constraints on RDF data by means of so-called shapes. Its central service is validation: verifying whether a data graph complies with a SHACL document. But so far, there are no static analysis services to compare documents. In this paper, we study the following problem: decide whether all graphs that validate one SHACL document also validate another. Unlike previous works that have considered the implication of shape expressions only, we consider documents comprising (recursive) shape definitions and targets. We show that implication (a.k.a. containment) is undecidable under the supported and the stable model semantics, even for the fragment that uses the description logic ALCIO for shape expressions. Under the well-founded semantics, in surprising contrast, it is decidable in single exponential time. Our key technical contribution is a translation of SHACL under the well-founded semantics into the full hybrid mu-calculus, revealing a novel link between well-founded models and a fixed point modal logic, and a worst-case optimal automata-based decision procedure.",
+      "authors": [
+        "Anouk Oudshoorn",
+        "Magdalena Ortiz",
+        "Mantas Simkus"
+      ],
+      "published": "2026-05-04T16:29:29Z",
+      "updated": "2026-05-04T16:29:29Z",
+      "url": "https://arxiv.org/abs/2605.02787",
+      "pdf_url": "https://arxiv.org/pdf/2605.02787.pdf",
+      "primary_category": "cs.LO",
+      "categories": [
+        "cs.LO",
+        "cs.AI"
+      ],
+      "tags": [
+        "cs.AI",
+        "cs.LO"
+      ],
+      "domain": "AI",
+      "pdf_downloaded": true,
+      "pdf_size_bytes": 590647,
+      "pdf_path": "2026-05-05/ai/2605.02787.pdf"
+    },
+    {
+      "id": "2605.02782",
+      "title": "When Audio-Language Models Fail to Leverage Multimodal Context for Dysarthric Speech Recognition",
+      "abstract": "Automatic speech recognition (ASR) systems remain brittle on dysarthric and other atypical speech. Recent audio-language models raise the possibility of improving performance by conditioning on additional clinical context at inference time, but it is unclear whether these models can make use of such information. We introduce a benchmark built on the Speech Accessibility Project (SAP) dataset that tests whether diagnosis labels, clinician-derived speech ratings, and progressively richer clinical descriptions improve transcription accuracy for dysarthric speech. Across matched comparisons on nine models, we find that current models do not meaningfully use this context: diagnosis-informed and clinically detailed prompts yield negligible improvements and often degrade word error rate. We complement the prompting analysis with context-dependent fine-tuning, showing that LoRA adaptation with a mixture of clinical prompt formats achieves a WER of 0.066, a 52% relative reduction over the frozen baseline, while preserving performance when context is unavailable. Subgroup analyses reveal significant gains for Down syndrome and mild-severity speakers. These results clarify where current models fall short and provide a testbed for measuring progress toward more inclusive ASR.",
+      "authors": [
+        "Pehu\u00e9n Moure",
+        "Niclas Pokel",
+        "Bilal Bounajma",
+        "Yingqiang Gao",
+        "Roman Boehringer",
+        "Longbiao Cheng",
+        "Shih-Chii Liu"
+      ],
+      "published": "2026-05-04T16:24:06Z",
+      "updated": "2026-05-04T16:24:06Z",
+      "url": "https://arxiv.org/abs/2605.02782",
+      "pdf_url": "https://arxiv.org/pdf/2605.02782.pdf",
+      "primary_category": "cs.AI",
+      "categories": [
+        "cs.AI",
+        "cs.CL",
+        "eess.AS"
+      ],
+      "tags": [
+        "cs.AI",
+        "cs.CL",
+        "eess.AS"
+      ],
+      "domain": "AI",
+      "pdf_downloaded": true,
+      "pdf_size_bytes": 699035,
+      "pdf_path": "2026-05-05/ai/2605.02782.pdf"
+    },
+    {
+      "id": "2605.02780",
+      "title": "Fine-Grained Graph Generation through Latent Mixture Scheduling",
+      "abstract": "Structure aware graph generation aims to generate graphs that satisfy given topological properties. It has applications in domains such as drug discovery, social network modeling, and knowledge graph construction. Unlike existing methods that only provide coarse control over graph properties, we introduce a novel conditional variational autoencoder for fine-grained structural control in graph generation. The approach refines the decoder's latent space by dynamically aligning graph- and property-driven representations to improve both graph fidelity and control satisfaction. Specifically, the approach implements a mixture scheduler that progressively integrates graph and control priors. Experiments on five real-world datasets show the efficacy of the proposed model compared to recent baselines, achieving high generation quality while maintaining high controllability.",
+      "authors": [
+        "Nidhi Vakil",
+        "Hadi Amiri"
+      ],
+      "published": "2026-05-04T16:23:01Z",
+      "updated": "2026-05-04T16:23:01Z",
+      "url": "https://arxiv.org/abs/2605.02780",
+      "pdf_url": "https://arxiv.org/pdf/2605.02780.pdf",
+      "primary_category": "cs.AI",
+      "categories": [
+        "cs.AI",
+        "cs.LG"
+      ],
+      "tags": [
+        "cs.AI",
+        "cs.LG"
+      ],
+      "domain": "AI",
+      "pdf_downloaded": true,
+      "pdf_size_bytes": 4970626,
+      "pdf_path": "2026-05-05/ai/2605.02780.pdf"
+    },
+    {
+      "id": "2605.02777",
+      "title": "A decoupled diffusion planner that adapts to changing cost limits by using cost-conditioned generation for safety and reward gradients for performance",
+      "abstract": "Offline safe reinforcement learning often requires policies to adapt at deployment time to safety budgets that vary across episodes or change within a single episode. While diffusion-based planners enable flexible trajectory generation, existing guidance schemes often treat reward improvement and constraint satisfaction as competing gradient objectives, which can lead to unreliable safety compliance under cost limits. We reinterpret adaptive safe trajectory generation as sampling from a constrained trajectory distribution, where the budget restricts the trajectory region, and reward shapes preferences within that region. This perspective motivates Safe Decoupled Guidance Diffusion (SDGD), which conditions classifier-free guidance on the cost limit to bias sampling toward trajectories satisfying the specified limit, while using reward-gradient guidance to refine trajectories for higher return. Because direct reward guidance can increase return while also steering samples toward trajectories with higher cumulative cost, we introduce Feasible Trajectory Relabeling (FTR) to reshape reward targets and discourage such directions. We further provide a first-order sampling-time analysis showing that FTR suppresses reward-induced cost drift under a prefix-restorative alignment condition. Extensive evaluations on the DSRL benchmark show that SDGD achieves the strongest safety compliance among baselines, satisfying the constraint on 94.7% of tasks (36/38), while obtaining the highest reward among safe methods on 21 tasks.",
+      "authors": [
+        "Rufeng Chen",
+        "Zhaofan Zhang",
+        "Zhejiang Yang",
+        "Hechang Chen",
+        "Sihong Xie"
+      ],
+      "published": "2026-05-04T16:19:42Z",
+      "updated": "2026-05-04T16:19:42Z",
+      "url": "https://arxiv.org/abs/2605.02777",
+      "pdf_url": "https://arxiv.org/pdf/2605.02777.pdf",
+      "primary_category": "cs.LG",
+      "categories": [
+        "cs.LG",
+        "cs.AI"
+      ],
+      "tags": [
+        "cs.AI",
+        "cs.LG"
+      ],
+      "domain": "AI",
+      "pdf_downloaded": true,
+      "pdf_size_bytes": 1088188,
+      "pdf_path": "2026-05-05/ai/2605.02777.pdf"
+    },
+    {
+      "id": "2605.02771",
+      "title": "Universality in Deep Neural Networks: An approach via the Lindeberg exchange principle",
+      "abstract": "We consider the infinite-width limit of a fully connected deep neural network with general weights, and we prove quantitative general bounds on the $2$-Wasserstein distance between the network and its infinite-width Gaussian limit, under appropriate regularity assumptions on the activation function. Our main tool is a Lindeberg principle for Deep Neural Networks, which we use to successively replace the weights on each layer by Gaussian random variables.",
+      "authors": [
+        "Filippo Giovagnini",
+        "Sotirios Kotitsas",
+        "Marco Romito"
+      ],
+      "published": "2026-05-04T16:14:26Z",
+      "updated": "2026-05-04T16:14:26Z",
+      "url": "https://arxiv.org/abs/2605.02771",
+      "pdf_url": "https://arxiv.org/pdf/2605.02771.pdf",
+      "primary_category": "math.PR",
+      "categories": [
+        "math.PR",
+        "cs.LG",
+        "stat.ML"
+      ],
+      "tags": [
+        "cs.LG",
+        "math.PR",
+        "stat.ML"
+      ],
+      "domain": "AI",
+      "pdf_downloaded": true,
+      "pdf_size_bytes": 430376,
+      "pdf_path": "2026-05-05/ai/2605.02771.pdf"
+    },
+    {
+      "id": "2605.02767",
+      "title": "TOC-SR: Task-Optimal Compact diffusion for Image Super Resolution",
+      "abstract": "Diffusion models have recently demonstrated strong performance for image restoration tasks, including super-resolution. However, their large model size and iterative sampling procedures make them computationally expensive for practical deployment. In this work, we present TOC-SR, a framework for building efficient one-step super-resolution models by first discovering a compact diffusion backbone. Starting from a sixteen-channel latent diffusion model, we construct parameter-efficient surrogate blocks using feature-wise generative distillation and perform architecture discovery using epsilon-constrained Bayesian Optimization to minimize model complexity while preserving generative fidelity. The resulting compact diffusion backbone achieves a 6.6x reduction in parameters and a 2.8x reduction in GMACs compared to the expanded diffusion model. We then adapt this backbone for super-resolution and distill the diffusion process into a single-step generator. Experiments demonstrate that the proposed approach enables efficient super-resolution while maintaining strong reconstruction quality.",
+      "authors": [
+        "Sowmya Vajrala",
+        "Akshay Bankar",
+        "Manjunath Arveti",
+        "Shreyas Pandith",
+        "Sravanth Kodavanti",
+        "Subhajit Sanyal",
+        "Amit Unde",
+        "Srinivas Soumitri Miriyala"
+      ],
+      "published": "2026-05-04T16:06:24Z",
+      "updated": "2026-05-04T16:06:24Z",
+      "url": "https://arxiv.org/abs/2605.02767",
+      "pdf_url": "https://arxiv.org/pdf/2605.02767.pdf",
+      "primary_category": "cs.CV",
+      "categories": [
+        "cs.CV",
+        "cs.AI"
+      ],
+      "tags": [
+        "cs.AI",
+        "cs.CV"
+      ],
+      "domain": "AI",
+      "pdf_downloaded": true,
+      "pdf_size_bytes": 20924434,
+      "pdf_path": "2026-05-05/ai/2605.02767.pdf"
+    },
+    {
+      "id": "2605.02765",
+      "title": "U-Define: Designing User Workflows for Hard and Soft Constraints in LLM-Based Planning",
+      "abstract": "LLMs are increasingly used for end-user task planning, yet their black-box nature limits users' ability to ensure reliability and control. While recent systems incorporate verification techniques, it remains unclear how users can effectively apply such rigid constraints to represent intent or adapt to real-world variability. For example, prior work finds that hard-only constraints are too rigid, and numeric flexibility weights confuse users. We investigate how interaction workflows can better support users in applying constraints to guide LLM-generated plans, examining whether abstracting strictness into high-level types (i.e., hard and soft) paired with distinct verification mechanisms helps users more reliably express and align intent. We present U-Define, a system that lets users define constraints in natural language and categorize them as either hard rules that must not be violated or soft preferences that allow flexibility. U-Define verifies these types through complementary methods: formal model checking for hard constraints and LLM-as-judge evaluation for soft ones. Through a technical evaluation and user studies with general and expert participants, we find that user-defined constraint types improve perceived usefulness, performance, and satisfaction while maintaining usability. These findings provide insights for designing flexible yet reliable constraint-based workflows.",
+      "authors": [
+        "Christine P Lee",
+        "Xinyu Jessica Wang",
+        "Aws Albarghouthi",
+        "David Porfirio",
+        "Bilge Mutlu"
+      ],
+      "published": "2026-05-04T16:05:40Z",
+      "updated": "2026-05-04T16:05:40Z",
+      "url": "https://arxiv.org/abs/2605.02765",
+      "pdf_url": "https://arxiv.org/pdf/2605.02765.pdf",
+      "primary_category": "cs.AI",
+      "categories": [
+        "cs.AI",
+        "cs.HC",
+        "cs.LG"
+      ],
+      "tags": [
+        "cs.AI",
+        "cs.HC",
+        "cs.LG"
+      ],
+      "domain": "AI",
+      "pdf_downloaded": true,
+      "pdf_size_bytes": 6125532,
+      "pdf_path": "2026-05-05/ai/2605.02765.pdf"
+    },
+    {
+      "id": "2605.02751",
+      "title": "Mitigating Misalignment Contagion by Steering with Implicit Traits",
+      "abstract": "Language models (LMs) are increasingly used in high-stakes, multi-agent settings, where following instructions and maintaining value alignment are critical. Most alignment research focuses on interactions between a single LM and a single user, failing to address the risk of misaligned behavior spreading between multiple LMs in multi-turn interactions. We find evidence of this phenomenon, which we call misalignment contagion, across multiple LMs as they engage multi-turn conversational social dilemma games. Specifically, we find that LMs become more anti-social after gameplay and that this effect is intensified when other players are steered to act maliciously. We explore different steering techniques to mitigate such misalignment contagion and find that reinforcing an LM's system prompt is insufficient and often harmful. Instead, we propose steering with implicit traits: a technique that intermittently injects system prompts with statements that reinforce an LMs initial traits and is more effective than system prompt repetition at keeping models in line with their initial pro-social behaviors. Importantly, this method does not require access to model parameters or internal model states, making it suitable for increasingly common use cases where complex multi-agent workflows are being designed with black box models.",
+      "authors": [
+        "Maria Chang",
+        "Ronny Luss",
+        "Miao Lui",
+        "Keerthiram Murugesan",
+        "Karthikeyan Ramamurthy",
+        "Djallel Bouneffouf"
+      ],
+      "published": "2026-05-04T15:54:46Z",
+      "updated": "2026-05-04T15:54:46Z",
+      "url": "https://arxiv.org/abs/2605.02751",
+      "pdf_url": "https://arxiv.org/pdf/2605.02751.pdf",
+      "primary_category": "cs.AI",
+      "categories": [
+        "cs.AI",
+        "cs.CL"
+      ],
+      "tags": [
+        "cs.AI",
+        "cs.CL"
+      ],
+      "domain": "AI",
+      "pdf_downloaded": true,
+      "pdf_size_bytes": 3602822,
+      "pdf_path": "2026-05-05/ai/2605.02751.pdf"
+    },
+    {
+      "id": "2605.02746",
+      "title": "Virtual Scanning for NSCLC Histology: Investigating the Discriminatory Power of Synthetic PET",
+      "abstract": "Accurate histological differentiation between adenocarcinoma (ADC) and squamous cell carcinoma (SCC) is critical for personalized treatment in non-small cell lung cancer (NSCLC). While [$^{18}$F]FDG PET/CT is a standard tool for the clinical evaluation of lung cancer, its utility is often limited by high costs and radiation exposure. In this paper, we investigate the feasibility of \"virtual scanning\" as a feature-enhancement strategy by evaluating whether synthetic PET data can provide complementary feature representations to supplement anatomical CT scans in histological subtype classification. We propose a framework that leverages a 3D Pix2Pix Generative Adversarial Network (GAN), pretrained on the FDG-PET/CT Lesions dataset, to synthesize pseudo-PET volumes from anatomical CT scans. These synthetic volumes are integrated with structural CT data within the MINT framework, a multi-stage intermediate fusion architecture. Our experiments, conducted on a multi-center dataset of 714 subjects, demonstrate that the inclusion of synthetic metabolic features significantly improves classification performance over a CT-only baseline. The multimodal approach achieved a statistically significant increase in the Area Under the Curve (AUC) from 0.489 to 0.591 and improved the Geometric Mean (GMean) from 0.305 to 0.524. These results suggest that synthetic PET scans provide discriminatory metabolic cues that enable deep learning models to exploit complementary cross-modal information, offering a potential feature-enhancement strategy for clinical scenarios where physical PET scans are unavailable.",
+      "authors": [
+        "Fatih Aksu",
+        "Laura Ciuffetti",
+        "Francesco Di Feola",
+        "Filippo Ruffini",
+        "Giulia Romoli",
+        "Fabrizia Gelardi",
+        "Arturo Chiti",
+        "Valerio Guarrasi",
+        "Paolo Soda"
+      ],
+      "published": "2026-05-04T15:46:53Z",
+      "updated": "2026-05-04T15:46:53Z",
+      "url": "https://arxiv.org/abs/2605.02746",
+      "pdf_url": "https://arxiv.org/pdf/2605.02746.pdf",
+      "primary_category": "cs.CV",
+      "categories": [
+        "cs.CV",
+        "cs.AI"
+      ],
+      "tags": [
+        "cs.AI",
+        "cs.CV"
+      ],
+      "domain": "AI",
+      "pdf_downloaded": true,
+      "pdf_size_bytes": 1188520,
+      "pdf_path": "2026-05-05/ai/2605.02746.pdf"
+    },
+    {
+      "id": "2605.02745",
+      "title": "Bolek: A Multimodal Language Model for Molecular Reasoning",
+      "abstract": "Molecular property models increasingly support high-stakes drug-discovery decisions, but their outputs are often difficult to audit: classical predictors return scores without rationale, while language models can produce fluent explanations weakly grounded in the input molecule. We introduce Bolek, a compact multimodal language model that grounds natural-language reasoning in molecular structure by injecting a Morgan fingerprint embedding into an instruction-tuned text decoder. Bolek is fine-tuned on molecular alignment tasks, including molecule description, RDKit descriptor prediction, and substructure detection, and on downstream reasoning over 15 TDC binary classification tasks using synthetic chains-of-thought anchored in concrete molecular features. Across these tasks, Bolek outperforms its Qwen3-4B-Instruct base on all endpoints in yes/no mode and on 13 of 15 in chain-of-thought mode, raising mean ROC/PR AUC from 0.55 to 0.76. It also outperforms TxGemma-9B-Chat on 13 of 15 binary classification tasks despite being less than half its size. Bolek's explanations are more grounded than those of the baseline LLMs: it cites numerical descriptors 10-100x more often per chain-of-thought, and the cited values agree strongly with RDKit for key descriptors such as TPSA, MolLogP, and MolWt (Spearman rho = 0.87-0.91). Generalisation extends beyond the training panel: on 15 unseen TDC classification endpoints, Bolek matches TxGemma on five, and it produces non-trivial rank correlations on three held-out regression endpoints despite never seeing downstream regression during training. These results suggest that targeted modality injection and reasoning supervision tied to verifiable molecular features can yield compact, auditable molecular reasoning models.",
+      "authors": [
+        "Frederic Grabowski",
+        "Jacek Szczerbi\u0144ski",
+        "Maciej Ja\u015bkowski",
+        "Kalina Jasi\u0144ska-Kobus",
+        "Pawe\u0142 D\u0105browski-Tuma\u0144ski",
+        "Tomasz Jetka",
+        "Bartosz Topolski"
+      ],
+      "published": "2026-05-04T15:46:39Z",
+      "updated": "2026-05-04T15:46:39Z",
+      "url": "https://arxiv.org/abs/2605.02745",
+      "pdf_url": "https://arxiv.org/pdf/2605.02745.pdf",
+      "primary_category": "cs.LG",
+      "categories": [
+        "cs.LG",
+        "cs.AI",
+        "q-bio.BM"
+      ],
+      "tags": [
+        "cs.AI",
+        "cs.LG",
+        "q-bio.BM"
+      ],
+      "domain": "AI",
+      "pdf_downloaded": true,
+      "pdf_size_bytes": 520332,
+      "pdf_path": "2026-05-05/ai/2605.02745.pdf"
+    },
+    {
+      "id": "2605.02743",
+      "title": "Triple Spectral Fusion for Sensor-based Human Activity Recognition",
+      "abstract": "The field of sensor-based human activity recognition (HAR) mainly uses posture, motion and context data of Inertial Measurement Units (IMUs) to identify daily activities. Despite the advancements in learning-based methods, it is challenging to perform information fusion from the temporal perspective due to the complexities in fusing heterogeneous sensor data and establishing long-term context correlations. This paper proposes a novel triple spectral fusion framework tailored for HAR. First, we develop an adaptive complementary filtering technique for noise suppression and organize each IMU's sensors into posture and motion modality nodes. Given that IMU nodes form a dynamic heterogeneous graph, we then apply adaptive filtering within the graph Fourier domain to merge both homogeneous and heterogeneous node information. Furthermore, an adaptive wavelet frequency selection approach is implemented to suppress context redundancy and shorten the length of features. This approach enhances both timestamp-based graph aggregation and the correlation of long-term contexts. Our framework uses adaptive filtering in the Fourier, graph Fourier, and wavelet domains, enabling effective multi-sensor fusion and context correlation. Extensive experiments on ten benchmark datasets demonstrate the superior performance of our framework. Project page: https://github.com/crocodilegogogo/TSF-TPAMI2026.",
+      "authors": [
+        "Ye Zhang",
+        "Longguang Wang",
+        "Qing Gao",
+        "Chaocan Xiang",
+        "Mohammed Bennamoun",
+        "Yulan Guo"
+      ],
+      "published": "2026-05-04T15:42:58Z",
+      "updated": "2026-05-04T15:42:58Z",
+      "url": "https://arxiv.org/abs/2605.02743",
+      "pdf_url": "https://arxiv.org/pdf/2605.02743.pdf",
+      "primary_category": "cs.AI",
+      "categories": [
+        "cs.AI",
+        "cs.CV",
+        "cs.HC"
+      ],
+      "tags": [
+        "cs.AI",
+        "cs.CV",
+        "cs.HC"
+      ],
+      "domain": "AI",
+      "pdf_downloaded": true,
+      "pdf_size_bytes": 4505074,
+      "pdf_path": "2026-05-05/ai/2605.02743.pdf"
+    },
+    {
+      "id": "2605.02742",
+      "title": "Adaptive Interpolation-Synthesis for Motion In-Betweening on Keyframe-Based Animation",
+      "abstract": "Motion in-betweening is one of the most artistically demanding and time consuming stages of 3D animation, where the expressivity and rhythm of motion are defined. The level of creative control it requires makes it a major production bottleneck, underscoring the need for intelligent tools that assist animators in this process. Although recent deep learning approaches have achieved strong results in motion synthesis and in-betweening, they assume data characteristics, motion styles, and problem formulations that diverge from professional animation workflows. To bridge this gap, we propose a method explicitly aligned with the constraints of motion in-betweening for keyframe-based animation in production environments. At its core, the Adaptive Interpolation-Synthesis (AIS) layer mirrors the animator's creative process by dynamically balancing learned interpolation and direct pose synthesis. In addition, a domain-based input keypose schedule reflects the distribution of production data, improving stylistic consistency and alignment between training and real-world usage. Our method achieves state-of-the-art performance on production data; when integrated into Autodesk Maya, it enables animators to complete in-betweening tasks with a 3.5x speedup.",
+      "authors": [
+        "Anton Ra\u00ebl",
+        "Julien Boucher",
+        "Antoine Lhermitte"
+      ],
+      "published": "2026-05-04T15:41:42Z",
+      "updated": "2026-05-04T15:41:42Z",
+      "url": "https://arxiv.org/abs/2605.02742",
+      "pdf_url": "https://arxiv.org/pdf/2605.02742.pdf",
+      "primary_category": "cs.GR",
+      "categories": [
+        "cs.GR",
+        "cs.LG"
+      ],
+      "tags": [
+        "cs.GR",
+        "cs.LG"
+      ],
+      "domain": "AI",
+      "pdf_downloaded": true,
+      "pdf_size_bytes": 14123882,
+      "pdf_path": "2026-05-05/ai/2605.02742.pdf"
+    }
+  ]
+}
