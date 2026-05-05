@@ -1,0 +1,710 @@
+{
+  "domain": "Agent",
+  "date": "2026-05-05",
+  "count": 24,
+  "papers": [
+    {
+      "id": "2605.02881",
+      "title": "MolmoAct2: Action Reasoning Models for Real-world Deployment",
+      "abstract": "Vision-Language-Action (VLA) models aim to provide a single generalist controller for robots, but today's systems fall short on the criteria that matter for real-world deployment. Frontier models are closed, open-weight alternatives are tied to expensive hardware, reasoning-augmented policies pay prohibitive latency for their grounding, and fine-tuned success rates remain below the threshold for dependable use. We present MolmoAct2, a fully open action reasoning model built for practical deployment, advancing its predecessor along five axes. We introduce MolmoER, a VLM backbone specialized for spatial and embodied reasoning, trained on a 3.3M-sample corpus with a specialize-then-rehearse recipe. We release three new datasets spanning low-to-medium cost platforms, including MolmoAct2-BimanualYAM, 720 hours of teleoperated bimanual trajectories that constitute the largest open bimanual dataset to date, together with quality-filtered Franka (DROID) and SO100/101 subsets. We provide OpenFAST, an open-weight, open-data action tokenizer trained on millions of trajectories across five embodiments. We redesign the architecture to graft a flow-matching continuous-action expert onto a discrete-token VLM via per-layer KV-cache conditioning. Finally, we propose MolmoThink, an adaptive-depth reasoning variant that re-predicts depth tokens only for scene regions that change between timesteps, retaining geometric grounding at a fraction of prior latency. In the most extensive empirical study of any open VLA to date, spanning 7 simulation and real-world benchmarks, MolmoAct2 outperforms strong baselines including Pi-05, while MolmoER surpasses GPT-5 and Gemini Robotics ER-1.5 across 13 embodied-reasoning benchmarks. We release model weights, training code, and complete training data. Project page: https://allenai.org/blog/molmoact2",
+      "authors": [
+        "Haoquan Fang",
+        "Jiafei Duan",
+        "Donovan Clay",
+        "Sam Wang",
+        "Shuo Liu",
+        "Weikai Huang",
+        "Xiang Fan",
+        "Wei-Chuan Tsai",
+        "Shirui Chen",
+        "Yi Ru Wang",
+        "Shanli Xing",
+        "Jaemin Cho",
+        "Jae Sung Park",
+        "Ainaz Eftekhar",
+        "Peter Sushko",
+        "Karen Farley",
+        "Angad Wadhwa",
+        "Cole Harrison",
+        "Winson Han",
+        "Ying-Chun Lee",
+        "Eli VanderBilt",
+        "Rose Hendrix",
+        "Suveen Ellawela",
+        "Lucas Ngoo",
+        "Joyce Chai",
+        "Zhongzheng Ren",
+        "Ali Farhadi",
+        "Dieter Fox",
+        "Ranjay Krishna"
+      ],
+      "published": "2026-05-04T17:51:21Z",
+      "updated": "2026-05-04T17:51:21Z",
+      "url": "https://arxiv.org/abs/2605.02881",
+      "pdf_url": "https://arxiv.org/pdf/2605.02881.pdf",
+      "primary_category": "cs.RO",
+      "categories": [
+        "cs.RO"
+      ],
+      "tags": [
+        "cs.RO"
+      ],
+      "domain": "Agent",
+      "pdf_downloaded": true,
+      "pdf_size_bytes": 20730844,
+      "pdf_path": "2026-05-05/agent/2605.02881.pdf"
+    },
+    {
+      "id": "2605.02862",
+      "title": "Semantic Risk-Aware Heuristic Planning for Robotic Navigation in Dynamic Environments: An LLM-Inspired Approach",
+      "abstract": "The integration of Large Language Model (LLM) reasoning principles into classical robot path planning represents a rapidly emerging research direction. In this paper, we propose a Semantic Risk-Aware Heuristic (SRAH) planner that encodes LLM-inspired cost functions penalising geometrically cluttered or high-risk zones into an A$^*$ search framework, augmented with closed-loop replanning upon dynamic obstacle detection. We evaluate SRAH against two established baselines Breadth-First Search (BFS) with replanning and a Greedy heuristic without replanning across 200 randomised trials in a $15{\\times}15$ grid-world with 20\\% static obstacle density and stochastic dynamic obstacles. SRAH achieves a task success rate of 62.0\\%, outperforming BFS (56.5\\%) by 9.7\\% relative improvement and Greedy (4.0\\%) by a large margin. We further analyse the trade-off between planning overhead, path efficiency, and failure-recovery count, and demonstrate via an obstacle-density ablation that semantic cost shaping consistently improves navigation across environments of varying difficulty. Our results suggest that even lightweight, LLM-inspired heuristics provide measurable safety and robustness gains for autonomous robot navigation.",
+      "authors": [
+        "Hamza Ahmed Durrani",
+        "Rafay Suleman Durrani"
+      ],
+      "published": "2026-05-04T17:38:12Z",
+      "updated": "2026-05-04T17:38:12Z",
+      "url": "https://arxiv.org/abs/2605.02862",
+      "pdf_url": "https://arxiv.org/pdf/2605.02862.pdf",
+      "primary_category": "cs.RO",
+      "categories": [
+        "cs.RO"
+      ],
+      "tags": [
+        "cs.RO"
+      ],
+      "domain": "Agent",
+      "pdf_downloaded": true,
+      "pdf_size_bytes": 884189,
+      "pdf_path": "2026-05-05/agent/2605.02862.pdf"
+    },
+    {
+      "id": "2605.02809",
+      "title": "LiDAR Teach, Radar Repeat: Robust Cross-Modal Navigation in Degenerate and Varying Environments",
+      "abstract": "Long-term autonomy requires robust navigation in environments subject to dynamic and static changes, as well as adverse weather conditions. Teach-and-Repeat (T\\&R) navigation offers a reliable and cost-effective solution by avoiding the need for consistent global mapping; however, existing T\\&R systems lack a systematic solution to tackle various environmental variations such as weather degradation, ephemeral dynamics, and structural changes. This work proposes LTR$^2$, the first cross-modal, cross-platform LiDAR-Teach-and-Radar-Repeat system that systematically addresses these challenges. LTR$^2$ leverages LiDAR during the teaching phase to capture precise structural information under normal conditions and utilizes 4D millimeter-wave radar during the repeating phase for robust operation under environmental degradations. To align sparse and noisy forward-looking 4D radar with dense and accurate omnidirectional 3D LiDAR data, we introduce a Cross-Modal Registration (CMR) network that jointly exploits Doppler-based motion priors and the physical laws governing LiDAR intensity and radar power density. Furthermore, we propose an adaptive fine-tuning strategy that incrementally updates the CMR network based on localization errors, enabling long-term adaptability to static environmental changes without ground-truth labels. We demonstrate that the proposed CMR network achieves state-of-the-art cross-modal registration performance on the open-access dataset. Then we validate LTR$^2$ across three robot platforms over a large-scale, long-term deployment (40+ km over 6 months), including challenging conditions such as nighttime smoke. Experimental results and ablation studies demonstrate centimeter-level accuracy and strong robustness against diverse environmental disturbances, significantly outperforming existing approaches.",
+      "authors": [
+        "Renxiang Xiao",
+        "Yichen Chen",
+        "Yuanfan Zhang",
+        "Qianyi Shao",
+        "Yushuai Chen",
+        "Yuxuan Han",
+        "Yunjiang Lou",
+        "Liang Hu"
+      ],
+      "published": "2026-05-04T16:46:54Z",
+      "updated": "2026-05-04T16:46:54Z",
+      "url": "https://arxiv.org/abs/2605.02809",
+      "pdf_url": "https://arxiv.org/pdf/2605.02809.pdf",
+      "primary_category": "cs.RO",
+      "categories": [
+        "cs.RO"
+      ],
+      "tags": [
+        "cs.RO"
+      ],
+      "domain": "Agent",
+      "pdf_downloaded": false,
+      "pdf_size_bytes": null,
+      "pdf_path": null
+    },
+    {
+      "id": "2605.02739",
+      "title": "Latent Bridge: Feature Delta Prediction for Efficient Dual-System Vision-Language-Action Model Inference",
+      "abstract": "Dual-system Vision-Language-Action (VLA) models achieve state-of-the-art robotic manipulation but are bottlenecked by the VLM backbone, which must execute at every control step while producing temporally redundant features. We propose Latent Bridge, a lightweight model that predicts VLM output deltas between timesteps, enabling the action head to operate on predicted outputs while the expensive VLM backbone is called only periodically. We instantiate Latent Bridge on two architecturally distinct VLAs: GR00T-N1.6 (feature-space bridge) and \u03c00.5 (KV-cache bridge), demonstrating that the approach generalizes across VLA designs. Our task-agnostic DAgger training pipeline transfers across benchmarks without modification. Across four LIBERO suites, 24 RoboCasa kitchen tasks, and the ALOHA sim transfer-cube task, Latent Bridge achieves 95-100% performance retention while reducing VLM calls by 50-75%, yielding 1.65-1.73x net per-episode speedup.",
+      "authors": [
+        "Yudong Liu",
+        "Yuan Li",
+        "Zijia Tang",
+        "Yuxi Zheng",
+        "Yueqian Lin",
+        "Qinsi Wang",
+        "Yi Li",
+        "Shuangjun Liu",
+        "Shuai Zhang",
+        "Taotao Jing",
+        "Dashan Gao",
+        "Ning Bi",
+        "Jingwei Sun",
+        "Yiran Chen",
+        "Hai Li"
+      ],
+      "published": "2026-05-04T15:37:55Z",
+      "updated": "2026-05-04T15:37:55Z",
+      "url": "https://arxiv.org/abs/2605.02739",
+      "pdf_url": "https://arxiv.org/pdf/2605.02739.pdf",
+      "primary_category": "cs.RO",
+      "categories": [
+        "cs.RO"
+      ],
+      "tags": [
+        "cs.RO"
+      ],
+      "domain": "Agent",
+      "pdf_downloaded": true,
+      "pdf_size_bytes": 16066441,
+      "pdf_path": "2026-05-05/agent/2605.02739.pdf"
+    },
+    {
+      "id": "2605.02716",
+      "title": "Parking Assistance for Trailer-Truck Transport Vehicles Using Sensor Fusion and Motion Planning",
+      "abstract": "Autonomous driving technology has rapidly evolved over the past decade, offering significant improvements in transportation efficiency, safety, and cost reduction. While much of the progress has focused on highway driving and obstacle avoidance, low-speed maneuvers such as parking remain among the most difficult challenges for autonomous systems. This challenge is especially pronounced in trailer-truck transport vehicles due to their articulated motion and environmental constraints. This paper presents a proposed framework for autonomous truck parking that integrates perception, motion planning, control systems, and infrastructure awareness. By combining sensor fusion, Hybrid A* path planning, nonlinear model predictive control (NMPC), and data-driven parking systems, this work highlights the importance of system-level coordination for reliable and scalable autonomous parking solutions. As a proof-of-concept implementation, we adapted an open-source A* path planning simulation to incorporate a tractor-trailer kinematic model, demonstrating articulated vehicle path planning within a command-line simulation environment, with jackknife prevention identified as an area requiring further development.",
+      "authors": [
+        "George Alenchery",
+        "Thomas Jeske",
+        "Tova Quinones",
+        "Lentz Fortune",
+        "Tristan Lindo-Slones",
+        "Amber Jones",
+        "Jordan Fletcher"
+      ],
+      "published": "2026-05-04T15:18:39Z",
+      "updated": "2026-05-04T15:18:39Z",
+      "url": "https://arxiv.org/abs/2605.02716",
+      "pdf_url": "https://arxiv.org/pdf/2605.02716.pdf",
+      "primary_category": "cs.RO",
+      "categories": [
+        "cs.RO"
+      ],
+      "tags": [
+        "cs.RO"
+      ],
+      "domain": "Agent",
+      "pdf_downloaded": true,
+      "pdf_size_bytes": 5978782,
+      "pdf_path": "2026-05-05/agent/2605.02716.pdf"
+    },
+    {
+      "id": "2605.02710",
+      "title": "Tensegrity crutches with compliance from a pre-stressed self-tensile module improve ground reaction force profiles, speed, effort, comfort, and perceived stability",
+      "abstract": "Purpose: Six million people use crutches as mobile aids in the US. Rigid designs with no axial mobility limit sensory feedback and lead to secondary injury on the upper joints. Spring-loaded designs offer compliance but may compromise stability. We designed a biologically inspired tensegrity crutch with a compliant module aiming to achieve favorable mechanical properties. The terminal module was a pre-stressed self-tensile two-cell tensegrity structure. We compared the tensegrity crutch to commercial rigid and spring-loaded crutches in mechanical tests using axial loading, in overground straight and turning walking, and in participant experience. Methods: In human trials, healthy young adults (N=18) with no recent lower-body injury performed straight walking and turning trials at a comfortable self-selected pace. A knee blocker simulated unilateral injury of the dominant leg. After using each type of crutch, participants reported their perceived levels of effort, comfort, pain, stability, and usability. Results: Compared to the rigid design, both spring-loaded and tensegrity conditions reduced peak loading rates. The tensegrity design improved effort, comfort, pain, and usability. Spring-loaded crutches reduced perceived stability and walking speed. Conclusion: The biologically inspired tensegrity crutches were an overall improvement to existing designs. Simulations and mechanical testing suggest that nonlinear stiffness, ground-following, and force feedback are among the beneficial mechanical properties that underlie this improvement.",
+      "authors": [
+        "Jingxian Gu",
+        "Joanna Spyra",
+        "Andrew Walski",
+        "Lyla Elsaesser",
+        "Samuel Bierner",
+        "Dobromir Dotov"
+      ],
+      "published": "2026-05-04T15:16:35Z",
+      "updated": "2026-05-04T15:16:35Z",
+      "url": "https://arxiv.org/abs/2605.02710",
+      "pdf_url": "https://arxiv.org/pdf/2605.02710.pdf",
+      "primary_category": "cs.RO",
+      "categories": [
+        "cs.RO",
+        "nlin.AO"
+      ],
+      "tags": [
+        "cs.RO",
+        "nlin.AO"
+      ],
+      "domain": "Agent",
+      "pdf_downloaded": true,
+      "pdf_size_bytes": 1030703,
+      "pdf_path": "2026-05-05/agent/2605.02710.pdf"
+    },
+    {
+      "id": "2605.02697",
+      "title": "Executor-Side Progressive Risk-Gated Actuation for Agentic AI in Wireless Supervisory Control",
+      "abstract": "Agentic artificial intelligence (AI) shows promise for automating O-RAN wireless supervisory control, but translated intents still require an executor-side decision before live network actuation. Existing control flows lack explicit semantics for whether an intent should commit, gate for evidence, or reject under stale telemetry, concurrent policies, deadline and bandwidth limits, and rollback constraints. We propose Progressive Risk-Gated Actuation (PRGA), an executor-side contract for risk-gated wireless intent execution. PRGA structures each intent into executable local triage (C0), on-demand coordination evidence (C1), and post-hoc provenance support (C2), with C2 kept off the online safety path. A deterministic two-stage policy checks expiry, freshness, rollback-handle validity, local conflict, blocking preconditions, and planner-executor risk divergence from C0, then retrieves C1 only for gated intents when deadline and bandwidth budgets allow; evidence-mandatory gates reject when required C1 is unavailable. On two 3GPP-parameterized energy-saving and slice-SLA benchmarks, PRGA reduces time-to-first-safe-action by 23.3-27.4% and per-commit control-plane bytes by 52.7-54.2% against a decision-identical eager full-evidence cost-overlay comparator, thereby isolating retrieval-cost accounting; remains non-inferior within a pre-declared 0.5 percentage-point unsafe-action margin against an invariant-respecting static-threshold comparator; and rejects 100% of injected over-threshold stale inputs in the stale-state fault campaign. On these benchmarks, PRGA improves supervisory responsiveness and control-plane efficiency within the evaluated unsafe-action boundary.",
+      "authors": [
+        "Zhenyu Liu",
+        "Yi Ma",
+        "Rahim Tafazolli"
+      ],
+      "published": "2026-05-04T15:09:41Z",
+      "updated": "2026-05-04T15:09:41Z",
+      "url": "https://arxiv.org/abs/2605.02697",
+      "pdf_url": "https://arxiv.org/pdf/2605.02697.pdf",
+      "primary_category": "eess.SY",
+      "categories": [
+        "eess.SY",
+        "cs.MA"
+      ],
+      "tags": [
+        "cs.MA",
+        "eess.SY"
+      ],
+      "domain": "Agent",
+      "pdf_downloaded": true,
+      "pdf_size_bytes": 2113953,
+      "pdf_path": "2026-05-05/agent/2605.02697.pdf"
+    },
+    {
+      "id": "2605.02600",
+      "title": "CoRAL: Contact-Rich Adaptive LLM-based Control for Robotic Manipulation",
+      "abstract": "While Large Language Models (LLMs) and Vision-Language Models (VLMs) demonstrate remarkable capabilities in high-level reasoning and semantic understanding, applying them directly to contact-rich manipulation remains a challenge due to their lack of explicit physical grounding and inability to perform adaptive control. To bridge this gap, we propose CoRAL (Contact-Rich Adaptive LLM-based control), a modular framework that enables zero-shot planning by decoupling high-level reasoning from low-level control. Unlike black-box policies, CoRAL uses LLMs not as direct controllers, but as cost designers that synthesize context-aware objective functions for a sampling-based motion planner (MPPI). To address the ambiguity of physical parameters in visual data, we introduce a neuro-symbolic adaptation loop: a VLM provides semantic priors for environmental dynamics, such as mass and friction estimates, which are then explicitly refined in real time via online system identification, while the LLM iteratively modulates the cost-function structure to correct strategic errors based on interaction feedback. Furthermore, a retrieval-based memory unit allows the system to reuse successful strategies across recurrent tasks. This hierarchical architecture ensures real-time control stability by decoupling high-level semantic reasoning from reactive execution, effectively bridging the gap between slow LLM inference and dynamic contact requirements. We validate CoRAL on both simulation and real-world hardware across challenging and novel tasks, such as flipping objects against walls by leveraging extrinsic contacts. Experiments demonstrate that CoRAL outperforms state-of-the-art VLA and foundation-model-based planner baselines by boosting success rates over 50% on average in unseen contact-rich scenarios, effectively handling sim-to-real gaps through its adaptive physical understanding.",
+      "authors": [
+        "Berk \u00c7i\u00e7ek",
+        "Mert K. Er",
+        "\u00d6zg\u00fcr S. \u00d6\u011f\u00fcz"
+      ],
+      "published": "2026-05-04T13:49:19Z",
+      "updated": "2026-05-04T13:49:19Z",
+      "url": "https://arxiv.org/abs/2605.02600",
+      "pdf_url": "https://arxiv.org/pdf/2605.02600.pdf",
+      "primary_category": "cs.RO",
+      "categories": [
+        "cs.RO",
+        "cs.AI"
+      ],
+      "tags": [
+        "cs.AI",
+        "cs.RO"
+      ],
+      "domain": "Agent",
+      "pdf_downloaded": true,
+      "pdf_size_bytes": 9995388,
+      "pdf_path": "2026-05-05/agent/2605.02600.pdf"
+    },
+    {
+      "id": "2605.02580",
+      "title": "Hyp2Former: Hierarchy-Aware Hyperbolic Embeddings for Open-Set Panoptic Segmentation",
+      "abstract": "Recognizing unknown objects is crucial for safety-critical applications such as autonomous driving and robotics. Open-Set Panoptic Segmentation (OPS) aims to segment known thing and stuff classes while identifying valid unknown objects as separate instances. Prior OPS approaches largely treat known categories as a flat label set, ignoring the semantic hierarchy that provides valuable structural priors for distinguishing unknown objects from in-distribution classes. In this work, we propose Hyp2Former, an end-to-end framework for OPS that does not require explicit modeling of unknowns during training, and instead learns hierarchical semantic similarities continuously in hyperbolic space. By explicitly encoding hierarchical relationships among known categories, the model learns a structured embedding space that captures multiple levels of semantic abstraction. As a result, unknown objects that cannot be confidently classified as known categories still remain in close proximity to higher-level concepts (e.g., an unknown animal remains closer to \"animal\" or \"object\" than to unrelated concepts such as \"electronics\" or \"stuff\") and can therefore be reliably detected, even if their fine-grained category was not represented during training. Empirical evaluations across multiple public datasets such as MS COCO, Cityscapes, and Lost&Found demonstrate that Hyp2Former outperforms existing methods on OPS, achieving the best balance between unknown object discovery and in-distribution robustness.",
+      "authors": [
+        "Yao Lu",
+        "Rohit Mohan",
+        "Florian Drews",
+        "Yakov Miron",
+        "Abhinav Valada"
+      ],
+      "published": "2026-05-04T13:33:43Z",
+      "updated": "2026-05-04T13:33:43Z",
+      "url": "https://arxiv.org/abs/2605.02580",
+      "pdf_url": "https://arxiv.org/pdf/2605.02580.pdf",
+      "primary_category": "cs.CV",
+      "categories": [
+        "cs.CV",
+        "cs.AI",
+        "cs.RO"
+      ],
+      "tags": [
+        "cs.AI",
+        "cs.CV",
+        "cs.RO"
+      ],
+      "domain": "Agent",
+      "pdf_downloaded": true,
+      "pdf_size_bytes": 7605007,
+      "pdf_path": "2026-05-05/agent/2605.02580.pdf"
+    },
+    {
+      "id": "2605.02538",
+      "title": "Robotic Affection -- Opportunities of AI-based haptic interactions to improve social robotic touch through a multi-deep-learning approach",
+      "abstract": "Despite the advancement in robotic grasping and dexterity through haptic information, affective social touch, such as handshaking or reassuring stroking, remains a major challenge in Human-Robot-Interaction. This position paper examines current progress and limitations across artificial intelligence, haptics and robotics research, and proposes a novel multi-model architecture to address these gaps. Drawing inspiration from neurobiology, we decompose affective touch into distinct, specialized subtasks models. By treating affective touch as a distributed, closed-loop perceptual task rather than a monolithic motoric movement, we aim to overcome the \"haptic uncanny valley\" through a peer-to-peer, state-sharing framework. Our approach supports scalable and cumulative development within a Sim-to-Real pipeline, fostering interdisciplinary collaboration. By enabling haptics, AI, and robotics researchers to contribute independently yet coherently, we outline a pathway toward a unified, expressive system for social robotics.",
+      "authors": [
+        "Ali Askari",
+        "Jens Gerken"
+      ],
+      "published": "2026-05-04T12:40:46Z",
+      "updated": "2026-05-04T12:40:46Z",
+      "url": "https://arxiv.org/abs/2605.02538",
+      "pdf_url": "https://arxiv.org/pdf/2605.02538.pdf",
+      "primary_category": "cs.HC",
+      "categories": [
+        "cs.HC",
+        "cs.RO"
+      ],
+      "tags": [
+        "cs.HC",
+        "cs.RO"
+      ],
+      "domain": "Agent",
+      "pdf_downloaded": true,
+      "pdf_size_bytes": 466604,
+      "pdf_path": "2026-05-05/agent/2605.02538.pdf"
+    },
+    {
+      "id": "2605.02537",
+      "title": "Orchestrating Spatial Semantics via a Zone-Graph Paradigm for Intricate Indoor Scene Generation",
+      "abstract": "Autonomous 3D indoor scene synthesis breaks down in non-convex rooms with tightly coupled spatial constraints. Data-driven generators lack topological priors for long-horizon planning, while iterative agents fragment semantics and become geometrically brittle. We present ZoneMaestro, a unified framework that shifts the paradigm from object-centric synthesis to Zone-Graph Orchestration. By internalizing a novel zone-based logic, ZoneMaestro translates high-level semantic intent into functional zones and topological constraints, enabling robust adaptation to diverse architectural forms. To support this, we construct Zone-Scene-10K, a large-scale dataset enriched with explicit Zone-Graph annotations. We further introduce an Alternating Alignment Strategy that cycles between reasoning internalization and Zone-Aware Group Relative Policy Optimization (Z-GRPO), effectively reconciling the tension between semantic richness and geometric validity without relying on external physics engines. To rigorously evaluate spatial intelligence beyond convex primitives, we formally define the task of Intricate Spatial Orchestration and release SCALE, a stress-test benchmark for irregular indoor scenarios with complex, dense spatial relations. Extensive experiments demonstrate that ZoneMaestro resolves the density-safety dichotomy, significantly outperforming state-of-the-art baselines in both structural coherence and intent adherence.",
+      "authors": [
+        "Meisheng Zhang",
+        "Shizhao Sun",
+        "Yang Zhao",
+        "Ziyuan Liu",
+        "Zhijun Gao",
+        "Jiang Bian"
+      ],
+      "published": "2026-05-04T12:40:37Z",
+      "updated": "2026-05-04T12:40:37Z",
+      "url": "https://arxiv.org/abs/2605.02537",
+      "pdf_url": "https://arxiv.org/pdf/2605.02537.pdf",
+      "primary_category": "cs.RO",
+      "categories": [
+        "cs.RO",
+        "cs.AI"
+      ],
+      "tags": [
+        "cs.AI",
+        "cs.RO"
+      ],
+      "domain": "Agent",
+      "pdf_downloaded": true,
+      "pdf_size_bytes": 13295315,
+      "pdf_path": "2026-05-05/agent/2605.02537.pdf"
+    },
+    {
+      "id": "2605.02529",
+      "title": "Sim-to-Real Transfer and Robustness Evaluation of Reinforcement Learning Control with Integrated Perception on an ASV for Floating Waste Capture",
+      "abstract": "Autonomous surface vessels for floating-waste removal operate under varying hydrodynamics, external disturbances, and challenging water-surface perception. We present a field-validated system that combines camera-based polarimetric perception with a lightweight DRL-based controller for floating-waste detection and capture. Camera detections are converted into water-surface target points and tracked by a controller trained entirely in simulation and deployed directly on a retrofitted ASV platform. Our main contribution is a sim-to-real testing methodology that combines a two-stage simulation protocol with a perception abstraction module designed to mimic real camera behavior, enabling reproducible field trials and explicit evaluation of the sim-to-real gap. We apply this framework in matched simulation and field experiments across 14 disturbance regimes to expose failure modes and evaluate robustness. The results show centimeter-level terminal accuracy and indicate robust control performance under the evaluated perturbation regimes. The main source of degradation is insufficient actuation-model fidelity. We also demonstrate the system in a search-and-capture application using real camera detections in real-world conditions over areas of up to $450~m^2$. The study distills practical lessons for reliable transfer, including improved actuation-model fidelity, targeted domain randomization, and careful management of latency and timestamps across modules, while highlighting remaining challenges.",
+      "authors": [
+        "Luis F. W. Batista",
+        "St\u00e9phanie Aravecchia",
+        "C\u00e9dric Pradalier"
+      ],
+      "published": "2026-05-04T12:29:15Z",
+      "updated": "2026-05-04T12:29:15Z",
+      "url": "https://arxiv.org/abs/2605.02529",
+      "pdf_url": "https://arxiv.org/pdf/2605.02529.pdf",
+      "primary_category": "cs.RO",
+      "categories": [
+        "cs.RO"
+      ],
+      "tags": [
+        "cs.RO"
+      ],
+      "domain": "Agent",
+      "pdf_downloaded": false,
+      "pdf_size_bytes": null,
+      "pdf_path": null
+    },
+    {
+      "id": "2605.02528",
+      "title": "Beyond Specialization: Robust Reinforcement Learning Navigation via Procedural Map Generators",
+      "abstract": "Deep reinforcement learning (DRL) navigation policies often overfit to the structure of their training environments, as environmental diversity is typically constrained by the manual effort required to design diverse scenarios. While procedural map generation offers scalable diversity, no prior work systematically compares how different generator types affect policy generalization. We integrate four generators (sparse, maze, graph, and Wave Function Collapse) with guaranteed navigability into MuRoSim, a 2D simulator focusing on training efficiency for LiDAR-based navigation. We cross-evaluate five navigation policies on 1000 seeded maps per generator across three training seeds. Results show a strongly asymmetric cross-generator transfer: a specialist trained on sparse layouts falls to 3.3% success on mazes, whereas a policy trained on the combined generator set achieves 91.5 +/- 1.1% mean success. We further demonstrate that A* path-planner subgoal inputs are the dominant factor for robustness, raising success from the 90.2 +/- 1.4% feedforward baseline to 98.9 +/- 0.4% and outperforming GRU recurrence, which only improves the reactive baseline. The DRL policies outperform a classical Carrot+A* controller, which matches their success only at low speeds (1.0 m/s) but collapses to 24.9% at 2.0 m/s. This highlights learned speed adaptation as the decisive advantage of the learned approach. Real-world experiments on a RoboMaster confirm sim-to-real transfer in a cluttered arena, while a maze-like layout exposes remaining failure modes that recurrence helps mitigate.",
+      "authors": [
+        "Christian Jestel",
+        "Nicolas Bach",
+        "Marvin Wiedemann",
+        "Jan Finke",
+        "Peter Detzner"
+      ],
+      "published": "2026-05-04T12:28:16Z",
+      "updated": "2026-05-04T12:28:16Z",
+      "url": "https://arxiv.org/abs/2605.02528",
+      "pdf_url": "https://arxiv.org/pdf/2605.02528.pdf",
+      "primary_category": "cs.RO",
+      "categories": [
+        "cs.RO",
+        "cs.LG"
+      ],
+      "tags": [
+        "cs.LG",
+        "cs.RO"
+      ],
+      "domain": "Agent",
+      "pdf_downloaded": true,
+      "pdf_size_bytes": 1847308,
+      "pdf_path": "2026-05-05/agent/2605.02528.pdf"
+    },
+    {
+      "id": "2605.02525",
+      "title": "A Semantic Autonomy Framework for VLM-Integrated Indoor Mobile Robots: Hybrid Deterministic Reasoning and Cross-Robot Adaptive Memory",
+      "abstract": "Autonomous indoor mobile robots can navigate reliably to metric coordinates using established frameworks such as ROS 2 Navigation 2, yet they lack the ability to interpret natural language instructions that express intent rather than positions. Vision-Language Models offer the semantic reasoning required to bridge this gap, but their inference latency (2-9 seconds per decision on consumer hardware) and session-by-session amnesia limit practical deployment. This paper presents the Semantic Autonomy Stack, a six-layer reference framework for semantically autonomous indoor navigation, and validates a complete instance featuring hybrid deterministic-VLM reasoning and cross-robot adaptive memory on physical robots with off-the-shelf edge hardware. A seven-step parametric resolver handles 88% of instructions in under 0.1 milliseconds without invoking a language model, camera, or GPU; only genuinely ambiguous instructions escalate to VLM reasoning. A five-category semantic memory framework with explicit scope taxonomy (global environment knowledge, per-operator preferences, per-robot capabilities) enables cross-session learning and cross-robot knowledge transfer: preferences learned through VLM interactions on one robot are promoted to deterministic resolution and transferred to a second robot via a shared compiled digest, achieving a measured latency reduction of 103,000-fold. Experimental validation on two custom-built differential-drive robots across 82 scenario-level decisions and three sessions demonstrates 100% semantic transfer accuracy (33/33, 95% CI [0.894, 1.000]), 100% semantic resolution accuracy, and concurrent multi-robot operation feasibility - all on Raspberry Pi 5 platforms with no onboard GPU, requiring zero training data.",
+      "authors": [
+        "Bogdan Felician Abaza",
+        "Andrei-Alexandru Staicu",
+        "Cristian Vasile Doicin"
+      ],
+      "published": "2026-05-04T12:27:03Z",
+      "updated": "2026-05-04T12:27:03Z",
+      "url": "https://arxiv.org/abs/2605.02525",
+      "pdf_url": "https://arxiv.org/pdf/2605.02525.pdf",
+      "primary_category": "cs.RO",
+      "categories": [
+        "cs.RO",
+        "cs.AI"
+      ],
+      "tags": [
+        "cs.AI",
+        "cs.RO"
+      ],
+      "domain": "Agent",
+      "pdf_downloaded": true,
+      "pdf_size_bytes": 2185572,
+      "pdf_path": "2026-05-05/agent/2605.02525.pdf"
+    },
+    {
+      "id": "2605.02513",
+      "title": "Adaptive Gait Generation for Multi-Terrain Exoskeletons via Constrained Kernelized Movement Primitives",
+      "abstract": "Lower limb exoskeletons (LLEs) present the potential to make motor-impaired individuals walk again. Their application in real-world environments is still limited by the lack of effective adaptive gait planning. Indeed, current exoskeletons are meant to walk only on a flat and even terrain. Generating environment-aware, physiologically consistent gait trajectories in real-time is an open challenge. To overcome this, we propose a novel Kernelized Movement Primitives (KMP)-based framework for adaptive gait generation (AGG) across multiple indoor terrains. The proposed approach learns a probabilistic representation of human gait in both the joint and task spaces from a limited number of human demonstrations, representing natural gait characteristics and ensuring kinematic feasibility. In addition, the learned trajectories are adapted using environmental information extracted from an onboard RGB-D camera by treating the AGG as a linearly constrained optimization problem with via-points. The proposed method has been thoroughly validated first in simulations for gait generation in different scenarios, such as flat-ground walking, slopes, stairs, and obstacles crossing. Finally, the effectiveness and robustness of the method have been demonstrated with experiments on a commercial LLE in real-world scenarios. The results obtained demonstrate the feasibility of an environment-aware gait planning system for a new generation of intelligent lower limb exoskeletons for assisting people with disabilities in their every-day life.",
+      "authors": [
+        "Edoardo Trombin",
+        "Miroljub Mihailovic",
+        "Matheus Henrique Ferreira Moura",
+        "Luca Tonin",
+        "Emanuele Menegatti",
+        "Stefano Tortora"
+      ],
+      "published": "2026-05-04T12:08:18Z",
+      "updated": "2026-05-04T12:08:18Z",
+      "url": "https://arxiv.org/abs/2605.02513",
+      "pdf_url": "https://arxiv.org/pdf/2605.02513.pdf",
+      "primary_category": "cs.RO",
+      "categories": [
+        "cs.RO"
+      ],
+      "tags": [
+        "cs.RO"
+      ],
+      "domain": "Agent",
+      "pdf_downloaded": true,
+      "pdf_size_bytes": 9575472,
+      "pdf_path": "2026-05-05/agent/2605.02513.pdf"
+    },
+    {
+      "id": "2605.02487",
+      "title": "Visibility-Aware Mobile Grasping in Dynamic Environments",
+      "abstract": "This paper addresses the problem of mobile grasping in dynamic, unknown environments where a robot must operate under a limited field-of-view. The fundamental challenge is the inherent trade-off between ``seeing'' around to reduce environmental uncertainty and ``moving'' the body to achieve task progress in a high-dimensional configuration space, subject to visibility constraints. Previous approaches often assume known or static environments and decouple these objectives, failing to guarantee safety when unobserved dynamic obstacles intersect the robot's path during manipulation. In this paper, we propose a unified mobile grasping system comprising two core components: (1) an iterative low-level whole-body planner coupled with velocity-aware active perception to navigate dynamic environments safely; and (2) a hierarchical high-level planner based on behavior trees that adaptively generates subgoals to guide the robot through exploration and runtime failures. We provide experimental results across 400 randomized simulation scenarios and real-world deployment on a Fetch mobile manipulator. Results show that our system achieves a success rate of 68.8\\% and 58.0\\% in unknown static and dynamic environments, respectively, significantly boosting success rates by 22.8\\% and 18.0\\% over the \\nam approach in both unknown static and dynamic environments, with improved collision safety.",
+      "authors": [
+        "Tianrun Hu",
+        "Anxing Xiao",
+        "David Hsu",
+        "Hanbo Zhang"
+      ],
+      "published": "2026-05-04T11:41:28Z",
+      "updated": "2026-05-04T11:41:28Z",
+      "url": "https://arxiv.org/abs/2605.02487",
+      "pdf_url": "https://arxiv.org/pdf/2605.02487.pdf",
+      "primary_category": "cs.RO",
+      "categories": [
+        "cs.RO"
+      ],
+      "tags": [
+        "cs.RO"
+      ],
+      "domain": "Agent",
+      "pdf_downloaded": false,
+      "pdf_size_bytes": null,
+      "pdf_path": null
+    },
+    {
+      "id": "2605.02463",
+      "title": "When Stress Becomes Signal: Detecting Antifragility-Compatible Regimes in Multi-Agent LLM Systems",
+      "abstract": "Multi-agent LLM systems are increasingly used to solve complex tasks through decomposition, debate, specialization, and ensemble reasoning. However, these systems are usually evaluated in terms of robustness: whether performance is preserved under perturbation. This paper studies a different question: whether semantic stress exposes structured variation that could support future antifragile learning. We introduce CAFE, a statistical framework for detecting antifragility-compatible regimes in multi-agent architectures. CAFE models a controlled expected distribution of semantic stressors, reconstructs an architecture-specific observed effective stress distribution from multi-dimensional judge signals, and compares both distributions using a distributional Jensen Gap under a convex stress potential. A positive gap does not imply immediate performance improvement; instead, it indicates a convex-expansive deformation of the observed stress distribution, suggesting that the architecture exposes learnable stress structure. We evaluate CAFE on a banking-risk analysis benchmark with five multi-agent architectures: flat, hierarchical, debate, meta-adaptive, and ensemble. Across all architectures, semantic stress reduces average judged quality by roughly one third. Yet all architectures exhibit positive distributional Jensen Gaps with bootstrap confidence intervals above zero. These results show that immediate quality degradation can coexist with statistically detectable antifragility-compatible stress geometry. CAFE is therefore not an antifragile learner itself, but a measurement layer for identifying when and where antifragility learning may be worth applying.",
+      "authors": [
+        "Jose Manuel de la Chica",
+        "Juan Manuel Vera",
+        "Jairo Rodr\u00edguez"
+      ],
+      "published": "2026-05-04T11:06:19Z",
+      "updated": "2026-05-04T11:06:19Z",
+      "url": "https://arxiv.org/abs/2605.02463",
+      "pdf_url": "https://arxiv.org/pdf/2605.02463.pdf",
+      "primary_category": "cs.MA",
+      "categories": [
+        "cs.MA",
+        "cs.AI",
+        "cs.CE"
+      ],
+      "tags": [
+        "cs.AI",
+        "cs.CE",
+        "cs.MA"
+      ],
+      "domain": "Agent",
+      "pdf_downloaded": true,
+      "pdf_size_bytes": 1174087,
+      "pdf_path": "2026-05-05/agent/2605.02463.pdf"
+    },
+    {
+      "id": "2605.02434",
+      "title": "Higher-Order Flexible Configurations of Planar Parallel Manipulators Constructed by Averaging",
+      "abstract": "This paper investigates singular configurations of planar 3-RPR parallel manipulators, which result from applying the averaging technique to solution pairs of their direct kinematic problem. Without computing the zeros of the corresponding degree 6 polynomial we parametrize the input pairs and determine their relative orientation in a way that the flexion order of the averaged configurations increases. Moreover, the obtained results are visualized for concrete examples. The presented methodology can also be used for studying the spherical and spatial analogues of planar 3-RPR parallel manipulators.",
+      "authors": [
+        "Yudi Zhao",
+        "Georg Nawratil"
+      ],
+      "published": "2026-05-04T10:34:35Z",
+      "updated": "2026-05-04T10:34:35Z",
+      "url": "https://arxiv.org/abs/2605.02434",
+      "pdf_url": "https://arxiv.org/pdf/2605.02434.pdf",
+      "primary_category": "cs.RO",
+      "categories": [
+        "cs.RO",
+        "math.AG"
+      ],
+      "tags": [
+        "cs.RO",
+        "math.AG"
+      ],
+      "domain": "Agent",
+      "pdf_downloaded": false,
+      "pdf_size_bytes": null,
+      "pdf_path": null
+    },
+    {
+      "id": "2605.02411",
+      "title": "FitText: Evolving Agent Tool Ecologies via Memetic Retrieval",
+      "abstract": "A semantic gap separates how users describe tasks from how tools are documented. As API ecosystems scale to tens of thousands of endpoints, static retrieval from the initial query alone cannot bridge this gap: the agent's understanding of what it needs evolves during execution, but its tool set does not. We introduce FitText, a training-free framework that makes retrieval dynamic by embedding it directly in the agent's reasoning loop. FitText generates natural-language pseudo-tool descriptions as retrieval probes, refines them iteratively using retrieval feedback, and explores diverse alternatives through stochastic generation. Memetic Retrieval adds evolutionary selection pressure over candidate descriptions, guided by a tool memory that avoids redundant search. On ToolRet (43k tools, 4 domains), FitText improves average retrieval rank from 8.81 to 2.78; on StableToolBench (16,464 APIs), it achieves a 0.73 average pass rate--a 24-point absolute gain over static query retrieval. The gains transfer across base models capable of acting as competent semantic operators; under weaker base models, Memetic's evolutionary search inverts--amplifying noise rather than refining signal--surfacing model capacity as a prerequisite for evolutionary tool exploration.",
+      "authors": [
+        "Kyle Zheng",
+        "Han Zhang",
+        "Renliang Sun",
+        "Chenchen Ye",
+        "Wei Wang"
+      ],
+      "published": "2026-05-04T10:01:24Z",
+      "updated": "2026-05-04T10:01:24Z",
+      "url": "https://arxiv.org/abs/2605.02411",
+      "pdf_url": "https://arxiv.org/pdf/2605.02411.pdf",
+      "primary_category": "cs.AI",
+      "categories": [
+        "cs.AI",
+        "cs.IR",
+        "cs.LG",
+        "cs.MA"
+      ],
+      "tags": [
+        "cs.AI",
+        "cs.IR",
+        "cs.LG",
+        "cs.MA"
+      ],
+      "domain": "Agent",
+      "pdf_downloaded": true,
+      "pdf_size_bytes": 7691020,
+      "pdf_path": "2026-05-05/agent/2605.02411.pdf"
+    },
+    {
+      "id": "2605.02410",
+      "title": "Shared Autonomy Assisted by Impedance-Driven Anisotropic Guidance Field",
+      "abstract": "Shared autonomy (SA) enables robots to infer human intent and assist in its achievement. While most research focuses on improving intent inference, it overlooks whether humans can understand the robot's intent in return. Without such mutual understanding, collaboration becomes less effective, degrading user experience and task performance. To address this gap, previous studies have explicitly conveyed the robot intent through additional interfaces, which remain unintuitive and limited in expressiveness. Inspired by impedance control, we propose Impedance-Driven Anisotropic Guidance Field Enhanced Shared Autonomy (IAGF-SA), a novel paradigm that extends SA with an embodied, physically-grounded communication channel. This channel adaptively modulates the robot's dynamic response to human input, enabling intuitive, continuous, physically-grounded robot intent communication while naturally guiding human actions. User studies across three scenarios and two teleoperation interfaces indicate that IAGF-SA improves task performance, human-robot agreement, and subjective experience, thus demonstrating its effectiveness in enhancing human-robot communication and collaboration.",
+      "authors": [
+        "Sihan Chen",
+        "Hang Xu",
+        "Yupu Lu",
+        "Chen Wang",
+        "Benfang Duan",
+        "Ruixing Jia",
+        "Jia Pan"
+      ],
+      "published": "2026-05-04T10:01:21Z",
+      "updated": "2026-05-04T10:01:21Z",
+      "url": "https://arxiv.org/abs/2605.02410",
+      "pdf_url": "https://arxiv.org/pdf/2605.02410.pdf",
+      "primary_category": "cs.RO",
+      "categories": [
+        "cs.RO",
+        "cs.HC"
+      ],
+      "tags": [
+        "cs.HC",
+        "cs.RO"
+      ],
+      "domain": "Agent",
+      "pdf_downloaded": true,
+      "pdf_size_bytes": 4277913,
+      "pdf_path": "2026-05-05/agent/2605.02410.pdf"
+    },
+    {
+      "id": "2605.02370",
+      "title": "Robust Adaptive Predictive Control for Hook-Based Aerial Transportation Between Moving Platforms",
+      "abstract": "This paper presents a novel model predictive control (MPC) approach for autonomous pick-and-place between moving platforms with a hook-equipped aerial manipulator. First, for accurate and rapid modeling of the complex dynamics, a digital twin model of the quadcopter equipped with a hook-based gripper, implemented in MuJoCo, is constructed and used as the predictive model for the MPC. To handle uncertainties of the predictive model (e.g. due to aerodynamics and uncertain payloads), a robust adaptive MPC approach is proposed. By systematic integration of zero-order robust optimization (zoRO) based uncertainty propagation and an extended Kalman filter (EKF) for parameter estimation, the MPC algorithm ensures robust constraint satisfaction, high performance, and computational efficiency. The effectiveness of the proposed method is evaluated in complex simulated scenarios and in real-world flight experiments.",
+      "authors": [
+        "P\u00e9ter Antal",
+        "Andrea Carron",
+        "Melanie Zeilinger",
+        "Roland T\u00f3th",
+        "Tam\u00e1s P\u00e9ni"
+      ],
+      "published": "2026-05-04T09:14:34Z",
+      "updated": "2026-05-04T09:14:34Z",
+      "url": "https://arxiv.org/abs/2605.02370",
+      "pdf_url": "https://arxiv.org/pdf/2605.02370.pdf",
+      "primary_category": "cs.RO",
+      "categories": [
+        "cs.RO",
+        "eess.SY"
+      ],
+      "tags": [
+        "cs.RO",
+        "eess.SY"
+      ],
+      "domain": "Agent",
+      "pdf_downloaded": true,
+      "pdf_size_bytes": 4898895,
+      "pdf_path": "2026-05-05/agent/2605.02370.pdf"
+    },
+    {
+      "id": "2605.02361",
+      "title": "Feedback Motion Planning for Stochastic Nonlinear Systems with Signal Temporal Logic Specifications",
+      "abstract": "We study feedback motion planning for continuous-time stochastic nonlinear systems under signal temporal logic (STL) specifications. We propose a framework that synthesizes control policies for chance-constrained STL trajectory optimization problems, with the goal of ensuring that the closed-loop stochastic system satisfies a given STL formula with high probability (e.g., 99.99\\%). Our approach is based on a predicate erosion strategy that transforms the intractable stochastic problem into a deterministic STL trajectory optimization problem with tightened STL formula constraints. The amount of erosion is determined by a probabilistic reachable tube (PRT) that bounds the deviation between the stochastic trajectory and an associated nominal trajectory. To compute such bounds, we leverage contraction theory and feedback design, and develop several tracking controllers. This yields a complete feedback motion planning pipeline which can be implemented by numerical optimizations. We demonstrate the efficacy and versatility of the proposed framework through simulations on several robotic systems and through experiments on a real-world quadrupedal robot, and show that it is less conservative and achieves higher specification satisfaction probability than representative baselines.",
+      "authors": [
+        "Liqian Ma",
+        "Zishun Liu",
+        "Glen Chou",
+        "Yongxin Chen"
+      ],
+      "published": "2026-05-04T09:02:16Z",
+      "updated": "2026-05-04T09:02:16Z",
+      "url": "https://arxiv.org/abs/2605.02361",
+      "pdf_url": "https://arxiv.org/pdf/2605.02361.pdf",
+      "primary_category": "cs.RO",
+      "categories": [
+        "cs.RO",
+        "eess.SY"
+      ],
+      "tags": [
+        "cs.RO",
+        "eess.SY"
+      ],
+      "domain": "Agent",
+      "pdf_downloaded": true,
+      "pdf_size_bytes": 3913442,
+      "pdf_path": "2026-05-05/agent/2605.02361.pdf"
+    },
+    {
+      "id": "2605.02347",
+      "title": "ShapeGrasp: Simultaneous Visuo-Haptic Shape Completion and Grasping for Improved Robot Manipulation",
+      "abstract": "Humans grasp unfamiliar objects by combining an initial visual estimate with tactile and proprioceptive feedback during interaction. We present ShapeGrasp, a robotic implementation of this approach. The proposed method is an iterative grasp-and-complete pipeline that couples implicit surface visuo-haptic shape completion (creation of full 3D shape from partial information) with physics-based grasp planning. From a single RGB-D view, ShapeGrasp infers a complete shape (point cloud or triangular mesh), generates candidate grasps via rigid-body simulation, and executes the best feasible grasp. Each grasp attempt yields additional geometric constraints -- tactile surface contacts and space occupied by the gripper body -- which are fused to update the object shape. Failures trigger pose re-estimation and regrasping using the refined shape. We evaluate ShapeGrasp in the real world using two different robots and grippers. To the best of our knowledge, this is the first approach that updates shape representations following a real-world grasp. We achieved superior results over baselines for both grippers (grasp success rate of 84% with a three-finger gripper and 91% with a two-finger gripper), while improving the 3D shape reconstruction quality in all evaluation metrics used.",
+      "authors": [
+        "Lukas Rustler",
+        "Matej Hoffmann"
+      ],
+      "published": "2026-05-04T08:49:52Z",
+      "updated": "2026-05-04T08:49:52Z",
+      "url": "https://arxiv.org/abs/2605.02347",
+      "pdf_url": "https://arxiv.org/pdf/2605.02347.pdf",
+      "primary_category": "cs.RO",
+      "categories": [
+        "cs.RO"
+      ],
+      "tags": [
+        "cs.RO"
+      ],
+      "domain": "Agent",
+      "pdf_downloaded": true,
+      "pdf_size_bytes": 11689438,
+      "pdf_path": "2026-05-05/agent/2605.02347.pdf"
+    },
+    {
+      "id": "2605.02335",
+      "title": "LLM-enabled Social Agents",
+      "abstract": "Large Language Models (LLMs) have transformed agent-agent and human-agent interaction by enabling software, physical, and simulation agents to communicate and deliberate through natural language. Yet fluent language use does not by itself yield socially intelligible behaviour. Most current systems remain weakly grounded in roles, norms, intentions, and contextual constraints, limiting their capacity for meaningful participation in social environments. This paper develops a conceptual baseline for LLM-enabled social agents by arguing that they should be grounded in role definitions operationalized through persona descriptions. On this basis, we outline research directions for representation, hybrid control, and evaluation. The paper concludes that persona-based role definitions are a necessary foundation for turning language competence into social behaviour.",
+      "authors": [
+        "\u00d6nder G\u00fcrcan",
+        "Moharram Challenger"
+      ],
+      "published": "2026-05-04T08:39:58Z",
+      "updated": "2026-05-04T08:39:58Z",
+      "url": "https://arxiv.org/abs/2605.02335",
+      "pdf_url": "https://arxiv.org/pdf/2605.02335.pdf",
+      "primary_category": "cs.MA",
+      "categories": [
+        "cs.MA",
+        "cs.AI"
+      ],
+      "tags": [
+        "cs.AI",
+        "cs.MA"
+      ],
+      "domain": "Agent",
+      "pdf_downloaded": true,
+      "pdf_size_bytes": 182856,
+      "pdf_path": "2026-05-05/agent/2605.02335.pdf"
+    }
+  ]
+}
