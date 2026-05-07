@@ -1,0 +1,747 @@
+{
+  "domain": "Agent",
+  "date": "2026-05-07",
+  "count": 26,
+  "papers": [
+    {
+      "id": "2605.05182",
+      "title": "A Closed-Form Dual-Barrier CBF Safety Filter for Holonomic Robots on Incrementally Built Occupancy Grid Maps",
+      "abstract": "We present a dual-barrier control barrier function (CBF) safety filter for real-time, safety-critical velocity control of holonomic robots operating in incrementally built occupancy grid maps. As a robot explores an unknown environment, unmapped regions introduce irreducible uncertainty, since obstacle geometry beyond the explored frontier is unknown, making entry into such regions a source of collision risk, especially with front-facing sensors. To address this, we enforce two constraints: avoidance of mapped obstacles and restriction from unexplored regions. Both constraints are derived analytically from the occupancy grid's signed distance field, yielding a closed-form safety filter that requires only a small linear system solve per cycle. On resource-constrained platforms such as the Raspberry Pi, where SLAM and planning already consume significant compute, the low overhead of the proposed filter preserves resources. An adaptive gain schedule relaxes the frontier constraint in information-rich regions and tightens it in well-mapped areas, improving exploration efficiency while maintaining safety. The filter operates in velocity space as a minimally invasive correction and composes with arbitrary nominal controllers, including learning-based methods. Hardware flight experiments on a PX4-controlled quadrotor demonstrate zero collisions across multiple indoor runs.",
+      "authors": [
+        "Himanshu Paudel",
+        "Basanta Joshi",
+        "Dhirendra Raj Madai",
+        "Alina Bartaula",
+        "Biman Rimal",
+        "Sanjay Neupane"
+      ],
+      "published": "2026-05-06T17:49:17Z",
+      "updated": "2026-05-06T17:49:17Z",
+      "url": "https://arxiv.org/abs/2605.05182",
+      "pdf_url": "https://arxiv.org/pdf/2605.05182.pdf",
+      "primary_category": "cs.RO",
+      "categories": [
+        "cs.RO",
+        "eess.SY"
+      ],
+      "tags": [
+        "cs.RO",
+        "eess.SY"
+      ],
+      "domain": "Agent",
+      "pdf_downloaded": true,
+      "pdf_size_bytes": 403789,
+      "pdf_path": "2026-05-07/agent/2605.05182.pdf"
+    },
+    {
+      "id": "2605.05126",
+      "title": "ConsisVLA-4D: Advancing Spatiotemporal Consistency in Efficient 3D-Perception and 4D-Reasoning for Robotic Manipulation",
+      "abstract": "Current Vision-Language-Action (VLA) models primarily focus on mapping 2D observations to actions, but exhibit notable limitations in spatiotemporal perception and reasoning: 1) spatial representations often rely on additional sensors, introducing substantial computational overhead; 2) visual reasoning is typically limited to future-frame prediction, lacking alignment with the instruction-grounded scene and thus compromising spatiotemporal consistency. To address these challenges, we propose ConsisVLA-4D, a unified and efficient framework that enhances spatiotemporal consistency in 3D perception and 4D reasoning. Specifically, we design: 1) CV-Aligner, which ensures cross-view object semantic consistency by filtering instruction-relevant regions and aligning object identities across multiple viewpoints; 2) CO-Fuser, which guarantees cross-object spatial geometric consistency by eliminating spatial relation ambiguities between objects across views using compact latent representations. Building upon these, we introduce 3) CS-Thinker to achieve cross-scene spatiotemporal consistency as actions unfold. It learns implicit knowledge of local dynamics from object-semantic tokens of CV-Aligner and global depth from geometric tokens of CO-Fuser, thereby enhancing efficient visual reasoning under scene variations. Extensive experiments demonstrate that, benefiting from its efficient spatiotemporal consistency design, ConsisVLA-4D achieves 21.6% and 41.5% performance improvements, along with 2.3-fold and 2.4-fold inference speedups compared to OpenVLA on the LIBERO benchmark and real-world platforms, respectively.ConsisVLA-4D is open-sourced and publicly available at",
+      "authors": [
+        "Wei Li",
+        "Jizhihui Liu",
+        "Li Yixing",
+        "Junwen Tong",
+        "Rui Shao",
+        "Liqiang Nie"
+      ],
+      "published": "2026-05-06T16:55:44Z",
+      "updated": "2026-05-06T16:55:44Z",
+      "url": "https://arxiv.org/abs/2605.05126",
+      "pdf_url": "https://arxiv.org/pdf/2605.05126.pdf",
+      "primary_category": "cs.RO",
+      "categories": [
+        "cs.RO"
+      ],
+      "tags": [
+        "cs.RO"
+      ],
+      "domain": "Agent",
+      "pdf_downloaded": true,
+      "pdf_size_bytes": 5682557,
+      "pdf_path": "2026-05-07/agent/2605.05126.pdf"
+    },
+    {
+      "id": "2605.05020",
+      "title": "Graph-SND: Sparse Aggregation for Behavioral Diversity in Multi-Agent Reinforcement Learning",
+      "abstract": "System Neural Diversity (SND) measures behavioral heterogeneity in multi-agent reinforcement learning by averaging pairwise distances over all $\\binom{n}{2}$ agent pairs, making each call quadratic in team size. We introduce Graph-SND, which replaces this complete-graph average with a weighted average over the edges of an arbitrary graph $G$. Three regimes follow: $G=K_n$ recovers SND exactly; a fixed sparse $G$ defines a localized diversity measure at $O(|E|)$ cost; and random edge samples yield an unbiased Horvitz-Thompson estimator and a normalized sample mean with $O(1/\\sqrt{m})$ concentration in the sampled edge count $m$. For fixed sparse graphs we prove forwarding-index distortion bounds for expanders and a spectral refinement under low-rank distance structure; for random $d$-regular graphs we prove an unconditional probabilistic $\\widetilde{\\mathcal{O}}(D_{\\max}/\\sqrt{n})$ bound. On VMAS we verify recovery, unbiasedness, concentration, and wall-clock scaling, with a PettingZoo TVD panel checking non-Gaussian transfer. In a 500-iteration $n=100$ PPO run, Bernoulli-$0.1$ Graph-SND tracks full SND while reducing per-call metric time by about $10\\times$, and frozen-policy GPU timing up to $n=500$ follows the predicted $\\binom{n}{2}/|E|$ speedup. Random $d$-regular expanders empirically achieve $\\mathrm{SND}_{G}^{\\mathrm{u}}/\\mathrm{SND} \\in [0.9987, 1.0013]$ at $\u0398(n \\log n)$ edges. In DiCo diversity control at $n=50$, Bernoulli-$0.1$ Graph-SND preserves set-point tracking with paired reward differences indistinguishable from zero across nine matched cells while cutting per-call metric cost by ${\\sim}9.5\\times$. Together, these results show that the SND aggregation bottleneck can be removed without changing the metric's semantics, yielding a drop-in sparse alternative that scales beyond complete-graph SND and supports both passive measurement and closed-loop diversity control.",
+      "authors": [
+        "Shawn Ray"
+      ],
+      "published": "2026-05-06T15:18:42Z",
+      "updated": "2026-05-06T15:18:42Z",
+      "url": "https://arxiv.org/abs/2605.05020",
+      "pdf_url": "https://arxiv.org/pdf/2605.05020.pdf",
+      "primary_category": "cs.LG",
+      "categories": [
+        "cs.LG",
+        "cs.MA"
+      ],
+      "tags": [
+        "cs.LG",
+        "cs.MA"
+      ],
+      "domain": "Agent",
+      "pdf_downloaded": true,
+      "pdf_size_bytes": 3179679,
+      "pdf_path": "2026-05-07/agent/2605.05020.pdf"
+    },
+    {
+      "id": "2605.05017",
+      "title": "Position: Embodied AI Requires a Privacy-Utility Trade-off",
+      "abstract": "Embodied AI (EAI) systems are rapidly transitioning from simulations into real-world domestic and other sensitive environments. However, recent EAI solutions have largely demonstrated advancements within isolated stages such as instruction, perception, planning and interaction, without considering their coupled privacy implications in high-frequency deployments where privacy leakage is often irreversible. This position paper argues that optimizing these components independently creates a systemic privacy crisis when deployed in sensitive settings, thereby advancing the position that privacy in EAI is a life cycle-level architectural constraint rather than a stage-local feature. To address these challenges, we propose Secure Privacy Integration in Next-generation Embodied AI (SPINE), a unified privacy-aware framework that treats privacy as a dynamic control signal governing cross-stage coupling throughout the entire EAI life cycle. SPINE decomposes the EAI pipeline into various stages and establishes a multi-criterion privacy classification matrix to orchestrate contextual sensitivity across stage boundaries. We conduct preliminary simulation and real-world case studies to conceptually validate how privacy constraints propagate downstream to reshape system behavior, illustrating the insufficiency of fragmented privacy patches and motivating future research directions into secure yet functional embodied AI systems. We detail the SPINE framework and case studies at https://github.com/rminshen03/EAI_Privacy_Position.",
+      "authors": [
+        "Xiaoliang Fan",
+        "Jiarui Chen",
+        "Zhuodong Liu",
+        "Ziqi Yang",
+        "Peixuan Xu",
+        "Ruimin Shen",
+        "Junhui Liu",
+        "Jianzhong Qi",
+        "Cheng Wang"
+      ],
+      "published": "2026-05-06T15:16:05Z",
+      "updated": "2026-05-06T15:16:05Z",
+      "url": "https://arxiv.org/abs/2605.05017",
+      "pdf_url": "https://arxiv.org/pdf/2605.05017.pdf",
+      "primary_category": "cs.AI",
+      "categories": [
+        "cs.AI",
+        "cs.RO"
+      ],
+      "tags": [
+        "cs.AI",
+        "cs.RO"
+      ],
+      "domain": "Agent",
+      "pdf_downloaded": true,
+      "pdf_size_bytes": 903753,
+      "pdf_path": "2026-05-07/agent/2605.05017.pdf"
+    },
+    {
+      "id": "2605.04939",
+      "title": "Modular Reinforcement Learning For Cooperative Swarms",
+      "abstract": "A cooperative robot swarm is a collective of computationally-limited robots that share a common goal. Each robot can only interact with a small subset of its peers, without knowing how this affects the collective utility. Recent advances in distributed multi-agent reinforcement learning have demonstrated that it is possible for robots to learn how to interact effectively with others, in a manner that is aligned with the common goal, despite each robot learning independently of others. However, this requires each robot to represent a potentially combinatorial number of interaction states, challenging the memory capabilities of the robots. This paper proposes an alternative approach for representing spatial interaction states for multi-robot reinforcement learning in swarms. A modular (decomposed) representation is used, where each feature of the state is handled by a separate learning procedure, and the results aggregated. We demonstrate the efficacy of the approach in numerous experiments with simulated robot swarms carrying out foraging.",
+      "authors": [
+        "Erel Shtossel",
+        "Gal A. Kaminka"
+      ],
+      "published": "2026-05-06T14:05:36Z",
+      "updated": "2026-05-06T14:05:36Z",
+      "url": "https://arxiv.org/abs/2605.04939",
+      "pdf_url": "https://arxiv.org/pdf/2605.04939.pdf",
+      "primary_category": "cs.RO",
+      "categories": [
+        "cs.RO",
+        "cs.AI"
+      ],
+      "tags": [
+        "cs.AI",
+        "cs.RO"
+      ],
+      "domain": "Agent",
+      "pdf_downloaded": true,
+      "pdf_size_bytes": 962301,
+      "pdf_path": "2026-05-07/agent/2605.04939.pdf"
+    },
+    {
+      "id": "2605.04922",
+      "title": "Evolving Idea Graphs with Learnable Edits-and-Commits for Multi-Agent Scientific Ideation",
+      "abstract": "LLM-empowered multi-agent systems offer new potential to accelerate scientific discovery by generating novel research ideas. However, existing methods typically coordinate agents through temporary texts, such as drafts or chat logs; it is difficult to pinpoint the weaknesses in the generated ideas and how the agents refine them. To this end, we introduce \\textbf{Evolving Idea Graphs} (EIG), a graph-based multi-agent scientific ideation framework that can generate high-performance research ideas across various benchmark-native metrics, such as novelty, feasibility, and clarity. Instead of coordinating solely through texts, EIG represents a partially formed proposal as an evolving idea graph, where nodes capture scientific claims and edges encode relations (e.g., support and conflict), enabling unresolved weaknesses to remain identifiable throughout the idea evolving process. Specifically, a learned two-head controller operates over the evolving graph to guide the ideation: one head selects graph edits for agents to execute, while the other decides when the graph is ready for commit as final proposal synthesis. On AI Idea Bench 2025 and LiveIdeaBench, EIG outperforms all compared systems on both automatic benchmark scores and blind expert ratings. Ablations further show that explicit graph state provides the main performance gains, and learned edit-and-commit control adds consistent improvements.",
+      "authors": [
+        "Jiangwen Dong",
+        "Bo Li",
+        "Wanyu Lin"
+      ],
+      "published": "2026-05-06T13:50:40Z",
+      "updated": "2026-05-06T13:50:40Z",
+      "url": "https://arxiv.org/abs/2605.04922",
+      "pdf_url": "https://arxiv.org/pdf/2605.04922.pdf",
+      "primary_category": "cs.MA",
+      "categories": [
+        "cs.MA",
+        "cs.AI"
+      ],
+      "tags": [
+        "cs.AI",
+        "cs.MA"
+      ],
+      "domain": "Agent",
+      "pdf_downloaded": true,
+      "pdf_size_bytes": 788974,
+      "pdf_path": "2026-05-07/agent/2605.04922.pdf"
+    },
+    {
+      "id": "2605.04917",
+      "title": "Koopman Identification of Nonlinear Systems via Reservoir Liftings",
+      "abstract": "Learning tractable linear representations of nonlinear dynamical systems via Koopman operator theory is often hindered by dictionary selection, temporal memory encoding, and numerical ill-conditioning. Inspired by Reservoir Computing (RC) paradigm, this paper introduces the RC-Koopman framework, which interprets reservoir as a stateful, finite-dimensional Koopman dictionary whose temporal depth is explicitly controlled by its spectral radius. We show that the Echo State Property (ESP) guarantees well-posedness and favorable numerical conditioning of the lifted Koopman approximation. A correlation-based spectral radius selection algorithm aligns reservoir memory with dominant system timescales. Analysis reveals how the finite memory of the reservoir determines which Koopman eigenfunctions remain observable from the lifted features. Evaluation on synthetic benchmarks demonstrates that RC-Koopman achieves a favorable balance between reconstruction accuracy of the underlying nonlinear dynamics and dynamical stability, compared to Extended Dynamic Mode Decomposition (EDMD) and Hankel-based lifting approaches. Code available at: https://github.com/NEAR-the-future/RC-Koopman.git",
+      "authors": [
+        "Weibin Gu",
+        "Chen Yang",
+        "Lu Shi"
+      ],
+      "published": "2026-05-06T13:46:17Z",
+      "updated": "2026-05-06T13:46:17Z",
+      "url": "https://arxiv.org/abs/2605.04917",
+      "pdf_url": "https://arxiv.org/pdf/2605.04917.pdf",
+      "primary_category": "cs.LG",
+      "categories": [
+        "cs.LG",
+        "cs.RO"
+      ],
+      "tags": [
+        "cs.LG",
+        "cs.RO"
+      ],
+      "domain": "Agent",
+      "pdf_downloaded": true,
+      "pdf_size_bytes": 1995042,
+      "pdf_path": "2026-05-07/agent/2605.04917.pdf"
+    },
+    {
+      "id": "2605.04811",
+      "title": "Tree-based Credit Assignment for Multi-Agent Memory System",
+      "abstract": "Memory systems are widely adopted to enhance LLMs for long-horizon tasks, and are commonly organized as multi-agent pipelines with memory building, summarizing, and retrieval agents. To empower this system, existing RL-based methods either apply final downstream task rewards (e.g., QA accuracy) for all agents uniformly, which are coarse and ambiguous, or design task-specific rewards for agents on different subtasks, which require costly annotations (e.g., key evidence) and are difficult to define reliably. To address these limitations, we propose Tree-based Credit Assignment for Multi-Agent Memory Systems (TreeMem), which derives agent-specific credit from the final reward without task-specific annotations. Specifically, TreeMem extends the multi-agent pipeline (builder--summarizer--retrieval) into a tree structure, where each agent's outputs are expanded into multiple subsequent branches. The contribution of each agent is estimated via Monte Carlo averaging over its subsequent branches, capturing how intermediate agent actions may influence the final reward. This converts the coarse final reward into agent-specific optimization signals. These signals are then used to update all agent policies simultaneously, helping heterogeneous agents specialize effectively. Experiments on long-horizon benchmarks show that TreeMem improves memory system performance over strong baselines, validating the effectiveness of tree-structured credit assignment for the multi-agent memory system.",
+      "authors": [
+        "Marina Mao",
+        "Alexandr Liu",
+        "Pengbo Li",
+        "Siheng Li",
+        "Bo Zhou",
+        "Xiang Wang"
+      ],
+      "published": "2026-05-06T12:02:59Z",
+      "updated": "2026-05-06T12:02:59Z",
+      "url": "https://arxiv.org/abs/2605.04811",
+      "pdf_url": "https://arxiv.org/pdf/2605.04811.pdf",
+      "primary_category": "cs.MA",
+      "categories": [
+        "cs.MA"
+      ],
+      "tags": [
+        "cs.MA"
+      ],
+      "domain": "Agent",
+      "pdf_downloaded": true,
+      "pdf_size_bytes": 2460771,
+      "pdf_path": "2026-05-07/agent/2605.04811.pdf"
+    },
+    {
+      "id": "2605.04809",
+      "title": "Optimal Uncertainty-Aware Calibration for the AX=YB Problem",
+      "abstract": "This article proposes a general optimization framework for solving hand-eye calibration problem. Unlike traditional methods, an iterative algorithm based on Lie algebra that achieves approximately global optimal solutions is developed. During the optimization process, the method strictly preserves the structural constraints of the calibration parameters and enables synchronized updates between calibration parameters. Recognizing that data used in real-word hand-eye calibration often contain uncertainty, especially in over-loading and large workspace industrial robot scenarios, which can significantly degrade accuracy, and accurately modeling such uncertainty is inherently difficult, this article avoids explicit uncertainty modeling. Instead, an uncertainty metric to evaluate the relative uncertainty between data sources is introduced and used to dynamically refine the iterative process. To further enhance convergence efficiency, an effective initial solution generation method that improves overall stability and accuracy is designed. Numerical simulations and real-world experiments validate the effectiveness of the proposed approach, and in synthetic datasets, the proposed approach improves the estimation accuracy by at least 67\\% under high-uncertainty conditions compared with the existing methods.",
+      "authors": [
+        "Yanjia Chen",
+        "Xiangfei Li",
+        "Huan Zhao",
+        "Yiyuan Hong",
+        "Guanxiao Xia",
+        "Jiexin Zhang",
+        "Han Ding"
+      ],
+      "published": "2026-05-06T12:00:03Z",
+      "updated": "2026-05-06T12:00:03Z",
+      "url": "https://arxiv.org/abs/2605.04809",
+      "pdf_url": "https://arxiv.org/pdf/2605.04809.pdf",
+      "primary_category": "cs.RO",
+      "categories": [
+        "cs.RO"
+      ],
+      "tags": [
+        "cs.RO"
+      ],
+      "domain": "Agent",
+      "pdf_downloaded": true,
+      "pdf_size_bytes": 18500348,
+      "pdf_path": "2026-05-07/agent/2605.04809.pdf"
+    },
+    {
+      "id": "2605.04806",
+      "title": "Dr-PoGO: Direct Radar Pose-Graph Optimization",
+      "abstract": "This paper introduces Dr-PoGO, a method for Simultaneous Localization And Mapping (SLAM) using a 2D spinning radar. Unlike cameras or lidars that require line-of-sight, millimetre-wave radars can `see' through dust, falling snow, rain, etc. Accordingly, it is a great modality for robust perception regardless of the weather conditions. While most existing radar-based SLAM methods rely on the extraction of point clouds or features to perform ego-motion estimation, Dr-PoGO leverages direct registration techniques for odometry (DRO) and loop-closure registration. An off-the-shelf radar-focused place recognition algorithm, RaPlace, provides loop-closure candidates. As RaPlace does not provide relative transformations, Dr-PoGO introduces a coarse-to-fine registration that uses visual features and descriptors to obtain an initial guess for the direct transformation refinement. The global trajectory is optimized in a pose-graph optimization. Dr-PoGO demonstrates state-of-the-art performance over 300km of data in various real-world automotive environments. Our implementation is publicly available: https://github.com/utiasASRL/dr_pogo.",
+      "authors": [
+        "Cedric Le Gentil",
+        "Weican Li",
+        "Leonardo Brizi",
+        "Timothy D. Barfoot"
+      ],
+      "published": "2026-05-06T11:58:39Z",
+      "updated": "2026-05-06T11:58:39Z",
+      "url": "https://arxiv.org/abs/2605.04806",
+      "pdf_url": "https://arxiv.org/pdf/2605.04806.pdf",
+      "primary_category": "cs.RO",
+      "categories": [
+        "cs.RO"
+      ],
+      "tags": [
+        "cs.RO"
+      ],
+      "domain": "Agent",
+      "pdf_downloaded": true,
+      "pdf_size_bytes": 1671988,
+      "pdf_path": "2026-05-07/agent/2605.04806.pdf"
+    },
+    {
+      "id": "2605.04777",
+      "title": "Bridging Perception and Action: A Lightweight Multimodal Meta-Planner Framework for Robust Earth Observation Agents",
+      "abstract": "Autonomous Earth Observation (EO) agents are transitioning from passive perception to complex, multi-step task execution. However, current architectures that integrate planning and execution within a single model often struggle with combinatorial complexity and reasoning errors in dynamic EO scenarios. To resolve these challenges, we propose the Lightweight Multimodal Meta-Planner (LMMP) framework. LMMP incorporates a dual-awareness mechanism that grounds strategic plans in both multimodal image features and high-level task semantics. Crucially, we introduce a Meta Task Library to inject remote sensing expert knowledge directly into the workflow, which standardizes domain logic and ensures plans are physically feasible. We further implement a two-stage training pipeline, initializing the Meta-Planner via expert-distilled Supervised Fine-Tuning and refining it through Direct Preference Optimization based on execution feedback. Extensive experiments on a dataset derived from EarthBench and ThinkGeo demonstrate that LMMP significantly improves tool-calling accuracy and task success rates. Moreover, the framework exhibits strong ``plug-and-play'' versatility, consistently enhancing the performance of diverse executor backbones across previously unseen EO missions.",
+      "authors": [
+        "Jinghui Xu",
+        "Boyi Shangguan",
+        "Mengke Zhu",
+        "Hao Liu",
+        "Junhuan Jiang",
+        "Guangjun He",
+        "Pengming Feng",
+        "Shichao Jin",
+        "Bin Liang",
+        "Yongzhe Chang",
+        "Junbo Tan",
+        "Tiantian Zhang",
+        "Xueqian Wang"
+      ],
+      "published": "2026-05-06T11:30:21Z",
+      "updated": "2026-05-06T11:30:21Z",
+      "url": "https://arxiv.org/abs/2605.04777",
+      "pdf_url": "https://arxiv.org/pdf/2605.04777.pdf",
+      "primary_category": "cs.MA",
+      "categories": [
+        "cs.MA"
+      ],
+      "tags": [
+        "cs.MA"
+      ],
+      "domain": "Agent",
+      "pdf_downloaded": true,
+      "pdf_size_bytes": 2192029,
+      "pdf_path": "2026-05-07/agent/2605.04777.pdf"
+    },
+    {
+      "id": "2605.04770",
+      "title": "Gaze4HRI: Zero-shot Benchmarking Gaze Estimation Neural-Networks for Human-Robot Interaction",
+      "abstract": "While zero-shot appearance-based 3D gaze estimation offers significant cost-efficiency by directly mapping RGB images to gaze vectors, its reliability in Human-Robot Interaction (HRI) settings remains uncertain. Existing benchmarks frequently overlook fundamental HRI conditions, such as dynamic camera viewpoints and moving targets in video. Furthermore, current cross-dataset evaluations often suffer from a complexity gap, where methods trained on diverse datasets are tested on significantly smaller and less varied sets, failing to assess true robustness. To bridge these gaps, we introduce Gaze4HRI, a large-scale dataset (50+ subjects, 3,000+ videos, 600,000+ frames) designed to evaluate state-of-the-art performance against critical HRI variables: illumination, head-gaze conflict, as well as the motion of camera and gaze target in video. Our benchmark reveals that all evaluated methods fail in at least one condition, identifying steeply-downward gaze as a universal failure point. Notably, PureGaze trained on the ETH-X-Gaze dataset uniquely maintains resilience across all other conditions. These results challenge the recent focus in the literature on complex spatial-temporal modeling and Transformer-based architectures. Instead, our findings suggest that extensive data diversity, as exemplified by the ETH-X-Gaze dataset, serves as the primary driver of zero-shot robustness in unconstrained environments, while resilience-enhancing frameworks, such as PureGaze's self-adversarial loss for gaze feature purification, provide a substantial further improvement. Ultimately, this study establishes a rigorous benchmark that provides practical guidelines for practitioners as well as reshaping future research. The dataset and codes are available at https://gazeforhri.github.io.",
+      "authors": [
+        "Berk Sezer",
+        "Ali G\u00f6rkem K\u00fc\u00e7\u00fck",
+        "Erol \u015eahin",
+        "Sinan Kalkan"
+      ],
+      "published": "2026-05-06T11:17:18Z",
+      "updated": "2026-05-06T11:17:18Z",
+      "url": "https://arxiv.org/abs/2605.04770",
+      "pdf_url": "https://arxiv.org/pdf/2605.04770.pdf",
+      "primary_category": "cs.CV",
+      "categories": [
+        "cs.CV",
+        "cs.HC",
+        "cs.LG",
+        "cs.RO"
+      ],
+      "tags": [
+        "cs.CV",
+        "cs.HC",
+        "cs.LG",
+        "cs.RO"
+      ],
+      "domain": "Agent",
+      "pdf_downloaded": true,
+      "pdf_size_bytes": 8152846,
+      "pdf_path": "2026-05-07/agent/2605.04770.pdf"
+    },
+    {
+      "id": "2605.04757",
+      "title": "3D Printing of Passively Actuated Self-Folding Robots with Integrated Functional Modules",
+      "abstract": "We introduce an elastic-driven self-folding approach that fabricates robots directly from flat 3D-printed conductive PLA nets. Elastic bands routed through printed hooks store energy that folds the sheet into programmed 3D geometries, while the flat state allows accurate placement of electronics and magnets before deployment. The same substrate doubles as electrodes for capacitive touch and supports a reusable platform I/O palette with Hall sensors and eccentric rotating mass (ERM) motors for docking detection and vibration actuation. We also derive a closed-form folding model that balances hinge stiffness with elastic band moment to predict equilibrium fold angles; experiments validate the model and yield a design map linking hinge thickness, band size, and hook spacing to target angles. Using this workflow we realize multiple polyhedral modules and demonstrate three applications: a cube that highlights the potential of self-folding for scalable modular robot collectives, a deployable gripper, and a tendon-driven finger. The method is low cost, stimulus-free, and integrates actuation and sensing.",
+      "authors": [
+        "Gaolin Ge",
+        "Qifeng Yang",
+        "Haoran Lu",
+        "Tingyu Cheng",
+        "Martin Nisser",
+        "Yiyue Luo"
+      ],
+      "published": "2026-05-06T11:05:54Z",
+      "updated": "2026-05-06T11:05:54Z",
+      "url": "https://arxiv.org/abs/2605.04757",
+      "pdf_url": "https://arxiv.org/pdf/2605.04757.pdf",
+      "primary_category": "cs.RO",
+      "categories": [
+        "cs.RO",
+        "cs.HC"
+      ],
+      "tags": [
+        "cs.HC",
+        "cs.RO"
+      ],
+      "domain": "Agent",
+      "pdf_downloaded": true,
+      "pdf_size_bytes": 8431738,
+      "pdf_path": "2026-05-07/agent/2605.04757.pdf"
+    },
+    {
+      "id": "2605.04741",
+      "title": "Hierarachical Multiagent Reinforcement Learning for Multi-Group Tax Game",
+      "abstract": "Reinforcement learning has increasingly been used to study economic decision-making, such as taxation, public spending, and labour supply. However, most existing RL-based economic models focus on a single government--household group, thereby overlooking the strategic interactions that arise when multiple governments compete while managing their own populations. In practice, many economic systems (e.g., taxation) exhibit a multi-group structure, where each government must optimize its fiscal policy in response not only to household behaviour within its jurisdiction, but also to the policies of other competing governments. To capture this structure, we formulate taxation as a hierarchical multi-group game. Within each group, the interaction between the government and households is modelled as a leader--follower game; across groups, governments are modelled as players in a competitive game. This results in a hybrid hierarchical game that is difficult to solve using standard multi-agent reinforcement learning algorithms. We therefore propose a bi-level training framework built on multi-agent reinforcement learning, together with \\textit{ Curriculum Learning} and a \\textit{ Closed-Loop Sequential Update} strategy, to stabilize training and promote convergence. We instantiate this framework in a taxation game simulation environment grounded in classical economic models. The environment supports the evaluation of different taxation algorithms and provides multiple economic indicators for assessing policy performance. Experiments show that our approach can learn stable tax policies that benefit all participating groups. Compared with a two-group baseline without the proposed update mechanisms, our method avoids premature game collapse, extends the effective game duration by 60.92\\%, produces more sustainable and robust tax policies, and reduces GDP disparities among governments by 44.12\\%.",
+      "authors": [
+        "Honglei Guo",
+        "Yuhan Zhao",
+        "Yexin Li"
+      ],
+      "published": "2026-05-06T10:37:41Z",
+      "updated": "2026-05-06T10:37:41Z",
+      "url": "https://arxiv.org/abs/2605.04741",
+      "pdf_url": "https://arxiv.org/pdf/2605.04741.pdf",
+      "primary_category": "cs.MA",
+      "categories": [
+        "cs.MA"
+      ],
+      "tags": [
+        "cs.MA"
+      ],
+      "domain": "Agent",
+      "pdf_downloaded": true,
+      "pdf_size_bytes": 6759880,
+      "pdf_path": "2026-05-07/agent/2605.04741.pdf"
+    },
+    {
+      "id": "2605.04709",
+      "title": "ELVIS: Ensemble-Calibrated Latent Imagination for Long-Horizon Visual MPC",
+      "abstract": "A central challenge of visual control with model-based reinforcement learning (RL) is reliable long-horizon planning: long rollouts with learned latent dynamics exhibit branching futures and multi-modal action-value distributions. In addition, compounding model errors amplified by visual occlusions make deep imagination brittle. We present ELVIS, a latent model predictive controller (MPC) designed to make long-horizon planning practical. ELVIS plans in a Dreamer-style recurrent state space model (RSSM) and replaces standard unimodal model predictive path integral (MPPI) with a Gaussian-mixture MPPI that maintains multiple coherent hypotheses over long horizons, avoiding mode averaging under branching rollouts. In parallel, ELVIS stabilizes deep imagination with a shared uncertainty-aware lambda-return: an ensemble of latent critics defines an upper-confidence-bound (UCB) score that gates a time-varying lambda, adaptively trading off bootstrapping versus look-ahead to limit compounding error during planning. The same return is used both to train an actor-critic prior from imagined rollouts and to score candidate trajectories inside GMM-MPPI, aligning RL objectives with the planner's long-horizon optimization. On fourteen DeepMind Control Suite visual tasks, ELVIS establishes state-of-the-art performance compared with TD-MPC2 and DreamerV3. Finally, ELVIS transfers zero-shot to a real-world sand-spraying task with severe occlusions, improving surface-quality metrics and demonstrating robustness beyond simulation.",
+      "authors": [
+        "Yurui Du",
+        "Pinhao Song",
+        "Yutong Hu",
+        "Renaud Detry"
+      ],
+      "published": "2026-05-06T09:59:58Z",
+      "updated": "2026-05-06T09:59:58Z",
+      "url": "https://arxiv.org/abs/2605.04709",
+      "pdf_url": "https://arxiv.org/pdf/2605.04709.pdf",
+      "primary_category": "cs.LG",
+      "categories": [
+        "cs.LG",
+        "cs.RO",
+        "eess.SY"
+      ],
+      "tags": [
+        "cs.LG",
+        "cs.RO",
+        "eess.SY"
+      ],
+      "domain": "Agent",
+      "pdf_downloaded": true,
+      "pdf_size_bytes": 10186861,
+      "pdf_path": "2026-05-07/agent/2605.04709.pdf"
+    },
+    {
+      "id": "2605.04678",
+      "title": "From Pixels to Tokens: A Systematic Study of Latent Action Supervision for Vision-Language-Action Models",
+      "abstract": "Latent actions serve as an intermediate representation that enables consistent modeling of vision-language-action (VLA) models across heterogeneous datasets. However, approaches to supervising VLAs with latent actions are fragmented and lack a systematic comparison. This work structures the study of latent action supervision from two perspectives: (i) regularizing the trajectory via image-based latent actions, and (ii) unifying the target space with action-based latent actions. Under a unified VLA baseline, we instantiate and compare four representative integration strategies. Our results reveal a formulation-task correspondence: image-based latent actions benefit long-horizon reasoning and scene-level generalization, whereas action-based latent actions excel at complex motor coordination. Furthermore, we find that directly supervising the VLM with discrete latent action tokens yields the most effective performance. Finally, our experiments offer initial insights into the benefits of latent action supervision in mixed-data, suggesting a promising direction for VLA training. Code is available at https://github.com/RUCKBReasoning/From_Pixels_to_Tokens.",
+      "authors": [
+        "Yihan Lin",
+        "Haoyang Li",
+        "Yang Li",
+        "Haitao Shen",
+        "Yihan Zhao",
+        "Chao Shao",
+        "Jing Zhang"
+      ],
+      "published": "2026-05-06T09:27:07Z",
+      "updated": "2026-05-06T09:27:07Z",
+      "url": "https://arxiv.org/abs/2605.04678",
+      "pdf_url": "https://arxiv.org/pdf/2605.04678.pdf",
+      "primary_category": "cs.RO",
+      "categories": [
+        "cs.RO",
+        "cs.CV"
+      ],
+      "tags": [
+        "cs.CV",
+        "cs.RO"
+      ],
+      "domain": "Agent",
+      "pdf_downloaded": true,
+      "pdf_size_bytes": 3639342,
+      "pdf_path": "2026-05-07/agent/2605.04678.pdf"
+    },
+    {
+      "id": "2605.04672",
+      "title": "AI-Aided Advancements in Autonomous Underwater Vehicle Navigation",
+      "abstract": "Autonomous underwater vehicles (AUVs) have become indispensable for deep-sea exploration, spanning critical scientific research and commercial applications. The rapid attenuation of electromagnetic waves renders satellite radio signals unavailable, while the dynamic unpredictability of the marine environment presents formidable navigation challenges. This chapter explores recent advancements in AI-aided AUV positioning, specifically focusing on advanced sensor fusion architectures that integrate inertial navigation systems with Doppler velocity logs and cameras. Beyond traditional model-based filtering, we examine the transformative emergence of AI-driven learning approaches in enhancing inertial dead-reckoning tasks and adaptive fusion algorithms. By addressing these recent milestones, this chapter provides a comprehensive roadmap for achieving the high-precision navigation essential for autonomous underwater missions.",
+      "authors": [
+        "Guy Damari",
+        "Zeev Yampolsky",
+        "Nadav Cohen",
+        "Arup Kumar Sahoo",
+        "Jeryes Danial",
+        "Felipe O. Silva",
+        "Itzik Klein"
+      ],
+      "published": "2026-05-06T09:22:12Z",
+      "updated": "2026-05-06T09:22:12Z",
+      "url": "https://arxiv.org/abs/2605.04672",
+      "pdf_url": "https://arxiv.org/pdf/2605.04672.pdf",
+      "primary_category": "cs.RO",
+      "categories": [
+        "cs.RO"
+      ],
+      "tags": [
+        "cs.RO"
+      ],
+      "domain": "Agent",
+      "pdf_downloaded": true,
+      "pdf_size_bytes": 3080078,
+      "pdf_path": "2026-05-07/agent/2605.04672.pdf"
+    },
+    {
+      "id": "2605.04649",
+      "title": "From Reach to Insert: Tactile-Augmented Precision Assembly under Sub-Millimeter Tolerances",
+      "abstract": "High-precision assembly frequently involves tight-tolerance insertions, where even slight pose errors can cause jamming or excessive interaction forces, making robust and safe insertion policies difficult to obtain. This paper proposes a tactile-augmented two-stage method that combines Imitation Learning (IL) and Reinforcement Learning (RL) for precision insertion tasks. In the first stage, IL learns a reaching policy with position generalization that grasps the peg and brings it to the vicinity of the target region. In the second stage, RL executes the insertion and enables recovery from failures during contact-rich interactions. To better exploit tactile feedback, we introduce tactile group sampling to increase coverage of critical contact segments during training, and design a tactile critic to more accurately evaluate policy values, improving insertion performance while maintaining low contact forces. We conduct systematic experiments across five hole geometries and three clearance settings. Results show that our method substantially improves insertion performance across all settings; under the most challenging 0.05\\,mm clearance, it achieves a 67\\% success rate while keeping contact forces low, reducing the maximum interaction force by 60\\% and torque by 44\\%, thereby validating both effectiveness and safety for precision assembly.",
+      "authors": [
+        "Xinpan Meng",
+        "Siyao Huang",
+        "JingPu Yang",
+        "Muyuan Ma",
+        "Zhenghua Ma",
+        "Lijun Han",
+        "Gao Yuan",
+        "Houcheng Li",
+        "Long Cheng"
+      ],
+      "published": "2026-05-06T08:56:20Z",
+      "updated": "2026-05-06T08:56:20Z",
+      "url": "https://arxiv.org/abs/2605.04649",
+      "pdf_url": "https://arxiv.org/pdf/2605.04649.pdf",
+      "primary_category": "cs.RO",
+      "categories": [
+        "cs.RO"
+      ],
+      "tags": [
+        "cs.RO"
+      ],
+      "domain": "Agent",
+      "pdf_downloaded": true,
+      "pdf_size_bytes": 8319411,
+      "pdf_path": "2026-05-07/agent/2605.04649.pdf"
+    },
+    {
+      "id": "2605.04647",
+      "title": "ReflectDrive-2: Reinforcement-Learning-Aligned Self-Editing for Discrete Diffusion Driving",
+      "abstract": "We introduce ReflectDrive-2, a masked discrete diffusion planner with separate action expert for autonomous driving that represents plans as discrete trajectory tokens and generates them through parallel masked decoding. This discrete token space enables in-place trajectory revision: AutoEdit rewrites selected tokens using the same model, without requiring an auxiliary refinement network. To train this capability, we use a two-stage procedure. First, we construct structure-aware perturbations of expert trajectories along longitudinal progress and lateral heading directions and supervise the model to recover the original expert trajectory. We then fine-tune the full decision--draft--reflect rollout with reinforcement learning (RL), assigning terminal driving reward to the final post-edit trajectory and propagating policy-gradient credit through full-rollout transitions. Full-rollout RL proves crucial for coupling drafting and editing: under supervised training alone, inference-time AutoEdit improves PDMS by at most $0.3$, whereas RL increases its gain to $1.9$. We also co-design an efficient reflective decoding stack for the decision--draft--reflect pipeline, combining shared-prefix KV reuse, Alternating Step Decode, and fused on-device unmasking. On NAVSIM, ReflectDrive-2 achieves $91.0$ PDMS with camera-only input and $94.8$ PDMS in a best-of-6 oracle setting, while running at $31.8$ ms average latency on NVIDIA Thor.",
+      "authors": [
+        "Huimin Wang",
+        "Yue Wang",
+        "Bihao Cui",
+        "Pengxiang Li",
+        "Ben Lu",
+        "Mingqian Wang",
+        "Tong Wang",
+        "Chuan Tang",
+        "Teng Zhang",
+        "Kun Zhan"
+      ],
+      "published": "2026-05-06T08:52:32Z",
+      "updated": "2026-05-06T08:52:32Z",
+      "url": "https://arxiv.org/abs/2605.04647",
+      "pdf_url": "https://arxiv.org/pdf/2605.04647.pdf",
+      "primary_category": "cs.RO",
+      "categories": [
+        "cs.RO"
+      ],
+      "tags": [
+        "cs.RO"
+      ],
+      "domain": "Agent",
+      "pdf_downloaded": true,
+      "pdf_size_bytes": 7507737,
+      "pdf_path": "2026-05-07/agent/2605.04647.pdf"
+    },
+    {
+      "id": "2605.04637",
+      "title": "SWE-WebDevBench: Evaluating Coding Agent Application Platforms as Virtual Software Agencies",
+      "abstract": "The emergence of \"vibe coding\" platforms, where users describe applications in natural language and AI agents autonomously generate full-stack software, has created a need for rigorous evaluation beyond code-level benchmarks. In order to assess them as virtual software development agencies on understanding business requirements, making architectural decisions, writing production code, handling iterative modifications, and maintaining business readiness, we introduce SWE-WebDev Bench, a 68-metric evaluation framework spanning 25 primary and 43 diagnostic metrics across seven groups, organized along three dimensions: Interaction Mode (App Creation Request (ACR) vs. App Modification Request (AMR)), Agency Angle (Product Manager (PM), Engineering, Ops), and Complexity Tier (T4 multi-role SaaS, T5 AI-native). Our evaluation (six platforms, three domains, 18 evaluation cells) reveals four recurring shortcomings in the current generation of AI app builders: (1) A specification bottleneck, where platforms compress rich business requirements into oversimplified technical plans, (2) A pervasive frontend-backend decoupling, where visually polished UIs mask absent or broken backend infrastructure, (3) A steep production-readiness cliff, where no platform scores above 60% on engineering quality and post-generation human effort varies substantially across platforms and (4) Widespread security and infrastructure failures, with no platform exceeding 65% Security Score against a 90% target and concurrency handling as low as 6%. These observations are descriptive of our sample and require larger-scale replication to establish generality. We release SWE-WebDev Bench as a community benchmark to enable such replication and help platform builders identify and address these gaps. Code and benchmark resources are available at: https://github.com/snowmountainAi/webdevbench and https://webdevbench.com/.",
+      "authors": [
+        "Siddhant Saxena",
+        "Nilesh Trivedi",
+        "Vinayaka Jyothi"
+      ],
+      "published": "2026-05-06T08:30:37Z",
+      "updated": "2026-05-06T08:30:37Z",
+      "url": "https://arxiv.org/abs/2605.04637",
+      "pdf_url": "https://arxiv.org/pdf/2605.04637.pdf",
+      "primary_category": "cs.MA",
+      "categories": [
+        "cs.MA",
+        "cs.SE"
+      ],
+      "tags": [
+        "cs.MA",
+        "cs.SE"
+      ],
+      "domain": "Agent",
+      "pdf_downloaded": true,
+      "pdf_size_bytes": 2712694,
+      "pdf_path": "2026-05-07/agent/2605.04637.pdf"
+    },
+    {
+      "id": "2605.04627",
+      "title": "Autonomous Synchronization of Discrete-Time Heterogeneous Multiagent Systems",
+      "abstract": "This paper investigates the autonomous synchronization problem for discrete-time heterogeneous multiagent systems. The synchronization problem is transformed into the asymptotic decoupling problem of stable modes in a class of discrete-time linear time-varying systems, for which we provide a sufficient condition. Leveraging this condition, synchronization conditions are established. The synchronization conditions are based on the average of the agents' initial dynamic matrices, without requiring the differences among these matrices to be small. This approach reduces the conservativeness of existing conditions and achieves a unification of both homogeneous and heterogeneous systems. Numerical simulation results are provided to support the theoretical findings.",
+      "authors": [
+        "Wei Hu",
+        "Quanyi Liang"
+      ],
+      "published": "2026-05-06T08:15:38Z",
+      "updated": "2026-05-06T08:15:38Z",
+      "url": "https://arxiv.org/abs/2605.04627",
+      "pdf_url": "https://arxiv.org/pdf/2605.04627.pdf",
+      "primary_category": "cs.MA",
+      "categories": [
+        "cs.MA"
+      ],
+      "tags": [
+        "cs.MA"
+      ],
+      "domain": "Agent",
+      "pdf_downloaded": true,
+      "pdf_size_bytes": 328014,
+      "pdf_path": "2026-05-07/agent/2605.04627.pdf"
+    },
+    {
+      "id": "2605.04610",
+      "title": "Active Contact Sensing for Robust Robot-to-Human Object Handover",
+      "abstract": "Robot-to-human object handover is an essential skill for robot assistants, from serving drinks at home to passing surgical tools in the operating room. We expect robots to perform handover robustly -- to release the object only after a firm human grasp while ignoring incidental touches. Existing passive-sensing methods struggle to generalize across diverse objects and human behaviors, as they lack informative perturbations to disambiguate different contact conditions, such as firm grasp versus incidental touch. We propose an active sensing approach for robust handovers: the robot applies information-gathering motions and senses the resulting human-applied forces to infer the contact state. A firm grasp produces forces in multiple directions, while an accidental touch does not. To capture this distinction, we model the contact state with a Bayesian linear model: a distribution over piecewise-linear mappings from robot motions to human-applied forces. This model enables firm grasp detection and active information gathering. In experiments with 12 participants and 30 diverse rigid objects, our method achieved a 97.5% success rate -- over 30% higher than two common baselines.",
+      "authors": [
+        "Linfeng Li",
+        "Lin Shao",
+        "David Hsu"
+      ],
+      "published": "2026-05-06T07:59:02Z",
+      "updated": "2026-05-06T07:59:02Z",
+      "url": "https://arxiv.org/abs/2605.04610",
+      "pdf_url": "https://arxiv.org/pdf/2605.04610.pdf",
+      "primary_category": "cs.RO",
+      "categories": [
+        "cs.RO"
+      ],
+      "tags": [
+        "cs.RO"
+      ],
+      "domain": "Agent",
+      "pdf_downloaded": true,
+      "pdf_size_bytes": 2259002,
+      "pdf_path": "2026-05-07/agent/2605.04610.pdf"
+    },
+    {
+      "id": "2605.04607",
+      "title": "Right Model, Right Time: Real-Time Cascaded-Fidelity MPC for Bipedal Walking",
+      "abstract": "This paper presents a multi-phase whole-body model predictive control approach for bipedal walking, combining a detailed whole-body model in the near horizon with a simplified single-rigid-body model in the later prediction steps. This reduces computational complexity while retaining prediction capabilities. The resulting nonlinear optimal control problem is solved using sequential quadratic programming (SQP) in acados. Using a prior specified contact schedule and a target walking speed, the controller optimizes joint torques without depending on prior selected foot step locations. The controller is validated in MuJoCo simulation on the 18-DoF bipedal robot HyPer-2",
+      "authors": [
+        "Franek Stark",
+        "Felix Wiebe",
+        "Shubham Vyas",
+        "Dennis Mronga",
+        "Frank Kirchner"
+      ],
+      "published": "2026-05-06T07:54:49Z",
+      "updated": "2026-05-06T07:54:49Z",
+      "url": "https://arxiv.org/abs/2605.04607",
+      "pdf_url": "https://arxiv.org/pdf/2605.04607.pdf",
+      "primary_category": "cs.RO",
+      "categories": [
+        "cs.RO"
+      ],
+      "tags": [
+        "cs.RO"
+      ],
+      "domain": "Agent",
+      "pdf_downloaded": true,
+      "pdf_size_bytes": 1282524,
+      "pdf_path": "2026-05-07/agent/2605.04607.pdf"
+    },
+    {
+      "id": "2605.04568",
+      "title": "Dream-MPC: Gradient-Based Model Predictive Control with Latent Imagination",
+      "abstract": "State-of-the-art model-based Reinforcement Learning (RL) approaches either use gradient-free, population-based methods for planning, learned policy networks, or a combination of policy networks and planning. Hybrid approaches that combine Model Predictive Control (MPC) with a learned model and a policy prior to leverage the advantages of both paradigms have shown promising results. However, these approaches typically rely on gradient-free optimization methods, which can be computationally expensive for high-dimensional control tasks. While gradient-based methods are a promising alternative, recent works have empirically shown that gradient-based methods often perform worse than their gradient-free counterparts. We propose Dream-MPC, a novel approach that generates few candidate trajectories from a rolled-out policy and optimizes each trajectory by gradient ascent using a learned world model, uncertainty regularization and amortization of optimization iterations over time by reusing previously optimized actions. Our results on 24 continuous control tasks show that Dream-MPC can significantly improve the performance of the underlying policy and can outperform gradient-free MPC and state-of-the-art baselines. We will open source our code and more at https://dream-mpc.github.io.",
+      "authors": [
+        "Jonathan Spieler",
+        "Sven Behnke"
+      ],
+      "published": "2026-05-06T07:13:11Z",
+      "updated": "2026-05-06T07:13:11Z",
+      "url": "https://arxiv.org/abs/2605.04568",
+      "pdf_url": "https://arxiv.org/pdf/2605.04568.pdf",
+      "primary_category": "cs.LG",
+      "categories": [
+        "cs.LG",
+        "cs.AI",
+        "cs.RO"
+      ],
+      "tags": [
+        "cs.AI",
+        "cs.LG",
+        "cs.RO"
+      ],
+      "domain": "Agent",
+      "pdf_downloaded": true,
+      "pdf_size_bytes": 9425995,
+      "pdf_path": "2026-05-07/agent/2605.04568.pdf"
+    },
+    {
+      "id": "2605.04564",
+      "title": "Practical validation of synthetic pre-crash scenarios",
+      "abstract": "The representativeness of synthetic pre-crash scenarios is crucial for assessing the safety impact of Driving Automation Systems through virtual simulations. However, a gap remains in the robust evaluation of synthetic pre-crash scenarios' practical equivalence to their real-world counterparts; that is, whether they are similar enough for the intended assessment purpose. Conventional significance testing is inadequate, as it focuses on detecting differences rather than establishing practical equivalence. This study addresses the research gap by extending our previous work on a Bayesian Region of Practical Equivalence (ROPE)-based equivalence testing framework by introducing a binning-based approach to define appropriate statistics and equivalence criteria. Two binning-based statistics are proposed to measure practically meaningful distributional differences between datasets in the context of safety impact assessment. The framework's applicability is demonstrated through a case study, which tests the practical equivalence of two synthetic rear-end pre-crash datasets with a previously developed reference dataset in the context of the safety impact assessment of an Automatic Emergency Braking system. The results show that the framework provides informative quantitative assessments of practical equivalence as well as diagnostic insights into the divergence of datasets. Although the demonstration focuses on rear-end pre-crash scenarios, the framework is generic and extensible to broader validation contexts, providing an interpretable and principled basis for practical equivalence assessment across diverse synthetic data applications.",
+      "authors": [
+        "Jian Wu",
+        "Ulrich Sander",
+        "Carol Flannagan",
+        "Jonas B\u00e4rgman"
+      ],
+      "published": "2026-05-06T07:08:06Z",
+      "updated": "2026-05-06T07:08:06Z",
+      "url": "https://arxiv.org/abs/2605.04564",
+      "pdf_url": "https://arxiv.org/pdf/2605.04564.pdf",
+      "primary_category": "cs.RO",
+      "categories": [
+        "cs.RO"
+      ],
+      "tags": [
+        "cs.RO"
+      ],
+      "domain": "Agent",
+      "pdf_downloaded": true,
+      "pdf_size_bytes": 749677,
+      "pdf_path": "2026-05-07/agent/2605.04564.pdf"
+    },
+    {
+      "id": "2605.04528",
+      "title": "YOTOnet: Zero-Shot Cross-Domain Fault Diagnosis via Domain-Conditioned Mixture of Experts",
+      "abstract": "Mechanical equipment forms the critical backbone of modern industrial production, yet domain shift severely limits the generalization of deep learning based fault diagnosis models across different equipment and operating conditions.Inspired by the success of foundation models in achieving zero-shotgeneralization, we propose YOTOnet (You Only Train Once), a novel architecture specifically designed for cross-domain fault diagnosis in mechanical equipment.YOTOnet comprises three core components: (1) a physics-aware Invariant Feature Distiller that extracts domain-agnostic representations using multi-scale dilated convolutions and FFT-based time-frequency fusion,(2) Domain-Conditioned Sparse Experts (DC-MoE) that adaptively route inputs to specialized processors via learned gating without external meta-data, and (3) a dual-head classification system with auxiliary supervision.Extensive validation on five public bearing datasets (CWRU, MFPT, XJTU,OTTAWA, HUST) through 30 cross-dataset protocols demonstrates the superiority of YOTOnet compared with other state-of-the-art methods. Critically, we observe a clear scaling effect-average test F1 improves from 0.5339(1 training dataset) to 0.705 (4 datasets), with a clear gain when moving from 3 to 4 datasets. These findings provide empirical evidence that foundation model principles can enable robust, train-once deployment for industrial fault diagnosis.",
+      "authors": [
+        "Zesen Wang",
+        "Zihao Wu",
+        "Yue Hu",
+        "Yang Gao",
+        "Fuzhen Xuan"
+      ],
+      "published": "2026-05-06T06:12:21Z",
+      "updated": "2026-05-06T06:12:21Z",
+      "url": "https://arxiv.org/abs/2605.04528",
+      "pdf_url": "https://arxiv.org/pdf/2605.04528.pdf",
+      "primary_category": "cs.LG",
+      "categories": [
+        "cs.LG",
+        "cs.MA"
+      ],
+      "tags": [
+        "cs.LG",
+        "cs.MA"
+      ],
+      "domain": "Agent",
+      "pdf_downloaded": true,
+      "pdf_size_bytes": 1502472,
+      "pdf_path": "2026-05-07/agent/2605.04528.pdf"
+    }
+  ]
+}
