@@ -1,0 +1,234 @@
+{
+  "domain": "Quant",
+  "date": "2026-05-08",
+  "count": 8,
+  "papers": [
+    {
+      "id": "2605.06604",
+      "title": "A Geometry-Aware Residual Correction of Hagan's SABR Implied Volatility Formula",
+      "abstract": "This paper proposes a hybrid methodology to improve the approximation of SABR (Stochastic Alpha Beta Rho) implied volatility by combining analytical structure with machine learning. The approach augments the neural-network input representation with geometric features derived from the stochastic differential equations of the SABR model. Unlike approaches that fully replace analytical formulas with black-box models, the proposed framework preserves the analytical backbone of the model. The hybridization operates along two complementary dimensions. First, geometry-aware variables reflecting intrinsic properties of the SABR dynamics are used as structured inputs to the network. Second, the neural network is trained to learn the residual error relative to Hagan's closed-form approximation rather than implied volatility directly. The resulting model acts as a structured residual correction to the analytical formula, retaining interpretability while capturing higher-order effects that are not included in the asymptotic expansion. Numerical experiments conducted over realistic parameter domains, as well as stressed environments, show that the method improves accuracy and robustness compared with both analytical approximations and standard neural-network approaches. Because the correction remains lightweight and structurally consistent with the underlying model, the framework is well suited for real-time pricing and calibration in practical trading environments.",
+      "authors": [
+        "Adil Reghai",
+        "Lama Tarsissi",
+        "G\u00e9rard Biau",
+        "Alex Lipton"
+      ],
+      "published": "2026-05-07T17:22:39Z",
+      "updated": "2026-05-07T17:22:39Z",
+      "url": "https://arxiv.org/abs/2605.06604",
+      "pdf_url": "https://arxiv.org/pdf/2605.06604.pdf",
+      "primary_category": "q-fin.CP",
+      "categories": [
+        "q-fin.CP",
+        "stat.ML"
+      ],
+      "tags": [
+        "q-fin.CP",
+        "stat.ML"
+      ],
+      "domain": "Quant",
+      "pdf_downloaded": true,
+      "pdf_size_bytes": 2924094,
+      "pdf_path": "2026-05-08/quant/2605.06604.pdf"
+    },
+    {
+      "id": "2605.06570",
+      "title": "SNAPO: Smooth Neural Adjoint Policy Optimization for Optimal Control via Differentiable Simulation",
+      "abstract": "Many real-world problems require sequential decisions under uncertainty: when to inject or withdraw gas from storage, how to rebalance a pension portfolio each month, what temperature profile to run through a pharmaceutical reactor chain. Dynamic programming solves small instances exactly but scales exponentially in state dimensions. Black-box reinforcement learning handles high-dimensional states but trains slowly and produces no sensitivities. We introduce SNAPO (Smooth Neural Adjoint Policy Optimization), a framework that embeds a neural policy inside a known, differentiable simulator, replaces hard constraints with smooth approximations, and computes exact gradients of the objective with respect to all policy parameters and all inputs in a single adjoint pass. We demonstrate SNAPO on three domains: natural gas storage (training in under a minute, 365 forward curve sensitivities at no additional cost per sensitivity), pension fund asset-liability management (6.5x-200x sensitivity speedup over bump-and-revalue, scaling with the number of risk factors), and pharmaceutical manufacturing (cross-unit sensitivities through a 4-unit process chain, with 20 ICH Q8 regulatory sensitivities from 5 adjoint passes in 74.5 milliseconds). All sensitivities are produced by the same backward pass that trains the policy, at a cost proportional to one reverse pass regardless of how many sensitivities are computed.",
+      "authors": [
+        "Dmitri Goloubentsev",
+        "Natalija Karpichina"
+      ],
+      "published": "2026-05-07T17:01:13Z",
+      "updated": "2026-05-07T17:01:13Z",
+      "url": "https://arxiv.org/abs/2605.06570",
+      "pdf_url": "https://arxiv.org/pdf/2605.06570.pdf",
+      "primary_category": "cs.LG",
+      "categories": [
+        "cs.LG",
+        "math.OC",
+        "q-fin.CP",
+        "q-fin.MF",
+        "q-fin.RM"
+      ],
+      "tags": [
+        "cs.LG",
+        "math.OC",
+        "q-fin.CP",
+        "q-fin.MF",
+        "q-fin.RM"
+      ],
+      "domain": "Quant",
+      "pdf_downloaded": true,
+      "pdf_size_bytes": 185187,
+      "pdf_path": "2026-05-08/quant/2605.06570.pdf"
+    },
+    {
+      "id": "2605.06438",
+      "title": "Neural-Actuarial Longevity Forecasting: Anchoring LSTMs for Explainable Risk Management",
+      "abstract": "Traditional multi-population models, such as the Li-Lee framework, rely on the assumption of mean-reverting country-specific deviations. However, recent data from high-longevity clusters suggest a systemic break in this paradigm. We identify a stationarity paradox where mortality residuals in countries like Sweden and West Germany exhibit persistent unit roots, leading to a systematic mispricing of longevity risk in linear models. To address these non-linearities, we propose Hybrid-Lift, a neural-actuarial framework that combines Hierarchical LSTM networks with a Mean-Bias Correction (MBC) anchoring mechanism. Positioned as a governance-friendly model challenger rather than a replacement of classical approaches, the framework exhibits selective superiority on out-of-sample validation (2012-2020): it outperforms Li-Lee by 17.40% in Sweden and 12.57% in West Germany, while remaining comparable for near-linear regimes such as Switzerland and Japan. We complement the predictive model with an integrated governance suite comprising SHAP-based cross-country influence mapping, a dual uncertainty framework for regulatory capital calibration (Swiss ES 99.0% of +1.153 years), and a reverse stress test identifying the critical shock threshold for solvency buffer exhaustion. This research provides evidence that neural networks, when properly anchored by actuarial principles, can serve as effective model challengers for longevity risk management under the SST and Solvency II standards.",
+      "authors": [
+        "Davide Rindori"
+      ],
+      "published": "2026-05-07T15:37:28Z",
+      "updated": "2026-05-07T15:37:28Z",
+      "url": "https://arxiv.org/abs/2605.06438",
+      "pdf_url": "https://arxiv.org/pdf/2605.06438.pdf",
+      "primary_category": "stat.ML",
+      "categories": [
+        "stat.ML",
+        "cs.LG",
+        "q-fin.RM"
+      ],
+      "tags": [
+        "cs.LG",
+        "q-fin.RM",
+        "stat.ML"
+      ],
+      "domain": "Quant",
+      "pdf_downloaded": true,
+      "pdf_size_bytes": 1887450,
+      "pdf_path": "2026-05-08/quant/2605.06438.pdf"
+    },
+    {
+      "id": "2605.06405",
+      "title": "Funding-Aware Optimal Market Making for Perpetual DEXs",
+      "abstract": "This paper studies optimal liquidity provision for perpetual contracts when the funding rate is a stochastic state variable. The core extension to classical market making is the coupling between inventory and funding payments: inventory creates both mark-to-market exposure and a state-dependent funding cash flow. A reduced inventory-funding control problem is formulated, solved with a monotone finite-difference Hamilton-Jacobi-Bellman scheme, and bid and ask quote offsets are recovered from discrete inventory value differences. Funding is calibrated on Hyperliquid ETH, BTC, and SOL perpetual data. Gaussian OU funding is retained as a tractable diffusion baseline, while OU-plus-jump diagnostics document the heavy-tailed funding innovations that should enter a future extension. In 100-seed holdout simulations under two official-fill proxy calibrations, the funding-aware HJB improves mean ETH/BTC performance while lowering inventory RMS relative to classical Avellaneda-Stoikov. SOL gains are positive versus unscaled AS but are not a Pareto improvement once a risk-scaled AS diagnostic is included.",
+      "authors": [
+        "Nam Anh Le"
+      ],
+      "published": "2026-05-07T15:13:00Z",
+      "updated": "2026-05-07T15:13:00Z",
+      "url": "https://arxiv.org/abs/2605.06405",
+      "pdf_url": "https://arxiv.org/pdf/2605.06405.pdf",
+      "primary_category": "q-fin.MF",
+      "categories": [
+        "q-fin.MF"
+      ],
+      "tags": [
+        "q-fin.MF"
+      ],
+      "domain": "Quant",
+      "pdf_downloaded": true,
+      "pdf_size_bytes": 432436,
+      "pdf_path": "2026-05-08/quant/2605.06405.pdf"
+    },
+    {
+      "id": "2605.06281",
+      "title": "INEUS: Iterative Neural Solver for High-Dimensional PIDEs",
+      "abstract": "In this paper, we introduce INEUS, a meshfree iterative neural solver for partial integro-differential equations (PIDEs). The method replaces the explicit evaluation of nonlocal jump integrals with single-jump sampling and reformulates PIDE solving as a sequence of recursive regression problems. Like Physics-Informed Neural Networks (PINNs), INEUS learns global solutions over the entire space-time domain, yet it offers a more efficient treatment of nonlocal terms and avoids the computationally expensive differentiation of full PIDE residuals. These features make INEUS particularly well suited for high-dimensional PDEs and PIDEs. Supported by a contraction-based convergence proof for linear PIDEs, our numerical experiments show that INEUS delivers accurate and scalable solutions for various high-dimensional linear and nonlinear examples.",
+      "authors": [
+        "Jean-Loup Dupret",
+        "Davide Gallon",
+        "Patrick Cheridito"
+      ],
+      "published": "2026-05-07T13:53:45Z",
+      "updated": "2026-05-07T13:53:45Z",
+      "url": "https://arxiv.org/abs/2605.06281",
+      "pdf_url": "https://arxiv.org/pdf/2605.06281.pdf",
+      "primary_category": "cs.LG",
+      "categories": [
+        "cs.LG",
+        "math.NA",
+        "q-fin.CP"
+      ],
+      "tags": [
+        "cs.LG",
+        "math.NA",
+        "q-fin.CP"
+      ],
+      "domain": "Quant",
+      "pdf_downloaded": true,
+      "pdf_size_bytes": 4723178,
+      "pdf_path": "2026-05-08/quant/2605.06281.pdf"
+    },
+    {
+      "id": "2605.06220",
+      "title": "Numerical methods for lambda quantiles: robust evaluation and portfolio optimisation",
+      "abstract": "Lambda quantiles, originally introduced as lambda value at risk, generalise the classical value at risk by allowing for a variable confidence level. This work presents efficient algorithms for computing lambda quantiles and demonstrates their application in portfolio optimisation. We first develop a robust algorithm, \u039b-Newton-Bis, that combines Newton's method with a bisection strategy to ensure global convergence. The algorithm handles potential discontinuities and achieves local quadratic convergence under standard regularity assumptions. To address cases with multiple roots, we also propose an interval analysis approach. We then demonstrate the algorithm's computational efficiency and practical relevance within a portfolio optimization framework. To this end, we develop two alternative solution methods that incorporate the \u039b-Newton-Bis procedure. Numerical experiments confirm the algorithm's convergence properties and highlight its computational advantages in optimization tasks based on lambda quantiles.",
+      "authors": [
+        "Ilaria Peri",
+        "Linus Wunderlich"
+      ],
+      "published": "2026-05-07T13:18:08Z",
+      "updated": "2026-05-07T13:18:08Z",
+      "url": "https://arxiv.org/abs/2605.06220",
+      "pdf_url": "https://arxiv.org/pdf/2605.06220.pdf",
+      "primary_category": "q-fin.CP",
+      "categories": [
+        "q-fin.CP",
+        "q-fin.RM"
+      ],
+      "tags": [
+        "q-fin.CP",
+        "q-fin.RM"
+      ],
+      "domain": "Quant",
+      "pdf_downloaded": true,
+      "pdf_size_bytes": 579867,
+      "pdf_path": "2026-05-08/quant/2605.06220.pdf"
+    },
+    {
+      "id": "2605.05739",
+      "title": "Multi-Dimensional Behavioral Evaluation of Agentic Stock Prediction Systems Using LLM Judges with Closed-Loop Reinforcement Learning Feedback",
+      "abstract": "Agentic stock prediction systems make sequences of interdependent decisions (regime detection, pathway routing, reinforcement learning control) whose individual quality is hidden by aggregate metrics such as mean absolute percentage error (MAPE) or directional accuracy. We present a behavioral evaluation framework that addresses this gap. Behavioral traces logged at every autonomous decision point are grouped into five-day episodes and scored along six domain-specific dimensions (regime detection, routing, adaptation, risk calibration, strategy coherence, error recovery) by an ensemble of three large language model (LLM) judges (GPT 5.4, Claude 4.6 Opus, Gemini 3.1 Pro). Perturbation-based validation on 420 episodes yields targeted score drops of $-1.6$ to $-2.4$ on intended dimensions versus an average of $-0.32$ on the remaining five, with cross-model agreement up to Krippendorff's $\u03b1= 0.85$. The composite behavioral score, used here only for cross-episode reporting, correlates at $\u03c1= 0.72$ with realized 20-day Sharpe ratio from offline backtesting. Closing the loop, the framework converts deficient per-dimension scores into a credit-assigned penalty term added to the Soft Actor-Critic (SAC) reward. Three short fine-tuning cycles, all confined to the validation period, produce on the held-out 2017-2025 test period a one-day MAPE reduction from 0.61% to 0.54% (an 11.5% relative reduction; $p<0.001$, Cohen's $d=0.31$), a directional accuracy increase from 71% to 74%, and an 18% Sharpe ratio improvement (95% bootstrap CI [8.2%, 27.4%]), with gains concentrated in high-volatility episodes where the original system was most behaviorally deficient. Results are from offline backtesting and do not address effects specific to live deployment.",
+      "authors": [
+        "Mohammad Al Ridhawi",
+        "Mahtab Haj Ali",
+        "Hussein Al Osman"
+      ],
+      "published": "2026-05-07T06:31:34Z",
+      "updated": "2026-05-07T06:31:34Z",
+      "url": "https://arxiv.org/abs/2605.05739",
+      "pdf_url": "https://arxiv.org/pdf/2605.05739.pdf",
+      "primary_category": "cs.LG",
+      "categories": [
+        "cs.LG",
+        "cs.AI",
+        "cs.CL",
+        "q-fin.CP"
+      ],
+      "tags": [
+        "cs.AI",
+        "cs.CL",
+        "cs.LG",
+        "q-fin.CP"
+      ],
+      "domain": "Quant",
+      "pdf_downloaded": true,
+      "pdf_size_bytes": 2711528,
+      "pdf_path": "2026-05-08/quant/2605.05739.pdf"
+    },
+    {
+      "id": "2605.05376",
+      "title": "Frustrated Dynamics of Distance Matrices",
+      "abstract": "We introduce the Frustrated Distance Matrix (FDM) model, a dynamic extension of the static distance-matrix ensemble on S^2 analyzed by Bogomolny, Bohigas, and Schmit (BBS). Its entries are pairwise geodesic distances between N Brownian particles on the sphere evolving under quenched random pairwise couplings linear in those distances. Where the static BBS theory recovers geometric information about the underlying manifold from spectra of distance matrices on i.i.d.\\ samples, the time-resolved FDM spectrum carries information about structural changes of the underlying point process. The particle dynamics realize one such change: a fast collapse from a uniform configuration onto a one-dimensional ring, followed by slow rotational drift of the ring orientation; the particle-level picture provides the ground truth against which spectral diagnostics are calibrated. We find that the static BBS template is preserved at every time, with the dynamics entering as a redistribution of spectral mass within that template, sharp enough to flag ring formation. We propose self-averaging of the bulk density as the mechanism behind this preservation, verified by an i.i.d.-resample comparison, and extract a small set of spectral diagnostics of the structural change computable from the distance matrix alone. We suggest that our diagnostics can be applied in other similar inverse-problem settings: financial correlation matrices, graph and network adjacency spectra, similarity matrices in molecular dynamics, and dynamics on parameter manifolds.",
+      "authors": [
+        "Igor Halperin"
+      ],
+      "published": "2026-05-06T18:58:44Z",
+      "updated": "2026-05-06T18:58:44Z",
+      "url": "https://arxiv.org/abs/2605.05376",
+      "pdf_url": "https://arxiv.org/pdf/2605.05376.pdf",
+      "primary_category": "nlin.PS",
+      "categories": [
+        "nlin.PS",
+        "cond-mat.dis-nn",
+        "cond-mat.stat-mech",
+        "hep-th",
+        "q-fin.CP"
+      ],
+      "tags": [
+        "cond-mat.dis-nn",
+        "cond-mat.stat-mech",
+        "hep-th",
+        "nlin.PS",
+        "q-fin.CP"
+      ],
+      "domain": "Quant",
+      "pdf_downloaded": true,
+      "pdf_size_bytes": 6617102,
+      "pdf_path": "2026-05-08/quant/2605.05376.pdf"
+    }
+  ]
+}
