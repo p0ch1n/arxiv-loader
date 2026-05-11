@@ -1,0 +1,704 @@
+{
+  "domain": "Vision",
+  "date": "2026-05-11",
+  "count": 24,
+  "papers": [
+    {
+      "id": "2605.08084",
+      "title": "123D: Unifying Multi-Modal Autonomous Driving Data at Scale",
+      "abstract": "The pursuit of autonomous driving has produced one of the richest sensor data collections in all of robotics. However, its scale and diversity remain largely untapped. Each dataset adopts different 2D and 3D modalities, such as cameras, lidar, ego states, annotations, traffic lights, and HD maps, with different rates and synchronization schemes. They come in fragmented formats requiring complex dependencies that cannot natively coexist in the same development environment. Further, major inconsistencies in annotation conventions prevent training or measuring generalization across multiple datasets. We present 123D, an open-source framework that unifies such multi-modal driving data through a single API. To handle synchronization, we store each modality as an independent timestamped event stream with no prescribed rate, enabling synchronous or asynchronous access across arbitrary datasets. Using 123D, we consolidate eight real-world driving datasets spanning 3,300 hours and 90,000 kilometers, together with a synthetic dataset with configurable collection scripts, and provide tools for data analysis and visualization. We conduct a systematic study comparing annotation statistics and assessing each dataset's pose and calibration accuracy. Further, we showcase two applications 123D enables: cross-dataset 3D object detection transfer and reinforcement learning for planning, and offer recommendations for future directions. Code and documentation are available at https://github.com/kesai-labs/py123d.",
+      "authors": [
+        "Daniel Dauner",
+        "Valentin Charraut",
+        "Bastian Berle",
+        "Tianyu Li",
+        "Long Nguyen",
+        "Jiabao Wang",
+        "Changhui Jing",
+        "Maximilian Igl",
+        "Holger Caesar",
+        "Boris Ivanovic",
+        "Yiyi Liao",
+        "Andreas Geiger",
+        "Kashyap Chitta"
+      ],
+      "published": "2026-05-08T17:59:53Z",
+      "updated": "2026-05-08T17:59:53Z",
+      "url": "https://arxiv.org/abs/2605.08084",
+      "pdf_url": "https://arxiv.org/pdf/2605.08084.pdf",
+      "primary_category": "cs.RO",
+      "categories": [
+        "cs.RO",
+        "cs.CV"
+      ],
+      "tags": [
+        "cs.CV",
+        "cs.RO"
+      ],
+      "domain": "Vision",
+      "pdf_downloaded": true,
+      "pdf_size_bytes": 6923792,
+      "pdf_path": "2026-05-11/vision/2605.08084.pdf"
+    },
+    {
+      "id": "2605.08064",
+      "title": "Proxy3D: Efficient 3D Representations for Vision-Language Models via Semantic Clustering and Alignment",
+      "abstract": "Spatial intelligence in vision-language models (VLMs) attracts research interest with the practical demand to reason in the 3D world.Despite promising results, most existing methods follow the conventional 2D pipeline in VLMs and use pixel-aligned representations for the vision modality. However, correspondence-based models with implicit 3D scene understanding often fail to achieve spatial consistency, and representation-based models with 3D geometric priors lack efficiency in vision sequence serialization. To address this, we propose a Proxy3D method with compact yet comprehensive 3D proxy representations for the vision modality. Given only video frames as input, we employ semantic and geometric encoders to extract scene features and then perform their semantic-aware clustering to obtain a set of proxies in the 3D space. For representation alignment, we further curate the SpaceSpan dataset and apply multi-stage training to adopt the proposed 3D proxy representations with the VLM. When using shorter sequences for vision information, our method achieves competitive or state-of-the-art performance in 3D visual question answering, visual grounding and general spatial intelligence benchmarks.",
+      "authors": [
+        "Jerry Jiang",
+        "Haowen Sun",
+        "Denis Gudovskiy",
+        "Yohei Nakata",
+        "Tomoyuki Okuno",
+        "Kurt Keutzer",
+        "Wenzhao Zheng"
+      ],
+      "published": "2026-05-08T17:50:47Z",
+      "updated": "2026-05-08T17:50:47Z",
+      "url": "https://arxiv.org/abs/2605.08064",
+      "pdf_url": "https://arxiv.org/pdf/2605.08064.pdf",
+      "primary_category": "cs.CV",
+      "categories": [
+        "cs.CV"
+      ],
+      "tags": [
+        "cs.CV"
+      ],
+      "domain": "Vision",
+      "pdf_downloaded": true,
+      "pdf_size_bytes": 8960369,
+      "pdf_path": "2026-05-11/vision/2605.08064.pdf"
+    },
+    {
+      "id": "2605.08059",
+      "title": "6D Pose Estimation via Keypoint Heatmap Regression with RGB-D Residual Neural Networks",
+      "abstract": "In this paper, we propose a modular framework for 6D pose estimation based on keypoint heatmap regression. Our approach combines YOLOv10m for object detection with a ResNet18-based network that predicts 2D heatmaps from RGB images. Keypoints extracted from these heatmaps are used to estimate the 6D object pose via the PnP RANSAC algorithm. We compare different keypoint selection strategies to assess their impact on pose accuracy. Additionally, we extend the baseline by incorporating depth data using a cross-fusion architecture, which enables interaction between RGB and depth features at multiple stages. We further explore general training improvements, such as experimenting with activation functions and learning rate scheduling strategies to improve model performance. Our best RGB-only model achieved a mean ADD-based accuracy of 84.50%, while the RGB-D fusion model reached 92.41% on the LINEMOD dataset. The code is available at https://github.com/ameermasood/HeatNet.",
+      "authors": [
+        "Ismail Aljosevic",
+        "Amir Masoud Almasi",
+        "Ana Parovic",
+        "Ashkan Shafiei"
+      ],
+      "published": "2026-05-08T17:47:02Z",
+      "updated": "2026-05-08T17:47:02Z",
+      "url": "https://arxiv.org/abs/2605.08059",
+      "pdf_url": "https://arxiv.org/pdf/2605.08059.pdf",
+      "primary_category": "cs.CV",
+      "categories": [
+        "cs.CV",
+        "cs.RO"
+      ],
+      "tags": [
+        "cs.CV",
+        "cs.RO"
+      ],
+      "domain": "Vision",
+      "pdf_downloaded": true,
+      "pdf_size_bytes": 4450342,
+      "pdf_path": "2026-05-11/vision/2605.08059.pdf"
+    },
+    {
+      "id": "2605.08054",
+      "title": "Towards Highly-Constrained Human Motion Generation with Retrieval-Guided Diffusion Noise Optimization",
+      "abstract": "Generating human motion that satisfies customized zero-shot goal functions, enabling applications such as controllable character animation and behavior synthesis for virtual agents, is a critical capability. While current approaches handle many unseen constraints, they fail on tasks with very challenging spatiotemporal restrictions, such as severe spatial obstacles or specified numbers of walking steps. To equip motion generators for these highly constrained tasks, we present a retrieval-guided method built on the training-free diffusion noise optimization framework. The key idea is to search within large motion datasets for guidance that can potentially satisfy difficult constraints. We introduce relational task parsing to group target constraints and identify the difficult ones to be handled by retrieved reference. A better initialization for diffusion noise is then obtained via a reward-guided mask that combines random noise with retrieved noise. By optimizing diffusion noise from this improved initialization, we successfully solve highly constrained generation tasks. By leveraging LLM for relational task parsing, the whole framework is further enabled to automatically reason for what to retrieve, improving the intelligence of moving agents under a training-free optimization scheme.",
+      "authors": [
+        "Hanchao Liu",
+        "Fang-Lue Zhang",
+        "Shining Zhang",
+        "Tai-Jiang Mu",
+        "Shi-Min Hu"
+      ],
+      "published": "2026-05-08T17:43:29Z",
+      "updated": "2026-05-08T17:43:29Z",
+      "url": "https://arxiv.org/abs/2605.08054",
+      "pdf_url": "https://arxiv.org/pdf/2605.08054.pdf",
+      "primary_category": "cs.CV",
+      "categories": [
+        "cs.CV"
+      ],
+      "tags": [
+        "cs.CV"
+      ],
+      "domain": "Vision",
+      "pdf_downloaded": true,
+      "pdf_size_bytes": 2667838,
+      "pdf_path": "2026-05-11/vision/2605.08054.pdf"
+    },
+    {
+      "id": "2605.08050",
+      "title": "MoCoTalk: Multi-Conditional Diffusion with Adaptive Router for Controllable Talking Head Generation",
+      "abstract": "Talking-head generation requires joint modeling of identity, head pose, facial expression, and mouth dynamics. Existing methods typically address only a subset of these factors, and rely on fixed-weight or heuristic fusion when multiple conditions are involved. We present MoCoTalk, a multi-conditional video diffusion framework that unifies four complementary control signals: a reference image, facial keypoints, 3DMM-rendered shading meshes, and the corresponding speech audio. To resolve destructive interference among heterogeneous conditions, we introduce an Adaptive Multi-Condition Router that computes channel-wise, timestep-aware gating over the four condition streams, allowing the fusion strategy to vary with both feature subspace and noise level. To better capture speech-related facial dynamics, we design a Mouth-Augmented Shading Mesh, a 3DMM-based representation that decouples head motion, mouth motion, expression, and lighting. This design provides a temporally consistent geometric prior and allows flexible recombination of these attributes at inference. We further introduce a lip consistency loss to tighten audio-visual alignment. Extensive experiments show that MoCoTalk achieves state-of-the-art performance on the majority of structural, motion, and perceptual metrics, while offering attribute-level controllability that single-condition methods do not provide.",
+      "authors": [
+        "Xinyan Ye",
+        "Jiankang Deng",
+        "Abbas Edalat"
+      ],
+      "published": "2026-05-08T17:40:01Z",
+      "updated": "2026-05-08T17:40:01Z",
+      "url": "https://arxiv.org/abs/2605.08050",
+      "pdf_url": "https://arxiv.org/pdf/2605.08050.pdf",
+      "primary_category": "cs.CV",
+      "categories": [
+        "cs.CV"
+      ],
+      "tags": [
+        "cs.CV"
+      ],
+      "domain": "Vision",
+      "pdf_downloaded": true,
+      "pdf_size_bytes": 13028335,
+      "pdf_path": "2026-05-11/vision/2605.08050.pdf"
+    },
+    {
+      "id": "2605.08031",
+      "title": "Object Hallucination-Free Reinforcement Unlearning for Vision-Language Models",
+      "abstract": "Vision-language models (VLMs) raise growing concerns about privacy, copyright, and bias, motivating machine unlearning to remove sensitive knowledge. However, existing methods primarily fine-tune the language decoder, leading to superficial forgetting that fails to erase underlying visual representations and often introduces object hallucination. We propose HFRU, a reinforcement unlearning framework that operates on the vision encoder for deep semantic removal. Our two-stage approach combines alignment disruption with GRPO-based optimization using a composite reward, including an abstraction reward that encourages semantically valid substitutions and mitigates hallucinations. Experiments on object recognition and face identity tasks show that HFRU achieves over 98% forgetting and retention performance, while introducing negligible object hallucination, significantly outperforming prior methods.Our code and implementation details are available at https://github.com/XMUDeepLIT/HFRU.",
+      "authors": [
+        "Kaidi Jia",
+        "Yujie Lin",
+        "Chengyi Yang",
+        "Jiayao Ma",
+        "Jinsong Su"
+      ],
+      "published": "2026-05-08T17:19:53Z",
+      "updated": "2026-05-08T17:19:53Z",
+      "url": "https://arxiv.org/abs/2605.08031",
+      "pdf_url": "https://arxiv.org/pdf/2605.08031.pdf",
+      "primary_category": "cs.CV",
+      "categories": [
+        "cs.CV"
+      ],
+      "tags": [
+        "cs.CV"
+      ],
+      "domain": "Vision",
+      "pdf_downloaded": true,
+      "pdf_size_bytes": 3295815,
+      "pdf_path": "2026-05-11/vision/2605.08031.pdf"
+    },
+    {
+      "id": "2605.08025",
+      "title": "TRAS: An Interactive Software for Tracing Tree Ring Cross Sections",
+      "abstract": "Tree ring marking remains a key step in dendrometry and dendrochronology, but it is often performed manually, making the process time-consuming, subjective, and difficult to scale to large image datasets. We present the Tree Ring Analyzer Suite (TRAS), an open-source graphical software for automatic delineation, manual correction, and measurement of tree rings in wood cross-sectional images. TRAS integrates three complementary detection algorithms: the classical image-processing method CS-TRD and two deep-learning approaches, DeepCS-TRD and INBD. The interface allows users to refine automatic detections, remove false positives, and manually add missing rings. It also computes dendrochronological metrics such as earlywood and latewood areas, ring perimeter, equivalent ring width, and custom path-based ring-width measurements. TRAS was evaluated on 18 expertly annotated Pinus taeda L. cross-section images. DeepCS-TRD achieved the best automatic detection performance, with an F-score of 81.0% and precision of 86.4%. Automatic detection reduced the required manual correction effort to approximately 20% of ring boundaries. For one-dimensional ring-width measurements, TRAS showed excellent agreement with CooRecorder ($r > 0.99$). Common detection errors, such as jump propagation or false positives near knots, were easily corrected through the postprocessing interface. TRAS provides a flexible and reproducible solution for tree-ring analysis on Windows, macOS, and Linux. Code is available at the https://hmarichal93.github.io/tras.",
+      "authors": [
+        "Henry Marichal",
+        "Diego Passarella",
+        "Gregory Randall"
+      ],
+      "published": "2026-05-08T17:11:38Z",
+      "updated": "2026-05-08T17:11:38Z",
+      "url": "https://arxiv.org/abs/2605.08025",
+      "pdf_url": "https://arxiv.org/pdf/2605.08025.pdf",
+      "primary_category": "cs.CV",
+      "categories": [
+        "cs.CV"
+      ],
+      "tags": [
+        "cs.CV"
+      ],
+      "domain": "Vision",
+      "pdf_downloaded": true,
+      "pdf_size_bytes": 17294595,
+      "pdf_path": "2026-05-11/vision/2605.08025.pdf"
+    },
+    {
+      "id": "2605.08003",
+      "title": "SphereVAD: Training-Free Video Anomaly Detection via Geodesic Inference on the Unit Hypersphere",
+      "abstract": "Video anomaly detection (VAD) aims to automatically identify events that deviate from normal patterns in untrimmed surveillance videos. Existing methods universally depend on large-scale annotations or task-specific training procedures, severely limiting their rapid deployment to novel scenes. We observe that intermediate-layer features of pre-trained multimodal large language models (MLLMs) already encode rich anomaly semantics, yet existing approaches rely on the language output pathway and fail to exploit the geometric discriminability latent in these representations. Based on this finding, we propose SphereVAD, a fully training-free, zero-shot VAD framework that recasts anomaly discrimination as von Mises-Fisher (vMF) likelihood-ratio geodesic inference on the unit hypersphere, unleashing latent discriminability through principled geometric reasoning rather than learning new representations. Specifically, SphereVAD first applies Frechet mean centering to unfold feature distributions and eliminate domain biases, then employs Holistic Scene Attention (HSA) to reinforce feature consistency using cross-video priors, and finally performs vMF-guided Spherical Geodesic Pulling (SGP) to align ambiguous segments with directional prototypes on the spherical manifold. This training-free pipeline requires only minimal synthetic images for calibration. SphereVAD establishes new state-of-the-art results among training-free approaches on three major benchmarks and remains competitive with fully supervised baselines. Code will be available upon acceptance.",
+      "authors": [
+        "Chao Huang",
+        "Penfei Wei",
+        "Wei Wang",
+        "Jie Wen",
+        "Zhihua Wang",
+        "Li Shen",
+        "Wenqi Ren",
+        "Xiaochun Cao"
+      ],
+      "published": "2026-05-08T16:57:38Z",
+      "updated": "2026-05-08T16:57:38Z",
+      "url": "https://arxiv.org/abs/2605.08003",
+      "pdf_url": "https://arxiv.org/pdf/2605.08003.pdf",
+      "primary_category": "cs.CV",
+      "categories": [
+        "cs.CV"
+      ],
+      "tags": [
+        "cs.CV"
+      ],
+      "domain": "Vision",
+      "pdf_downloaded": true,
+      "pdf_size_bytes": 8046739,
+      "pdf_path": "2026-05-11/vision/2605.08003.pdf"
+    },
+    {
+      "id": "2605.08000",
+      "title": "Rethinking Dense Optical Flow without Test-Time Scaling",
+      "abstract": "Recent progress in dense optical flow has been driven by increasingly complex architectures and multi-step refinement for test-time scaling. While these approaches achieve strong benchmark performance, they also require substantial computation during inference. This raises a fundamental question: Is scaling test-time computation the only way to improve dense optical flow accuracy? We argue that it is not. Instead, powerful visual semantic and geometric priors encoded in modern foundation models can reduce, if not overcome, the need for computationally expensive iterative refinement at test-time. In this paper, we present a framework that estimates dense optical flow in a single forward pass, leveraging pretrained foundation representations, while avoiding iterative refinement and additional inference-time computation, thus offering an alternative to test-time scaling. Our method extracts visual semantic features from a frozen DINO-v2 backbone and combines them with geometric cues from a monocular depth foundation model. We fuse these complementary priors into a unified representation and apply a global matching formulation to estimate dense correspondences without recurrent updates or test-time optimization. Despite avoiding iterative refinement, our approach achieves strong cross-dataset generalization across challenging benchmarks. On Sintel Final, we obtain 2.81 EPE without refinement, significantly improving over state-of-the-art (SOTA) SEA-RAFT under comparable training conditions and outperforming RAFT, GMFlow (without refinement), and recent FlowSeek in the same setting. These results suggest that strong foundation priors can substitute for test-time scaling, offering a computationally efficient alternative to refinement-heavy pipelines.",
+      "authors": [
+        "Praroop Chanda",
+        "Suryansh Kumar"
+      ],
+      "published": "2026-05-08T16:56:24Z",
+      "updated": "2026-05-08T16:56:24Z",
+      "url": "https://arxiv.org/abs/2605.08000",
+      "pdf_url": "https://arxiv.org/pdf/2605.08000.pdf",
+      "primary_category": "cs.CV",
+      "categories": [
+        "cs.CV"
+      ],
+      "tags": [
+        "cs.CV"
+      ],
+      "domain": "Vision",
+      "pdf_downloaded": true,
+      "pdf_size_bytes": 2531487,
+      "pdf_path": "2026-05-11/vision/2605.08000.pdf"
+    },
+    {
+      "id": "2605.07987",
+      "title": "Uncertainty Quantification for Cardiac Shape Reconstruction with Deep Signed Distance Functions via MCMC methods",
+      "abstract": "Atlas-based approaches allow high-quality, patient-specific shape reconstructions of cardiac anatomy from sparse and/or noisy data such as point clouds. However, these methods are mainly prior-driven, so the impact of uncertainty can be large, limiting their clinical reliability. We propose a probabilistic framework for uncertainty-aware cardiac shape reconstruction that combines Deep Signed Distance Functions (DeepSDFs) with Markov Chain Monte Carlo (MCMC) sampling. Cardiac geometries are modeled implicitly as zero-level sets of a neural network conditioned on learned latent codes, enabling multi-surface reconstruction of the left and right ventricles. By interpreting the reconstruction loss as a log-likelihood, we perform Bayesian inference in the latent space to obtain both maximum a posteriori (MAP) and posterior-sampled reconstructions. Experiments on a public cardiac dataset show that our approach produces accurate reconstructions and well-calibrated uncertainty estimates.",
+      "authors": [
+        "Jan Verh\u00fclsdonk",
+        "Thomas Grandits",
+        "Francisco Sahli Costabal",
+        "Thomas Beiert",
+        "Simone Pezzuto",
+        "Alexander Effland"
+      ],
+      "published": "2026-05-08T16:45:11Z",
+      "updated": "2026-05-08T16:45:11Z",
+      "url": "https://arxiv.org/abs/2605.07987",
+      "pdf_url": "https://arxiv.org/pdf/2605.07987.pdf",
+      "primary_category": "eess.IV",
+      "categories": [
+        "eess.IV",
+        "cs.CV"
+      ],
+      "tags": [
+        "cs.CV",
+        "eess.IV"
+      ],
+      "domain": "Vision",
+      "pdf_downloaded": true,
+      "pdf_size_bytes": 9565608,
+      "pdf_path": "2026-05-11/vision/2605.07987.pdf"
+    },
+    {
+      "id": "2605.07978",
+      "title": "Seeing Across Skies and Streets: Feedforward 3D Reconstruction from Satellite, Drone, and Ground Images",
+      "abstract": "Cross-view localization classically asks: where does this ground image lie on the satellite tile? Existing methods are typically limited to 3-DoF estimates -- an $(x,y)$ position and a yaw angle -- because nadir satellite imagery provides no direct cues for roll, pitch, or altitude, forcing a reliance on planar-motion and zero-tilt assumptions. These assumptions break on real terrain with slopes, ramps, and tilted camera mounts. To overcome this, we introduce a single UAV image as an intermediate viewpoint: it reveals the 3D structure invisible from nadir, supplies the cues for roll, pitch, and altitude that the satellite alone cannot provide, and needs only spatial overlap with the ground camera -- no known relative pose is required. Building on this insight, we propose **Cross3R**, a flexible feed-forward model that ingests a satellite tile together with a UAV image, a ground image, or both, and, in a single forward pass, recovers a cross-view 3D point cloud, the 6-DoF poses of every input camera, and the on-tile $(x,y)$ position and yaw of each perspective camera. For training and evaluation, we also construct **CrossGeo**, a 278K-image tri-view dataset spanning 85 scenes across every continent except Antarctica. On CrossGeo, Cross3R consistently outperforms feed-forward 3D baselines in point-cloud reconstruction, 6-DoF camera-pose estimation, and cross-view localization. On KITTI, it outperforms dedicated cross-view methods trained on KITTI on most metrics, despite having no KITTI training itself.",
+      "authors": [
+        "Qiwei Wang",
+        "Zhongyao Tuo",
+        "Xianghui Ze",
+        "Yujiao Shi"
+      ],
+      "published": "2026-05-08T16:35:57Z",
+      "updated": "2026-05-08T16:35:57Z",
+      "url": "https://arxiv.org/abs/2605.07978",
+      "pdf_url": "https://arxiv.org/pdf/2605.07978.pdf",
+      "primary_category": "cs.CV",
+      "categories": [
+        "cs.CV"
+      ],
+      "tags": [
+        "cs.CV"
+      ],
+      "domain": "Vision",
+      "pdf_downloaded": true,
+      "pdf_size_bytes": 20754606,
+      "pdf_path": "2026-05-11/vision/2605.07978.pdf"
+    },
+    {
+      "id": "2605.07973",
+      "title": "HEART: Hyperspherical Embedding Alignment via Kent-Representation Traversal in Diffusion Models",
+      "abstract": "Text-to-image diffusion models can generate visually stunning images, yet, controlling what appears and how it appears, remains surprisingly difficult, especially when operating solely within the constraints of the text-conditioning space. For example, changing a subject or adjusting an attribute often leads to unintended side effects, such as altered backgrounds or distorted details. This is because most existing text-based control methods treat the embedding space as Euclidean and apply simple linear transformations, which do not reflect how semantic concepts are actually organized. In this work, we take a step back and ask: what is the true geometry of these embeddings? We find that text encoder representations lie on a hypersphere, where concepts are not linear directions but structured, anisotropic distributions better captured by Kent distributions. Building on this insight, we propose HEART, a training-free framework that performs Kent-aware geodesic transformations directly on the hypersphere. By respecting the underlying geometry, HEART enables intuitive and precise edits, such as consistent subject replacement and fine-grained attribute control, while preserving the original scene. Importantly, HEART requires no finetuning, inversion, or optimization, and generalizes across diffusion model architectures. Our results show that a simple shift in perspective, from linear to spherical, can unlock fast, and controllable image generation.",
+      "authors": [
+        "Arani Roy",
+        "Shristi Das Biswas",
+        "Kaushik Roy"
+      ],
+      "published": "2026-05-08T16:32:44Z",
+      "updated": "2026-05-08T16:32:44Z",
+      "url": "https://arxiv.org/abs/2605.07973",
+      "pdf_url": "https://arxiv.org/pdf/2605.07973.pdf",
+      "primary_category": "cs.CV",
+      "categories": [
+        "cs.CV"
+      ],
+      "tags": [
+        "cs.CV"
+      ],
+      "domain": "Vision",
+      "pdf_downloaded": false,
+      "pdf_size_bytes": null,
+      "pdf_path": null
+    },
+    {
+      "id": "2605.07971",
+      "title": "DVD: Discrete Voxel Diffusion for 3D Generation and Editing",
+      "abstract": "We introduce Discrete Voxel Diffusion (DVD), a discrete diffusion framework to generate, assess, and edit sparse voxels for SLat (Structured LATent) based 3D generative pipelines. Although discrete diffusion has not generally displaced continuous diffusion in image-like generation, we show that it can be an effective first-stage prior for sparse voxel scaffolds. By treating voxel occupancy as a native discrete variable, DVD avoids continuous-to-discrete thresholding and provides a simple framework for voxel generation, uncertainty estimation, and editing. Beyond quality gains, DVD provides more interpretable generation dynamics through explicit categorical modeling. Furthermore, we leverage the predictive entropy as a robust uncertainty metric to identify ambiguous voxel regions and complicated samples, facilitating tasks such as data filtering and quality assessment. Finally, we propose a lightweight fine-tuning strategy using block-structured perturbation patterns. This approach empowers the model to inpaint and edit voxels within a single sampling round, requiring negligible auxiliary computation and no additional model evaluations.",
+      "authors": [
+        "Zhengrui Xiang",
+        "Jiaqi Wu",
+        "Fupeng Sun",
+        "Heliang Zheng",
+        "Yingzhen Li"
+      ],
+      "published": "2026-05-08T16:32:17Z",
+      "updated": "2026-05-08T16:32:17Z",
+      "url": "https://arxiv.org/abs/2605.07971",
+      "pdf_url": "https://arxiv.org/pdf/2605.07971.pdf",
+      "primary_category": "cs.CV",
+      "categories": [
+        "cs.CV",
+        "cs.LG"
+      ],
+      "tags": [
+        "cs.CV",
+        "cs.LG"
+      ],
+      "domain": "Vision",
+      "pdf_downloaded": false,
+      "pdf_size_bytes": null,
+      "pdf_path": null
+    },
+    {
+      "id": "2605.07955",
+      "title": "TimeLesSeg: Unified Contrast-Agnostic Cross-Sectional and Longitudinal MS Lesion Segmentation via a Stochastic Generative Model",
+      "abstract": "Multiple sclerosis (MS) expresses substantial clinical and radiological heterogeneity, which poses significant challenges for automatic lesion segmentation. The current deep learning-based SOTA is highly susceptible to changes in both distribution, e.g., changes in scanner; as well as the structure of inputs, evident in the current divide between cross-sectional and longitudinal approaches. We introduce TimeLesSeg, a unified contrast-agnostic framework designed to segment MS lesions regardless of the presence of a temporal dimension in its inputs, with a single convolutional neural network. Our approach models pathological priors through lesion masks, which are processed together with the current scan. Cross-sectional processing is enabled by exposing the model to training cases where no prior information is available, which are modeled with an empty mask, allowing it to operate seamlessly in both scenarios. To overcome the scarcity and inconsistency of longitudinal datasets, we propose a novel generative pipeline in which patterns of lesion evolution are simulated by stochastically deforming each individual lesion with morphological operations, producing realistic prior timepoints. In parallel, we achieve contrast agnosticism through Gaussian mixture model-based domain randomization, enabling the network to experience a wide spectrum of intensity profiles. Results on three publicly available and two in-house datasets show that TimeLesSeg outperforms the contrast-agnostic state of the art on single-modality inputs across overlap- and distance-based metrics. In longitudinal processing, our method outperforms SAMSEG, and captures lesion load dynamics more accurately than both the former and LST-AI. All source code related to the development of TimeLesSeg is available at https://github.com/NeuroADaS-Lab/TimeLesSeg.",
+      "authors": [
+        "Vicent Caselles-Ballester",
+        "Eloy Mart\u00ednez-Heras",
+        "Giuseppe Pontillo",
+        "Zoe Mendelsohn",
+        "Elena M. Marr\u00f3n",
+        "Juan Luis Garc\u00eda Fern\u00e1ndez",
+        "Laia Subirats",
+        "Jon Stutters",
+        "Jeremy Chataway",
+        "Frederik Barkhof",
+        "Sara Llufriu",
+        "Ferran Prados"
+      ],
+      "published": "2026-05-08T16:19:34Z",
+      "updated": "2026-05-08T16:19:34Z",
+      "url": "https://arxiv.org/abs/2605.07955",
+      "pdf_url": "https://arxiv.org/pdf/2605.07955.pdf",
+      "primary_category": "cs.CV",
+      "categories": [
+        "cs.CV",
+        "cs.AI"
+      ],
+      "tags": [
+        "cs.AI",
+        "cs.CV"
+      ],
+      "domain": "Vision",
+      "pdf_downloaded": true,
+      "pdf_size_bytes": 7816749,
+      "pdf_path": "2026-05-11/vision/2605.07955.pdf"
+    },
+    {
+      "id": "2605.07945",
+      "title": "Rebalancing gradient to improve self-supervised co-training of depth, odometry and optical flow predictions",
+      "abstract": "We present CoopNet, an approach that improves the cooperation of co-trained networks by dynamically adapting the apportionment of gradient, to ensure equitable learning progress. It is applied to motion-aware self-supervised prediction of depth maps, by introducing a new hybrid loss, based on a distribution model of photo-metric reconstruction errors made by, on the one hand the depth + odometry paired networks, and on the other hand the optical flow network. This model essentially assumes that the pixels from moving objects (that must be discarded for training depth and odometry), correspond to those where the two reconstructions strongly disagree. We justify this model by theoretical considerations and experimental evidences. A comparative evaluation on KITTI and CityScapes datasets shows that CoopNet improves or is comparable to the state-of-the-art in depth, odometry and optical flow predictions.",
+      "authors": [
+        "Marwane Hariat",
+        "Antoine Manzanera",
+        "David Filliat"
+      ],
+      "published": "2026-05-08T16:12:47Z",
+      "updated": "2026-05-08T16:12:47Z",
+      "url": "https://arxiv.org/abs/2605.07945",
+      "pdf_url": "https://arxiv.org/pdf/2605.07945.pdf",
+      "primary_category": "cs.CV",
+      "categories": [
+        "cs.CV"
+      ],
+      "tags": [
+        "cs.CV"
+      ],
+      "domain": "Vision",
+      "pdf_downloaded": true,
+      "pdf_size_bytes": 2259279,
+      "pdf_path": "2026-05-11/vision/2605.07945.pdf"
+    },
+    {
+      "id": "2605.07943",
+      "title": "TAVIS: A Benchmark for Egocentric Active Vision and Anticipatory Gaze in Imitation Learning",
+      "abstract": "Active vision -- where a policy controls its own gaze during manipulation -- has emerged as a key capability for imitation learning, with multiple independent systems demonstrating its benefits in the past year. Yet there is no shared benchmark to compare approaches or quantify what active vision contributes, on which task types, and under what conditions. We introduce TAVIS, evaluation infrastructure for active-vision imitation learning, with two complementary task suites -- TAVIS-Head (5 tasks, global search via pan/tilt necks) and TAVIS-Hands (3 tasks, local occlusion via wrist cameras) -- on two humanoid torso embodiments (GR1T2, Reachy2), built on IsaacLab. TAVIS provides three evaluation primitives: a paired headcam-vs-fixedcam protocol on identical demonstrations; GALT (Gaze-Action Lead Time), a novel metric grounded in cognitive science and HRI that quantifies anticipatory gaze in learned policies; and procedural ID/OOD splits. Baseline experiments with Diffusion Policy and $\u03c0_0$ reveal that (i) active-vision generally helps, but benefits are task-conditional rather than uniform; (ii) multi-task policies degrade sharply under controlled distribution shifts on both suites; and (iii) imitation alone yields anticipatory gaze, with median lead times comparable to the human teleoperator reference. Code, evaluation scripts, demonstrations (LeRobot v3.0; ~2200 episodes) and trained baselines are released at https://github.com/spiglerg/tavis and https://huggingface.co/tavis-benchmark.",
+      "authors": [
+        "Giacomo Spigler"
+      ],
+      "published": "2026-05-08T16:11:13Z",
+      "updated": "2026-05-08T16:11:13Z",
+      "url": "https://arxiv.org/abs/2605.07943",
+      "pdf_url": "https://arxiv.org/pdf/2605.07943.pdf",
+      "primary_category": "cs.RO",
+      "categories": [
+        "cs.RO",
+        "cs.AI",
+        "cs.CV",
+        "cs.LG"
+      ],
+      "tags": [
+        "cs.AI",
+        "cs.CV",
+        "cs.LG",
+        "cs.RO"
+      ],
+      "domain": "Vision",
+      "pdf_downloaded": true,
+      "pdf_size_bytes": 8610877,
+      "pdf_path": "2026-05-11/vision/2605.07943.pdf"
+    },
+    {
+      "id": "2605.07940",
+      "title": "Delta-Adapter: Scalable Exemplar-Based Image Editing with Single-Pair Supervision",
+      "abstract": "Exemplar-based image editing applies a transformation defined by a source-target image pair to a new query image. Existing methods rely on a pair-of-pairs supervision paradigm, requiring two image pairs sharing the same edit semantics to learn the target transformation. This constraint makes training data difficult to curate at scale and limits generalization across diverse edit types. We propose Delta-Adapter, a method that learns transferable editing semantics under single-pair supervision, requiring no textual guidance. Rather than directly exposing the exemplar pair to the model, we leverage a pre-trained vision encoder to extract a semantic delta that encodes the visual transformation between the two images. This semantic delta is injected into a pre-trained image editing model via a Perceiver-based adapter. Since the target image is never directly visible to the model, it can serve as the prediction target, enabling single-pair supervision without requiring additional exemplar pairs. This formulation allows us to leverage existing large-scale editing datasets for training. To further promote faithful transformation transfer, we introduce a semantic delta consistency loss that aligns the semantic change of the generated output with the ground-truth semantic delta extracted from the exemplar pair. Extensive experiments demonstrate that Delta-Adapter consistently improves both editing accuracy and content consistency over four strong baselines on seen editing tasks, while also generalizing more effectively to unseen editing tasks. Code will be available at https://delta-adapter.github.io.",
+      "authors": [
+        "Jiacheng Chen",
+        "Songze Li",
+        "Han Fu",
+        "Baoquan Zhao",
+        "Wei Liu",
+        "Yanyan Liang",
+        "Li Qing",
+        "Xudong Mao"
+      ],
+      "published": "2026-05-08T16:09:15Z",
+      "updated": "2026-05-08T16:09:15Z",
+      "url": "https://arxiv.org/abs/2605.07940",
+      "pdf_url": "https://arxiv.org/pdf/2605.07940.pdf",
+      "primary_category": "cs.CV",
+      "categories": [
+        "cs.CV"
+      ],
+      "tags": [
+        "cs.CV"
+      ],
+      "domain": "Vision",
+      "pdf_downloaded": true,
+      "pdf_size_bytes": 15539736,
+      "pdf_path": "2026-05-11/vision/2605.07940.pdf"
+    },
+    {
+      "id": "2605.07931",
+      "title": "One Token Per Frame: Reconsidering Visual Bandwidth in World Models for VLA Policy",
+      "abstract": "Vision-language-action (VLA) models increasingly rely on auxiliary world modules to plan over long horizons, yet how such modules should be parameterized on top of a pretrained VLA remains an open design question. Existing world-model-augmented VLAs typically pass the per-frame visual stream into the world module at high visual bandwidth and treat its rollout as a side product of action prediction; under a constrained adaptation budget on a frozen backbone, this leaves both the per-frame representation and the latent action coupling under-examined. We introduce OneWM-VLA, which compresses each view into a single semantic token per frame through an Adaptive Attention Pooling, and produces the resulting latent stream and the action trajectory under a single flow-matching objective rather than connecting them through a separate decoder. Empirically, we find that per-frame visual bandwidth can be reduced to a single token without compromising long-horizon performance under our setup. Trained with 14.71M LoRA parameters on a $\u03c0_0$ (2B) backbone, OneWM-VLA improves the average success rate from 47.9% to 61.3% on MetaWorld~MT50, reaches 95.6% on LIBERO-Long (vs.85.2% for $\u03c0_0$), and reaches 60.0% on the long-horizon deformable task Fold Cloth on a real Piper arm (vs.20.0% for $\u03c0_0$).",
+      "authors": [
+        "Zuojin Tang",
+        "Shengchao Yuan",
+        "Xiaoxin Bai",
+        "Zhiyuan Jin",
+        "De Ma",
+        "Gang Pan",
+        "Bin Liu"
+      ],
+      "published": "2026-05-08T16:04:43Z",
+      "updated": "2026-05-08T16:04:43Z",
+      "url": "https://arxiv.org/abs/2605.07931",
+      "pdf_url": "https://arxiv.org/pdf/2605.07931.pdf",
+      "primary_category": "cs.CV",
+      "categories": [
+        "cs.CV",
+        "cs.AI"
+      ],
+      "tags": [
+        "cs.AI",
+        "cs.CV"
+      ],
+      "domain": "Vision",
+      "pdf_downloaded": true,
+      "pdf_size_bytes": 2230339,
+      "pdf_path": "2026-05-11/vision/2605.07931.pdf"
+    },
+    {
+      "id": "2605.07919",
+      "title": "MedVIGIL: Evaluating Trustworthy Medical VLMs Under Broken Visual Evidence",
+      "abstract": "Medical vision--language models (VLMs) are usually evaluated on intact image--question pairs, but trustworthy clinical use requires a stronger property: a model must recognise when the evidential basis for an answer has failed. We study this through silent failures under perturbed evidence, where a vision-required medical question is paired with a false premise, wording perturbation, knowledge-only rewrite, or ROI-corrupted image, yet the model returns a fluent non-refusal answer. We introduce medvigil, a 300-case evaluation suite drawn from four public medical VQA sources, supervised end to end by four board-certified radiologists: every gold answer, refusal option, candidate-answer set, paraphrase, false-premise trap, ROI box, and clinical risk tier is clinician-authored. Two attending radiologists annotate every case in parallel, a senior radiologist consolidates the released manifest, and a separate fourth radiologist independent of construction answers every probe to provide the human reference baseline. The release contains 2{,}556 MCQ probes, 240 counterfactual triplets, physician-adjudicated risk-tier and answerability flags, ROI boxes, and a paired open-ended variant. We report seven correctness-conditioned audit metrics that summarise into the medvigil Composite Score (MCS), and audit 16 vision-capable models plus two text-only baselines. The independent radiologist scores MCS 83.3 at silent-failure rate 5.8%, leaving a 14.1-point composite headroom above the strongest audited model (Claude Opus 4.7 at 69.2). The benchmark and evaluation harness are publicly released.",
+      "authors": [
+        "Hanqi Jiang",
+        "Junhao Chen",
+        "Yi Pan",
+        "Lifeng Chen",
+        "Weihang You",
+        "Haozhen Gong",
+        "Ruiyu Yan",
+        "Jinglei Lv",
+        "Lin Zhao",
+        "Hui Ren",
+        "Quanzheng Li",
+        "Tianming Liu",
+        "Xiang Li"
+      ],
+      "published": "2026-05-08T15:55:30Z",
+      "updated": "2026-05-08T15:55:30Z",
+      "url": "https://arxiv.org/abs/2605.07919",
+      "pdf_url": "https://arxiv.org/pdf/2605.07919.pdf",
+      "primary_category": "cs.CV",
+      "categories": [
+        "cs.CV"
+      ],
+      "tags": [
+        "cs.CV"
+      ],
+      "domain": "Vision",
+      "pdf_downloaded": true,
+      "pdf_size_bytes": 5090426,
+      "pdf_path": "2026-05-11/vision/2605.07919.pdf"
+    },
+    {
+      "id": "2605.07915",
+      "title": "What Matters for Diffusion-Friendly Latent Manifold? Prior-Aligned Autoencoders for Latent Diffusion",
+      "abstract": "Tokenizers are a crucial component of latent diffusion models, as they define the latent space in which diffusion models operate. However, existing tokenizers are primarily designed to improve reconstruction fidelity or inherit pretrained representations, leaving unclear what kind of latent space is truly friendly for generative modeling. In this paper, we study this question from the perspective of latent manifold organization. By constructing controlled tokenizer variants, we identify three key properties of a diffusion-friendly latent manifold: coherent spatial structure, local manifold continuity, and global manifold semantics. We find that these properties are more consistent with downstream generation quality than reconstruction fidelity. Motivated by this finding, we propose the Prior-Aligned AutoEncoder (PAE), which explicitly shapes the latent manifold instead of leaving diffusion-friendly manifold to emerge indirectly from reconstruction or inheritance. Specifically, PAE leverages refined priors derived from VFMs and perturbation-based regularization to turn spatial structure, local continuity, and global semantics into explicit training objectives. On ImageNet 256x256, PAE improves both training efficiency and generation quality over existing tokenizers, reaching performance comparable to RAE with up to 13x faster convergence under the same training setup and achieving a new state-of-the-art gFID of 1.03. These results highlight the importance of organizing the latent manifold for latent diffusion models.",
+      "authors": [
+        "Zhengrong Yue",
+        "Taihang Hu",
+        "Mengting Chen",
+        "Haiyu Zhang",
+        "Zihao Pan",
+        "Tao Liu",
+        "Zikang Wang",
+        "Jinsong Lan",
+        "Xiaoyong Zhu",
+        "Bo Zheng",
+        "Yali Wang"
+      ],
+      "published": "2026-05-08T15:52:51Z",
+      "updated": "2026-05-08T15:52:51Z",
+      "url": "https://arxiv.org/abs/2605.07915",
+      "pdf_url": "https://arxiv.org/pdf/2605.07915.pdf",
+      "primary_category": "cs.CV",
+      "categories": [
+        "cs.CV"
+      ],
+      "tags": [
+        "cs.CV"
+      ],
+      "domain": "Vision",
+      "pdf_downloaded": false,
+      "pdf_size_bytes": null,
+      "pdf_path": null
+    },
+    {
+      "id": "2605.07914",
+      "title": "Flatness and Gradient Alignment Are Both Necessary: Spectral-Aware Gradient-Aligned Exploration for Multi-Distribution Learning",
+      "abstract": "Sharpness-aware and gradient-alignment methods have been shown to improve generalization, however each family of methods targets a single geometric property of the loss landscape, while ignoring the other. In this paper, we show that this omission is structurally unavoidable and that both flatness and gradient alignment should be considered in multi-distribution learning settings. Specifically, we derive an excess-risk decomposition that yields two additive leading-order terms: (i) an alignment term, controlled by the trace of $\\bar{H}^{-1}\u03a3_g$ and (ii) a curvature term, controlled by $\\bar{H}$, where $\\bar{H}$ is the average Hessian and $\u03a3_g$ is the covariance of the gradient across distributions. Notably, $\\bar{H}$ appears inverted in one and non-inverted in the other. We further show, via a counterexample, that neither quantity bounds the other in general, so no algorithm targeting only one term can guarantee low excess risk. Motivated by this decomposition, we propose SAGE (Spectral-Aware Gradient-Aligned Exploration) that targets both terms. The curvature component replaces SAM's gradient-scaled perturbation with the polar factor of each layer's gradient matrix, computed via Newton-Schulz iteration, so that the ascent step probes all directions with similar magnitude. On the other hand, the alignment component injects isotropic noise at the descent step, the magnitude of which scales with cross-distribution gradient disagreement. Experiments on five domain-generalization and two multi-task learning benchmarks show that the proposed method establishes a new state-of-the-art on DomainBed and acts as a general-purpose improvement to base MTL solvers, remaining competitive with, or even surpassing, state-of-the-art methods.",
+      "authors": [
+        "Aristotelis Ballas",
+        "Christos Diou"
+      ],
+      "published": "2026-05-08T15:52:34Z",
+      "updated": "2026-05-08T15:52:34Z",
+      "url": "https://arxiv.org/abs/2605.07914",
+      "pdf_url": "https://arxiv.org/pdf/2605.07914.pdf",
+      "primary_category": "cs.LG",
+      "categories": [
+        "cs.LG",
+        "cs.CV"
+      ],
+      "tags": [
+        "cs.CV",
+        "cs.LG"
+      ],
+      "domain": "Vision",
+      "pdf_downloaded": true,
+      "pdf_size_bytes": 2149727,
+      "pdf_path": "2026-05-11/vision/2605.07914.pdf"
+    },
+    {
+      "id": "2605.07910",
+      "title": "One World, Dual Timeline: Decoupled Spatio-Temporal Gaussian Scene Graph for 4D Cooperative Driving Reconstruction",
+      "abstract": "Reconstructing dynamic scenes from Vehicle-to-Infrastructure Cooperative Autonomous Driving (VICAD) data is fundamentally complicated by temporal asynchrony: vehicle and infrastructure cameras operate on independent clocks, capturing the same dynamic agent such as cars and pedestrians at different physical times. Existing Gaussian Scene Graph methods implicitly assume synchronized observations and assign a single pose per agent per frame, which is an assumption that breaks in cooperative settings, where the resulting gradient conflicts cause severe ghosting on dynamic agents. We identify this as a representation-level failure, not an optimization artifact: we prove that any single-timeline formulation incurs an irreducible photometric loss scaling quadratically with agent velocity and cross-source time offset. To resolve this, we propose Dust (DecoUpled Spatio-Temporal) Gaussian Scene Graph for 4D Cooperative Driving Reconstruction. DUST Gaussian Scene Graph shares a canonical Gaussian set per agent for appearance consistency, while maintaining decouple pose trajectories aligned to each source's true capture timestamps. We prove that this decoupling enables the pose-gradient kernel block-diagonal, eliminating cross-source interference entirely. To make Dust practical, we further introduce a static anchor-based pose correction pipeline that corrects spatio misalignment between vehicle and infrastructure annotations, and a pose-regularized joint optimization scheme that prevents trajectory jitter and drift during early training. On 26 sequences from V2X-Seq, DUST achieves state-of-the-art performance, improving dynamic-area PSNR by 3.2 dB over the strongest baseline and reducing Fr\u00e9chet Video Distance by 37.7%, with keeping robustness under larger temporal asynchrony. Code is available at https://anonymous.4open.science/r/DUST-6A55.",
+      "authors": [
+        "Yulong Chen",
+        "Xiaoyun Dong",
+        "Haoyu Zhang",
+        "Zongxian Yang",
+        "Lewei Xie",
+        "Xinke Li",
+        "Yifan Zhang",
+        "Kai Wang",
+        "Jianping Wang"
+      ],
+      "published": "2026-05-08T15:48:57Z",
+      "updated": "2026-05-08T15:48:57Z",
+      "url": "https://arxiv.org/abs/2605.07910",
+      "pdf_url": "https://arxiv.org/pdf/2605.07910.pdf",
+      "primary_category": "cs.CV",
+      "categories": [
+        "cs.CV"
+      ],
+      "tags": [
+        "cs.CV"
+      ],
+      "domain": "Vision",
+      "pdf_downloaded": true,
+      "pdf_size_bytes": 10075911,
+      "pdf_path": "2026-05-11/vision/2605.07910.pdf"
+    },
+    {
+      "id": "2605.07907",
+      "title": "Consistency Regularised Gradient Flows for Inverse Problems",
+      "abstract": "Vision-Language Latent Diffusion Models (LDMs) (Rombach et al., 2022) provide powerful generative priors for inverse problems. However, existing LDM-based inverse solvers typically require a large number of neural function evaluations (NFEs) and backpropagation through large pretrained components, leading to substantial computational costs and, in some cases, degraded reconstruction quality. We propose a unified Euclidean-Wasserstein-2 gradient-flow framework that jointly performs posterior sampling and prompt optimization in the latent space through a single flow that aligns the prior and posterior with the observed data. Combined with few-step latent text-to-image models, this formulation enables low-NFE inference without backpropagation through autoencoders. Experiments across several canonical imaging inverse problems show that our method achieves state-of-the-art performance with significantly reduced computational cost.",
+      "authors": [
+        "Alessio Spagnoletti",
+        "Tim Y. J. Wang",
+        "Marcelo Pereyra",
+        "O. Deniz Akyildiz"
+      ],
+      "published": "2026-05-08T15:45:34Z",
+      "updated": "2026-05-08T15:45:34Z",
+      "url": "https://arxiv.org/abs/2605.07907",
+      "pdf_url": "https://arxiv.org/pdf/2605.07907.pdf",
+      "primary_category": "stat.ML",
+      "categories": [
+        "stat.ML",
+        "cs.CV",
+        "cs.LG"
+      ],
+      "tags": [
+        "cs.CV",
+        "cs.LG",
+        "stat.ML"
+      ],
+      "domain": "Vision",
+      "pdf_downloaded": true,
+      "pdf_size_bytes": 9263965,
+      "pdf_path": "2026-05-11/vision/2605.07907.pdf"
+    },
+    {
+      "id": "2605.07897",
+      "title": "Semantic-Aware Adaptive Visual Memory for Streaming Video Understanding",
+      "abstract": "Online streaming video understanding requires models to process continuous visual inputs and respond to user queries in real time, where the unbounded stream and unpredictable query timing turn memory management into a central challenge. Existing methods typically compress visual tokens via visual similarity heuristics, or augment compression with KV-cache-level retrieval. However, compression decisions rarely incorporate semantic signals, and retrieval is often added after compression is finalized, making the two stages hard to coordinate. We present SAVEMem, a training-free dual-stage framework that brings semantic awareness into memory generation and lets the retrieval scope adapt per query. In Stage~1, SAVEMem builds a three-tier streaming memory online under a constant memory budget. A fixed pseudo-question bank provides a lightweight semantic prior, so that long-term retention is shaped by semantic salience rather than visual similarity alone. In Stage~2, SAVEMem performs query-aware retrieval over this memory. An anchor-conditioned recency gate adapts the retrieval scope from short-term to mid- and long-term memory based on whether the query targets the present or the distant past. Within this scope, late interaction between query and memory tokens selects candidate frames for answering. Applied to Qwen2.5-VL without training, SAVEMem improves the OVO-Bench overall score from 52.27 to 62.69 and yields consistent gains on StreamingBench and ODV-Bench, while reducing peak GPU memory by 48\\% at 128 frames over the backbone.",
+      "authors": [
+        "Hang Wu",
+        "Sherin Mary Mathews",
+        "Yujun Cai",
+        "Ming-Hsuan Yang",
+        "Yiwei Wang"
+      ],
+      "published": "2026-05-08T15:40:40Z",
+      "updated": "2026-05-08T15:40:40Z",
+      "url": "https://arxiv.org/abs/2605.07897",
+      "pdf_url": "https://arxiv.org/pdf/2605.07897.pdf",
+      "primary_category": "cs.CV",
+      "categories": [
+        "cs.CV",
+        "cs.AI"
+      ],
+      "tags": [
+        "cs.AI",
+        "cs.CV"
+      ],
+      "domain": "Vision",
+      "pdf_downloaded": true,
+      "pdf_size_bytes": 1718893,
+      "pdf_path": "2026-05-11/vision/2605.07897.pdf"
+    }
+  ]
+}
