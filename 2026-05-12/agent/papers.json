@@ -1,0 +1,752 @@
+{
+  "domain": "Agent",
+  "date": "2026-05-12",
+  "count": 25,
+  "papers": [
+    {
+      "id": "2605.10942",
+      "title": "HarmoWAM: Harmonizing Generalizable and Precise Manipulation via Adaptive World Action Models",
+      "abstract": "World Action Models (WAMs) have emerged as a promising paradigm for robot control by modeling physical dynamics. Current WAMs generally follow two paradigms: the \"Imagine-then-Execute\" approach, which uses video prediction to infer actions via inverse dynamics, and the \"Joint Modeling\" approach, which jointly models actions and video representations. Based on systematic experiments, we observe a fundamental trade-off between these paradigms: the former explicitly leverages world models for generalizable transit but lacks interaction precision, whereas the latter enables fine-grained, temporally coherent action generation but is constrained by the exploration space of the training distribution. Motivated by these findings, we propose HarmoWAM, an end-to-end WAM that fully leverages a world model to unify predictive and reactive control, enabling both generalizable transit and precise manipulation. Specifically, the world model provides spatio-temporal physical priors that condition two complementary action experts: a predictive expert that leverages latent dynamics for iterative action generation, and a reactive expert that directly infers actions from predicted visual evolution. To enable adaptive coordination, a Process-Adaptive Gating Mechanism is proposed to automatically determine the timing and location of switching between them. This allows the world model to drive the reactive expert to expand the exploration space and the predictive expert to perform precise interactions across different stages of a task. For evaluation, we construct three training-unseen test environments across six real-world robotic tasks, covering variations in background, position, and object semantics. Notably, HarmoWAM achieves strong zero-shot generalization across these scenarios, significantly outperforming prior state-of-the-art VLA models and WAMs by margins of 33% and 29%, respectively.",
+      "authors": [
+        "Qiuxuan Feng",
+        "Jiale Yu",
+        "Jiaming Liu",
+        "Yueru Jia",
+        "Zhuangzhe Wu",
+        "Hao Chen",
+        "Zezhong Qian",
+        "Shuo Gu",
+        "Peng Jia",
+        "Siwei Ma",
+        "Shanghang Zhang"
+      ],
+      "published": "2026-05-11T17:59:56Z",
+      "updated": "2026-05-11T17:59:56Z",
+      "url": "https://arxiv.org/abs/2605.10942",
+      "pdf_url": "https://arxiv.org/pdf/2605.10942.pdf",
+      "primary_category": "cs.RO",
+      "categories": [
+        "cs.RO"
+      ],
+      "tags": [
+        "cs.RO"
+      ],
+      "domain": "Agent",
+      "pdf_downloaded": true,
+      "pdf_size_bytes": 13223269,
+      "pdf_path": "2026-05-12/agent/2605.10942.pdf"
+    },
+    {
+      "id": "2605.10925",
+      "title": "PriorVLA: Prior-Preserving Adaptation for Vision-Language-Action Models",
+      "abstract": "Large-scale pretraining has made Vision-Language-Action (VLA) models promising foundations for generalist robot manipulation, yet adapting them to downstream tasks remains necessary. However, the common practice of full fine-tuning treats pretraining as initialization and can shift broad priors toward narrow training-distribution patterns. We propose PriorVLA, a novel framework that preserves pretrained priors and learns to leverage them for effective adaptation. PriorVLA keeps a frozen Prior Expert as a read-only prior source and trains an Adaptation Expert for downstream specialization. Expert Queries capture scene priors from the pretrained VLM and motor priors from the Prior Expert, integrating both into the Adaptation Expert to guide adaptation. Together, PriorVLA updates only 25% of the parameters updated by full fine-tuning. Across RoboTwin 2.0, LIBERO, and real-world tasks, PriorVLA achieves stronger overall performance than full fine-tuning and state-of-the-art VLA baselines, with the largest gains under out-of-distribution (OOD) and few-shot settings. PriorVLA improves over pi0.5 by 11 points on RoboTwin 2.0-Hard and achieves 99.1% average success on LIBERO. Across eight real-world tasks and two embodiments, PriorVLA reaches 81% in-distribution (ID) and 57% OOD success with standard data. With only 10 demonstrations per task, PriorVLA reaches 48% ID and 32% OOD success, surpassing pi0.5 by 24 and 22 points, respectively.",
+      "authors": [
+        "Xinyu Guo",
+        "Bin Xie",
+        "Wei Chai",
+        "Xianchi Deng",
+        "Tiancai Wang",
+        "Zhengxing Wu",
+        "Xingyu Chen"
+      ],
+      "published": "2026-05-11T17:56:02Z",
+      "updated": "2026-05-11T17:56:02Z",
+      "url": "https://arxiv.org/abs/2605.10925",
+      "pdf_url": "https://arxiv.org/pdf/2605.10925.pdf",
+      "primary_category": "cs.RO",
+      "categories": [
+        "cs.RO"
+      ],
+      "tags": [
+        "cs.RO"
+      ],
+      "domain": "Agent",
+      "pdf_downloaded": true,
+      "pdf_size_bytes": 3765227,
+      "pdf_path": "2026-05-12/agent/2605.10925.pdf"
+    },
+    {
+      "id": "2605.10921",
+      "title": "RoboMemArena: A Comprehensive and Challenging Robotic Memory Benchmark",
+      "abstract": "Memory is a critical component of robotic intelligence, as robots must rely on past observations and actions to accomplish long-horizon tasks in partially observable environments. However, existing robotic memory benchmarks still lack multimodal annotations for memory formation, provide limited task coverage and structural complexity, and remain restricted to simulation without real-world evaluation. We address this gap with RoboMemArena, a large-scale benchmark of 26 tasks, with average trajectory lengths exceeding 1,000 steps per task and 68.9% of subtasks being memory-dependent. The generation pipeline leverages a vision-language model (VLM) to design and compose subtasks, generates full trajectories through atomic functions, and provides memory-related annotations, including subtask instructions and native keyframe annotations, while paired real-world memory tasks support physical evaluation. We further design PrediMem, a dual-system VLA in which a high-level VLM planner manages a memory bank with recent and keyframe buffers and uses a predictive coding head to improve sensitivity to task dynamics. Extensive experiments on RoboMemArena show that PrediMem outperforms all baselines and provides insights into memory management, model architecture, and scaling laws for complex memory systems.",
+      "authors": [
+        "Huashuo Lei",
+        "Wenxuan Song",
+        "Huarui Zhang",
+        "Jieyuan Pei",
+        "Jiayi Chen",
+        "Haodong Yan",
+        "Han Zhao",
+        "Pengxiang Ding",
+        "Zhipeng Zhang",
+        "Lida Huang",
+        "Donglin Wang",
+        "Yan Wang",
+        "Haoang Li"
+      ],
+      "published": "2026-05-11T17:54:49Z",
+      "updated": "2026-05-11T17:54:49Z",
+      "url": "https://arxiv.org/abs/2605.10921",
+      "pdf_url": "https://arxiv.org/pdf/2605.10921.pdf",
+      "primary_category": "cs.RO",
+      "categories": [
+        "cs.RO"
+      ],
+      "tags": [
+        "cs.RO"
+      ],
+      "domain": "Agent",
+      "pdf_downloaded": true,
+      "pdf_size_bytes": 22118104,
+      "pdf_path": "2026-05-12/agent/2605.10921.pdf"
+    },
+    {
+      "id": "2605.10904",
+      "title": "MDrive: Benchmarking Closed-Loop Cooperative Driving for End-to-End Multi-agent Systems",
+      "abstract": "Vehicle-to-Everything (V2X) communication has emerged as a promising paradigm for autonomous driving, enabling connected agents to share complementary perception information and negotiate with each other to benefit the final planning. Existing V2X benchmarks, however, fall short in two ways: (i) open-loop evaluations fail to capture the inherently closed-loop nature of driving, leading to evaluation gaps, and (ii) current closed-loop evaluations lack behavioral and interactive diversity to reflect real-world driving. Thus, it is still unclear the extent of benefits of multi-agent systems for closed-loop driving. In this paper, we introduce MDrive, a closed-loop cooperative driving benchmark comprising 225 scenarios grounded in both NHTSA pre-crash typologies and real-world V2X datasets. Our benchmark results demonstrate that multi-agent systems are generally better than single-agent counterparts. However, current multi-agent systems still face two important challenges: (i) perception sharing enhances perceptions, but doesn't always translate to better planning; (ii) negotiation improves planning performance but harms it in complex and dense traffic scenarios. MDrive further provides an open-source toolbox for scenario generation, Real2Sim conversion, and human-in-the-loop simulation. Together, MDrive establishes a reproducible foundation for evaluating and improving the generalization and robustness of cooperative driving systems.",
+      "authors": [
+        "Marco Coscoy",
+        "Zewei Zhou",
+        "Seth Z. Zhao",
+        "Henry Wei",
+        "Angela Magtoto",
+        "Johnson Liu",
+        "Rui Song",
+        "Walter Zimmer",
+        "Zhiyu Huang",
+        "Chen Tang",
+        "Bolei Zhou",
+        "Jiaqi Ma"
+      ],
+      "published": "2026-05-11T17:44:34Z",
+      "updated": "2026-05-11T17:44:34Z",
+      "url": "https://arxiv.org/abs/2605.10904",
+      "pdf_url": "https://arxiv.org/pdf/2605.10904.pdf",
+      "primary_category": "cs.RO",
+      "categories": [
+        "cs.RO"
+      ],
+      "tags": [
+        "cs.RO"
+      ],
+      "domain": "Agent",
+      "pdf_downloaded": true,
+      "pdf_size_bytes": 7928969,
+      "pdf_path": "2026-05-12/agent/2605.10904.pdf"
+    },
+    {
+      "id": "2605.10880",
+      "title": "Safe Aerial 3D Path Planning for Autonomous UAVs using Magnetic Potential Fields",
+      "abstract": "Safe autonomous Uncrewed Aerial Vehicle (UAV) navigation in urban environments requires real-time path planning that avoids obstacles. MaxConvNet is a potential-field planner that leverages properties of Maxwell's equations to generate a path to the goal without local minima. We extend the 2D MaxConvNet magnetic field planner to 3D, using a convolutional autoencoder to predict obstacle-aware potential fields from LiDAR-derived 101^3 voxel grids. Evaluation across 100 randomized closed-loop trials in two distinct Cosys-AirSim urban environments, a dense night-time cityscape and a suburban district shows a 100% path planning success rate on both maps without retraining. In offline path planning, 3DMaxConvNet produces path lengths comparable to A* on unseen maps while reducing runtime from 0.155--0.17s to 0.087--0.089s, or about 1.7--1.95 times faster than A*. Against RRT*(3k), 3DMaxConvNet achieves similar path quality while reducing planning runtime from 17.2--17.5s to about 0.09s, which is roughly 193--201 times faster than RRT*(3k).",
+      "authors": [
+        "Haechan Mark Bong",
+        "Giovanni Beltrame"
+      ],
+      "published": "2026-05-11T17:28:26Z",
+      "updated": "2026-05-11T17:28:26Z",
+      "url": "https://arxiv.org/abs/2605.10880",
+      "pdf_url": "https://arxiv.org/pdf/2605.10880.pdf",
+      "primary_category": "cs.RO",
+      "categories": [
+        "cs.RO"
+      ],
+      "tags": [
+        "cs.RO"
+      ],
+      "domain": "Agent",
+      "pdf_downloaded": true,
+      "pdf_size_bytes": 4031637,
+      "pdf_path": "2026-05-12/agent/2605.10880.pdf"
+    },
+    {
+      "id": "2605.10821",
+      "title": "Unified Noise Steering for Efficient Human-Guided VLA Adaptation",
+      "abstract": "Diffusion-based vision-language-action (VLA) models have emerged as strong priors for robotic manipulation, yet adapting them to real-world distributions remains challenging. In particular, on-robot reinforcement learning (RL) is expensive and time-consuming, so effective adaptation depends on efficient policy improvement within a limited budget of real-world interactions. Noise-space RL lowers the cost by keeping the pretrained VLA fixed as a denoising generator while updating only a lightweight actor that predicts the noise. However, its performance is still limited due to inefficient autonomous exploration. Human corrective interventions can reduce this exploration burden, but they are naturally provided in action space, whereas noise-space finetuning requires supervision over noise variables. To address these challenges, we propose UniSteer, a Unified Noise Steering framework that combines human corrective guidance with noise-space RL through approximate action-to-noise inversion. Given a human corrective action, UniSteer inverts the frozen flow-matching decoder to recover a noise target, which provides supervised guidance for the same noise actor that is simultaneously optimized via reinforcement learning. Real-world experiments on diverse manipulation tasks show that UniSteer adapts more efficiently than strong noise-space RL and action-space human-in-the-loop baselines, improving the success rate from 20% to 90% in 66 minutes on average across four real-world adaptation tasks.",
+      "authors": [
+        "Junjie Lu",
+        "Xinyao Qin",
+        "Yuhua Jiang",
+        "Kaixin Wang",
+        "Chuheng Zhang",
+        "Bin Liang",
+        "Jun Yang",
+        "Min Xu",
+        "Li Zhao"
+      ],
+      "published": "2026-05-11T16:37:34Z",
+      "updated": "2026-05-11T16:37:34Z",
+      "url": "https://arxiv.org/abs/2605.10821",
+      "pdf_url": "https://arxiv.org/pdf/2605.10821.pdf",
+      "primary_category": "cs.RO",
+      "categories": [
+        "cs.RO"
+      ],
+      "tags": [
+        "cs.RO"
+      ],
+      "domain": "Agent",
+      "pdf_downloaded": true,
+      "pdf_size_bytes": 7461487,
+      "pdf_path": "2026-05-12/agent/2605.10821.pdf"
+    },
+    {
+      "id": "2605.10760",
+      "title": "MAGS-SLAM: Monocular Multi-Agent Gaussian Splatting SLAM for Geometrically and Photometrically Consistent Reconstruction",
+      "abstract": "Collaborative photorealistic 3D reconstruction from multiple agents enables rapid large-scale scene capture for virtual production and cooperative multi-robot exploration. While recent 3D Gaussian Splatting (3DGS) SLAM algorithms can generate high-fidelity real-time mapping, most of the existing multi-agent Gaussian SLAM methods still rely on RGB-D sensors to obtain metric depth and simplify cross-agent alignment, which limits the deployment on lightweight, low-cost, or power-constrained robotic platforms. To address this challenge, we propose MAGS-SLAM, the first RGB-only multi-agent 3DGS SLAM framework for collaborative scene reconstruction. Each agent independently builds local monocular Gaussian submaps and transmits compact submap summaries rather than raw observations or dense maps. To facilitate robust collaboration in the presence of monocular scale ambiguity, our framework integrates compact submap communication, geometry- and appearance-aware loop verification, and occupancy-aware Gaussian fusion, enabling coherent global reconstruction without active depth sensors. We further introduce ReplicaMultiagent Plus benchmark for evaluating collaborative Gaussian SLAM. Intensive experiments on synthetic and real-world datasets show that MAGS-SLAM achieves competitive tracking accuracy and comparable or superior rendering quality to state-of-the-art RGB-D collaborative Gaussian SLAM methods while relying only RGB images.",
+      "authors": [
+        "Zhihao Cao",
+        "Qi Shao",
+        "Shuhao Zhai",
+        "Jing Zhang",
+        "Anh Nguyen",
+        "Baoru Huang"
+      ],
+      "published": "2026-05-11T15:57:13Z",
+      "updated": "2026-05-11T15:57:13Z",
+      "url": "https://arxiv.org/abs/2605.10760",
+      "pdf_url": "https://arxiv.org/pdf/2605.10760.pdf",
+      "primary_category": "cs.RO",
+      "categories": [
+        "cs.RO"
+      ],
+      "tags": [
+        "cs.RO"
+      ],
+      "domain": "Agent",
+      "pdf_downloaded": false,
+      "pdf_size_bytes": null,
+      "pdf_path": null
+    },
+    {
+      "id": "2605.10744",
+      "title": "C-CoT: Counterfactual Chain-of-Thought with Vision-Language Models for Safe Autonomous Driving",
+      "abstract": "Safety-critical planning in complex environments, particularly at urban intersections, remains a fundamental challenge for autonomous driving. Existing methods, whether rule-based or data-driven, frequently struggle to capture complex scene semantics, infer potential risks, and make reliable decisions in rare, high-risk situations. While vision-language models (VLMs) offer promising approaches for safe decision-making in these environments, most current approaches lack reflective and causal reasoning, thereby limiting their overall robustness. To address this, we propose a counterfactual chain-of-thought (C-CoT) framework that leverages VLMs to decompose driving decisions into five sequential stages: scene description, critical object identification, risk prediction, counterfactual risk reasoning, and final action planning. Within the counterfactual reasoning stage, we introduce a structured meta-action evaluation tree to explicitly assess the potential consequences of alternative action combinations. This self-reflective reasoning establishes causal links between action choices and safety outcomes, improving robustness in long-tail and out-of-distribution scenarios. To validate our approach, we construct the DeepAccident-CCoT dataset based on the DeepAccident benchmark and fine-tune a Qwen2.5-VL (7B) model using low-rank adaptation. Our model achieves a risk prediction recall of 81.9%, reduces the collision rate to 3.52%, and lowers L2 error to 1.98 m. Ablation studies further confirm the critical role of counterfactual reasoning and the meta-action evaluation tree in enhancing safety and interpretability.",
+      "authors": [
+        "Kefei Tian",
+        "Yuansheng Lian",
+        "Kai Yang",
+        "Xiangdong Chen",
+        "Shen Li"
+      ],
+      "published": "2026-05-11T15:45:00Z",
+      "updated": "2026-05-11T15:45:00Z",
+      "url": "https://arxiv.org/abs/2605.10744",
+      "pdf_url": "https://arxiv.org/pdf/2605.10744.pdf",
+      "primary_category": "cs.CV",
+      "categories": [
+        "cs.CV",
+        "cs.RO"
+      ],
+      "tags": [
+        "cs.CV",
+        "cs.RO"
+      ],
+      "domain": "Agent",
+      "pdf_downloaded": true,
+      "pdf_size_bytes": 6037386,
+      "pdf_path": "2026-05-12/agent/2605.10744.pdf"
+    },
+    {
+      "id": "2605.10738",
+      "title": "Decentralized Contingency MPC based on Safe Sets for Nonlinear Multi-agent Collision Avoidance",
+      "abstract": "Decentralized collision avoidance remains challenging, particularly when agents do not communicate any information related to planned trajectories. Most existing approaches either rely on conservative coordination mechanisms or provide limited guarantees on recursive feasibility and convergence. This paper develops a decentralized contingency MPC framework for multi-agent systems with nonlinear dynamics that achieves collision-free motion under a state-only information pattern. Each agent follows the same consensual rule set, enabling safe decentralized planning without communication. Each agent solves a local optimization problem that couples a nominal trajectory with a contingency certificate ensuring a feasible backup maneuver under receding-horizon operation. A novel geometric and decentralized safe-set update mechanism prevents feasibility loss between consecutive time steps. The resulting scheme guarantees recursive feasibility, including collision avoidance, and establishes a Lyapunov-type convergence result to an admissible safe equilibrium. Simulation results demonstrate performance in both sparse and dense multi-agent environments, including cluttered bottleneck scenarios and under plug-and-play operation.",
+      "authors": [
+        "Max Studt",
+        "Georg Schildbach"
+      ],
+      "published": "2026-05-11T15:40:36Z",
+      "updated": "2026-05-11T15:40:36Z",
+      "url": "https://arxiv.org/abs/2605.10738",
+      "pdf_url": "https://arxiv.org/pdf/2605.10738.pdf",
+      "primary_category": "math.OC",
+      "categories": [
+        "math.OC",
+        "cs.MA",
+        "cs.RO",
+        "eess.SY"
+      ],
+      "tags": [
+        "cs.MA",
+        "cs.RO",
+        "eess.SY",
+        "math.OC"
+      ],
+      "domain": "Agent",
+      "pdf_downloaded": true,
+      "pdf_size_bytes": 2030235,
+      "pdf_path": "2026-05-12/agent/2605.10738.pdf"
+    },
+    {
+      "id": "2605.10723",
+      "title": "AllocMV: Optimal Resource Allocation for Music Video Generation via Structured Persistent State",
+      "abstract": "Generating long-horizon music videos (MVs) is frequently constrained by prohibitive computational costs and difficulty maintaining cross-shot consistency. We propose AllocMV, a hierarchical framework formulating music video synthesis as a Multiple-Choice Knapsack Problem (MCKP). AllocMV represents the video's persistent state as a compact, structured object comprising character entities, scene priors, and sharing graphs, produced by a global planner prior to realization. By estimating segment saliency from multimodal cues, a group-level MCKP solver based on dynamic programming optimally allocates resources across High-Gen, Mid-Gen, and Reuse branches. For repetitive musical motifs, we implement a divergence-based forking strategy that reuses visual prefixes to reduce costs while ensuring motif-level continuity. Evaluated via the Cost-Quality Ratio (CQR), AllocMV achieves an optimal trade-off between perceived quality and resource expenditure under strict budgetary and rhythmic constraints.",
+      "authors": [
+        "Huimin Wang",
+        "Leilei Ouyang",
+        "Chang Xia",
+        "Yongqi Kang",
+        "Yu Fu",
+        "Yuqi Ouyang"
+      ],
+      "published": "2026-05-11T15:31:35Z",
+      "updated": "2026-05-11T15:31:35Z",
+      "url": "https://arxiv.org/abs/2605.10723",
+      "pdf_url": "https://arxiv.org/pdf/2605.10723.pdf",
+      "primary_category": "cs.CV",
+      "categories": [
+        "cs.CV",
+        "cs.AI",
+        "cs.LG",
+        "cs.MA"
+      ],
+      "tags": [
+        "cs.AI",
+        "cs.CV",
+        "cs.LG",
+        "cs.MA"
+      ],
+      "domain": "Agent",
+      "pdf_downloaded": true,
+      "pdf_size_bytes": 22306640,
+      "pdf_path": "2026-05-12/agent/2605.10723.pdf"
+    },
+    {
+      "id": "2605.10721",
+      "title": "Conformity Generates Collective Misalignment in AI Agents Societies",
+      "abstract": "Artificial intelligence safety research focuses on aligning individual language models with human values, yet deployed AI systems increasingly operate as interacting populations where social influence may override individual alignment. Here we show that populations of individually aligned AI agents can be driven into stable misaligned states through conformity dynamics. Simulating opinion dynamics across nine large language models and one hundred opinion pairs, we find that each agent's behavior is governed by two competing forces: a tendency to follow the majority and an intrinsic bias toward specific positions. Using tools from statistical physics, we derive a quantitative theory that predicts when populations become trapped in long-lived misaligned configurations, and identifies predictable tipping points where small numbers of adversarial agents can irreversibly shift population-level alignment even after manipulation ceases. These results demonstrate that individual-level alignment provides no guarantee of collective safety, calling for evaluation frameworks that account for emergent behavior in AI populations.",
+      "authors": [
+        "Giordano De Marzo",
+        "Alessandro Bellina",
+        "Claudio Castellano",
+        "Viola Priesemann",
+        "David Garcia"
+      ],
+      "published": "2026-05-11T15:30:48Z",
+      "updated": "2026-05-11T15:30:48Z",
+      "url": "https://arxiv.org/abs/2605.10721",
+      "pdf_url": "https://arxiv.org/pdf/2605.10721.pdf",
+      "primary_category": "physics.soc-ph",
+      "categories": [
+        "physics.soc-ph",
+        "cs.CL",
+        "cs.MA"
+      ],
+      "tags": [
+        "cs.CL",
+        "cs.MA",
+        "physics.soc-ph"
+      ],
+      "domain": "Agent",
+      "pdf_downloaded": true,
+      "pdf_size_bytes": 3105062,
+      "pdf_path": "2026-05-12/agent/2605.10721.pdf"
+    },
+    {
+      "id": "2605.10707",
+      "title": "ObjView-Bench: Rethinking Difficulty and Deployment for Object-Centric View Planning",
+      "abstract": "Object-centric view planning is a core component of active geometric 3D reconstruction in robotics, yet existing evaluations often conflate object complexity, planning difficulty, budget assumptions, and physical reachability constraints. As a result, conclusions drawn from idealized view-planning evaluations may not reliably predict performance under realistic reconstruction settings. We introduce ObjView-Bench, an evaluation framework for rethinking difficulty and deployment in object-centric view planning. First, we disentangle three quantities underlying view-planning evaluation: omnidirectional self-occlusion as an object-side attribute, observation saturation difficulty, and protocol-dependent planning difficulty defined through a set-cover formulation. This separation supports controlled dataset construction, analysis of slow-saturation objects, and a case study showing that planning difficulty-aware sampling can improve learned view planners. Second, we design deployment-oriented evaluation protocols that reveal how budget regimes and reachable-view constraints alter method behavior. Across classical, learned, and hybrid planners, ObjView-Bench shows that difficulty, budget, and reachability constraints substantially change method rankings and failure modes.",
+      "authors": [
+        "Sicong Pan",
+        "Hao Hu",
+        "Xuying Huang",
+        "Benno Wingender",
+        "Maren Bennewitz"
+      ],
+      "published": "2026-05-11T15:20:22Z",
+      "updated": "2026-05-11T15:20:22Z",
+      "url": "https://arxiv.org/abs/2605.10707",
+      "pdf_url": "https://arxiv.org/pdf/2605.10707.pdf",
+      "primary_category": "cs.RO",
+      "categories": [
+        "cs.RO"
+      ],
+      "tags": [
+        "cs.RO"
+      ],
+      "domain": "Agent",
+      "pdf_downloaded": true,
+      "pdf_size_bytes": 8390996,
+      "pdf_path": "2026-05-12/agent/2605.10707.pdf"
+    },
+    {
+      "id": "2605.10704",
+      "title": "xApp Empowered Resource Management for Non-Terrestrial Users in 5G O-RAN Networks",
+      "abstract": "This paper introduces a proactive Unmanned Aerial Vehicle (UAV) mobility management xApp for Open Radio Access Network (O-RAN) Near Real-Time Radio Intelligent Controller (Near-RT RIC) environments, employing Double Deep Q-Network (DDQN) reinforcement learning (RL) enhanced with transfer learning to optimise handover decisions for UAVs operating along predetermined flight trajectories. Unlike reactive approaches that respond to signal degradation, the proposed framework anticipates network conditions and minimises both outage probability and handover frequency through predictive optimisation. The system leverages centralised weight averaging to consolidate knowledge from multiple flight scenarios into a global model capable of generalising to previously unseen operational environments without extensive retraining. A comprehensive evaluation demonstrates that the proposed framework achieves a favourable trade-off between handover frequency and connectivity reliability, reducing handover events by up to 54.6% compared to greedy approaches while maintaining outage probability at practically negligible levels. The results validate the effectiveness of intelligent learning-based approaches for UAV mobility management in next-generation O-RAN architectures, thereby contributing to seamless integration of aerial user equipment into cellular networks.",
+      "authors": [
+        "Mohammed M. H. Qazzaz",
+        "Syed Ali Zaidi",
+        "Aubida A. Al-Hameed",
+        "Abdelaziz Salama",
+        "Des Mclernon"
+      ],
+      "published": "2026-05-11T15:18:23Z",
+      "updated": "2026-05-11T15:18:23Z",
+      "url": "https://arxiv.org/abs/2605.10704",
+      "pdf_url": "https://arxiv.org/pdf/2605.10704.pdf",
+      "primary_category": "eess.SP",
+      "categories": [
+        "eess.SP",
+        "cs.RO"
+      ],
+      "tags": [
+        "cs.RO",
+        "eess.SP"
+      ],
+      "domain": "Agent",
+      "pdf_downloaded": true,
+      "pdf_size_bytes": 4838632,
+      "pdf_path": "2026-05-12/agent/2605.10704.pdf"
+    },
+    {
+      "id": "2605.10698",
+      "title": "The Bystander Effect in Multi-Agent Reasoning: Quantifying Cognitive Loafing in Collaborative Interactions",
+      "abstract": "Multi-agent systems (MAS) assume that collaborating inherently improves Large Language Model (LLM) reasoning. We challenge this by demonstrating that simulated social pressure triggers an algorithmic ``Bystander Effect,'' inducing severe cognitive loafing. By evaluating 22,500 deterministic trajectories across 3 dataset contexts (GAIA, SWE-bench, Multi-Challenge) with 3 state-of-the-art (SOTA) models, we semantically audit internal reasoning traces against external outputs. We formalize the \\textit{Interaction Depth Limit} ($D_L$), the exact plurality threshold where an agent's logical sovereignty collapses into social compliance. Crucially, we uncover the \\textit{Sovereignty Gap}: models frequently compute the correct derivation internally but suffer ``Alignment Hallucinations'' -- actively subjugating empirical evidence to sycophantically appease a simulated swarm. We prove that multi-agent social load is strictly non-commutative; the \"brand\" identity of the ``Lead Anchor'' auditor disproportionately dictates the swarm's integrity. These findings expose architectural vulnerabilities, proving that unstructured multi-agent topologies can degrade independent reasoning.",
+      "authors": [
+        "Dahlia Shehata",
+        "Ming Li"
+      ],
+      "published": "2026-05-11T15:13:01Z",
+      "updated": "2026-05-11T15:13:01Z",
+      "url": "https://arxiv.org/abs/2605.10698",
+      "pdf_url": "https://arxiv.org/pdf/2605.10698.pdf",
+      "primary_category": "cs.MA",
+      "categories": [
+        "cs.MA",
+        "cs.AI"
+      ],
+      "tags": [
+        "cs.AI",
+        "cs.MA"
+      ],
+      "domain": "Agent",
+      "pdf_downloaded": true,
+      "pdf_size_bytes": 1641014,
+      "pdf_path": "2026-05-12/agent/2605.10698.pdf"
+    },
+    {
+      "id": "2605.10696",
+      "title": "VRA: Grounding Discrete-Time Joint Acceleration in Voltage-Constrained Actuation",
+      "abstract": "Discrete-time joint acceleration constraints are widely used to enforce position and velocity limits. However, under voltage-constrained electric actuators, kinematically admissible accelerations may be physically unrealizable, exposing a missing execution-level abstraction. We propose Voltage-Realizable Acceleration (VRA), a joint-level acceleration interface that grounds kinematic acceleration in voltage-constrained actuator physics by restricting commanded accelerations to voltage-realizable constraints. Hardware experiments on electric actuators and a wheel-legged quadruped show that VRA removes unrealizable accelerations, restores consistent near-constraint execution, and reduces constraint-induced oscillations.",
+      "authors": [
+        "Lingwei Zhang",
+        "Jiaming Wang",
+        "Tianlin Zhang",
+        "Zhitao Song",
+        "Xuanqi Zeng",
+        "Weipeng Xia",
+        "Zhongyu Li",
+        "Yun-hui Liu"
+      ],
+      "published": "2026-05-11T15:11:45Z",
+      "updated": "2026-05-11T15:11:45Z",
+      "url": "https://arxiv.org/abs/2605.10696",
+      "pdf_url": "https://arxiv.org/pdf/2605.10696.pdf",
+      "primary_category": "cs.RO",
+      "categories": [
+        "cs.RO"
+      ],
+      "tags": [
+        "cs.RO"
+      ],
+      "domain": "Agent",
+      "pdf_downloaded": true,
+      "pdf_size_bytes": 4946755,
+      "pdf_path": "2026-05-12/agent/2605.10696.pdf"
+    },
+    {
+      "id": "2605.10653",
+      "title": "Embodied AI in Action: Insights from SAE World Congress 2026 on Safety, Trust, Robotics, and Real-World Deployment",
+      "abstract": "Embodied artificial intelligence is rapidly moving from research into real-world systems such as autonomous vehicles, mobile robots, and industrial machines. As these systems become more capable of perceiving, deciding, and acting in dynamic environments, they also introduce new challenges in safety, trust, governance, and operational reliability. This white paper summarizes key insights from the SAE World Congress 2026 panel session \\textit{Embodied AI in Action}, which brought together experts from automotive, robotics, artificial intelligence, and safety engineering. The discussion highlighted the need to treat embodied AI as a systems challenge requiring engineering rigor, lifecycle governance, human-centered design, and evolving standards. The paper provides practical perspectives for executives, policymakers, and technical leaders seeking to adopt embodied AI responsibly. The panel reached broad agreement that long-term success will depend not only on advances in AI capability, but equally on safe and trustworthy deployment.",
+      "authors": [
+        "Jan-Mou Li",
+        "Paul Schmitt",
+        "Wei Tong",
+        "Majed Mohammed",
+        "Akshay Chalana",
+        "Arpan Kusari",
+        "Edward Griffor"
+      ],
+      "published": "2026-05-11T14:37:37Z",
+      "updated": "2026-05-11T14:37:37Z",
+      "url": "https://arxiv.org/abs/2605.10653",
+      "pdf_url": "https://arxiv.org/pdf/2605.10653.pdf",
+      "primary_category": "cs.RO",
+      "categories": [
+        "cs.RO"
+      ],
+      "tags": [
+        "cs.RO"
+      ],
+      "domain": "Agent",
+      "pdf_downloaded": true,
+      "pdf_size_bytes": 252898,
+      "pdf_path": "2026-05-12/agent/2605.10653.pdf"
+    },
+    {
+      "id": "2605.10564",
+      "title": "DeepSight: Long-Horizon World Modeling via Latent States Prediction for End-to-End Autonomous Driving",
+      "abstract": "End-to-end autonomous driving systems are increasingly integrating Vision-Language Model (VLM) architectures, incorporating text reasoning or visual reasoning to enhance the robustness and accuracy of driving decisions. However, the reasoning mechanisms employed in most methods are direct adaptations from general domains, lacking in-depth exploration tailored to autonomous driving scenarios, particularly within visual reasoning modules. In this paper, we propose a driving world model that performs parallel prediction of latent semantic features for consecutive future frames in the bird's-eye-view (BEV) space, thereby enabling long-horizon modeling of future world states. We also introduce an efficient and adaptive text reasoning mechanism that utilizes additional social knowledge and reasoning capabilities to further improve driving performance in challenging long-tail scenarios. We present a novel, efficient, and effective approach that achieves state-of-the-art (SOTA) results on the closed-loop Bench2drive benchmark. Codes are available at: https://github.com/hotdogcheesewhite/DeepSight.",
+      "authors": [
+        "Lingjun Zhang",
+        "Changjie Wu",
+        "Linzhe Shi",
+        "Jiangyang Li",
+        "Jiaxin Liu",
+        "Lei Yang",
+        "Hang Zhang",
+        "Mu Xu",
+        "Hong Wang"
+      ],
+      "published": "2026-05-11T13:36:51Z",
+      "updated": "2026-05-11T13:36:51Z",
+      "url": "https://arxiv.org/abs/2605.10564",
+      "pdf_url": "https://arxiv.org/pdf/2605.10564.pdf",
+      "primary_category": "cs.CV",
+      "categories": [
+        "cs.CV",
+        "cs.RO"
+      ],
+      "tags": [
+        "cs.CV",
+        "cs.RO"
+      ],
+      "domain": "Agent",
+      "pdf_downloaded": true,
+      "pdf_size_bytes": 6271855,
+      "pdf_path": "2026-05-12/agent/2605.10564.pdf"
+    },
+    {
+      "id": "2605.10558",
+      "title": "Effect of Graph Gluing on Consensus in Networked Multi-Agent Systems",
+      "abstract": "In this paper, the effects of graph gluing operations in networks of multi-agent systems and their impact on system performance are investigated. In many practical applications, multiple multi-agent subsystems must be interconnected through communication links to accomplish complex tasks, resulting in a larger communication network. Such interconnections modify the underlying graph topology and consequently affect the consensus behavior and convergence rate of the network. In particular, this paper examines both bridge gluing and interface gluing and analyzes how the number and structure of communication links between subsystems influence the Fiedler eigenvalue of the resulting graph. Since the Fiedler eigenvalue is directly related to the convergence rate of consensus dynamics, the proposed analysis establishes a clear relationship between interconnection strategies, algebraic connectivity, and system performance. The results provide theoretical insight into how different gluing mechanisms alter the spectral properties of the graph Laplacian and, in turn, the convergence characteristics of the networked multi-agent system. Simulation studies are presented to illustrate the theoretical findings and to validate the effectiveness of the proposed framework.",
+      "authors": [
+        "Rohollah Moghadam",
+        "Santosh Kandel"
+      ],
+      "published": "2026-05-11T13:32:52Z",
+      "updated": "2026-05-11T13:32:52Z",
+      "url": "https://arxiv.org/abs/2605.10558",
+      "pdf_url": "https://arxiv.org/pdf/2605.10558.pdf",
+      "primary_category": "cs.MA",
+      "categories": [
+        "cs.MA",
+        "eess.SY"
+      ],
+      "tags": [
+        "cs.MA",
+        "eess.SY"
+      ],
+      "domain": "Agent",
+      "pdf_downloaded": true,
+      "pdf_size_bytes": 259902,
+      "pdf_path": "2026-05-12/agent/2605.10558.pdf"
+    },
+    {
+      "id": "2605.10528",
+      "title": "Collective Alignment in LLM Multi-Agent Systems: Disentangling Bias from Cooperation via Statistical Physics",
+      "abstract": "We investigate the emergent collective dynamics of LLM-based multi-agent systems on a 2D square lattice and present a model-agnostic statistical-physics method to disentangle social conformity from intrinsic bias, compute critical exponents, and probe the collective behavior and possible phase transitions of multi-agent systems. In our framework, each node of an $L\\!\\times\\!L$ lattice hosts an identical LLM agent holding a binary state ($+1$/$-1$, mapped to yes/no) and updating it by querying the model conditioned on the four nearest-neighbor states. The sampler temperature $T$ serves as the sole control parameter. Across three open-weight models (llama3.1:8b, phi4-mini:3.8b, mistral:7b), we measure magnetization and susceptibility under a global-flip protocol designed to probe $\\mathbb{Z}_2$ symmetry. All models display temperature-driven order-disorder crossovers and susceptibility peaks; finite-size scaling on even-$L$ lattices yields effective exponents $\u03b3/\u03bd$ whose values are model-dependent, close to but incompatible with the 2D Ising universality class ($\u03b3/\u03bd=7/4$). Our method enables the extraction of effective $\u03b2$-weighted couplings $\\tilde{J}(T)$ and fields $\\tilde{h}(T)$, which serve as a measure of social conformity and intrinsic bias. In the models we analyzed, we found that collective alignment is dominated by an intrinsic bias ($\\tilde{h}\\gg\\tilde{J}$) rather than by cooperative neighbor coupling, producing field-driven crossovers instead of genuine phase transitions. These effective parameters vary qualitatively across models, providing compact collective-behavior fingerprints for LLM agents and a quantitative diagnostic for the reliability of multi-agent consensus and collective alignment.",
+      "authors": [
+        "Cristiano De Nobili"
+      ],
+      "published": "2026-05-11T13:13:44Z",
+      "updated": "2026-05-11T13:13:44Z",
+      "url": "https://arxiv.org/abs/2605.10528",
+      "pdf_url": "https://arxiv.org/pdf/2605.10528.pdf",
+      "primary_category": "cond-mat.stat-mech",
+      "categories": [
+        "cond-mat.stat-mech",
+        "cs.CL",
+        "cs.MA",
+        "physics.soc-ph"
+      ],
+      "tags": [
+        "cond-mat.stat-mech",
+        "cs.CL",
+        "cs.MA",
+        "physics.soc-ph"
+      ],
+      "domain": "Agent",
+      "pdf_downloaded": true,
+      "pdf_size_bytes": 4589674,
+      "pdf_path": "2026-05-12/agent/2605.10528.pdf"
+    },
+    {
+      "id": "2605.10485",
+      "title": "VEGA: Visual Encoder Grounding Alignment for Spatially-Aware Vision-Language-Action Models",
+      "abstract": "Precise spatial reasoning is fundamental to robotic manipulation, yet the visual backbones of current vision-language-action (VLA) models are predominantly pretrained on 2D image data without explicit 3D geometric supervision, resulting in representations that lack accurate spatial awareness. Existing implicit spatial grounding methods partially address this by aligning VLA features with those of 3D-aware foundation models, but they rely on empirical layer search and perform alignment on LLM-level visual tokens where spatial structure has already been entangled with linguistic semantics, limiting both generalizability and geometric interpretability. We propose VEGA (Visual Encoder Grounding Alignment), a simple yet effective framework that directly aligns the output of the VLA's visual encoder with spatially-aware features from DINOv2-FiT3D, a DINOv2 model fine-tuned with multi-view consistent 3D Gaussian Splatting supervision. By performing alignment at the visual encoder output level, VEGA grounds spatial awareness before any linguistic entanglement occurs, offering a more interpretable and principled alignment target. The alignment is implemented via a lightweight projector trained with a cosine similarity loss alongside the standard action prediction objective, and is discarded at inference time, introducing no additional computational overhead. Extensive experiments on simulation benchmark and real-world manipulation tasks demonstrate that VEGA consistently outperforms existing implicit spatial grounding baselines, establishing a new state-of-the-art among implicit spatial grounding methods for VLA models.",
+      "authors": [
+        "Hao Wang",
+        "Xiaobao Wei",
+        "Jingyang He",
+        "Chengyu Bai",
+        "Chun-Kai Fan",
+        "Jiajun Cao",
+        "Jintao Chen",
+        "Ying Li",
+        "Shanyu Rong",
+        "Ming Lu",
+        "Xiaozhu Ju",
+        "Jian Tang",
+        "Shanghang Zhang"
+      ],
+      "published": "2026-05-11T12:44:26Z",
+      "updated": "2026-05-11T12:44:26Z",
+      "url": "https://arxiv.org/abs/2605.10485",
+      "pdf_url": "https://arxiv.org/pdf/2605.10485.pdf",
+      "primary_category": "cs.RO",
+      "categories": [
+        "cs.RO"
+      ],
+      "tags": [
+        "cs.RO"
+      ],
+      "domain": "Agent",
+      "pdf_downloaded": true,
+      "pdf_size_bytes": 7839224,
+      "pdf_path": "2026-05-12/agent/2605.10485.pdf"
+    },
+    {
+      "id": "2605.10484",
+      "title": "OpenSGA: Efficient 3D Scene Graph Alignment in the Open World",
+      "abstract": "Scene graph alignment establishes object correspondences between two 3D scene graphs constructed from partially overlapping observations. This enables efficient scene understanding and object-level relocalization when a robot revisits a place, as well as global map fusion across multiple agents. Such capabilities are essential for robots that require long-term memory for long-horizon tasks involving interactions with the environment. Existing approaches mainly focus on subscan-to-subscan (S2S) alignment and depend heavily on geometric point-cloud features, leaving frame-to-scan (F2S) alignment and open-set vision-language features underexplored. In addition, existing datasets for scene graph alignment remain small-scale with limited object diversity, constraining systematic training and evaluation. We present a unified and efficient scene graph alignment framework that predicts object correspondences by fusing vision-language, textual, and geometric features with spatial context. The framework comprises modules such as a distance-gated spatial attention encoder, a minimum-cost-flow-based allocator, and a global scene embedding generator to achieve accurate alignment even under large coordinate discrepancies. We further introduce ScanNet-SG, a large-scale dataset generated via an automated annotation pipeline with over 700k samples, covering 509 object categories from ScanNet labels and over 3k categories from GPT-4o-based tagging. Experiments show that our method achieves the best overall performance on both F2S and S2S tasks, substantially outperforming existing scene graph alignment methods. Our code and dataset are released at: https://autonomousrobots.nl/paper_websites/opensga.",
+      "authors": [
+        "Gang Chen",
+        "Sebasti\u00e1n Barbas Laina",
+        "Stefan Leutenegger",
+        "Javier Alonso-Mora"
+      ],
+      "published": "2026-05-11T12:44:18Z",
+      "updated": "2026-05-11T12:44:18Z",
+      "url": "https://arxiv.org/abs/2605.10484",
+      "pdf_url": "https://arxiv.org/pdf/2605.10484.pdf",
+      "primary_category": "cs.CV",
+      "categories": [
+        "cs.CV",
+        "cs.RO"
+      ],
+      "tags": [
+        "cs.CV",
+        "cs.RO"
+      ],
+      "domain": "Agent",
+      "pdf_downloaded": true,
+      "pdf_size_bytes": 5069930,
+      "pdf_path": "2026-05-12/agent/2605.10484.pdf"
+    },
+    {
+      "id": "2605.10482",
+      "title": "Priority-Driven Control and Communication in Decentralized Multi-Agent Systems via Reinforcement Learning",
+      "abstract": "Event-triggered control provides a mechanism for avoiding excessive use of constrained communication bandwidth in networked multi-agent systems. However, most existing methods rely on accurate system models, which may be unavailable in practice. In this work, we propose a model-free, priority-driven reinforcement learning algorithm that learns communication priorities and control policies jointly from data in decentralized multi-agent systems. By learning communication priorities, we circumvent the hybrid action space typical in event-triggered control with binary communication decisions. We evaluate our algorithm on benchmark tasks and demonstrate that it outperforms the baseline method.",
+      "authors": [
+        "Qingyun Guo",
+        "Junyi Shi",
+        "Tomasz Piotr Kucner",
+        "Dominik Baumann"
+      ],
+      "published": "2026-05-11T12:43:25Z",
+      "updated": "2026-05-11T12:43:25Z",
+      "url": "https://arxiv.org/abs/2605.10482",
+      "pdf_url": "https://arxiv.org/pdf/2605.10482.pdf",
+      "primary_category": "eess.SY",
+      "categories": [
+        "eess.SY",
+        "cs.LG",
+        "cs.RO"
+      ],
+      "tags": [
+        "cs.LG",
+        "cs.RO",
+        "eess.SY"
+      ],
+      "domain": "Agent",
+      "pdf_downloaded": true,
+      "pdf_size_bytes": 2569585,
+      "pdf_path": "2026-05-12/agent/2605.10482.pdf"
+    },
+    {
+      "id": "2605.10481",
+      "title": "Safe Multi-Agent Behavior Must Be Maintained, Not Merely Asserted: Constraint Drift in LLM-Based Multi-Agent Systems",
+      "abstract": "Modern LLM based agents are no longer passive text generators. They read repositories, call tools, browse the web, execute code, maintain memory, communicate with other agents, and act through long horizon workflows. This shift moves the unit of safety. A system may produce a compliant final answer while leaking private information through an internal message, delegating authority beyond its original scope, calling an external tool with sensitive context, or losing the evidence needed to reconstruct why an action was allowed. We argue that many emerging failures in LLM-based multi-agent systems share a common structure: safety critical constraints do not remain operative throughout the trajectory. We call this phenomenon constraint drift: the loss, distortion, weakening, or relaxation of constraints as they pass through memory, delegation, communication, tool use, audit, and optimization. The position taken here is that safe multi-agent behavior must be maintained, not merely asserted. Prompts, guardrails, tool schemas, access control, and final output checks are necessary, but they are insufficient unless constraints remain fresh, inherited, enforceable, and auditable across execution. We propose Constraint State Governance as a research paradigm for LLM-based multi-agent systems. In this paradigm, safety-critical constraints are maintained as explicit execution state, while constraint-native reinforcement learning improves utility only within maintained safety boundaries. The goal is not to freeze agentic systems under rigid rules, but to make safety operational across the trajectories through which modern agents actually act.",
+      "authors": [
+        "Tianxiao Li",
+        "Yixing Ma",
+        "Haiquan Wen",
+        "Zhenglin Huang",
+        "Qianyu Zhou",
+        "Zeyu Fu",
+        "Guangliang Cheng"
+      ],
+      "published": "2026-05-11T12:43:19Z",
+      "updated": "2026-05-11T12:43:19Z",
+      "url": "https://arxiv.org/abs/2605.10481",
+      "pdf_url": "https://arxiv.org/pdf/2605.10481.pdf",
+      "primary_category": "cs.MA",
+      "categories": [
+        "cs.MA"
+      ],
+      "tags": [
+        "cs.MA"
+      ],
+      "domain": "Agent",
+      "pdf_downloaded": true,
+      "pdf_size_bytes": 627815,
+      "pdf_path": "2026-05-12/agent/2605.10481.pdf"
+    },
+    {
+      "id": "2605.10457",
+      "title": "Geometrically Approximated Modeling for Emitter-Centric Ray-Triangle Filtering in Arbitrarily Dynamic LiDAR Simulation",
+      "abstract": "Real-time Light Detection And Ranging (LiDAR) simulation must find, per emitted ray, the closest intersecting triangle even in dynamic scenes containing large numbers of moving and deformable objects. Dominant acceleration-structure approaches require rebuilding each frame for dynamic geometry -- a cost that compounds directly with scene dynamics and cannot be amortized regardless of how little actually changed. This paper presents the Gajmer Ray-Casting Algorithm (GRCA), which inverts the question: instead of asking what does each ray hit? it asks which rays can each triangle possibly hit? GRCA geometrically models spinning LiDAR emitters as rotation-traced cones or planes and uses each triangle's emitter-centric apparent area to cull, per triangle, which channels and the rays within those channels can possibly reach it -- without any acceleration structure. GRCA is compute-based and vendor-agnostic by design, targeting highly dynamic, high-resolution simultaneous multi-sensor simulation. At its core, GRCA is a general-purpose ray-casting algorithm: the emitter-centric inversion applies to any setting where rays originate from a known position, not only LiDAR. Benchmarks evaluate 2-8 simultaneous 128x4096-ray LiDARs (360deg/180deg) over complex dynamic scenes -- with just two sensors casting ~1M rays per frame. With range culling inactive, GRCA reaches up to 7.97x over hardware-accelerated OptiX (GPU) and 14.55x over Embree (CPU). Two independent extensions further boost performance even in the most complex scene (~22M triangles, ~9M of which are dynamic, 8 LiDARs): range culling at realistic deployment ranges (10-100m) reaches up to 7.02x GPU and 9.33x CPU; a hybrid pipeline -- GRCA for dynamic geometry, OptiX/Embree for static -- reaches up to 10.5x GPU and 19.2x CPU.",
+      "authors": [
+        "Rabin Gajmer",
+        "Joonas Haapala",
+        "Zoltan Beck"
+      ],
+      "published": "2026-05-11T12:28:49Z",
+      "updated": "2026-05-11T12:28:49Z",
+      "url": "https://arxiv.org/abs/2605.10457",
+      "pdf_url": "https://arxiv.org/pdf/2605.10457.pdf",
+      "primary_category": "cs.GR",
+      "categories": [
+        "cs.GR",
+        "cs.PF",
+        "cs.RO"
+      ],
+      "tags": [
+        "cs.GR",
+        "cs.PF",
+        "cs.RO"
+      ],
+      "domain": "Agent",
+      "pdf_downloaded": true,
+      "pdf_size_bytes": 4554994,
+      "pdf_path": "2026-05-12/agent/2605.10457.pdf"
+    },
+    {
+      "id": "2605.10456",
+      "title": "Learning Point Cloud Geometry as a Statistical Manifold: Theory and Practice",
+      "abstract": "Point clouds are a fundamental representation for robotic perception tasks such as localization, mapping, and object pose estimation. However, LiDAR-acquired point clouds are inherently sparse and non-uniform, providing incomplete observations of the underlying scene geometry. This makes reliable geometric reasoning challenging and degrades downstream perception performance. Existing approaches attempt to compensate for these limitations by estimating local geometry, but often rely on hand-crafted statistics or end-to-end supervised learning, which can suffer from limited scalability or require large amounts of accurately labeled data. To address these challenges, we explicitly model point cloud geometry under a principled mathematical formulation. We represent local geometry as a statistical manifold induced by a family of Gaussian distributions, where each point is associated with a Gaussian capturing its local geometric structure. Based on this formulation, we introduce Point-to-Ellipsoid (POLI), a deep neural estimator that predicts per-point Gaussian geometry. POLI learns a mapping from point cloud observations to their underlying geometry in a self-supervised manner, removing the need for labeled data while preserving strong geometric inductive biases. The resulting representation integrates seamlessly into existing robotic perception pipelines without architectural modifications. Extensive experiments show that POLI enables accurate and robust geometry estimation and consistently improves performance across diverse robotic perception tasks.",
+      "authors": [
+        "Jinwoo Lee",
+        "Jiwoo Kim",
+        "Woojae Shin",
+        "Giseop Kim",
+        "Hyondong Oh"
+      ],
+      "published": "2026-05-11T12:27:25Z",
+      "updated": "2026-05-11T12:27:25Z",
+      "url": "https://arxiv.org/abs/2605.10456",
+      "pdf_url": "https://arxiv.org/pdf/2605.10456.pdf",
+      "primary_category": "cs.RO",
+      "categories": [
+        "cs.RO"
+      ],
+      "tags": [
+        "cs.RO"
+      ],
+      "domain": "Agent",
+      "pdf_downloaded": false,
+      "pdf_size_bytes": null,
+      "pdf_path": null
+    }
+  ]
+}
