@@ -1,0 +1,1244 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>6285 啟碁科技 — AI 交易機器人完整分析報告</title>
+  <style>
+    :root {
+      --bg: #0d1117;
+      --bg2: #161b22;
+      --bg3: #21262d;
+      --border: #30363d;
+      --text: #e6edf3;
+      --text-muted: #7d8590;
+      --blue: #58a6ff;
+      --blue-dim: #1f6feb;
+      --green: #3fb950;
+      --red: #f85149;
+      --yellow: #d29922;
+      --orange: #db6d28;
+      --purple: #a371f7;
+      --cyan: #39d353;
+      --accent: #238636;
+    }
+
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+
+    body {
+      background: var(--bg);
+      color: var(--text);
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Noto Sans TC', sans-serif;
+      font-size: 15px;
+      line-height: 1.7;
+    }
+
+    /* ── TOP HEADER ── */
+    .hero {
+      background: linear-gradient(135deg, #0d1117 0%, #1a2332 50%, #0d1e35 100%);
+      border-bottom: 1px solid var(--border);
+      padding: 48px 24px 40px;
+      text-align: center;
+      position: relative;
+      overflow: hidden;
+    }
+    .hero::before {
+      content: '';
+      position: absolute;
+      top: -50%;
+      left: -50%;
+      width: 200%;
+      height: 200%;
+      background: radial-gradient(ellipse at center, rgba(88,166,255,0.06) 0%, transparent 60%);
+      pointer-events: none;
+    }
+    .hero .badge {
+      display: inline-block;
+      background: rgba(35,134,54,0.2);
+      border: 1px solid var(--accent);
+      color: var(--green);
+      font-size: 11px;
+      font-weight: 600;
+      letter-spacing: 1.5px;
+      text-transform: uppercase;
+      padding: 4px 12px;
+      border-radius: 20px;
+      margin-bottom: 16px;
+    }
+    .hero h1 { font-size: clamp(28px, 5vw, 48px); font-weight: 700; margin-bottom: 8px; }
+    .hero h1 span { color: var(--blue); }
+    .hero .subtitle { color: var(--text-muted); font-size: 15px; margin-bottom: 24px; }
+    .hero .price-row {
+      display: flex;
+      justify-content: center;
+      gap: 32px;
+      flex-wrap: wrap;
+      margin-top: 8px;
+    }
+    .hero .price-item { text-align: center; }
+    .hero .price-item .label { font-size: 11px; color: var(--text-muted); letter-spacing: 0.5px; }
+    .hero .price-item .value { font-size: 22px; font-weight: 700; }
+    .hero .price-item .value.up { color: var(--green); }
+    .hero .price-item .value.down { color: var(--red); }
+    .hero .price-item .value.hold { color: var(--yellow); }
+    .hero .price-item .value.neutral { color: var(--blue); }
+
+    /* ── DECISION BANNER ── */
+    .decision-banner {
+      background: linear-gradient(90deg, rgba(210,153,34,0.15), rgba(210,153,34,0.08));
+      border: 1px solid rgba(210,153,34,0.4);
+      border-radius: 12px;
+      margin: 24px auto;
+      max-width: 860px;
+      padding: 20px 28px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 16px;
+    }
+    .decision-banner .decision-label { font-size: 13px; color: var(--text-muted); }
+    .decision-banner .decision-action {
+      font-size: 32px;
+      font-weight: 800;
+      color: var(--yellow);
+      letter-spacing: 4px;
+    }
+    .decision-meta { display: flex; gap: 24px; flex-wrap: wrap; }
+    .decision-meta .meta-item { text-align: center; }
+    .decision-meta .meta-item .ml { font-size: 11px; color: var(--text-muted); }
+    .decision-meta .meta-item .mv { font-size: 16px; font-weight: 600; }
+
+    /* ── LAYOUT ── */
+    .container { max-width: 960px; margin: 0 auto; padding: 0 24px 80px; }
+
+    /* ── SECTION ── */
+    .section { margin-top: 48px; }
+    .section-header {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      margin-bottom: 20px;
+    }
+    .section-number {
+      width: 32px; height: 32px;
+      background: var(--blue-dim);
+      color: #fff;
+      border-radius: 8px;
+      display: flex; align-items: center; justify-content: center;
+      font-size: 14px; font-weight: 700;
+      flex-shrink: 0;
+    }
+    .section-header h2 { font-size: 20px; font-weight: 700; }
+    .section-header .section-desc { color: var(--text-muted); font-size: 13px; margin-top: 2px; }
+
+    /* ── CARDS ── */
+    .card {
+      background: var(--bg2);
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      padding: 20px 24px;
+      margin-bottom: 16px;
+    }
+    .card h3 { font-size: 15px; font-weight: 700; margin-bottom: 12px; }
+    .card.green { border-left: 3px solid var(--green); }
+    .card.red { border-left: 3px solid var(--red); }
+    .card.yellow { border-left: 3px solid var(--yellow); }
+    .card.blue { border-left: 3px solid var(--blue); }
+    .card.purple { border-left: 3px solid var(--purple); }
+
+    /* ── GRID ── */
+    .grid-2 { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 16px; }
+    .grid-3 { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 16px; }
+    .grid-4 { display: grid; grid-template-columns: repeat(auto-fit, minmax(160px, 1fr)); gap: 12px; }
+
+    /* ── STAT BOX ── */
+    .stat-box {
+      background: var(--bg3);
+      border: 1px solid var(--border);
+      border-radius: 10px;
+      padding: 16px;
+      text-align: center;
+    }
+    .stat-box .sl { font-size: 11px; color: var(--text-muted); margin-bottom: 4px; letter-spacing: 0.3px; }
+    .stat-box .sv { font-size: 22px; font-weight: 700; }
+    .stat-box .sd { font-size: 11px; color: var(--text-muted); margin-top: 4px; }
+    .stat-box .sv.up { color: var(--green); }
+    .stat-box .sv.down { color: var(--red); }
+    .stat-box .sv.warn { color: var(--yellow); }
+    .stat-box .sv.neutral { color: var(--blue); }
+
+    /* ── PIPELINE STEPS ── */
+    .pipeline {
+      position: relative;
+      padding-left: 32px;
+    }
+    .pipeline::before {
+      content: '';
+      position: absolute;
+      left: 12px; top: 0; bottom: 0;
+      width: 2px;
+      background: linear-gradient(to bottom, var(--blue-dim), var(--border));
+    }
+    .pipeline-step {
+      position: relative;
+      margin-bottom: 28px;
+    }
+    .pipeline-step::before {
+      content: '';
+      position: absolute;
+      left: -26px; top: 14px;
+      width: 12px; height: 12px;
+      border-radius: 50%;
+      background: var(--blue);
+      box-shadow: 0 0 0 3px rgba(88,166,255,0.2);
+    }
+    .pipeline-step.done::before { background: var(--green); box-shadow: 0 0 0 3px rgba(63,185,80,0.2); }
+    .pipeline-step.warn::before { background: var(--yellow); box-shadow: 0 0 0 3px rgba(210,153,34,0.2); }
+
+    .step-header { display: flex; align-items: center; gap: 10px; margin-bottom: 8px; }
+    .step-tag {
+      font-size: 10px; font-weight: 700; letter-spacing: 1px;
+      padding: 2px 8px; border-radius: 4px;
+      background: rgba(88,166,255,0.15); color: var(--blue);
+    }
+    .step-tag.green { background: rgba(63,185,80,0.15); color: var(--green); }
+    .step-tag.yellow { background: rgba(210,153,34,0.15); color: var(--yellow); }
+    .step-title { font-size: 15px; font-weight: 700; }
+    .step-result {
+      background: var(--bg3);
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      padding: 12px 16px;
+      font-size: 13px;
+      font-family: 'SF Mono', Consolas, monospace;
+      color: var(--cyan);
+      margin-top: 8px;
+    }
+    .step-explain {
+      margin-top: 10px;
+      font-size: 13px;
+      color: var(--text-muted);
+      background: rgba(255,255,255,0.02);
+      border-radius: 8px;
+      padding: 10px 14px;
+    }
+
+    /* ── TERM TOOLTIP ── */
+    .term {
+      color: var(--blue);
+      border-bottom: 1px dashed rgba(88,166,255,0.5);
+      cursor: help;
+      font-size: inherit;
+    }
+
+    /* ── TABLE ── */
+    table { width: 100%; border-collapse: collapse; font-size: 13px; }
+    thead th {
+      background: var(--bg3);
+      padding: 10px 14px;
+      text-align: left;
+      font-size: 11px;
+      color: var(--text-muted);
+      font-weight: 600;
+      letter-spacing: 0.5px;
+      text-transform: uppercase;
+      border-bottom: 1px solid var(--border);
+    }
+    tbody td {
+      padding: 10px 14px;
+      border-bottom: 1px solid rgba(48,54,61,0.5);
+      vertical-align: top;
+    }
+    tbody tr:last-child td { border-bottom: none; }
+    tbody tr:hover td { background: rgba(255,255,255,0.02); }
+    .td-green { color: var(--green); font-weight: 600; }
+    .td-red { color: var(--red); font-weight: 600; }
+    .td-yellow { color: var(--yellow); font-weight: 600; }
+    .td-blue { color: var(--blue); font-weight: 600; }
+    .td-muted { color: var(--text-muted); }
+
+    /* ── GLOSSARY ── */
+    .glossary-item {
+      border-bottom: 1px solid var(--border);
+      padding: 16px 0;
+    }
+    .glossary-item:last-child { border-bottom: none; }
+    .glossary-term { font-weight: 700; font-size: 15px; color: var(--blue); margin-bottom: 6px; }
+    .glossary-body { color: var(--text-muted); font-size: 13px; line-height: 1.8; }
+    .glossary-example {
+      margin-top: 6px;
+      background: var(--bg3);
+      border-left: 2px solid var(--blue-dim);
+      padding: 8px 12px;
+      border-radius: 0 6px 6px 0;
+      font-size: 12px;
+      color: var(--text-muted);
+    }
+
+    /* ── PROGRESS BAR ── */
+    .progress-bar {
+      height: 8px;
+      background: var(--bg3);
+      border-radius: 4px;
+      overflow: hidden;
+      margin-top: 6px;
+    }
+    .progress-bar .fill {
+      height: 100%;
+      border-radius: 4px;
+      background: linear-gradient(90deg, var(--blue-dim), var(--blue));
+    }
+    .progress-bar .fill.green { background: linear-gradient(90deg, #238636, var(--green)); }
+    .progress-bar .fill.yellow { background: linear-gradient(90deg, #9e6a03, var(--yellow)); }
+    .progress-bar .fill.red { background: linear-gradient(90deg, #b91c1c, var(--red)); }
+
+    /* ── SIGNAL BADGE ── */
+    .badge-signal {
+      display: inline-block;
+      padding: 3px 10px;
+      border-radius: 20px;
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: 0.5px;
+    }
+    .badge-signal.BUY { background: rgba(63,185,80,0.15); color: var(--green); border: 1px solid rgba(63,185,80,0.3); }
+    .badge-signal.HOLD { background: rgba(210,153,34,0.15); color: var(--yellow); border: 1px solid rgba(210,153,34,0.3); }
+    .badge-signal.SELL { background: rgba(248,81,73,0.15); color: var(--red); border: 1px solid rgba(248,81,73,0.3); }
+    .badge-signal.LONG { background: rgba(88,166,255,0.15); color: var(--blue); border: 1px solid rgba(88,166,255,0.3); }
+    .badge-signal.NEUTRAL { background: rgba(125,133,144,0.15); color: var(--text-muted); border: 1px solid var(--border); }
+
+    /* ── RISK METER ── */
+    .risk-gauge {
+      display: flex; align-items: center; gap: 16px; margin: 8px 0;
+    }
+    .risk-gauge .label { font-size: 12px; color: var(--text-muted); width: 80px; flex-shrink: 0; }
+    .risk-gauge .bar-wrap { flex: 1; }
+    .risk-gauge .value-label { font-size: 13px; font-weight: 700; width: 60px; text-align: right; }
+
+    /* ── CALLOUT ── */
+    .callout {
+      border-radius: 8px;
+      padding: 14px 18px;
+      margin: 12px 0;
+      font-size: 13px;
+      display: flex;
+      gap: 12px;
+      align-items: flex-start;
+    }
+    .callout.info { background: rgba(88,166,255,0.08); border: 1px solid rgba(88,166,255,0.2); }
+    .callout.warn { background: rgba(210,153,34,0.08); border: 1px solid rgba(210,153,34,0.2); }
+    .callout.danger { background: rgba(248,81,73,0.08); border: 1px solid rgba(248,81,73,0.2); }
+    .callout.success { background: rgba(63,185,80,0.08); border: 1px solid rgba(63,185,80,0.2); }
+    .callout .icon { font-size: 18px; flex-shrink: 0; margin-top: 1px; }
+    .callout .body { flex: 1; line-height: 1.7; }
+    .callout .body strong { color: var(--text); }
+
+    /* ── FOOTER ── */
+    .footer {
+      margin-top: 80px;
+      border-top: 1px solid var(--border);
+      padding: 24px;
+      text-align: center;
+      color: var(--text-muted);
+      font-size: 12px;
+    }
+
+    /* ── TIMELINE ── */
+    .timeline { display: flex; flex-direction: column; gap: 12px; }
+    .timeline-item { display: flex; gap: 16px; align-items: flex-start; }
+    .timeline-dot {
+      width: 10px; height: 10px;
+      border-radius: 50%;
+      background: var(--blue);
+      margin-top: 6px;
+      flex-shrink: 0;
+    }
+    .timeline-dot.green { background: var(--green); }
+    .timeline-item .date { font-size: 12px; color: var(--text-muted); width: 90px; flex-shrink: 0; }
+    .timeline-item .event { font-size: 13px; }
+
+    /* ── RESPONSIVE ── */
+    @media (max-width: 640px) {
+      .hero .price-row { gap: 20px; }
+      .decision-banner { flex-direction: column; text-align: center; }
+      .decision-meta { justify-content: center; }
+    }
+  </style>
+</head>
+<body>
+
+<!-- ═══════════════ HERO ═══════════════ -->
+<div class="hero">
+  <div class="badge">AI 交易機器人分析報告 · 2026/05/18</div>
+  <h1>6285 · <span>啟碁科技</span></h1>
+  <p class="subtitle">WNC Corporation（前身：Wistron NeWeb Corporation）· TWSE 上市 · 2026/05/18 分析</p>
+  <div class="price-row">
+    <div class="price-item">
+      <div class="label">當前股價</div>
+      <div class="value neutral">NT$260</div>
+    </div>
+    <div class="price-item">
+      <div class="label">52W 高點</div>
+      <div class="value up">NT$286</div>
+    </div>
+    <div class="price-item">
+      <div class="label">AI 決策</div>
+      <div class="value hold">HOLD</div>
+    </div>
+    <div class="price-item">
+      <div class="label">Q1 2026 EPS</div>
+      <div class="value up">NT$2.36</div>
+    </div>
+    <div class="price-item">
+      <div class="label">4月營收 YoY</div>
+      <div class="value up">+15.65%</div>
+    </div>
+  </div>
+</div>
+
+<!-- ═══════════════ DECISION BANNER ═══════════════ -->
+<div class="container">
+  <div class="decision-banner">
+    <div>
+      <div class="decision-label">機器人最終決策</div>
+      <div class="decision-action">⏸ HOLD</div>
+      <div style="font-size:13px;color:#7d8590;margin-top:4px;">停損 NT$252 · 停利 NT$280</div>
+    </div>
+    <div class="decision-meta">
+      <div class="meta-item">
+        <div class="ml">VaR 95%</div>
+        <div class="mv" style="color:var(--green)">0.47%</div>
+      </div>
+      <div class="meta-item">
+        <div class="ml">Kelly 倉位</div>
+        <div class="mv" style="color:var(--yellow)">25%</div>
+      </div>
+      <div class="meta-item">
+        <div class="ml">辯論輪數</div>
+        <div class="mv" style="color:var(--blue)">3 輪</div>
+      </div>
+      <div class="meta-item">
+        <div class="ml">ML 訊號</div>
+        <div class="mv" style="color:var(--text-muted)">NEUTRAL</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ═══════════════ SECTION 0: 讀這份報告前 ═══════════════ -->
+  <div class="section">
+    <div class="section-header">
+      <div class="section-number">👋</div>
+      <div>
+        <h2>讀這份報告前，先了解是什麼在分析它</h2>
+        <div class="section-desc">給第一次看 AI 交易報告的你</div>
+      </div>
+    </div>
+    <div class="card blue">
+      <p style="margin-bottom:12px;">這份報告由一套自建的 <strong>AI 交易機器人</strong>（程式名稱：<code>run.py 6285</code>）在 2026/05/18 自動執行後產生。它不是人工手寫的分析，而是多個 AI 代理人（Agent）協同討論後給出建議。</p>
+      <p style="margin-bottom:12px;">整個過程分成 <strong>8 個步驟</strong>（下方有詳細圖解）：</p>
+      <ol style="margin-left:20px;font-size:14px;line-height:2;">
+        <li>從網路抓取股價歷史資料（728 根 K 棒 ≈ 3 年）</li>
+        <li>計算 31 個技術指標（RSI、MACD、布林通道等）</li>
+        <li>Kronos AI 閱讀知識庫 + 技術指標 → 給出 ML 訊號</li>
+        <li>5 位分析師 AI 各自撰寫報告（技術面、基本面、情緒面、籌碼、總體經濟）</li>
+        <li>研究主管 AI 整合所有報告寫成 memo</li>
+        <li>3 位交易員 AI（多頭 Bull / 空頭 Bear / 中性 Neutral）提出建議</li>
+        <li>Bull / Bear 辯論最多 3 輪，收斂共識</li>
+        <li>風險管理 + 投資組合管理 → 最終決策</li>
+      </ol>
+    </div>
+  </div>
+
+  <!-- ═══════════════ SECTION 1: 公司簡介 ═══════════════ -->
+  <div class="section">
+    <div class="section-header">
+      <div class="section-number">1</div>
+      <div>
+        <h2>公司是誰？啟碁科技做什麼？</h2>
+        <div class="section-desc">認識這家公司，才能理解為什麼值得關注</div>
+      </div>
+    </div>
+
+    <div class="callout info">
+      <div class="icon">💡</div>
+      <div class="body">
+        <strong>啟碁科技（6285.TW）</strong>是仁寶集團旗下的上市子公司，2025年5月英文名從 Wistron NeWeb Corporation 改為 <strong>WNC Corporation</strong>。總部在新竹，員工 18,000 人以上，越南是主要生產基地。它是台灣最大 LEO（低軌衛星）地面終端設備製造商之一。
+      </div>
+    </div>
+
+    <div class="grid-3" style="margin-top:16px;">
+      <div class="card green">
+        <h3>🛰️ 衛星 + 寬頻（41% 營收）</h3>
+        <p style="font-size:13px;color:var(--text-muted);">SpaceX Starlink 地面終端 ODM（估佔總營收 ~24%）、Wi-Fi 7 路由器、5G FWA、DOCSIS 有線電視閘道</p>
+      </div>
+      <div class="card blue">
+        <h3>🏢 企業網路（31% 營收）</h3>
+        <p style="font-size:13px;color:var(--text-muted);">800G 高速乙太網路交換器（H2 2026 出貨）、企業 Wi-Fi 7 AP、OCS 光電路交換器（AI 資料中心）、SD-WAN</p>
+      </div>
+      <div class="card purple">
+        <h3>🚗 車用電子（27% 營收）</h3>
+        <p style="font-size:13px;color:var(--text-muted);">ADAS 毫米波雷達、行車記錄器、DMS 駕駛監控、TCU/RSU 車用通訊模組、C-V2X</p>
+      </div>
+    </div>
+
+    <div class="card" style="margin-top:4px;">
+      <h3>📦 什麼是 ODM？（新手必讀）</h3>
+      <p style="font-size:13px;color:var(--text-muted);line-height:1.9;">
+        <strong>ODM = Original Design Manufacturer（原廠設計製造商）</strong>。簡單說，啟碁負責設計 + 生產，品牌名稱（如 Starlink）貼別人的。iPhone 是 Apple 品牌，富士康是 ODM；Starlink 天線是 SpaceX 品牌，啟碁是 ODM。ODM 不吃品牌溢價，靠量與技術護城河獲利，毛利率通常 12–18%，遠低於品牌廠的 30–50%。
+      </p>
+    </div>
+
+    <h3 style="margin-top:24px;margin-bottom:12px;font-size:15px;">📅 最新重要事件（截至 2026/05/18）</h3>
+    <div class="card">
+      <div class="timeline">
+        <div class="timeline-item">
+          <div class="timeline-dot green"></div>
+          <div class="date">2026/05/14</div>
+          <div class="event">股價創歷史新高 <strong>NT$286</strong>，後回落至 NT$260（-9%）</div>
+        </div>
+        <div class="timeline-item">
+          <div class="timeline-dot green"></div>
+          <div class="date">2026/05/07</div>
+          <div class="event">Q1 2026 法說會：EPS <strong>NT$2.36</strong>（vs Q1 2025 NT$1.92，+23% YoY）✅ 創同期新高</div>
+        </div>
+        <div class="timeline-item">
+          <div class="timeline-dot green"></div>
+          <div class="date">2026/05/12</div>
+          <div class="event">Goldman Sachs 升評，目標價 <strong>NT$318</strong>（Buy）；兆豐投顧目標 <strong>NT$348</strong></div>
+        </div>
+        <div class="timeline-item">
+          <div class="timeline-dot green"></div>
+          <div class="date">2026/04/10</div>
+          <div class="event">4月營收 <strong>NT$114.01億</strong>，歷史新高，YoY +15.65%；1–4月累計 YoY +15.9%</div>
+        </div>
+        <div class="timeline-item">
+          <div class="timeline-dot"></div>
+          <div class="date">2026/04/19</div>
+          <div class="event">獲 OCS 光電路交換器合約（客戶未具名，估為美國大型網路設備商）</div>
+        </div>
+        <div class="timeline-item">
+          <div class="timeline-dot"></div>
+          <div class="date">2026/03/02</div>
+          <div class="event">MWC 2026 宣布與 NVIDIA AI-RAN 合作，拓展 AI 資料中心基礎設施</div>
+        </div>
+        <div class="timeline-item">
+          <div class="timeline-dot"></div>
+          <div class="date">2025/05</div>
+          <div class="event">公司英文名從 Wistron NeWeb Corporation 改為 <strong>WNC Corporation</strong></div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ═══════════════ SECTION 2: 財務快照 ═══════════════ -->
+  <div class="section">
+    <div class="section-header">
+      <div class="section-number">2</div>
+      <div>
+        <h2>財務數字怎麼看？</h2>
+        <div class="section-desc">股票的「成績單」，用簡單語言解釋每個數字的意義</div>
+      </div>
+    </div>
+
+    <div class="grid-4">
+      <div class="stat-box">
+        <div class="sl">市值</div>
+        <div class="sv neutral">NT$1,258億</div>
+        <div class="sd">約 US$39億</div>
+      </div>
+      <div class="stat-box">
+        <div class="sl">本益比（Trailing P/E）</div>
+        <div class="sv warn">41.5x</div>
+        <div class="sd">基於 FY2025 EPS</div>
+      </div>
+      <div class="stat-box">
+        <div class="sl">預估本益比（Forward P/E）</div>
+        <div class="sv up">19.7x</div>
+        <div class="sd">基於 FY2026E 共識</div>
+      </div>
+      <div class="stat-box">
+        <div class="sl">FY2025 每股盈餘</div>
+        <div class="sv neutral">NT$6.27</div>
+        <div class="sd">已公告實際值</div>
+      </div>
+      <div class="stat-box">
+        <div class="sl">FY2026E EPS 共識</div>
+        <div class="sv up">NT$8.35–10.8</div>
+        <div class="sd">+33–72% YoY</div>
+      </div>
+      <div class="stat-box">
+        <div class="sl">Q1 2026 EPS</div>
+        <div class="sv up">NT$2.36</div>
+        <div class="sd">+23% YoY ✅</div>
+      </div>
+      <div class="stat-box">
+        <div class="sl">FY2025 毛利率</div>
+        <div class="sv neutral">12.9%</div>
+        <div class="sd">Q4 2025 達 14.1%</div>
+      </div>
+      <div class="stat-box">
+        <div class="sl">Beta（波動係數）</div>
+        <div class="sv up">0.918</div>
+        <div class="sd">比大盤波動略小</div>
+      </div>
+    </div>
+
+    <div class="callout warn" style="margin-top:16px;">
+      <div class="icon">⚠️</div>
+      <div class="body">
+        <strong>yfinance 顯示 Forward EPS NT$13.23 不可信</strong>：這個數字是 FY2027 估計或離群值，目前主流券商（FactSet、Goldman Sachs）對 FY2026 的共識是 <strong>NT$8.35–10.8</strong>，機器人已用此範圍作為分析基礎。
+      </div>
+    </div>
+
+    <div class="card" style="margin-top:16px;">
+      <h3>💰 什麼是本益比（P/E）？</h3>
+      <p style="font-size:13px;color:var(--text-muted);line-height:1.9;">
+        本益比 = 股價 ÷ 每股盈餘。想像你用 NT$260 買一顆每年賺 NT$6.27 的雞蛋母雞，需要 <strong>41.5年</strong>（41.5x）才回本。Trailing P/E 用的是過去的盈餘，Forward P/E 用的是分析師對未來的預測。
+        <br><br>
+        啟碁的 Forward P/E 19.7x 遠低於 Trailing，代表市場預期 FY2026 EPS 大幅成長，是 <strong>成長股買法</strong>：用今天的高價格，賭明天更好的獲利能力。
+      </p>
+    </div>
+  </div>
+
+  <!-- ═══════════════ SECTION 3: AI 決策管道 ═══════════════ -->
+  <div class="section">
+    <div class="section-header">
+      <div class="section-number">3</div>
+      <div>
+        <h2>AI 交易機器人怎麼做決策？</h2>
+        <div class="section-desc">完整 8 步管道圖解，每步都有實際執行結果</div>
+      </div>
+    </div>
+
+    <div class="pipeline">
+
+      <!-- Step 1 -->
+      <div class="pipeline-step done">
+        <div class="step-header">
+          <span class="step-tag green">步驟 1</span>
+          <span class="step-title">資料抓取 — yfinance 抓股價</span>
+        </div>
+        <div class="step-result">✅ 取得 728 根日 K 棒（約 3 年）| 最新收盤 NT$260 | 成功解析 6285 → 6285.TW (WNC Corporation)</div>
+        <div class="step-explain">
+          機器人輸入 "6285"，yfinance 先嘗試台灣代號 "6285.TW"（TWSE）。728 根 K 棒 = 約 3 年的每日開高低收量資料，這是後續所有分析的原始材料。
+          <br><strong>K 棒是什麼？</strong> 每根棒子代表一天的交易：開盤價、最高價、最低價、收盤價（OHLCV），加上成交量（Volume）。
+        </div>
+      </div>
+
+      <!-- Step 2 -->
+      <div class="pipeline-step done">
+        <div class="step-header">
+          <span class="step-tag green">步驟 2</span>
+          <span class="step-title">特徵工程 — 計算 31 個技術指標</span>
+        </div>
+        <div class="step-result">✅ 計算完成 31 個指標（RSI、MACD、Bollinger Bands、ATR、VWAP、動能因子…）</div>
+        <div class="step-explain">
+          程式碼從 728 根 K 棒衍生出 31 個量化指標，把「原始價格」轉換成「可供 AI 閱讀的特徵」。就像把食材（股價）切絲切塊（計算指標），後面的廚師（AI 模型）才能料理。
+        </div>
+      </div>
+
+      <!-- Step 3 -->
+      <div class="pipeline-step warn">
+        <div class="step-header">
+          <span class="step-tag yellow">步驟 3</span>
+          <span class="step-title">Kronos ML 模型 — AI 閱讀知識庫 + 指標</span>
+        </div>
+        <div class="step-result">⚠️ Kronos 輸出 NEUTRAL 56% → 聚合訊號 NEUTRAL @ 0% conviction（低信心）</div>
+        <div class="step-explain">
+          <strong>Kronos</strong> 是我們自建的 AI 量化模型，它先讀取「知識庫」（data/wiki/asset_profiles/6285.md，包含公司業務、財務、風險的 Markdown 文件），再結合 31 個技術指標，讓 Claude AI 推理後輸出方向。
+          <br><br>
+          結果是 <strong>NEUTRAL 56%</strong>（56% 把握認為中性）。SignalAggregator 把 ML 訊號（權重 0.5）、TradingView 訊號（權重 0.3）、規則型訊號（權重 0.2）加權合併，由於 ML 訊號信心偏低，最終聚合訊號維持 <strong>NEUTRAL @ 0% conviction</strong>。
+          <br><br>
+          <em>為什麼比上次跑低？</em> 此次 Kronos 看到股價從 NT$286 回落 NT$260（-9%），MACD 出現空頭交叉，判斷技術面短期偏中性偏弱，因此降低多頭信心。
+        </div>
+      </div>
+
+      <!-- Step 4 -->
+      <div class="pipeline-step done">
+        <div class="step-header">
+          <span class="step-tag green">步驟 4</span>
+          <span class="step-title">5 位分析師 AI 並行分析</span>
+        </div>
+        <div class="step-result">✅ 技術面 / 基本面 / 情緒面 / 籌碼面（三大法人） / 總體經濟 — 全部完成</div>
+        <div class="step-explain">
+          5 個 AI 代理人同時平行運行，各自從不同角度分析 6285：
+          <br>
+          ・<strong>Technical（技術面）</strong>：看圖表、指標（RSI、MACD、趨勢）
+          <br>
+          ・<strong>Fundamental（基本面）</strong>：看 EPS、毛利率、成長驅動力
+          <br>
+          ・<strong>Sentiment（情緒面）</strong>：看新聞情緒、社群媒體、市場氣氛
+          <br>
+          ・<strong>Chip Flow（籌碼/三大法人）</strong>：看外資、投信、自營商的買賣超（台股專屬）
+          <br>
+          ・<strong>Macro（總體經濟）</strong>：看聯準會利率、美元、貿易關稅、全球需求
+        </div>
+      </div>
+
+      <!-- Step 5 -->
+      <div class="pipeline-step done">
+        <div class="step-header">
+          <span class="step-tag green">步驟 5</span>
+          <span class="step-title">研究主管 AI — 整合 5 份報告成 memo</span>
+        </div>
+        <div class="step-result">✅ 研究備忘錄生成（3,087 字元）</div>
+        <div class="step-explain">
+          Research Manager AI（相當於資深研究主管）把 5 份分析師報告整合，寫出一份統一的投資觀點備忘錄，強調共識與分歧，供後續交易員參考。
+          <br><br>
+          備忘錄摘要：「技術面建設性但非高信心，短期趨勢仍向上，但從 282→260 的回落、成交量未確認、情緒中性，加上總體面混合，建議列入觀察清單/持有候補，等待站穩關鍵阻力後再追。」
+        </div>
+      </div>
+
+      <!-- Step 6 -->
+      <div class="pipeline-step done">
+        <div class="step-header">
+          <span class="step-tag green">步驟 6</span>
+          <span class="step-title">交易員 AI 提案</span>
+        </div>
+        <div class="step-result">✅ 多頭(Bull)=BUY · 空頭(Bear)=HOLD · 中性(Neutral)=BUY</div>
+        <div class="step-explain">
+          3 位交易員 AI 各自表態：多頭看好基本面（Q1 EPS +23%、4月營收歷史新高、GS NT$318）；空頭擔心技術面回落；中性認為整體向好但需等確認。
+        </div>
+      </div>
+
+      <!-- Step 7 -->
+      <div class="pipeline-step done">
+        <div class="step-header">
+          <span class="step-tag green">步驟 7</span>
+          <span class="step-title">辯論機制 — Bull vs Bear，3 輪</span>
+        </div>
+        <div class="step-result">✅ 完成 3 輪辯論（最大輪數），未達 70% 收斂門檻</div>
+        <div class="step-explain">
+          <strong>辯論機制</strong>：Bull 和 Bear 輪流提出論點，若任一方信心達 ≥70% 且另一方認同，提前結束；否則跑完 3 輪。
+          <br>
+          本次跑完 3 輪，說明多空均有合理理由，沒有明顯贏家 → 共識偏保守 → 後續步驟傾向 HOLD。
+        </div>
+      </div>
+
+      <!-- Step 8 -->
+      <div class="pipeline-step warn">
+        <div class="step-header">
+          <span class="step-tag yellow">步驟 8</span>
+          <span class="step-title">風險管理 + 人工審核 + 投資組合決策</span>
+        </div>
+        <div class="step-result">⚠️ VaR=0.47% ✅ 通過 | Kelly=25% ⚠️ 觸發人工審核 | 最終：HOLD qty=0</div>
+        <div class="step-explain">
+          <strong>風險管理員（無 AI，純規則）</strong>計算 VaR（每日最大潛在虧損）和 Kelly 倉位，通過風控。<br>
+          Kelly=25% 超過人工審核門檻（設定 20%）→ 觸發 human review 旗標（因沒有 --checkpoint 模式，自動通過）。<br>
+          <strong>投資組合管理 AI</strong> 最後拍板：ML 信心低（NEUTRAL 0%）、技術面短期回落、辯論未收斂 → 選擇 <strong>HOLD（不動作）</strong>，保留乾火藥等待突破確認。
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- ═══════════════ SECTION 4: 技術分析 ═══════════════ -->
+  <div class="section">
+    <div class="section-header">
+      <div class="section-number">4</div>
+      <div>
+        <h2>技術分析解讀</h2>
+        <div class="section-desc">機器人看圖表看什麼？每個指標是「放大鏡」的哪個角度？</div>
+      </div>
+    </div>
+
+    <div class="grid-2">
+      <div class="card">
+        <h3>📊 RSI（相對強弱指數）</h3>
+        <div class="stat-box" style="margin-bottom:12px;">
+          <div class="sl">最新 RSI（14日）</div>
+          <div class="sv warn">~68–72</div>
+          <div class="sd">5月7日曾達 71.76，接近超買</div>
+        </div>
+        <p style="font-size:13px;color:var(--text-muted);">RSI 介於 0–100，>70 = 超買（短期漲太快，可能回調），&lt;30 = 超賣（跌太深，可能反彈）。從 NT$286 高點回落到 NT$260 後，RSI 應已從超買區降溫至 60–70 的健康多頭區間。</p>
+      </div>
+
+      <div class="card">
+        <h3>📉 MACD（指數移動平均差離值）</h3>
+        <div class="stat-box" style="margin-bottom:12px;">
+          <div class="sl">MACD Histogram</div>
+          <div class="sv down">-0.55（空頭交叉）</div>
+          <div class="sd">短期動能轉弱</div>
+        </div>
+        <p style="font-size:13px;color:var(--text-muted);">MACD = 12日均線 - 26日均線。柱狀圖（Histogram）由正轉負，代表短期均線下穿長期均線，稱為「死亡交叉」，短期動能轉弱。這是本次 Kronos 給 NEUTRAL 的重要原因之一。</p>
+      </div>
+
+      <div class="card">
+        <h3>📏 布林通道（Bollinger Bands）</h3>
+        <div class="stat-box" style="margin-bottom:12px;">
+          <div class="sl">%B 值</div>
+          <div class="sv warn">0.819</div>
+          <div class="sd">0=下緣，0.5=中軌，1=上緣</div>
+        </div>
+        <p style="font-size:13px;color:var(--text-muted);">布林通道是用「平均價 ± 2個標準差」畫出上下軌。%B=0.819 代表股價在上軌附近（但未突破），屬於強勢但有壓力的位置。>1 才算真正突破上軌（超買訊號）。</p>
+      </div>
+
+      <div class="card">
+        <h3>🌡️ ATR（平均真實範圍）</h3>
+        <div class="stat-box" style="margin-bottom:12px;">
+          <div class="sl">每日平均振幅</div>
+          <div class="sv warn">NT$15–25</div>
+          <div class="sd">約股價的 6–10%</div>
+        </div>
+        <p style="font-size:13px;color:var(--text-muted);">ATR 衡量股票每天的平均波動幅度。NT$15–25 代表一天內股價可能上下震盪 6–10%。這也是為什麼機器人設定 停損 NT$252（距現價約 -3%），這在 ATR 範圍內，必須小心「被止損洗掉」。</p>
+      </div>
+
+      <div class="card">
+        <h3>💧 VWAP（成交量加權平均價）</h3>
+        <div class="stat-box" style="margin-bottom:12px;">
+          <div class="sl">VWAP vs 現價</div>
+          <div class="sv up">現價 NT$260 &gt; VWAP</div>
+          <div class="sd">偏多頭（機構成本在下方）</div>
+        </div>
+        <p style="font-size:13px;color:var(--text-muted);">VWAP 是把每筆成交量乘以成交價加總後的平均，反映「大多數資金的平均成本」。股價在 VWAP 以上，代表持股者多數獲利，賣壓相對小，是偏多頭的信號。機構法人常用 VWAP 判斷是否還值得追。</p>
+      </div>
+
+      <div class="card">
+        <h3>🏦 三大法人籌碼（chip_flow）</h3>
+        <div class="stat-box" style="margin-bottom:12px;">
+          <div class="sl">外資近 6 日</div>
+          <div class="sv up">淨買超</div>
+          <div class="sd">融券（放空）餘額偏高</div>
+        </div>
+        <p style="font-size:13px;color:var(--text-muted);">台灣股市有獨特的「三大法人」資料：外資（外國機構）、投信（台灣基金公司）、自營商（券商自有資金）。外資持續淨買超是強力支撐訊號，但融券餘額高代表有人在放空，軋空（short squeeze）反而可能助漲。</p>
+      </div>
+    </div>
+
+    <div class="card" style="margin-top:4px;">
+      <h3>📐 關鍵價格水位</h3>
+      <table>
+        <thead>
+          <tr>
+            <th>價位</th>
+            <th>意義</th>
+            <th>狀態</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><strong>NT$286</strong></td>
+            <td>52週最高點（ATH，All-Time High）：最強阻力，突破且爆量才是確認多頭</td>
+            <td><span class="td-red">尚未突破（距 +10%）</span></td>
+          </tr>
+          <tr>
+            <td><strong>NT$280</strong></td>
+            <td>機器人設定的停利點（Take Profit）</td>
+            <td><span class="td-yellow">+7.7% 空間</span></td>
+          </tr>
+          <tr>
+            <td><strong>NT$260</strong></td>
+            <td>目前股價，前期盤整區，短期支撐</td>
+            <td><span class="td-blue">現在位置</span></td>
+          </tr>
+          <tr>
+            <td><strong>NT$252</strong></td>
+            <td>機器人設定的停損點（Stop Loss，約 -3%）</td>
+            <td><span class="td-red">-3.1%</span></td>
+          </tr>
+          <tr>
+            <td><strong>NT$96</strong></td>
+            <td>52週最低點，主要長期支撐</td>
+            <td><span class="td-green">遠在下方（-63%）</span></td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+
+  <!-- ═══════════════ SECTION 5: 基本面成長驅動 ═══════════════ -->
+  <div class="section">
+    <div class="section-header">
+      <div class="section-number">5</div>
+      <div>
+        <h2>基本面成長驅動力</h2>
+        <div class="section-desc">AI 基本面分析師看的是「為什麼公司未來會賺更多錢」</div>
+      </div>
+    </div>
+
+    <div class="grid-2">
+      <div class="card green">
+        <h3>🛰️ Starlink ODM（最大亮點）</h3>
+        <p style="font-size:13px;color:var(--text-muted);line-height:1.9;">SpaceX Starlink 全球訂閱用戶：2023年末 23萬 → 2024年末 46萬 → 2025年末 90萬（每年倍增）。啟碁是 Starlink 地面終端最大 ODM 廠，估計貢獻 FY2026 總收入 ~24%、毛利貢獻 ~28%。管理層措辭 "close and good relationship with LEO customer"（間接確認）。</p>
+      </div>
+      <div class="card blue">
+        <h3>📡 Wi-Fi 7 升級超週期</h3>
+        <p style="font-size:13px;color:var(--text-muted);line-height:1.9;">Wi-Fi 7 平均售價（ASP）比 Wi-Fi 6 高 30–50%，Q4 2025 已成出貨主力，FY2026 估佔 20–30% 收入。每一代 Wi-Fi 升級都會帶動一波換機潮，啟碁是美洲最大 Wi-Fi 路由器 ODM 廠之一。</p>
+      </div>
+      <div class="card purple">
+        <h3>⚡ 800G 企業交換器（新動能）</h3>
+        <p style="font-size:13px;color:var(--text-muted);line-height:1.9;">H2 2026 開始出貨給美國大型網路設備商（Cisco？），毛利率高於消費型產品，估佔 ~5% 收入。OCS 光電路交換器供 AI 資料中心，預計 2027 貢獻。AI 資料中心基礎設施需求驚人，這是中長期的新引擎。</p>
+      </div>
+      <div class="card yellow">
+        <h3>🚗 車用電子（防禦性收入）</h3>
+        <p style="font-size:13px;color:var(--text-muted);line-height:1.9;">ADAS 毫米波雷達、C-V2X 車用通訊等，認證週期長（3–5年），一旦進入車廠供應鏈就很難被替換，提供穩定現金流。27% 的車用比重是啟碁的「保險」，即使消費電子市況低迷仍有收入撐場。</p>
+      </div>
+    </div>
+
+    <div class="card" style="margin-top:4px;">
+      <h3>📈 EPS 成長預測</h3>
+      <table>
+        <thead>
+          <tr><th>年度</th><th>EPS</th><th>YoY 成長</th><th>備註</th></tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>FY2025（實際）</td>
+            <td class="td-blue">NT$6.27</td>
+            <td class="td-red">-11.7%</td>
+            <td class="td-muted">大量 R&D 投入（AI 交換器、車用）</td>
+          </tr>
+          <tr>
+            <td>FY2026E（共識）</td>
+            <td class="td-green">NT$8.35–10.8</td>
+            <td class="td-green">+33–72%</td>
+            <td class="td-muted">FactSet 中值 NT$8.35；GS 估 NT$10.8</td>
+          </tr>
+          <tr>
+            <td>FY2027E（機構）</td>
+            <td class="td-green">NT$13.23+</td>
+            <td class="td-green">~+50%+</td>
+            <td class="td-muted">yfinance 顯示值，需謹慎，800G+OCS 貢獻</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+
+  <!-- ═══════════════ SECTION 6: 風險評估 ═══════════════ -->
+  <div class="section">
+    <div class="section-header">
+      <div class="section-number">6</div>
+      <div>
+        <h2>風險評估</h2>
+        <div class="section-desc">機器人的風控模組：VaR、Kelly、停損線是什麼意思？</div>
+      </div>
+    </div>
+
+    <div class="grid-2">
+      <div class="card">
+        <h3>📉 VaR（Value at Risk，在險價值）</h3>
+        <div class="stat-box" style="margin-bottom:12px;">
+          <div class="sl">VaR 95%（每日）</div>
+          <div class="sv up">0.47%</div>
+          <div class="sd">CVaR 95% = 0.65%</div>
+        </div>
+        <p style="font-size:13px;color:var(--text-muted);">VaR 95% = 0.47% 意思是：<strong>在正常市況下，一天內虧損超過 0.47% 的機率 &lt; 5%</strong>。換算：買 100萬，正常日最多虧 4,700元。CVaR（超出 VaR 的平均損失）= 0.65%，也在合理範圍。機器人判斷：<span style="color:var(--green)">風控通過</span>。</p>
+      </div>
+
+      <div class="card">
+        <h3>🎯 Kelly Criterion（凱利公式）</h3>
+        <div class="stat-box" style="margin-bottom:12px;">
+          <div class="sl">建議倉位比例</div>
+          <div class="sv warn">25%（上限）</div>
+          <div class="sd">觸發人工審核門檻</div>
+        </div>
+        <p style="font-size:13px;color:var(--text-muted);">凱利公式用「勝率」和「賠率」計算最優倉位大小。計算結果 25% 觸發人工審核門檻（設定 20%），代表若真買入，理論上可用 25% 資金。但因 ML 訊號是 NEUTRAL，Portfolio Manager 選擇 qty=0（HOLD）而非真的買入。<br><br><strong>Wiki 建議：不超過 10% 倉位</strong>（低 Beta 但薄利結構，單季 miss 可能 -15~20% gap down）。</p>
+      </div>
+    </div>
+
+    <h3 style="margin-top:20px;margin-bottom:12px;font-size:15px;">⚠️ 主要風險因子</h3>
+    <div class="grid-2">
+      <div class="card red">
+        <h3>關稅風險（最立即）</h3>
+        <p style="font-size:13px;color:var(--text-muted);">美洲占 67% 收入，越南廠生產的產品若被美國加關稅，成本結構直接受壓。2026年美中貿易摩擦持續，需緊盯政策動向。</p>
+      </div>
+      <div class="card red">
+        <h3>Starlink 客戶集中（最大尾部風險）</h3>
+        <p style="font-size:13px;color:var(--text-muted);">LEO 衛星業務估佔 24% 收入，若 SpaceX 決定自製終端或切換供應商，影響巨大。目前公司未正式點名客戶，存在資訊不透明風險。</p>
+      </div>
+      <div class="card yellow">
+        <h3>薄利結構脆弱性</h3>
+        <p style="font-size:13px;color:var(--text-muted);">毛利率僅 12–14%，任何零件漲價或客戶砍單都會直接壓縮 EPS。底線：毛利率若跌破 12%，需立即檢討倉位。</p>
+      </div>
+      <div class="card yellow">
+        <h3>EPS 兌現壓力</h3>
+        <p style="font-size:13px;color:var(--text-muted);">FY2026E 三個事業群均需成長 >10% 才能達到共識預測。任何一個不如預期（尤其 Starlink 量）都會引發市場重新定價。</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- ═══════════════ SECTION 7: 最終決策解讀 ═══════════════ -->
+  <div class="section">
+    <div class="section-header">
+      <div class="section-number">7</div>
+      <div>
+        <h2>機器人為什麼最終決定 HOLD？</h2>
+        <div class="section-desc">把所有訊號整合成一個決策的邏輯推導</div>
+      </div>
+    </div>
+
+    <div class="callout warn">
+      <div class="icon">⏸</div>
+      <div class="body">
+        <strong>最終決策：HOLD（持有/觀望）</strong><br>
+        停損：NT$252 ｜ 停利：NT$280 ｜ 數量：0（不新增）｜ 交易所：Alpaca（模擬）
+      </div>
+    </div>
+
+    <div class="card" style="margin-top:16px;">
+      <h3>決策邏輯拆解</h3>
+      <table>
+        <thead>
+          <tr><th>因素</th><th>訊號</th><th>影響</th></tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Kronos ML</td>
+            <td><span class="badge-signal NEUTRAL">NEUTRAL 56%</span></td>
+            <td class="td-muted">低信心，不足以觸發 BUY</td>
+          </tr>
+          <tr>
+            <td>聚合 ML 訊號</td>
+            <td><span class="badge-signal NEUTRAL">NEUTRAL @ 0%</span></td>
+            <td class="td-muted">ML 層不提供方向支撐</td>
+          </tr>
+          <tr>
+            <td>多頭交易員</td>
+            <td><span class="badge-signal BUY">BUY</span></td>
+            <td class="td-green">看好 EPS 成長、4月ATH營收</td>
+          </tr>
+          <tr>
+            <td>空頭交易員</td>
+            <td><span class="badge-signal HOLD">HOLD</span></td>
+            <td class="td-yellow">擔心 MACD 死亡交叉、高位回落</td>
+          </tr>
+          <tr>
+            <td>中性交易員</td>
+            <td><span class="badge-signal BUY">BUY</span></td>
+            <td class="td-green">基本面改善，但需確認</td>
+          </tr>
+          <tr>
+            <td>辯論結果</td>
+            <td><span class="badge-signal HOLD">3輪未收斂</span></td>
+            <td class="td-yellow">多空均有理由，無明顯共識</td>
+          </tr>
+          <tr>
+            <td>風控（VaR）</td>
+            <td><span class="badge-signal BUY">0.47% ✅</span></td>
+            <td class="td-green">通過，不是阻擋因素</td>
+          </tr>
+          <tr>
+            <td>Kelly 倉位</td>
+            <td><span class="badge-signal HOLD">25% ⚠️</span></td>
+            <td class="td-yellow">觸發人工審核旗標</td>
+          </tr>
+          <tr>
+            <td>Portfolio Manager AI</td>
+            <td><span class="badge-signal HOLD">HOLD</span></td>
+            <td class="td-yellow">ML NEUTRAL + 辯論未收斂 → 觀望</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <div class="callout info" style="margin-top:16px;">
+      <div class="icon">🎓</div>
+      <div class="body">
+        <strong>新手重點：HOLD 不等於看壞</strong><br>
+        HOLD 的意思是「條件尚未成熟，等待更好的進場訊號」。本次基本面（EPS +23%、4月ATH）很強，但技術面（MACD 死叉、從 ATH 回落）在發警訊。機器人選擇等待：若股價突破 NT$286 且成交量放大（≥1.5× 20日均量），才是高信心進場點。
+      </div>
+    </div>
+
+    <div class="card" style="margin-top:16px;">
+      <h3>📋 後續觀察清單（Trading Rules for 6285）</h3>
+      <table>
+        <thead>
+          <tr><th>觸發條件</th><th>行動</th></tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><strong>NT$286 突破 + 成交量 ≥1.5× 20日均量</strong></td>
+            <td class="td-green">強勢買入確認訊號</td>
+          </tr>
+          <tr>
+            <td>每月 10 日前月營收公告（MOPS）— YoY 成長率</td>
+            <td class="td-blue">最即時的基本面追蹤</td>
+          </tr>
+          <tr>
+            <td>三大法人連續淨買超 / 淨賣超</td>
+            <td class="td-blue">籌碼動向主要指標</td>
+          </tr>
+          <tr>
+            <td>毛利率跌破 12%</td>
+            <td class="td-red">減倉訊號</td>
+          </tr>
+          <tr>
+            <td>SpaceX Starlink 訂單異動 / 自製終端消息</td>
+            <td class="td-red">最大尾部風險</td>
+          </tr>
+          <tr>
+            <td>800G 交換器出貨進度（H2 2026）</td>
+            <td class="td-blue">新增動能確認</td>
+          </tr>
+          <tr>
+            <td>美國對越南關稅政策</td>
+            <td class="td-yellow">成本結構風險</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+
+  <!-- ═══════════════ SECTION 8: 分析師共識 ═══════════════ -->
+  <div class="section">
+    <div class="section-header">
+      <div class="section-number">8</div>
+      <div>
+        <h2>外部分析師怎麼看？</h2>
+        <div class="section-desc">把 AI 機器人的結論和人類分析師對照</div>
+      </div>
+    </div>
+
+    <div class="grid-2">
+      <div class="card green">
+        <h3>🏦 Goldman Sachs（最新 2026/05/12）</h3>
+        <p style="font-size:13px;color:var(--text-muted);">評等：<strong style="color:var(--green)">Buy（買進）</strong><br>目標價：<strong style="color:var(--green)">NT$318</strong>（距現價 +22%）<br>FY2026E EPS：NT$10.8（共識高端）<br>看法：Starlink 業務加速 + Wi-Fi 7 超週期</p>
+      </div>
+      <div class="card blue">
+        <h3>🏦 兆豐投顧（2026/05）</h3>
+        <p style="font-size:13px;color:var(--text-muted);">評等：<strong style="color:var(--green)">Buy（買進）</strong><br>目標價：<strong style="color:var(--green)">NT$348</strong>（距現價 +34%）<br>12個月最樂觀預測<br>看法：800G + OCS 貢獻開始兌現</p>
+      </div>
+    </div>
+
+    <div class="card" style="margin-top:4px;">
+      <h3>📊 分析師共識彙整</h3>
+      <table>
+        <thead>
+          <tr><th>機構</th><th>評等</th><th>目標價</th><th>FY2026E EPS</th></tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>FactSet 共識中值</td>
+            <td><span class="badge-signal BUY">Buy</span></td>
+            <td class="td-green">—</td>
+            <td class="td-blue">NT$8.35</td>
+          </tr>
+          <tr>
+            <td>Goldman Sachs</td>
+            <td><span class="badge-signal BUY">Buy</span></td>
+            <td class="td-green">NT$318</td>
+            <td class="td-blue">NT$10.8</td>
+          </tr>
+          <tr>
+            <td>兆豐投顧</td>
+            <td><span class="badge-signal BUY">Buy</span></td>
+            <td class="td-green">NT$348</td>
+            <td class="td-muted">—</td>
+          </tr>
+          <tr>
+            <td>AI 機器人（本次）</td>
+            <td><span class="badge-signal HOLD">Hold</span></td>
+            <td class="td-yellow">NT$280（停利）</td>
+            <td class="td-muted">使用共識 NT$8.35–10.8</td>
+          </tr>
+        </tbody>
+      </table>
+      <div class="callout info" style="margin-top:12px;">
+        <div class="icon">🤔</div>
+        <div class="body">機器人比人類分析師保守的原因：人類分析師看的是 6–12 個月目標，機器人的 Kronos 和辯論機制更敏感於「當下技術面」（MACD 死叉、從高點回落）。兩者都有道理：中長期看漲，短期等待回落穩定後的確認訊號。</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ═══════════════ SECTION 9: 專有名詞字典 ═══════════════ -->
+  <div class="section">
+    <div class="section-header">
+      <div class="section-number">📚</div>
+      <div>
+        <h2>專有名詞字典</h2>
+        <div class="section-desc">報告中出現的所有術語，用一句話解釋清楚</div>
+      </div>
+    </div>
+
+    <div class="card">
+      <div class="glossary-item">
+        <div class="glossary-term">RSI（Relative Strength Index，相對強弱指數）</div>
+        <div class="glossary-body">衡量最近一段時間漲幅vs跌幅的比例，範圍 0–100。>70 = 超買（短期漲太兇），&lt;30 = 超賣（跌太深）。</div>
+        <div class="glossary-example">類比：馬拉松選手的心率監測器，>180bpm 可能要減速了。</div>
+      </div>
+
+      <div class="glossary-item">
+        <div class="glossary-term">MACD（Moving Average Convergence Divergence，指數移動平均差離值）</div>
+        <div class="glossary-body">12日均線 - 26日均線 = MACD 線，再減去 9日信號線 = Histogram（柱狀圖）。柱狀圖正→負 = 死亡交叉（賣訊），負→正 = 黃金交叉（買訊）。</div>
+        <div class="glossary-example">類比：兩台速度計的差距——短跑者（12日）比馬拉松選手（26日）慢下來時，動能轉弱。</div>
+      </div>
+
+      <div class="glossary-item">
+        <div class="glossary-term">Bollinger Bands（布林通道）& %B</div>
+        <div class="glossary-body">以 20日均線為中軌，±2個標準差為上下軌。%B = (收盤價 - 下軌) / (上軌 - 下軌)。%B=1 代表股價碰到上軌（超買），%B=0 代表碰到下軌（超賣），%B=0.5 代表在中軌。</div>
+        <div class="glossary-example">類比：橡皮筋，股價拉到上軌（%B>1）通常會回彈，拉到下軌（%B&lt;0）通常會反彈。</div>
+      </div>
+
+      <div class="glossary-item">
+        <div class="glossary-term">ATR（Average True Range，平均真實範圍）</div>
+        <div class="glossary-body">14天內每天最高價與最低價差距的平均值，用來衡量波動性。ATR 越大 = 每天越震盪，停損必須設更寬才不被噪音洗掉。</div>
+        <div class="glossary-example">類比：海浪高度，浪大（ATR 高）時要游得更遠才安全。</div>
+      </div>
+
+      <div class="glossary-item">
+        <div class="glossary-term">VWAP（Volume-Weighted Average Price，成交量加權平均價）</div>
+        <div class="glossary-body">把每筆成交量 × 成交價加總，再除以總成交量。代表「今天所有資金的平均成本」。機構法人常用 VWAP 作為買賣標準。</div>
+        <div class="glossary-example">類比：一天去超市 10 次，買了不同數量的東西，算出「每樣東西的平均花費」。</div>
+      </div>
+
+      <div class="glossary-item">
+        <div class="glossary-term">VaR（Value at Risk，在險價值）</div>
+        <div class="glossary-body">在特定信心水準（如 95%）下，某段時間內可能的最大損失。VaR 95% = 0.47% 表示：95% 的交易日，一天的損失不超過 0.47%；另 5% 的日子（也就是每 20 個交易日有 1 天）可能更糟。</div>
+        <div class="glossary-example">類比：保險精算，「這棟房子95%的機率一年內損失不超過X元」。</div>
+      </div>
+
+      <div class="glossary-item">
+        <div class="glossary-term">Kelly Criterion（凱利公式）</div>
+        <div class="glossary-body">根據勝率（W）和賠率（R），計算最優倉位比例：Kelly = W - (1-W)/R。使長期財富最大化，但波動大，實際使用常取「半凱利」（結果 ÷ 2）。</div>
+        <div class="glossary-example">類比：在賭場用數學算出每次應該下多少注，才能長期最大化資金成長。</div>
+      </div>
+
+      <div class="glossary-item">
+        <div class="glossary-term">ODM（Original Design Manufacturer，原廠設計製造商）</div>
+        <div class="glossary-body">負責設計 + 製造，但品牌冠上客戶（品牌商）的名字。蘋果是 OBM（自有品牌），台積電是 IC 代工（OEM），啟碁是連設計都包的 ODM。</div>
+        <div class="glossary-example">類比：你設計出了一款手機，交給別人貼「Samsung」的商標賣——你是 ODM，Samsung 是 OBM。</div>
+      </div>
+
+      <div class="glossary-item">
+        <div class="glossary-term">三大法人 / chip_flow</div>
+        <div class="glossary-body">台灣股市獨特制度：外資（外國機構法人）+ 投信（台灣公募基金）+ 自營商（券商自有帳戶），每日公告買賣超（正=淨買超，負=淨賣超），是最即時的機構籌碼指標。</div>
+        <div class="glossary-example">類比：餐廳門口排隊的是一般消費者（散戶），三大法人是訂了包廂的大客戶——他們往哪走，場面會不同。</div>
+      </div>
+
+      <div class="glossary-item">
+        <div class="glossary-term">P/E（Price-to-Earnings Ratio，本益比）</div>
+        <div class="glossary-body">股價 ÷ 每股盈餘（EPS）。告訴你「用現在的股價，要幾年的盈餘才回本」。Trailing P/E 用歷史盈餘，Forward P/E 用預測盈餘。</div>
+        <div class="glossary-example">類比：買餐廳 100萬，每年賺 5萬，20年回本 = 20x P/E。</div>
+      </div>
+
+      <div class="glossary-item">
+        <div class="glossary-term">FWA（Fixed Wireless Access，固定無線寬頻接入）</div>
+        <div class="glossary-body">不用拉有線光纖，用 5G 基地台把網路「無線射頻」送到你家的接收器，再轉成 Wi-Fi。啟碁是美國 mmWave 5G FWA 主要 ODM 廠。</div>
+        <div class="glossary-example">類比：以前要拉水管，現在改用空氣「傳水」（無線），FWA 就是把 5G 基地台的網路帶回家的「接水盒子」。</div>
+      </div>
+
+      <div class="glossary-item">
+        <div class="glossary-term">LEO Satellite（Low Earth Orbit，低軌衛星）& Starlink</div>
+        <div class="glossary-body">LEO 衛星在 200–2,000km 高度運行（傳統同步衛星在 36,000km），延遲更低（20–40ms vs 600ms+）。SpaceX Starlink 是目前全球最大的 LEO 衛星網路，啟碁為其製造地面終端（碟型接收器 + 路由器）。</div>
+        <div class="glossary-example">類比：傳統衛星是在平流層的中繼站，Starlink 是在地球大氣邊緣密集部署的「網路蜘蛛網」。</div>
+      </div>
+
+      <div class="glossary-item">
+        <div class="glossary-term">ADAS（Advanced Driver Assistance Systems，先進駕駛輔助系統）</div>
+        <div class="glossary-body">車輛自動化技術的統稱，包含：防碰撞、車道保持、自動停車等。啟碁供應 77GHz 毫米波雷達（偵測障礙物）和攝影機模組。</div>
+        <div class="glossary-example">類比：車子的「蝙蝠俠感知器」，用雷達和攝影機看四面八方，幫司機避開危險。</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ═══════════════ FOOTER ═══════════════ -->
+  <div class="footer">
+    <p><strong>免責聲明：</strong>本報告由 AI 交易機器人自動生成，僅供教育與研究目的，不構成任何投資建議。股票投資有風險，過去表現不代表未來結果。</p>
+    <p style="margin-top:8px;">資料來源：yfinance、FactSet、Goldman Sachs、兆豐投顧、MOPS、Firecrawl/Exa 網路研究 ｜ 分析日期：2026/05/18 ｜ 機器人版本：LangGraph + LiteLLM + Kronos</p>
+    <p style="margin-top:8px;color:#7d8590;">6285.TW (WNC Corporation / 啟碁科技) — AI Trading Bot Full Analysis Report</p>
+  </div>
+
+</div>
+</body>
+</html>
