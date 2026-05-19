@@ -1,0 +1,734 @@
+{
+  "domain": "Vision",
+  "date": "2026-05-19",
+  "count": 24,
+  "papers": [
+    {
+      "id": "2605.18754",
+      "title": "Can These Views Be One Scene? Evaluating Multiview 3D Consistency when 3D Foundation Models Hallucinate",
+      "abstract": "Multiview 3D evaluation assumes that the images being scored are observations of one static 3D scene. This assumption can fail in NVS and sparse-view reconstruction: inputs or generated outputs may contain artifacts, outlier frames, repeated views, or noise, yet still receive high 3D consistency scores. Existing reference-based metrics require ground truth, while ground-truth-free metrics such as MEt3R depend on learned reconstruction backbones whose failure modes are poorly characterized. We study this reliability problem by comparing neural reconstruction priors with classical geometric verification. We introduce \\benchmark, a controlled robustness benchmark for multiview 3D consistency, and a parametric family that decomposes neural metrics into backbone, residual, and aggregation components. This family recovers MEt3R and yields variants up to $3\\times$ more robust. Our analysis shows that VGGT, MASt3R, DUSt3R, and Fast3R can hallucinate dense geometry and cross-view support for unrelated scenes, repeated images, and random noise. We introduce COLMAP-based metrics that use matches, registration, dense support, and reconstruction failure as failure-aware consistency signals. On real NVS outputs and a structured human study, these metrics achieve up to $4\\times$ higher correlation with human judgments than MEt3R.",
+      "authors": [
+        "Soumava Paul",
+        "Prakhar Kaushik",
+        "Alan Yuille"
+      ],
+      "published": "2026-05-18T17:59:58Z",
+      "updated": "2026-05-18T17:59:58Z",
+      "url": "https://arxiv.org/abs/2605.18754",
+      "pdf_url": "https://arxiv.org/pdf/2605.18754.pdf",
+      "primary_category": "cs.CV",
+      "categories": [
+        "cs.CV"
+      ],
+      "tags": [
+        "cs.CV"
+      ],
+      "domain": "Vision",
+      "pdf_downloaded": true,
+      "pdf_size_bytes": 18978620,
+      "pdf_path": "2026-05-19/vision/2605.18754.pdf"
+    },
+    {
+      "id": "2605.18749",
+      "title": "WavFlow: Audio Generation in Waveform Space",
+      "abstract": "Modern audio generation predominantly relies on latent-space compression, introducing additional complexity and potential information loss. In this work, we challenge this paradigm with WavFlow, a framework that generates high-fidelity audio directly in raw waveform space without intermediate representations. To overcome the inherent difficulties of modeling high-dimensional and low-energy signals, we reshape audio into 2D token grids through waveform patchify and introduce amplitude lifting to align signal scales, enabling stable optimization via direct x-prediction in flow matching. To capture complex semantic alignment and temporal synchronization, we leverage an automated data pipeline to curate 5 million high-quality video-text-audio triplets, allowing the model to learn fine-grained acoustic patterns from scratch. Experimental results show that WavFlow achieves competitive performance on the video-to-audio benchmark VGGSound (FD_PaSST: 59.98, IS_PANNs: 17.40, DeSync: 0.44) and the text-to-audio benchmark AudioCaps (FD_PANNs: 10.63, IS_PANNs: 12.62), matching or exceeding the performance of established latent-based methods. Our work demonstrates that intermediate compression is not a prerequisite for high-quality synthesis, offering a simpler and more scalable alternative for multimodal audio generation.",
+      "authors": [
+        "Feiyan Zhou",
+        "Luyuan Wang",
+        "Shoufa Chen",
+        "Zhe Wang",
+        "Zhiheng Liu",
+        "Yuren Cong",
+        "Xiaohui Zhang",
+        "Fanny Yang",
+        "Belinda Zeng"
+      ],
+      "published": "2026-05-18T17:59:10Z",
+      "updated": "2026-05-18T17:59:10Z",
+      "url": "https://arxiv.org/abs/2605.18749",
+      "pdf_url": "https://arxiv.org/pdf/2605.18749.pdf",
+      "primary_category": "cs.SD",
+      "categories": [
+        "cs.SD",
+        "cs.CV"
+      ],
+      "tags": [
+        "cs.CV",
+        "cs.SD"
+      ],
+      "domain": "Vision",
+      "pdf_downloaded": true,
+      "pdf_size_bytes": 5883675,
+      "pdf_path": "2026-05-19/vision/2605.18749.pdf"
+    },
+    {
+      "id": "2605.18748",
+      "title": "Aurora: Unified Video Editing with a Tool-Using Agent",
+      "abstract": "Recent video editing models have converged on a unified conditioning design: a single diffusion transformer jointly consumes text, source video, and reference images, and one set of weights covers replacement, removal, style transfer, and reference-driven insertion. The design is flexible, but it assumes that the user already provides model-ready text, reference images, and spatial grounding for local edits, which real requests often omit. We present Aurora, an agentic video editing framework that pairs a tool-augmented vision-language model (VLM) agent with a unified video diffusion transformer. The VLM agent maps a raw user request to a structured edit plan aligned with the transformer's conditioning channels, thereby resolving textual and visual underspecification before generation. We train the VLM agent with supervised data for complete edit planning and reference-image selection, together with preference pairs for robust tool use and instruction refinement. We introduce AgentEdit-Bench to evaluate agent-enhanced video editing under textual and visual underspecification. Experiments on AgentEdit-Bench and two existing video editing benchmarks show that Aurora improves over instruction-only baselines and that the VLM agent transfers to compatible frozen video editing models. Project page: https://yeates.github.io/Aurora-Page",
+      "authors": [
+        "Yongsheng Yu",
+        "Ziyun Zeng",
+        "Zhiyuan Xiao",
+        "Zhenghong Zhou",
+        "Hang Hua",
+        "Wei Xiong",
+        "Jiebo Luo"
+      ],
+      "published": "2026-05-18T17:59:03Z",
+      "updated": "2026-05-18T17:59:03Z",
+      "url": "https://arxiv.org/abs/2605.18748",
+      "pdf_url": "https://arxiv.org/pdf/2605.18748.pdf",
+      "primary_category": "cs.CV",
+      "categories": [
+        "cs.CV"
+      ],
+      "tags": [
+        "cs.CV"
+      ],
+      "domain": "Vision",
+      "pdf_downloaded": true,
+      "pdf_size_bytes": 14331706,
+      "pdf_path": "2026-05-19/vision/2605.18748.pdf"
+    },
+    {
+      "id": "2605.18739",
+      "title": "LongLive-2.0: An NVFP4 Parallel Infrastructure for Long Video Generation",
+      "abstract": "We present LongLive-2.0, an NVFP4-based parallel infrastructure throughout the full training and inference workflow of long video generation, addressing speed and memory bottlenecks. For training, we introduce sequence-parallel autoregressive (AR) training, instantiated as Balanced SP, which co-designs the efficient teacher-forcing layout with SP execution by pairing clean-history and noisy-target temporal chunks on each rank, enabling a natural teacher-forcing mask with SP-aware chunked VAE encoding. Combined with NVFP4 precision, it reduces GPU memory cost and accelerates GEMM computation during training, the proportion of which increases as video length grows. Moreover, we show that a high-quality infrastructure and dataset enable a remarkably clean training pipeline. Unlike existing Self-Forcing series methods that rely on ODE initialization and subsequent distribution matching distillation (DMD), LongLive-2.0 directly tunes a diffusion model into a long, multi-shot, interactive auto-regressive (AR) diffusion model. It can be further converted to real-time generation (4 to 2 denoising steps) with standalone LoRA weights. For inference on Blackwell GPUs, we enable W4A4 NVFP4 inference, quantize KV cache into NVFP4 for memory savings, and boost end-to-end throughput with asynchronous streaming VAE decoding. On non-Blackwell GPU architectures, we deploy SP inference to match the speed on Blackwell GPUs, while the quantized KV cache can lower inter-GPU communication of SP. Experiments show up to 2.15x speedup in training, and 1.84x in inference. LongLive-2.0-5B achieves 45.7 FPS inference while attaining strong performance on benchmarks. To our knowledge, LongLive-2.0 is the first NVFP4 training and inference system for long video generation.",
+      "authors": [
+        "Yukang Chen",
+        "Luozhou Wang",
+        "Wei Huang",
+        "Shuai Yang",
+        "Bohan Zhang",
+        "Yicheng Xiao",
+        "Ruihang Chu",
+        "Weian Mao",
+        "Qixin Hu",
+        "Shaoteng Liu",
+        "Yuyang Zhao",
+        "Huizi Mao",
+        "Ying-Cong Chen",
+        "Enze Xie",
+        "Xiaojuan Qi",
+        "Song Han"
+      ],
+      "published": "2026-05-18T17:57:03Z",
+      "updated": "2026-05-18T17:57:03Z",
+      "url": "https://arxiv.org/abs/2605.18739",
+      "pdf_url": "https://arxiv.org/pdf/2605.18739.pdf",
+      "primary_category": "cs.CV",
+      "categories": [
+        "cs.CV",
+        "cs.DC"
+      ],
+      "tags": [
+        "cs.CV",
+        "cs.DC"
+      ],
+      "domain": "Vision",
+      "pdf_downloaded": true,
+      "pdf_size_bytes": 4326942,
+      "pdf_path": "2026-05-19/vision/2605.18739.pdf"
+    },
+    {
+      "id": "2605.18736",
+      "title": "Spectral Progressive Diffusion for Efficient Image and Video Generation",
+      "abstract": "Diffusion models have been shown to implicitly generate visual content autoregressively in the frequency domain, where low-frequency components are generated earlier in the denoising process while high-frequency details emerge only in later timesteps. This structure offers a natural opportunity for efficient generation, as high-resolution computation on noise-dominated frequencies is largely redundant. We propose Spectral Progressive Diffusion, a general framework that progressively grows resolution along the denoising trajectory of pretrained diffusion models. To this end, we develop a spectral noise expansion mechanism and derive an optimal resolution schedule from the model's power spectrum. Our framework supports training-free acceleration and a novel fine-tuning recipe that further improves efficiency and quality. We demonstrate significant speedups on state-of-the-art pretrained image and video generation models while preserving visual quality.",
+      "authors": [
+        "Howard Xiao",
+        "Brian Chao",
+        "Lior Yariv",
+        "Gordon Wetzstein"
+      ],
+      "published": "2026-05-18T17:55:39Z",
+      "updated": "2026-05-18T17:55:39Z",
+      "url": "https://arxiv.org/abs/2605.18736",
+      "pdf_url": "https://arxiv.org/pdf/2605.18736.pdf",
+      "primary_category": "cs.CV",
+      "categories": [
+        "cs.CV"
+      ],
+      "tags": [
+        "cs.CV"
+      ],
+      "domain": "Vision",
+      "pdf_downloaded": true,
+      "pdf_size_bytes": 24435685,
+      "pdf_path": "2026-05-19/vision/2605.18736.pdf"
+    },
+    {
+      "id": "2605.18734",
+      "title": "EgoExoMem: Cross-View Memory Reasoning over Synchronized Egocentric and Exocentric Videos",
+      "abstract": "Egocentric memory is widely used in embodied intelligence, but it may be insufficient for comprehensive spatial-temporal reasoning. Inspired by human recall from both field and observer perspectives, we introduce EgoExoMem, the first benchmark for cross-view memory reasoning over synchronized egocentric and exocentric videos. EgoExoMem contains $2.6K$ high-quality MCQs across eight temporal, spatial, and cross-view QA types. To support dual-view retrieval, we propose E$^2$-Select, a training-free frame selection method for synchronized ego-exo videos. It combines relevance-based budget allocation with per-view k-DPP sampling to handle view asymmetry and cross-view temporal consistency. Experiments show that ego and exo views provide complementary memory cues, while existing MLLMs remain far from solving the benchmark: the best model reaches only $55.3\\%$. E$^2$-Select achieves state-of-the-art performance of $58.2\\%$ over frame-selection and RAG-based memory baselines. Further analysis reveals systematic view-preference conflicts between question framing and answer grounding, underscoring the novelty and challenge of cross-view memory reasoning.",
+      "authors": [
+        "Ruiping Liu",
+        "Junwei Zheng",
+        "Yufan Chen",
+        "Di Wen",
+        "Shaofang Quan",
+        "Chengzhi Wu",
+        "Jiaming Zhang",
+        "Kailun Yang",
+        "Kunyu Peng",
+        "Rainer Stiefelhagen"
+      ],
+      "published": "2026-05-18T17:54:55Z",
+      "updated": "2026-05-18T17:54:55Z",
+      "url": "https://arxiv.org/abs/2605.18734",
+      "pdf_url": "https://arxiv.org/pdf/2605.18734.pdf",
+      "primary_category": "cs.CV",
+      "categories": [
+        "cs.CV"
+      ],
+      "tags": [
+        "cs.CV"
+      ],
+      "domain": "Vision",
+      "pdf_downloaded": true,
+      "pdf_size_bytes": 19535853,
+      "pdf_path": "2026-05-19/vision/2605.18734.pdf"
+    },
+    {
+      "id": "2605.18733",
+      "title": "Advancing Narrative Long Video Generation via Training-Free Identity-Aware Memory",
+      "abstract": "Autoregressive video generation has improved rapidly in visual fidelity and interactivity, but it still suffers from long-term inconsistency and memory degradation. Most existing solutions either compress historical frames using predefined strategies or retrieve keyframes based on coarse implicit attention signals, both of which fail to handle evolving prompts with shifting entity references, leading to identity drift, character duplication, and attribute loss. To address this, we propose IAMFlow, a training-free identity-aware memory framework that explicitly models and tracks persistent entity identities, enabling consistent generation across prompt transitions. Specifically, an LLM extracts entities with visual attributes from each prompt and assigns unique global IDs for identity-aware memory, while a VLM asynchronously verifies and refines attributes from rendered frames, enabling explicit entity tracking in place of implicit similarity-based matching. To keep the proposed framework computationally practical, we design a systematic inference acceleration pipeline, including asynchronous visual verification, adaptive prompt transition, and model quantization, which achieves faster generation than existing baselines. Furthermore, we introduce NarraStream-Bench, a benchmark for narrative streaming video generation that features 324 multi-prompt scripts spanning six dimensions and a three-dimensional evaluation protocol that integrates both traditional metrics and multimodal large language model-based assessments. Extensive experiments show that IAMFlow, despite being training-free, achieves the best overall performance on NarraStream-Bench, outperforming the strongest baseline by 2.56 points, while achieving a 1.39$\\times$ speedup over the most efficient baseline in the 60-second multi-prompt setting.",
+      "authors": [
+        "Jinzhuo Liu",
+        "Jiangning Zhang",
+        "Wencan Jiang",
+        "Yabiao Wang",
+        "Dingkang Liang",
+        "Zhucun Xue",
+        "Ran Yi",
+        "Yong Liu"
+      ],
+      "published": "2026-05-18T17:54:34Z",
+      "updated": "2026-05-18T17:54:34Z",
+      "url": "https://arxiv.org/abs/2605.18733",
+      "pdf_url": "https://arxiv.org/pdf/2605.18733.pdf",
+      "primary_category": "cs.CV",
+      "categories": [
+        "cs.CV"
+      ],
+      "tags": [
+        "cs.CV"
+      ],
+      "domain": "Vision",
+      "pdf_downloaded": true,
+      "pdf_size_bytes": 21066790,
+      "pdf_path": "2026-05-19/vision/2605.18733.pdf"
+    },
+    {
+      "id": "2605.18729",
+      "title": "Robo-Cortex: A Self-Evolving Embodied Agent via Dual-Grain Cognitive Memory and Autonomous Knowledge Induction",
+      "abstract": "The ability to navigate and interact with complex environments is central to real-world embodied agents, yet navigation in unseen environments remains challenging due to \"experiential amnesia,\" where existing trajectory-driven or reactive policies fail to synthesize generalizable strategies from past interactions. We propose Robo-Cortex, a self-evolving framework that enables robots to autonomously induce navigation heuristics and refine cognitive strategies through a continuous reflection-adaptation loop. By abstracting success patterns and failure pitfalls into natural-language heuristics, Robo-Cortex enables a transition from passive execution to active strategy evolution. Our core innovation is an Autonomous Knowledge Induction (AKI) mechanism that distills multimodal trajectories into a structured Navigation Heuristic Library for knowledge generalization. The architecture further incorporates a Dual-Grain Cognitive Memory system, comprising a Short-term Reflective Memory (SRM) for real-time local progress analysis, and a Long-term Principle Memory (LPM) that abstracts past trajectories into reusable guiding and cautionary principles. To ensure robust decision-making, we introduce a multimodal Imagine-then-Verify loop, where a world model simulates potential outcomes and a VLM-based evaluator validates action plans. Extensive evaluations on IGNav, AR, and AEQA show that Robo-Cortex consistently outperforms strong baselines in both task success and exploration efficiency, with gains of up to +4.16% SPL over the strongest prior method and up to +15.30% SPL under heuristic transfer to unseen environments. Preliminary real-world robotic experiments further support the effectiveness of Robo-Cortex in physical settings.",
+      "authors": [
+        "Nga Teng Chan",
+        "Yi Zhang",
+        "Yechi Liu",
+        "Renwen Cui",
+        "Fanhu Zeng",
+        "Zeyuan Ding",
+        "Xiancong Ren",
+        "Zhang Zhang",
+        "Qifeng Chen",
+        "Jian Liu",
+        "Yong Dai",
+        "Xiaozhu Ju"
+      ],
+      "published": "2026-05-18T17:52:14Z",
+      "updated": "2026-05-18T17:52:14Z",
+      "url": "https://arxiv.org/abs/2605.18729",
+      "pdf_url": "https://arxiv.org/pdf/2605.18729.pdf",
+      "primary_category": "cs.RO",
+      "categories": [
+        "cs.RO",
+        "cs.CV"
+      ],
+      "tags": [
+        "cs.CV",
+        "cs.RO"
+      ],
+      "domain": "Vision",
+      "pdf_downloaded": true,
+      "pdf_size_bytes": 15005420,
+      "pdf_path": "2026-05-19/vision/2605.18729.pdf"
+    },
+    {
+      "id": "2605.18719",
+      "title": "SafeDiffusion-R1: Online Reward Steering for Safe Diffusion Post-Training",
+      "abstract": "Diffusion models have been widely studied for removing unsafe content learned during pre-training. Existing methods require expensive supervised data, either unsafe-text paired with safe-image groundtruth or negative/positive image pairs, making them impractical to scale. Furthermore, offline reinforcement learning and supervised fine-tuning approaches that generate synthetic data offline suffer from catastrophic forgetting, degrading generation quality. We propose a novel online reinforcement learning framework that addresses both data scarcity and model degradation through post-training with Group Relative Policy Optimization (GRPO) on both negative and positive text prompts. To eliminate the need for fine-tuning specialized safe/unsafe reward models, we introduce a \\textit{steering reward mechanism} that exploits an inherent property of CLIP embeddings: steering text representations toward positive safety directions and away from negative ones in the embedding space. Our online-policy approach enables the model to learn from diverse prompts, including explicit unsafe content, without catastrophic forgetting. Extensive experiments demonstrate that our method reduces inappropriate content to 18.07\\% (vs. 48.9\\% for SD v1.4) and nudity detections to 15 (vs. 646 baseline) while improving compositional generation quality from 42.08\\% to 47.83\\% on GenEval. Remarkably, these safety gains generalize to out-of-domain unsafe prompts across seven harm categories, achieving state-of-the-art performance without supervised paired data or reward tuning. Github: https://github.com/MAXNORM8650/SafeDiffusion-R1.",
+      "authors": [
+        "Komal Kumar",
+        "Ankan Deria",
+        "Abhishek Basu",
+        "Fahad Shamshad",
+        "Hisham Cholakkal",
+        "Karthik Nandakumar"
+      ],
+      "published": "2026-05-18T17:50:04Z",
+      "updated": "2026-05-18T17:50:04Z",
+      "url": "https://arxiv.org/abs/2605.18719",
+      "pdf_url": "https://arxiv.org/pdf/2605.18719.pdf",
+      "primary_category": "cs.CV",
+      "categories": [
+        "cs.CV"
+      ],
+      "tags": [
+        "cs.CV"
+      ],
+      "domain": "Vision",
+      "pdf_downloaded": false,
+      "pdf_size_bytes": null,
+      "pdf_path": null
+    },
+    {
+      "id": "2605.18700",
+      "title": "A Large-Scale Study on the Accuracy vs Cost Trade-offs of Training and Evaluation Settings in Fine-Grained Image Recognition",
+      "abstract": "Prior work on fine-grained image recognition (FGIR) has established the importance of the backbone selection, but has neglected the accuracy-vs-cost trade-offs under different training and evaluation settings. In this work we conduct a large-scale study with over 2000 experiments across 6 training and evaluation settings, 9 pretrained backbones, and 17 datasets. Preliminary observations on the effectiveness of data augmentation for fine-grained training motivate us to extend Counterfactual Attention Learning (CAL), a state-of-the-art method based on data-aware cropping and masking augmentations, with cross-image discriminative region mixing augmentation. We also propose an efficient evaluation-only variant that maintains competitive accuracy while reducing inference costs by forfeiting the forward pass on discriminative crops that is normally used by CAL and similar FGIR methods. Our results show that data-aware augmentations during training only can enable a model to achieve excellent accuracy even without crops, significantly reducing inference costs. To support future research we share our code and checkpoints at: \\url{https://github.com/arkel23/FGIR-Backbones}",
+      "authors": [
+        "Edwin Arkel Rios",
+        "Augusto Christian Surya",
+        "Oswin Gosal",
+        "Fernando Mikael",
+        "Mary Madeline Nicole",
+        "Kisoon Jang",
+        "Bo-Cheng Lai",
+        "Min-Chun Hu"
+      ],
+      "published": "2026-05-18T17:36:30Z",
+      "updated": "2026-05-18T17:36:30Z",
+      "url": "https://arxiv.org/abs/2605.18700",
+      "pdf_url": "https://arxiv.org/pdf/2605.18700.pdf",
+      "primary_category": "cs.CV",
+      "categories": [
+        "cs.CV"
+      ],
+      "tags": [
+        "cs.CV"
+      ],
+      "domain": "Vision",
+      "pdf_downloaded": true,
+      "pdf_size_bytes": 4463243,
+      "pdf_path": "2026-05-19/vision/2605.18700.pdf"
+    },
+    {
+      "id": "2605.18680",
+      "title": "CMAG: Concept-Scaffolded Retrieval for Marketplace Avatar Generation",
+      "abstract": "Metaverse platforms rely on creator-driven marketplaces where avatars are assembled from discrete, taxonomy-labeled 3D assets (e.g., tops, bottoms, shoes, accessories) under strict category and topology constraints. While users increasingly expect free-form text control, text-only retrieval is brittle: natural language is ambiguous with respect to platform taxonomies, metadata is often noisy or informal, and independently retrieved components can be stylistically inconsistent or geometrically incompatible. We propose \\textbf{CMAG}, a concept-scaffolded retrieval and verified composition framework for marketplace avatar generation. Given a prompt, CMAG first synthesizes an intermediate 3D concept scaffold that disambiguates intent beyond text by providing global spatial and stylistic context. In parallel, a view-aware part discovery module extracts localized visual evidence via prompt decomposition and text-grounded segmentation. A prompt-conditioned taxonomy router enforces category coverage and resolves semantic-to-taxonomic mismatch, after which a hybrid category-wise retriever combines part-based fusion with a concept-residual fallback using feature suppression. Finally, an agentic vision--language model filters and re-ranks candidates across categories and drives an iterative verification loop to assemble prompt-faithful, topologically consistent avatars from catalog assets. We evaluate CMAG on diverse compositional prompts and demonstrate improved retrieval robustness and compositional correctness compared to strong baselines, highlighting the importance of 3D concept scaffolding under prompt ambiguity.",
+      "authors": [
+        "Rajeev Goel",
+        "Jason Ding",
+        "Phani Harish Wajjala",
+        "Pavan Turaga",
+        "Tejaswi Gowda",
+        "Krishna C. Garikipati"
+      ],
+      "published": "2026-05-18T17:21:43Z",
+      "updated": "2026-05-18T17:21:43Z",
+      "url": "https://arxiv.org/abs/2605.18680",
+      "pdf_url": "https://arxiv.org/pdf/2605.18680.pdf",
+      "primary_category": "cs.CV",
+      "categories": [
+        "cs.CV"
+      ],
+      "tags": [
+        "cs.CV"
+      ],
+      "domain": "Vision",
+      "pdf_downloaded": true,
+      "pdf_size_bytes": 3781826,
+      "pdf_path": "2026-05-19/vision/2605.18680.pdf"
+    },
+    {
+      "id": "2605.18652",
+      "title": "MementoGUI: Learning Agentic Multimodal Memory Control for Long-Horizon GUI Agents",
+      "abstract": "Recent GUI agents have made substantial progress in visual grounding and action prediction, yet they remain brittle in long-horizon tasks that require maintaining task state across many interface transitions. Existing agents typically rely on raw history replay or text-only memory, which either overwhelms the model with redundant screenshots or discards localized visual evidence needed for future decisions. To address these limitations, we introduce \\textbf{MementoGUI}, a plug-in agentic memory framework that equips MLLM-based GUI agents with \\textbf{MementoCore}, a learned controller for online memory selection, compression, and retrieval. Rather than treating interaction history as a fixed context, MementoGUI formulates long-horizon GUI control as an online memory-control problem: working memory selectively preserves task-relevant interface events with textual summaries and ROI-level visual evidence, while episodic memory retrieves reusable past trajectories through learned relevance selection. MementoCore modularizes memory control into specialized operators for step processing, memory compression, episodic writing, and episodic selection, enabling plug-in memory augmentation without finetuning the GUI agent backbone. We further develop a scalable data curation pipeline that converts computer-use trajectories into memory-controller training data, introduce \\textbf{MementoGUI-Bench} for evaluating long-horizon decision-making in GUI agents, and design MLLM-based metrics for semantic action matching, task progress, and memory consistency. Experiments on GUI-Odyssey, MM-Mind2Web, and MementoGUI-Bench show that MementoGUI consistently improves GUI agents over no-history, history-replay, and text-only memory baselines, with larger MementoCore backbones further strengthening memory-augmented GUI control.",
+      "authors": [
+        "Ziyun Zeng",
+        "Hang Hua",
+        "Bocheng Zou",
+        "Mu Cai",
+        "Rogerio Feris",
+        "Jiebo Luo"
+      ],
+      "published": "2026-05-18T16:57:36Z",
+      "updated": "2026-05-18T16:57:36Z",
+      "url": "https://arxiv.org/abs/2605.18652",
+      "pdf_url": "https://arxiv.org/pdf/2605.18652.pdf",
+      "primary_category": "cs.CV",
+      "categories": [
+        "cs.CV"
+      ],
+      "tags": [
+        "cs.CV"
+      ],
+      "domain": "Vision",
+      "pdf_downloaded": true,
+      "pdf_size_bytes": 2054732,
+      "pdf_path": "2026-05-19/vision/2605.18652.pdf"
+    },
+    {
+      "id": "2605.18645",
+      "title": "Articulation in Prime: Primitive-Based Articulated Object Understanding from a Single Casual Video",
+      "abstract": "Retrieving the 3D kinematics of articulated objects from monocular video is a fundamental challenge in computer vision. Existing methods rely on complex video setups or cues such as long-term point tracking or wide-baseline matching, but are frequently brittle under severe occlusions, rapid camera ego-motion, or weak local features. Learning-based methods, meanwhile, struggle to generalize beyond their training categories. We propose a category-agnostic optimization framework that treats articulated object understanding as a primitive-fitting problem. Geometric primitives serve as a proxy representation that avoids the pitfalls of unstable point tracks; a novel mechanism organizes them into coherent parts constrained by revolute and prismatic joints. Our formulation jointly optimizes part segmentation and joint parameters, recovering complex kinematics from a single casually captured video. A visibility-aware procedure handles partial observations and occlusions inherent to real-world data. We also propose the AiP-synth and AiP-real benchmarks, featuring significant camera motion and heavy occlusions, and outperform existing methods. Project page: https://aartykov.github.io/Articulation-in-Prime/",
+      "authors": [
+        "Arslan Artykov",
+        "Tom Ravaud",
+        "Nicol\u00e1s Violante-Grezzi",
+        "Vincent Lepetit"
+      ],
+      "published": "2026-05-18T16:52:41Z",
+      "updated": "2026-05-18T16:52:41Z",
+      "url": "https://arxiv.org/abs/2605.18645",
+      "pdf_url": "https://arxiv.org/pdf/2605.18645.pdf",
+      "primary_category": "cs.CV",
+      "categories": [
+        "cs.CV"
+      ],
+      "tags": [
+        "cs.CV"
+      ],
+      "domain": "Vision",
+      "pdf_downloaded": false,
+      "pdf_size_bytes": null,
+      "pdf_path": null
+    },
+    {
+      "id": "2605.18641",
+      "title": "Leveraging Latent Visual Reasoning in Silence",
+      "abstract": "Latent visual reasoning involves visual evidence more directly in multimodal reasoning by inserting continuous latent tokens before textual generation. However, the necessity of these latent tokens at inference remains ambiguous. We show that replacing latent tokens with random noise or removing them completely causes little performance degradation across spatial reasoning benchmarks. Reinforcement learning further diminishes the latent generation behavior after post-training. These observations raise a central question: Is latent visual reasoning still meaningful? We argue that its value should be measured by how effectively latent tokens guide learning, rather than whether they persist as an inference-time format. Our analysis shows that latent reasoning is unevenly favorable across question types, yet hard task-level routing for applying latent generation is brittle. Motivated by these findings, we propose an attention-based reward that encourages generated latent tokens to interact with later text tokens during RL. This reward promotes latent utilization when the latent mode is activated while preserving the flexibility to use pure-text reasoning. Experiments show that our method improves performance across perception and visual reasoning benchmarks, even when latent tokens are rarely generated after post-training. Our results highlight that, without explicit expression at inference, latent visual reasoning can shape better visual grounding and more accurate textual reasoning in silence. Our code and trained models are publicly available at \\href{https://github.com/ddydyd32/silent-lvr/tree/master}{GitHub} and \\href{https://huggingface.co/collections/cornuHGF/silent-lvr}{Hugging Face}.",
+      "authors": [
+        "Dongyao Zhu",
+        "Zhen Wang",
+        "Xi Xiao",
+        "Han Jiang",
+        "Saeed Vahidian",
+        "Wei-Lun Chao",
+        "Tanya Berger-Wolf",
+        "Yu Su",
+        "Raju Vatsavai",
+        "Jianyang Gu"
+      ],
+      "published": "2026-05-18T16:46:02Z",
+      "updated": "2026-05-18T16:46:02Z",
+      "url": "https://arxiv.org/abs/2605.18641",
+      "pdf_url": "https://arxiv.org/pdf/2605.18641.pdf",
+      "primary_category": "cs.CV",
+      "categories": [
+        "cs.CV"
+      ],
+      "tags": [
+        "cs.CV"
+      ],
+      "domain": "Vision",
+      "pdf_downloaded": true,
+      "pdf_size_bytes": 3765933,
+      "pdf_path": "2026-05-19/vision/2605.18641.pdf"
+    },
+    {
+      "id": "2605.18636",
+      "title": "SPIKE: An Adaptive Dual Controller Framework for Cost-Efficient Long-Horizon Game Agents",
+      "abstract": "Long-horizon multimodal agents in open-world games must stay goal-directed across many low-level interactions under tight token and latency budgets. Existing approaches often trade off costly per-step reasoning against reactive execution that can drift, repeat failures, and recover poorly. Our key idea is to reuse strategic reasoning across locally stable segments and reinvoke it at event boundaries. We present SPIKE, an adaptive dual controller framework for cost-efficient long-horizon game control. Its Strategic Controller performs low-frequency global planning, failure analysis, and recovery, while its Reactive Controller handles fast local execution under a strict token budget. An Event Trigger monitors visual change, task progress, repeated actions, and failure signals to decide when control should stay reactive or escalate to strategic reasoning. Hierarchical Memory separates short-term experience reuse in the State-Action Memory Bank (SA-MB) from structured evidence in the State Action Knowledge Graph (SA-KG), allowing each controller to retrieve the context it needs. This design reuses strategic proposals over multiple reactive steps, supports local override when plans become stale, and reserves expensive reasoning for moments where extra deliberation is useful. On the Lite-100 split of StarDojo, SPIKE improves Lite-100 success rate (SR) by 5.0 percentage points (38.5% relative) over the strongest Lite-100 baseline and Budgeted SR by 9.3 points (75.6% relative) over the strongest budgeted baseline. It also reduces token consumption by 54.9% and latency by 40.8%. Ablations show that event triggering, reactive override, and heterogeneous memory each contribute to success and recovery, supporting selective reasoning rather than reasoning at every step.",
+      "authors": [
+        "Wencan Jiang",
+        "Jiangning Zhang",
+        "Jianbiao Mei",
+        "Jinzhuo Liu",
+        "Yu Yang",
+        "Xiaobin Hu",
+        "Zhucun Xue",
+        "Yong Liu",
+        "Dacheng Tao"
+      ],
+      "published": "2026-05-18T16:43:32Z",
+      "updated": "2026-05-18T16:43:32Z",
+      "url": "https://arxiv.org/abs/2605.18636",
+      "pdf_url": "https://arxiv.org/pdf/2605.18636.pdf",
+      "primary_category": "cs.CV",
+      "categories": [
+        "cs.CV"
+      ],
+      "tags": [
+        "cs.CV"
+      ],
+      "domain": "Vision",
+      "pdf_downloaded": true,
+      "pdf_size_bytes": 2475536,
+      "pdf_path": "2026-05-19/vision/2605.18636.pdf"
+    },
+    {
+      "id": "2605.18621",
+      "title": "CrossView Suite: Harnessing Cross-view Spatial Intelligence of MLLMs with Dataset, Model and Benchmark",
+      "abstract": "Spatial intelligence requires multimodal large language models (MLLMs) to move beyond single-view perception and reason consistently about objects, visibility, geometry, and interactions across multiple viewpoints. However, progress in cross-view reasoning remains limited by three major gaps: the scarcity of large-scale well-annotated training data, the lack of comprehensive benchmarks for systematic evaluation, and the absence of explicit alignment mechanisms that establish object-level consistency across views. To address these gaps, we thoroughly develop CrossView Suite across three coordinated components: CrossViewSet, CrossViewBench, and CrossViewer. Firstly, we introduce a multi-agent data engine to meticulously curate a large-scale, high-quality cross-view instruction dataset, termed CrossViewSet, covering 17 fine-grained task types with 1.6M samples. Second, we meticulously create a scene-disjoint CrossViewBench to comprehensively assess the cross-view spatial understanding capability of an MLLM, evaluating it across various aspects. Finally, we propose CrossViewer, a progressive three-stage framework for cross-view spatial reasoning in MLLMs, following a Perception -> Alignment -> Reasoning paradigm. Our method equips an adaptive spatial region tokenizer to capture fine-grained object representations, and then aligns the multi-view objects explicitly, and thus fuses aligned features for boosting the cross-view inference capacity for MLLMs. Extensive experiments and analyses show that large-scale training data, systematic evaluation, and explicit cross-view alignment are all critical for advancing MLLMs from single-view perception toward real-world spatial intelligence. The project page is available at https://github.com/Thinkirin/Crossview-Suite.",
+      "authors": [
+        "Wei Wang",
+        "Yuqian Yuan",
+        "Tianwei Lin",
+        "Wenqiao Zhang",
+        "Siliang Tang",
+        "Jun Xiao",
+        "Yueting Zhuang"
+      ],
+      "published": "2026-05-18T16:31:31Z",
+      "updated": "2026-05-18T16:31:31Z",
+      "url": "https://arxiv.org/abs/2605.18621",
+      "pdf_url": "https://arxiv.org/pdf/2605.18621.pdf",
+      "primary_category": "cs.CV",
+      "categories": [
+        "cs.CV",
+        "cs.AI"
+      ],
+      "tags": [
+        "cs.AI",
+        "cs.CV"
+      ],
+      "domain": "Vision",
+      "pdf_downloaded": true,
+      "pdf_size_bytes": 8616126,
+      "pdf_path": "2026-05-19/vision/2605.18621.pdf"
+    },
+    {
+      "id": "2605.18617",
+      "title": "ManiSoft: Towards Vision-Language Manipulation for Soft Continuum Robotics",
+      "abstract": "Most existing vision-language manipulation research targets rigid robotic arms, whose fixed morphology limits adaptability in cluttered or confined spaces. Soft robotic arms offer an appealing alternative due to their deformability, but confront challenges such as unreliable proprioception and distributed low-level actuation. To investigate these challenges, we introduce \\ManiSoft, a benchmark for vision-language manipulation with soft arms. ManiSoft features a tailored simulator that couples realistic soft-body dynamics with contact-rich interactions via an elastic force constraint. On this basis, ManiSoft defines four tasks, each highlighting distinct aspects of deformable control, from basic end-effector coordination to obstacle avoidance. To support policy training and evaluation, \\ManiSoft{} includes an automated pipeline that generates $6{,}300$ diverse scenes and corresponding expert trajectories. To produce high-quality trajectories at scale, we first employ a high-level planner to decompose each task into a sequence of waypoints, followed by a low-level reinforcement learning policy that generates torque commands to track waypoints. Benchmarking three representative policy models shows relatively promising results in clean scenes but substantial performance drop under randomization. Visualization analysis indicates that failures stem primarily from inaccurate visual estimation of proprioceptive state and limited exploitation of deformability for adaptive obstacle avoiding. We anticipate ManiSoft to serve as a valuable testbed, bridging the gap between rigid and soft arms in the context of vision-language manipulation. Out codes and datasets are released at https://buaa-colalab.github.io/ManiSoft.",
+      "authors": [
+        "Ziyu Wei",
+        "Luting Wang",
+        "Chen Gao",
+        "Li Wen",
+        "Si Liu"
+      ],
+      "published": "2026-05-18T16:26:22Z",
+      "updated": "2026-05-18T16:26:22Z",
+      "url": "https://arxiv.org/abs/2605.18617",
+      "pdf_url": "https://arxiv.org/pdf/2605.18617.pdf",
+      "primary_category": "cs.RO",
+      "categories": [
+        "cs.RO",
+        "cs.AI",
+        "cs.CV"
+      ],
+      "tags": [
+        "cs.AI",
+        "cs.CV",
+        "cs.RO"
+      ],
+      "domain": "Vision",
+      "pdf_downloaded": true,
+      "pdf_size_bytes": 4010958,
+      "pdf_path": "2026-05-19/vision/2605.18617.pdf"
+    },
+    {
+      "id": "2605.18610",
+      "title": "CATA: Continual Machine Unlearning via Conflict-Averse Task Arithmetic",
+      "abstract": "Vision-language models (VLMs) have shown remarkable ability in aligning visual and textual representations, enabling a wide range of multimodal applications. However, their large-scale training data inevitably raises concerns about privacy, copyright, and undesirable content, creating a strong need for machine unlearning. While existing studies mainly focus on single-shot unlearning, practical VLM deployment often involves sequential removal requests over time, giving rise to continual machine unlearning. In this work, we make the first attempt to study continual unlearning for VLMs and identify three key challenges in this setting: effectiveness in removing target knowledge, fidelity in preserving retained model utility, and persistence in preventing knowledge re-emergence under sequential updates. To address these challenges, we propose CATA, a conflict-averse task arithmetic method that represents each forget request as an unlearning task vector. By maintaining historical task vectors and performing sign-aware conflict-averse aggregation, CATA suppresses conflicting update components that may weaken previous forgetting effects. Extensive experiments under both single-shot and continual settings show that CATA outperforms baselines in terms of forgetting effectiveness, model fidelity, and forgetting persistence.",
+      "authors": [
+        "Shen Lin",
+        "Junhao Dong",
+        "Rongjie Chen",
+        "Xiaoyu Zhang",
+        "Li Xu",
+        "Xiaofeng Chen"
+      ],
+      "published": "2026-05-18T16:21:41Z",
+      "updated": "2026-05-18T16:21:41Z",
+      "url": "https://arxiv.org/abs/2605.18610",
+      "pdf_url": "https://arxiv.org/pdf/2605.18610.pdf",
+      "primary_category": "cs.CV",
+      "categories": [
+        "cs.CV",
+        "cs.AI",
+        "cs.LG"
+      ],
+      "tags": [
+        "cs.AI",
+        "cs.CV",
+        "cs.LG"
+      ],
+      "domain": "Vision",
+      "pdf_downloaded": true,
+      "pdf_size_bytes": 842441,
+      "pdf_path": "2026-05-19/vision/2605.18610.pdf"
+    },
+    {
+      "id": "2605.18608",
+      "title": "Dance Across Shifts: Forward-Facilitation Continual Test-Time Adaptation through Dynamic Style Bridging",
+      "abstract": "Continual Test-Time Adaptation (CTTA) aims to empower perception systems to handle dynamic distribution shifts encountered after deployment. Existing methods predominantly follow a backward-alignment paradigm, which rigidly aligns incoming data with supervisory surrogates derived from the source domain. Consequently, they struggle with unreliable supervision and evolving distribution shifts. To overcome these limitations, we introduce a novel forward-facilitation paradigm through a method termed Dynamic Style Bridging. Prior to deployment, we construct a compact knowledge base of generated class exemplars. During test time, to mitigate inherent generative bias and adapt these proxies to incoming data, we propose a multi-level bridging mechanism. This mechanism dynamically injects the proxies with incoming data styles at the input, statistical, and representation levels, while preserving the original semantics of the proxies. These high-fidelity proxies are then used to provide reliable, on-demand supervisory signals, enabling stable adaptation under continual shifts. Extensive experiments across standard CTTA benchmarks demonstrate that our method achieves consistent and substantial improvements over recent state-of-the-art approaches. Code is available at \\href{https://github.com/z1358/DAS}.",
+      "authors": [
+        "Zhilin Zhu",
+        "Yabin Wang",
+        "Zhiheng Ma",
+        "Yaguang Song",
+        "Yaowei Wang",
+        "Xiaopeng Hong"
+      ],
+      "published": "2026-05-18T16:18:17Z",
+      "updated": "2026-05-18T16:18:17Z",
+      "url": "https://arxiv.org/abs/2605.18608",
+      "pdf_url": "https://arxiv.org/pdf/2605.18608.pdf",
+      "primary_category": "cs.CV",
+      "categories": [
+        "cs.CV"
+      ],
+      "tags": [
+        "cs.CV"
+      ],
+      "domain": "Vision",
+      "pdf_downloaded": true,
+      "pdf_size_bytes": 2144147,
+      "pdf_path": "2026-05-19/vision/2605.18608.pdf"
+    },
+    {
+      "id": "2605.18603",
+      "title": "Starve to Perceive: Taming Lazy Perception in VLMs with Constrained Visual Bandwidth",
+      "abstract": "Vision-Language Models (VLMs) deployed as situated agents in high-resolution visual environments require active perception -- the ability to dynamically decide where to look through operations like zooming, cropping, and panning. However, current training paradigms produce models that mimic the surface form of such operations without functionally depending on their outputs, a phenomenon we term lazy perception. We trace this to a fundamental learning asymmetry: when coarse global views combined with language priors suffice for moderate accuracy, the model has no incentive to learn harder multi-step visual search. If a model can succeed without actively looking, it will never learn to look. This motivates Starve to Perceive, a training paradigm that constrains visual bandwidth -- restricting each observation to a tight token budget so that no single view suffices for task completion, making active perception the only viable strategy. Despite requiring no auxiliary losses, reward shaping, or architectural changes -- serving as a minimal, plug-in modification to standard post-training pipelines -- models trained under perceptual starvation achieve substantial gains of 5% average relative improvement across diverse benchmarks.",
+      "authors": [
+        "Yuhuan Wu",
+        "Cong Wei",
+        "Fangzhen Lin",
+        "Wenhu Chen",
+        "Haozhe Wang"
+      ],
+      "published": "2026-05-18T16:13:09Z",
+      "updated": "2026-05-18T16:13:09Z",
+      "url": "https://arxiv.org/abs/2605.18603",
+      "pdf_url": "https://arxiv.org/pdf/2605.18603.pdf",
+      "primary_category": "cs.CV",
+      "categories": [
+        "cs.CV"
+      ],
+      "tags": [
+        "cs.CV"
+      ],
+      "domain": "Vision",
+      "pdf_downloaded": true,
+      "pdf_size_bytes": 1299200,
+      "pdf_path": "2026-05-19/vision/2605.18603.pdf"
+    },
+    {
+      "id": "2605.18601",
+      "title": "Incantation: Natural Language as the Action Interface for Multi-Entity Video World Models",
+      "abstract": "Modern interactive video world models have achieved impressive visual fidelity, yet lack fine-grained multi-entity control and cross-entity, cross-world generalization. We trace this gap to the action interface: standard control protocols (e.g. animation IDs, device inputs, scene-level captions) bind action semantics to specific entities or engines at design time. We propose natural language as the interface to unlock expressiveness that no prior interface can achieve, and we present Incantation, the first interactive video world model with per-latent-frame (0.25 s) natural-language conditioning that supports simultaneous multi-entity control and concept-level cross-entity transfer beyond any fixed rendering pipeline. We pair a pretrained bidirectional video backbone with frame-local text cross-attention, and enable real-time long-horizon streaming through ODE-initialized Self-Forcing distillation with a RoPE-decoupled sliding KV-cache. We surpass the Action-Index baseline on cross-entity transfer (89% vs. 43%) and out-of-vocabulary prompts (90% vs. 0%), and our 2-step student sustains 19.7 FPS at 480p with stable FVD over 2-hour rollouts. We further apply the same architecture and training recipe to The King of Fighters, changing only the per-entity action vocabulary slots. We have released a preview subset of the Incantation dataset at https://huggingface.co/datasets/zhush/incantation-elden-ring-scenes, containing manually collected Elden Ring player-boss combat clips with structured action-oriented metadata. Larger-scale Elden Ring and KOF data will be released with the full project.",
+      "authors": [
+        "Shangwen Zhu",
+        "Qianyu Peng",
+        "Zhao Pu",
+        "Zhilei Shu",
+        "Xiangrui Ke",
+        "Zhaohu Xing",
+        "Zizhao Tong",
+        "Zeqing Wang",
+        "Xinyu Cui",
+        "Huangji Wang",
+        "Jian Zhao",
+        "Yeying Jin",
+        "Fan Cheng",
+        "Ruili Feng"
+      ],
+      "published": "2026-05-18T16:12:52Z",
+      "updated": "2026-05-18T16:12:52Z",
+      "url": "https://arxiv.org/abs/2605.18601",
+      "pdf_url": "https://arxiv.org/pdf/2605.18601.pdf",
+      "primary_category": "cs.CV",
+      "categories": [
+        "cs.CV"
+      ],
+      "tags": [
+        "cs.CV"
+      ],
+      "domain": "Vision",
+      "pdf_downloaded": true,
+      "pdf_size_bytes": 9010462,
+      "pdf_path": "2026-05-19/vision/2605.18601.pdf"
+    },
+    {
+      "id": "2605.18599",
+      "title": "Resolving Representation Ambiguity in Feedforward Novel View Synthesis Transformer via Semantic-Spatial Decoupling",
+      "abstract": "Transformer-based models have advanced feedforward novel view synthesis (NVS). Current architectures such as GS-LRM and LVSM mix semantic information (e.g., RGB) and spatial information (e.g., Pl\u00fccker rays) into a shared feature space. Since Pl\u00fccker rays naturally carry lattice-like spatial structure, these designs can make the spatial bias interfere with appearance representation and degrade rendering fidelity. To this end, we propose to decouple the representation of feedforward NVS transformers into separate semantic and spatial tokens. The decoupled design keeps semantic and spatial information explicit in their branches while preserving cross-branch interaction through shared attention routing. Built on this design, we introduce optional categorized supervision and bidirectional modulation: the former provides branch-specific training signals, while the latter improves interaction between the two branches. Notably, the base decoupled design introduces virtually zero additional inference latency due to its architectural design. The proposed designs achieve consistent improvements, demonstrating effectiveness across decoder-only and encoder-decoder feedforward NVS models.",
+      "authors": [
+        "Yihang Wu",
+        "Yihang Sun",
+        "Shaofeng Zhang",
+        "Zuxuan Wu",
+        "Junchi Yan",
+        "Xiaosong Jia",
+        "Yu-gang Jiang"
+      ],
+      "published": "2026-05-18T16:09:52Z",
+      "updated": "2026-05-18T16:09:52Z",
+      "url": "https://arxiv.org/abs/2605.18599",
+      "pdf_url": "https://arxiv.org/pdf/2605.18599.pdf",
+      "primary_category": "cs.CV",
+      "categories": [
+        "cs.CV"
+      ],
+      "tags": [
+        "cs.CV"
+      ],
+      "domain": "Vision",
+      "pdf_downloaded": true,
+      "pdf_size_bytes": 4922327,
+      "pdf_path": "2026-05-19/vision/2605.18599.pdf"
+    },
+    {
+      "id": "2605.18577",
+      "title": "OmniPro: A Comprehensive Benchmark for Omni-Proactive Streaming Video Understanding",
+      "abstract": "Omni-proactive streaming video understanding, i.e., autonomously deciding when to speak and what to say from continuous audio-visual streams, is an emerging capability of omni-modal large language models. Existing benchmarks fall short in three key aspects: they rely primarily on visual signals, adopt polling or fixed-timestamp protocols instead of true proactive evaluation, and cover only a limited range of tasks, preventing reliable assessment and differentiation of omni-proactive streaming models. We present OmniPro, the first benchmark to jointly evaluate omni-modal perception, proactive responding, and diverse video understanding tasks. It comprises 2,700 human-verified samples spanning 9 sub-tasks and 3 cognitive levels, covering 6 basic video understanding capabilities. Notably, 84% of samples require audio signals (speech or non-speech), and each sample is annotated with modality-isolation labels to enable fine-grained multimodal analysis. We further introduce a dual-mode evaluation protocol: Probe mode assesses content understanding by querying the model before and after each ground-truth trigger, while Online mode evaluates full proactive ability by requiring models to autonomously decide when to respond in streaming input. Evaluating 11 representative models reveals three key findings: (1) audio provides consistent gains but with highly variable utilization across models, (2) performance degrades significantly over time, indicating limited long-horizon robustness, and (3) non-speech audio perception remains the weakest dimension.",
+      "authors": [
+        "Ruixiang Zhao",
+        "Jie Yang",
+        "Zijie Xin",
+        "Tianyi Wang",
+        "Fengyun Rao",
+        "Jing LYU",
+        "Xirong Li"
+      ],
+      "published": "2026-05-18T15:55:22Z",
+      "updated": "2026-05-18T15:55:22Z",
+      "url": "https://arxiv.org/abs/2605.18577",
+      "pdf_url": "https://arxiv.org/pdf/2605.18577.pdf",
+      "primary_category": "cs.CV",
+      "categories": [
+        "cs.CV"
+      ],
+      "tags": [
+        "cs.CV"
+      ],
+      "domain": "Vision",
+      "pdf_downloaded": true,
+      "pdf_size_bytes": 5654844,
+      "pdf_path": "2026-05-19/vision/2605.18577.pdf"
+    },
+    {
+      "id": "2605.18553",
+      "title": "StableHand: Quality-Aware Flow Matching for World-Space Dual-Hand Motion Estimation from Egocentric Video",
+      "abstract": "Recovering world space 4D motion of two interacting hands from egocentric video is a fundamental capability for supervising robot policy learning, where wrist trajectories track the end-effector and finger articulations specify the grasp pose. Two major challenges arise in this setting: hands frequently leave the camera view for extended periods due to head motion, and persistent hand-object interactions cause severe occlusions of one or both hands. Existing methods uniformly condition on noisy hand motion observations without accounting for their per-frame reliability, leading to substantial performance degradation. Our key insight is that accurate world space hand motion estimation is tightly coupled with the quality of per-frame hand observations. To this end, we decompose the quality of hand motion observations extracted from an off-the-shelf hand pose estimator into four channels: wrist global translation and finger articulations for both hands. We propose StableHand, a quality-aware flow-matching framework conditioned on these four-channel quality signals, which are predicted by a learned quality network. We naturally incorporate the quality signals into the flow-matching process through a per-channel forward schedule, a quality-adjusted velocity target, AdaLN modulation of the DiT denoiser, and a quality-aware ODE initialization. This unified generative process preserves high-quality observations while reconstructing unreliable ones using a learned bimanual motion prior. Experiments on HOT3D and ARCTIC, two egocentric benchmarks featuring long missing-hand spans and persistent hand-object occlusions, show that StableHand achieves state-of-the-art performance across all reported metrics, reducing W-MPJPE by 20-25% compared to the strongest baseline, with the largest gains on heavily occluded ARCTIC sequences.",
+      "authors": [
+        "Huajian Zeng",
+        "Chaohua Yao",
+        "Yuantai Zhang",
+        "Jiaqi Yang",
+        "Rolandos Alexandros Potamias",
+        "Xingxing Zuo"
+      ],
+      "published": "2026-05-18T15:33:15Z",
+      "updated": "2026-05-18T15:33:15Z",
+      "url": "https://arxiv.org/abs/2605.18553",
+      "pdf_url": "https://arxiv.org/pdf/2605.18553.pdf",
+      "primary_category": "cs.CV",
+      "categories": [
+        "cs.CV",
+        "cs.AI"
+      ],
+      "tags": [
+        "cs.AI",
+        "cs.CV"
+      ],
+      "domain": "Vision",
+      "pdf_downloaded": true,
+      "pdf_size_bytes": 6518262,
+      "pdf_path": "2026-05-19/vision/2605.18553.pdf"
+    }
+  ]
+}
