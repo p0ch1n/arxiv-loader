@@ -1,0 +1,815 @@
+{
+  "domain": "Agent",
+  "date": "2026-05-19",
+  "count": 26,
+  "papers": [
+    {
+      "id": "2605.18722",
+      "title": "Dexora: Open-source VLA for High-DoF Bimanual Dexterity",
+      "abstract": "Vision-Language-Action (VLA) models have recently become a central direction in embodied AI, but current systems are restricted to either dual-gripper control or single-arm dexterous hand manipulation. While low-dimensional gripper control can often be handled with simpler methods, high-dimensional dexterous hand control benefits greatly from full end-to-end VLA learning. In this work, we introduce Dexora, the first open-source VLA system that natively targets dual-arm, dual-hand high-DoF manipulation. We design a hybrid teleoperation pipeline that decouples gross arm kinematics (captured with a custom exoskeleton backpack) from fine finger motion (markerless hand tracking via Apple Vision Pro), and that drives both a physical dual-arm dual-hand platform and an identical MuJoCo digital twin. Using that interface, we assemble a large training corpus: an embodiment-matched synthetic corpus (100K simulated trajectories, 6.5M frames) and a real-world dataset of 10K teleoperated episodes (2.92M frames). To mitigate noisy teleoperation demonstrations, we propose a data-quality-aware training recipe: an offline discriminator provides clip-level weights for diffusion-transformer policy training, down-weighting low-quality demonstrations. Empirically, Dexora outperforms competitive VLA baselines on both basic and dexterous benchmarks (e.g., average dexterous success 66.7% vs. 51.7%), attains 90% success on basic tasks, and shows robust out-of-distribution and cross-embodiment generalization. Ablations confirm the importance of real data and the discriminator for dexterity.",
+      "authors": [
+        "Zongzheng Zhang",
+        "Jingrui Pang",
+        "Zhuo Yang",
+        "Kun Li",
+        "Minwen Liao",
+        "Saining Zhang",
+        "Guoxuan Chi",
+        "Jinbang Guo",
+        "Huan-ang Gao",
+        "Modi Shi",
+        "Dongyun Ge",
+        "Yao Mu",
+        "Jiayuan Gu",
+        "Rui Chen",
+        "Hao Dong",
+        "Huazhe Xu",
+        "Li Yi",
+        "Yixin Zhu",
+        "Hang Zhao",
+        "Pengwei Wang",
+        "Shanghang Zhang",
+        "Guocai Yao",
+        "Jianyu Chen",
+        "Hongyang Li",
+        "Hao Zhao"
+      ],
+      "published": "2026-05-18T17:50:32Z",
+      "updated": "2026-05-18T17:50:32Z",
+      "url": "https://arxiv.org/abs/2605.18722",
+      "pdf_url": "https://arxiv.org/pdf/2605.18722.pdf",
+      "primary_category": "cs.RO",
+      "categories": [
+        "cs.RO"
+      ],
+      "tags": [
+        "cs.RO"
+      ],
+      "domain": "Agent",
+      "pdf_downloaded": true,
+      "pdf_size_bytes": 12171486,
+      "pdf_path": "2026-05-19/agent/2605.18722.pdf"
+    },
+    {
+      "id": "2605.18720",
+      "title": "Data-Driven Dynamic Modeling of a Tendon-Actuated Continuum Robot",
+      "abstract": "Developing dynamic models for tendon-driven continuum robots is challenging due to their nonlinear, high-dimensional, and friction-dominated dynamics. This paper presents a comparative study of data-driven system identification methods, including N4SID, ARX, and SINDYc, for modeling a tendon-actuated continuum robot with rolling joints developed at CERN. Despite the high number of joints of the robot, experimental analysis reveals that a two-degree-of-freedom dynamic model can accurately capture the system dynamics, owing to strong kinematic dependencies between the joints. The models are validated against experimental data, and used in the design of a model predictive controller, demonstrating their feasibility for real-time control.",
+      "authors": [
+        "Harald Minde Hansen",
+        "Bj\u00f8rn K\u00e5re S\u00e6b\u00f8",
+        "Kristin Y. Pettersen",
+        "Jan Tommy Gravdahl",
+        "Mario Di Castro"
+      ],
+      "published": "2026-05-18T17:50:22Z",
+      "updated": "2026-05-18T17:50:22Z",
+      "url": "https://arxiv.org/abs/2605.18720",
+      "pdf_url": "https://arxiv.org/pdf/2605.18720.pdf",
+      "primary_category": "cs.RO",
+      "categories": [
+        "cs.RO"
+      ],
+      "tags": [
+        "cs.RO"
+      ],
+      "domain": "Agent",
+      "pdf_downloaded": true,
+      "pdf_size_bytes": 1288879,
+      "pdf_path": "2026-05-19/agent/2605.18720.pdf"
+    },
+    {
+      "id": "2605.18611",
+      "title": "Unified Walking, Running, and Recovery for Humanoids via State-Dependent Adversarial Motion Priors",
+      "abstract": "We propose a unified reinforcement learning framework that enables a single policy to perform walking, running, and fall recovery on the Unitree G1 humanoid robot, validated on physical hardware without any explicit mode-switching command at deployment. The framework extends Adversarial Motion Priors (AMP) by replacing the conventional global reference distribution with a state-dependent gate that routes each training transition to one of two discriminators: a dedicated recovery discriminator and a velocity-conditioned locomotion discriminator that jointly covers walking and running. The gate is defined by a single fixed threshold on projected gravity: the recovery discriminator is activated when body tilt exceeds approximately $37^\\circ$ from vertical ($|g_z+1|>0.6$); otherwise the locomotion discriminator is used, with the normalized commanded velocity serving as a condition that selects the appropriate reference trajectory between walk and run clips. Only three LAFAN1 reference clips are required to regularize the complete behavior set. At deployment, a single frozen ONNX policy executes at 50\\,Hz with no runtime mode logic; hardware experiments demonstrate successful recovery from both prone and supine falls and smooth walk-to-run transitions under the same controller.",
+      "authors": [
+        "Yidan Lu",
+        "Yichao Zhong",
+        "Liu Zhao",
+        "Wanyue Li",
+        "Peng Lu"
+      ],
+      "published": "2026-05-18T16:21:57Z",
+      "updated": "2026-05-18T16:21:57Z",
+      "url": "https://arxiv.org/abs/2605.18611",
+      "pdf_url": "https://arxiv.org/pdf/2605.18611.pdf",
+      "primary_category": "cs.RO",
+      "categories": [
+        "cs.RO"
+      ],
+      "tags": [
+        "cs.RO"
+      ],
+      "domain": "Agent",
+      "pdf_downloaded": true,
+      "pdf_size_bytes": 5042725,
+      "pdf_path": "2026-05-19/agent/2605.18611.pdf"
+    },
+    {
+      "id": "2605.18604",
+      "title": "Efficient Gradient Methods for Distributed Saddle Problems",
+      "abstract": "The distributed setting for Saddle Problems (SPs) has recently emerged as a framework for various modern applications in machine learning and multiagent systems. Despite its relevance, the theoretical foundations of this setting have not yet been thoroughly established. In this paper, we advance this research direction by formalizing the distributed setup for SPs and providing rigorous definitions of communication and computational costs. Our main result is a novel decoupled method that achieves optimal communication cost within the zero-respecting framework. Our method is based on a multi-stage reduction to the decoupled minimization of residual norms, which yields strict improvements over the best known communication cost for the class and the long-standing oracle cost of the Extragradient method. Further, we show by a matching lower bound that our method is communication-optimal within the family of gradient-span algorithms. Finally, we study the extension of distributed SP into Variational Inequality Problem (VIP), which generalizes two-player zero-sum games to multiplayer general-sum games. We show that our decoupled method achieves a new state-of-the-art communication complexity for this broader class.",
+      "authors": [
+        "Ruichen Luo",
+        "Anton Rodomanov",
+        "Sebastian U. Stich"
+      ],
+      "published": "2026-05-18T16:14:04Z",
+      "updated": "2026-05-18T16:14:04Z",
+      "url": "https://arxiv.org/abs/2605.18604",
+      "pdf_url": "https://arxiv.org/pdf/2605.18604.pdf",
+      "primary_category": "math.OC",
+      "categories": [
+        "math.OC",
+        "cs.DC",
+        "cs.MA"
+      ],
+      "tags": [
+        "cs.DC",
+        "cs.MA",
+        "math.OC"
+      ],
+      "domain": "Agent",
+      "pdf_downloaded": true,
+      "pdf_size_bytes": 760564,
+      "pdf_path": "2026-05-19/agent/2605.18604.pdf"
+    },
+    {
+      "id": "2605.18593",
+      "title": "Not What You Asked For: Typographic Attacks in Household Robot Manipulation",
+      "abstract": "Open-vocabulary embodied AI agents increasingly rely on vision-language models such as CLIP for object perception and task grounding. However, the shared embedding space that enables this flexibility introduces a structural vulnerability to typographic attacks, where printed text in a physical scene semantically overrides visual judgment. While prior work has quantified this threat in static 2D benchmarks and 3D navigation tasks, its impact on the full Sense-Plan-Act pipeline of household robot manipulation remains unexplored. This work evaluates typographic attacks in a Habitat-based simulation using the HomeRobot benchmark. We introduce a decoupled perception architecture that exposes a frozen CLIP encoder to adversarial stickers while maintaining geometric grounding via DETIC. In a controlled evaluation pool of 59 attributable episodes, the attack achieves an overall Attack Success Rate (ASR) of 67.8%, rising to 70.0% among fully successful episodes, under uncontrolled viewing angles and occlusion with no perceptual optimization. Critically, we find that perceptual errors propagate through the persistent 3D semantic map to produce kinetic failures, defined here as physically executed grasping and transport of the wrong object driven by an adversarially poisoned semantic state. In these cases, the robot physically grasps and delivers the wrong object to a target receptacle. These results establish typographic misclassification as a real, measurable, and physically consequential threat to the safety of modular manipulation pipelines that prior typographic attack research has left unexamined.",
+      "authors": [
+        "Ali Iranmanesh",
+        "Peng Liu"
+      ],
+      "published": "2026-05-18T16:06:29Z",
+      "updated": "2026-05-18T16:06:29Z",
+      "url": "https://arxiv.org/abs/2605.18593",
+      "pdf_url": "https://arxiv.org/pdf/2605.18593.pdf",
+      "primary_category": "cs.CR",
+      "categories": [
+        "cs.CR",
+        "cs.AI",
+        "cs.RO"
+      ],
+      "tags": [
+        "cs.AI",
+        "cs.CR",
+        "cs.RO"
+      ],
+      "domain": "Agent",
+      "pdf_downloaded": true,
+      "pdf_size_bytes": 412297,
+      "pdf_path": "2026-05-19/agent/2605.18593.pdf"
+    },
+    {
+      "id": "2605.18556",
+      "title": "Key-Gram: Extensible World Knowledge for Embodied Manipulation",
+      "abstract": "Embodied control increasingly requires models to follow compositional language instructions while reasoning over dynamic visual states. However, current vision-language-action policies and world-action models often couple linguistic knowledge with visual computation in a shared backbone or conditioning pathway, leading to modality competition and making knowledge extension dependent on backbone updates. In this paper, we introduce Key-Gram, a conditional-memory framework that separates language-derived world knowledge from visual-state reasoning for embodied control. At its core is a memory module that decomposes an instruction into task-specific key-grams, retrieves static linguistic priors through deterministic hashed lookup, and injects the retrieved entries into selected hidden layers through context-aware gating and lightweight convolutional fusion. This design allows the backbone to devote its main capacity to visual reasoning and action inference, while reusable instruction knowledge is stored in an extensible external memory. The logical memory table can be conveniently partitioned during training and, due to its $O(1)$ lookup pattern, efficiently placed on host memory during inference. Across RoboTwin2.0, LIBERO/LIBERO-Plus, and real-world dual-arm manipulation, Key-Gram consistently improves both $\u03c0_{0}$ and $\u03c0_{0.5}$ backbones, with average relative gains of $29.5\\%/9.9\\%$ on RoboTwin2.0, $35.8\\%/4.5\\%$ on LIBERO-Plus transfer without target-domain fine-tuning, and $15.4\\%/8.1\\%$ on real-world long-horizon tasks. These results demonstrate that externalized linguistic memory provides an effective and extensible mechanism for improving compositional grounding, transfer, and real-world manipulation.",
+      "authors": [
+        "Jingjing Fan",
+        "Siyuan Li",
+        "Botao Ren",
+        "Zhidong Deng"
+      ],
+      "published": "2026-05-18T15:37:02Z",
+      "updated": "2026-05-18T15:37:02Z",
+      "url": "https://arxiv.org/abs/2605.18556",
+      "pdf_url": "https://arxiv.org/pdf/2605.18556.pdf",
+      "primary_category": "cs.RO",
+      "categories": [
+        "cs.RO",
+        "cs.AI"
+      ],
+      "tags": [
+        "cs.AI",
+        "cs.RO"
+      ],
+      "domain": "Agent",
+      "pdf_downloaded": true,
+      "pdf_size_bytes": 7212063,
+      "pdf_path": "2026-05-19/agent/2605.18556.pdf"
+    },
+    {
+      "id": "2605.18543",
+      "title": "Geometry-Aware Surrogate for Real-Time Hydrodynamics Estimation of Autonomous Ground Vehicles in Amphibious Environments",
+      "abstract": "Autonomous ground vehicles operating in shallow water or flood-prone terrains require dynamic models that account for hydrodynamic forces. However, the simulation and planning tools currently available either lack the physical fidelity or are too computationally expensive to run in real time. This work presents a per-surface neural network surrogate that bridges this gap by predicting geometry-resolved hydrodynamic forces at real-time rates, trained entirely on high-fidelity CFD data from two geometrically distinct vehicles. A vehicle specific Signed Distance Field (SDF) provides per-surface submergence inputs, allowing the model to resolve how loading varies with vehicle geometry, depth, and flow direction. On held-out CFD data, the surrogate achieves a longitudinal-force symmetric MAPE (sMAPE) of 13\\% and a vertical-force sMAPE of 3-12\\%, with inference running under 0.9\\,ms per sample. To evaluate the model under real-world conditions, water wading trials of a full-scale vehicle at different submersion depths are used. Motion capture derived kinematics serve as the surrogate inputs, and the resulting predictions are tested to reproduce known physical relationships between force, speed, and depth. The predicted drag follows quadratic speed scaling ($R^2 \\geq 0.97$) and the buoyancy intercepts scale linearly with depth ($R^2 = 0.973$). Neither relationship is encoded in the model training loss, both emerge from the per-surface architecture summing individually predicted surface forces. The resulting framework provides a pathway for embedding physically grounded hydrodynamics into the simulation and planning loops that autonomous ground vehicles depend on in amphibious environments.",
+      "authors": [
+        "Ammar Waheed",
+        "Luke Gallantree",
+        "Zohaib Hasnain"
+      ],
+      "published": "2026-05-18T15:24:23Z",
+      "updated": "2026-05-18T15:24:23Z",
+      "url": "https://arxiv.org/abs/2605.18543",
+      "pdf_url": "https://arxiv.org/pdf/2605.18543.pdf",
+      "primary_category": "cs.RO",
+      "categories": [
+        "cs.RO"
+      ],
+      "tags": [
+        "cs.RO"
+      ],
+      "domain": "Agent",
+      "pdf_downloaded": true,
+      "pdf_size_bytes": 11033477,
+      "pdf_path": "2026-05-19/agent/2605.18543.pdf"
+    },
+    {
+      "id": "2605.18535",
+      "title": "Beyond Scaling: Agents Are Heading to the Edge",
+      "abstract": "The bottleneck of useful agentic intelligence has shifted from compressing world knowledge into a single model to executing a coordinated system. This position paper argues that personal-agent architecture must move to the edge because the core properties of agentic intelligence tasks, particularly their structural coupling with high-fidelity local context and the need for zero-latency execution loops, do not sit well with cloud-centric designs. We develop this claim through three structural shifts. First, the Prefrontal Turn: the main marginal lever of capability has moved from pre-training scale to framework-level executive control. Such control must remain physically close to the environment of action if the agent is to preserve cognitive alignment. Second, the Data-Geography Paradox, the ``dark matter'' of agentic data (local file hierarchies, real-time sensor streams, and transient OS states) degrades, disappears, or loses meaning once prepared for cloud transmission, thereby cutting the agent off from ground-truth context. Third, the interaction-alignment loop, the only economically and ecologically sustainable source of agentic refinement data is the high-fidelity implicit preference signal produced through real-time local interaction. Third, the interaction-alignment loop, the only economically and ecologically sustainable source of agentic refinement data is the high-fidelity implicit preference signal produced through real-time local interaction. We conclude with falsifiable predictions for the next deployment cycle of personal agents.",
+      "authors": [
+        "Chunlin Tian",
+        "Dongqi Cai",
+        "Wanru Zhao",
+        "Nicholas D. Lane"
+      ],
+      "published": "2026-05-18T15:18:29Z",
+      "updated": "2026-05-18T15:18:29Z",
+      "url": "https://arxiv.org/abs/2605.18535",
+      "pdf_url": "https://arxiv.org/pdf/2605.18535.pdf",
+      "primary_category": "cs.LG",
+      "categories": [
+        "cs.LG",
+        "cs.MA"
+      ],
+      "tags": [
+        "cs.LG",
+        "cs.MA"
+      ],
+      "domain": "Agent",
+      "pdf_downloaded": true,
+      "pdf_size_bytes": 607615,
+      "pdf_path": "2026-05-19/agent/2605.18535.pdf"
+    },
+    {
+      "id": "2605.18482",
+      "title": "Bidirectional Optical sensors for Actuation Tracking (BOAT) in soft lattice systems",
+      "abstract": "The growing adoption of lattice-based structures in soft robotics creates a need for advanced sensing solutions capable of monitoring their global deformation, particularly compression and extension. In this work, we address this challenge by introducing a novel optical sensor based on two patterned waveguides arranged in an ellipsoidal geometry. This Bidirectional Optical sensor for Actuation Tracking (BOAT) is seamlessly co-printed with a lattice structure actuated by an embedded pneumatic artificial muscle (PAM), and its performance is assessed. During PAM elongation or contraction, the bending of the embedded BOAT waveguides induces output signal variations that enable a clear discrimination between compression and extension states. The designs of both each specific waveguide structure (by surface patterning) and of the sensorized lattice-based unit embedding two BOATs are supported by numerical simulations. Experimental calibration over 100 consecutive pressure cycles ranging from +50 kPa to $-$40 kPa demonstrates a highly repeatable response, allowing a reliable distinction between extension and compression. Finally, sensor feedback is used to implement a digital shadow, enabling continuous synchronization between the whole sensorized unit and its virtual counterpart. These results establish BOAT as a powerful and reliable approach for deformation monitoring in soft lattice-based robotic systems.",
+      "authors": [
+        "Petr Trunin",
+        "Carolina Gay",
+        "Anderson Brazil Nardin",
+        "Trevor Exley",
+        "Diana Cafiso",
+        "Lucia Beccai"
+      ],
+      "published": "2026-05-18T14:34:49Z",
+      "updated": "2026-05-18T14:34:49Z",
+      "url": "https://arxiv.org/abs/2605.18482",
+      "pdf_url": "https://arxiv.org/pdf/2605.18482.pdf",
+      "primary_category": "cs.RO",
+      "categories": [
+        "cs.RO"
+      ],
+      "tags": [
+        "cs.RO"
+      ],
+      "domain": "Agent",
+      "pdf_downloaded": true,
+      "pdf_size_bytes": 3959592,
+      "pdf_path": "2026-05-19/agent/2605.18482.pdf"
+    },
+    {
+      "id": "2605.18441",
+      "title": "REACT: Environment-Adaptive Architecture for Continuous Formation Navigation of Wheeled Mobile Robots",
+      "abstract": "Formation control of wheeled mobile robots (WMRs) has been extensively studied due to its broad applications in fields such as logistics transportation, environmental monitoring, and search and rescue. However, most existing works mainly focus on tracking predefined formations, which limits their adaptability to complex real-world environments. To address this, we propose REACT (Real-time Environment-Adaptive architecture for Continuous formation navigaTion), a hierarchical architecture integrating centralized formation generation and distributed formation maintenance. Specifically, our upper layer generates new environment-adaptive formations when necessary and uses our proposed TCF-R2T (Trajectory-Conflict-Free Robot-to-Target assignment) algorithm to compute conflict-free WMR-to-target assignments in polynomial time, enabling timely formation transitions without trajectory conflicts. At the lower layer, each WMR executes our developed JSTP (Joint Spatio-Temporal trajectory Planning) method to maintain the generated formation by simultaneously optimizing spatial positions and temporal durations, thereby enhancing coordination among WMRs and enabling continuous navigation in obstacle-rich environments and dynamic-obstacle scenarios. Both simulation and real-world experiments validate the effectiveness and practical applicability of REACT. Experimental videos are available on our project website: https://dongjh20.github.io/REACT-website.",
+      "authors": [
+        "Jianghong Dong",
+        "Yifeng Zhang",
+        "Jiawei Wang",
+        "Mengchi Cai",
+        "Keqiang Li",
+        "Guillaume Sartoretti"
+      ],
+      "published": "2026-05-18T14:11:31Z",
+      "updated": "2026-05-18T14:11:31Z",
+      "url": "https://arxiv.org/abs/2605.18441",
+      "pdf_url": "https://arxiv.org/pdf/2605.18441.pdf",
+      "primary_category": "cs.RO",
+      "categories": [
+        "cs.RO",
+        "eess.SY"
+      ],
+      "tags": [
+        "cs.RO",
+        "eess.SY"
+      ],
+      "domain": "Agent",
+      "pdf_downloaded": true,
+      "pdf_size_bytes": 2744611,
+      "pdf_path": "2026-05-19/agent/2605.18441.pdf"
+    },
+    {
+      "id": "2605.18423",
+      "title": "REBAR: Reference Ethical Benchmark for Autonomy Readiness",
+      "abstract": "As autonomous systems grow more advanced, objective metrics to evaluate their ethical and legal compliance are critical for informing end users of their limitations and ensuring accountability of those who misuse them. Current ethical embodied AI frameworks remain mostly qualitative, focusing on system design (through safety guardrails or targeted red teaming), and the realized guardrails often directly disallow unsafe behavior without providing the user with an override or interpretable reason. Instead, there is a need for computable metrics through rigorous testing that allow a user to determine the applicability of the system to the task. To address this gap, we introduce the Reference Ethical Benchmark for Autonomy Readiness (REBAR), a quantitative test and evaluation framework for autonomous systems. REBAR maps operating metrics into a computable Autonomy Readiness Level (ARL) rubric that can quantify ethical performance. Key innovations of the framework include a neuro-symbolic Large Language Model (LLM) approach to calculate and explain the ethical difficulty of scenarios, LLM-driven at-scale generation of test instances, and a versatile, photorealistic simulation environment. By evaluating white-box autonomy solutions through this rigorous testing pipeline, REBAR delivers an objective and repeatable benchmark score, bridging the gap between abstract principles and verifiable, accountable autonomy.",
+      "authors": [
+        "Jonathan Diller",
+        "David Barnes",
+        "Rebekah Bogdanoff",
+        "Rhett Collier",
+        "Roddy Collins",
+        "Keith Fieldhouse",
+        "Yonatan Gefen",
+        "Cameron Johnson",
+        "Anuriha Kodali",
+        "Brad Kriel",
+        "Varun Murali",
+        "James Niehaus",
+        "Mish Sukharev",
+        "Joseph VanPelt",
+        "Anthony Hoogs",
+        "Vijay Kumar",
+        "Arslan Basharat"
+      ],
+      "published": "2026-05-18T13:56:19Z",
+      "updated": "2026-05-18T13:56:19Z",
+      "url": "https://arxiv.org/abs/2605.18423",
+      "pdf_url": "https://arxiv.org/pdf/2605.18423.pdf",
+      "primary_category": "cs.RO",
+      "categories": [
+        "cs.RO",
+        "cs.CY"
+      ],
+      "tags": [
+        "cs.CY",
+        "cs.RO"
+      ],
+      "domain": "Agent",
+      "pdf_downloaded": true,
+      "pdf_size_bytes": 2605356,
+      "pdf_path": "2026-05-19/agent/2605.18423.pdf"
+    },
+    {
+      "id": "2605.18407",
+      "title": "Qumus: Realization of An Embodied AI Quantum Material Experimentalist",
+      "abstract": "While modern Large Language Models (LLMs) and agentic artificial intelligence (AI) have demonstrated transformative capabilities in digital domains, the realization of embodied AI capable of real-world scientific discovery remains a difficult frontier. The advancements are hindered by the inherent complexity of integrating high-level reasoning, multimodal information processing and real-time physical execution. Here we introduce Qumus, the first AI quantum materials experimentalist. Physically embodied within a robotic mini-laboratory, Qumus is an intelligent, multimodal, and multi-agent system designed for the creation and nano-processing of atomically thin two-dimensional (2D) materials and stacked van der Waals (vdW) structures. Qumus autonomously navigates the full scientific cycle, from hypothesis generation and protocol planning to multi-step experimental execution, result analysis and reporting, acting as an experimentalist. Markedly, the system has achieved, for the first time, the AI-creation of graphene, as well as the first AI-fabrication of complex nanodevices including atomically thin field-effect transistors via vdW stacking. Qumus excels at these tasks by demonstrating autonomous error correction and closed-loop experimentation. Our results establish a generalizable framework for self-improving embodied AI systems that learn directly from the quantum world, opening a pathway toward accelerated discovery in quantum materials, electronics and beyond.",
+      "authors": [
+        "Lihan Shi",
+        "Zhaoyi Joy Zheng",
+        "Xinzhe Juan",
+        "Yimin Wang",
+        "Ming Yin",
+        "Mayank Sengupta",
+        "Kristina Wolinski",
+        "Yanyu Jia",
+        "Jingzhi Shi",
+        "Derek Saucedo",
+        "Neill Saggi",
+        "Haosen Guan",
+        "Kenji Watanabe",
+        "Takashi Taniguchi",
+        "Ali Yazdani",
+        "Mengdi Wang",
+        "Sanfeng Wu"
+      ],
+      "published": "2026-05-18T13:47:31Z",
+      "updated": "2026-05-18T13:47:31Z",
+      "url": "https://arxiv.org/abs/2605.18407",
+      "pdf_url": "https://arxiv.org/pdf/2605.18407.pdf",
+      "primary_category": "cond-mat.mes-hall",
+      "categories": [
+        "cond-mat.mes-hall",
+        "cond-mat.mtrl-sci",
+        "cs.AI",
+        "cs.RO"
+      ],
+      "tags": [
+        "cond-mat.mes-hall",
+        "cond-mat.mtrl-sci",
+        "cs.AI",
+        "cs.RO"
+      ],
+      "domain": "Agent",
+      "pdf_downloaded": true,
+      "pdf_size_bytes": 14868717,
+      "pdf_path": "2026-05-19/agent/2605.18407.pdf"
+    },
+    {
+      "id": "2605.18385",
+      "title": "Towards Ubiquitous Mapping and Localization for Dynamic Indoor Environments",
+      "abstract": "We present UbiSLAM, an innovative solution for real-time mapping and localization in dynamic indoor environments. By deploying a network of fixed RGB-D cameras strategically throughout the workspace, UbiSLAM addresses limitations commonly encountered in traditional SLAM systems, such as sensitivity to environmental changes and reliance on mobile unit sensors. This fixed-sensor approach enables real-time, comprehensive mapping, enhancing the localization accuracy and responsiveness of robots operating within the environment. The centralized map generated by UbiSLAM is continuously updated, providing robots with an accurate global view, which improves navigation, minimizes collisions, and facilitates smoother human-robot interactions in shared spaces. Beyond its advantages, UbiSLAM faces challenges, particularly in ensuring complete spatial coverage and managing blind spots, which necessitate data integration from the robots themselves. In this paper we discuss potential solutions, such as automatic calibration for optimal camera placement and orientation, along with enhanced communication protocols for real-time data sharing. The proposed model reduces the computational load on individual robotic units, allowing less complex robotic platforms to operate effectively while enhancing the robustness of the overall system.",
+      "authors": [
+        "Halim Djerroud",
+        "Nico Steyn",
+        "Olivier Rabreau",
+        "Patrick Bonnin",
+        "Abderraouf Benali"
+      ],
+      "published": "2026-05-18T13:28:23Z",
+      "updated": "2026-05-18T13:28:23Z",
+      "url": "https://arxiv.org/abs/2605.18385",
+      "pdf_url": "https://arxiv.org/pdf/2605.18385.pdf",
+      "primary_category": "cs.RO",
+      "categories": [
+        "cs.RO",
+        "cs.AI"
+      ],
+      "tags": [
+        "cs.AI",
+        "cs.RO"
+      ],
+      "domain": "Agent",
+      "pdf_downloaded": true,
+      "pdf_size_bytes": 312512,
+      "pdf_path": "2026-05-19/agent/2605.18385.pdf"
+    },
+    {
+      "id": "2605.18373",
+      "title": "Dynamic robotic cloth folding with efficient Koopman operator-based model predictive control",
+      "abstract": "Robotic cloth folding is a challenging task, particularly when considering dynamic folding tasks, which aim at folding cloth by fast motions that leverage its dynamics. When subject to such fast motions, the complexity of cloth dynamics hinders both system identification and planning of folding trajectories, resulting in a difficult simulation-to-reality transfer when using physical models of cloth. Compared to the dexterity that humans exhibit when performing folding tasks, robotic approaches usually employ small garments with quite rigid dynamics, and are either too slow, or fast but imprecise, requiring several attempts to achieve a reasonably good fold. In this paper, we tackle these challenges by generating fast folding trajectories with a novel model predictive controller, integrating physics-based simulation of cloth dynamics and efficient, kernel-based Koopman operator regression. Koopman operator regression, an increasingly popular machine learning technique for nonlinear system identification, is used to obtain a linear model for the cloth being folded. Such a surrogate model, trained with data from a high-fidelity, physics-based cloth simulator, can then be employed within a suitable model predictive control algorithm, in place of the costly, nonlinear one, to efficiently generate folding trajectories to be executed by a robotic manipulator. Both in simulated and real-robot experiments, we show how the linearization supplied by the Koopman operator-based model can be employed to efficiently generate fast folding trajectories to unseen poses, without sacrificing folding accuracy.",
+      "authors": [
+        "Edoardo Caldarelli",
+        "Franco Coltraro",
+        "Adri\u00e0 Colom\u00e9",
+        "Lorenzo Rosasco",
+        "Carme Torras"
+      ],
+      "published": "2026-05-18T13:21:38Z",
+      "updated": "2026-05-18T13:21:38Z",
+      "url": "https://arxiv.org/abs/2605.18373",
+      "pdf_url": "https://arxiv.org/pdf/2605.18373.pdf",
+      "primary_category": "cs.RO",
+      "categories": [
+        "cs.RO",
+        "cs.LG",
+        "math.DS",
+        "math.OC"
+      ],
+      "tags": [
+        "cs.LG",
+        "cs.RO",
+        "math.DS",
+        "math.OC"
+      ],
+      "domain": "Agent",
+      "pdf_downloaded": true,
+      "pdf_size_bytes": 13803447,
+      "pdf_path": "2026-05-19/agent/2605.18373.pdf"
+    },
+    {
+      "id": "2605.18303",
+      "title": "PH-Dreamer: A Physics-Driven World Model via Port-Hamiltonian Generative Dynamics",
+      "abstract": "World models built on recurrent state space architectures enable efficient latent imagination, yet remain physically unstructured, producing dynamics that violate conservation and dissipative principles. We introduce a unified Port-Hamiltonian framework that remedies this through three synergistic mechanisms. First, we embed implicit physical priors into recurrent transitions by modeling projected latent evolution as action controlled energy routing governed by flow and dissipation, biasing the projected PH phase space toward a more compact and physically structured representation. Second, we develop a kinematics aware energy world model that estimates the Hamiltonian and power balance from proprioceptive observations, providing an explicit physical signal for thermodynamic reasoning. Third, leveraging these energy gradients, we establish an energy guided Actor-Critic that uses Lagrangian multipliers to regularize policy optimization toward lower energy and smoother control. Across visual control benchmarks, this paradigm not only attains superior asymptotic returns but also elevates internal simulator fidelity by establishing a tighter, lower variance alignment between imagined and real rewards, all while reducing latent phase space volume by 4.18-8.41%, energy consumption by up to 7.80%, and mean squared jerk by up to 9.38%.",
+      "authors": [
+        "Xueyu Luan",
+        "Chenwei Shi"
+      ],
+      "published": "2026-05-18T12:20:54Z",
+      "updated": "2026-05-18T12:20:54Z",
+      "url": "https://arxiv.org/abs/2605.18303",
+      "pdf_url": "https://arxiv.org/pdf/2605.18303.pdf",
+      "primary_category": "cs.LG",
+      "categories": [
+        "cs.LG",
+        "cs.AI",
+        "cs.CV",
+        "cs.RO"
+      ],
+      "tags": [
+        "cs.AI",
+        "cs.CV",
+        "cs.LG",
+        "cs.RO"
+      ],
+      "domain": "Agent",
+      "pdf_downloaded": true,
+      "pdf_size_bytes": 5381815,
+      "pdf_path": "2026-05-19/agent/2605.18303.pdf"
+    },
+    {
+      "id": "2605.18295",
+      "title": "Assessing Localization Technologies for Pedestrian Collision Avoidance",
+      "abstract": "Robust pedestrian safety is crucial to the next-generation of intelligent transportation systems. Such systems rely on active pedestrian localization and predictive collision alerts. Pedestrian localization can be supported by Ultra-Wideband technology and Bluetooth 6.0, which offer high-precision ranging and low-latency communication, making them promising candidates for vehicular collision warning systems. This paper assesses the localization accuracy of these technologies for pedestrian alerting and benchmarks their performance against Global Navigation Satellite Systems. Experimental evaluations performed in this paper focused on key performance metrics, including localization accuracy and robustness to environmental conditions. Preliminary results suggest that Ultra-Wideband and Bluetooth 6.0 can serve as viable alternatives or complements to Global Navigation Satellite Systems in certain scenarios, improving situational awareness and enabling timely pedestrian alerts.",
+      "authors": [
+        "Joshua Varughese",
+        "Joseba Gorospe",
+        "Novel Certad",
+        "Cristina Olaverri-Monreal"
+      ],
+      "published": "2026-05-18T12:17:59Z",
+      "updated": "2026-05-18T12:17:59Z",
+      "url": "https://arxiv.org/abs/2605.18295",
+      "pdf_url": "https://arxiv.org/pdf/2605.18295.pdf",
+      "primary_category": "cs.RO",
+      "categories": [
+        "cs.RO"
+      ],
+      "tags": [
+        "cs.RO"
+      ],
+      "domain": "Agent",
+      "pdf_downloaded": true,
+      "pdf_size_bytes": 1803032,
+      "pdf_path": "2026-05-19/agent/2605.18295.pdf"
+    },
+    {
+      "id": "2605.18287",
+      "title": "StableVLA: Towards Robust Vision-Language-Action Models without Extra Data",
+      "abstract": "It is infeasible to encompass all possible disturbances within the training dataset. This raises a critical question regarding the robustness of Vision-Language-Action (VLA) models when encountering unseen real-world visual disturbances, particularly under imperfect visual conditions. In this work, we conduct a systematic study based on recent state-of-the-art VLA models and reveal a significant performance drop when visual disturbances absent from the training data are introduced. To mitigate this issue, we propose a lightweight adapter module grounded in information theory, termed the Information Bottleneck Adapter (IB-Adapter), which selectively filters potential noise from visual inputs. Without requiring any extra data or augmentation strategies, IB-Adapter consistently improves over the baseline by an average of 30%, while adding fewer than 10M parameters, demonstrating notable efficiency and effectiveness. Furthermore, even with a 14x smaller backbone (0.5B parameters) and no pre-training on the Open X-Embodiment dataset, our model StableVLA achieves robustness competitive with 7B-scale state-of-the-art VLAs. With negligible parameter overhead (<10M), our approach maintains accuracy on long-horizon tasks and surpasses OpenPi under both synthetic and physical visual corruptions.",
+      "authors": [
+        "Yiyang Fu",
+        "Chubin Zhang",
+        "Shukai Gong",
+        "Yufan Deng",
+        "Kaiwei Sun",
+        "Qiyang Min",
+        "Qibin Hou",
+        "Yansong Tang",
+        "Jianan Wang",
+        "Daquan Zhou"
+      ],
+      "published": "2026-05-18T12:15:16Z",
+      "updated": "2026-05-18T12:15:16Z",
+      "url": "https://arxiv.org/abs/2605.18287",
+      "pdf_url": "https://arxiv.org/pdf/2605.18287.pdf",
+      "primary_category": "cs.CV",
+      "categories": [
+        "cs.CV",
+        "cs.RO"
+      ],
+      "tags": [
+        "cs.CV",
+        "cs.RO"
+      ],
+      "domain": "Agent",
+      "pdf_downloaded": true,
+      "pdf_size_bytes": 5788792,
+      "pdf_path": "2026-05-19/agent/2605.18287.pdf"
+    },
+    {
+      "id": "2605.18262",
+      "title": "On Improving Multimodal Pedestrian Trajectory Prediction with CVAE: A Study on Benchmark and Robot Data",
+      "abstract": "Accurate pedestrian trajectory prediction is crucial for autonomous systems operating in complex environments, such as modular buses and delivery robots in suburban or semi-structured areas. Social Spatio-Temporal Graph Convolutional Neural Networks (Social-STGCNN) have shown strong performance by modeling social interactions; however, producing diverse and well-calibrated future trajectories remains challenging. In this work, we build on a Social-STGCNN backbone and introduce a Conditional Variational Autoencoder (CVAE)-based probabilistic formulation to explicitly model multimodal future trajectories. We evaluate the method on the ETH and UCY pedestrian trajectory datasets as well as on a real-world pedestrian dataset collected by a mobile robot. Results show moderate gains on public benchmarks, but more consistent endpoint accuracy and improved trajectory diversity across different crowd configurations. Evaluation on robot-collected data further demonstrates the approach's effectiveness beyond curated benchmarks and supports its applicability in practical deployments.",
+      "authors": [
+        "Yuzhou Liu",
+        "Cristina Olaverri-Monreal"
+      ],
+      "published": "2026-05-18T11:59:52Z",
+      "updated": "2026-05-18T11:59:52Z",
+      "url": "https://arxiv.org/abs/2605.18262",
+      "pdf_url": "https://arxiv.org/pdf/2605.18262.pdf",
+      "primary_category": "cs.RO",
+      "categories": [
+        "cs.RO"
+      ],
+      "tags": [
+        "cs.RO"
+      ],
+      "domain": "Agent",
+      "pdf_downloaded": true,
+      "pdf_size_bytes": 736605,
+      "pdf_path": "2026-05-19/agent/2605.18262.pdf"
+    },
+    {
+      "id": "2605.18197",
+      "title": "RGB-only Active 3D Scene Graph Generation for Indoor Mobile Robots",
+      "abstract": "Current approaches to 3D scene graph generation rely on dedicated depth sensors, such as LiDAR or RGB-D cameras, for metric 3D reconstruction. This limits deployment to specialized robotic platforms and excludes settings where only RGB cameras are available, such as fixed external infrastructure. Existing pipelines also typically operate on passively collected observation trajectories, rather than selecting viewpoints based on the partially built scene representation, and therefore fail to effectively exploit the semantic and spatial information encoded within the graph during exploration. This paper presents a fully visual framework for the active, incremental construction of 3D scene graphs from RGB input only, addressing both limitations. The proposed approach unifies perception and planning around a shared structured representation that captures object semantics, 3D geometry, relational context, and information from multiple viewpoints. Because the framework is hardware-agnostic and relies only on RGB observations, it can incorporate inputs from both onboard robot cameras and fixed external cameras within the same representation. Experiments on the Replica dataset show that the RGB-only pipeline achieves F1-score parity with baselines using ground-truth depth. Active exploration experiments on ReplicaCAD further show that semantic-driven viewpoint selection detects more than twice as many objects as a geometric frontier-based baseline under the same exploration budget. Finally, the external-camera setting demonstrates that complementary RGB views can effectively bootstrap the scene graph and improve contextual understanding at no additional exploration cost.",
+      "authors": [
+        "Giorgia Modi",
+        "Davide Buoso",
+        "Giuseppe Averta",
+        "Daniele De Martini"
+      ],
+      "published": "2026-05-18T10:37:39Z",
+      "updated": "2026-05-18T10:37:39Z",
+      "url": "https://arxiv.org/abs/2605.18197",
+      "pdf_url": "https://arxiv.org/pdf/2605.18197.pdf",
+      "primary_category": "cs.RO",
+      "categories": [
+        "cs.RO",
+        "cs.AI",
+        "cs.CV"
+      ],
+      "tags": [
+        "cs.AI",
+        "cs.CV",
+        "cs.RO"
+      ],
+      "domain": "Agent",
+      "pdf_downloaded": true,
+      "pdf_size_bytes": 1202715,
+      "pdf_path": "2026-05-19/agent/2605.18197.pdf"
+    },
+    {
+      "id": "2605.18185",
+      "title": "The Dynamics of Policy Gradient in Social Dilemmas with Partner Selection",
+      "abstract": "In social dilemmas self-interested learning agents face the choice between the societal benefit of cooperation and the immediate reward of defection. Significant evidence exists on the benefits of assortment mechanisms such as partner selection for the emergence of cooperation, but this is largely available through agent-based simulations. In this paper, we provide an analytical solution to the problem, studying the policy-gradient dynamics in a multi-agent environment with partner selection. We show how partner selection changes the opponent distribution and hence the reward landscape, and prove this promotes cooperation under simple rules known from the literature. In particular, we find that population variance is a necessary condition for cooperation to emerge. Using a two-dimensional Wiener process, we extend the dynamics to capture the stochastic effects of partner selection and the resulting opponent distribution. We derive a sufficient condition for the population to be cooperation-promoting and prove the existence of a stationary distribution. Simulations confirm that the stochastic model accurately captures the policy-gradient dynamics and clarifies how the learning rate affects the emergence of cooperation.",
+      "authors": [
+        "Benedict Russell",
+        "Chin-wing Leung",
+        "Paolo Turrini"
+      ],
+      "published": "2026-05-18T10:26:50Z",
+      "updated": "2026-05-18T10:26:50Z",
+      "url": "https://arxiv.org/abs/2605.18185",
+      "pdf_url": "https://arxiv.org/pdf/2605.18185.pdf",
+      "primary_category": "cs.MA",
+      "categories": [
+        "cs.MA"
+      ],
+      "tags": [
+        "cs.MA"
+      ],
+      "domain": "Agent",
+      "pdf_downloaded": true,
+      "pdf_size_bytes": 572873,
+      "pdf_path": "2026-05-19/agent/2605.18185.pdf"
+    },
+    {
+      "id": "2605.18184",
+      "title": "Fixed External Cameras as Common Prior Maps for Active 3D Scene Graph Generation",
+      "abstract": "Commonly available prior information, such as BIM models, floor plans, and remote sensing images, can provide valuable geometric and semantic context for autonomous robotic systems. In this paper, we treat observations from fixed external RGB cameras as Common Prior Maps (CPMs): wide-field views of the environment that initialize a semantic and geometric scene prior before any robot motion begins. We present an RGB-only framework for active, incremental 3D scene graph (3DSG) generation that seamlessly fuses observations from both onboard robot cameras and fixed external cameras within a single hardware-agnostic pipeline. By relying solely on RGB observations processed by a feed-forward 3D reconstruction model, the system treats all cameras - onboard or external - identically, requiring no hardware modifications. A graph-based active semantic exploration framework then directly leverages the partial scene graph to guide the robot toward regions of high semantic uncertainty, progressively completing and refining the prior. Experiments demonstrate that bootstrapping the scene graph with even a single external camera increases initial object recall by up to +79%, and that the richer context of the prior significantly improves the efficiency of subsequent active exploration.",
+      "authors": [
+        "Giorgia Modi",
+        "Davide Buoso",
+        "Giuseppe Averta",
+        "Daniele De Martini"
+      ],
+      "published": "2026-05-18T10:26:07Z",
+      "updated": "2026-05-18T10:26:07Z",
+      "url": "https://arxiv.org/abs/2605.18184",
+      "pdf_url": "https://arxiv.org/pdf/2605.18184.pdf",
+      "primary_category": "cs.RO",
+      "categories": [
+        "cs.RO",
+        "cs.AI",
+        "cs.CV"
+      ],
+      "tags": [
+        "cs.AI",
+        "cs.CV",
+        "cs.RO"
+      ],
+      "domain": "Agent",
+      "pdf_downloaded": true,
+      "pdf_size_bytes": 1096580,
+      "pdf_path": "2026-05-19/agent/2605.18184.pdf"
+    },
+    {
+      "id": "2605.18109",
+      "title": "TaskGround: Structured Executable Task Inference for Full-Scene Household Reasoning",
+      "abstract": "In real home deployments, household agents must often operate from a complete household scene and a situated household request, rather than from a clean task specification. Such requests require agents to identify task-relevant entities, recover intended task conditions, and resolve ordering constraints from the surrounding scene context. We formalize this capability as full-scene household reasoning: given a complete household scene and a situated household request, an agent must infer executable task structure before producing a grounded skill-level action sequence. This setting is challenging because complete household scenes contain substantial task-irrelevant information, making direct complete-scene prompting inefficient and error-prone. In practical deployment, this challenge is further amplified by privacy and local compute constraints, which favor compact open-weight models with limited long-context reasoning ability. We propose TaskGround, a training-free and model-agnostic Ground-Infer-Execute framework that grounds complete scenes into compact task-relevant scene slices, infers executable task structure, and compiles it into grounded skill-level action sequences. To evaluate this setting, we introduce FullHome, a human-validated evaluation suite of 400 household tasks spanning diverse home-scale environments and both goal-oriented and process-constrained requirements. On FullHome, TaskGround improves task success rates by large margins across both proprietary and open-weight models. Notably, it makes Qwen3.5-9B competitive with GPT-5 under direct complete-scene prompting while reducing total input-token cost by up to 18x. Our results identify executable task-structure inference as a central bottleneck in full-scene household reasoning and show that structured grounding can make compact local models substantially more effective for practical household deployment.",
+      "authors": [
+        "ZhiYuan Feng",
+        "Yu Deng",
+        "Ruichuan An",
+        "Zhenhua Liu",
+        "Qixiu Li",
+        "Keming Wu",
+        "Zhiying Du",
+        "Weijie Wang",
+        "Haoxiao Wang",
+        "Shuang Chen",
+        "Sicheng Xu",
+        "Yaobo Liang",
+        "Jiaolong Yang",
+        "Baining Guo"
+      ],
+      "published": "2026-05-18T09:19:20Z",
+      "updated": "2026-05-18T09:19:20Z",
+      "url": "https://arxiv.org/abs/2605.18109",
+      "pdf_url": "https://arxiv.org/pdf/2605.18109.pdf",
+      "primary_category": "cs.AI",
+      "categories": [
+        "cs.AI",
+        "cs.CV",
+        "cs.RO"
+      ],
+      "tags": [
+        "cs.AI",
+        "cs.CV",
+        "cs.RO"
+      ],
+      "domain": "Agent",
+      "pdf_downloaded": true,
+      "pdf_size_bytes": 10231703,
+      "pdf_path": "2026-05-19/agent/2605.18109.pdf"
+    },
+    {
+      "id": "2605.18077",
+      "title": "LLM-Guided Communication for Cooperative Multi-Agent Reinforcement Learning",
+      "abstract": "Communication is a key component in multi-agent reinforcement learning (MARL) for mitigating partial observability, yet prior approaches often rely on inefficient information exchange or fail to transmit sufficient state information. To address this, we propose LLM-driven Multi-Agent Communication (LMAC), which leverages an LLM's reasoning capability to design a communication protocol that enables all agents to reconstruct the underlying state as accurately and uniformly as possible. LMAC iteratively refines the protocol using an explicit state-awareness criterion, improving state recovery while narrowing differences in agents' knowledge. Experiments on diverse MARL benchmarks show that LMAC improves state reconstruction across agents and yields substantial performance gains over prior communication baselines.",
+      "authors": [
+        "Sangjun Bae",
+        "Yisak Park",
+        "Sanghyeon Lee",
+        "Seungyul Han"
+      ],
+      "published": "2026-05-18T08:56:07Z",
+      "updated": "2026-05-18T08:56:07Z",
+      "url": "https://arxiv.org/abs/2605.18077",
+      "pdf_url": "https://arxiv.org/pdf/2605.18077.pdf",
+      "primary_category": "cs.AI",
+      "categories": [
+        "cs.AI",
+        "cs.LG",
+        "cs.MA"
+      ],
+      "tags": [
+        "cs.AI",
+        "cs.LG",
+        "cs.MA"
+      ],
+      "domain": "Agent",
+      "pdf_downloaded": true,
+      "pdf_size_bytes": 6287809,
+      "pdf_path": "2026-05-19/agent/2605.18077.pdf"
+    },
+    {
+      "id": "2605.18074",
+      "title": "4DLidarOpen: An Open 4D FMCW Lidar Dataset for Motion-Aware Autonomous Driving",
+      "abstract": "We present 4DLidarOpen, a large-scale open multi-modal dataset for autonomous driving, centered on 4D frequency-modulated continuous-wave (FMCW) Lidar sensing. Unlike conventional time-of-flight Lidar datasets that mainly provide geometric measurements, 4DLidarOpen includes point-wise radial velocity measurements from a forward-facing 4D FMCW Lidar, together with multiple Lidars of different types, including rotating, solid-state, and blind-spot variants, surround-view cameras, and 6-DOF ego-vehicle poses. The dataset was collected in complex urban environments in Beijing and covers dense pedestrian interactions, congested traffic, high-speed driving, and unprotected maneuvers. 4DLidarOpen provides synchronized multi-sensor data and 3D bounding-box annotations with persistent track IDs across five object categories. A hybrid annotation strategy is adopted, where large-scale auto-labeled data support scalable training and human experts refine annotations for the human-annotated training and validation sets. Based on this dataset, we establish benchmarks for 3D object detection, birds-eye view (BEV) segmentation and flow prediction, and motion forecasting with planning. Extensive experiments show that direct velocity measurements from 4D FMCW Lidar provide complementary motion cues for dynamic-scene understanding. Compared with geometric-only sensing, the velocity-aware representation improves motion-related perception and downstream forecasting and planning, especially in scenarios involving vulnerable road users and fast-moving objects. These results indicate that 4D FMCW Lidar is a promising sensing modality for motion-aware autonomous driving. The dataset and evaluation toolkit are publicly released to support research on 4D scene understanding, multi-Lidar fusion, and velocity-aware perception and planning.",
+      "authors": [
+        "Kane Qian",
+        "Xin Zhao",
+        "Yining Shi",
+        "Rujun Yan",
+        "Zhengqing Pan",
+        "Kaojin Zhu",
+        "Mengmeng Yang",
+        "Kai Sun",
+        "Diange Yang",
+        "Kun Jiang"
+      ],
+      "published": "2026-05-18T08:55:32Z",
+      "updated": "2026-05-18T08:55:32Z",
+      "url": "https://arxiv.org/abs/2605.18074",
+      "pdf_url": "https://arxiv.org/pdf/2605.18074.pdf",
+      "primary_category": "cs.RO",
+      "categories": [
+        "cs.RO"
+      ],
+      "tags": [
+        "cs.RO"
+      ],
+      "domain": "Agent",
+      "pdf_downloaded": true,
+      "pdf_size_bytes": 3627803,
+      "pdf_path": "2026-05-19/agent/2605.18074.pdf"
+    },
+    {
+      "id": "2605.18059",
+      "title": "Bench2Drive-Robust: Benchmarking Closed-Loop Autonomous Driving under Deployment Perturbations",
+      "abstract": "Robustness is a critical requirement for deploying autonomous driving systems in the real world. Existing robustness benchmarks for autonomous driving have made important progress in studying the effects of image-level corruptions, such as adverse weather or camera degradation, on perception modules and open-loop planning outputs. However, deployment can also involve system-level imperfections, such as inference latency and ego-state estimation errors, which remain less studied in closed-loop E2E-AD evaluation. These imperfections can accumulate through the feedback loop and destabilize control. In this work, we present Bench2Drive-Robust, to our knowledge the first device-centric robustness benchmark for closed-loop end-to-end autonomous driving under realistic deployment perturbations. We systematically evaluate deployment-oriented perturbations arising from three major sources: camera-stream failures (frame drop, partial observation), ego-state estimation errors (GPS noise, and speed or odometry errors), and compute-induced control delay (model inference delay). We evaluate representative end-to-end driving methods and analyze their robustness under different perturbation severities. Our results show that these deployment-related perturbations can substantially degrade closed-loop driving performance, revealing robustness challenges that are not fully captured by conventional image-level corruption evaluations. By establishing a closed-loop evaluation protocol and demonstrating the substantial impact of these deployment-oriented perturbations, Bench2Drive-Robust defines practical robustness problems for end-to-end autonomous driving and encourages further research on deployment-aware robust driving systems.",
+      "authors": [
+        "Zhiyuan Zhang",
+        "Zhenghao Jin",
+        "Yanlun Peng",
+        "Xianda Guo",
+        "Haoran Liu",
+        "Shaofeng Zhang",
+        "Xingjun Ma",
+        "Zuxuan Wu",
+        "Junchi Yan",
+        "Xiaosong Jia",
+        "Yu-Gang Jiang"
+      ],
+      "published": "2026-05-18T08:45:24Z",
+      "updated": "2026-05-18T08:45:24Z",
+      "url": "https://arxiv.org/abs/2605.18059",
+      "pdf_url": "https://arxiv.org/pdf/2605.18059.pdf",
+      "primary_category": "cs.RO",
+      "categories": [
+        "cs.RO"
+      ],
+      "tags": [
+        "cs.RO"
+      ],
+      "domain": "Agent",
+      "pdf_downloaded": true,
+      "pdf_size_bytes": 10622165,
+      "pdf_path": "2026-05-19/agent/2605.18059.pdf"
+    },
+    {
+      "id": "2605.18047",
+      "title": "FUSE: A Framework for Unified State Estimation in Robotic SLAM Systems",
+      "abstract": "Tightly coupled SLAM formulations under mixed-rate sensing often bind temporal processing, local geometric association, estimator formulation, and map-update policy into method-specific designs. Such binding makes it difficult to vary one design choice without re-engineering the rest of the state-estimation process. This paper presents FUSE, a framework for unified state estimation in robotic SLAM systems. FUSE organizes the state-estimation interface around observation ingestion, propagation, update, and state query, and uses this interface to separate temporal processing, residual-ready local geometric association, estimator formulation, and map-update policy. A LiDAR--IMU instantiation is developed to examine the framework under mixed-rate sensing and directional degeneracy, where high-rate inertial propagation, LiDAR-triggered geometric update, residual screening, and degeneracy-aware correction operate through the same interface boundaries. On a 418 m loop-corridor sequence, the instantiation reports a 1.626~m end-to-end trajectory error, corresponding to a 7.9% relative error reduction compared with Faster-LIO, the lowest-error baseline on this sequence. The results support FUSE as a framework for organizing state-estimation design choices and show how the evaluated instantiation regularizes updates along weakly observable directions.",
+      "authors": [
+        "Wei Wu",
+        "Honglin Chen",
+        "Wenhan Cao",
+        "Yao Lyu",
+        "Jiangtao Li",
+        "Tao Zhang",
+        "Shengbo Eben Li"
+      ],
+      "published": "2026-05-18T08:36:04Z",
+      "updated": "2026-05-18T08:36:04Z",
+      "url": "https://arxiv.org/abs/2605.18047",
+      "pdf_url": "https://arxiv.org/pdf/2605.18047.pdf",
+      "primary_category": "cs.RO",
+      "categories": [
+        "cs.RO"
+      ],
+      "tags": [
+        "cs.RO"
+      ],
+      "domain": "Agent",
+      "pdf_downloaded": true,
+      "pdf_size_bytes": 6328809,
+      "pdf_path": "2026-05-19/agent/2605.18047.pdf"
+    }
+  ]
+}
