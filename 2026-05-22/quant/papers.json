@@ -1,0 +1,353 @@
+{
+  "domain": "Quant",
+  "date": "2026-05-22",
+  "count": 13,
+  "papers": [
+    {
+      "id": "2605.22792",
+      "title": "From Arbitrage Removal to Density Extraction: A Model-Free Framework for Short-Dated Options",
+      "abstract": "We study risk-neutral density extraction from short-dated option chains. As expiry approaches, option premia decline and bid--ask spreads can be large relative to prices, making mid quotes particularly uninformative. Stale or asynchronous quotes may also generate potential static arbitrages, rendering standard procedures infeasible or unstable. We develop a model-free pipeline that treats bid-ask quotes as the primitive market constraint. The pipeline consists of two steps. First, a procedure called ``Arbitrage Removal Iterative Executable Strategy'' (ARIES) filters executable static arbitrage at quoted bid and ask prices under market-depth constraints. Second, the ``Smooth Entropic Density EXtraction'' (SEDEx) then recovers the density through a criterion leveraging smoothness and entropy under bid-ask constraints. We test the pipeline on synthetic Heston panels and short-dated SPX option data, sampled from a few hours to one week before expiry. Computation is fast and returns robust densities across various market conditions, including scheduled macroeconomic announcements. As an empirical application, we use the recovered densities to construct short dated implied-volatility smiles.",
+      "authors": [
+        "Aaron Wizman",
+        "Gabriel Turinici",
+        "Gregory Merran"
+      ],
+      "published": "2026-05-21T17:46:10Z",
+      "updated": "2026-05-21T17:46:10Z",
+      "url": "https://arxiv.org/abs/2605.22792",
+      "pdf_url": "https://arxiv.org/pdf/2605.22792.pdf",
+      "primary_category": "q-fin.CP",
+      "categories": [
+        "q-fin.CP",
+        "q-fin.MF",
+        "q-fin.PR"
+      ],
+      "tags": [
+        "q-fin.CP",
+        "q-fin.MF",
+        "q-fin.PR"
+      ],
+      "domain": "Quant",
+      "pdf_downloaded": true,
+      "pdf_size_bytes": 3908680,
+      "pdf_path": "2026-05-22/quant/2605.22792.pdf"
+    },
+    {
+      "id": "2605.22427",
+      "title": "Faster Monotone Implied Volatility Solver",
+      "abstract": "We present ThiopheneIV, a Black-Scholes implied-volatility solver with a monotone core and explicit production guards. Prices are first reduced to J\u00e4ckel's out-of-the-money normalisation and inverted through a tail-stable logarithmic price equation. The solver starts from the non-iterative Choi-Huh-Su L3 lower-bound seed and applies three Euler-Chebyshev corrections. In exact arithmetic, the seed is below the admissible root and the Euler-Chebyshev map increases monotonically without overshooting; the proof is included. The implementation then adds the floating-point machinery needed in practice: parity normalisation, microscopic Bachelier-limit handling, saturated-price treatment, finite-update checks, fallback seeds, and an optional J\u00e4ckel-Newton polish. Against the highly accurate expanded J\u00e4ckel reference price, ThiopheneIV is faster than a Java port of J\u00e4ckel's Let's Be Rational while keeping regular-grid errors close. ThiopheneIV+ adds one final J\u00e4ckel-Newton correction for systems that need closer agreement with that expanded reference price. The broader lesson is that a convergence proof gives a clean core, but robust production inversion still depends on boundary handling and on the pricing objective one chooses to match.",
+      "authors": [
+        "Fabien Le Floc'h"
+      ],
+      "published": "2026-05-21T12:48:56Z",
+      "updated": "2026-05-21T12:48:56Z",
+      "url": "https://arxiv.org/abs/2605.22427",
+      "pdf_url": "https://arxiv.org/pdf/2605.22427.pdf",
+      "primary_category": "q-fin.CP",
+      "categories": [
+        "q-fin.CP",
+        "q-fin.PR"
+      ],
+      "tags": [
+        "q-fin.CP",
+        "q-fin.PR"
+      ],
+      "domain": "Quant",
+      "pdf_downloaded": true,
+      "pdf_size_bytes": 2318683,
+      "pdf_path": "2026-05-22/quant/2605.22427.pdf"
+    },
+    {
+      "id": "2605.22215",
+      "title": "A Generative Adversarial Graph Neural Network for Synthetic Time Series Data",
+      "abstract": "Generating synthetic data for financial time series poses challenges, especially considering their non-stationary nature. Traditional statistical time series models normally assume weak stationarity. However, this assumption can constrain their effectiveness. Deep learning models, particularly Generative Adversarial Networks (GANs), have exhibited considerable potential in emulating complex probability distributions. GANs employ a generator-discriminator framework, where the generator creates data samples, while the discriminator distinguishes real from generated data. In this research, we introduce the Sig-Graph GAN model, which integrates the time-series signature, offering a structured summary of its temporal evolution; the Long Short-Term Memory network, capturing its inherent autoregressive structure; and Graph Neural Networks (GNNs), leveraging geometric patterns within the time-series data. To employ GNNs optimally, we use the visibility graph algorithm to derive a graph-based representation of the underlying time series. Numerical evaluations demonstrate that the Sig-Graph GAN model outperforms baseline methods in replicating the distribution of logarithmic returns across different stock exchanges. The integration of the graph structure with the autoregressive component effectively captures both geometric and temporal patterns embedded in time-series data. This research advances the field of GAN models for time series by introducing a model capable of leveraging both autoregressive properties and geometric structures for synthetic data generation.",
+      "authors": [
+        "Marco Gregnanin",
+        "Johannes De Smedt",
+        "Giorgio Gnecco",
+        "Maurizio Parton"
+      ],
+      "published": "2026-05-21T09:19:21Z",
+      "updated": "2026-05-21T09:19:21Z",
+      "url": "https://arxiv.org/abs/2605.22215",
+      "pdf_url": "https://arxiv.org/pdf/2605.22215.pdf",
+      "primary_category": "cs.CE",
+      "categories": [
+        "cs.CE",
+        "q-fin.CP"
+      ],
+      "tags": [
+        "cs.CE",
+        "q-fin.CP"
+      ],
+      "domain": "Quant",
+      "pdf_downloaded": true,
+      "pdf_size_bytes": 586315,
+      "pdf_path": "2026-05-22/quant/2605.22215.pdf"
+    },
+    {
+      "id": "2605.21759",
+      "title": "An optimal transport foundation for a class of dynamically consistent risk measures",
+      "abstract": "We study a class of dynamically consistent risk measures that robustify a time-homogeneous Markovian reference model by allowing for distributional uncertainty in its transition laws. We start from one-step convex risk evaluations in which ambiguity is captured by penalized worst-case expectations over alternative transition laws. Imposing time consistency then yields a convex monotone semigroup on bounded continuous payoff functions, and this semigroup represents the associated dynamic risk measure. The semigroup is uniquely characterized by its risk generator. Under a lower bound on the family of penalties in terms of suitable optimal transport costs relative to the reference laws, we identify the generator on smooth test functions. For optimal transport bounds with linear small-time scaling, this produces a first-order, drift-type correction given by a convex Hamiltonian acting on the gradient. Under martingale transport constraints and a different scaling, however, the leading correction is genuinely of second order and is described by a convex monotone functional acting on the Hessian. We illustrate both regimes for Wasserstein and martingale Wasserstein penalizations and derive explicit formulas via convex conjugates of the underlying transport costs. The associated dynamic risk measures admit stochastic control representations in which the control acts on the drift in the first-order case and on the volatility in the second-order case.",
+      "authors": [
+        "Sven Fuhrmann",
+        "Michael Kupper",
+        "Max Nendel"
+      ],
+      "published": "2026-05-20T21:42:48Z",
+      "updated": "2026-05-20T21:42:48Z",
+      "url": "https://arxiv.org/abs/2605.21759",
+      "pdf_url": "https://arxiv.org/pdf/2605.21759.pdf",
+      "primary_category": "q-fin.MF",
+      "categories": [
+        "q-fin.MF",
+        "math.OC",
+        "math.PR"
+      ],
+      "tags": [
+        "math.OC",
+        "math.PR",
+        "q-fin.MF"
+      ],
+      "domain": "Quant",
+      "pdf_downloaded": true,
+      "pdf_size_bytes": 565296,
+      "pdf_path": "2026-05-22/quant/2605.21759.pdf"
+    },
+    {
+      "id": "2605.21696",
+      "title": "What Does Deep Hedging Actually Learn? Delta Corrections, Regime Fragility, and Symbolic Distillation",
+      "abstract": "This paper studies empirical deep hedging for S&P 500 index options under a local downside-shortfall reward. It moves beyond performance comparison by asking what the learned hedge does, when it fails, and whether it can be made auditable. TD3 agents are compared with a daily-updated Black-Scholes delta hedge on the same option episodes. In walk-forward tests from 2015 to 2023, the agents usually learn a systematic delta haircut relative to Black-Scholes. The correction is explained by spot-implied-volatility co-movement and often improves accumulated reward and terminal downside variance, but it is regime-fragile: 2022 exposes losses in adverse daily states, while 2023 shows that underhedging can raise ordinary variance when option P&L is spot-dominated and the volatility channel is unusually weak. Symbolic regression distills the neural policies into compact formulas that can be traded out of sample; these formulas preserve much of the reward, downside-variance, and CVaR advantage over Black-Scholes, and sometimes sharpen it, but inherit the same fragility in difficult regimes.",
+      "authors": [
+        "Kirill Zernikov"
+      ],
+      "published": "2026-05-20T19:56:30Z",
+      "updated": "2026-05-20T19:56:30Z",
+      "url": "https://arxiv.org/abs/2605.21696",
+      "pdf_url": "https://arxiv.org/pdf/2605.21696.pdf",
+      "primary_category": "q-fin.RM",
+      "categories": [
+        "q-fin.RM",
+        "q-fin.CP",
+        "q-fin.PR"
+      ],
+      "tags": [
+        "q-fin.CP",
+        "q-fin.PR",
+        "q-fin.RM"
+      ],
+      "domain": "Quant",
+      "pdf_downloaded": true,
+      "pdf_size_bytes": 1114155,
+      "pdf_path": "2026-05-22/quant/2605.21696.pdf"
+    },
+    {
+      "id": "2605.21409",
+      "title": "Portfolio Preference Elicitation in Institutional Crossing Markets",
+      "abstract": "Institutional crossing platforms face a hidden-information problem: investors value trades as portfolios, but liquidity discovery is typically organized around individual securities. We model portfolio crossing as limited-communication preference elicitation over signed portfolio trades. The platform first uses price-directed demand queries to search the portfolio space and then verifies selected packages through value queries; an incumbent verification query records the demand-discovered allocation before further exploration. Final allocations are chosen from elicited reports, so the learning model guides queries but does not determine welfare. The analysis shows why search and verification are complementary. Demand queries locate high-value regions of a nonseparable portfolio space, but they provide only conservative welfare evidence unless selected packages are verified. Value queries provide exact welfare comparisons, but they are ineffective when applied to poorly targeted packages. Market-calibrated experiments using equity panels from the United States, Korea, Japan, and Germany show that demand-only and value-only designs recover only about half of full-information welfare under a limited query budget, whereas the hybrid procedure recovers 88\\% and approaches 95\\% as communication expands. We then compare exact security-level packages with factor-completed basket packages within the same allocation rule. Security-level packages are the unadjusted-efficiency mode when exact-securities disclosure is inexpensive. Factor-completed baskets become preferable when pretrade message informativeness is costly. The results characterize portfolio crossing as a selective verification problem and identify disclosure-sensitive package representation as a core design choice for hidden liquidity platforms.",
+      "authors": [
+        "Yoontae Hwang"
+      ],
+      "published": "2026-05-20T17:08:14Z",
+      "updated": "2026-05-20T17:08:14Z",
+      "url": "https://arxiv.org/abs/2605.21409",
+      "pdf_url": "https://arxiv.org/pdf/2605.21409.pdf",
+      "primary_category": "q-fin.PM",
+      "categories": [
+        "q-fin.PM",
+        "q-fin.CP"
+      ],
+      "tags": [
+        "q-fin.CP",
+        "q-fin.PM"
+      ],
+      "domain": "Quant",
+      "pdf_downloaded": true,
+      "pdf_size_bytes": 601428,
+      "pdf_path": "2026-05-22/quant/2605.21409.pdf"
+    },
+    {
+      "id": "2605.21192",
+      "title": "The Statistical Significance of the Inclusion of Graph Neural Networks in the Financial Time Series Forecasting Problem",
+      "abstract": "Forecasting univariate time series in the financial market is a challenging endeavor. While numerous statistical and machine learning models have been introduced to address this challenge, they typically concentrate solely on analyzing temporal patterns within the time series data. In this research, we study the statistical significance of the inclusion of geometric patterns in enhancing forecasting accuracy within the context of time series analysis. We introduce the Time-Geometric model, a combination of models designed to exploit both geometric and temporal patterns. The contribution of this research lies in advancing the domain of univariate time series prediction,as demonstrated through extensive empirical evaluations. Our findings underscore that leveraging geometric patterns, captured through Graph Neural Networks, yields statistically significant improvements in forecasting accuracy.",
+      "authors": [
+        "Marco Gregnanin",
+        "Johannes De Smedt",
+        "Giorgio Gnecco",
+        "Maurizio Parton"
+      ],
+      "published": "2026-05-20T13:55:54Z",
+      "updated": "2026-05-20T13:55:54Z",
+      "url": "https://arxiv.org/abs/2605.21192",
+      "pdf_url": "https://arxiv.org/pdf/2605.21192.pdf",
+      "primary_category": "cs.CE",
+      "categories": [
+        "cs.CE",
+        "q-fin.CP"
+      ],
+      "tags": [
+        "cs.CE",
+        "q-fin.CP"
+      ],
+      "domain": "Quant",
+      "pdf_downloaded": true,
+      "pdf_size_bytes": 2913607,
+      "pdf_path": "2026-05-22/quant/2605.21192.pdf"
+    },
+    {
+      "id": "2605.21009",
+      "title": "Wartime Controls, Political Connections, and the Pricing of Zaibatsu Rents in Japan, 1930-1943",
+      "abstract": "This paper examines how wartime economic controls shaped stock-price formation in Japan from 1930 to 1943. We develop a four-portfolio asset-pricing model in which zaibatsu affiliation affects expected payoffs and the translation of valuations into economic scale through lower financing wedges. We then construct daily capitalization-weighted indices and four benchmark portfolios based on a two-by-two sort by zaibatsu affiliation and military orientation. Using a CAPM-AR(p)-SV event-study framework that allows for serial correlation and stochastic volatility, we show that the model rationalizes capitalization concentration, segmented abnormal returns, delayed cumulative adjustment, regime-risk insulation of zaibatsu portfolios, and zaibatsu-concentrated responses to embedded-rent or group-continuation shocks. The evidence is consistent not with a collapse of semi-strong efficiency, but with institutionally contingent efficiency: stock prices continued to respond to news while capitalizing uneven access to credit, materials, and procurement.",
+      "authors": [
+        "Keiichi Morimoto",
+        "Akihiko Noda",
+        "Takenobu Yuki"
+      ],
+      "published": "2026-05-20T10:45:19Z",
+      "updated": "2026-05-20T10:45:19Z",
+      "url": "https://arxiv.org/abs/2605.21009",
+      "pdf_url": "https://arxiv.org/pdf/2605.21009.pdf",
+      "primary_category": "econ.GN",
+      "categories": [
+        "econ.GN",
+        "q-fin.PR",
+        "q-fin.ST"
+      ],
+      "tags": [
+        "econ.GN",
+        "q-fin.PR",
+        "q-fin.ST"
+      ],
+      "domain": "Quant",
+      "pdf_downloaded": true,
+      "pdf_size_bytes": 1245953,
+      "pdf_path": "2026-05-22/quant/2605.21009.pdf"
+    },
+    {
+      "id": "2605.20636",
+      "title": "Continuous Timing Signals for Growth-Defensive Style Allocation: Factor Attribution, Risk Matching, and Out-of-Sample Evidence",
+      "abstract": "This paper studies conditional allocation between a growth/technology ETF basket, denoted by $G$, and a defensive income/value-oriented ETF basket, denoted by $D$. The objective is not to discover a new standalone alpha factor, but to examine whether known style exposures can be dynamically allocated using macro-market timing signals. Fama-French five-factor plus momentum attribution shows that the relative portfolio $G-D$ is a recognizable style portfolio: its market beta is 0.273, its HML beta is -0.552, its momentum beta is 0.117, and its annualized alpha is 1.95\\% with a Newey-West t-statistic of only 0.81. The empirical object is therefore interpreted as a growth-versus-defensive style allocation problem rather than a new return anomaly. The allocation framework replaces discrete regime labels and if-then trading rules with a continuous smooth score. The score combines rate relief, SPY drawdown depth, high-VIX stress relief, and a growth-crowding penalty. Interaction terms are smoothed with softplus functions, the total score is mapped to G/D weights through a hyperbolic tangent function, and realized weights are smoothed with EWMA. In the main aligned comparison window from June 28, 2017 to May 15, 2026, with 10bp transaction costs, the selected smooth-score policy uses a 50\\% maximum active tilt and obtains a 19.24\\% CAGR, a Sharpe ratio of 1.01, and a maximum drawdown of -31.63\\%. It improves over 50/50 G/D, matched TNX-only, matched core-only, SPY, and volatility-matched 100\\% G benchmarks. It does not, however, exceed 100\\% G or the best high-G static portfolios in raw CAGR. Walk-forward and post-2022 validations provide additional evidence of drawdown reduction and risk-adjusted allocation value. Overall, the evidence supports continuous, interpretable style timing, while also showing that high static growth exposure remains a strong benchmark.",
+      "authors": [
+        "Zheli Xiong"
+      ],
+      "published": "2026-05-20T02:45:07Z",
+      "updated": "2026-05-20T02:45:07Z",
+      "url": "https://arxiv.org/abs/2605.20636",
+      "pdf_url": "https://arxiv.org/pdf/2605.20636.pdf",
+      "primary_category": "q-fin.PM",
+      "categories": [
+        "q-fin.PM"
+      ],
+      "tags": [
+        "q-fin.PM"
+      ],
+      "domain": "Quant",
+      "pdf_downloaded": true,
+      "pdf_size_bytes": 2225274,
+      "pdf_path": "2026-05-22/quant/2605.20636.pdf"
+    },
+    {
+      "id": "2605.20348",
+      "title": "Memory-Induced Supra-Competitive Outcomes Between Deep Reinforcement Learning Agents in Optimal Trade Execution",
+      "abstract": "In this paper, we investigate whether deep reinforcement-learning agents interacting in a shared optimal-execution environment can sustain supra-competitive outcomes, in the sense of achieving lower implementation shortfalls than the relevant game-theoretical competitive benchmark. We study a two-agent Almgren-Chriss liquidation game and examine how learned behavior depends on intra-episode environment feedback, the ability to interpret the mid-price and the agent's knoledge of the past. We first use ex-ante schedule-learning agents to remove intra-episode feedback and isolate what can arise when agents commit to complete liquidation trajectories before execution begins. We then allow agents to condition on the evolving state using a variety of DDQN architectures. We find that, when agents are given access to intra-episode history, especially recent prices and own past actions, supra-competitive outcomes become substantially more frequent and more persistent. These findings indicate that supra-competitive behavior in this execution game is driven not by multi-agent learning or by current price observation alone, but by feedback, memory, and state-contingent interaction along the realized execution path.",
+      "authors": [
+        "Christos Spyridon Koulouris",
+        "Carlo Campajola"
+      ],
+      "published": "2026-05-19T18:03:48Z",
+      "updated": "2026-05-19T18:03:48Z",
+      "url": "https://arxiv.org/abs/2605.20348",
+      "pdf_url": "https://arxiv.org/pdf/2605.20348.pdf",
+      "primary_category": "q-fin.CP",
+      "categories": [
+        "q-fin.CP",
+        "cs.AI"
+      ],
+      "tags": [
+        "cs.AI",
+        "q-fin.CP"
+      ],
+      "domain": "Quant",
+      "pdf_downloaded": true,
+      "pdf_size_bytes": 4879439,
+      "pdf_path": "2026-05-22/quant/2605.20348.pdf"
+    },
+    {
+      "id": "2605.20142",
+      "title": "Mining Financial Data using Mixtures of Mirrored Weibull Distributions",
+      "abstract": "Risk management is an important part of financial practice, essential for protecting assets and investments in modern-day volatile markets. This paper proposes a mixture of mirrored Weibull (MMW) distribution for modelling stock returns and estimating risk measures. Unlike common practices which are typically based on the normal distribution, the MMW model can flexibly accommodate non-normal features frequently exhibited in financial data. It also enjoys appealing properties such as having a simple density expression and fast parameter estimation. We demonstrate the effectiveness of our model by assessing its performance in Value-at-Risk (VaR) estimation of three S&P500 stocks. The MMW model compares favourably to Gaussian mixture model and t-mixture model, with significant improvements in VaR estimation and prediction.",
+      "authors": [
+        "Zijun Jia",
+        "Sharon X. Lee"
+      ],
+      "published": "2026-05-19T17:30:53Z",
+      "updated": "2026-05-19T17:30:53Z",
+      "url": "https://arxiv.org/abs/2605.20142",
+      "pdf_url": "https://arxiv.org/pdf/2605.20142.pdf",
+      "primary_category": "stat.AP",
+      "categories": [
+        "stat.AP",
+        "q-fin.ST"
+      ],
+      "tags": [
+        "q-fin.ST",
+        "stat.AP"
+      ],
+      "domain": "Quant",
+      "pdf_downloaded": true,
+      "pdf_size_bytes": 294288,
+      "pdf_path": "2026-05-22/quant/2605.20142.pdf"
+    },
+    {
+      "id": "2605.19278",
+      "title": "Do Better Volatility Forecasts Lead to Better Portfolios? Evidence from Graph Neural Networks",
+      "abstract": "This paper tests whether graph neural networks improve realized volatility forecasts and whether those forecasts improve portfolio performance. Using weekly realized volatility for 465 S&P 500 equities from 2015-2025, Heterogeneous Autoregressive and Long Short-Term Memory baselines are compared against GraphSAGE models built on rolling correlation, sector, and Granger-causal graphs, with and without macro regime features. The empirical finding is that the model with the lowest forecast MSE, the model with the highest cross-sectional ranking accuracy, and the model with the highest portfolio Sharpe ratio are three different models. Forecast accuracy, ranking quality, and portfolio performance are related but not interchangeable objectives. Graph volatility models add value only when the portfolio rule can exploit the cross-sectional structure they encode.",
+      "authors": [
+        "Rylan Wade"
+      ],
+      "published": "2026-05-19T02:52:00Z",
+      "updated": "2026-05-20T14:49:39Z",
+      "url": "https://arxiv.org/abs/2605.19278",
+      "pdf_url": "https://arxiv.org/pdf/2605.19278.pdf",
+      "primary_category": "q-fin.PM",
+      "categories": [
+        "q-fin.PM",
+        "cs.LG"
+      ],
+      "tags": [
+        "cs.LG",
+        "q-fin.PM"
+      ],
+      "domain": "Quant",
+      "pdf_downloaded": true,
+      "pdf_size_bytes": 226701,
+      "pdf_path": "2026-05-22/quant/2605.19278.pdf"
+    },
+    {
+      "id": "2605.19146",
+      "title": "Designing On-Chain Options: Amortizing Perpetual Options",
+      "abstract": "Financial options are fundamental to traditional markets, enabling strategies ranging from hedging to speculating. Yet, while the Automated Market Maker paradigm has revolutionized decentralized spot markets, no equivalent standard has emerged for on-chain options. Typical designs attempt to replicate centralized exchange mechanics, requiring high-frequency oracles and robust liquidation engines which may fail during stress events. This paper presents a design for amortizing perpetual options tailored to the operational and adversarial constraints of blockchain environments. Leveraging this primitive, we introduce a decentralized market framework with minimal consistency requirements. We demonstrate that this contract functions as a foundational risk primitive for DeFi, enabling applications such as endogenous collateralization and explicitly priced de-peg insurance, thereby showing that this design provides a layer for mutualizing tail risk across protocols without reliance on centralized clearing institutions.",
+      "authors": [
+        "Maxim Bichuch",
+        "Zachary Feinstein"
+      ],
+      "published": "2026-05-18T21:56:19Z",
+      "updated": "2026-05-18T21:56:19Z",
+      "url": "https://arxiv.org/abs/2605.19146",
+      "pdf_url": "https://arxiv.org/pdf/2605.19146.pdf",
+      "primary_category": "q-fin.MF",
+      "categories": [
+        "q-fin.MF",
+        "cs.CE"
+      ],
+      "tags": [
+        "cs.CE",
+        "q-fin.MF"
+      ],
+      "domain": "Quant",
+      "pdf_downloaded": true,
+      "pdf_size_bytes": 487535,
+      "pdf_path": "2026-05-22/quant/2605.19146.pdf"
+    }
+  ]
+}
