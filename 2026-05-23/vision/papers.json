@@ -1,0 +1,788 @@
+{
+  "domain": "Vision",
+  "date": "2026-05-23",
+  "count": 27,
+  "papers": [
+    {
+      "id": "2605.22823",
+      "title": "Which Way Did It Move? Diagnosing and Overcoming Directional Motion Blindness in Video-LLMs",
+      "abstract": "Video Large Language Models (Video-LLMs) have made rapid progress on temporal video understanding, yet many fail at a basic perceptual primitive: signed image-plane motion direction. On simple videos of a single object moving left, right, up, or down, most Video-LLMs perform near chance, with above-chance cases largely attributable to prediction biases rather than genuine direction understanding. We call this failure directional motion blindness. We localize the failure by tracing motion direction information through the Video-LLM pipeline. Motion direction remains linearly accessible from the vision encoder, projector, and LLM hidden states, but the readout fails to bind this signal to the correct verbal answer option, revealing a direction binding gap. Although synthetic motion direction instruction tuning reduces this gap on the source domain, motion direction concept vector analysis shows that visual complexity weakens the signal magnitude and limits out-of-domain generalization. We introduce MoDirect, a dataset family for motion direction instruction tuning and evaluation, and DeltaDirect, a diagnosis-driven, projector-level objective that predicts normalized 2-D motion vectors from adjacent-frame feature deltas. On MoDirect-SynBench, instruction tuning with DeltaDirect improves motion direction accuracy from 25.9% to 85.4%. On MoDirect-RealBench, DeltaDirect improves real-world motion direction accuracy by 21.9 points over the vanilla baseline without real-world tuning data, while preserving standard video-understanding performance. Code: https://github.com/KHU-VLL/DeltaDirect",
+      "authors": [
+        "Jongseo Lee",
+        "Hyuntak Lee",
+        "Sunghun Kim",
+        "Sooa Kim",
+        "Jihoon Chung",
+        "Jinwoo Choi"
+      ],
+      "published": "2026-05-21T17:59:56Z",
+      "updated": "2026-05-21T17:59:56Z",
+      "url": "https://arxiv.org/abs/2605.22823",
+      "pdf_url": "https://arxiv.org/pdf/2605.22823.pdf",
+      "primary_category": "cs.CV",
+      "categories": [
+        "cs.CV"
+      ],
+      "tags": [
+        "cs.CV"
+      ],
+      "domain": "Vision",
+      "pdf_downloaded": true,
+      "pdf_size_bytes": 4869662,
+      "pdf_path": "2026-05-23/vision/2605.22823.pdf"
+    },
+    {
+      "id": "2605.22819",
+      "title": "Cambrian-P: Pose-Grounded Video Understanding",
+      "abstract": "Camera pose matters. The position and orientation of each viewpoint define a shared spatial coordinate frame that relates observations across video frames. Yet this signal is largely absent from multimodal LLMs (MLLMs) for video understanding, which process frames as isolated 2D snapshots, instead of the persistent scene humans perceive. We revisit pose as a lightweight supervisory signal and introduce Cambrian-P, a video MLLM augmented with per-frame learnable camera tokens and a pose regression head. With a carefully designed sampling scheme, the model achieves substantial gains of 4.5-6.5% on spatial reasoning benchmarks such as VSI-Bench, generalizes across eight additional spatial and general video QA benchmarks, and, as a byproduct, achieves state of the art streaming pose estimation on ScanNet. Surprisingly, training on pseudo-annotated poses from in-the-wild video further improves general video QA benchmarks, showing pose helps beyond spatial reasoning. Together, these results position camera pose as a fundamental signal for video models that reason about the physical world.",
+      "authors": [
+        "Jihan Yang",
+        "Zifan Zhao",
+        "Xichen Pan",
+        "Shusheng Yang",
+        "Junyi Zhang",
+        "Bingyi Kang",
+        "Hu Xu",
+        "Saining Xie"
+      ],
+      "published": "2026-05-21T17:59:45Z",
+      "updated": "2026-05-21T17:59:45Z",
+      "url": "https://arxiv.org/abs/2605.22819",
+      "pdf_url": "https://arxiv.org/pdf/2605.22819.pdf",
+      "primary_category": "cs.CV",
+      "categories": [
+        "cs.CV"
+      ],
+      "tags": [
+        "cs.CV"
+      ],
+      "domain": "Vision",
+      "pdf_downloaded": true,
+      "pdf_size_bytes": 5719193,
+      "pdf_path": "2026-05-23/vision/2605.22819.pdf"
+    },
+    {
+      "id": "2605.22818",
+      "title": "MotiMotion: Motion-Controlled Video Generation with Visual Reasoning",
+      "abstract": "Current motion-controlled image-to-video generation models rigidly follow user-provided trajectories that are often sparse, imprecise, and causally incomplete. Such reliance often yields unnatural or implausible outcomes, especially by missing secondary causal consequences. To address this, we introduce MotiMotion, a novel framework that reformulates motion control as a reasoning-then-generation problem. To encourage causally grounded and commonsense-consistent interactions, we leverage a training-free vision-language reasoner to refine image-space coordinates of primary trajectories and to hallucinate plausible secondary motions. To further improve motion naturalness, we propose a confidence-aware control scheme that modulates guidance strength, enabling the model to closely follow high-confidence plans while correcting artifacts under low-confidence inputs with its internal generative priors. To support systematic evaluation, we curate a new image-to-video benchmark, MotiBench, consisting of interaction-centric scenes where new events are triggered by motion. Both VLM-based evaluation and a human study on MotiBench demonstrate that MotiMotion produces videos with more plausible object behaviors and interaction, and is preferred over existing approaches.",
+      "authors": [
+        "Lee Hsin-Ying",
+        "Hanwen Jiang",
+        "Yiqun Mei",
+        "Jing Shi",
+        "Ming-Hsuan Yang",
+        "Zhixin Shu"
+      ],
+      "published": "2026-05-21T17:59:36Z",
+      "updated": "2026-05-21T17:59:36Z",
+      "url": "https://arxiv.org/abs/2605.22818",
+      "pdf_url": "https://arxiv.org/pdf/2605.22818.pdf",
+      "primary_category": "cs.CV",
+      "categories": [
+        "cs.CV"
+      ],
+      "tags": [
+        "cs.CV"
+      ],
+      "domain": "Vision",
+      "pdf_downloaded": true,
+      "pdf_size_bytes": 8465798,
+      "pdf_path": "2026-05-23/vision/2605.22818.pdf"
+    },
+    {
+      "id": "2605.22809",
+      "title": "Sensor2Sensor: Cross-Embodiment Sensor Conversion for Autonomous Driving",
+      "abstract": "Robust training and validation of Autonomous Driving Systems (ADS) require massive, diverse datasets. Proprietary data collected by Autonomous Vehicle (AV) fleets, while high-fidelity, are limited in scale, diversity of sensor configurations, as well as geographic and long-tail-behavioral coverage. In contrast, in-the-wild data from sources like dashcams offers immense scale and diversity, capturing critical long-tail scenarios and novel environments. However, this unstructured, in-the-wild video data is incompatible with ADS expecting structured, multi-modal sensor inputs for validation and training. To bridge this data gap, we propose Sensor2Sensor, a novel generative modeling paradigm that translates in-the-wild monocular dashcam videos into a high-fidelity, multi-modal sensor suite (AV logs) comprising multi-view camera images and LiDAR point clouds. A core challenge is the lack of paired training data. We address this by converting real AV logs into dashcam-style videos via 4D Gaussian Splatting (4DGS) reconstruction and novel-view rendering. Sensor2Sensor then utilizes a diffusion architecture to perform the generative conversion. We perform comprehensive quantitative evaluations on the fidelity and realism of the generated sensor data. We demonstrate Sensor2Sensor's practical utility by converting challenging in-the-wild internet and dashcam footage into realistic, multi-modal data formats, further unlocking vast external data sources for AV development.",
+      "authors": [
+        "Jiahao Wang",
+        "Bo Sun",
+        "Yijing Bai",
+        "Vincent Casser",
+        "Songyou Peng",
+        "Zehao Zhu",
+        "Meng-Li Shih",
+        "Xander Masotto",
+        "Shih-Yang Su",
+        "Kanaad V Parvate",
+        "Tiancheng Ge",
+        "Linn Bieske",
+        "Dragomir Anguelov",
+        "Mingxing Tan",
+        "Chiyu Max Jiang"
+      ],
+      "published": "2026-05-21T17:57:17Z",
+      "updated": "2026-05-21T17:57:17Z",
+      "url": "https://arxiv.org/abs/2605.22809",
+      "pdf_url": "https://arxiv.org/pdf/2605.22809.pdf",
+      "primary_category": "cs.CV",
+      "categories": [
+        "cs.CV"
+      ],
+      "tags": [
+        "cs.CV"
+      ],
+      "domain": "Vision",
+      "pdf_downloaded": false,
+      "pdf_size_bytes": null,
+      "pdf_path": null
+    },
+    {
+      "id": "2605.22777",
+      "title": "DecQ: Detail-Condensing Queries for Enhanced Reconstruction and Generation in Representation Autoencoders",
+      "abstract": "Representation Autoencoders (RAEs) leverage frozen vision foundation models (VFMs) as tokenizer encoders, providing robust high-level representations that facilitate fast convergence and high-quality generation in latent diffusion models. However, freezing the VFM inherently constrains its spatial reconstruction capacity, limiting fine-grained generation and image editing; in contrast, incorporating reconstruction-oriented signals via fine-tuning disrupts the pretrained semantic space and degrades generative fidelity. To address this trade-off, we propose DecQ, a simple yet effective framework for RAEs. Specifically, DecQ introduces lightweight detail-condensing queries that extract fine-grained information from intermediate VFM features through condenser modules. These queries are incorporated into the decoder to support reconstruction and are jointly generated with patch tokens during generative modeling. By aggregating information from both shallow and deep layers, DecQ effectively mitigates the reconstruction--generation trade-off, improving both reconstruction quality and generative performance. Our experiments demonstrate that: (1) with only 8 additional queries and 3.9% extra computation, DecQ improves reconstruction over the frozen DINOv2-based RAE, increasing PSNR from 19.13 dB to 22.76 dB; and (2) for generative modeling, DecQ achieves 3.3$\\times$ faster convergence than RAE, attaining an FID of 1.41 without guidance and 1.05 with guidance.",
+      "authors": [
+        "Tianhang Wang",
+        "Yitong Chen",
+        "Wei Song",
+        "Zuxuan Wu",
+        "Min Li",
+        "Jiaqi Wang"
+      ],
+      "published": "2026-05-21T17:34:04Z",
+      "updated": "2026-05-21T17:34:04Z",
+      "url": "https://arxiv.org/abs/2605.22777",
+      "pdf_url": "https://arxiv.org/pdf/2605.22777.pdf",
+      "primary_category": "cs.CV",
+      "categories": [
+        "cs.CV"
+      ],
+      "tags": [
+        "cs.CV"
+      ],
+      "domain": "Vision",
+      "pdf_downloaded": true,
+      "pdf_size_bytes": 4839093,
+      "pdf_path": "2026-05-23/vision/2605.22777.pdf"
+    },
+    {
+      "id": "2605.22767",
+      "title": "Synthetic Data Alone is Enough? Rethinking Data Scarcity in Pediatric Rare Disease Recognition",
+      "abstract": "Children with rare genetic diseases often exhibit distinctive facial phenotypes, yet developing computer vision systems for early diagnosis remains challenging due to extreme data scarcity, privacy constraints, and limited data sharing in pediatric settings. These challenges not only hinder automated diagnosis but also restrict the availability of visual resources for clinical genetic counseling. While prior work has shown that synthetic data can augment real datasets and preserve phenotype-level semantics, it remains unclear whether synthetic data alone is sufficient for learning in ultra-low-resource pediatric settings. In this work, we study the synthetic-only regime for pediatric rare disease recognition. Under a controlled experimental setup, models are trained exclusively on phenotype-aware synthetic facial images at increasing scales. We find that synthetic-only training achieves performance comparable to real-data-only baselines at sufficient scale across multiple backbones, suggesting that high-fidelity synthetic data can approximate clinically meaningful distributions. These findings together further enable the use of synthetic pediatric facial images as privacy-preserving resources for genetic education and counseling, supporting clinician training and patient communication. Our results highlight the potential of computer vision to improve data efficiency and expand accessible visual tools in children's healthcare.",
+      "authors": [
+        "Ganlin Feng",
+        "Yuxi Long",
+        "Erin Lou",
+        "Lianghong Chen",
+        "Zihao Jing",
+        "Pingzhao Hu",
+        "Wei Xu"
+      ],
+      "published": "2026-05-21T17:28:11Z",
+      "updated": "2026-05-21T17:28:11Z",
+      "url": "https://arxiv.org/abs/2605.22767",
+      "pdf_url": "https://arxiv.org/pdf/2605.22767.pdf",
+      "primary_category": "cs.CV",
+      "categories": [
+        "cs.CV"
+      ],
+      "tags": [
+        "cs.CV"
+      ],
+      "domain": "Vision",
+      "pdf_downloaded": true,
+      "pdf_size_bytes": 486825,
+      "pdf_path": "2026-05-23/vision/2605.22767.pdf"
+    },
+    {
+      "id": "2605.22751",
+      "title": "Spectral Tail Auxiliary Learning for AI-Generated Image Detection",
+      "abstract": "As generative image models evolve rapidly, the perceptual gap between generated and real images continues to narrow, making AI-generated image detection increasingly challenging. Many existing methods exploit frequency-domain cues for detection, typically described as frequency-domain artifacts or high-frequency discrepancies. However, the specific and recurring spectral regularities remain insufficiently understood and characterized. In this paper, we systematically analyze the one-dimensional radial log-power spectra of real and generated images. We find that generated images do not necessarily exhibit higher or lower energy across the entire spectrum or high-band range. Instead, their spectra deviate from the power-law decay and show an anomalous uplift in the ultra-high-frequency tail. We term this phenomenon spectral tail uplift. We further attribute this phenomenon to nonlinear harmonic accumulation in trained generative models, suggesting that it can serve as a structural cue across generative architectures. Based on this observation, we propose Spectral Tail Auxiliary Learning (STAL), a frequency-domain auxiliary supervision framework for generalizable AI-generated image detection. STAL transfers spectral-tail cues from a tail-aware frequency teacher to a spatial detector during training, while all frequency-domain modules are discarded at inference time. Consequently, STAL introduces no inference overhead. Extensive experiments on 9 public datasets show that STAL achieves strong generalization and stability across generators, data distributions, and real-world scenarios.",
+      "authors": [
+        "Xingyi Li",
+        "Jiahui Zhang",
+        "Yiheng Li",
+        "Yun Cao",
+        "Wenhao Wang"
+      ],
+      "published": "2026-05-21T17:20:59Z",
+      "updated": "2026-05-21T17:20:59Z",
+      "url": "https://arxiv.org/abs/2605.22751",
+      "pdf_url": "https://arxiv.org/pdf/2605.22751.pdf",
+      "primary_category": "cs.CV",
+      "categories": [
+        "cs.CV"
+      ],
+      "tags": [
+        "cs.CV"
+      ],
+      "domain": "Vision",
+      "pdf_downloaded": true,
+      "pdf_size_bytes": 2006473,
+      "pdf_path": "2026-05-23/vision/2605.22751.pdf"
+    },
+    {
+      "id": "2605.22718",
+      "title": "WorldKV: Efficient World Memory with World Retrieval and Compression",
+      "abstract": "Autoregressive video diffusion models have enabled real-time, action-conditioned world generation. However, sustaining a persistent world, where revisiting a previously seen viewpoint yields consistent content, remains an open problem. Full KV-cache attention preserves this consistency but breaks real-time constraints: memory footprint and attention cost grow linearly with rollout length. Sliding window inference restores throughput but discards long-term consistency. We propose WorldKV, a training-free framework with two components: World Retrieval and World Compression. World Retrieval stores evicted KV-cache chunks in GPU/CPU memory and selectively retrieves scene-relevant chunks via camera/ action correspondence, inserting them back into the native attention window without re-encoding. World Compression prunes redundant tokens within each chunk via key-key similarity to an anchor frame, halving per-chunk storage to fit 2x more history under a fixed budget. On Matrix-Game-2.0 and LingBot- World-Fast, WorldKV matches or exceeds full-KV memory fidelity at roughly 2x the throughput, and is competitive with memory-trained baselines without any fine-tuning. Project Page: https://cvlab-kaist.github.io/WorldKV/",
+      "authors": [
+        "Jung Yi",
+        "Minjae Kim",
+        "Paul Hyunbin Cho",
+        "Wooseok Jang",
+        "Sangdoo Yun",
+        "Seungryong Kim"
+      ],
+      "published": "2026-05-21T16:55:04Z",
+      "updated": "2026-05-21T16:55:04Z",
+      "url": "https://arxiv.org/abs/2605.22718",
+      "pdf_url": "https://arxiv.org/pdf/2605.22718.pdf",
+      "primary_category": "cs.CV",
+      "categories": [
+        "cs.CV"
+      ],
+      "tags": [
+        "cs.CV"
+      ],
+      "domain": "Vision",
+      "pdf_downloaded": true,
+      "pdf_size_bytes": 15055009,
+      "pdf_path": "2026-05-23/vision/2605.22718.pdf"
+    },
+    {
+      "id": "2605.22715",
+      "title": "AnyMo: Geometry-Aware Setup-Agnostic Modeling of Human Motion in the Wild",
+      "abstract": "As wearable and mobile devices become increasingly embedded in daily life, they offer a practical way to continuously sense human motion in the wild. But inertial signals are highly dependent on the sensing setup, including body location, mounting position, sensor orientation, device hardware, and sampling protocol. This setup dependence makes it difficult to learn motion representations that transfer across devices and datasets, and limits the broader use of wearable IMUs beyond closed-set recognition. We introduce AnyMo, a geometry-aware framework for setup-agnostic human motion modeling. AnyMo uses physics-grounded IMU simulation over dense body-surface placements to generate diverse and plausible synthetic signals, pre-trains a graph encoder from paired synthetic placement views and masked partial observations, tokenizes multi-position IMU into full-body motion tokens, and aligns these tokens with an LLM for motion-language understanding. We evaluate AnyMo on three complementary tasks: zero-shot activity recognition across 14 unseen downstream datasets, cross-modal retrieval, and wearable IMU motion captioning, where it improves average Accuracy/F1/R@2 by 11.7\\%/11.6\\%/22.6\\% on HAR, increases zero-shot IMU-to-text and text-to-IMU retrieval MRR by 15.9\\% and 28.6\\%, respectively, and improves zero-shot captioning BERT-F1 by 18.8\\%. These results support AnyMo as a generalist model for wearable motion understanding in the wild. Project page: https://baiyuchen.com/project/AnyMo.",
+      "authors": [
+        "Baiyu Chen",
+        "Zechen Li",
+        "Wilson Wongso",
+        "Lihuan Li",
+        "Xiachong Lin",
+        "Hao Xue",
+        "Benjamin Tag",
+        "Flora Salim"
+      ],
+      "published": "2026-05-21T16:52:10Z",
+      "updated": "2026-05-21T16:52:10Z",
+      "url": "https://arxiv.org/abs/2605.22715",
+      "pdf_url": "https://arxiv.org/pdf/2605.22715.pdf",
+      "primary_category": "cs.CV",
+      "categories": [
+        "cs.CV",
+        "cs.AI",
+        "cs.CL",
+        "cs.HC"
+      ],
+      "tags": [
+        "cs.AI",
+        "cs.CL",
+        "cs.CV",
+        "cs.HC"
+      ],
+      "domain": "Vision",
+      "pdf_downloaded": true,
+      "pdf_size_bytes": 9730887,
+      "pdf_path": "2026-05-23/vision/2605.22715.pdf"
+    },
+    {
+      "id": "2605.22697",
+      "title": "Cross-Domain Human Action Recognition from Multiview Motion and Textual Descriptions",
+      "abstract": "Robustness to domain changes is a key capability for effective deployment of human action recognition systems in real-world scenarios, where action categories at inference can present important domain shifts or even unseen actions from training. In this context, improving the recognition capabilities of Zero-Shot Action Recognition models (ZSAR), without requiring strong annotation efforts, remains a central challenge. Most ZSAR approaches assume that actions are observed under geometric conditions similar to those seen during training. In practice, variations in human body orientation and camera viewpoint add a significant domain gap in ZSAR, substantially limiting generalization to novel action-motion combinations. In this context, this paper presents a novel orientation-aware action recognition approach with improved cross-domain capabilities. Our approach combines motion cues of multiple camera viewpoints and text descriptions of human actions in the training phase. We present a new orientation-aware motion encoding network to learn different motion features, and adapt a specific orientation-aware text prompt to match the corresponding features at inference. Extensive experiments demonstrate that the proposed method consistently improves ZSAR performance across different recognition benchmarks, outperforming recent state-of-the-art zero-shot approaches on NTU-RGB+D, BABEL, NW-UCLA, and on two surveillance datasets. In addition, the learned representations exhibit strong transfer learning capabilities, yielding competitive performance on both cross-domain and same-domain recognition of seen actions. Code and trained models are available at: https://icb-vision-ai.github.io/OrientationAware-HAR",
+      "authors": [
+        "Yannick Porto",
+        "Renato Martins",
+        "Thomas Chalumeau",
+        "Cedric Demonceaux"
+      ],
+      "published": "2026-05-21T16:39:58Z",
+      "updated": "2026-05-21T16:39:58Z",
+      "url": "https://arxiv.org/abs/2605.22697",
+      "pdf_url": "https://arxiv.org/pdf/2605.22697.pdf",
+      "primary_category": "cs.CV",
+      "categories": [
+        "cs.CV"
+      ],
+      "tags": [
+        "cs.CV"
+      ],
+      "domain": "Vision",
+      "pdf_downloaded": true,
+      "pdf_size_bytes": 1884952,
+      "pdf_path": "2026-05-23/vision/2605.22697.pdf"
+    },
+    {
+      "id": "2605.22695",
+      "title": "Improving Viewpoint-Invariance and Temporal Consistency for Action Detection",
+      "abstract": "Viewpoint change invariance and action temporal consistency are critical aspects for the effective deployment of human action detection of untrimmed videos. Existing appearance-based video detection methods often struggle with limited viewpoint diversity during training, while motion-based detection approaches frequently fail to model fine-grained temporal relationships across consecutive motion windows. This paper introduces a novel two-stage action detection approach designed to improve both view-invariance and global temporal coherence properties. In the first stage, we extract motion features from augmented virtual viewpoints, solely used at training. Then, the second stage introduces a new view-invariant, multi-scale temporal encoder based on selective state-space sequence modelling to aggregate information across viewpoints and time scales. Experiments on PKU-MMD and BABEL benchmarks demonstrate that this approach significantly outperforms state-of-the-art methods in all considered splits. Code and trained models are available at: https://icb-vision-ai.github.io/HydraView-TAD",
+      "authors": [
+        "Yannick Porto",
+        "Renato Martins",
+        "Thomas Chalumeau",
+        "Cedric Demonceaux"
+      ],
+      "published": "2026-05-21T16:38:21Z",
+      "updated": "2026-05-21T16:38:21Z",
+      "url": "https://arxiv.org/abs/2605.22695",
+      "pdf_url": "https://arxiv.org/pdf/2605.22695.pdf",
+      "primary_category": "cs.CV",
+      "categories": [
+        "cs.CV"
+      ],
+      "tags": [
+        "cs.CV"
+      ],
+      "domain": "Vision",
+      "pdf_downloaded": true,
+      "pdf_size_bytes": 2633004,
+      "pdf_path": "2026-05-23/vision/2605.22695.pdf"
+    },
+    {
+      "id": "2605.22679",
+      "title": "Conceptualizing Embeddings: Sparse Disentanglement for Vision-Language Models",
+      "abstract": "Vision-language models learn powerful multimodal embeddings, yet their internal semantics remain opaque. While sparse autoencoders (SAEs) can extract interpretable features, they rely on expanding the representation dimension, which compromises the original geometry and introduces redundancy. We introduce CEDAR (Conceptual Embedding Disentanglement via Adaptive Rotation), a post-hoc method that reveals the compositional structure of pretrained embeddings without increasing dimensionality. By learning an invertible transformation with a top-$k$ sparsity bottleneck, CEDAR concentrates semantic information into axis-aligned disentangled coordinates. In CLIP-like architecture, individual coordinates can be interpreted with textual concepts, while for generative models such as BLIP, they can be decoded into natural language descriptions. Experiments demonstrate that CEDAR achieves a competitive reconstruction-sparsity trade-off while producing explanations that are more interpretable and better aligned with human perception. Our results suggest that the apparent entanglement in vision-language representations can be resolved through a suitable change of basis, eliminating the need for overcomplete expansions.",
+      "authors": [
+        "Piotr Kubaty",
+        "Patryk Marsza\u0142ek",
+        "\u0141ukasz Struski",
+        "Adam Wr\u00f3bel",
+        "Jacek Tabor",
+        "Marek \u015amieja"
+      ],
+      "published": "2026-05-21T16:23:34Z",
+      "updated": "2026-05-21T16:23:34Z",
+      "url": "https://arxiv.org/abs/2605.22679",
+      "pdf_url": "https://arxiv.org/pdf/2605.22679.pdf",
+      "primary_category": "cs.CV",
+      "categories": [
+        "cs.CV",
+        "cs.LG"
+      ],
+      "tags": [
+        "cs.CV",
+        "cs.LG"
+      ],
+      "domain": "Vision",
+      "pdf_downloaded": true,
+      "pdf_size_bytes": 17712958,
+      "pdf_path": "2026-05-23/vision/2605.22679.pdf"
+    },
+    {
+      "id": "2605.22678",
+      "title": "Swift Sampling: Selecting Temporal Surprises via Taylor Series",
+      "abstract": "While most frames in long-form video are redundant, the critical information resides in temporal surprises: moments where the actual visual features deviate from their predicted evolution. Inspired by the human brain's predictive coding, we introduce Swift Sampling, an elegant, training-free frame selection algorithm that automatically identifies high-information moments in a video. Specifically, we model a video as a differentiable trajectory in the visual latent space and compute the velocity and acceleration of its features. Then, we apply Taylor expansion to project the expected path of subsequent frames. Frames that diverge sharply from this predicted manifold are identified as temporally surprising frames and selected for sampling. Unlike prior training-free methods that rely on auxiliary networks or video-specific hyperparameter tuning, Swift Sampling is incredibly lightweight, adding only 0.02x additional computational cost over baseline making it 30x cheaper overhead than leading baselines. Across three long-video question answering benchmarks and 10 different downstream tasks, Swift Sampling outperforms uniform sampling and prior query-agnostic baselines. It is especially powerful for long videos with limited frame budgets improving accuracy by up to +12.5 points.",
+      "authors": [
+        "Dahye Kim",
+        "Bhuvan Sachdeva",
+        "Karan Uppal",
+        "Naman Gupta",
+        "Vineeth N. Balasubramanian",
+        "Deepti Ghadiyaram"
+      ],
+      "published": "2026-05-21T16:20:31Z",
+      "updated": "2026-05-21T16:20:31Z",
+      "url": "https://arxiv.org/abs/2605.22678",
+      "pdf_url": "https://arxiv.org/pdf/2605.22678.pdf",
+      "primary_category": "cs.CV",
+      "categories": [
+        "cs.CV",
+        "cs.AI"
+      ],
+      "tags": [
+        "cs.AI",
+        "cs.CV"
+      ],
+      "domain": "Vision",
+      "pdf_downloaded": true,
+      "pdf_size_bytes": 10036261,
+      "pdf_path": "2026-05-23/vision/2605.22678.pdf"
+    },
+    {
+      "id": "2605.22677",
+      "title": "Slimmable ConvNeXt: Width-Adaptive Inference for Efficient Multi-Device Deployment",
+      "abstract": "Deploying vision models across devices with varying resource constraints, or even on a single device where available compute fluctuates due to battery state, thermal throttling, or latency deadlines, typically requires training and maintaining separate models. Width-adaptive inference addresses this by training a single set of shared weights containing multiple nested subnetworks of increasing capacity, but prior CNN-based approaches required switchable batch normalization, while recent scalable methods have focused on Vision Transformers. We present Slimmable ConvNeXt, which shows that ConvNeXt's modern design, specifically LayerNorm and inverted bottlenecks, makes it particularly suited for channel-width slimming, eliminating the normalization overhead of classical slimmable networks and producing a simpler training pipeline than both prior CNN and ViT approaches. On ImageNet-1k, Slimmable ConvNeXt-T with 3 subnetworks achieves 80.8% top-1 accuracy at 4.5 GMACs and 77.4% at 1.2 GMACs, trained from scratch for 600 epochs. At comparable compute, this exceeds HydraViT's 6-head subnetwork (78.4% at 4.6 GMACs) by 2.4 percentage points and its 3-head configuration (73.0% at 1.3 GMACs) by 4.4 percentage points, while also outperforming MatFormer-S (78.6%) and SortedNet-S (78.2%) at the same GMACs. Scaling to Slimmable ConvNeXt-B further improves maximum accuracy to 82.8% at 15.35 GMACs.",
+      "authors": [
+        "Janek Haberer",
+        "Jon Eike Wilhelm",
+        "Olaf Landsiedel"
+      ],
+      "published": "2026-05-21T16:20:18Z",
+      "updated": "2026-05-21T16:20:18Z",
+      "url": "https://arxiv.org/abs/2605.22677",
+      "pdf_url": "https://arxiv.org/pdf/2605.22677.pdf",
+      "primary_category": "cs.CV",
+      "categories": [
+        "cs.CV"
+      ],
+      "tags": [
+        "cs.CV"
+      ],
+      "domain": "Vision",
+      "pdf_downloaded": true,
+      "pdf_size_bytes": 648703,
+      "pdf_path": "2026-05-23/vision/2605.22677.pdf"
+    },
+    {
+      "id": "2605.22671",
+      "title": "From Abstraction to Instantiation: Learning Behavioral Representation for Vision-Language-Action Model",
+      "abstract": "Vision-Language-Action (VLA) models often suffer from performance degradation under distribution shifts, as they struggle to learn generalized behavior representations across varying environments. While existing approaches attempt to construct behavior representations through action-centric latent variables, they are often limited by short-horizon temporal fragmentation and static execution-alignment, leading to inconsistent behaviors in complex scenarios. To address these limitations, we propose \\textbf{BehaviorVLA}, a framework that facilitates robust manipulation through the learning of a temporally coherent behavioral representations. Our approach features two symmetric components: (1) the \\textbf{Visuomotor Behavior Encoder (VBE)}, which utilizes a causal Mamba-based architecture to aggregate long-horizon trajectory information into a unified behavior representation; and (2) the \\textbf{Phase-conditioned Behavior Decoder (PBD)}, which decodes this representation into precise actions by dynamically aligning task-level priors with real-time execution progress. Experiments on RoboTwin 2.0, LIBERO, and CALVIN demonstrate state-of-the-art success rates of 58\\%, 98\\%, and 4.36 (Avg.Len), respectively. Notably, in real-world sim-to-real transfer, BehaviorVLA matches the performance of OpenVLA-OFT using only 50\\% of the demonstration data, showcasing its superior data efficiency and generalization.",
+      "authors": [
+        "Bing Hu",
+        "Zaijing Li",
+        "Rui Shao",
+        "Junda Chen",
+        "April Hua Liu",
+        "Wei-Shi Zheng",
+        "Liqiang Nie"
+      ],
+      "published": "2026-05-21T16:14:19Z",
+      "updated": "2026-05-21T16:14:19Z",
+      "url": "https://arxiv.org/abs/2605.22671",
+      "pdf_url": "https://arxiv.org/pdf/2605.22671.pdf",
+      "primary_category": "cs.CV",
+      "categories": [
+        "cs.CV"
+      ],
+      "tags": [
+        "cs.CV"
+      ],
+      "domain": "Vision",
+      "pdf_downloaded": true,
+      "pdf_size_bytes": 14014952,
+      "pdf_path": "2026-05-23/vision/2605.22671.pdf"
+    },
+    {
+      "id": "2605.22668",
+      "title": "SEGA: Spectral-Energy Guided Attention for Resolution Extrapolation in Diffusion Transformers",
+      "abstract": "Diffusion transformers (DiTs) have emerged as a dominant architecture for text-to-image generation, yet their performance drops when generating at resolutions beyond their training range. Existing training-free approaches mitigate this by modifying inference-time attention behavior, often through Rotary Position Embeddings (RoPE) extrapolation combined with attention scaling. However, these strategies apply a uniform and content-agnostic scaling across RoPE components with distinct frequency characteristics, inducing a trade-off between preserving global structure and recovering fine detail. We introduce SEGA, a training-free method that dynamically scales attention across RoPE components according to the latent's spatial-frequency structure at each denoising step. This adaptive scaling improves both structural coherence and fine-detail fidelity. Experiments show that SEGA consistently improves high-resolution synthesis across multiple target resolutions, outperforming state-of-the-art training-free baselines.",
+      "authors": [
+        "Javad Rajabi",
+        "Kimia Shaban",
+        "Koorosh Roohi",
+        "David B. Lindell",
+        "Babak Taati"
+      ],
+      "published": "2026-05-21T16:09:01Z",
+      "updated": "2026-05-21T16:09:01Z",
+      "url": "https://arxiv.org/abs/2605.22668",
+      "pdf_url": "https://arxiv.org/pdf/2605.22668.pdf",
+      "primary_category": "cs.CV",
+      "categories": [
+        "cs.CV"
+      ],
+      "tags": [
+        "cs.CV"
+      ],
+      "domain": "Vision",
+      "pdf_downloaded": false,
+      "pdf_size_bytes": null,
+      "pdf_path": null
+    },
+    {
+      "id": "2605.22658",
+      "title": "SegCompass: Exploring Interpretable Alignment with Sparse Autoencoders for Enhanced Reasoning Segmentation",
+      "abstract": "While large language models provide strong compositional reasoning, existing reasoning segmentation pipelines fail to transparently connect this reasoning to visual perception. Current methods, such as latent query alignment, are end-to-end yet opaque \"black boxes\". Conversely, textual localization readout is merely readable, not truly interpretable, often functioning as an unconstrained post-hoc step. To bridge this interpretability gap, we propose SegCompass, an end-to-end model that leverages a Sparse Autoencoder (SAE) to forge an explicit, interpretable, and differentiable alignment pathway. Given an image-instruction pair, SegCompass first generates a chain-of-thought (CoT) trace. The core of our method is an SAE that maps both the CoT and visual tokens into a shared, high-dimensional sparse concept space. A query codebook selects salient concepts from this space, which are then spatially grounded by a slot mapper into a multi-slot heatmap that guides the final mask decoder. The entire model is trained jointly, unifying reinforcement learning for the reasoning path with standard segmentation supervision. This SAE-driven interface provides a \"white-box\" connection that is significantly more traceable than latent queries and more coherent than textual readouts. Extensive experiments on five challenging benchmarks demonstrate that SegCompass matches or surpasses state-of-the-art performance. Crucially, our visual and quantitative analyses show a strong correlation between the quality of the learned sparse concepts and final mask accuracy, confirming that SegCompass achieves superior results through its enhanced and inspectable alignment. Code is available at https://github.com/ZhenyuLU-Heliodore/SegCompass.",
+      "authors": [
+        "Zhenyu Lu",
+        "Liupeng Li",
+        "Jinpeng Wang",
+        "Haoqian Kang",
+        "Yan Feng",
+        "Ke Chen",
+        "Yaowei Wang"
+      ],
+      "published": "2026-05-21T15:59:39Z",
+      "updated": "2026-05-21T15:59:39Z",
+      "url": "https://arxiv.org/abs/2605.22658",
+      "pdf_url": "https://arxiv.org/pdf/2605.22658.pdf",
+      "primary_category": "cs.CV",
+      "categories": [
+        "cs.CV",
+        "cs.LG",
+        "cs.MM",
+        "eess.IV"
+      ],
+      "tags": [
+        "cs.CV",
+        "cs.LG",
+        "cs.MM",
+        "eess.IV"
+      ],
+      "domain": "Vision",
+      "pdf_downloaded": true,
+      "pdf_size_bytes": 3712392,
+      "pdf_path": "2026-05-23/vision/2605.22658.pdf"
+    },
+    {
+      "id": "2605.22654",
+      "title": "Seeing the Poem: Image-Semantic Detection of AI-Generated Modern Chinese Poetry with MLLMs",
+      "abstract": "Previous detection studies have shown that LLMs cannot be effectively used as detectors, but these studies have not addressed modern Chinese poetry. Moreover, no relevant research has explored the performance of LLMs in detecting modern Chinese poetry. This paper evaluates and enhances the performance of LLMs as detectors for modern Chinese poetry, and proposes an image-semantic guided poetry detection method. Compared with traditional detection approaches, our method innovatively incorporates images that reflect the content of the poetry. Through example-driven approaches, our method effectively integrates information such as meaning, imagery, and feeling from the image, then forms a complementary judgment with the poem text. Experimental results demonstrate that the LLM detectors based on our method outperform baseline detectors based on plain text, and even surpass the best-performing traditional detector, RoBERTa. The Gemini detector using our method achieves a Macro-F1 score of 85.65%, reaching the state-of-the-art level. The performance improvements of different LLM detectors on multiple LLMs-generated data prove the effectiveness of our method.",
+      "authors": [
+        "Shanshan Wang",
+        "Fengying Ye",
+        "Hanjia Lyu",
+        "Caiwen Gou",
+        "Junchao Wu",
+        "Jingming Yao",
+        "Chengzhong Xu",
+        "Jiebo Luo",
+        "Derek F. Wong"
+      ],
+      "published": "2026-05-21T15:57:04Z",
+      "updated": "2026-05-21T15:57:04Z",
+      "url": "https://arxiv.org/abs/2605.22654",
+      "pdf_url": "https://arxiv.org/pdf/2605.22654.pdf",
+      "primary_category": "cs.CL",
+      "categories": [
+        "cs.CL",
+        "cs.CV"
+      ],
+      "tags": [
+        "cs.CL",
+        "cs.CV"
+      ],
+      "domain": "Vision",
+      "pdf_downloaded": true,
+      "pdf_size_bytes": 1663159,
+      "pdf_path": "2026-05-23/vision/2605.22654.pdf"
+    },
+    {
+      "id": "2605.22651",
+      "title": "What Does the Caption Really Say? Counterfactual Phrase Intervention for Compositional Data Selection in Vision-Language Pretraining",
+      "abstract": "CLIP-style contrastive pretraining typically curates web-scale image-text pairs using sample-level filtering signals, often based on pair-level alignment. We show that this signal saturates: once coarse mismatches are removed, stricter global filtering no longer tracks the compositional supervision provided by the retained captions. The reason is structural - a global score conflates whether a pair is broadly plausible with whether the individual object, attribute, and relation phrases inside the caption materially support the image-text match. The latter is what compositional generalization demands, yet pair-level filters are blind to it. We address this with Counterfactual Phrase Intervention (CPI), a phrase-level curation framework that converts controlled nonce-token substitutions into image-conditioned phrase-sensitivity scores. CPI uses global alignment only for coarse mismatch removal, then ranks the surviving pool by whether caption phrases measurably affect the image-text score under controlled substitution. We frame CPI as a first-order phrase-sensitivity signal rather than a grounding or identification result, and evaluate it at CC3M scale. Ranking by this signal yields a 50%-data subset that improves VL-CheckList-VG Relation by +1.91 over the full-data baseline and +1.00 over alignment-only filtering at matched budget, while improving SugarCrepe overall and preserving general transfer. CPI is loss-orthogonal: applied unchanged to NegCLIP, it further improves VL-CheckList-VG Relation by +3.84, with additional CE-CLIP gains in the main text.",
+      "authors": [
+        "Hyejin Go",
+        "Semi Lee",
+        "Hyesong Choi"
+      ],
+      "published": "2026-05-21T15:55:15Z",
+      "updated": "2026-05-21T15:55:15Z",
+      "url": "https://arxiv.org/abs/2605.22651",
+      "pdf_url": "https://arxiv.org/pdf/2605.22651.pdf",
+      "primary_category": "cs.CV",
+      "categories": [
+        "cs.CV"
+      ],
+      "tags": [
+        "cs.CV"
+      ],
+      "domain": "Vision",
+      "pdf_downloaded": true,
+      "pdf_size_bytes": 1993051,
+      "pdf_path": "2026-05-23/vision/2605.22651.pdf"
+    },
+    {
+      "id": "2605.22649",
+      "title": "From Baseline to Follow-Up: Counterfactual Spine DXA Image Synthesis in UK Biobank Using a Causal Hierarchical Variational Autoencoder",
+      "abstract": "Dual-energy X-ray absorptiometry (DXA) is widely used for large-scale skeletal assessment, yet learning controllable and interpretable factor-specific anatomical variation remains challenging. We propose a metadata-conditioned causal hierarchical variational autoencoder (CHVAE) for causally consistent generation of anteroposterior (AP) spine DXA images from the UK Biobank (UKB). The model is trained on 3,743 raw AP spine scans from the first imaging visit and conditioned on basic participant attributes and lumbar morphometry. Causal consistency is evaluated in a baseline-to-follow-up setting using abduction--action--prediction (AAP): latent variables are abducted from baseline images, age is intervened to the repeat-imaging value, and the resulting counterfactual follow-up morphometry is compared with observed repeat-imaging measurements. Results show strong absolute-level agreement for key vertebral morphometry variables under age intervention, supporting intervention-aligned synthesis of anatomically plausible DXA images.",
+      "authors": [
+        "Yilin Zhang",
+        "Nicholas C. Harvey",
+        "Nicholas R. Fuggle",
+        "Rahman Attar"
+      ],
+      "published": "2026-05-21T15:53:44Z",
+      "updated": "2026-05-21T15:53:44Z",
+      "url": "https://arxiv.org/abs/2605.22649",
+      "pdf_url": "https://arxiv.org/pdf/2605.22649.pdf",
+      "primary_category": "cs.CV",
+      "categories": [
+        "cs.CV",
+        "cs.LG"
+      ],
+      "tags": [
+        "cs.CV",
+        "cs.LG"
+      ],
+      "domain": "Vision",
+      "pdf_downloaded": true,
+      "pdf_size_bytes": 2799918,
+      "pdf_path": "2026-05-23/vision/2605.22649.pdf"
+    },
+    {
+      "id": "2605.22635",
+      "title": "The Double Dilemma in Multi-Task Radiology Report Generation: A Gradient Dynamics Analysis and Solution",
+      "abstract": "While multi-task learning based automatic radiology report generation (RRG) is widely adopted to ensure clinical consistency, most focus on architectural designs yet remain limited to coarse linear scalarization strategies. These strategies cannot effectively balance the hard constraints of discriminative clinical supervision with the smoothness requirements of report generation. To address these problems, we analyze the failure mechanism of linear scalarization from the perspective of gradient dynamics, utilizing the stochastic differential equation (SDE) framework to characterize it as a \"Double Dilemma\" of drift term deviation and diffusion term decay. Based on this, we propose a backbone-agnostic optimizer named Conflict-Averse Magnitude-Enhanced Gradient Descent (CAME-Grad). Through conflict-averse direction rectification and magnitude-enhanced energy injection, the algorithm not only ensures geometric validity, but also avoids local optimal solutions. Then, the adaptive gradient fusion mechanism is used to establish a dynamic balance between the theoretical optimal direction and the task-specific inductive bias. Experiments show that as a universal plug-and-play optimizer, CAME-Grad brings substantial and consistent improvements across eight diverse RRG methods, elevating overall clinical efficacy performance by an average of 2.3\\% on MIMIC-CXR and 1.9\\% on IU X-Ray. Our code is available at https://github.com/vpsg-research/CAME-Grad.",
+      "authors": [
+        "Erjian Zhang",
+        "Yatong Hao",
+        "Liejun Wang",
+        "Zhiqing Guo"
+      ],
+      "published": "2026-05-21T15:40:13Z",
+      "updated": "2026-05-21T15:40:13Z",
+      "url": "https://arxiv.org/abs/2605.22635",
+      "pdf_url": "https://arxiv.org/pdf/2605.22635.pdf",
+      "primary_category": "cs.LG",
+      "categories": [
+        "cs.LG",
+        "cs.CL",
+        "cs.CV"
+      ],
+      "tags": [
+        "cs.CL",
+        "cs.CV",
+        "cs.LG"
+      ],
+      "domain": "Vision",
+      "pdf_downloaded": true,
+      "pdf_size_bytes": 1407476,
+      "pdf_path": "2026-05-23/vision/2605.22635.pdf"
+    },
+    {
+      "id": "2605.22631",
+      "title": "AtomicMotion: Learning Human Motion From Different Human Parts",
+      "abstract": "Accurately reconstructing full-body poses from sparse head and hand trajectories is a foundational challenge for immersive AR/VR telepresence. Current methods often struggle with error accumulation and unnatural joint coordination, primarily because they treat the human body as a monolithic entity, thereby failing to capture the fine-grained ``atomic intents'' embedded in subtle signal variations and overlooking the inherent structural topology. To bridge this gap, we present AtomicMotion, a framework designed to decouple and re-integrate body dynamics through three core innovations. First, we introduce a logical body partitioning scheme that decomposes the skeleton into five distinct clusters based on functional intent; this ensures that each partition preserves internal joint synergies while isolating local motion primitives. Second, to robustly map sparse inputs to high-dimensional poses, we employ a masked full-body pre-conditioning strategy during training, forcing the model to internalize global skeletal topology and latent kinematic constraints. Finally, addressing the limitations of vanilla spatial attention, which often ignores fixed physiological connectivity, we propose Kinematic Attention. By embedding the classical kinematic tree structure into the attention mechanism, we ensure biological plausibility in the synthesized motions. Extensive evaluations on the AMASS dataset demonstrate that AtomicMotion significantly outperforms existing baselines, yielding higher reconstruction fidelity and superior biomechanical realism.",
+      "authors": [
+        "Runzhen Liu",
+        "Chuhua Xian",
+        "Fa-Ting Hong"
+      ],
+      "published": "2026-05-21T15:39:38Z",
+      "updated": "2026-05-21T15:39:38Z",
+      "url": "https://arxiv.org/abs/2605.22631",
+      "pdf_url": "https://arxiv.org/pdf/2605.22631.pdf",
+      "primary_category": "cs.CV",
+      "categories": [
+        "cs.CV"
+      ],
+      "tags": [
+        "cs.CV"
+      ],
+      "domain": "Vision",
+      "pdf_downloaded": true,
+      "pdf_size_bytes": 11098359,
+      "pdf_path": "2026-05-23/vision/2605.22631.pdf"
+    },
+    {
+      "id": "2605.22629",
+      "title": "H-Flow: Self-supervised Human Scene Flow via Physics-inspired Joint Multi-modal Learning",
+      "abstract": "Parametric human models capture global pose but cannot represent the non-rigid surface dynamics of clothing and soft tissue. Generic scene flow estimates dense motion but breaks down on articulated bodies, where pixel-level supervision is also intractable to acquire. We introduce H-Flow, a dense human scene flow that captures both skeletal kinematics and surface deformation. A unified multi-head transformer estimates flow from monocular video, jointly predicting pose and depth as companion outputs. The challenge lies in the lack of supervision. In place of unattainable labels, we anchor the network in the physics of human motion, encoding geometric, structural, and biomechanical priors as cross-modal training objectives. We further introduce DynAct4D, a high-fidelity synthetic benchmark providing dense flow annotations across diverse subjects, garments, and motions. On standard benchmarks, H-Flow outperforms scene-flow and parametric baselines, and generalizes zero-shot to in-the-wild video. Code, models, and the DynAct4D benchmark will be released upon publication",
+      "authors": [
+        "Zhanbo Huang",
+        "Xiaoming Liu",
+        "Yu Kong"
+      ],
+      "published": "2026-05-21T15:38:41Z",
+      "updated": "2026-05-21T15:38:41Z",
+      "url": "https://arxiv.org/abs/2605.22629",
+      "pdf_url": "https://arxiv.org/pdf/2605.22629.pdf",
+      "primary_category": "cs.CV",
+      "categories": [
+        "cs.CV"
+      ],
+      "tags": [
+        "cs.CV"
+      ],
+      "domain": "Vision",
+      "pdf_downloaded": false,
+      "pdf_size_bytes": null,
+      "pdf_path": null
+    },
+    {
+      "id": "2605.22619",
+      "title": "GLeVE: Graph-Guided Lesion Grounding with Proposal Verification in 3D CT",
+      "abstract": "Grounding radiology report descriptions to 3D CT volumes is essential for verifiable clinical interpretation, yet remains challenging due to the semantic-spatial gap between free-text narratives and volumetric anatomy. Existing report-assisted and vision-language grounding methods typically rely on phrase-level alignment or dense pixel supervision, resulting in limited lesion-wise correspondence and suboptimal localization accuracy. We propose GLeVE, a graph-guided lesion grounding framework with anatomical prior verification and octree-based autoregressive refinement. GLeVE treats each lesion description as an atomic semantic unit and encodes organ attribution, attributes, and inter-lesion relations through relation-aware graph reasoning to produce discriminative lesion-wise queries. Anatomy-aware proposal generation with region-level verification enforces one-to-one text-lesion alignment, while hierarchical octree refinement progressively improves boundary delineation. Experiments on AbdomenAtlas 3.0 demonstrate consistent gains over classical multimodal foundation models and report-supervised baselines in both segmentation accuracy and lesion-level localization.",
+      "authors": [
+        "Shuo Jiang",
+        "Yuhao Hong",
+        "Chunbo Jiang",
+        "Weihong Chen",
+        "Huangwei Chen",
+        "Shenghao Zhu",
+        "Beining Wu",
+        "Mingxuan Liu",
+        "Zhu Zhu",
+        "Feiwei Qin",
+        "Min Tan",
+        "Yifei Chen"
+      ],
+      "published": "2026-05-21T15:30:41Z",
+      "updated": "2026-05-21T15:30:41Z",
+      "url": "https://arxiv.org/abs/2605.22619",
+      "pdf_url": "https://arxiv.org/pdf/2605.22619.pdf",
+      "primary_category": "cs.CV",
+      "categories": [
+        "cs.CV"
+      ],
+      "tags": [
+        "cs.CV"
+      ],
+      "domain": "Vision",
+      "pdf_downloaded": true,
+      "pdf_size_bytes": 4827429,
+      "pdf_path": "2026-05-23/vision/2605.22619.pdf"
+    },
+    {
+      "id": "2605.22607",
+      "title": "Enhancing Gaze Reasoning in Vision Foundation Models for Gaze Following",
+      "abstract": "Gaze following requires both scene understanding and gaze reasoning to localize the gaze target of an in-scene person. Recently, vision foundation models (VFMs) have demonstrated strong performance on this task, enabling simpler architectures while outperforming prior methods. However, we observe a key limitation of VFM-based approaches: while VFMs substantially improve scene understanding, they contribute little to gaze reasoning. As a result, existing methods often rely on semantically salient objects rather than true gaze cues, leading to degraded performance when targets are not salient. To address this, we propose a novel training mechanism to enhance gaze reasoning in VFMs for gaze following. Our method includes: (1) a head-conditioned local LoRA, which enables localized adaptation to preserve scene token learning while improving head token learning for gaze reasoning; and (2) an out-of-cone penalty, which injects gaze cues into head tokens while aligning them with scene tokens. Experiments on the GazeFollow and VAT datasets demonstrate that our method achieves state-of-the-art performance, with particularly strong improvements when gaze targets are not semantically salient. Our findings offer valuable insights for advancing future gaze following research. We will release the code once the paper is accepted.",
+      "authors": [
+        "Shijing Wang",
+        "Yaping Huang",
+        "Chaoqun Cui",
+        "David Wong",
+        "Yihua Cheng",
+        "Alexandros Neophytou",
+        "Hyung Jin Chang"
+      ],
+      "published": "2026-05-21T15:21:14Z",
+      "updated": "2026-05-21T15:21:14Z",
+      "url": "https://arxiv.org/abs/2605.22607",
+      "pdf_url": "https://arxiv.org/pdf/2605.22607.pdf",
+      "primary_category": "cs.CV",
+      "categories": [
+        "cs.CV"
+      ],
+      "tags": [
+        "cs.CV"
+      ],
+      "domain": "Vision",
+      "pdf_downloaded": true,
+      "pdf_size_bytes": 3149210,
+      "pdf_path": "2026-05-23/vision/2605.22607.pdf"
+    },
+    {
+      "id": "2605.22591",
+      "title": "Rethinking Noise-Robust Training for Frozen Vision Foundation Models: A Cross-Dataset Benchmark with a Case Study of Small-Loss Failure",
+      "abstract": "Frozen Vision Foundation Models (VFMs) with lightweight classification heads are increasingly used in medical imaging because they offer efficient and reproducible deployment. Yet noisy-label learning methods for this frozen-feature regime remain poorly understood, and most existing methods still rely on a small-loss assumption inherited from end-to-end training. We present a controlled benchmark of eight noisy-label methods across five medical datasets, three backbones, two noise types, and five noise rates (150 conditions, 6,000 training runs), evaluated with balanced accuracy. The benchmark shows that there is no universal winner: Friedman ranking over the 150 conditions yields $\u03c7^2 = 333.2$ ($p = 4.77 \\times 10^{-68}$), ELR wins the most conditions (49/150), while CUFIT attains the best mean rank (2.51). The practical cost of method choice grows sharply with noise severity, from 4.5pp on clean data to 18.8pp at asymmetric 40\\% noise. To explain these benchmark-level patterns, we revisit the small-loss assumption in a representative high-risk regime. Under frozen DINOv2 features, clean and noisy loss distributions overlap by 53--61\\%, and matched-rate clean-sample detection shows that prediction agreement is markedly more stable than loss ranking under asymmetric noise (3pp vs.\\ 13pp precision drop). On ISIC2019 with asymmetric 40\\% noise, Co-Teaching reaches 68\\% overall accuracy while collapsing to 35.1\\% balanced accuracy with zero recall on three minority classes. Together, these results recast noisy-label learning for frozen VFMs as a regime-aware method-selection problem rather than a search for a single dominant algorithm. We conclude with evidence-based guidance and a low-regret feature-space selector for practical recommendation.",
+      "authors": [
+        "Zitong Li",
+        "Haoyu Wang"
+      ],
+      "published": "2026-05-21T15:02:44Z",
+      "updated": "2026-05-21T15:02:44Z",
+      "url": "https://arxiv.org/abs/2605.22591",
+      "pdf_url": "https://arxiv.org/pdf/2605.22591.pdf",
+      "primary_category": "cs.CV",
+      "categories": [
+        "cs.CV"
+      ],
+      "tags": [
+        "cs.CV"
+      ],
+      "domain": "Vision",
+      "pdf_downloaded": true,
+      "pdf_size_bytes": 478879,
+      "pdf_path": "2026-05-23/vision/2605.22591.pdf"
+    },
+    {
+      "id": "2605.22581",
+      "title": "SceneAligner: 3D-Grounded Floorplan Localization in the Wild",
+      "abstract": "Many public buildings provide floorplans with a \"you are here\" indicator to help visitors orient themselves. Floorplan localization seeks to computationally replicate this capability by determining where visual observations were captured within a floorplan. However, existing methods typically assume controlled small-scale environments and precise vectorized floorplans, limiting their ability to operate in large-scale buildings and rasterized floorplans. In this work, we present an approach for performing floorplan localization in the wild by grounding the task in a reconstructed 3D representation of the scene. Given an unconstrained image collection, our method reconstructs a gravity-aligned 3D scene and projects it into a 2D density map that serves as a floorplan proxy. Floorplan localization is then formulated as aligning this proxy with the input floorplan via a 2D similarity transform. To bridge the appearance gap between density maps and architectural floorplans, we adapt a 2D foundation model to learn cross-modal correspondences, introducing a fine-tuning scheme that encourages semantically aligned matches while preserving structural consistency. Extensive experiments demonstrate substantial improvements over prior methods, including in extremely sparse settings with as little as a single input image. Our code and data will be publicly available.",
+      "authors": [
+        "Junhyeong Cho",
+        "Ruojin Cai",
+        "Hadar Averbuch-Elor"
+      ],
+      "published": "2026-05-21T14:53:05Z",
+      "updated": "2026-05-21T14:53:05Z",
+      "url": "https://arxiv.org/abs/2605.22581",
+      "pdf_url": "https://arxiv.org/pdf/2605.22581.pdf",
+      "primary_category": "cs.CV",
+      "categories": [
+        "cs.CV",
+        "cs.AI",
+        "cs.LG"
+      ],
+      "tags": [
+        "cs.AI",
+        "cs.CV",
+        "cs.LG"
+      ],
+      "domain": "Vision",
+      "pdf_downloaded": true,
+      "pdf_size_bytes": 13202673,
+      "pdf_path": "2026-05-23/vision/2605.22581.pdf"
+    }
+  ]
+}
