@@ -1,0 +1,652 @@
+{
+  "domain": "Vision",
+  "date": "2026-05-25",
+  "count": 23,
+  "papers": [
+    {
+      "id": "2605.23903",
+      "title": "Geo-Align: Video Generation Alignment via Metric Geometry Reward",
+      "abstract": "Camera-controlled video generation has achieved remarkable progress in recent years. However, existing video-to-video re-rendering methods primarily rely on Supervised Fine-Tuning using synthetic datasets. At present, there is an extreme scarcity of synchronized, multi-view real-world video data. Consequently, the prevailing paradigm often exhibits limited generalization when processing out-of-distribution real-world videos, with models struggling to accurately adhere to physical scales and camera trajectories. To bridge this gap, we propose Geo-Align, the first Reinforcement Learning framework specifically designed for camera-controlled video re-rendering. Built upon a pretrained model, we optimize the model through a scale-aware perceptual reward mechanism. Specifically, we introduce a metric 3D estimator to extract precise camera trajectories from generated videos, explicitly penalizing deviations in rotation and translation. Furthermore, we meticulously designed a data pipeline strategy based on real-world conditioning videos and target camera trajectories derived from synthetic data, eliminating the reliance on paired data. Extensive experiments demonstrate that Geo-Align consistently outperforms existing supervised learning baselines in both precise camera controllability and visual fidelity, indicating the effectiveness of our method.",
+      "authors": [
+        "Zizun Li",
+        "Haoyu Guo",
+        "Runzhe Teng",
+        "Chunhua Shen",
+        "Tong He"
+      ],
+      "published": "2026-05-22T17:59:43Z",
+      "updated": "2026-05-22T17:59:43Z",
+      "url": "https://arxiv.org/abs/2605.23903",
+      "pdf_url": "https://arxiv.org/pdf/2605.23903.pdf",
+      "primary_category": "cs.CV",
+      "categories": [
+        "cs.CV"
+      ],
+      "tags": [
+        "cs.CV"
+      ],
+      "domain": "Vision",
+      "pdf_downloaded": false,
+      "pdf_size_bytes": null,
+      "pdf_path": null
+    },
+    {
+      "id": "2605.23902",
+      "title": "PiD: Fast and High-Resolution Latent Decoding with Pixel Diffusion",
+      "abstract": "Most practical high-resolution text-to-image systems, including latent diffusion and autoregressive models, perform generation in a compact latent space, and a decoder maps the generated latents back to pixels. Yet the latent-to-pixel decoder is reconstruction-oriented, optimized to invert the encoder rather than synthesize more details, and becomes increasingly costly at megapixel scale. This drawback calls for a more expressive and efficient decoding paradigm. Motivated by recent progress in scalable pixel-space diffusion, we introduce PiD, a Pixel diffusion Decoder that reformulates latent decoding as conditional pixel diffusion, unifying decoding and upsampling into one generative module. By denoising directly in high-resolution pixel space, PiD synthesizes $4\\times$ and even $8\\times$ upscaled images with low latency. For latent conditioning, a lightweight sigma-aware adapter injects noise-corrupted latents into the pixel diffusion backbone, enabling PiD to decode partially denoised latents and terminate the latent diffusion process early. To further improve efficiency, we distill the model using DMD2, reducing inference to just 4 steps. PiD applies to both conventional VAE latents and semantic latents (e.g., SigLIP, DINOv2) used in recent RAE-based models. PiD decodes latents of $512 \\times 512$ images into $2048 \\times 2048$ pixels in under 1 second with 13 GB peak memory on a consumer RTX 5090, and as fast as 210 ms on a GB200 GPU, about $6\\times$ faster than cascaded diffusion-based super-resolution pipelines with better visual fidelity.",
+      "authors": [
+        "Yifan Lu",
+        "Qi Wu",
+        "Jay Zhangjie Wu",
+        "Zian Wang",
+        "Huan Ling",
+        "Sanja Fidler",
+        "Xuanchi Ren"
+      ],
+      "published": "2026-05-22T17:59:42Z",
+      "updated": "2026-05-22T17:59:42Z",
+      "url": "https://arxiv.org/abs/2605.23902",
+      "pdf_url": "https://arxiv.org/pdf/2605.23902.pdf",
+      "primary_category": "cs.CV",
+      "categories": [
+        "cs.CV"
+      ],
+      "tags": [
+        "cs.CV"
+      ],
+      "domain": "Vision",
+      "pdf_downloaded": false,
+      "pdf_size_bytes": null,
+      "pdf_path": null
+    },
+    {
+      "id": "2605.23895",
+      "title": "From Activation to Causality: Discovery of Causal Visual Representations in the Human Brain",
+      "abstract": "Identifying which brain regions represent a visual concept in the human brain is a central challenge in neuroscience. Existing approaches have localized coarse functional regions (e.g., faces, places) through activation maximization, identifying regions that activate strongly for a target concept relative to other concepts. Yet strong activation alone does not establish that a region represents the concept itself, as responses may instead be driven by correlated visual or semantic cues. We introduce BrainCause, an automated framework that combines generative and brain models to synthesize controlled stimuli and validate neural representations through targeted causal testing. Given a query specifying a concept of interest, our framework constructs targeted stimulus sets comprising concept images, counterfactual edits that remove the target concept while preserving other image content, and images with candidate correlated distractors. It then uses an image-to-fMRI encoding model to predict brain responses and searches for representations that respond specifically to the target concept over correlated alternatives. BrainCause returns validated candidate representations and proposes follow-up fMRI experiments to further test or extend its discoveries. Our approach successfully recovers known functional localizations and identifies new candidate representations across dozens of concepts, validated on both predicted and measured fMRI data. Critically, we show that without causal validation, a large fraction of localizations would be false positives, confirming that activation alone is insufficient evidence of representation.",
+      "authors": [
+        "Yuval Golbari",
+        "Navve Wasserman",
+        "Matias Cosarinsky",
+        "Roman Beliy",
+        "Aude Oliva",
+        "Antonio Torralba",
+        "Michal Irani",
+        "Tamar Rott Shaham"
+      ],
+      "published": "2026-05-22T17:56:37Z",
+      "updated": "2026-05-22T17:56:37Z",
+      "url": "https://arxiv.org/abs/2605.23895",
+      "pdf_url": "https://arxiv.org/pdf/2605.23895.pdf",
+      "primary_category": "cs.CV",
+      "categories": [
+        "cs.CV"
+      ],
+      "tags": [
+        "cs.CV"
+      ],
+      "domain": "Vision",
+      "pdf_downloaded": false,
+      "pdf_size_bytes": null,
+      "pdf_path": null
+    },
+    {
+      "id": "2605.23891",
+      "title": "Smart-Insertion-V: Photorealistic Video Insertion via a Closed-Loop Feedback Dual-Stream Framework",
+      "abstract": "Mask-free video object insertion has emerged as a challenging task, requiring harmonious integration of reference objects into source videos. However, existing methods struggle when references exhibit severe stylistic domain gaps with the source scene. To overcome this, we propose \\textit{\\textbf{Smart-Insertion-V}}, an end-to-end \\textbf{Dual-Stream} framework that concurrently conducts video insertion and image style transfer. Within this framework, the image stream synchronously guides the video generation process, while a \\textbf{Closed-loop Feedback} mechanism is further incorporated to ensure robust insertion. Inevitably, integrating these diverse conditioning signals results in feature entanglement and style leakage. To tackle this issue, we design \\textbf{Dual-World-View RoPE} to distinguish different signals via spatial-temporal offsets without incurring heavy training overhead. Furthermore, to facilitate spatial grounding and stylistic adaptation, we introduce a \\textbf{Decoupled Guidance Module} that leverages a Vision-Language Model for semantic reasoning while preserving original temporal guidance with native text encoder. To bridge data gap for harmonious reference insertion task, we propose a data curation pipeline and will release an \\textbf{open-source dataset}. Experiments demonstrate that our method can insert objects into plausible positions while achieving the most harmonious results.",
+      "authors": [
+        "Xiao Cao",
+        "Yansong Qu",
+        "Xiangzhen",
+        "Chang",
+        "Wen Xiao",
+        "Jiakui Hu",
+        "Heyuan Li",
+        "Jialun Liu",
+        "Zhiyong Huang",
+        "Xuelong Li"
+      ],
+      "published": "2026-05-22T17:54:54Z",
+      "updated": "2026-05-22T17:54:54Z",
+      "url": "https://arxiv.org/abs/2605.23891",
+      "pdf_url": "https://arxiv.org/pdf/2605.23891.pdf",
+      "primary_category": "cs.CV",
+      "categories": [
+        "cs.CV"
+      ],
+      "tags": [
+        "cs.CV"
+      ],
+      "domain": "Vision",
+      "pdf_downloaded": true,
+      "pdf_size_bytes": 9168660,
+      "pdf_path": "2026-05-25/vision/2605.23891.pdf"
+    },
+    {
+      "id": "2605.23889",
+      "title": "HorizonStream: Long-Horizon Attention for Streaming 3D Reconstruction",
+      "abstract": "Online 3D reconstruction requires estimating camera pose and scene geometry under strict causal and bounded-memory constraints. Existing methods often suffer from drift, jitter, or collapse on long sequences. We trace these failures to a fundamental mismatch. Streaming geometry is inherently temporally heterogeneous, with evidence ranging from short-lived correspondences to persistent global scale. However, current architectures impose uniform and pathological influence patterns. For example, sliding windows enforce hard cutoffs, while ungated recurrence and causal attention cause cache saturation and spike-like attention sinks. To resolve this, we formalize geometric propagation as an \\emph{evidence influence kernel} and propose HorizonStream, a long-horizon Transformer that explicitly factorizes this kernel. For the long-range temporal factor, Geometric Linear Attention learns channel-wise decay rates to enable bounded, multi-timescale propagation of geometric evidence. For the short-range spatial factor, Geometric Local Attention with Spatiotemporal RoPE performs reliable 3D matching while suppressing attention sinks. Finally, Metric Readout Tokens recover stable scale and rigid pose directly from the persistent geometric state. Extensive experiments show that HorizonStream, trained on only 48-frame clips, generalizes stably to sequences exceeding 10,000\\ frames with constant memory and linear time, achieving state-of-the-art streaming 3D reconstruction performance. Project Page: https://3dagentworld.github.io/horizonstream/",
+      "authors": [
+        "Chong Cheng",
+        "Peilin Tao",
+        "Nanjie Yao",
+        "Guanzhi Ding",
+        "Xianda Chen",
+        "Yuansen Du",
+        "Xiaoyang Guo",
+        "Wei Yin",
+        "Weiqiang Ren",
+        "Qian Zhang",
+        "Zhengqing Chen",
+        "Hao Wang"
+      ],
+      "published": "2026-05-22T17:50:48Z",
+      "updated": "2026-05-22T17:50:48Z",
+      "url": "https://arxiv.org/abs/2605.23889",
+      "pdf_url": "https://arxiv.org/pdf/2605.23889.pdf",
+      "primary_category": "cs.CV",
+      "categories": [
+        "cs.CV"
+      ],
+      "tags": [
+        "cs.CV"
+      ],
+      "domain": "Vision",
+      "pdf_downloaded": true,
+      "pdf_size_bytes": 16523731,
+      "pdf_path": "2026-05-25/vision/2605.23889.pdf"
+    },
+    {
+      "id": "2605.23888",
+      "title": "GenRecon: Bridging Generative Priors for Multi-View 3D Scene Reconstruction",
+      "abstract": "We introduce a new approach to high-fidelity 3D scene reconstruction from multi-view RGB images that tightly couples reconstruction with a strong generative 3D prior. We cast scene reconstruction as conditional 3D generation over a set of spatially-localized, overlapping chunks that together tile the scene, scaling generation to large scene extents. Crucially, we inherit the fidelity and completeness of state-of-the-art generative shape models -- we use Trellis.2 as an example -- which we generalize to the scene level. To this end, we propose a projection-based conditioning mechanism that lifts posed multi-view image features into a coherent 3D representation aligned with the generative model, independent of view ordering and spatially anchored to the scene, yielding high-fidelity, multi-view consistent generated geometry. This enables lifting the strong object-level prior of Trellis.2 to multi-view, scene-scale generation, producing faithful, editable PBR mesh reconstructions of indoor environments. As a result, we obtain high-fidelity results that outperform cutting-edge reconstruction methods by 16%.",
+      "authors": [
+        "Katharina Schmid",
+        "Nicolas von L\u00fctzow",
+        "Jozef Hladk\u00fd",
+        "Angela Dai",
+        "Matthias Nie\u00dfner"
+      ],
+      "published": "2026-05-22T17:49:59Z",
+      "updated": "2026-05-22T17:49:59Z",
+      "url": "https://arxiv.org/abs/2605.23888",
+      "pdf_url": "https://arxiv.org/pdf/2605.23888.pdf",
+      "primary_category": "cs.CV",
+      "categories": [
+        "cs.CV"
+      ],
+      "tags": [
+        "cs.CV"
+      ],
+      "domain": "Vision",
+      "pdf_downloaded": false,
+      "pdf_size_bytes": null,
+      "pdf_path": null
+    },
+    {
+      "id": "2605.23878",
+      "title": "LaMo: Self-Supervised Latent Motion Priors for Physical Realism in Video Generation",
+      "abstract": "Modern video generators produce visually compelling clips but still struggle with physical and motion consistency, limiting their use as reliable world simulators. Existing remedies often rely on external simulators, teacher models, or curated physics-focused data. We explore a complementary self-supervised direction: extracting motion cues from the unlabeled videos already used to train video diffusion models. We propose LaMo, which formulates a latent motion prior over frame-to-frame latent changes conditioned on the current latent and prompt. This prior is exposed through two lightweight readouts: a macro motion drift used during training as a Motion Drift Loss, and a learned micro motion field used during sampling as Motion Prior Guidance. Both components are plug-and-play with existing video diffusion backbones, requiring no architectural or I/O changes. On VideoPhy and VideoPhy2, LaMo improves CogVideoX backbones and outperforms recent physics-aware baselines that use external supervision. On VBench, it preserves overall generation quality while improving motion-related dimensions. These results suggest that unlabeled video contains useful motion supervision for improving physical fidelity in modern video diffusion models.",
+      "authors": [
+        "Bo Jiang",
+        "Depu Meng",
+        "Yihan Hu",
+        "Yichen Xie",
+        "Tianshuo Xu",
+        "Wei Zhan"
+      ],
+      "published": "2026-05-22T17:34:42Z",
+      "updated": "2026-05-22T17:34:42Z",
+      "url": "https://arxiv.org/abs/2605.23878",
+      "pdf_url": "https://arxiv.org/pdf/2605.23878.pdf",
+      "primary_category": "cs.CV",
+      "categories": [
+        "cs.CV"
+      ],
+      "tags": [
+        "cs.CV"
+      ],
+      "domain": "Vision",
+      "pdf_downloaded": true,
+      "pdf_size_bytes": 6890724,
+      "pdf_path": "2026-05-25/vision/2605.23878.pdf"
+    },
+    {
+      "id": "2605.23868",
+      "title": "Vision Transformers Need Better Token Interaction",
+      "abstract": "Vision Transformers (ViTs) can learn strong image-level representations while their patch representations become less effective for dense prediction during prolonged training. We revisit this dense degradation phenomenon and argue that it is not fully explained by high-norm artifacts alone. Instead, we characterize \\emph{semantic diffusion}: an optimization shortcut in which global semantic information spreads through patch tokens beyond what is locally justified. Our analysis shows that dense representation quality is not captured by locality alone: shallow features can remain better aligned with foreground regions yet underperform deeper features, and \\texttt{[CLS]} features remain complementary for dense prediction. These observations suggest that the goal should not be to remove global context, but to make token interactions more selective. We therefore study sparse attention as a minimal intervention, replacing softmax attention with entmax-1.5 while preserving global token connectivity. On DINOv1 ViT-S/16 trained for 200 epochs on ImageNet-1K, this change preserves ImageNet linear probing accuracy and substantially improves semantic segmentation performance: VOC mIoU increases from 42.80 to 48.78, ADE20K from 19.85 to 21.97, and Cityscapes from 36.79 to 37.87. These results suggest that selective token mixing is a simple and effective bias for improving dense ViT representations.",
+      "authors": [
+        "Linxiang Su"
+      ],
+      "published": "2026-05-22T17:25:16Z",
+      "updated": "2026-05-22T17:25:16Z",
+      "url": "https://arxiv.org/abs/2605.23868",
+      "pdf_url": "https://arxiv.org/pdf/2605.23868.pdf",
+      "primary_category": "cs.CV",
+      "categories": [
+        "cs.CV"
+      ],
+      "tags": [
+        "cs.CV"
+      ],
+      "domain": "Vision",
+      "pdf_downloaded": true,
+      "pdf_size_bytes": 781791,
+      "pdf_path": "2026-05-25/vision/2605.23868.pdf"
+    },
+    {
+      "id": "2605.23845",
+      "title": "Learning a Particle Dynamics Model with Real-world Videos",
+      "abstract": "Data-driven learning approaches for physics simulation, sometimes referred to as world models, have emerged as promising alternatives to traditional physics simulators due to their differentiable nature. Prior work has demonstrated impressive results in predicting the motions of rigid and non-rigid objects in complex scenes involving multiple interacting bodies. However, these models are typically trained in simulated environments because obtaining perfect state information such as complete scene point clouds and point correspondences over time is challenging in real-world settings. This reliance on synthetic data can limit their applicability when the sim-to-real gap is large. In this work, we aim to overcome these limitations by introducing a novel framework for training neural object dynamics models directly from unlabeled real-world videos. Specifically, we propose to learn a particle-based dynamics model compatible with a Gaussian splatting framework, which operates on dense particles derived from Gaussians (i.e., particles with scales and rotations) and predicts their position and rotation changes over time. The model is trained via rendering supervision, enabling learning from real-world videos without requiring particle-level labeled states. Our model operates directly on dense Gaussians without relying on heuristic subsampling anchor points. To enable this study, we also present a real-world dataset consisting of about 500 videos capturing diverse object interactions.",
+      "authors": [
+        "Chanho Kim",
+        "Suhas V. Sumukh",
+        "Li Fuxin"
+      ],
+      "published": "2026-05-22T16:56:27Z",
+      "updated": "2026-05-22T16:56:27Z",
+      "url": "https://arxiv.org/abs/2605.23845",
+      "pdf_url": "https://arxiv.org/pdf/2605.23845.pdf",
+      "primary_category": "cs.CV",
+      "categories": [
+        "cs.CV"
+      ],
+      "tags": [
+        "cs.CV"
+      ],
+      "domain": "Vision",
+      "pdf_downloaded": true,
+      "pdf_size_bytes": 1300253,
+      "pdf_path": "2026-05-25/vision/2605.23845.pdf"
+    },
+    {
+      "id": "2605.23840",
+      "title": "MuellerPT: Decomposition Driven Pretraining for Dense Learning in Mueller Polarimetry",
+      "abstract": "Mueller matrix imaging provides rich, physically meaningful contrast for biomedical tissue analysis, but supervised learning is hindered by scarce dense annotations and strong domain shifts across specimens and acquisition settings. We introduce MuellerPT, a physics guided pre-training approach that learns transferable dense representations by predicting Lu-Chipman decomposition maps from per-pixel 4x4 Mueller matrices. To scale pre-training, we collected a new large Multispectral Animal Polarimetric Organ dataset (MAP-Org). The pre-trained encoder is adapted with a segmentation head for grey vs. white matter segmentation in lamb brain. A classification head is used for colorectal cancer vs. non-cancer classification. Both segmentation and classification are evaluated across few-shot learning scenarios. In segmentation, MuellerPT improves label efficiency and cross specimen transfer compared to models without pre-training, achieving an absolute DICE gain of over 20% compared to the baseline trained from scratch when using 5% of the training data. In classification, MuellerPT also enhances label efficiency, improving overall accuracy by 8% compared to the baseline when using 1% of the training data. We demonstrate MuellerPT's robustness to domain shift with a qualitative evaluation of its predicted Lu-Chipman maps on an ex vivo human oesophagus sample. These results suggest that predicting Lu-Chipman decomposition is an effective and practical pretext task for robust biomedical inference from Mueller polarimetry and can pave the way for future work on label efficient Mueller imaging.",
+      "authors": [
+        "Adam Tlemsani",
+        "Yingdian Li",
+        "Maxime Giot",
+        "Naim Slim",
+        "Christopher J. Peters",
+        "Abhijeet Ghosh",
+        "Daniel S. Elson"
+      ],
+      "published": "2026-05-22T16:48:57Z",
+      "updated": "2026-05-22T16:48:57Z",
+      "url": "https://arxiv.org/abs/2605.23840",
+      "pdf_url": "https://arxiv.org/pdf/2605.23840.pdf",
+      "primary_category": "cs.CV",
+      "categories": [
+        "cs.CV"
+      ],
+      "tags": [
+        "cs.CV"
+      ],
+      "domain": "Vision",
+      "pdf_downloaded": true,
+      "pdf_size_bytes": 15494628,
+      "pdf_path": "2026-05-25/vision/2605.23840.pdf"
+    },
+    {
+      "id": "2605.23826",
+      "title": "Decomposing Queries into Tool Calls for Long-Video Keyframe Retrieval",
+      "abstract": "Keyframe selection is a direct way to provide verifiable visual evidence for long-video question answering (QA). Queries differ in what they require, and finding the right frames depends on knowing what to look for. Existing keyframe selectors either score every frame against a single query, or decompose the query into a fixed schema evaluated by a single visual tool. We propose ToolMerge, a keyframe retrieval method based on decomposition and merging: an Large Language Model (LLM) based planner decomposes the query into tool calls and specifies how their per-tool rankings are merged using boolean operators. To evaluate retrieval directly, we construct Molmo-2 Moments (M2M), a benchmark in which every question is anchored to a specific time interval by construction. Across QA, question retrieval, and caption retrieval, ToolMerge is competitive with prior keyframe selectors, most notably on caption retrieval, outperforming other methods by 5%. Code and data can be found at https://github.com/michalsr/ToolMerge .",
+      "authors": [
+        "Michal Shlapentokh-Rothman",
+        "Prachi Garg",
+        "Yu-Xiong Wang",
+        "Derek Hoiem"
+      ],
+      "published": "2026-05-22T16:29:51Z",
+      "updated": "2026-05-22T16:29:51Z",
+      "url": "https://arxiv.org/abs/2605.23826",
+      "pdf_url": "https://arxiv.org/pdf/2605.23826.pdf",
+      "primary_category": "cs.CV",
+      "categories": [
+        "cs.CV",
+        "cs.CL"
+      ],
+      "tags": [
+        "cs.CL",
+        "cs.CV"
+      ],
+      "domain": "Vision",
+      "pdf_downloaded": true,
+      "pdf_size_bytes": 662912,
+      "pdf_path": "2026-05-25/vision/2605.23826.pdf"
+    },
+    {
+      "id": "2605.23790",
+      "title": "Exploring deep learning for Event-Based Saliency Prediction with a Transformer-based model",
+      "abstract": "Saliency prediction has been extensively studied in RGB images and videos as a computational model of human visual attention. In contrast, predicting saliency from event-based data remains largely unexplored, despite the biological inspiration and favorable sensing properties of event cameras. Two obstacles have held this direction back: the absence of large-scale event saliency datasets, and the lack of a strong baseline. In this paper, we introduce SEST (Swin Event-based Saliency Transformer), a transformer-based model for saliency prediction from event data, bridging the data scarcity barrier through event-native pretraining and synthetic supervision. SEST leverages a self-supervised pretrained event-based Swin Transformer backbone combined with a lightweight CNN decoder to produce dynamic saliency maps. To address the scarcity of annotated event-based saliency data, we introduce two new benchmark datasets, N-DHF1K and N-UCF Sports, generated from large-scale RGB saliency benchmarks. Experimental results show that SEST clearly outperforms existing event-based saliency methods and narrows the performance gap with state-of-the-art RGB models. Zero-shot evaluation on a real event camera dataset further demonstrates that our model trained on synthetic data remains transferable on real event streams. To the best of our knowledge, this work is the first to apply deep learning to event-based saliency prediction, opening a new research direction at the intersection of event-based vision and neuromorphic visual attention.",
+      "authors": [
+        "Romaric Mazna",
+        "Jean Martinet",
+        "Sai Deepesh Pokala"
+      ],
+      "published": "2026-05-22T15:52:01Z",
+      "updated": "2026-05-22T15:52:01Z",
+      "url": "https://arxiv.org/abs/2605.23790",
+      "pdf_url": "https://arxiv.org/pdf/2605.23790.pdf",
+      "primary_category": "cs.CV",
+      "categories": [
+        "cs.CV"
+      ],
+      "tags": [
+        "cs.CV"
+      ],
+      "domain": "Vision",
+      "pdf_downloaded": true,
+      "pdf_size_bytes": 2107461,
+      "pdf_path": "2026-05-25/vision/2605.23790.pdf"
+    },
+    {
+      "id": "2605.23777",
+      "title": "Machine learning applied to emerald gemstone grading: framework proposal and creation of a public dataset",
+      "abstract": "The grading of gemstones is currently a manual procedure performed by gemologists. A popular approach uses reference stones, where those are visually inspected by specialists that decide which one of the available reference stone is the most similar to the inspected stone. This procedure is very subjective as different specialists may end up with different grading choices. This work proposes a complete framework that entails the image acquisition and goes up to the final stone categorization. The proposal is able to automate the entire process apart from including the stone in the created chamber for the image acquisition. It discards the subjective decisions made by specialists. This is the first work to propose a machine learning approach coupled with image processing techniques for emerald grading. The proposed framework achieves 98% of accuracy (correctly categorized stones), outperforming a deep learning approach. Furthermore, we also create and publish the used dataset that contains 192 images of emerald stones along with their extracted and pre-processed features.",
+      "authors": [
+        "FB Pena",
+        "D Crabi",
+        "Sandro C Izidoro",
+        "\u00c9rick O Rodrigues",
+        "G Bernardes"
+      ],
+      "published": "2026-05-22T15:43:26Z",
+      "updated": "2026-05-22T15:43:26Z",
+      "url": "https://arxiv.org/abs/2605.23777",
+      "pdf_url": "https://arxiv.org/pdf/2605.23777.pdf",
+      "primary_category": "cs.CV",
+      "categories": [
+        "cs.CV"
+      ],
+      "tags": [
+        "cs.CV"
+      ],
+      "domain": "Vision",
+      "pdf_downloaded": true,
+      "pdf_size_bytes": 4828483,
+      "pdf_path": "2026-05-25/vision/2605.23777.pdf"
+    },
+    {
+      "id": "2605.23775",
+      "title": "A Novel Approach for the Counting of Wood Logs Using cGANs and Image Processing Techniques",
+      "abstract": "This study tackles the challenge of precise wood log counting, where applications of the proposed methodology can span from automated approaches for materials management, surveillance, and safety science to wood traffic monitoring, wood volume estimation, and others. We introduce an approach leveraging Conditional Generative Adversarial Networks (cGANs) for eucalyptus log segmentation in images, incorporating specialized image processing techniques to handle noise and intersections, coupled with the Connected Components Algorithm for efficient counting. To support this research, we created and made publicly available a comprehensive database of 466 images containing approximately 13,048 eucalyptus logs, which served for both training and validation purposes. Our method demonstrated robust performance, achieving an average Accuracy_pixel of 96.4% and Accuracy_logs of 92.3%, with additional measures such as F1 scores ranging from 0.879 to 0.933 and IoU values between 0.784 and 0.875, further validating its effectiveness. The implementation proves to be efficient with an average processing time of 0.713s per image on an NVIDIA T4 GPU, making it suitable for realtime applications. The practical implications of this method are significant for operational forestry, enabling more accurate inventory management, reducing human errors in manual counting, and optimizing resource allocation. Furthermore, the segmentation capabilities of the model provide a foundation for advanced applications such as eucalyptus stack volume estimation, contributing to a more comprehensive and refined analysis of forestry operations. The methodology's success in handling complex scenarios, including intersecting logs and varying environmental conditions, positions it as a valuable tool for practical applications across related industrial sectors.",
+      "authors": [
+        "Jo\u00e3o VC Mazzochin",
+        "Giovani Bernardes Vitor",
+        "Gustavo Tiecker",
+        "Elioenai MF Diniz",
+        "Gilson A Oliveira",
+        "Marcelo Trentin",
+        "\u00c9rick O Rodrigues"
+      ],
+      "published": "2026-05-22T15:43:16Z",
+      "updated": "2026-05-22T15:43:16Z",
+      "url": "https://arxiv.org/abs/2605.23775",
+      "pdf_url": "https://arxiv.org/pdf/2605.23775.pdf",
+      "primary_category": "cs.CV",
+      "categories": [
+        "cs.CV"
+      ],
+      "tags": [
+        "cs.CV"
+      ],
+      "domain": "Vision",
+      "pdf_downloaded": true,
+      "pdf_size_bytes": 13533982,
+      "pdf_path": "2026-05-25/vision/2605.23775.pdf"
+    },
+    {
+      "id": "2605.23747",
+      "title": "Revitalizing Dense Material Segmentation: Stabilized Vision Transformers and the Generalization Paradox",
+      "abstract": "Material segmentation, the pixel-wise classification of physical surface properties, remains a challenging problem in computer vision, requiring physicochemical understanding distinct from object-centric parsing. Despite the introduction of the rigorous Apple Dense Material Segmentation (DMS) dataset, the benchmark has suffered from attrition and stagnation, increasingly overshadowed by geometry-biased foundation models. In this paper, we revive the Apple-DMS benchmark to establish a modern Vision Transformer baseline. We conduct an exhaustive evaluation of SegFormer and Mask2Former architectures, revealing that standard training paradigms fail on amorphous texture fields due to high-variance gradients. To address this, we introduce a stabilized training recipe featuring High-Fidelity Logit Projection, Query Entropy Regularization, and a domain-specific, physics-compliant augmentation pipeline. Our optimized SegFormer-B5 achieves a new State-of-the-Art (SOTA) of 0.4572 mIoU on the original dataset split, significantly surpassing the prior convolutional baseline. Furthermore, we identify a critical \"Generalization Paradox\": while re-partitioning the dataset into a data-rich 80/10/10 split inflates the metric to 0.5276 mIoU, expert qualitative analysis reveals this induces distributional homogenization, severely degrading real-world, out-of-distribution performance. By releasing our recovered dataset index and robust training framework, we demonstrate that material perception is far from solved and urge the community to leverage the rigorous original split to drive genuine progress in physically grounded artificial intelligence.",
+      "authors": [
+        "Allan Kazakov",
+        "Duygu Cakir",
+        "Hilal Kurt \u0130rfano\u011flu",
+        "Yavuz \u0130rfano\u011flu"
+      ],
+      "published": "2026-05-22T15:20:27Z",
+      "updated": "2026-05-22T15:20:27Z",
+      "url": "https://arxiv.org/abs/2605.23747",
+      "pdf_url": "https://arxiv.org/pdf/2605.23747.pdf",
+      "primary_category": "cs.CV",
+      "categories": [
+        "cs.CV"
+      ],
+      "tags": [
+        "cs.CV"
+      ],
+      "domain": "Vision",
+      "pdf_downloaded": true,
+      "pdf_size_bytes": 19939967,
+      "pdf_path": "2026-05-25/vision/2605.23747.pdf"
+    },
+    {
+      "id": "2605.23699",
+      "title": "CRONOS: Benchmarking Counterfactual Physical Consistency in Video Models",
+      "abstract": "Video prediction is increasingly viewed as a path toward generalizable world models, yet it remains unclear whether these systems learn underlying causal structure or merely exploit superficial visual correlations for future prediction. We introduce CRONOS, an intervention-based benchmark designed to evaluate counterfactual physical consistency: whether a model's predictions of physical events respond appropriately to controlled changes in the visual input, such as variations of scene context, viewpoint, object appearance, and object category. Built in a photorealistic Unreal Engine environment, CRONOS enables controlled, high-fidelity generation of videos across diverse scenes and dynamics. In contrast to previous benchmarks, CRONOS systematically intervenes on four key factors - viewpoint, scene, object category, and object appearance - while keeping the underlying physical event type, such as a collision, occlusion, or fall, fixed. Our evaluation of recent open-source video generators reveals substantial failures in counterfactual physical consistency: prediction quality for the same physical event type is affected by appearance, environment, and, particularly by viewpoint changes. CRONOS provides a controlled and reproducible testbed for diagnosing how the quality of generated videos changes for different interventions, establishing a concrete target for developing models that perform consistently across changes of multiple conditions. The dataset and code are available at our project page.",
+      "authors": [
+        "Le\u00f3n Begiristain",
+        "Olaf D\u00fcnkel",
+        "Adam Kortylewski"
+      ],
+      "published": "2026-05-22T14:51:22Z",
+      "updated": "2026-05-22T14:51:22Z",
+      "url": "https://arxiv.org/abs/2605.23699",
+      "pdf_url": "https://arxiv.org/pdf/2605.23699.pdf",
+      "primary_category": "cs.CV",
+      "categories": [
+        "cs.CV"
+      ],
+      "tags": [
+        "cs.CV"
+      ],
+      "domain": "Vision",
+      "pdf_downloaded": true,
+      "pdf_size_bytes": 22962108,
+      "pdf_path": "2026-05-25/vision/2605.23699.pdf"
+    },
+    {
+      "id": "2605.23672",
+      "title": "RiGS: Rigid-aware 4D Gaussian Splatting from a Single Monocular Video",
+      "abstract": "Reconstructing dynamic 3D scenes from monocular videos is a fundamental yet highly challenging task, as real-world motions often involve both long-term smooth transformations and short-term complex deformations. Existing methods either struggle to maintain temporal consistency or fail to capture high-frequency dynamics due to limited motion modeling capacity. In this work, we present Rigid-aware 4D Gaussian Splatting (RiGS), which simultaneously captures motions across multiple temporal scales. Specifically, RiGS introduces three types of Gaussian primitives: static, rigid, and transient, which represent static backgrounds, long-term low-frequency motions, and short-term high-frequency dynamics, respectively. An object-wise dynamic mask is proposed to aggregate long-range spatiotemporal motion information and guide the decomposition of static and dynamic regions. To jointly model motion across scales, rigid Gaussians are allowed to transition into transient Gaussians based on their temporal duration, and both are optimized under scene flow guidance, providing dense 3D motion supervision. Extensive experiments demonstrate that RiGS achieves state-of-the-art performance on novel view synthesis benchmarks. Code is available at \\hyperlink{https://github.com/ladvu/RiGS}{https://github.com/ladvu/RiGS}.",
+      "authors": [
+        "Chenyu Wu",
+        "Wanhua Li",
+        "Zhu-Tian Chen",
+        "Hanspeter Pfister"
+      ],
+      "published": "2026-05-22T14:20:39Z",
+      "updated": "2026-05-22T14:20:39Z",
+      "url": "https://arxiv.org/abs/2605.23672",
+      "pdf_url": "https://arxiv.org/pdf/2605.23672.pdf",
+      "primary_category": "cs.CV",
+      "categories": [
+        "cs.CV"
+      ],
+      "tags": [
+        "cs.CV"
+      ],
+      "domain": "Vision",
+      "pdf_downloaded": true,
+      "pdf_size_bytes": 15220586,
+      "pdf_path": "2026-05-25/vision/2605.23672.pdf"
+    },
+    {
+      "id": "2605.23656",
+      "title": "Recursive Block-Diagonal Coupling for Resource-Efficient Training of Vision Models",
+      "abstract": "Training high-capacity vision models from scratch requires substantial computational resources. To improve training efficiency of a wide target model, existing growth methods often assume the availability of narrower models, obscuring the true computational cost of the entire pipeline. We propose an efficient training protocol, RBDC, that builds wide models by coupling in a parameter-free block-diagonal way narrower, independently trained models in a recursive way. This allows a flexible allocation of the training budget available across all the models involved. Evaluated with vision transformers (DeiT) and convolutional networks (ResNet) on ImageNet, our RBDC training protocol shows a much better efficiency than models trained from scratch with the standard protocol, yielding 30% FLOPs reduction at similar test accuracies. It also achieves higher performances at same training FLOPs than training protocols from the model growth literature. Finally, we show that our models can serve as better backbones than their original counterparts for downstream object detection and instance segmentation tasks.",
+      "authors": [
+        "Maxim Henry",
+        "Adrien Deli\u00e8ge",
+        "S\u00e9bastien Pi\u00e9rard",
+        "Marc Van Droogenbroeck"
+      ],
+      "published": "2026-05-22T14:08:22Z",
+      "updated": "2026-05-22T14:08:22Z",
+      "url": "https://arxiv.org/abs/2605.23656",
+      "pdf_url": "https://arxiv.org/pdf/2605.23656.pdf",
+      "primary_category": "cs.CV",
+      "categories": [
+        "cs.CV"
+      ],
+      "tags": [
+        "cs.CV"
+      ],
+      "domain": "Vision",
+      "pdf_downloaded": true,
+      "pdf_size_bytes": 941371,
+      "pdf_path": "2026-05-25/vision/2605.23656.pdf"
+    },
+    {
+      "id": "2605.23655",
+      "title": "CVSearch: Empowering Multimodal LLMs with Cognitive Visual Search for High-Resolution Image Perception",
+      "abstract": "High-resolution (HR) image perception presents a key bottleneck for multimodal large language models (MLLMs). While visual search offers a promising solution, existing methods struggle with the trade-off between coverage and efficiency. Visual expert-assisted search is efficient but prone to blind spots when proposals fail, whereas scan-based search guarantees coverage at the cost of computational redundancy and semantic fragmentation. To address this dilemma, we introduce CVSearch, a training-free adaptive framework that dynamically schedules search strategies via an Assess-then-Search workflow. Specifically, CVSearch first invokes expert-assisted search when global information is insufficient, and only triggers a novel semantic-aware scanning mechanism upon failure. Distinct from rigid grid partitioning, this efficient scanning paradigm incorporates Semantic Guided Adaptive Patching to decompose images into semantically consistent regions, effectively mitigating object fragmentation. Furthermore, we devise a Dynamic Bottom-Up Search strategy driven by a Visual Complexity prior to enable efficient and precise iterative exploration of local details. Extensive experiments on HR benchmarks demonstrate that CVSearch achieves state-of-the-art accuracy while substantially improving search efficiency. Code is released at https://github.com/liliupeng28/ICML26-CVSearch.",
+      "authors": [
+        "Liupeng Li",
+        "Haoqian Kang",
+        "Zhenyu Lu",
+        "Jinpeng Wang",
+        "Bin Chen",
+        "Ke Chen",
+        "Yaowei Wang"
+      ],
+      "published": "2026-05-22T14:07:44Z",
+      "updated": "2026-05-22T14:07:44Z",
+      "url": "https://arxiv.org/abs/2605.23655",
+      "pdf_url": "https://arxiv.org/pdf/2605.23655.pdf",
+      "primary_category": "cs.CV",
+      "categories": [
+        "cs.CV",
+        "cs.AI",
+        "cs.LG",
+        "cs.MM"
+      ],
+      "tags": [
+        "cs.AI",
+        "cs.CV",
+        "cs.LG",
+        "cs.MM"
+      ],
+      "domain": "Vision",
+      "pdf_downloaded": true,
+      "pdf_size_bytes": 7740872,
+      "pdf_path": "2026-05-25/vision/2605.23655.pdf"
+    },
+    {
+      "id": "2605.23653",
+      "title": "ExpOS: Explainable Open-Surgery Skills Assessment Using 3D Hand Reconstruction",
+      "abstract": "Timely and transparent feedback is essential for effective surgical training, yet current assessment remains dependent on expert observation, limiting scalability and opportunities for autonomous practice. We present ExpOS, an explainable framework for data-driven assessment of open-surgery skills designed to enable automatic, feedback-oriented evaluation. Rather than relying on expert-defined metrics, ExpOS learns discriminative temporal patterns directly from motion data and identifies the segments and behaviors most predictive of skill level. We trained and evaluated the method on 221 videos of medical students performing three open-surgery tasks. Hand poses and tool detections were extracted from each frame to derive kinematic descriptors and global motion statistics. Spatiotemporal hand-tool dynamics were modeled using a temporal convolutional backbone with attention-based pooling to generate frame-level importance maps. These representations were fused with global motion statistics to predict skill level and to provide interpretable feedback. ExpOS provides multi-level explainability by identifying when informative events occur through attention weights and which motion characteristics most influence predictions through global feature analysis. Across tasks, the framework achieved strong correlation with expert ratings, with best performance on fascial closure (r = 0.778, R2 = 0.74). These results demonstrate that combining weakly-supervised temporal importance learning with interpretable motion statistics enables scalable and actionable surgical skill assessment.",
+      "authors": [
+        "Roi Papo",
+        "Idan Smoller",
+        "Shlomi Laufer"
+      ],
+      "published": "2026-05-22T14:06:41Z",
+      "updated": "2026-05-22T14:06:41Z",
+      "url": "https://arxiv.org/abs/2605.23653",
+      "pdf_url": "https://arxiv.org/pdf/2605.23653.pdf",
+      "primary_category": "cs.CV",
+      "categories": [
+        "cs.CV"
+      ],
+      "tags": [
+        "cs.CV"
+      ],
+      "domain": "Vision",
+      "pdf_downloaded": true,
+      "pdf_size_bytes": 1698264,
+      "pdf_path": "2026-05-25/vision/2605.23653.pdf"
+    },
+    {
+      "id": "2605.23634",
+      "title": "DualMem: Bypassing the Objectness Bottleneck for Calibrated Unknown-Stream Filtering in Open-World Object Detection",
+      "abstract": "Open-world object detection (OWOD) requires detectors to localize known classes while identifying unknown objects for future incremental learning. We find that the unknown prediction streams of strong OWOD detectors are heavily polluted: on M-OWODB, across PROB, OW-DETR, and HypOW, future-task positive unknowns make up less than 10% of unknown predictions, whereas background false positives account for 46-71%. We show that this is not a missing-information problem, but an information bottleneck at the objectness head. On PROB Task 1, a linear probe on the 256-D decoder query achieves an AUROC of 0.908 for positive-versus-negative unknown discrimination, but the final one-dimensional objectness scalar drops to 0.642. A frozen SigLIP feature, without access to the detector, independently recovers much of this proposal-level separability at the filtering stage (AUROC = 0.871). Motivated by this finding, we propose DualMem, a calibrated post-hoc filter that assumes a small image-disjoint annotated calibration split of held-out future-task objects and performs a non-parametric likelihood ratio test in frozen SigLIP feature space. DualMem uses a k-nearest-neighbor positive memory to protect future-task objects and a negative memory to suppress background-like proposals. Its decision threshold is chosen by Neyman-Pearson calibration, giving users an explicit trade-off between false-unknown suppression and novel recall. Across PROB, OW-DETR, and HypOW on M-OWODB Task 1, DualMem reduces background-type false unknown proposals per image by 44.9%-66.3%, with a mean reduction of 56.6%. On PROB Task 1, it more than doubles the reduction achieved by a natural K-means prototype baseline, while leaving known-class mAP unchanged because known detections bypass the filter.",
+      "authors": [
+        "Yingjun Xiao",
+        "Xi Chen",
+        "Gang Fang",
+        "Siyuan Chen"
+      ],
+      "published": "2026-05-22T13:50:38Z",
+      "updated": "2026-05-22T13:50:38Z",
+      "url": "https://arxiv.org/abs/2605.23634",
+      "pdf_url": "https://arxiv.org/pdf/2605.23634.pdf",
+      "primary_category": "cs.CV",
+      "categories": [
+        "cs.CV",
+        "cs.AI"
+      ],
+      "tags": [
+        "cs.AI",
+        "cs.CV"
+      ],
+      "domain": "Vision",
+      "pdf_downloaded": true,
+      "pdf_size_bytes": 5094192,
+      "pdf_path": "2026-05-25/vision/2605.23634.pdf"
+    },
+    {
+      "id": "2605.23629",
+      "title": "DDX-TRACE: A Benchmark for Medical Diagnostic Trajectories in VLMs",
+      "abstract": "Medical diagnosis is not a single prediction from a fully specified vignette. It is a sequential workup: clinicians decide what evidence to obtain, revise a differential diagnosis, and stop when the diagnosis is sufficiently supported. Most medical AI benchmarks instead reveal the relevant context upfront and score only the final answer, making unsupported correct guesses, premature closure, inefficient workups, and poor uncertainty updating invisible. We introduce DDX-TRACE, a physician-adjudicated benchmark for multimodal neuroradiology that evaluates diagnostic trajectories under hidden evidence over 211 challenging cases. Each case begins with limited clinical history; models request imaging studies in free form, receive matched image bundles when available, update a probabilistic differential diagnosis after each turn, and stop with a localized final diagnosis. Evaluating state-of-the-art VLMs, we find that final diagnosis scores can substantially misrepresent workup quality: models may guess plausible diagnoses without essential evidence, request useful studies but misinterpret raw images, or acquire evidence inefficiently while updating uncertainty poorly. Controlled evidence variants isolate bottlenecks in planning, visual evidence extraction, and downstream differential reasoning. DDX-TRACE shifts medical AI evaluation from final answers to evidence-supported diagnostic trajectories.",
+      "authors": [
+        "Jiazhen Pan",
+        "Weixiang Shen",
+        "Jun Li",
+        "Julian Canisius",
+        "Felix Bitzer",
+        "Paula Ro\u00dfm\u00fcller",
+        "Jiancheng Yang",
+        "Virginie Kreutzinger",
+        "Daniel Rueckert",
+        "Benedikt Wiestler"
+      ],
+      "published": "2026-05-22T13:41:10Z",
+      "updated": "2026-05-22T13:41:10Z",
+      "url": "https://arxiv.org/abs/2605.23629",
+      "pdf_url": "https://arxiv.org/pdf/2605.23629.pdf",
+      "primary_category": "cs.CV",
+      "categories": [
+        "cs.CV"
+      ],
+      "tags": [
+        "cs.CV"
+      ],
+      "domain": "Vision",
+      "pdf_downloaded": true,
+      "pdf_size_bytes": 4702870,
+      "pdf_path": "2026-05-25/vision/2605.23629.pdf"
+    },
+    {
+      "id": "2605.23610",
+      "title": "EM-Vid: Training-Free Entity-Centric Memory for Efficient and Consistent Multi-Shot Video Generation",
+      "abstract": "Multi-shot video generation requires maintaining a consistent appearance of recurring entities across shots while remaining faithful to shot-specific text prompts. Recent autoregressive methods reuse previously generated frames as memory. However, full-frame storage entangles persistent entity information with transient scene context, leading to irrelevant information leakage and high computational cost. We propose an entity-centric memory in the form of an entity-indexed bank of latent patches. We introduce sparse token conditioning compatible with pretrained models, restricting self-attention to entity-relevant tokens and reducing computational cost. To support this, we introduce a structured multi-shot script format. We additionally propose a budgeted memory update strategy to maintain a compact, evolving memory. Finally, we equip the entity representation with a noise-injection mechanism that enables fine-grained appearance control, preventing leakage of irrelevant information. Our method improves prompt adherence and efficiency while preserving subject consistency.",
+      "authors": [
+        "Jente Vandersanden",
+        "Matheus Gadelha",
+        "Chun-Hao P. Huang",
+        "Hyeonho Jeong",
+        "Yulia Gryaditskaya"
+      ],
+      "published": "2026-05-22T13:20:29Z",
+      "updated": "2026-05-22T13:20:29Z",
+      "url": "https://arxiv.org/abs/2605.23610",
+      "pdf_url": "https://arxiv.org/pdf/2605.23610.pdf",
+      "primary_category": "cs.CV",
+      "categories": [
+        "cs.CV",
+        "cs.AI"
+      ],
+      "tags": [
+        "cs.AI",
+        "cs.CV"
+      ],
+      "domain": "Vision",
+      "pdf_downloaded": false,
+      "pdf_size_bytes": null,
+      "pdf_path": null
+    }
+  ]
+}
