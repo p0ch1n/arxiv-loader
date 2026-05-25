@@ -1,0 +1,748 @@
+{
+  "domain": "Agent",
+  "date": "2026-05-25",
+  "count": 26,
+  "papers": [
+    {
+      "id": "2605.23863",
+      "title": "Robotic Strawberry Harvesting with Robust Vision and Deep Reinforcement Learning based Sim-to-Real Control",
+      "abstract": "This study presents a closed-loop robotic strawberry harvesting system that combines a robust vision module, simulation-trained deep reinforcement learning (DRL) control, and ROS-based realrobot execution. For perception, we propose HRAttnEdge-YOLO26-seg, a modified YOLO26-seg architecture that incorporates a high-resolution P2 branch, segmentation-path attention, and edgesupervised prototype learning to improve instance segmentation in cluttered scenes. For control, we train a target-conditioned Proximal Policy Optimization (PPO) policy in Isaac Lab to produce smooth joint-position commands for a UR10e manipulator and deploy it on a UR10e robot for targetfruit reaching and harvesting. This simulation-based approach reduces hardware dependency, lowers development cost, and allows scalable policy training without exhaustive physical trials before real deployment. The proposed vision model demonstrated the highest overall performance among the evaluated methods. On both self-collected and public datasets, the model showed a 10 to 14% improvement in segmentation performance. In controlled in-house tests, the PPO controller produced stable and dynamically smoother motion than a inverse kinematics (IK)-based MoveIt baseline. In greenhouse trials, the proposed integrated system harvested 281 strawberries, achieving 96.6% reaching success, 91.3% grasp-and-pull success, and 84.3% overall harvesting success. These results illustrate that task-specific perception combined with simulation-trained PPO can serve as a practical and resource-efficient alternative to conventional planner-dependent reaching in manipulation, enabling reliable closed-loop robotic harvesting in complex agricultural environments.",
+      "authors": [
+        "Al Bashir",
+        "Shao-Yang Chang",
+        "Partho Ghose",
+        "Prem Raj",
+        "Chen-Kang Huang",
+        "Azlan Zahid"
+      ],
+      "published": "2026-05-22T17:21:06Z",
+      "updated": "2026-05-22T17:21:06Z",
+      "url": "https://arxiv.org/abs/2605.23863",
+      "pdf_url": "https://arxiv.org/pdf/2605.23863.pdf",
+      "primary_category": "cs.RO",
+      "categories": [
+        "cs.RO"
+      ],
+      "tags": [
+        "cs.RO"
+      ],
+      "domain": "Agent",
+      "pdf_downloaded": true,
+      "pdf_size_bytes": 7063199,
+      "pdf_path": "2026-05-25/agent/2605.23863.pdf"
+    },
+    {
+      "id": "2605.23856",
+      "title": "Point Tracking Improves World Action Models",
+      "abstract": "Robot policy learning benefits from world-action models that capture environment dynamics, but pixel-level prediction entangles dynamics with nuisance factors such as lighting and texture, making learned representations vulnerable to task-irrelevant visual variation. We propose JOPAT, a JOint Pixel-And-Track World-Action Model that predicts latent visual observations, 2D point tracks with visibility, and actions in a single denoising diffusion transformer. The key insight is that tracks provide an explicit representation of motion that captures long-horizon dynamics and remains robust under occlusion or partial out-of-frame motion, offering greater utility than modeling pixel appearance alone. On LIBERO and real-world LeRobot tasks, JOPAT improves over pixel-based baselines, with the largest gains on long-horizon tasks involving occlusion, object interaction, and off-screen motion.",
+      "authors": [
+        "Jiarui Guan",
+        "Wenshuai Zhao",
+        "Yue Pei",
+        "Ziliang Chen",
+        "Arno Solin",
+        "Juho Kannala"
+      ],
+      "published": "2026-05-22T17:08:37Z",
+      "updated": "2026-05-22T17:08:37Z",
+      "url": "https://arxiv.org/abs/2605.23856",
+      "pdf_url": "https://arxiv.org/pdf/2605.23856.pdf",
+      "primary_category": "cs.RO",
+      "categories": [
+        "cs.RO"
+      ],
+      "tags": [
+        "cs.RO"
+      ],
+      "domain": "Agent",
+      "pdf_downloaded": true,
+      "pdf_size_bytes": 7271476,
+      "pdf_path": "2026-05-25/agent/2605.23856.pdf"
+    },
+    {
+      "id": "2605.23847",
+      "title": "Instrumentation for Imitation Learning: Enhancing Training Datasets for Clothes Hanger Insertion",
+      "abstract": "Large behaviour models have transformed the field of robotic manipulation, but prohibitive data requirements have thus far prevented a revolution similar to vision language models. We believe that instrumentation, i.e. sensor integration in objects, can provide invaluable state information and enable efficient learning for robotic manipulation. In this paper, we present instrumented imitation learning of clothes hanger insertion. Using 180 teleoperated demonstrations, we train diffusion policies with and without access to instrumentation data. Results show that policies leveraging instrumentation outperform vision-only counterparts by 14-25 %pt and exhibit greater task awareness. Crucially, a black-box imitation learning policy learns to prioritise instrumentation signals without explicit guidance. In addition, enhancing the teleoperation dataset with rollouts from an instrumented expert policy, enables a vision-only student policy to achieve performance comparable to the instrumented expert, thereby surpassing the original vision-only policy. These findings establish instrumentation as a promising strategy to enhance imitation learning for robotic manipulation. Datasets are available on Zenodo.",
+      "authors": [
+        "Remko Proesmans",
+        "Thomas Lips",
+        "Francis wyffels"
+      ],
+      "published": "2026-05-22T16:59:55Z",
+      "updated": "2026-05-22T16:59:55Z",
+      "url": "https://arxiv.org/abs/2605.23847",
+      "pdf_url": "https://arxiv.org/pdf/2605.23847.pdf",
+      "primary_category": "cs.RO",
+      "categories": [
+        "cs.RO"
+      ],
+      "tags": [
+        "cs.RO"
+      ],
+      "domain": "Agent",
+      "pdf_downloaded": true,
+      "pdf_size_bytes": 5640247,
+      "pdf_path": "2026-05-25/agent/2605.23847.pdf"
+    },
+    {
+      "id": "2605.23832",
+      "title": "SFG-ROS: A Resource-Aware Framework for Dense Multi-Agent Perception",
+      "abstract": "Deploying heterogeneous multi-agent robot fleets for collaborative perception requires robust data exchange and scalable software architectures. However, standard ROS 2 implementations often suffer from network saturation, namespace collisions, and severe computational overhead when distributing dense sensor streams across devices. To address these bottlenecks, we present SFG-ROS, a resource-aware multi-agent software framework designed for dynamic fleet deployments. SFG-ROS addresses these challenges through three primary contributions. First, schema-driven traffic routing isolates high-frequency intra-agent traffic from the global network using a programmatic fully qualified name schema and targeted Fast DDS routing. Second, an on-demand centralized decoding pipeline automatically offloads high-bandwidth sensor data decompression, eliminating redundant processing across local consumer nodes. Finally, a hardware-agnostic container pipeline dynamically adapts to heterogeneous accelerators, seamlessly bridging development environments with zero-touch, field-ready execution. We evaluate the framework using a fleet of wheeled and legged robots equipped with LiDAR and stereo depth cameras. Experimental results show SFG-ROS bounds network traffic to $\\mathcal{O}(1)$ and, by replacing redundant decompression with lightweight IPC, reduces the per-subscriber CPU scaling penalty by 72.3\\% versus standard ROS 2, all while maintaining low latency. Finally, we publish SFG-ROS under a permissive license, available via \\href{https://iis-esslingen.github.io/sfg-ros}{iis-esslingen.github.io/sfg-ros}.",
+      "authors": [
+        "Constantin Blessing",
+        "Elias Geiger",
+        "Jakob H\u00e4ringer",
+        "Dennis Grewe",
+        "Markus Enzweiler"
+      ],
+      "published": "2026-05-22T16:41:12Z",
+      "updated": "2026-05-22T16:41:12Z",
+      "url": "https://arxiv.org/abs/2605.23832",
+      "pdf_url": "https://arxiv.org/pdf/2605.23832.pdf",
+      "primary_category": "cs.RO",
+      "categories": [
+        "cs.RO"
+      ],
+      "tags": [
+        "cs.RO"
+      ],
+      "domain": "Agent",
+      "pdf_downloaded": true,
+      "pdf_size_bytes": 1261920,
+      "pdf_path": "2026-05-25/agent/2605.23832.pdf"
+    },
+    {
+      "id": "2605.23762",
+      "title": "Direct Dynamic Retargeting for Humanoid Imitation Learning from Videos",
+      "abstract": "Imitation Learning from monocular video demonstrations provides a scalable approach for teaching complex skills to humanoid robots. However, translating human motion to humanoids requires overcoming significant morphological mismatches. Standard approaches rely on Geometric Retargeting or Indirect Dynamic Retargeting pipelines. We identify that these intermediate kinematic projections introduce a geometric bias, restricting the search space and yielding suboptimal dynamic behaviors. In this paper, we propose Direct Dynamic Retargeting (DDR), a novel single-stage framework that generates high-fidelity, dynamically feasible trajectories directly from expert videos. By formulating the problem in the task space and leveraging a sampling-based Model Predictive Control solver within a physics simulator, DDR natively optimizes over complex contact sequences while mitigating input drift. Our experiments demonstrate that bypassing the geometric bias allows DDR to outperform state-of-the-art baselines in demonstration tracking accuracy. Furthermore, we establish that providing such physically viable references to RL agents accelerates training convergence and enhances the final execution of agile and balancing behaviors. Source code will be made publicly available.",
+      "authors": [
+        "Constant Roux",
+        "Ludovic De Matte\u00efs",
+        "Armand Jordana",
+        "Valentin Guillet",
+        "Nicolas Mansard",
+        "Olivier Stasse",
+        "Philippe Sou\u00e8res"
+      ],
+      "published": "2026-05-22T15:33:40Z",
+      "updated": "2026-05-22T15:33:40Z",
+      "url": "https://arxiv.org/abs/2605.23762",
+      "pdf_url": "https://arxiv.org/pdf/2605.23762.pdf",
+      "primary_category": "cs.RO",
+      "categories": [
+        "cs.RO"
+      ],
+      "tags": [
+        "cs.RO"
+      ],
+      "domain": "Agent",
+      "pdf_downloaded": true,
+      "pdf_size_bytes": 9287830,
+      "pdf_path": "2026-05-25/agent/2605.23762.pdf"
+    },
+    {
+      "id": "2605.23743",
+      "title": "The Communication Complexity of Instant-Runoff Voting",
+      "abstract": "The communication complexity of a voting rule is the worst-case number of bits that n voters must transmit to a central authority under the most efficient elicitation protocol in an election with m candidates. We study the communication complexity of Instant-Runoff Voting (IRV). Conitzer and Sandholm [2005] established an upper bound of O(n (log m)${}^2$), but did not provide a matching lower bound beyond $\u03a9$(n log m). We resolve this open problem by raising the lower bound to $\u03a9$(n (log m)${}^2$) using the fooling set technique, thereby showing that the communication complexity of IRV is $\u0398$(n (log m)${}^2$). We further show that this complexity drops to $\u0398$(n log m) under the single-peakedness restriction, and that both the IRV-Average variant and Single Transferable Vote (STV), the multiwinner extension of IRV, have the same asymptotic communication complexity as IRV.",
+      "authors": [
+        "\u00c9lie de Panafieu",
+        "Fran\u00e7ois Durand",
+        "J\u00e9r\u00f4me Lang"
+      ],
+      "published": "2026-05-22T15:18:25Z",
+      "updated": "2026-05-22T15:18:25Z",
+      "url": "https://arxiv.org/abs/2605.23743",
+      "pdf_url": "https://arxiv.org/pdf/2605.23743.pdf",
+      "primary_category": "cs.MA",
+      "categories": [
+        "cs.MA"
+      ],
+      "tags": [
+        "cs.MA"
+      ],
+      "domain": "Agent",
+      "pdf_downloaded": true,
+      "pdf_size_bytes": 367771,
+      "pdf_path": "2026-05-25/agent/2605.23743.pdf"
+    },
+    {
+      "id": "2605.23717",
+      "title": "Vision-Based Agile Landing on Turbulent Waters",
+      "abstract": "Autonomous landing of Unmanned Aerial Vehicles on maritime vessels is challenging due to the coupled motion of the vehicle and landing platform in open-sea conditions. This paper presents a reinforcement-learning-based approach for autonomous multirotor landing on moving maritime platforms without requiring explicit platform-state information. The proposed method uses multirotor state measurements together with local visual features, consisting of keypoints and associated descriptors extracted from the landing surface, to predict attitude and thrust commands. These commands are tracked by a conventional low-level controller. The policy is trained in simulation using synthetic keypoints with randomly generated normalized descriptors, enabling zero-shot deployment with different local feature extractors onboard the UAV. We evaluate the method in a realistic simulator and show that it outperforms a state-of-the-art Model Predictive Control baseline under platform motions corresponding to ``Very Rough'' sea conditions. Finally, we perform extensive real-world experiments, demonstrating autonomous onboard landing using two different local feature extractors. To the best of our knowledge, this is the first approach for agile multirotor landing on maritime platforms in turbulent waters that does not rely on an explicit platform-state representation.",
+      "authors": [
+        "Dimosthenis Angelis",
+        "Leonard Bauersfeld",
+        "Davide Scaramuzza",
+        "Evangelos Boukas"
+      ],
+      "published": "2026-05-22T14:59:17Z",
+      "updated": "2026-05-22T14:59:17Z",
+      "url": "https://arxiv.org/abs/2605.23717",
+      "pdf_url": "https://arxiv.org/pdf/2605.23717.pdf",
+      "primary_category": "cs.RO",
+      "categories": [
+        "cs.RO"
+      ],
+      "tags": [
+        "cs.RO"
+      ],
+      "domain": "Agent",
+      "pdf_downloaded": true,
+      "pdf_size_bytes": 4412427,
+      "pdf_path": "2026-05-25/agent/2605.23717.pdf"
+    },
+    {
+      "id": "2605.23583",
+      "title": "How Many Training Samples Are Needed for the Inverse Kinematics Solutions by Artificial Neural Networks",
+      "abstract": "Inverse Kinematics (IK) plays a critical role in robotic motion planning and control. The IK solutions of a robot manipulator could be done by conventional ways such as geometric, algebraic, or Jacobian methods, which have drawbacks. The Artificial Neural Networks (ANNs) have become a promising alternative for approximating IK solutions due to their generalization ability and computational efficiency. This approach basically trains only a few samples of the end effector that are recorded for the solution of the IK problem. However, a fundamental question remains: how many training samples are sufficient to achieve reliable and accurate IK predictions? This study investigates the mathematical framework of relating the size of training datasets and the accuracy of ANN-based IK solvers. Using an articulated robotic manipulator, we generate varying amounts of joint-position pairs to train feedforward neural networks and assess their accuracy, convergence, and generalization capability. The results reveal more training samples than 125 did not contribute to the improvement of the model efficiency that the comparable measure dealing with the approximation accuracy over the sampling size, offering valuable insight into data efficiency. This work provides practical guidance for optimizing the data sizing of ANN solutions, balancing computational cost and model accuracy for real-world robotic applications.",
+      "authors": [
+        "Dong-Won Lim"
+      ],
+      "published": "2026-05-22T12:54:08Z",
+      "updated": "2026-05-22T12:54:08Z",
+      "url": "https://arxiv.org/abs/2605.23583",
+      "pdf_url": "https://arxiv.org/pdf/2605.23583.pdf",
+      "primary_category": "cs.RO",
+      "categories": [
+        "cs.RO",
+        "cs.LG"
+      ],
+      "tags": [
+        "cs.LG",
+        "cs.RO"
+      ],
+      "domain": "Agent",
+      "pdf_downloaded": true,
+      "pdf_size_bytes": 1124022,
+      "pdf_path": "2026-05-25/agent/2605.23583.pdf"
+    },
+    {
+      "id": "2605.23578",
+      "title": "Safety, Liveness, and Fairness in Quantitative Argumentation Dialogues",
+      "abstract": "We introduce notions of safety, liveness, and fairness, as commonly used in temporal reasoning, to quantitative (bipolar) argumentation dialogues where repeated inferences are drawn from argumentation graphs with weighted nodes. Between inferences, these graphs undergo updates. Strong and weak safety capture that arguments' (final) strengths remain above a specific threshold of justification and always reach the threshold eventually, respectively. Liveness requires that arguments' strengths fluctuate across the threshold of justification. Fairness notions assess how safe arguments are spread within a sequence of argumentation graphs. We formally show how these notions are related, and discuss some analytical challenges with respect to providing general guarantees for our properties.",
+      "authors": [
+        "Arunavo Ganguly",
+        "Julian Alfredo Mendez",
+        "Timotheus Kampik"
+      ],
+      "published": "2026-05-22T12:46:38Z",
+      "updated": "2026-05-22T12:46:38Z",
+      "url": "https://arxiv.org/abs/2605.23578",
+      "pdf_url": "https://arxiv.org/pdf/2605.23578.pdf",
+      "primary_category": "cs.MA",
+      "categories": [
+        "cs.MA"
+      ],
+      "tags": [
+        "cs.MA"
+      ],
+      "domain": "Agent",
+      "pdf_downloaded": true,
+      "pdf_size_bytes": 625057,
+      "pdf_path": "2026-05-25/agent/2605.23578.pdf"
+    },
+    {
+      "id": "2605.23568",
+      "title": "TactileReflex: Noise-Statistics-Driven Vision-Tactile Reflex Control for Force-Sensitive Manipulation",
+      "abstract": "Manipulating fragile deformable containers, such as disposable plastic cups filled with liquid, demands real-time grip-force adaptation within an extremely narrow force margin: insufficient force causes slip, while excessive force irreversibly deforms the thin wall. Existing approaches struggle to achieve such force-sensitive manipulation tasks. We propose a noise-statistics-based calibration-driven reflex control paradigm with vision-based tactile sensing: by analyzing the sensor's intrinsic noise characteristics (via a brief static-hold-and-unload protocol), we directly derive all controller thresholds, eliminating external force calibration, trial-and-error manual tuning, or material-specific physical models. Instantiating this paradigm, we present TactileReflex, a three-channel closed-loop controller that extracts three image-level proxies, shear intensity ($S_y$), contact intensity ($F_n$), and center of pressure ($C$), from dual visuo-tactile sensors and drives prioritized reflex channels at ~12 Hz for slip suppression, weight-adaptive release, and force protection. Each channel closes the loop directly on its proxy via noise-derived thresholds. Ablation demonstrates that only the full three-channel system is able to prevent irreversible container deformation (5/5 success vs. at most 1/5 for partial configurations). In a dynamic pouring task, fixed-effort baselines fail in all 10 attempts due to pose drift, while TactileReflex achieves 9/10 success across two water volumes. As a self-contained and interpretable controller, TactileReflex can serve as a plug-and-play safety layer beneath high-level manipulation pipelines, including haptic-free VR teleoperation and vision-language-action (VLA) policies.",
+      "authors": [
+        "Ziyan Feng",
+        "Yulong Fu",
+        "Zheng Li",
+        "Yuxin He",
+        "Jieji Ren",
+        "Lujia Wang",
+        "Jinni Zhou",
+        "Yudong Zhong",
+        "Qiang Nie"
+      ],
+      "published": "2026-05-22T12:35:28Z",
+      "updated": "2026-05-22T12:35:28Z",
+      "url": "https://arxiv.org/abs/2605.23568",
+      "pdf_url": "https://arxiv.org/pdf/2605.23568.pdf",
+      "primary_category": "cs.RO",
+      "categories": [
+        "cs.RO",
+        "eess.SY"
+      ],
+      "tags": [
+        "cs.RO",
+        "eess.SY"
+      ],
+      "domain": "Agent",
+      "pdf_downloaded": true,
+      "pdf_size_bytes": 4761717,
+      "pdf_path": "2026-05-25/agent/2605.23568.pdf"
+    },
+    {
+      "id": "2605.23562",
+      "title": "ARMS: Automatic Reward Shaping for Sparse-Reward Multi-Agent Reinforcement Learning",
+      "abstract": "Sparse rewards are a major bottleneck in multi-agent reinforcement learning (MARL), where simultaneous learning induces non-stationarity and makes reward design especially delicate. Reward shaping can accelerate learning, but in the multi-agent setting it must preserve the strategic structure of the problem rather than merely improve short-term optimization. We propose Automatic Reward-shaping in Multi-agent Systems (ARMS), a self-supervised reward shaping framework for MARL that learns dense shaping signals from sparse environmental rewards through trajectory ranking. Since single-agent trajectory-ranking guarantees do not directly transfer to MARL, we reformulate policy invariance through conditional best-response reasoning, and show that if certain conditions hold, then using shaping rewards preserves each agent's best-response set under fixed opponent policies, and consequently preserve the set of Nash equilibria. Guided by this perspective, ARMS alternates between policy learning and reward learning while sharing shaping parameters across agents for efficiency. Experiments in a partially observable multi-agent pathfinding domain show that ARMS improves sampling efficiency under increasing reward sparsity and agent count, generalizes to unseen environments, and reveals a MARL-specific failure mode in which limited exploration and coupled policy--reward dynamics induce oscillatory behavior. Increasing exploration mitigates this effect and stabilizes learning. To the best of our knowledge, ARMS is the first automatic reward shaping framework for MARL whose design is motivated by a game-theoretic equilibrium-preservation result.",
+      "authors": [
+        "Elie Abboud",
+        "Oren Gal"
+      ],
+      "published": "2026-05-22T12:29:29Z",
+      "updated": "2026-05-22T12:29:29Z",
+      "url": "https://arxiv.org/abs/2605.23562",
+      "pdf_url": "https://arxiv.org/pdf/2605.23562.pdf",
+      "primary_category": "cs.MA",
+      "categories": [
+        "cs.MA",
+        "cs.AI"
+      ],
+      "tags": [
+        "cs.AI",
+        "cs.MA"
+      ],
+      "domain": "Agent",
+      "pdf_downloaded": true,
+      "pdf_size_bytes": 4179399,
+      "pdf_path": "2026-05-25/agent/2605.23562.pdf"
+    },
+    {
+      "id": "2605.23481",
+      "title": "Optimal Design Framework for Distributed Array Using Magnetically-Actuated Satellite Swarm",
+      "abstract": "Distributed space antennas using electromagnetic formation flight (EMFF) are a promising architecture for large-aperture, long-life space communication systems. Their feasible aperture, however, is governed by coupled constraints on antenna performance, satellite mass, power generation, coil geometry, and formation-keeping power. This paper proposes a system-level design framework for EMFF-based distributed space antennas. It links phased-array requirements with satellite-level sizing constraints and provides a static grid-based reference for designing feasible apertures under a fixed system mass. Unlike our previous bucket-brigade disturbance-compensation model, the formation-maintenance requirement is incorporated through a control index derived from distributed-control simulations. This index is integrated into an antenna-aperture maximization problem with sizing, power, coil, and sidelobe-envelope constraints. Parametric case studies examine margin magnetic moment, prescribed transmit power, and large inter-satellite spacing. Results show that increasing system mass improves footprint reduction or effective isotropic radiated power only while satellite-level design headroom remains. In direct-to-device cases with 0.15 m spacing, generated-power and coil-geometry constraints dominate the feasible aperture. In the 0.60 m large-spacing case, the required coil burden can exceed satellite-level mass, size, and power capacities, making the design infeasible despite favorable communication performance. The proposed framework enables the design and evaluation of feasible static grid-based EMFF distributed antennas under coupled antenna, satellite, and control constraints.",
+      "authors": [
+        "Seang Shim",
+        "Yuta Takahashi",
+        "Naoto Usami",
+        "Shin-ichiro Sakai"
+      ],
+      "published": "2026-05-22T10:41:12Z",
+      "updated": "2026-05-22T10:41:12Z",
+      "url": "https://arxiv.org/abs/2605.23481",
+      "pdf_url": "https://arxiv.org/pdf/2605.23481.pdf",
+      "primary_category": "eess.SP",
+      "categories": [
+        "eess.SP",
+        "cs.MA"
+      ],
+      "tags": [
+        "cs.MA",
+        "eess.SP"
+      ],
+      "domain": "Agent",
+      "pdf_downloaded": true,
+      "pdf_size_bytes": 3156591,
+      "pdf_path": "2026-05-25/agent/2605.23481.pdf"
+    },
+    {
+      "id": "2605.23477",
+      "title": "Semantically Structured Mixture-of-Experts for Compositional Robotic Manipulation",
+      "abstract": "Diffusion-based policies have established a new standard for precise robotic manipulation but face a critical scalability bottleneck: high-performance models are computationally expensive, while lightweight alternatives often fail to generalize across diverse multi-task environments. Mixture-of-Experts (MoE) architectures offer a promising path to efficiency by activating only a subset of parameters. However, existing MoE routing mechanisms typically rely on low-level noise or latent statistics, ignoring the compositional nature of manipulation tasks. This can fragment reusable behaviors across experts, limiting interpretability and transferability. We introduce Semantically Structured Mixture-of-Experts Diffusion Policy (SMoDP) for compositional robotic manipulation, a framework that grounds expert specialization in semantic task structure. SMoDP leverages a lightweight, inference-time skill predictor, supervised by offline annotations from Vision-Language Models (VLMs), to route action chunks to experts specialized for specific behavioral phases. To ensure robust assignment, we propose a dual contrastive alignment strategy that grounds multi-modal observations in language-defined skill semantics (Inter-modal) while enforcing routing consistency across visually distinct but functionally related behaviors (Intra-modal). Our approach outperforms representative diffusion and MoE-based baselines on multi-task benchmarks with significantly improved parameter efficiency and demonstrates effective compositional transfer to novel tasks through parameter-efficient fine-tuning. Project website: https://deng-cy20.github.io/SMoDP/",
+      "authors": [
+        "Chengyu Deng",
+        "Guanqi Chen",
+        "Yizhou Chen",
+        "Zejia Liu",
+        "Zhiwen Ruan",
+        "Guanhua Chen",
+        "Jia Pan"
+      ],
+      "published": "2026-05-22T10:38:59Z",
+      "updated": "2026-05-22T10:38:59Z",
+      "url": "https://arxiv.org/abs/2605.23477",
+      "pdf_url": "https://arxiv.org/pdf/2605.23477.pdf",
+      "primary_category": "cs.RO",
+      "categories": [
+        "cs.RO"
+      ],
+      "tags": [
+        "cs.RO"
+      ],
+      "domain": "Agent",
+      "pdf_downloaded": true,
+      "pdf_size_bytes": 3013189,
+      "pdf_path": "2026-05-25/agent/2605.23477.pdf"
+    },
+    {
+      "id": "2605.23386",
+      "title": "Droneulator: A Portable UAV Simulator for Agricultural Workflows with RotorPy and Godot 4",
+      "abstract": "Agricultural UAV research requires simulators that integrate realistic 3D scenes, high-fidelity vehicle dynamics, and robotics middleware, while remaining practical to deploy across heterogeneous development machines. We present Droneulator, a portable UAV simulator architecture that combines RotorPy for multirotor dynamics with Godot 4 for rendering and sensor generation. Droneulator exposes both PX4-based control and a lightweight WebSocket command path, and publishes synchronised visual and state streams through a Zenoh-based ROS~2-compatible pipeline. This integration enables a single stack to support inspection-oriented data capture, ROS~2/PX4 local planning, and reinforcement learning experiments without modifying the simulator infrastructure. We present quantified validation of the current system across three agricultural UAV workflows: tree-scale image collection for 3D reconstruction with COLMAP, local planning around canopy obstacles using EGO-Planner, and closed-loop reinforcement learning through a custom Gymnasium environment. In the reported setup, the results show that the simulator can sustain low-latency sensing, support reconstruction-oriented data collection under varying capture density, execute collision-free local planning around canopy obstacles, and support stable depth-sensing-based policy training for obstacle-aware navigation. Together, these results show the potential of Droneulator for agricultural UAV inspection, planning, and learning within one deployable stack.",
+      "authors": [
+        "Jacob Swindell",
+        "Michael Lowen",
+        "Marija Popovic",
+        "Riccardo Polvara"
+      ],
+      "published": "2026-05-22T08:58:29Z",
+      "updated": "2026-05-22T08:58:29Z",
+      "url": "https://arxiv.org/abs/2605.23386",
+      "pdf_url": "https://arxiv.org/pdf/2605.23386.pdf",
+      "primary_category": "cs.RO",
+      "categories": [
+        "cs.RO"
+      ],
+      "tags": [
+        "cs.RO"
+      ],
+      "domain": "Agent",
+      "pdf_downloaded": true,
+      "pdf_size_bytes": 3524566,
+      "pdf_path": "2026-05-25/agent/2605.23386.pdf"
+    },
+    {
+      "id": "2605.23350",
+      "title": "Multi-Floor Exploration for Ground Robots via an Incremental Reachable Graph and Structural Priors",
+      "abstract": "Autonomous exploration of multi-floor buildings remains challenging for ground robots because conventional 2D and 2.5D maps cannot represent overlapping traversable surfaces such as stairs, ramps, and multiple reachable elevations. This letter presents a multi-floor exploration framework based on an incremental reachable graph. Built as a sparse graph over reachable support surfaces, the graph preserves potentially valid connectivity through tentative graph elements under sparse observations and enables stable, physically reachable frontier detection. To guide exploration beyond the currently mapped floor, we project task-zone priors from an explored floor to initialize a hypothetical graph on the target floor and reconcile it incrementally with incoming observations. A hierarchical planner then jointly reasons over confirmed and hypothetical structures for global guidance. In simulation, the proposed method demonstrates improved exploration efficiency and mapping completeness compared to evaluated baselines. Furthermore, onboard real-world experiments validate its practical feasibility and real-time performance.",
+      "authors": [
+        "Zhiwen Zhu",
+        "Jiaqi Chen",
+        "Xiangyi Huang",
+        "Meiqi Hu",
+        "Boyu Zhou"
+      ],
+      "published": "2026-05-22T08:13:19Z",
+      "updated": "2026-05-22T08:13:19Z",
+      "url": "https://arxiv.org/abs/2605.23350",
+      "pdf_url": "https://arxiv.org/pdf/2605.23350.pdf",
+      "primary_category": "cs.RO",
+      "categories": [
+        "cs.RO"
+      ],
+      "tags": [
+        "cs.RO"
+      ],
+      "domain": "Agent",
+      "pdf_downloaded": true,
+      "pdf_size_bytes": 4622072,
+      "pdf_path": "2026-05-25/agent/2605.23350.pdf"
+    },
+    {
+      "id": "2605.23341",
+      "title": "Sparse Compositional Flow Matching by geometric assembly from motion primitives",
+      "abstract": "Embodied trajectories, such as the executable motion sequences of robotic manipulators, underwater vehicles, and mobile robots, are a fundamental output of embodied AI. Modern generative models often treat them as a dense, monolithic signal generated point by point, fitting an intricate high-dimensional posterior while leaving the data's latent structure unmodeled, the same sample inefficiency long identified by the structured generative model literature. We argue that a compositional latent structure is a natural choice: many embodied tasks share recurring motion fragments that can be made explicit as a finite repertoire of reusable motion primitives, and compositional units naturally align with subtask boundaries to support task decomposition. Existing compositional generators, however, compose in a latent space and rely on post-hoc decoding to relate sampled units to actual trajectory segments. We instead compose directly in the physical trajectory space through a flow-matching framework with two coupled designs. Motion-Primitive Dictionary Learning equips each atom with a learnable length mask and binary starting indicators so the atom itself is the primitive, reused verbatim wherever it is placed. Structural Sparse Flow Matching with Geometric Constraints then generates a binary placement matrix using duration-aware tokenization and a differentiable geometric loss that enforces spatial continuity and temporal contiguity where adjacent primitives meet. On Open X-Embodiment and 3DMoTraj, the framework attains state-of-the-art accuracy and reduces the FDE/ADE ratio from 1.8 to 1.07, improving ADE by 19.2% and FDE by 21.0% over the strongest baseline.",
+      "authors": [
+        "Yan Tang",
+        "Yuanbo Tang",
+        "Tingyu Cao",
+        "Shaolun Huang",
+        "Yang Li"
+      ],
+      "published": "2026-05-22T07:55:48Z",
+      "updated": "2026-05-22T07:55:48Z",
+      "url": "https://arxiv.org/abs/2605.23341",
+      "pdf_url": "https://arxiv.org/pdf/2605.23341.pdf",
+      "primary_category": "cs.RO",
+      "categories": [
+        "cs.RO",
+        "cs.AI"
+      ],
+      "tags": [
+        "cs.AI",
+        "cs.RO"
+      ],
+      "domain": "Agent",
+      "pdf_downloaded": true,
+      "pdf_size_bytes": 1487978,
+      "pdf_path": "2026-05-25/agent/2605.23341.pdf"
+    },
+    {
+      "id": "2605.23321",
+      "title": "Arrow-Type Impossibility for Genuinely Modal Judgments",
+      "abstract": "Judgment aggregation studies how to combine individual judgments on logically related propositions into a collective judgment. Classical impossibility results show that sufficiently strong logical interconnections force dictatorship under natural aggregation axioms. In this paper, we ask whether such impossibility can still arise when the objects of aggregation are required to be genuinely modal judgments rather than plain factual propositions. Since modal logic contains propositional logic, this question is meaningful only if one excludes fact-based aggregation in disguise. We show that Arrow-type impossibility already re-emerges in a strikingly sparse modal setting. We prove an impossibility theorem on a simple cyclic frame for an agenda generated from a single propositional variable by repeated applications of a single modal operator, and we further demonstrate this phenomenon for an alternative family of frames satisfying a natural symmetry condition. Thus, even under a modal-operator requirement, semantic structure alone can generate the logical interconnections needed for dictatorship. Technically, our analysis has two layers. First, we prove a semantic reduction theorem showing that certain iterated modal patterns can be collapsed by shifting the evaluation point. Second, building on this reduction, we identify a local-to-global frame mechanism by which frame geometry yields minimally inconsistent modal judgment sets and the strong path-connectivity required for impossibility. The same reduction also turns consistency checking into a small combinatorial covering problem, which yields efficient implementations of non-dictatorial aggregation procedures.",
+      "authors": [
+        "Yutaka Nagai",
+        "Hirotaka Ono"
+      ],
+      "published": "2026-05-22T07:36:30Z",
+      "updated": "2026-05-22T07:36:30Z",
+      "url": "https://arxiv.org/abs/2605.23321",
+      "pdf_url": "https://arxiv.org/pdf/2605.23321.pdf",
+      "primary_category": "cs.LO",
+      "categories": [
+        "cs.LO",
+        "cs.MA"
+      ],
+      "tags": [
+        "cs.LO",
+        "cs.MA"
+      ],
+      "domain": "Agent",
+      "pdf_downloaded": true,
+      "pdf_size_bytes": 483147,
+      "pdf_path": "2026-05-25/agent/2605.23321.pdf"
+    },
+    {
+      "id": "2605.23273",
+      "title": "Self-Refining Topology Optimization via an LLM-Based Multi-Agent Framework",
+      "abstract": "Topology optimization is a widely used design method that produces optimized material distributions for prescribed objectives and constraints through well-established numerical algorithms. Throughout the workflow, engineers make a series of decisions ranging from setting and adjusting numerical parameters to assessing whether the converged design meets considerations beyond those explicitly included in the optimization problem, such as physical feasibility. These decisions, which draw on domain expertise, interfere with the autonomous design process. To address this difficulty, this study presents TopOptAgents, a multi-agent system for automating not only the design process but also decision-making during the key stages of the topology optimization process. TopOptAgents consists of six LLM-based agents collaborating through iterative self-refinement cycles spanning problem formulation, validation, code generation and execution, and quality assessment of the optimized structure. This process enables error correction and progressive improvement of both the optimization setup and resulting design. The framework is demonstrated on optimization problems selected to cover a range of settings that differ in their literature coverage and numerical characteristics The benefits of iterative self-refinement are found to be particularly pronounced for problem classes where the pretrained language model has limited prior exposure, such as formulations whose literature and open-source implementations are comparatively sparse. In such cases, the proposed framework reliably produces converged designs where a single state-of-the-art LLM struggles, suggesting that self-refinement broadens the range of topology optimization problems that LLM-based automation can reliably address.",
+      "authors": [
+        "Hyunjee Park",
+        "Hayoung Chung"
+      ],
+      "published": "2026-05-22T06:27:18Z",
+      "updated": "2026-05-22T06:27:18Z",
+      "url": "https://arxiv.org/abs/2605.23273",
+      "pdf_url": "https://arxiv.org/pdf/2605.23273.pdf",
+      "primary_category": "cs.MA",
+      "categories": [
+        "cs.MA"
+      ],
+      "tags": [
+        "cs.MA"
+      ],
+      "domain": "Agent",
+      "pdf_downloaded": true,
+      "pdf_size_bytes": 12362569,
+      "pdf_path": "2026-05-25/agent/2605.23273.pdf"
+    },
+    {
+      "id": "2605.23270",
+      "title": "ChainFlow-VLA: Causal Flow Planning with Vision-Language Models",
+      "abstract": "Current end-to-end autonomous driving systems are fundamentally limited by a mismatch between temporal causal reasoning and global trajectory consistency. Autoregressive (AR) models capture interaction-aware temporal dependencies via causal factorization, but their step-wise decoding leads to error accumulation and suboptimal global structure. In contrast, diffusion models optimize trajectories globally but lack explicit causal constraints, making them unreliable in interactive and safety-critical scenarios. This dichotomy reveals a deeper issue: existing methods treat causal modeling and global optimization as separate paradigms, without a principled way to unify them within a single trajectory distribution. To address this, we propose ChainFlow-VLA, which unifies causal generation and global refinement within a unified probabilistic framework. We formulate planning as a mixture over AR-induced modes and learn Vision-Language Model (VLM)-conditioned residual distributions over these modes. An autoregressive generator (Chain) produces a discrete set of causal trajectory modes, followed by a diffusion-based refiner (Flow) that leverages VLM hidden states as semantic priors to perform mode-conditioned correction in residual space while preserving causal structure. This straightforward conditioning seamlessly injects high-level scene understanding into fine-grained trajectory adjustments. Experiments demonstrate that ChainFlow-VLA achieves robust planning in ambiguous and long-tail scenarios, achieving a state-of-the-art score of 94.85 on the NAVSIM v1 leaderboard, matching human-level performance (94.8). Code will be available at https://github.com/AFARI-Research/ChainFlow-VLA.",
+      "authors": [
+        "Xiyang Wang",
+        "Xinlin Wang",
+        "Tingguang Zhou",
+        "Gong Chen",
+        "Xingtai Gui",
+        "Zhi Xu",
+        "Xiaolei Wu",
+        "Feiyang Tan",
+        "Hangning Zhou",
+        "Mu Yang"
+      ],
+      "published": "2026-05-22T06:17:35Z",
+      "updated": "2026-05-22T06:17:35Z",
+      "url": "https://arxiv.org/abs/2605.23270",
+      "pdf_url": "https://arxiv.org/pdf/2605.23270.pdf",
+      "primary_category": "cs.CV",
+      "categories": [
+        "cs.CV",
+        "cs.AI",
+        "cs.RO"
+      ],
+      "tags": [
+        "cs.AI",
+        "cs.CV",
+        "cs.RO"
+      ],
+      "domain": "Agent",
+      "pdf_downloaded": true,
+      "pdf_size_bytes": 11441600,
+      "pdf_path": "2026-05-25/agent/2605.23270.pdf"
+    },
+    {
+      "id": "2605.23263",
+      "title": "6G Communication Networks Enabling Embodied Agents: Architecture and Prototype",
+      "abstract": "Embodied agents, which couple intelligent decision-making with physical actuation in the real world, impose far more stringent and heterogeneous communication requirements than purely software-based agents. While 6G promises sub-millisecond latency, ultra-high reliability, native intelligence, and integrated sensing, systematic studies on how to exploit these capabilities for embodied agent communication remain limited. This article investigates 6G-enabled communication systems for embodied agents from both conceptual and engineering perspectives. First, we review the concept, embodiment value of embodied agents, and clarify their distinctions from disembodied agents. Then, we analyse the symbiotic relationship between embodied agents and 6G networks. We highlight how key 6G enablers can support the stringent requirements of human-robot interaction. Furthermore, we demonstrate the proactive role of embodied agents in bolstering communication networks through coverage extension, environmental sensing, and physical world understanding. Building on these insights, we propose a hierarchical communication architecture for human-robot remote interaction, comprising a human-intent perception layer, an open radio access network (O-RAN)-based transport layer, an intelligent intermediary layer, and an embodiment layer. To validate its feasibility, we implement an end-to-end prototype that integrates a haptic device, an industrial robotic arm, an intermediary platform, and a 5G O-RAN testbed. Experimental results demonstrate millisecond-level latency and stable closed-loop operation, confirming the practicality of the proposed architecture and providing a reference for future 6G-embodied agent research and industrial deployments.",
+      "authors": [
+        "Lipeng Dai",
+        "Luping Xiang",
+        "Kun Yang"
+      ],
+      "published": "2026-05-22T06:05:14Z",
+      "updated": "2026-05-22T06:05:14Z",
+      "url": "https://arxiv.org/abs/2605.23263",
+      "pdf_url": "https://arxiv.org/pdf/2605.23263.pdf",
+      "primary_category": "cs.RO",
+      "categories": [
+        "cs.RO",
+        "cs.AI",
+        "eess.SP",
+        "eess.SY"
+      ],
+      "tags": [
+        "cs.AI",
+        "cs.RO",
+        "eess.SP",
+        "eess.SY"
+      ],
+      "domain": "Agent",
+      "pdf_downloaded": true,
+      "pdf_size_bytes": 16860021,
+      "pdf_path": "2026-05-25/agent/2605.23263.pdf"
+    },
+    {
+      "id": "2605.23257",
+      "title": "Turning Adaptation into Assets: Cross-Domain Bridging for Online Vision-Language Navigation",
+      "abstract": "Navigating under non-stationary environment shifts poses a critical challenge for a Vision-and-Language Navigation (VLN) agent deployed in the wild. Yet, existing Test-Time Adaptation (TTA) methods for VLN largely treat online adaptation as transient, isolated updates, leading to catastrophic forgetting and negative transfer. To overcome these issues, we propose Inter-Domain BridgE with Historical Assets (IDEA), a novel TTA framework that transforms adaptation into the accumulation and composition of assets. Specifically, IDEA introduces soft prompts optimized via a Fisher-guided weighting scheme to capture the transferable knowledge. These optimized prompts are then augmented with domain coordinates to form a dynamic asset library. Leveraging this library, IDEA constructs a cross-domain bridge by projecting the target domain onto the convex hull of historical knowledge. These designs form a complementary loop: the evolving library underpins bridge construction, while the bridge provides superior initialization to accelerate asset optimization. Extensive experiments across REVERIE, R2R, and R2R-CE benchmarks demonstrate the consistent superiority of IDEA over existing methods, showcasing its ability to enable training-free adaptation via asset sharing.",
+      "authors": [
+        "Zixuan Hu",
+        "Xuantuo Huang",
+        "Yancheng Li",
+        "Yichun Hu",
+        "Shengyong Xu",
+        "Ling-Yu Duan"
+      ],
+      "published": "2026-05-22T05:59:36Z",
+      "updated": "2026-05-22T05:59:36Z",
+      "url": "https://arxiv.org/abs/2605.23257",
+      "pdf_url": "https://arxiv.org/pdf/2605.23257.pdf",
+      "primary_category": "cs.RO",
+      "categories": [
+        "cs.RO",
+        "cs.CV"
+      ],
+      "tags": [
+        "cs.CV",
+        "cs.RO"
+      ],
+      "domain": "Agent",
+      "pdf_downloaded": true,
+      "pdf_size_bytes": 4378149,
+      "pdf_path": "2026-05-25/agent/2605.23257.pdf"
+    },
+    {
+      "id": "2605.23240",
+      "title": "Signal Temporal Logic Motion Planning via Graphs of Convex Sets",
+      "abstract": "This paper investigates continuous-time motion planning under Signal Temporal Logic (STL) specifications. The goal is to generate smooth robot trajectories that satisfy high-level logical and timing requirements while respecting low-level motion constraints. To this end, we propose an efficient framework that combines timed-automata reasoning with graphs of convex sets (GCS). An STL specification is first represented by a timed automaton, which is then coupled with a convex decomposition of the configuration space to form a joint transition system encoding both task progress and region occupancy. Based on this joint transition system, the STL motion-planning problem is reformulated as a shortest-path problem over a GCS, whose solution induces a smooth B\u00e9zier-spline trajectory satisfying the STL specification, smoothness requirements, and velocity bounds. We establish the soundness of the proposed formulation and analyze its computational complexity, showing that, once the timed automaton and convex decomposition are fixed, the convex relaxation scales polynomially with the configuration-space dimension and the B\u00e9zier degree. We further develop a compact timed-automaton construction for an expressive STL fragment using dedicated templates and Boolean composition. Numerical experiments on low-dimensional benchmarks, a $3$-D quadrotor, a $30$-DoF humanoid, and a hardware experiment on a UR-3 robot arm demonstrate that the proposed method efficiently solves complex STL motion-planning problems and produces smooth executable trajectories.",
+      "authors": [
+        "Yu Chen",
+        "Ancheng Hou",
+        "Mingyang Feng",
+        "Xiao Yu",
+        "Xiang Yin"
+      ],
+      "published": "2026-05-22T05:19:43Z",
+      "updated": "2026-05-22T05:19:43Z",
+      "url": "https://arxiv.org/abs/2605.23240",
+      "pdf_url": "https://arxiv.org/pdf/2605.23240.pdf",
+      "primary_category": "cs.RO",
+      "categories": [
+        "cs.RO",
+        "eess.SY"
+      ],
+      "tags": [
+        "cs.RO",
+        "eess.SY"
+      ],
+      "domain": "Agent",
+      "pdf_downloaded": true,
+      "pdf_size_bytes": 5841157,
+      "pdf_path": "2026-05-25/agent/2605.23240.pdf"
+    },
+    {
+      "id": "2605.23238",
+      "title": "GENSTRAT: Toward a Science of Strategic Reasoning in Large Language Models",
+      "abstract": "Large language models (LLMs) are increasingly deployed as economic agents in marketplaces, auctions, and bidding settings. Anticipating their behavior in any specific deployment is hard. Existing strategic-reasoning benchmarks evaluate models on fixed canonical games. These benchmarks may saturate as the frontier improves, and they do not allow evaluators to generalize with confidence from benchmark performance to the varied and messy strategic environments that actual deployments involve. We introduce GENSTRAT, which uses procedurally generated strategic environments to address these challenges. Concretely, we generate a distribution of two-player zero-sum imperfect-information card games. The generator can draw fresh games on demand, allowing for evergreen evaluation and resistance to contamination. We pair the game distribution with a capability-profile methodology that decomposes model competence across six axes (state space, temporal depth, information sensitivity, opponent modeling, risk, and brittleness). We also introduce a jaggedness measure of within-distribution smoothness that detects when a model's advantage jumps unpredictably between strategically similar games. We sample 50 benchmark games from a 2,000-game generated pool and evaluate nine frontier and open-weight LLMs in a head-to-head tournament with over 36,000 matches. Newer frontier-tier models score higher on average. Beyond that average, models with near-identical overall strength show qualitatively different capability profiles, and two of the top three leaderboard models (gpt-5 and claude) are noticeably more locally volatile than the third (gemini-3.1-pro), despite being close in overall strength. Together, the capability profile and the jaggedness measure give a deployment-relevant diagnostic that the overall ranking alone cannot provide.",
+      "authors": [
+        "Vartan Shadarevian",
+        "Kia Ghods",
+        "Alex Kenich",
+        "Anany Kotawala"
+      ],
+      "published": "2026-05-22T05:13:45Z",
+      "updated": "2026-05-22T05:13:45Z",
+      "url": "https://arxiv.org/abs/2605.23238",
+      "pdf_url": "https://arxiv.org/pdf/2605.23238.pdf",
+      "primary_category": "cs.AI",
+      "categories": [
+        "cs.AI",
+        "cs.GT",
+        "cs.LG",
+        "cs.MA"
+      ],
+      "tags": [
+        "cs.AI",
+        "cs.GT",
+        "cs.LG",
+        "cs.MA"
+      ],
+      "domain": "Agent",
+      "pdf_downloaded": true,
+      "pdf_size_bytes": 2439094,
+      "pdf_path": "2026-05-25/agent/2605.23238.pdf"
+    },
+    {
+      "id": "2605.23203",
+      "title": "Lipschitz Optimization for Formal Verification of Homographies",
+      "abstract": "The adoption of vision neural networks in regulated industries requires formal robustness guarantees, especially in safety-critical domains such as healthcare, autonomous vehicles, and aerospace. However, current approaches are confined to incomplete statistical verification or robustness to $\\ell_p$-norm and affine transforms, which cover only a narrow subset of perturbations to the image formation process. In particular, robustness to camera motion remains an open problem despite being key to deploy many vision applications. We present a formal verification approach that targets robustness against 3D motion perturbations of the capturing camera. We first establish a closed-form mapping from camera pose to pixel values. By analyzing the continuity properties of the resulting homographies, we show that recent work on Lipschitz optimization and piecewise continuity can be extended to derive tight linear bounds on perturbed pixel values. Our approach applies to scenes with predominantly planar structure, such as ground planes in augmented reality, road markings and traffic signs in autonomous driving, or planar workspaces in robotic manipulation. This enables the first formal verification of projective geometry transforms, without complex simulation, surrogate networks, or explicit image-formation models. We validate our implementation and show up to 89% speedup and 7% tighter bounds over prior work. We then evaluate our method on the VNN-COMP benchmark and reveal systematic weaknesses to projective perturbations. Finally, we demonstrate a real-world case study on a safety-critical runway classifier, highlighting practical vulnerabilities to camera motion, and addressing a key challenge in the certification of learned models. Data and code are publicly available at https://github.com/jeangud/homography-verification .",
+      "authors": [
+        "Jean-Guillaume Durand",
+        "Panagiotis Kouvaros",
+        "Maxime Gariel",
+        "Alessio Lomuscio"
+      ],
+      "published": "2026-05-22T03:37:34Z",
+      "updated": "2026-05-22T03:37:34Z",
+      "url": "https://arxiv.org/abs/2605.23203",
+      "pdf_url": "https://arxiv.org/pdf/2605.23203.pdf",
+      "primary_category": "cs.CV",
+      "categories": [
+        "cs.CV",
+        "cs.AI",
+        "cs.LG",
+        "cs.RO"
+      ],
+      "tags": [
+        "cs.AI",
+        "cs.CV",
+        "cs.LG",
+        "cs.RO"
+      ],
+      "domain": "Agent",
+      "pdf_downloaded": true,
+      "pdf_size_bytes": 8745025,
+      "pdf_path": "2026-05-25/agent/2605.23203.pdf"
+    },
+    {
+      "id": "2605.23193",
+      "title": "CultivAgents: Cultivating Relationship-Centered Multi-Agent Systems for Personalized Gardening",
+      "abstract": "Gardening is critical to support well-being, cultural continuity, and food autonomy, yet existing digital tools often provide generic advice that overlooks gardeners' skills, local ecologies, seasons, and cultural contexts. We introduce CultivAgents, a relationship-centered multi-agent system for personalized, socio-culturally grounded gardening support. Grounded in ethics of care, CultivAgents coordinates multiple specialized agents: an Experience Agent that adapts guidance to users' skill levels, an Environmental Agent that grounds advice in local and seasonal conditions, and an Ethnobotanical Agent that connects plants to cultural knowledge and histories. We evaluated CultivAgents through a three-phase mixed-methods study with domain experts (n=3), HCI researchers (n=7), and community gardeners (n=5), analyzing expert feedback, pre/post surveys, and participatory design activities. Results suggest that CultivAgents helped gardeners translate interest into situated action: community gardeners reported increased confidence (3.00 to 3.60), motivation (4.00 to 4.40), and trust in acting on AI advice (3.20 to 4.00). Participants valued hyperlocal ecological guidance and complementary agent perspectives, while also identifying limits in cultural specificity, ecological grounding, and agent coordination. The work advances relationship-centered AI, offering design implications for multi-agent systems that support food sovereignty, community resilience, and cultural preservation.",
+      "authors": [
+        "Yiyang Wang",
+        "Moeiini Reilly",
+        "Britney Johnson",
+        "Kefei Yan",
+        "Alex Cabral",
+        "Josiah Hester"
+      ],
+      "published": "2026-05-22T03:20:04Z",
+      "updated": "2026-05-22T03:20:04Z",
+      "url": "https://arxiv.org/abs/2605.23193",
+      "pdf_url": "https://arxiv.org/pdf/2605.23193.pdf",
+      "primary_category": "cs.HC",
+      "categories": [
+        "cs.HC",
+        "cs.CL",
+        "cs.CY",
+        "cs.MA"
+      ],
+      "tags": [
+        "cs.CL",
+        "cs.CY",
+        "cs.HC",
+        "cs.MA"
+      ],
+      "domain": "Agent",
+      "pdf_downloaded": true,
+      "pdf_size_bytes": 9339935,
+      "pdf_path": "2026-05-25/agent/2605.23193.pdf"
+    },
+    {
+      "id": "2605.23187",
+      "title": "IntentionNav: A Benchmark for Intent-Driven Object Navigation from Implicit Human Instruction",
+      "abstract": "Existing object navigation benchmarks usually tell an embodied agent which object category to find, such as microwave or chair. Human-facing embodied AI is often asked something less direct: \"I need something to warm this food\" or \"the room feels stuffy.\" The agent must infer the object that can satisfy the need, find a scene-grounded instance, and decide whether the goal has been reached. We study this setting as intent-driven object navigation and introduce IntentionNav, a diagnostic benchmark for active object search from implicit human instructions. Each episode provides a free-text intent, RGB-D observations, and pose, but withholds the target object name. IntentionNav contains 500 intents over 176 Isaac Sim scenes and 64 target categories. Each intent is rewritten in four controlled instruction styles and annotated with one of four intent modes, separating surface phrasing from semantic cue type under matched geometry. This paired design supports analysis of target inference, language robustness, neighborhood reachability, and terminal success rather than only aggregate success. We evaluated three VLMs using a fixed active-navigation agent. Models identify the intended target in 48.3 percent of episodes and enter its 2 m neighborhood in 68.7 percent, but terminate successfully in only 24.9 percent and achieve grounded 1 m success in 5.5 percent. Success is highest for event-script intents (28.7 percent) and lower for physical-state and affordance intents (19.2 percent and 18.5 percent), showing that indirect human intent remains a bottleneck for target selection, visual verification, and terminal localization in active embodied search.",
+      "authors": [
+        "Lin Qian",
+        "Shijie Li",
+        "Sihao Lin",
+        "Xuan Zhang",
+        "Bangya Liu",
+        "Yanran Li",
+        "Hujun Yin"
+      ],
+      "published": "2026-05-22T03:09:55Z",
+      "updated": "2026-05-22T03:09:55Z",
+      "url": "https://arxiv.org/abs/2605.23187",
+      "pdf_url": "https://arxiv.org/pdf/2605.23187.pdf",
+      "primary_category": "cs.CV",
+      "categories": [
+        "cs.CV",
+        "cs.RO"
+      ],
+      "tags": [
+        "cs.CV",
+        "cs.RO"
+      ],
+      "domain": "Agent",
+      "pdf_downloaded": false,
+      "pdf_size_bytes": null,
+      "pdf_path": null
+    }
+  ]
+}
