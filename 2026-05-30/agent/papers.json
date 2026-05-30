@@ -1,0 +1,887 @@
+{
+  "domain": "Agent",
+  "date": "2026-05-30",
+  "count": 27,
+  "papers": [
+    {
+      "id": "2605.30314",
+      "title": "SpecBench: Evaluating Specification-Level Reasoning for Software Engineering LLM Agents",
+      "abstract": "Software engineering (SWE) agents are transitioning from code generation to full software development lifecycle automation. A critical phase in this lifecycle is specification design: transforming initial proposals into carefully considered requirements through expert review. Existing benchmarks such as SWE-Bench are implementation-focused by measuring the agent's ability to generate code given fixed, precise design requirements. This formulation assumes specifications are correct and complete. In real-world complex and critical software systems, initial specifications are often incomplete and flawed, requiring extensive expert reviews and revisions before being accepted for implementation. To fill this gap, we introduce SpecBench to evaluate specification-level reasoning: the ability to generate complete, unambiguous, consistent, and correct system specifications. SpecBench tasks are derived from the Request for Comments (RFC) process used by mature open-source projects. For each task, an agent is given an initial design proposal, the project codebase, and all past project RFC discussions. The agent is tasked with identifying specification deficiencies: omissions, ambiguities, inconsistencies, or incorrect assumptions in the initial proposal. We evaluate predictions against critiques raised by expert maintainers during historical RFC reviews. SpecBench contains tasks from 5 diverse repositories: Kubernetes, React, Rust, TVM, and vLLM. We evaluate state-of-the-art SWE agents on SpecBench, analyzing their capacity to reason about system design without execution feedback. The best performing agent, GPT-5.4, achieves 44.4% accuracy.",
+      "authors": [
+        "Grant Hamblin",
+        "Kevin Song",
+        "Zhanda Zhu",
+        "Anand Jayarajan",
+        "Sihang Liu",
+        "Nandita Vijaykumar",
+        "Gennady Pekhimenko"
+      ],
+      "published": "2026-05-28T17:54:01Z",
+      "updated": "2026-05-28T17:54:01Z",
+      "url": "https://arxiv.org/abs/2605.30314",
+      "pdf_url": "https://arxiv.org/pdf/2605.30314.pdf",
+      "primary_category": "cs.MA",
+      "categories": [
+        "cs.MA"
+      ],
+      "tags": [
+        "cs.MA"
+      ],
+      "domain": "Agent",
+      "pdf_downloaded": true,
+      "pdf_size_bytes": 1102712,
+      "pdf_path": "2026-05-30/agent/2605.30314.pdf"
+    },
+    {
+      "id": "2605.30313",
+      "title": "A Heterogeneous Architecture for Robot RL Beyond GPU-Dominant Paradigms",
+      "abstract": "Simulation-based RL for contemporary robot control is increasingly organized around GPU-resident simulation: physics, rollout collection, and learning are placed on a single GPU-centric execution path. This paradigm has greatly improved training speed, but it has also encouraged a default assumption that efficient training requires physics to reside on the GPU. We revisit this assumption. Our view is that, in simulation-dominated robot control, the essential question is not which processor runs physics, but whether simulation throughput, policy learning, and runtime synchronization form an efficient end-to-end loop. We present UniLab, a heterogeneous CPU-simulation / GPU-learning architecture that decouples CPU-parallel simulation from GPU policy updates through a unified runtime for data movement, buffering, and synchronization. UniLab is implemented as a complete and extensible training system using MuJoCoUni and MotrixSim CPU-batched physics backends, supporting PPO, SAC, FlashSAC, TD3, and APPO. On representative simulation-based robot control tasks, UniLab improves end-to-end training efficiency by 3--10$\\times$ under the same hardware configuration, while reducing dependence on the NVIDIA CUDA-based software stack and supporting cross-platform execution on the Apple macOS platform and the AMD ROCm and Intel XPU accelerator backends. These results show that GPU simulation is an effective path to efficient training, but not a necessary one, broadening the practical system choices available for robot RL training. Project page: https://github.com/unilabsim/UniLab.",
+      "authors": [
+        "Yufei Jia",
+        "Zhanxiang Cao",
+        "Mingrui Yu",
+        "Heng Zhang",
+        "Shenyu Chen",
+        "Dixuan Jiang",
+        "Meng Li",
+        "Xiaofan Li",
+        "Yiyang Liu",
+        "Junzhe Wu",
+        "Zheng Li",
+        "XiLin Fang",
+        "Tingyu Cui",
+        "Shengcheng Fu",
+        "Haoyang Li",
+        "Anqi Wang",
+        "Zifan Wang",
+        "Dongjie Zhu",
+        "Chenyu Cao",
+        "Zhenbiao Huang",
+        "Ziang Zheng",
+        "Jie Lu",
+        "Xin Ma",
+        "Zhengyang Wei",
+        "Xiang Zhao",
+        "Tianyue Zhan",
+        "Ye He",
+        "Yuxiang Chen",
+        "Yizhou Jiang",
+        "Yue Li",
+        "Haizhou Ge",
+        "Yuhang Dong",
+        "Fan Jia",
+        "Ziheng Zhang",
+        "Meng Zhang",
+        "Xiwa Deng",
+        "Zhixing Chen",
+        "Hanyang Shao",
+        "Chenxin Dong",
+        "Yixuan Li",
+        "Yizhi Chen",
+        "Bokui Chen",
+        "Kaifeng Zhang",
+        "Hanqing Cui",
+        "Yusen Qin",
+        "Ruqi Huang",
+        "Lei Han",
+        "Tiancai Wang",
+        "Xiang Li",
+        "Yue Gao",
+        "Guyue Zhou"
+      ],
+      "published": "2026-05-28T17:53:50Z",
+      "updated": "2026-05-28T17:53:50Z",
+      "url": "https://arxiv.org/abs/2605.30313",
+      "pdf_url": "https://arxiv.org/pdf/2605.30313.pdf",
+      "primary_category": "cs.RO",
+      "categories": [
+        "cs.RO"
+      ],
+      "tags": [
+        "cs.RO"
+      ],
+      "domain": "Agent",
+      "pdf_downloaded": true,
+      "pdf_size_bytes": 7317412,
+      "pdf_path": "2026-05-30/agent/2605.30313.pdf"
+    },
+    {
+      "id": "2605.30282",
+      "title": "Gaze2Act: Gaze-Conditioned Vision-Language-Action Policies for Interactive Robot Manipulation",
+      "abstract": "Vision-Language-Action (VLA) models have recently shown strong potential for robot learning by following language instructions. However, in practice, language alone is often insufficient to precisely convey human intent. It is difficult to describe which exact object to interact with among similar candidates, where to act on the object, or how the target may change during execution. To address this limitation, we propose Gaze2Act, a novel VLA framework that leverages human gaze as a dynamic and intuitive intent signal for complex interactive manipulation. Gaze2Act first bridges the ego-exo view gap by mapping first-person gaze into the robot's perspective through cross-view semantic matching, producing both an object mask and a gaze point for coarse-to-fine target specification. These cues are then integrated into the policy through perception-level prompting and action-level conditioning, allowing the robot to attend to relevant regions and execute precise interactions under dynamic intent. In a systematic evaluation across seven task categories and 16 real-robot tasks on a Unitree G1 humanoid, Gaze2Act achieves state-of-the-art performance in both intent accuracy and task success rate. It notably outperforms baselines in object disambiguation, fine-grained interaction, and dynamic intent steering. These results demonstrate that human gaze provides a natural, low-burden, and highly expressive modality for human-in-the-loop VLA control.",
+      "authors": [
+        "Kuangji Zuo",
+        "Gen Li",
+        "Bofan Lyu",
+        "Yanshuo Lu",
+        "Boyu Ma",
+        "Shijia Han",
+        "Xinyu Zhou",
+        "Xichen Yuan",
+        "Chuhao Zhou",
+        "Jiaqi Bai",
+        "Geng Li",
+        "Jianfei Yang"
+      ],
+      "published": "2026-05-28T17:37:16Z",
+      "updated": "2026-05-28T17:37:16Z",
+      "url": "https://arxiv.org/abs/2605.30282",
+      "pdf_url": "https://arxiv.org/pdf/2605.30282.pdf",
+      "primary_category": "cs.RO",
+      "categories": [
+        "cs.RO"
+      ],
+      "tags": [
+        "cs.RO"
+      ],
+      "domain": "Agent",
+      "pdf_downloaded": true,
+      "pdf_size_bytes": 2269754,
+      "pdf_path": "2026-05-30/agent/2605.30282.pdf"
+    },
+    {
+      "id": "2605.30280",
+      "title": "Qwen-VLA: Unifying Vision-Language-Action Modeling across Tasks, Environments, and Robot Embodiments",
+      "abstract": "Embodied intelligence is often studied through specialized models for individual tasks such as manipulation or navigation, resulting in fragmented capabilities and limited generalization across tasks, environments, and robot embodiments. In this work, we study whether heterogeneous embodied decision-making problems can be unified within a single vision-language-action model. We present Qwen-VLA, a unified embodied foundation model that extends Qwen's vision-language modeling stack from perception, understanding, and reasoning to continuous action and trajectory generation through a DiT-based action decoder. Qwen-VLA is trained with a large-scale joint pretraining recipe over diverse data sources, including robotics manipulation trajectories, human egocentric demonstrations, synthetic simulation data, vision-and-language navigation data, trajectory-centric supervision, and auxiliary vision-language data. To support multiple robot platforms, we introduce embodiment-aware prompt conditioning, where robot-specific textual descriptions specify the current embodiment and control convention. We further cast manipulation, navigation, and trajectory prediction into a unified action-and-trajectory prediction framework, enabling transferable visual grounding, spatial reasoning, and continuous action generation across robot morphologies, task families, and environments. Experiments on manipulation, navigation, and trajectory-centric benchmarks show consistent multi-task performance and out-of-distribution generalization under variations in scene layout, background, lighting, object configuration, and robot embodiment. Qwen-VLA-Instruct achieves 97.9% on LIBERO, 73.7% on Simpler-WidowX, 86.1%/87.2% on RoboTwin-Easy/Hard, 69.0% OSR on R2R, 59.6% SR on RxR, 76.9% average OOD success in real-world ALOHA experiments, and 26.6% zero-shot success on DOMINO dynamic manipulation.",
+      "authors": [
+        "Qiuyue Wang",
+        "Mingsheng Li",
+        "Jian Guan",
+        "Jinhui Ye",
+        "Sicheng Xie",
+        "Yitao Liu",
+        "Junhao Chen",
+        "Zhixuan Liang",
+        "Jie Zhang",
+        "Xintong Hu",
+        "Xuhong Huang",
+        "Pei Lin",
+        "Junyang Lin",
+        "Dayiheng Liu",
+        "Shuai Bai",
+        "Jingren Zhou",
+        "Jiazhao Zhang",
+        "Haoqi Yuan",
+        "Gengze Zhou",
+        "Hang Yin",
+        "Ye Wang",
+        "Yiyang Huang",
+        "Zixing Lei",
+        "Wujian Peng",
+        "Delin Chen",
+        "Yingming Zheng",
+        "Jingyang Fan",
+        "Xianwei Zhuang",
+        "Xin Zhou",
+        "Haoyang Li",
+        "Anzhe Chen",
+        "Tong Zhang",
+        "Xuejing Liu",
+        "Yuchong Sun",
+        "Ruizhe Chen",
+        "Zhaohai Li",
+        "Chenxu L\u00fc",
+        "Zhibo Yang",
+        "Tao Yu",
+        "Xionghui Chen"
+      ],
+      "published": "2026-05-28T17:36:31Z",
+      "updated": "2026-05-28T17:36:31Z",
+      "url": "https://arxiv.org/abs/2605.30280",
+      "pdf_url": "https://arxiv.org/pdf/2605.30280.pdf",
+      "primary_category": "cs.RO",
+      "categories": [
+        "cs.RO",
+        "cs.AI",
+        "cs.CL"
+      ],
+      "tags": [
+        "cs.AI",
+        "cs.CL",
+        "cs.RO"
+      ],
+      "domain": "Agent",
+      "pdf_downloaded": true,
+      "pdf_size_bytes": 12688886,
+      "pdf_path": "2026-05-30/agent/2605.30280.pdf"
+    },
+    {
+      "id": "2605.30258",
+      "title": "EASE Configuration Facilitates A Reproducible Science of LLM Social Simulations",
+      "abstract": "LLMs are increasingly deployed to simulate social interactions, yet many of the existing simulators remain ad hoc and monolithic. This lack of architectural standardization prevents reproducible research and complicates downstream evaluation. We advance a rigorous science of LLM-based multi-agent simulation by modularizing core components into Environments, Agents, Simulation engines, and Evaluation metrics (EASE). We demonstrate the utility of EASE configuration by wrapping it in an experimental study schema for orchestrating workflows centered around answering explicit research questions in generated scenarios. We contribute SiliSocS, an open-source, research-ready Silicon Society Sandbox implementing a study-structured EASE configuration to enable highly configurable and reproducible LLM-based social simulations. Using SiliSocS and EASE, we present three case studies, showcasing the system's comprehensive assessment of existing questions, ability to dive deeper into complex questions, and elaboration of existing studies, respectively. Together, these case studies highlight the limitations of current modeling approaches and isolate the impacts of design choices on key results.",
+      "authors": [
+        "Sneheel Sarangi",
+        "Maximilian Puelma Touzel",
+        "Aur\u00e9lien B\u00fcck-Kaeffer",
+        "Zachary Yang",
+        "Jean-Fran\u00e7ois Godbout",
+        "Reihaneh Rabbany"
+      ],
+      "published": "2026-05-28T17:20:32Z",
+      "updated": "2026-05-28T17:20:32Z",
+      "url": "https://arxiv.org/abs/2605.30258",
+      "pdf_url": "https://arxiv.org/pdf/2605.30258.pdf",
+      "primary_category": "cs.MA",
+      "categories": [
+        "cs.MA"
+      ],
+      "tags": [
+        "cs.MA"
+      ],
+      "domain": "Agent",
+      "pdf_downloaded": true,
+      "pdf_size_bytes": 1465675,
+      "pdf_path": "2026-05-30/agent/2605.30258.pdf"
+    },
+    {
+      "id": "2605.30227",
+      "title": "Unifying Temporal and Structural Credit Assignment in LLM-Based Multi-Agent Prompt Optimization",
+      "abstract": "While Multi-Agent Systems (MAS) empower Large Language Models to tackle complex reasoning tasks through collaborative interaction, optimizing their dynamics remains a formidable challenge due to the discrete, non-differentiable nature of the computation graph and the sparsity of global supervisory signals. Existing black-box optimizers struggle to attribute trajectory-level failure to specific local components, resulting in inefficient, high-variance exploration. We argue that tractable MAS optimization needs structural inductive biases to disentangle error signals. We propose temporal and structural credit assignment, which decomposes the objective along two axes: (i) temporal credit, using state-space bottlenecks to identify critical rounds, and (ii) structural credit, using stationary role policies to isolate agent contributions. Leveraging these decomposed signals, we introduce a discrete, verbalized block coordinate descent algorithm for iterative refinement. Rather than indiscriminate global updates, it alternates between optimizing role prompts and aggregation protocols, using LLM-generated \"proxy gradients\" to target only the identified weak links. Across diverse reasoning benchmarks, our approach substantially reduces query complexity while improving performance, providing a principled and interpretable path toward self-improving MAS.",
+      "authors": [
+        "Wenwu Li",
+        "Yuran Song",
+        "Mingze Zhao",
+        "Bo Jin",
+        "Wenhao Li"
+      ],
+      "published": "2026-05-28T16:57:57Z",
+      "updated": "2026-05-28T16:57:57Z",
+      "url": "https://arxiv.org/abs/2605.30227",
+      "pdf_url": "https://arxiv.org/pdf/2605.30227.pdf",
+      "primary_category": "cs.MA",
+      "categories": [
+        "cs.MA",
+        "cs.AI"
+      ],
+      "tags": [
+        "cs.AI",
+        "cs.MA"
+      ],
+      "domain": "Agent",
+      "pdf_downloaded": true,
+      "pdf_size_bytes": 698112,
+      "pdf_path": "2026-05-30/agent/2605.30227.pdf"
+    },
+    {
+      "id": "2605.30226",
+      "title": "BORA: Bridging Offline Reinforcement Learning and Online Residual Adaptation for Real-World Dexterous VLA Models",
+      "abstract": "Vision-Language-Action (VLA) models have emerged as a promising paradigm for grounding visual-language understanding into real-world robotic manipulation. However, dexterous manipulation remains challenging for VLA policies due to high-dimensional hand control and compounding execution errors, which makes real-world RL post-training essential for bridging the gap between visually grounded action generation and physically reliable dexterous execution. However, high-dimensional dexterous exploration often triggers temporal inconsistency, sample inefficiency and hardware risks in the real world. To address these challenges, we propose BORA, an offline-to-online RL post-training framework designed for real-world dexterous VLA models. In the offline phase, BORA constructs a critic that takes both the VLM's cognition tokens and action chunks as inputs. This design enables action-conditioned value guidance, allowing the critic to evaluate dexterous hand motions beyond visual context alone. During the subsequent online phase, BORA freezes the VLA base and introduces a lightweight, Human-in-the-Loop (HiL) chunk-wise residual adaptation mechanism to mitigate real-world execution errors and further correct the offline-learned intents within the actual physical environment. By inheriting the offline critic and employing intervention-driven rewards, BORA effectively corrects execution discrepancies and adapts to real-world physical variances while preserving the pretrained policy as a stable prior. Extensive evaluations across five complex real-world dexterous tasks demonstrate that BORA significantly outperforms pure imitation learning and traditional decoupled RL baselines, achieving a 33% absolute increase in average success rate under standard settings and up to a 43% improvement in unseen object generalization.",
+      "authors": [
+        "Zhongxi Chen",
+        "Yifan Han",
+        "Yanming Shao",
+        "Huanming Liu",
+        "Congsheng Xu",
+        "Xiaoyu Chen",
+        "Yao Mu",
+        "Wenzhao Lian"
+      ],
+      "published": "2026-05-28T16:57:47Z",
+      "updated": "2026-05-28T16:57:47Z",
+      "url": "https://arxiv.org/abs/2605.30226",
+      "pdf_url": "https://arxiv.org/pdf/2605.30226.pdf",
+      "primary_category": "cs.RO",
+      "categories": [
+        "cs.RO",
+        "cs.AI"
+      ],
+      "tags": [
+        "cs.AI",
+        "cs.RO"
+      ],
+      "domain": "Agent",
+      "pdf_downloaded": true,
+      "pdf_size_bytes": 17486283,
+      "pdf_path": "2026-05-30/agent/2605.30226.pdf"
+    },
+    {
+      "id": "2605.30169",
+      "title": "Dissociative Identity: Language Model Agents Lack Grounding for Reputation Mechanisms",
+      "abstract": "As autonomous language model agents proliferate, forming an emerging agentic web with real-world consequences, what credibility signals can you use to decide whether to trust an unfamiliar agent in the wild and delegate to it? A natural governance intuition is to extend human identity verification and reputation mechanisms, from ``Know Your Customer'' and credit scores to ``Know Your Agent'' regimes. However, we argue that this analogy is fundamentally incomplete. Reputation mechanisms function both as social signals and as corrective feedback that sustain an equilibrium of trustworthy behavior, presuming a persistent identity associated with behavioral continuity, sanction sensitivity, and costly non-fungibility. Yet language model agents are ontologically \\emph{dissociative}: they are essentially an assemblage of mutable modules -- foundational models, system prompts, tool-access policies, external memory, and, in some cases, a multi-agent system as a whole -- any of which may change agent behavior -- with a fluid persona that is also vulnerable to adversarial attack and may not internalize sanctions. Drawing on dissociative identity disorder jurisprudence, this dissociativity leaves agents without grounding for identifiability, predictability, credibility, and rehabilitability -- the very properties that reputation mechanisms aim to sustain -- thereby collapsing trust. We argue that identity-based, ex post, regulative, sanction-based governance, such as reputation, is structurally inapplicable to dissociative agents, and we suggest a shift to observability-based, ex ante, constitutive, protocol-based behavioral harnesses.",
+      "authors": [
+        "Botao Amber Hu",
+        "Helena Rong",
+        "Max Van Kleek"
+      ],
+      "published": "2026-05-28T16:20:19Z",
+      "updated": "2026-05-28T16:20:19Z",
+      "url": "https://arxiv.org/abs/2605.30169",
+      "pdf_url": "https://arxiv.org/pdf/2605.30169.pdf",
+      "primary_category": "cs.CY",
+      "categories": [
+        "cs.CY",
+        "cs.AI",
+        "cs.MA"
+      ],
+      "tags": [
+        "cs.AI",
+        "cs.CY",
+        "cs.MA"
+      ],
+      "domain": "Agent",
+      "pdf_downloaded": true,
+      "pdf_size_bytes": 634748,
+      "pdf_path": "2026-05-30/agent/2605.30169.pdf"
+    },
+    {
+      "id": "2605.30144",
+      "title": "AgentSchool: An LLM-Powered Multi-Agent Simulation for Education",
+      "abstract": "Despite the rapid deployment of LLMs into classrooms, validating educational AI remains uniquely intractable: interventions act on developing learners whose cognitive and social trajectories are irreversibly shaped, while real-world trials are slow, ethically constrained, and institutionally locked. LLM-based educational simulators have emerged as a potential remedy, but many still collapse learning into persona-conditioned role-play and, when optimized only to reproduce existing classrooms, can structurally penalize the institutional novelty that pedagogical reform requires. In this work, we introduce AgentSchool, an LLM-driven multi-agent simulator that models learning as state transition rather than prompted behavior. AgentSchool couples cognitively growable student agents -- equipped with weighted subject knowledge graphs, thinking-workflow pools, and explicit misconceptions -- with adaptive teacher agents that plan, scaffold, and reflect along the Zone of Proximal Development, embedded in a configurable scenery generator that situates instruction within both formal and informal learning fields, and a multi-scale simulator that decouples interaction scale, temporal granularity, and simulation duration. Experiments show that structured student agents produce more differentiated mastery and misconception traces than a baseline simulator, while teacher-agent comparisons show backbone-dependent patterns consistent with ZPD-informed adaptation. Further, AgentSchool generates plausible traces of peripheral participation, clique formation, aggressor-induced cohesion, and opinion-leader emergence consistent with classroom social theories. Beyond its role as an educational research instrument, AgentSchool frames education as a socially meaningful testbed for long-horizon memory, multi-agent coordination, and future institutional reasoning under organizational pressure.",
+      "authors": [
+        "Yulei Ye",
+        "Wenhao Li",
+        "Zhong Wen",
+        "Yunshu Huang",
+        "Yichen Hu",
+        "Zifan Wei",
+        "Yige Wang",
+        "Xinyu Xie",
+        "Haoxuan Yang",
+        "Yanjun Huang",
+        "Ruijia Li",
+        "Hong Qian",
+        "Yu Song",
+        "Bo Jiang",
+        "Bingdong Li",
+        "Lijun Li",
+        "Bo Zhang",
+        "Pinlong Cai",
+        "Xingcheng Xu",
+        "Shuangye Chen",
+        "Xia Hu",
+        "Liang He",
+        "Aimin Zhou",
+        "Jingjing Qu",
+        "Jing Shao",
+        "Xiangfeng Wang"
+      ],
+      "published": "2026-05-28T16:05:58Z",
+      "updated": "2026-05-28T16:05:58Z",
+      "url": "https://arxiv.org/abs/2605.30144",
+      "pdf_url": "https://arxiv.org/pdf/2605.30144.pdf",
+      "primary_category": "cs.AI",
+      "categories": [
+        "cs.AI",
+        "cs.MA"
+      ],
+      "tags": [
+        "cs.AI",
+        "cs.MA"
+      ],
+      "domain": "Agent",
+      "pdf_downloaded": true,
+      "pdf_size_bytes": 19403034,
+      "pdf_path": "2026-05-30/agent/2605.30144.pdf"
+    },
+    {
+      "id": "2605.30102",
+      "title": "When Cloud Agents Meet Device Agents: Lessons from Hybrid Multi-Agent Systems",
+      "abstract": "The design space of agentic AI inference spans two extremes: frontier large language models (LLMs), typically hosted in the cloud and offering strong performance across a wide range of tasks at substantially high cost, and more cost-efficient small language models (SLMs), which are amenable to on-device inference. Hybrid multi-agent systems (MASs) combining on-device and cloud models offer a promising middle ground, but they also introduce a complex and poorly understood design space in which task accuracy, monetary cost, and edge energy consumption are tightly coupled; in the absence of general design principles, hybrid components, although not the most prevalent choice, are typically introduced through ad hoc decisions tailored to specific domains. In this work, we examine this design space more systematically. We adapt two representative MAS architectures to support hybrid inference and study how individual design choices shift the operating point along the Pareto frontier of power, cost, and performance. Our findings paint a nuanced picture of hybrid MAS design: while SLMs can effectively benefit from LLM assistance, the optimal architecture is highly task-dependent, and greater frontier-level compute does not consistently translate to better performance.",
+      "authors": [
+        "Corrado Rainone",
+        "Davide Belli",
+        "Bence Major",
+        "Arash Behboodi"
+      ],
+      "published": "2026-05-28T15:45:02Z",
+      "updated": "2026-05-28T15:45:02Z",
+      "url": "https://arxiv.org/abs/2605.30102",
+      "pdf_url": "https://arxiv.org/pdf/2605.30102.pdf",
+      "primary_category": "cs.MA",
+      "categories": [
+        "cs.MA",
+        "cs.AI"
+      ],
+      "tags": [
+        "cs.AI",
+        "cs.MA"
+      ],
+      "domain": "Agent",
+      "pdf_downloaded": true,
+      "pdf_size_bytes": 2327710,
+      "pdf_path": "2026-05-30/agent/2605.30102.pdf"
+    },
+    {
+      "id": "2605.30056",
+      "title": "Sample-Efficient Diffusion-based Reinforcement Learning with Critic Guidance",
+      "abstract": "Recent advances in reinforcement learning (RL) have achieved great successes by leveraging the multimodality and exploration capability of diffusion policies. Among these approaches, one representative branch focuses on the sampling-based policy optimization. This design enables better exploration capability of the diffusion model, particularly at the beginning of training, but suffer from low exploitation in Q-value information, resulting in a slow policy convergence. Another branch pays attention to gradient-based policy optimization, which sufficiently exploits the gradient of the Q function yet tends to collapse into a unimodal policy with low diversity. To address this issue, we propose CGPO, \\textbf{C}ritic-\\textbf{G}uided diffusion \\textbf{P}olicy \\textbf{O}ptimization, which effectively balances exploration and exploitation with the training-free guidance technique integrated into the denoising process of diffusion policy. Concretely, CGPO steers action generation toward high-value regions defined by the critic network and uses the guided actions as regression objectives. In this manner, CGPO reduces the time required to obtain high-quality actions and improves final performance with better balance between the exploration-exploitation tradeoff. We validate the effectiveness of CGPO on 5 MuJoCo locomotion tasks, and CGPO achieves state-of-the-art performance compared with existing diffusion-based RL methods. Notably, CGPO is the first success to incorporate diffusion policy into real-world RL, with its superior performance on Franka robot arm grasping tasks. Our official page is released at https://dingsht.tech/cgpo-webpage.",
+      "authors": [
+        "Shutong Ding",
+        "Zejia Zhong",
+        "Zhongyi Wang",
+        "Ke Hu",
+        "Bikang Pan",
+        "Jingya Wang",
+        "Ye Shi"
+      ],
+      "published": "2026-05-28T15:07:50Z",
+      "updated": "2026-05-28T15:07:50Z",
+      "url": "https://arxiv.org/abs/2605.30056",
+      "pdf_url": "https://arxiv.org/pdf/2605.30056.pdf",
+      "primary_category": "cs.RO",
+      "categories": [
+        "cs.RO",
+        "cs.LG"
+      ],
+      "tags": [
+        "cs.LG",
+        "cs.RO"
+      ],
+      "domain": "Agent",
+      "pdf_downloaded": true,
+      "pdf_size_bytes": 7900476,
+      "pdf_path": "2026-05-30/agent/2605.30056.pdf"
+    },
+    {
+      "id": "2605.30003",
+      "title": "Discovering Cooperative Pipelines: Autoresearch for Sequential Social Dilemmas",
+      "abstract": "We study two-level autoresearch for cooperation: an outer-loop AI agent autonomously redesigns the inner-loop pipeline of an LLM policy-synthesis system for multi-agent Sequential Social Dilemmas (SSDs). A researcher agent $\\mathcal{R}$ (run as a coding agent) reads the inner-loop source code, edits system prompts, feedback functions, helper libraries, and iteration logic, runs evaluations, and decides what to keep, following the autoresearch paradigm. Across two games (Cleanup and Gathering), two policy-synthesizer LLMs, and two welfare objectives (utilitarian efficiency and Rawlsian maximin), the researcher reliably exceeds hand-designed baselines, sharply tightens run-to-run variance, and outperforms prompt-only optimization. The discovered pipelines are objective-dependent: only under maximin does the researcher inject an explicit fairness mechanism into synthesizer pipelines, a class of mechanism that is absent from its own objective-agnostic system prompt and from every efficiency-optimized pipeline. This supports an information-design reading in which the researcher chooses what to reveal to the boundedly rational synthesizer as a function of the welfare objective. Code at https://github.com/vicgalle/autoresearch-social-dilemmas.",
+      "authors": [
+        "V\u00edctor Gallego"
+      ],
+      "published": "2026-05-28T14:33:10Z",
+      "updated": "2026-05-28T14:33:10Z",
+      "url": "https://arxiv.org/abs/2605.30003",
+      "pdf_url": "https://arxiv.org/pdf/2605.30003.pdf",
+      "primary_category": "cs.MA",
+      "categories": [
+        "cs.MA",
+        "cs.AI",
+        "cs.LG"
+      ],
+      "tags": [
+        "cs.AI",
+        "cs.LG",
+        "cs.MA"
+      ],
+      "domain": "Agent",
+      "pdf_downloaded": true,
+      "pdf_size_bytes": 1117208,
+      "pdf_path": "2026-05-30/agent/2605.30003.pdf"
+    },
+    {
+      "id": "2605.29973",
+      "title": "Replicable Simulation-Based Robot Validation through Provenance",
+      "abstract": "Robot behavior is often validated through simulation-based testing, yet the replicability of such campaigns depends critically on transparent documentation of how tests are configured, executed, and post-processed. We argue that data provenance, coupled with the FAIR principles (findability, accessibility, interoperability, and reusability), addresses this gap by explicitly tracking links between artifacts and by attaching machine-readable metadata about file origins and key design decisions. Moreover, provenance and metadata cannot be treated as an afterthought confined to final datasets; they must be integrated into the testing processes that generate those datasets so that evidence can be reconstructed end-to-end. We demonstrate this by augmenting an existing simulation-based testing framework with provenance tracking and metadata collection mechanisms, and by using these extensions to enrich a mobile robot navigation dataset with structured provenance and FAIR-aligned metadata. Finally, we discuss obstacles encountered in this integration -- such as vocabulary alignment, attribute selection, and adoption of domain standards -- and provide actionable recommendations for implementing provenance-centric, FAIR metadata in robotics validation workflows.",
+      "authors": [
+        "Argentina Ortega",
+        "Samuel Wiest",
+        "Frederik Pasch",
+        "Nico Hochgeschwender"
+      ],
+      "published": "2026-05-28T14:11:26Z",
+      "updated": "2026-05-28T14:11:26Z",
+      "url": "https://arxiv.org/abs/2605.29973",
+      "pdf_url": "https://arxiv.org/pdf/2605.29973.pdf",
+      "primary_category": "cs.RO",
+      "categories": [
+        "cs.RO"
+      ],
+      "tags": [
+        "cs.RO"
+      ],
+      "domain": "Agent",
+      "pdf_downloaded": true,
+      "pdf_size_bytes": 4291576,
+      "pdf_path": "2026-05-30/agent/2605.29973.pdf"
+    },
+    {
+      "id": "2605.29937",
+      "title": "Fisher-Preserving Guidance: Training-Free Manifold Constraints for Safe Diffusion Control",
+      "abstract": "Diffusion models are effective for waypoint prediction in visual navigation, but standard sampling and test time guidance can produce unreliable or inefficient trajectories when updates drift off the training manifold. We propose Fisher Preserving Guidance with Outer Product Span Projection, a training-free inference method that avoids large Fisher drift associated with off-distribution actions while optimizing a task objective. Our method computes the Fisher-preserving update via a low-rank Jacobian factorization, requiring only a single backward pass per step and enabling real-time use. We further introduce Truncated Fisher Denoising Sensitivity as an uncertainty signal and use it for robust multi-sample action blending. Experiments on toy and realistic navigation benchmarks, including Maze2D with TSDF-based guidance, PushT with official Diffusion Policy weights, and visual navigation in simulation and on real robots, demonstrate consistent improvements in performance over strong diffusion-policy baselines without additional training.",
+      "authors": [
+        "Hao Ren",
+        "Zetong Bi",
+        "Yiming Zeng",
+        "Le Zheng",
+        "Zhi Li",
+        "Zhaoliang Wan",
+        "Lu Qi",
+        "Hui Cheng"
+      ],
+      "published": "2026-05-28T13:47:31Z",
+      "updated": "2026-05-28T13:47:31Z",
+      "url": "https://arxiv.org/abs/2605.29937",
+      "pdf_url": "https://arxiv.org/pdf/2605.29937.pdf",
+      "primary_category": "cs.RO",
+      "categories": [
+        "cs.RO",
+        "cs.LG"
+      ],
+      "tags": [
+        "cs.LG",
+        "cs.RO"
+      ],
+      "domain": "Agent",
+      "pdf_downloaded": true,
+      "pdf_size_bytes": 22958940,
+      "pdf_path": "2026-05-30/agent/2605.29937.pdf"
+    },
+    {
+      "id": "2605.29919",
+      "title": "On the Geometry of Games and their Solvers",
+      "abstract": "A central challenge in game theory and learning systems such as GANs is understanding which algorithms can efficiently compute equilibria across the heterogeneous landscape of games. Equilibrium computation is typically studied solver by solver and game class by game class, yielding strong local guarantees but a fragmented view of solver behaviour. Existing discrete taxonomies often provide an incomplete account of where algorithms succeed. We study this problem through a solver-game map linking games to effective solver dynamics. Classical theory identifies isolated regions of this map but provides limited insight into intermediate or overlapping regimes, suggesting that solvability is governed by latent structural properties defining a continuous solver-aligned geometry of games. We formalise this perspective through structure-aware solver synthesis. A learned structure recogniser maps each game to a low-dimensional solver-aligned representation, and a policy maps this representation to effective primitive mechanisms, adapting solver behaviour across regimes. This reveals regions where particular solver dynamics are effective and where mixtures of primitives are required rather than a single dominant solver. A bounded residual acts as a local corrector and diagnostic signal for incomplete solver bases or representations. The framework yields both an adaptive solver and an analytical lens: games with similar optimisation dynamics cluster together, revealing continuous regions of algorithmic validity and overlapping solver behaviour. Empirically, we show that fixed primitives exhibit systematic regime mismatch, while the learned representation organises game space into a structured cartography aligned with solver behaviour. These results suggest viewing equilibrium computation as the joint problem of learning solver mechanisms and mapping the geometry of solvability.",
+      "authors": [
+        "Yaqi Sun",
+        "Julian Ma",
+        "David Mguni"
+      ],
+      "published": "2026-05-28T13:31:49Z",
+      "updated": "2026-05-28T13:31:49Z",
+      "url": "https://arxiv.org/abs/2605.29919",
+      "pdf_url": "https://arxiv.org/pdf/2605.29919.pdf",
+      "primary_category": "cs.AI",
+      "categories": [
+        "cs.AI",
+        "cs.MA"
+      ],
+      "tags": [
+        "cs.AI",
+        "cs.MA"
+      ],
+      "domain": "Agent",
+      "pdf_downloaded": true,
+      "pdf_size_bytes": 6791170,
+      "pdf_path": "2026-05-30/agent/2605.29919.pdf"
+    },
+    {
+      "id": "2605.29879",
+      "title": "DGSG-Mind: Dynamic 3D Gaussian Scene Graphs for Long-Term Scene Understanding and Grounding",
+      "abstract": "Integrating open-vocabulary semantic information into dynamic 3D scene representations is essential for long-term embodied scene understanding. However, existing methods often suffer from fragile instance association due to incomplete cross-view cues, while their limited ability to handle object-level topological changes restricts long-term robotic task execution. Moreover, current 3D scene understanding methods either rely on simple feature matching without explicit spatial reasoning or assume offline ground-truth 3D geometry. To address these challenges, we present DGSG-Mind, a hybrid instance-aware 3D Gaussian dynamic scene graph system with an embodied reasoning agent. Our system couples a probabilistic voxel grid with explicit 3D Gaussians to enable robust cross-modal instance fusion and incremental semantic mapping. It handles dynamic changes through Gaussian-based visual relocalization and localized masked refinement guided by geometric-semantic consistency. Built on the instance Gaussian map, DGSG-Mind further constructs a hierarchical scene graph and develops the 3D Gaussian Mind, which integrates structural relations, spatial-semantic information, and visually annotated RoI Gaussian renderings for multimodal reasoning. Extensive experiments show that DGSG-Mind achieves the best zero-shot 3DVG performance among methods operating on self-reconstructed maps, while also delivering strong performance in 3D open-vocabulary semantic segmentation and scene reconstruction. We further deploy DGSG-Mind on real-world robots to demonstrate its target-oriented reasoning and dynamic update capabilities. The project page of DGSG-Mind is available at https://icr-lab.github.io/DGSG-Mind",
+      "authors": [
+        "Luzhou Ge",
+        "Xiangyu Zhu",
+        "Jinyan Liu",
+        "Xuesong Li"
+      ],
+      "published": "2026-05-28T13:04:17Z",
+      "updated": "2026-05-28T13:04:17Z",
+      "url": "https://arxiv.org/abs/2605.29879",
+      "pdf_url": "https://arxiv.org/pdf/2605.29879.pdf",
+      "primary_category": "cs.CV",
+      "categories": [
+        "cs.CV",
+        "cs.RO"
+      ],
+      "tags": [
+        "cs.CV",
+        "cs.RO"
+      ],
+      "domain": "Agent",
+      "pdf_downloaded": true,
+      "pdf_size_bytes": 4704822,
+      "pdf_path": "2026-05-30/agent/2605.29879.pdf"
+    },
+    {
+      "id": "2605.29874",
+      "title": "Evolutionary Dynamics of Cooperation in Next-Generation LLM Agent Systems: A Cross-Provider Empirical Extension",
+      "abstract": "Do next-generation LLM agents inherit the cooperative biases documented in their predecessors, or does scale and provider diversity reshape equilibrium behaviour in competitive multi-agent settings? Willis et al. established a benchmark for this question using evolutionary game theory and the Iterated Prisoner's Dilemma (IPD), finding consistent cooperative biases in ChatGPT-4o and Claude 3.5 Sonnet. We extend this benchmark to four frontier models released in 2025-2026 - Claude Sonnet 4.6, Gemini 2.5 Flash, Gemini 3.1 Pro, and GPT-5.4 Mini - applying the identical protocol across three prompting styles (Default, Prose, Self-Refine) and four population compositions (balanced and biased, with and without noise). Cooperative bias persists across providers (H1): nine of twelve model-prompt combinations favour cooperative equilibria in balanced noiseless conditions. Cross-provider divergence is substantial (H3): Gemini 2.5 Flash reaches up to 77% aggressive equilibria under biased conditions, while GPT-5.4 Mini reaches 70% cooperative equilibria under Self-Refine. Support for aggressive capability parity is partial (H2): Self-Refine raises ICD in all models and Claude Sonnet 4.6 Refine achieves the highest ICD in the dataset (0.913), but Default and Prose prompts show no systematic narrowing. Evidence on noise robustness is directionally positive but not robustly confirmed (H4): with n=500 Moran iterations per condition, average noise sensitivity is approximately 6 percentage points for Claude Sonnet 4.6 versus 13 pp for Claude 3.5 Sonnet, but this cross-study gap is not statistically significant once the predecessor's unreported sampling error is propagated. Provider identity, rather than model generation, is the strongest correlate of equilibrium outcomes; noise remains a universal challenge regardless of model size or vintage.",
+      "authors": [
+        "Francisco Le\u00f3n Z\u00fa\u00f1iga Bol\u00edvar"
+      ],
+      "published": "2026-05-28T12:58:56Z",
+      "updated": "2026-05-28T12:58:56Z",
+      "url": "https://arxiv.org/abs/2605.29874",
+      "pdf_url": "https://arxiv.org/pdf/2605.29874.pdf",
+      "primary_category": "cs.MA",
+      "categories": [
+        "cs.MA",
+        "cs.AI",
+        "cs.GT"
+      ],
+      "tags": [
+        "cs.AI",
+        "cs.GT",
+        "cs.MA"
+      ],
+      "domain": "Agent",
+      "pdf_downloaded": true,
+      "pdf_size_bytes": 655428,
+      "pdf_path": "2026-05-30/agent/2605.29874.pdf"
+    },
+    {
+      "id": "2605.29864",
+      "title": "LLM-Guided Future Hypotheses for Horizon-Aware Exploration in Multi-Step Robot Manipulation",
+      "abstract": "Multi-step robot manipulation requires acting under uncertainty about how the scene will evolve, making exploration and policy adaptation challenging. We study whether short-horizon, task-consistent future videos can provide useful structured priors for control and reinforcement-learning fine-tuning. We formalize this idea through Future-Experience Conditioning (FEC), a simple interface that conditions closed-loop policies on a latent representation of a short future video. In our simulation setup, future clips are generated in three stages, an LLM reasoner operating over a task ontology initialized from the current scene state, a robot-free digital-twin rollout of the intended object motion, and a mask-free video diffusion model that synthesizes a robot-consistent future clip without requiring segmentation at inference. We instantiate this future-conditioning interface primarily with BC and BC+RL, and compare against a future-conditioned Streaming Flow Policy (SFP) baseline on RoboCasa and CALVIN under NoFuture, GTFuture, GenFuture, and WrongFuture. Generated futures improve performance over no-future conditioning, while mismatched futures degrade it, and our BC+RL instantiation achieves the strongest overall results. An average BC+RL learning-curve analysis across 8 CALVIN tasks further shows that GTFuture improves fastest, GenFuture improves earlier and to a higher level than NoFuture, and WrongFuture remains at zero throughout training. These results suggest that short-horizon future videos can serve as useful structured priors for exploration and policy adaptation under imperfect future predictions. https://enact2026.github.io/",
+      "authors": [
+        "Mohammad Khoshnazar",
+        "Andrew Melnik",
+        "Michael Beetz"
+      ],
+      "published": "2026-05-28T12:49:37Z",
+      "updated": "2026-05-28T12:49:37Z",
+      "url": "https://arxiv.org/abs/2605.29864",
+      "pdf_url": "https://arxiv.org/pdf/2605.29864.pdf",
+      "primary_category": "cs.RO",
+      "categories": [
+        "cs.RO"
+      ],
+      "tags": [
+        "cs.RO"
+      ],
+      "domain": "Agent",
+      "pdf_downloaded": true,
+      "pdf_size_bytes": 3636384,
+      "pdf_path": "2026-05-30/agent/2605.29864.pdf"
+    },
+    {
+      "id": "2605.29790",
+      "title": "Evolve as a Team: Collaborative Self-Evolution for LLM-based Multi-Agent Systems",
+      "abstract": "LLM-based multi-agent systems (MAS) have emerged as an effective paradigm for complex and long-horizon tasks. However, in real-world tasks, MAS often exhibit various failures during execution and such failures are difficult to eliminate during design. This motivates experience-driven MAS evolution, where a system improves based on its own execution experience. Yet such evolution is challenging because MAS experience is prolonged and intricate, interleaving multiple agents' execution chains and communication messages, which makes it difficult to identify what should be improved. To address this challenge, we propose Meta-Team, an experience-driven MAS evolution framework based on collaborative self-evolution. Meta-Team preserves the execution context of each agent and coordinates post-task communication, enabling agents to exchange distributed evidence for evolution. Building on this design, Meta-Team conducts multi-scale self-evolution, transforming execution experience into reusable improvements to agent behaviors, inter-agent coordination, and team-level organization. Across six long-horizon agent benchmarks, Meta-Team consistently outperforms single-agent systems, hand-crafted MAS, and prior MAS evolution methods; further analyses demonstrate that Meta-Team enables more reliable and scalable MAS self-evolution.",
+      "authors": [
+        "Zhezheng Hao",
+        "Tianfu Wang",
+        "Huanshuo Dong",
+        "Ziyan Liu",
+        "Hong Wang",
+        "Xiankun Lin",
+        "Qiang Lin",
+        "Can Wang",
+        "Hande Dong",
+        "Jiawei Chen"
+      ],
+      "published": "2026-05-28T11:40:16Z",
+      "updated": "2026-05-28T11:40:16Z",
+      "url": "https://arxiv.org/abs/2605.29790",
+      "pdf_url": "https://arxiv.org/pdf/2605.29790.pdf",
+      "primary_category": "cs.MA",
+      "categories": [
+        "cs.MA",
+        "cs.AI"
+      ],
+      "tags": [
+        "cs.AI",
+        "cs.MA"
+      ],
+      "domain": "Agent",
+      "pdf_downloaded": true,
+      "pdf_size_bytes": 1824139,
+      "pdf_path": "2026-05-30/agent/2605.29790.pdf"
+    },
+    {
+      "id": "2605.29773",
+      "title": "Energy-Aware NECO for Single-Pass Pixel-wise Out-of-Distribution Detection in Semantic Segmentation",
+      "abstract": "Reliable semantic segmentation for mobile robots requires both accurate dense prediction and robust uncertainty estimation under distribution shift. Strong uncertainty baselines such as Monte Carlo Dropout often require repeated stochastic forward passes and are difficult to deploy on edge platforms. We propose Energy-Aware NECO, a single-pass pixel-wise out-of-distribution (OOD) detector for semantic segmentation. The method combines a centered NECO-style geometric ratio computed from decoder features with a logit-based Energy score. Both components are standardized using statistics fitted on a pure in-distribution validation split and fused through a convex combination. We evaluate the method on the miniMUAD subset using true pixel-level OOD labels. The proposed hybrid score achieves an AUROC of 0.8539, outperforming NECO-only (0.8280), Energy-only (0.8171), and an ensemble predictive-entropy baseline (0.8124). Additional qualitative and operating-point analyses show that the hybrid detector improves overall ranking performance while preserving the efficiency advantages of a single-pass design. Code is available at https://github.com/boyuan-zhangx/Energy-Aware_NECO",
+      "authors": [
+        "Boyuan Zhang",
+        "Huanshan Huang",
+        "Yifei Cao"
+      ],
+      "published": "2026-05-28T11:19:46Z",
+      "updated": "2026-05-28T11:19:46Z",
+      "url": "https://arxiv.org/abs/2605.29773",
+      "pdf_url": "https://arxiv.org/pdf/2605.29773.pdf",
+      "primary_category": "cs.CV",
+      "categories": [
+        "cs.CV",
+        "cs.AI",
+        "cs.RO"
+      ],
+      "tags": [
+        "cs.AI",
+        "cs.CV",
+        "cs.RO"
+      ],
+      "domain": "Agent",
+      "pdf_downloaded": true,
+      "pdf_size_bytes": 1285595,
+      "pdf_path": "2026-05-30/agent/2605.29773.pdf"
+    },
+    {
+      "id": "2605.29771",
+      "title": "Joint Angle Estimation with Customized Wristband Based on Online Incremental Learning",
+      "abstract": "Intelligent wearable technology plays an increasingly important role in human-computer interaction, motion, and health monitoring. To ensure comfort and practicality of use, one common form for motion monitoring is to utilize soft wearable sensors. However, many research applications regarding wearable sensors are simplistic and difficult to adapt to different situations. This study proposes a system for estimating the angle of the wrist joint using a customized wristband based on an online incremental learning approach. It is a two-stage estimation method: the first stage updates the model based on the wearer's wrist movement characteristics using online learning, integrating real-time data from an IMU as ground truth. The second stage utilizes the updated model for estimation of wrist joint angle solely with the wristband. In other words, model training is completed during data acquisition, allowing the trained model to be used for subsequent angle estimation. This method offers advantages in adapting to data drift caused by variations in different testing configurations, such as the left and right wrists of the same subject, deviations in the wearing position on the same wrist, and even differences among various subjects. The results indicate that the sensors exhibit good performance under strain variations, and the wrist joint trajectory estimation of the proposed system has an approximate error of 15 degree in different scenarios.",
+      "authors": [
+        "Shuo Wang",
+        "Xiaobin Chen",
+        "Xiaoming Tao"
+      ],
+      "published": "2026-05-28T11:15:48Z",
+      "updated": "2026-05-28T11:15:48Z",
+      "url": "https://arxiv.org/abs/2605.29771",
+      "pdf_url": "https://arxiv.org/pdf/2605.29771.pdf",
+      "primary_category": "cs.RO",
+      "categories": [
+        "cs.RO"
+      ],
+      "tags": [
+        "cs.RO"
+      ],
+      "domain": "Agent",
+      "pdf_downloaded": true,
+      "pdf_size_bytes": 1334375,
+      "pdf_path": "2026-05-30/agent/2605.29771.pdf"
+    },
+    {
+      "id": "2605.29766",
+      "title": "MARS Policy: Multimodality Only When It Matters",
+      "abstract": "Imitation learning has become a cornerstone for solving complex robotic manipulation tasks. In particular, multimodality, which enables robots to capture diverse yet valid behavioral patterns, has driven the rapid emergence of generative policies as a dominant paradigm in robot learning. However, achieving such multimodality typically relies on stochastic noise initialization and iterative denoising procedures, resulting in substantial training complexity and low inference efficiency. Meanwhile, not all phases of a robotic task inherently require behavioral diversity. Motivated by this insight, we propose the Modality-Adaptive Robot Sampling (MARS) policy, which adaptively invokes tailored stochasticity only when it is truly beneficial, while reverting to an efficient deterministic learning during single-modal phases. In other words, the proper amount of noise is injected only at the proper time. By selectively activating multimodal generation, MARS policy bridges the gap between the multimodal capability of generative policies and the superior training and inference efficiency of deterministic models. Empirical studies across 8 simulated and 4 real-world tasks demonstrate that MARS exhibits robust multimodal expressivity and high efficiency, with a 16.67% success rate improvement and an 83.20% inference latency reduction in real-world tests. Counterintuitively, MARS also outpaces deterministic policies in training efficiency on near-deterministic tasks by more effectively modeling nuanced action diversity.",
+      "authors": [
+        "Jindou Jia",
+        "Tuo An",
+        "Yuxuan Hu",
+        "Gen Li",
+        "Jingliang Li",
+        "Bohan Hou",
+        "Xiangyu Chen",
+        "Jiaqi Bai",
+        "Bofan Lyu",
+        "Jianfei Yang"
+      ],
+      "published": "2026-05-28T11:12:30Z",
+      "updated": "2026-05-28T11:12:30Z",
+      "url": "https://arxiv.org/abs/2605.29766",
+      "pdf_url": "https://arxiv.org/pdf/2605.29766.pdf",
+      "primary_category": "cs.RO",
+      "categories": [
+        "cs.RO"
+      ],
+      "tags": [
+        "cs.RO"
+      ],
+      "domain": "Agent",
+      "pdf_downloaded": true,
+      "pdf_size_bytes": 14718950,
+      "pdf_path": "2026-05-30/agent/2605.29766.pdf"
+    },
+    {
+      "id": "2605.29744",
+      "title": "Why Specialist Models Still Matter: A Heterogeneous Multi-Agent Paradigm for Medical Artificial Intelligence",
+      "abstract": "The impressive performance of generalist large language models (LLMs) such as GPT and Claude in healthcare raises a critical question: will domain-specific medical specialist models become obsolete? We argue that the future of medical artificial intelligence (AI) lies not in building monolithic medical foundation models, nor in replacing human expertise, but in orchestrating collaboration among generalist LLMs, domain-specific specialist models, and clinicians. We propose HetMedAgent, a heterogeneous medical multi-agent framework that enables conflict-aware evidence fusion, uncertainty-based clinician intervention triggering, and adaptive threshold calibration. Experiments on three real-world clinical decision-making tasks demonstrate that the synergy between generalist LLMs and domain-specific specialist models significantly outperforms using either type of model alone, validating the irreplaceable value of specialist models in modality-specific analysis. HetMedAgent represents a shift from building medical LLMs or foundation models to multi-agent collaboration, achieving a balance between general reasoning capabilities and domain-specific precision.",
+      "authors": [
+        "Yanan Wang",
+        "Shuaicong Hu",
+        "Jian Liu",
+        "Guohui Zhou",
+        "Aiguo Wang",
+        "Cuiwei Yang"
+      ],
+      "published": "2026-05-28T10:42:44Z",
+      "updated": "2026-05-28T10:42:44Z",
+      "url": "https://arxiv.org/abs/2605.29744",
+      "pdf_url": "https://arxiv.org/pdf/2605.29744.pdf",
+      "primary_category": "cs.AI",
+      "categories": [
+        "cs.AI",
+        "cs.CL",
+        "cs.LG",
+        "cs.MA"
+      ],
+      "tags": [
+        "cs.AI",
+        "cs.CL",
+        "cs.LG",
+        "cs.MA"
+      ],
+      "domain": "Agent",
+      "pdf_downloaded": true,
+      "pdf_size_bytes": 2369237,
+      "pdf_path": "2026-05-30/agent/2605.29744.pdf"
+    },
+    {
+      "id": "2605.29710",
+      "title": "PhAIL: A Real-Robot VLA Benchmark and Distributional Methodology",
+      "abstract": "Real-world evaluation of vision-language-action (VLA) policies still rests on binary success rate at a fixed timeout with $N \\le 25$ rollouts per condition, almost always without confidence intervals or paired statistical comparison; these cohort sizes struggle to resolve close comparisons reliably. We introduce PhAIL (Physical AI Leaderboard, https://phail.ai), an open real-robot benchmark on a Franka FR3 (dataset, per-rollout artifacts, and end-to-end reference implementation) of a distributional evaluation methodology: the time-to-success cumulative distribution function (CDF) as the evaluation primitive, with two separated jobs. The first is scoring via Human-Relative Throughput (HRT), a dimensionless scalar with bootstrap confidence intervals, anchored to same-fixture human teleoperation. The second is a significance test (Kolmogorov-Smirnov, computed per-object and macro-averaged across objects). On four publicly-available VLAs, the macro-averaged KS test resolves two close comparisons (GR00T vs. ACT, OpenPI vs. ACT) at $N \\le 30$ rollouts per (model, object) cell where binary-threshold metrics do not; the closest pair (OpenPI vs. GR00T) remains unresolved within our budget. The best evaluated VLA is $\\sim 7\\times$ slower per operation (RMST ratio) than the human reference.",
+      "authors": [
+        "Sergey Arkhangelskiy"
+      ],
+      "published": "2026-05-28T10:10:19Z",
+      "updated": "2026-05-28T10:10:19Z",
+      "url": "https://arxiv.org/abs/2605.29710",
+      "pdf_url": "https://arxiv.org/pdf/2605.29710.pdf",
+      "primary_category": "cs.RO",
+      "categories": [
+        "cs.RO"
+      ],
+      "tags": [
+        "cs.RO"
+      ],
+      "domain": "Agent",
+      "pdf_downloaded": true,
+      "pdf_size_bytes": 2624675,
+      "pdf_path": "2026-05-30/agent/2605.29710.pdf"
+    },
+    {
+      "id": "2605.29704",
+      "title": "FLIP: Real-Time and Resilient Formation Planning for Large-Scale DIstributed Swarms via Point Cloud Registration",
+      "abstract": "Traditional large-scale formation planning either oversimplify the formation representation which leads to poor performance, or they employ complete collaborative relationships, which results in excessive computational load. To achieve high-performance and large-scale formation planning, we transform the Optimal Formation Position Sequence \\cite{c1} (OFPS) calculation problem into a spatiotemporal Point Cloud Registration (PCR) problem. Each agent derives its OFPS by distributively computing the matching result between current positions and the desired formation positions of all other agents. Then each agent optimizes the cooperative formation trajectory by using OFPS. We leverage the PCR method with outlier rejection to rapidly perform large-scale formation position registration. This prevents suboptimal trajectories and failed agents from propagating through the cooperative network and affecting more agents. Consequently, we uniformly achieve resilient, efficient, and distributed trajectory planning for large-scale swarms. The effectiveness and the superiority of the proposed method are demonstrated through large-scale simulations of 120-drone formation, and rigorous benchmarking against state-of-the-art (SOTA) methods.",
+      "authors": [
+        "Yuan Zhou",
+        "Guangtong Xu",
+        "Zhenyu Hou",
+        "Jialiang Hou",
+        "Fei Gao"
+      ],
+      "published": "2026-05-28T10:02:50Z",
+      "updated": "2026-05-28T10:02:50Z",
+      "url": "https://arxiv.org/abs/2605.29704",
+      "pdf_url": "https://arxiv.org/pdf/2605.29704.pdf",
+      "primary_category": "cs.RO",
+      "categories": [
+        "cs.RO"
+      ],
+      "tags": [
+        "cs.RO"
+      ],
+      "domain": "Agent",
+      "pdf_downloaded": true,
+      "pdf_size_bytes": 5957962,
+      "pdf_path": "2026-05-30/agent/2605.29704.pdf"
+    },
+    {
+      "id": "2605.29693",
+      "title": "Momentum Based Reward Design for Low Emission Traffic Signal Control",
+      "abstract": "Urban traffic congestion is a growing global issue contributing significantly to long commute times and environmental pollution. Traditional traffic signal control systems often fail to adapt to dynamic traffic conditions. Adaptive traffic signal control can improve urban traffic without changing road infrastructure. Deep Reinforcement Learning (DRL) has shown strong performance for this task, but existing delay and queue-based rewards often produce short-sighted or unstable policies. This paper proposes a Momentum-Based Reward Function (MBRF) that encourages vehicles to keep moving rather than penalizing congestion alone. The method is evaluated in SUMO (Simulation of Urban MObility) using standard traffic metrics such as waiting time, queue length, throughput, and CO2 emissions. Results show that the proposed reward produces better throughput-emission trade-offs and more stable learning behavior than delay or queue-based rewards, as well as classical controllers such as Max Pressure and LQF.",
+      "authors": [
+        "Chinmay Mundane",
+        "Amith Manoharan",
+        "Arun Singh"
+      ],
+      "published": "2026-05-28T09:53:31Z",
+      "updated": "2026-05-28T09:53:31Z",
+      "url": "https://arxiv.org/abs/2605.29693",
+      "pdf_url": "https://arxiv.org/pdf/2605.29693.pdf",
+      "primary_category": "cs.LG",
+      "categories": [
+        "cs.LG",
+        "cs.RO"
+      ],
+      "tags": [
+        "cs.LG",
+        "cs.RO"
+      ],
+      "domain": "Agent",
+      "pdf_downloaded": true,
+      "pdf_size_bytes": 776491,
+      "pdf_path": "2026-05-30/agent/2605.29693.pdf"
+    },
+    {
+      "id": "2605.29663",
+      "title": "EXACT-MPPI: Exact Signed-Distance Navigation for Arbitrary-Footprint Robots from Point Clouds via Path Integral Control",
+      "abstract": "Ground robots often carry payloads, implements, or other attachments that turn their effective footprint into complex, non-convex shapes. Navigating safely through clutter then requires reasoning about this true geometry, yet most local planners simplify it with convex or inflated proxies and rasterize sensor data into occupancy grids or distance fields. Both choices eliminate feasible motions when clearance is comparable to the footprint geometry. We present EXACT-MPPI, a training-free local navigation framework that maps local point-cloud observations and sparse guidance directly to motion commands, without any intermediate map representation. The framework embeds an analytic, exact signed-distance evaluator into a Model Predictive Path Integral (MPPI) controller. The footprint is represented as a simple polygon for general convex or concave planar shapes, with a rectangle-cover specialization for faster evaluation of rectilinear footprints, enabling footprint-aware collision costs without convex decomposition, inflation, or learned encoders. During each MPPI rollout, observed obstacle points are transformed into the predicted body frame and evaluated against the footprint. All operations are batched in JAX, leveraging GPU parallelism for real-time receding-horizon control. Experiments show that EXACT-MPPI accelerates batched distance evaluation over a learned point-to-robot baseline, preserves feasible motion where convex-footprint planners fail, and remains robust under dense static and moving obstacles. The same framework deploys on differential-drive, Ackermann, omnidirectional, and hybrid-mode platforms by changing only the footprint description and motion model without per-platform training. Pairing exact footprint geometry with sampling-based predictive control thus offers a practical, training-free path to footprint-aware local navigation across diverse robots.",
+      "authors": [
+        "Chen Peng",
+        "Zhikang Ge",
+        "Wenwu Lu",
+        "Haiming Gao",
+        "Stavros Vougioukas",
+        "Peng Wei"
+      ],
+      "published": "2026-05-28T09:23:54Z",
+      "updated": "2026-05-28T09:23:54Z",
+      "url": "https://arxiv.org/abs/2605.29663",
+      "pdf_url": "https://arxiv.org/pdf/2605.29663.pdf",
+      "primary_category": "cs.RO",
+      "categories": [
+        "cs.RO"
+      ],
+      "tags": [
+        "cs.RO"
+      ],
+      "domain": "Agent",
+      "pdf_downloaded": true,
+      "pdf_size_bytes": 16282662,
+      "pdf_path": "2026-05-30/agent/2605.29663.pdf"
+    }
+  ]
+}
