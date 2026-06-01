@@ -1,0 +1,644 @@
+{
+  "domain": "Vision",
+  "date": "2026-06-01",
+  "count": 22,
+  "papers": [
+    {
+      "id": "2605.31604",
+      "title": "Representation Forcing for Bottleneck-Free Unified Multimodal Models",
+      "abstract": "Unified multimodal models (UMMs) aim to handle perception and generation in a single model. Yet existing UMMs still rely on a frozen, separately pretrained VAE for image generation, imposing a structural bottleneck. Naively removing it introduces a quality gap, as the model must learn both high-level structure and low-level details from raw pixels. In this paper, we propose Representation Forcing (RF), a technique that closes this gap by making representation prediction a native capability of the model. Concretely, RF forces the decoder to autoregressively predict visual representations as intermediate tokens before pixels; these tokens then stay in context to guide pixel diffusion within the same backbone. By turning representations from perception outputs into generation targets, RF eliminates the need for any external generative latent space. We find that RF benefits both understanding and generation. On image generation, our pixel-space model with RF matches state-of-the-art VAE-based unified models. On image understanding, pixel-space RF generally outperforms its VAE-based variant. Together, these results offer an effective step toward end-to-end, bottleneck-free UMMs.",
+      "authors": [
+        "Yuqing Wang",
+        "Zhijie Lin",
+        "Ceyuan Yang",
+        "Yang Zhao",
+        "Fei Xiao",
+        "Hao He",
+        "Qi Zhao",
+        "Zihan Ding",
+        "Fuyun Wang",
+        "Shuai Wang",
+        "Youliang Zhang",
+        "Haoqi Fan",
+        "Xihui Liu"
+      ],
+      "published": "2026-05-29T17:59:55Z",
+      "updated": "2026-05-29T17:59:55Z",
+      "url": "https://arxiv.org/abs/2605.31604",
+      "pdf_url": "https://arxiv.org/pdf/2605.31604.pdf",
+      "primary_category": "cs.CV",
+      "categories": [
+        "cs.CV"
+      ],
+      "tags": [
+        "cs.CV"
+      ],
+      "domain": "Vision",
+      "pdf_downloaded": true,
+      "pdf_size_bytes": 10127754,
+      "pdf_path": "2026-06-01/vision/2605.31604.pdf"
+    },
+    {
+      "id": "2605.31598",
+      "title": "Linear Scaling Video VLMs for Long Video Understanding",
+      "abstract": "Video vision-language models (VLMs) are increasingly used in long-horizon and streaming settings, yet most video encoders still rely on spatiotemporal self-attention, causing compute and latency to grow quadratically with the number of frames. Existing efficiency methods improve scalability but often lose accuracy relative to full self-attention, for example through aggressive frame/token dropping or coarse attention approximations. We introduce StateKV, an inference-time method that adapts pretrained long-video VLMs to linear-time video prefill by carrying cross-frame context in a fixed-capacity, importance-based recurrent state, paired with a second full per-frame cache used for decoding. Across three long-video benchmarks and seven models spanning three families and multiple scales, StateKV remains close to full self-attention and consistently outperforms dominant sliding-window / recency-based streaming approximations, without fine-tuning or architectural changes. StateKV also reduces video-prefill cost measured FLOPs, enabling stronger accuracy at a fixed compute budget by running larger models. These results suggest a practical step toward scalable long-video understanding.",
+      "authors": [
+        "Cristobal Eyzaguirre",
+        "Jiajun Wu",
+        "Juan Carlos Niebles"
+      ],
+      "published": "2026-05-29T17:59:02Z",
+      "updated": "2026-05-29T17:59:02Z",
+      "url": "https://arxiv.org/abs/2605.31598",
+      "pdf_url": "https://arxiv.org/pdf/2605.31598.pdf",
+      "primary_category": "cs.CV",
+      "categories": [
+        "cs.CV"
+      ],
+      "tags": [
+        "cs.CV"
+      ],
+      "domain": "Vision",
+      "pdf_downloaded": true,
+      "pdf_size_bytes": 1445391,
+      "pdf_path": "2026-06-01/vision/2605.31598.pdf"
+    },
+    {
+      "id": "2605.31597",
+      "title": "SOCO: Benchmarking Semantic Object Correspondence in Vision Foundation Models",
+      "abstract": "Measuring structured object understanding in vision foundation models remains challenging due to inconsistent evaluation protocols and limited part-level supervision. Semantic correspondence (SC) evaluates this capability by testing whether object parts can be matched across instances and categories under large variations in appearance, viewpoint, and geometry. To enable a systematic SC evaluation, we introduce SOCO, a new benchmark for Semantic Object Correspondence that introduces a taxonomy of correspondence types and provides consistent, functionally meaningful keypoint annotations across 100 categories and over 1M correspondence pairs. In addition, SOCO includes keypoint language descriptions, enabling the evaluation of large vision-language models (LVLMs) and their fine-grained part-level understanding. Comprehensive experiments reveal that (i) vision foundation backbones encode strong semantic structure but transfer correspondences poorly across related categories and only partially capture object-part position, (ii) LVLMs are stronger at text-prompted part localization than at visual-reference cross-image matching, exposing a gap between language-grounded localization and fine-grained visual correspondence, and (iii) correspondence performance predicts performance on dense downstream tasks, including segmentation, tracking, 3D pose estimation, and 3D detection, more strongly than ImageNet classification. Together, these findings position SOCO as a benchmark for structured, part-level representation quality in vision and multimodal foundation models.",
+      "authors": [
+        "Olaf D\u00fcnkel",
+        "Basavaraj Sunagad",
+        "Haoran Wang",
+        "David T. Hoffmann",
+        "Christian Theobalt",
+        "Adam Kortylewski"
+      ],
+      "published": "2026-05-29T17:58:48Z",
+      "updated": "2026-05-29T17:58:48Z",
+      "url": "https://arxiv.org/abs/2605.31597",
+      "pdf_url": "https://arxiv.org/pdf/2605.31597.pdf",
+      "primary_category": "cs.CV",
+      "categories": [
+        "cs.CV"
+      ],
+      "tags": [
+        "cs.CV"
+      ],
+      "domain": "Vision",
+      "pdf_downloaded": true,
+      "pdf_size_bytes": 8557362,
+      "pdf_path": "2026-06-01/vision/2605.31597.pdf"
+    },
+    {
+      "id": "2605.31595",
+      "title": "Learning Global Motion with Compact Gaussians for Feed-Forward 4D Reconstruction",
+      "abstract": "Dynamic scene reconstruction from monocular video remains a fundamental challenge in computer vision. Existing feed-forward methods predict 3D Gaussians pixel-wise for each frame, suffering from duplicated Gaussians and view-dependent biases that hinder effective learning of scene motion. We present C4G, a feed-forward 4D reconstruction framework built upon a compact set of timestamp-conditioned learnable Gaussian query tokens. Each token aggregates corresponding features across the full temporal context and decodes a 3D Gaussian whose position is modulated by the target timestamp, enabling globally coherent motion modeling without per-scene optimization. To capture fine-grained details, we further introduce a video diffusion model-based rendering enhancement module. Since our framework effectively aggregates features into Gaussians, we extend this capability to feature lifting, producing a 4D feature field that supports point tracking and dynamic scene understanding. C4G achieves strong novel-view synthesis performance using significantly fewer Gaussians and without requiring camera poses, while exhibiting stronger motion modeling and robustness to large temporal gaps.",
+      "authors": [
+        "Mungyeom Kim",
+        "Minkyeong Jeon",
+        "Honggyu An",
+        "Jaewoo Jung",
+        "Hyuna Ko",
+        "Jisang Han",
+        "Hyeonseo Yu",
+        "Donghwan Shin",
+        "Sunghwan Hong",
+        "Takuya Narihira",
+        "Kazumi Fukuda",
+        "Yuki Mitsufuji",
+        "Seungryong Kim"
+      ],
+      "published": "2026-05-29T17:57:41Z",
+      "updated": "2026-05-29T17:57:41Z",
+      "url": "https://arxiv.org/abs/2605.31595",
+      "pdf_url": "https://arxiv.org/pdf/2605.31595.pdf",
+      "primary_category": "cs.CV",
+      "categories": [
+        "cs.CV"
+      ],
+      "tags": [
+        "cs.CV"
+      ],
+      "domain": "Vision",
+      "pdf_downloaded": true,
+      "pdf_size_bytes": 3496452,
+      "pdf_path": "2026-06-01/vision/2605.31595.pdf"
+    },
+    {
+      "id": "2605.31591",
+      "title": "CoFiDA-M: Concept-Aware Feature Modulation for Cross-Domain Adaptation with Image-Only Inference",
+      "abstract": "Models for AI-based skin cancer screening suffer a severe performance drop when shifting from expert dermoscopic (source) images to consumer-grade clinical (target) images, hindering real-world deployment. Existing domain adaptation methods often ignore crucial semantic invariants, such as clinical concepts. While new foundation models like MONET can provide this semantic information as dense, probabilistic scores, this metadata is unavailable at test time, creating a deployment paradox for practical image-only screening tools. We address this gap by proposing CoFiDA-M, a privileged information framework that learns from concepts at training time but deploys as an image-only model. Our method trains a teacher network that uses MONET concept probabilities to guide a FiLM modulator, transforming visual features into a semantically ``edited\" feature space. A lightweight, image-only student is then trained to reproduce this edited representation, not just the teacher's final predictions. This distillation ``bakes\" the clinical reasoning into the student's weights. On a challenging multi-dataset benchmark, our image-only student significantly outperforms state-of-the-art approaches, especially in melanoma recall. Our work provides a practical and generalizable framework for leveraging noisy, probabilistic metadata as privileged information, demonstrating strong cross-dataset robustness and potential for real-world deployment beyond dermatology. Implementation code is available at: https://github.com/mmu-dermatology-research/CoFiDA.git",
+      "authors": [
+        "Nurjahan Sultana",
+        "Moi Hoon Yap",
+        "Xinqi Fan",
+        "Wenqi Lu"
+      ],
+      "published": "2026-05-29T17:56:36Z",
+      "updated": "2026-05-29T17:56:36Z",
+      "url": "https://arxiv.org/abs/2605.31591",
+      "pdf_url": "https://arxiv.org/pdf/2605.31591.pdf",
+      "primary_category": "cs.CV",
+      "categories": [
+        "cs.CV"
+      ],
+      "tags": [
+        "cs.CV"
+      ],
+      "domain": "Vision",
+      "pdf_downloaded": true,
+      "pdf_size_bytes": 4406974,
+      "pdf_path": "2026-06-01/vision/2605.31591.pdf"
+    },
+    {
+      "id": "2605.31589",
+      "title": "Recognizing Co-Speech Gestures in-the-Wild",
+      "abstract": "While humans naturally gesture during speech, only a sparse subset of these movements are visually depictive and semantically linked to specific spoken words. Current multimodal models struggle to capture these semantic co-speech gestures, heavily bottlenecked by a lack of precisely annotated training data. To address this, we introduce the Gesture Recognition in the Wild (GRW) dataset, the first large-scale benchmark designed to map unconstrained human gestures to specific words with frame-accurate temporal boundaries. Comprising 156,688 manually annotated video clips, GRW spans a highly diverse 150-word taxonomy of physical actions, spatial descriptors, and abstract concepts. We leverage GRW to train video models to (a) classify gestures as semantic or not, (b) recognize the word corresponding to a co-speech gesture, and (c) temporally localize the gesture. We also use GRW to establish benchmarks for these three tasks.",
+      "authors": [
+        "Sindhu B Hegde",
+        "K R Prajwal",
+        "Andrew Zisserman"
+      ],
+      "published": "2026-05-29T17:55:17Z",
+      "updated": "2026-05-29T17:55:17Z",
+      "url": "https://arxiv.org/abs/2605.31589",
+      "pdf_url": "https://arxiv.org/pdf/2605.31589.pdf",
+      "primary_category": "cs.CV",
+      "categories": [
+        "cs.CV"
+      ],
+      "tags": [
+        "cs.CV"
+      ],
+      "domain": "Vision",
+      "pdf_downloaded": true,
+      "pdf_size_bytes": 9795649,
+      "pdf_path": "2026-06-01/vision/2605.31589.pdf"
+    },
+    {
+      "id": "2605.31577",
+      "title": "SurGe: Improved Surface Geometry in Point Maps",
+      "abstract": "Recent feedforward 3D reconstruction methods predict point maps and estimate global 3D geometry remarkably well. However, their predictions still exhibit inaccurate local surface geometry, which is clearly visible qualitatively but only weakly reflected in common metrics. To make these errors more explicit in evaluation, we introduce a point map normal metric that evaluates the local surface orientation induced by neighboring 3D predictions. To reduce these errors, we propose two complementary components: a point gradient matching loss that supervises depth-normalized 3D finite differences, and a Neighborhood Attention Decoder (NAD) that progressively upsamples features and uses Neighborhood Attention for local feature mixing. Across eight zero-shot monocular geometry benchmarks, our model, SurGe, achieves the best average rank for global point map AbsRel and consistently improves local point map and point map normal evaluations.",
+      "authors": [
+        "Karim Knaebel",
+        "Gonzalo Martin Garcia",
+        "Christian Schmidt",
+        "Ilya Fradlin",
+        "Lucas Nunes",
+        "Daan de Geus",
+        "Bastian Leibe"
+      ],
+      "published": "2026-05-29T17:46:46Z",
+      "updated": "2026-05-29T17:46:46Z",
+      "url": "https://arxiv.org/abs/2605.31577",
+      "pdf_url": "https://arxiv.org/pdf/2605.31577.pdf",
+      "primary_category": "cs.CV",
+      "categories": [
+        "cs.CV"
+      ],
+      "tags": [
+        "cs.CV"
+      ],
+      "domain": "Vision",
+      "pdf_downloaded": true,
+      "pdf_size_bytes": 23579407,
+      "pdf_path": "2026-06-01/vision/2605.31577.pdf"
+    },
+    {
+      "id": "2605.31576",
+      "title": "Joint Multi-Camera LiDAR Extrinsic Calibration via Learned Pairwise Initialization and Geometric Refinement",
+      "abstract": "Most learning-based camera-LiDAR calibration methods treat each camera-LiDAR pair independently, ignoring the rigid geometric coupling in multi-camera platforms. As a result, per-camera estimates may be individually accurate yet inconsistent at the system level. We present a two-stage framework for joint multi-camera LiDAR extrinsic calibration that combines learned pairwise matching with geometric refinement. First, CMRNext is applied independently to each camera to produce initial extrinsic estimates and dense 2D-3D correspondences. These predictions are then jointly refined through a multi-frame bundle adjustment with reprojection, per-camera prior, and relative-pose prior terms. This approach converts pairwise predictions into a globally consistent multi-camera calibration. Experiments on KITTI (in-domain for CMRNext) and Walkley (out-of-domain) datasets show improved per-camera accuracy and inter-camera consistency. On KITTI, the method achieves 0.89 cm translation error and 0.038 rotation error. On Walkley, it reduces translation error from 108.6 cm to 3.1 cm, highlighting the benefit of explicit multi-camera coupling when single-camera predictions are less reliable.",
+      "authors": [
+        "Aziz Al-Najjar",
+        "Marzieh Amini",
+        "James R. Green",
+        "Felix Kwamena"
+      ],
+      "published": "2026-05-29T17:45:26Z",
+      "updated": "2026-05-29T17:45:26Z",
+      "url": "https://arxiv.org/abs/2605.31576",
+      "pdf_url": "https://arxiv.org/pdf/2605.31576.pdf",
+      "primary_category": "cs.CV",
+      "categories": [
+        "cs.CV"
+      ],
+      "tags": [
+        "cs.CV"
+      ],
+      "domain": "Vision",
+      "pdf_downloaded": true,
+      "pdf_size_bytes": 15155017,
+      "pdf_path": "2026-06-01/vision/2605.31576.pdf"
+    },
+    {
+      "id": "2605.31572",
+      "title": "nuReasoning: A Reasoning-Centric Dataset and Benchmark for Long-Tail Autonomous Driving",
+      "abstract": "Reasoning is essential for autonomous driving (AD) in long-tail scenarios, where vehicles must apply commonsense knowledge, understand spatial relations, infer agent interactions, and make safe decisions. However, existing AD datasets and benchmarks mainly target perception, prediction, or planning, and provide limited supervision for reasoning over realistic long-tail driving scenes. We introduce nuReasoning, a large-scale real-world dataset and benchmark for reasoning-centric AD. Following the lineage of nuScenes and nuPlan, nuReasoning advances real-world AD datasets and benchmarks toward reasoning in long-tail driving scenarios. The dataset contains 20,000 clips, each 20 seconds long, collected across multiple cities, with synchronized multi-camera images, LiDAR data, HD maps, object annotations, and human-verified reasoning annotations spanning Spatial Reasoning, Decision Reasoning, and Counterfactual Reasoning. Unlike prior datasets that focus primarily on visual question answering, nuReasoning supports both reasoning evaluation and planning evaluation, enabling a direct study of how reasoning supervision affects driving performance. Experiments show that fine-tuning VLMs on nuReasoning substantially improves driving-specific question answering, while incorporating reasoning supervision into VLA training improves planning performance even when textual reasoning outputs are disabled at inference time. These results establish nuReasoning as a foundation for evaluating and improving robust, interpretable, reasoning-driven AD systems in realistic long-tail settings.",
+      "authors": [
+        "Zhiyu Huang",
+        "Johnson Liu",
+        "Rui Song",
+        "Zewei Zhou",
+        "Ruining Yang",
+        "Yun Zhang",
+        "Tianhui Cai",
+        "Hanyin Zhang",
+        "Mingxuan Gao",
+        "Valeria Xu",
+        "Jiali Chen",
+        "Yishan Shen",
+        "Yiluan Guo",
+        "Tony",
+        "Qi",
+        "Jiaqi Ma"
+      ],
+      "published": "2026-05-29T17:40:04Z",
+      "updated": "2026-05-29T17:40:04Z",
+      "url": "https://arxiv.org/abs/2605.31572",
+      "pdf_url": "https://arxiv.org/pdf/2605.31572.pdf",
+      "primary_category": "cs.CV",
+      "categories": [
+        "cs.CV"
+      ],
+      "tags": [
+        "cs.CV"
+      ],
+      "domain": "Vision",
+      "pdf_downloaded": true,
+      "pdf_size_bytes": 11727596,
+      "pdf_path": "2026-06-01/vision/2605.31572.pdf"
+    },
+    {
+      "id": "2605.31557",
+      "title": "EGOSTREAM: A Diagnostic Benchmark for Streaming Episodic Memory in Egocentric Vision",
+      "abstract": "Continuous episodic memory is a core capability for autonomous agents operating in dynamic, real-world environments, yet current streaming video benchmarks provide limited tools for diagnosing what models remember and for how long. We introduce \\egostream, a diagnostic benchmark for streaming episodic memory evaluation in egocentric vision. \\egostream organizes 2,250 curated questions along seven cognitive dimensions: detail, spatial, temporal, event, social, causal, and prospective memory. We introduce the Answer Validity Window (AVW), which specifies the temporal span an answer remains valid as the observed scene evolves. This allows us to expand the questions into 8,528 recall-conditioned evaluations, enabling controlled testing from instant to ultra-long-term recall while separating genuine model forgetting from natural world-state changes. We rigorously establish baseline performance through a unified streaming MLLM framework that compares several state-of-the-art memory-management mechanisms, covering sliding windows, attention sinks, KV-cache pruning, merging, and offloading. Experiments within a unified Qwen3-VL backbone reveal that comparable aggregate accuracies mask starkly different memory profiles. For instance, token pruning preserves fine-grained details and temporal structure significantly better than token merging, while quantized offloading rescues ultra-long-term recall. Ultimately, all mechanisms operate well below real-time (>1s per frame), and top performing methods ceil at about 45\\% accuracy, exposing critical gaps in current architectures. \\egostream provides the diagnostic testbed needed to close these gaps.",
+      "authors": [
+        "Rosario Forte",
+        "Giuseppe Lando",
+        "Antonino Furnari"
+      ],
+      "published": "2026-05-29T17:20:10Z",
+      "updated": "2026-05-29T17:20:10Z",
+      "url": "https://arxiv.org/abs/2605.31557",
+      "pdf_url": "https://arxiv.org/pdf/2605.31557.pdf",
+      "primary_category": "cs.CV",
+      "categories": [
+        "cs.CV"
+      ],
+      "tags": [
+        "cs.CV"
+      ],
+      "domain": "Vision",
+      "pdf_downloaded": true,
+      "pdf_size_bytes": 13696231,
+      "pdf_path": "2026-06-01/vision/2605.31557.pdf"
+    },
+    {
+      "id": "2605.31551",
+      "title": "SMART: SMPLest-X Mesh Adaptation and RAFT Tracking for Soccer Pose Estimation",
+      "abstract": "We present our approach to the FIFA Skeletal Tracking Challenge 2026, which requires estimating 3D world-space poses of soccer players from broadcast video. Our method finetunes SMPLest-X (ViT-H, 687 M parameters) via a stratified clip split, multi-task depth supervision, and broadcast augmentation, paired with a RAFT dense optical flow camera tracker, foot-plane anchoring, and two-pass temporal smoothing. Against the FIFA baseline score of 1.053 on the validation set, SMART achieves 0.647, a 38.6% improvement; on the held-out test set, SMART scores 0.593 (Global MPJPE: 0.324 m, Local MPJPE: 0.054 m).",
+      "authors": [
+        "Parthsarthi Rawat"
+      ],
+      "published": "2026-05-29T17:12:34Z",
+      "updated": "2026-05-29T17:12:34Z",
+      "url": "https://arxiv.org/abs/2605.31551",
+      "pdf_url": "https://arxiv.org/pdf/2605.31551.pdf",
+      "primary_category": "cs.CV",
+      "categories": [
+        "cs.CV"
+      ],
+      "tags": [
+        "cs.CV"
+      ],
+      "domain": "Vision",
+      "pdf_downloaded": true,
+      "pdf_size_bytes": 226916,
+      "pdf_path": "2026-06-01/vision/2605.31551.pdf"
+    },
+    {
+      "id": "2605.31529",
+      "title": "SVI-Bench: A Dynamic Microworld for Strategic Video Intelligence",
+      "abstract": "True video intelligence demands more than recognizing what is visible: it requires reasoning about why events unfold, predicting what would change under different conditions, and deciding what to do next. We refer to this progression, from perception through causal reasoning and simulation to strategic planning, as Strategic Video Intelligence (SVI). No existing benchmark evaluates this capability stack: in-the-wild videos lack verifiable ground truth for causal and strategic questions, while synthetic environments sacrifice the complexity of real multi-agent systems. To bridge this gap, we introduce SVI-Bench, a large-scale benchmark that leverages team sports as a dynamic microworld, combining the complexity of real-world multi-agent interaction (10-22 agents making coordinated decisions under adversarial pressure) with the verifiability of explicit rules and definitive outcomes. SVI-Bench comprises approximately 35K hours of broadcast video, 15M annotated actions, 15K hours of expert commentary, 23K game reports, and 103K structured statistical records across basketball, soccer, and hockey, all constructed via a data engine that transforms raw game data into a dense, cross-referenced corpus. We organize evaluation into 9 tasks spanning a progressive four-pillar hierarchy: Dynamic Scene Understanding, Causal Reasoning, Strategic Simulation, and Agentic Synthesis. Evaluating strong multimodal and agentic baselines, we find a capability cliff: models perform competently on perceptual tasks, achieving approximately 73% on fine-grained action QA, but degrade sharply at each successive cognitive level. Agentic tasks prove hardest: the strongest model achieves only 5% accuracy when required to autonomously gather and integrate evidence across a corpus of 1.8M clips.",
+      "authors": [
+        "Yulu Pan",
+        "Han Yi",
+        "Seongsu Ha",
+        "Md Mohaiminul Islam",
+        "Benjamin Zhang",
+        "Lorenzo Torresani",
+        "Gedas Bertasius"
+      ],
+      "published": "2026-05-29T16:43:06Z",
+      "updated": "2026-05-29T16:43:06Z",
+      "url": "https://arxiv.org/abs/2605.31529",
+      "pdf_url": "https://arxiv.org/pdf/2605.31529.pdf",
+      "primary_category": "cs.CV",
+      "categories": [
+        "cs.CV"
+      ],
+      "tags": [
+        "cs.CV"
+      ],
+      "domain": "Vision",
+      "pdf_downloaded": false,
+      "pdf_size_bytes": null,
+      "pdf_path": null
+    },
+    {
+      "id": "2605.31513",
+      "title": "Personalize Your Large Vision-language Models With In-context Prompt Tuning",
+      "abstract": "Large vision-language models (LVLMs) have demonstrated strong general multimodal capability and are increasingly deployed in downstream systems. This trend has driven growing interest in LVLM personalization, which aims to enable models to quickly and effectively learn out-of-distribution multimodal concepts to meet user-specific needs. However, many existing methods rely on inference-time training, which reduces efficiency. They also struggle to maintain accuracy in complex multi-image, multi-concept settings. These limitations restrict the broader deployment of LVLM-based systems. Therefore, this paper proposes in-context prompt tuning (ICPT). Specifically, ICPT employs a lightweight projection module capable of operating in complex scenarios to extract fine-grained visual semantics from multiple reference images, seamlessly transforming these features alongside identity-label mappings into continuous prompts. To maximize computational efficiency, this module adaptively determines the prompt length based on the intrinsic visual complexity of each concept. Crucially, to overcome the environmental biases and cross-concept interference prevalent in real-world applications, we introduce two novel geometric regularizations. These constraints refine prompt representations by decoupling key identities from transient environmental states and separating concepts to avoid semantic confusion. Extensive experiments show that ICPT achieves state-of-the-art personalization accuracy across diverse tasks and LVLM backbones.",
+      "authors": [
+        "Yanshu Li",
+        "Jiaqian Li",
+        "Kuai Yu",
+        "Xi Xiao",
+        "Dongfang Liu",
+        "Tianyang Wang",
+        "Ruixiang Tang"
+      ],
+      "published": "2026-05-29T16:31:25Z",
+      "updated": "2026-05-29T16:31:25Z",
+      "url": "https://arxiv.org/abs/2605.31513",
+      "pdf_url": "https://arxiv.org/pdf/2605.31513.pdf",
+      "primary_category": "cs.CV",
+      "categories": [
+        "cs.CV"
+      ],
+      "tags": [
+        "cs.CV"
+      ],
+      "domain": "Vision",
+      "pdf_downloaded": true,
+      "pdf_size_bytes": 4614368,
+      "pdf_path": "2026-06-01/vision/2605.31513.pdf"
+    },
+    {
+      "id": "2605.31508",
+      "title": "Internalizing Temporal Consistency in Video Object-Centric Learning without Explicit Regularization",
+      "abstract": "Video Object-Centric Learning (OCL) aims to represent objects as \\textit{slot} vectors and maintain their consistency across frames. Slot-Slot Contrastive (SSC) loss has become the cornerstone for state-of-the-art (SOTA) video OCL methods. While highly effective, SSC relies on one-to-one object correspondence across frames and introduces an extra loss. Following Occam's Razor, we propose a paradigm shift: temporal consistency is better enforced as an implicit model design rather than an explicit loss. To elegantly exclude SSC (\\textbf{xSSC}), we introduce two quasi-zero-overhead synergistic mechanisms: (\\textit{i}) Chrono-Channel Decomposition (CCD) structurally disentangles slot representations along the channel dimension into \\textit{static} and \\textit{dynamic} sub-spaces, serving as an empirically unified information bottleneck; (\\textit{ii}) Cross-Temporal Reconstruction (CTR) stochastically reconstructs target features of either the current or previous time step by fusing current slots' static channels and target slots' dynamic channels, using a single standard OCL decoder with minor training adaptation. Thereby, the slot sets inherently learn temporal consistency by minimizing the standard reconstruction error alone. Extensive experiments show that integrating xSSC into leading baselines not only improves training efficiency but also establishes new SOTAs on video object discovery and recognition tasks. Furthermore, our PCA and gradient analyses confirm that objects' time-invariant semantics and time-variant kinematics are encoded into the proposed sub-spaces. Our source code, model checkpoints and training logs are provided on https://github.com/Genera1Z/xSSC.",
+      "authors": [
+        "Rongzhen Zhao",
+        "Zhiyuan Li",
+        "Juho Kannala",
+        "Joni Pajarinen"
+      ],
+      "published": "2026-05-29T16:28:21Z",
+      "updated": "2026-05-29T16:28:21Z",
+      "url": "https://arxiv.org/abs/2605.31508",
+      "pdf_url": "https://arxiv.org/pdf/2605.31508.pdf",
+      "primary_category": "cs.CV",
+      "categories": [
+        "cs.CV"
+      ],
+      "tags": [
+        "cs.CV"
+      ],
+      "domain": "Vision",
+      "pdf_downloaded": true,
+      "pdf_size_bytes": 1724948,
+      "pdf_path": "2026-06-01/vision/2605.31508.pdf"
+    },
+    {
+      "id": "2605.31487",
+      "title": "Enhancing Computer Vision Model Generalization in Warehouse Facilities: A Case Study on Anomaly Detection in Vertical Material Handling Systems",
+      "abstract": "Deploying computer vision models in Warehouse Facilities traditionally requires extensive resources for camera mounting, image collection, annotation, training, and deployment - a process often needing repetition in each new environment due to camera mounting constraints and environmental variability. This paper explores an innovative approach to streamline this process by conducting the standard procedure solely in a laboratory setting, focusing on vertical material handling systems and anomaly detection in forks of the systems. Through extensive experimentation, we have found that combining optimal camera placement, strategic image triggering, careful model selection and model ensemble enables effective generalization from laboratory conditions to diverse warehouse facilities environments, potentially transforming warehouse automation implementation by simplifying warehouse facilities deployment to just camera mounting, image collection, and model deployment, thereby saving significant resources and time typically spent on image annotation and model retraining. This is an experimental research study and not a production deployment.",
+      "authors": [
+        "Ruiliang Liu",
+        "Tina Dongxu Li",
+        "Joshua Migdal",
+        "Ken Meszaros",
+        "Trevor Dardik"
+      ],
+      "published": "2026-05-29T16:10:39Z",
+      "updated": "2026-05-29T16:10:39Z",
+      "url": "https://arxiv.org/abs/2605.31487",
+      "pdf_url": "https://arxiv.org/pdf/2605.31487.pdf",
+      "primary_category": "cs.CV",
+      "categories": [
+        "cs.CV"
+      ],
+      "tags": [
+        "cs.CV"
+      ],
+      "domain": "Vision",
+      "pdf_downloaded": true,
+      "pdf_size_bytes": 1696258,
+      "pdf_path": "2026-06-01/vision/2605.31487.pdf"
+    },
+    {
+      "id": "2605.31466",
+      "title": "VolFill: Single-View Amodal 3D Scene Reconstruction with Volumetric Flow Matching",
+      "abstract": "Reconstructing the complete geometry of a scene from a single RGB image remains challenging - especially when inferring hidden structures where visual evidence is incomplete. We introduce VolFill, a generative framework that predicts the 3D structure of the complete scene rather than relying on traditional pixel-aligned regression. Our method utilizes a hybrid 3D VAE to compress sparse truncated unsigned distance function grids into a compact latent space, paired with a latent Diffusion Transformer that denoises this representation to recover the complete scene. We condition the generation on geometry foundation models, leveraging rich spatial priors for robust reasoning. Unlike existing methods limited by per-ray constraints or unstructured point-cloud queries, VolFill provides a structured representation that supports direct surface extraction and occupancy queries at scale. Extensive experiments on the SCRREAM and NRGB-D datasets demonstrate that our approach significantly outperforms current baselines, providing a robust foundation for holistic spatial understanding.",
+      "authors": [
+        "Tuan Duc Ngo",
+        "Chuang Gan",
+        "Evangelos Kalogerakis"
+      ],
+      "published": "2026-05-29T15:59:20Z",
+      "updated": "2026-05-29T15:59:20Z",
+      "url": "https://arxiv.org/abs/2605.31466",
+      "pdf_url": "https://arxiv.org/pdf/2605.31466.pdf",
+      "primary_category": "cs.CV",
+      "categories": [
+        "cs.CV"
+      ],
+      "tags": [
+        "cs.CV"
+      ],
+      "domain": "Vision",
+      "pdf_downloaded": true,
+      "pdf_size_bytes": 14098239,
+      "pdf_path": "2026-06-01/vision/2605.31466.pdf"
+    },
+    {
+      "id": "2605.31457",
+      "title": "VisionPulse: Dynamic Visual Sparsity for Efficient Multimodal Reasoning",
+      "abstract": "With the rapid advancement of large multimodal models (LMMs), inference-time overhead has become a key bottleneck for real-world deployment. Existing methods typically prune visual tokens at prefill, assuming the required visual evidence remains static during reasoning. However, we empirically show that visual evidence is strongly step-dependent: only a sparse subset of visual tokens is critical at each decoding step, and the critical set evolves across reasoning. Furthermore, we identify a coupled bottleneck where redundant visual context can steer the model toward query-irrelevant regions, lengthening the reasoning trace. Guided by these insights, we propose VisionPulse, a step-wise visual token pruning framework during reasoning. VisionPulse computes a lightweight visual attention mass to estimate the step-wise retention budget by exploiting its strong positive correlation with LMMs' effective visual token usage and retain only the most critical tokens under this budget. By enforcing visual sparsity during reasoning, VisionPulse filters redundant visual context while preserving relevant visual evidence, shortening reasoning traces naturally. Extensive experiments show that VisionPulse only retains 5% of visual tokens per step with reasoning traces shortened by 11.2%, while keeping accuracy almost unchanged.",
+      "authors": [
+        "Hengbo Xu",
+        "Shengjie Jin",
+        "Yanbiao Ma",
+        "Zhiwu Lu"
+      ],
+      "published": "2026-05-29T15:51:12Z",
+      "updated": "2026-05-29T15:51:12Z",
+      "url": "https://arxiv.org/abs/2605.31457",
+      "pdf_url": "https://arxiv.org/pdf/2605.31457.pdf",
+      "primary_category": "cs.CV",
+      "categories": [
+        "cs.CV"
+      ],
+      "tags": [
+        "cs.CV"
+      ],
+      "domain": "Vision",
+      "pdf_downloaded": true,
+      "pdf_size_bytes": 4588902,
+      "pdf_path": "2026-06-01/vision/2605.31457.pdf"
+    },
+    {
+      "id": "2605.31437",
+      "title": "Astra: a generalizable report generation foundation model for 3D computed tomography",
+      "abstract": "CT interpretation requires radiologists to review hundreds of volumetric slices per examination, making reporting time-consuming and highly expertise-dependent. Automated CT report generation offers a promising route to improving clinical efficiency, yet the field still lacks a generalizable CT report generation foundation model that supports multi-region reporting and remains robust across external real-world cohorts. Intrinsic inconsistencies in reporting style and diagnostic terminology across cohorts make naive joint training prone to noisy textual supervision, thereby limiting model generalizability. Here we present Astra, a generalizable CT report generation foundation model trained on 90,678 thoracoabdominal CT-report pairs (CTRgDB) with 353,671 abnormalities spanning eight organ systems. By harmonizing report style and further refining diagnostic consistency via reinforcement learning, Astra achieves style-consistent and diagnostically accurate report generation across diverse anatomical regions and institutions. Evaluating on CTRgDB and six external cohorts, Astra achieves state-of-the-art performance with a 44.1% average improvement in fine-grained diagnostic metrics (P<0.001). In real-world clinical workflows, Astra assistance accelerates chest report drafting by 29.6% and improves abdominal report completeness by 11.3% (P<0.001). Furthermore, Astra also demonstrates broad utility as a foundation for CT AI development, improving downstream diagnostic performance and scaling vision-language pretrain through high-quality report synthesis. Overall, Astra serves as a broadly accessible clinical assistant and a pivotal infrastructure for the next generation of AI-powered healthcare.",
+      "authors": [
+        "Zhuhao Wang",
+        "Fang Chen",
+        "Chaohui Yu",
+        "Zihan Li",
+        "Yuchao Zheng",
+        "Jing Wang",
+        "Xuan Yang",
+        "Jia Guo",
+        "Zhenlu Yang",
+        "Xingju Zheng",
+        "Yihua Sun",
+        "Haojie Han",
+        "Xiaoxiao Qin",
+        "Zhan Feng",
+        "Wenbo Xiao",
+        "Chao Zhu",
+        "Yuehua Li",
+        "Shipeng Zhang",
+        "Hao Luo",
+        "Yunsong Peng",
+        "Fan Wang",
+        "Hongen Liao"
+      ],
+      "published": "2026-05-29T15:35:07Z",
+      "updated": "2026-05-29T15:35:07Z",
+      "url": "https://arxiv.org/abs/2605.31437",
+      "pdf_url": "https://arxiv.org/pdf/2605.31437.pdf",
+      "primary_category": "cs.CV",
+      "categories": [
+        "cs.CV"
+      ],
+      "tags": [
+        "cs.CV"
+      ],
+      "domain": "Vision",
+      "pdf_downloaded": false,
+      "pdf_size_bytes": null,
+      "pdf_path": null
+    },
+    {
+      "id": "2605.31429",
+      "title": "YARD: Y-Architecture Register Decoding for Efficient Hallucination Mitigation in Large Vision-Language Models",
+      "abstract": "Contrastive decoding (CD) seeks to mitigate hallucinations in Large Vision-Language Models (LVLMs) by contrasting the output distributions of a standard model and a visually degraded model. However, existing training-free CD methods suffer from sub-optimal degraded branches: completely dropping visual tokens is too extreme and induces language hallucinations, while corrupting input images offers coarse control over visual evidence and suffers from high inference latency due to requiring two full forward passes. To address these dilemmas, we propose YARD, a training-free Y-Architecture Register Decoding framework. Motivated by the observation that reliable text-to-vision grounding predominantly emerges in the middle decoder layers, YARD constructs the degraded branch internally by sharing shallow-layer computations and branching exactly at this critical stage. For the degraded branch, YARD replaces patch-level visual tokens with register tokens, which preserve global image semantics but lack fine-grained local evidence. This image-aware yet locally under-grounded design provides a faithful contrastive signal without extreme modality mismatch, while the Y-architecture strictly avoids a costly second forward pass. Extensive experiments on generative and discriminative hallucination benchmarks demonstrate that YARD consistently achieves state-of-the-art hallucination mitigation across multiple LVLMs, alongside a significant reduction in inference latency.",
+      "authors": [
+        "Ting Chen",
+        "Geng Li",
+        "Guohao Chen",
+        "Yu Hu",
+        "Guan Huang",
+        "Mai Chen",
+        "Langsheng Lei",
+        "Jun Du"
+      ],
+      "published": "2026-05-29T15:23:39Z",
+      "updated": "2026-05-29T15:23:39Z",
+      "url": "https://arxiv.org/abs/2605.31429",
+      "pdf_url": "https://arxiv.org/pdf/2605.31429.pdf",
+      "primary_category": "cs.CV",
+      "categories": [
+        "cs.CV"
+      ],
+      "tags": [
+        "cs.CV"
+      ],
+      "domain": "Vision",
+      "pdf_downloaded": true,
+      "pdf_size_bytes": 2344851,
+      "pdf_path": "2026-06-01/vision/2605.31429.pdf"
+    },
+    {
+      "id": "2605.31426",
+      "title": "Self-Tuning Regularization for Image Scanning Microscopy",
+      "abstract": "Image Scanning Microscopy (ISM) is a fluorescence imaging technique that combines detector-array acquisition and computational reconstruction to achieve the theoretical resolution of an ideal confocal microscope, i.e., one operating with an infinitesimally small pinhole, while maintaining high signal-to-noise ratio. Among the reconstruction methods for obtaining the super-resolved image, multi-image deconvolution (MID) and its extension aimed at preserving the optical sectioning capability of confocal microscopy, known as super-resolution sectioning ISM (s$^2$ISM), are among the most widely used approaches. Both methods rely on Richardson--Lucy-type iterative schemes, whose semi-convergent behavior requires early stopping and often leads to noise amplification and reconstruction artifacts. In this work, we introduce a self-tuning explicit regularization framework for both MID and s$^2$ISM reconstruction. Within a Bayesian maximum a posteriori formulation, we combine a multi-frame Poisson data fidelity term with explicit regularization, considering $\\ell_1$ and smoothed total variation penalties as representative examples. We further develop an automatic and ground-truth-free strategy for regularization parameter selection by adapting the residual whiteness principle to the multi-frame Poisson setting and introducing a spectral high-pass extension tailored to s$^2$ISM. The resulting framework enables stable reconstructions without empirical stopping rules. To demonstrate the proposed framework, we consider first-order optimization schemes based on proximal gradient and mirror descent methods with adaptive backtracking strategies. Experiments on simulated and real fluorescence ISM datasets demonstrate improved reconstruction stability and image quality with respect to unregularized approaches, while enabling robust super-resolution and optical sectioning in low-photon conditions.",
+      "authors": [
+        "Sofia Agostoni",
+        "Lisa Cuneo",
+        "Christian Daniele",
+        "Giacomo Garr\u00e9",
+        "Laurent Le",
+        "Alessandro Zunino",
+        "Giuseppe Vicidomini",
+        "Luca Calatroni"
+      ],
+      "published": "2026-05-29T15:22:54Z",
+      "updated": "2026-05-29T15:22:54Z",
+      "url": "https://arxiv.org/abs/2605.31426",
+      "pdf_url": "https://arxiv.org/pdf/2605.31426.pdf",
+      "primary_category": "eess.IV",
+      "categories": [
+        "eess.IV",
+        "cs.CV",
+        "math.OC"
+      ],
+      "tags": [
+        "cs.CV",
+        "eess.IV",
+        "math.OC"
+      ],
+      "domain": "Vision",
+      "pdf_downloaded": true,
+      "pdf_size_bytes": 23602303,
+      "pdf_path": "2026-06-01/vision/2605.31426.pdf"
+    },
+    {
+      "id": "2605.31419",
+      "title": "Triangle Splatting SLAM",
+      "abstract": "We present a dense RGB-D SLAM system using differentiable triangles as the 3D map representation. While 3D Gaussian Splatting has emerged as the leading method for novel-view synthesis, triangles remain the standard primitive for traditional rendering hardware, game engines, and downstream tasks requiring explicit geometry such as simulation, collision, and editing. Recent offline methods have demonstrated that an unstructured 'triangle soup' can be optimised into a photorealistic mesh via Delaunay triangulation across a set of posed images. Building upon this insight, we present the first dense SLAM system to employ Triangle Splatting to perform both tracking and mapping through online differentiable rendering of a triangle soup. The map can be converted into a connected mesh on-the-fly via restricted Delaunay triangulation, enabling new online capabilities such as mesh deformation and collision checking. On Replica and TUM-RGBD, our system outperforms baselines on 3D geometry, matches the camera-tracking accuracy, and enables online mesh-based scene editing.",
+      "authors": [
+        "Nicholas Fry",
+        "Eric Dexheimer",
+        "Kirill Mazur",
+        "Paul H. J. Kelly",
+        "Andrew J. Davison"
+      ],
+      "published": "2026-05-29T15:20:38Z",
+      "updated": "2026-05-29T15:20:38Z",
+      "url": "https://arxiv.org/abs/2605.31419",
+      "pdf_url": "https://arxiv.org/pdf/2605.31419.pdf",
+      "primary_category": "cs.CV",
+      "categories": [
+        "cs.CV",
+        "cs.RO"
+      ],
+      "tags": [
+        "cs.CV",
+        "cs.RO"
+      ],
+      "domain": "Vision",
+      "pdf_downloaded": true,
+      "pdf_size_bytes": 22005058,
+      "pdf_path": "2026-06-01/vision/2605.31419.pdf"
+    },
+    {
+      "id": "2605.31400",
+      "title": "FSM-Net: An Efficient Frequency-Spatial Network for Real-World Deblurring",
+      "abstract": "Real-world image deblurring demands both high-fidelity restoration and computational efficiency, a balance existing methods often struggle to achieve. In this paper, we propose FSM-Net (Frequency-Spatial Multi-branch Network), a highly efficient solution that secured 2nd place in the NTIRE 2026 Challenge on Efficient Real-World Deblurring. FSM-Net pioneers a dual-domain approach: a novel Frequency Attention module explicitly recovers high-frequency structural details via FFT, while a Cross-Gated Vision E-Branchformer at the bottleneck captures global dependencies with linear complexity. To ensure robust convergence, we employ a progressive curriculum training strategy guided by a composite loss function (Multi-Scale Charbonnier, Structural Edge, and Frequency). Evaluated on the RSBlur benchmark, FSM-Net achieves an outstanding 33.144 dB PSNR with only 4.94M parameters and 159.35 GMACs (at 1920x1200 resolution). By effectively pushing the Pareto frontier of efficiency and quality, FSM-Net establishes a strong baseline for resource-constrained image restoration.",
+      "authors": [
+        "Vinh-Thuan Ly"
+      ],
+      "published": "2026-05-29T15:03:53Z",
+      "updated": "2026-05-29T15:03:53Z",
+      "url": "https://arxiv.org/abs/2605.31400",
+      "pdf_url": "https://arxiv.org/pdf/2605.31400.pdf",
+      "primary_category": "cs.CV",
+      "categories": [
+        "cs.CV"
+      ],
+      "tags": [
+        "cs.CV"
+      ],
+      "domain": "Vision",
+      "pdf_downloaded": true,
+      "pdf_size_bytes": 2104277,
+      "pdf_path": "2026-06-01/vision/2605.31400.pdf"
+    }
+  ]
+}
