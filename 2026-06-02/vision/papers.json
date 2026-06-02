@@ -1,0 +1,629 @@
+{
+  "domain": "Vision",
+  "date": "2026-06-02",
+  "count": 22,
+  "papers": [
+    {
+      "id": "2606.02580",
+      "title": "Thinking in Blender: Staged Executable Inverse Graphics with Vision-Language Models",
+      "abstract": "Inverse graphics is a longstanding and highly underconstrained problem that seeks to reconstruct images as editable 3D scenes which can be rendered, relit, and manipulated. In this work, we investigate whether pretrained vision-language models (VLMs) can perform executable inverse graphics directly from a single image by reconstructing a scene as an editable Blender program, without relying on specialized 2D or 3D foundation models, differentiable rendering, or multi-view supervision. We introduce Staged Executable Inverse Graphics (SEIG), an agentic framework that reconstructs a 3D scene from a single image by progressively refining scene factors including geometry, materials, composition, and lighting directly in executable Blender code space. We evaluate our framework across diverse scenes using a range of reconstruction metrics spanning pixel-level, perceptual, and semantic fidelity. Our experiments show that staged reconstruction substantially improves reconstruction fidelity, highlighting the importance of task decomposition for executable inverse graphics with general-purpose VLMs. Finally, we showcase various downstream applications enabled by the reconstructed editable Blender scenes.",
+      "authors": [
+        "Guangzhao He",
+        "Rundong Luo",
+        "Wei-Chiu Ma",
+        "Hadar Averbuch-Elor"
+      ],
+      "published": "2026-06-01T17:59:53Z",
+      "updated": "2026-06-01T17:59:53Z",
+      "url": "https://arxiv.org/abs/2606.02580",
+      "pdf_url": "https://arxiv.org/pdf/2606.02580.pdf",
+      "primary_category": "cs.CV",
+      "categories": [
+        "cs.CV"
+      ],
+      "tags": [
+        "cs.CV"
+      ],
+      "domain": "Vision",
+      "pdf_downloaded": true,
+      "pdf_size_bytes": 16422656,
+      "pdf_path": "2026-06-02/vision/2606.02580.pdf"
+    },
+    {
+      "id": "2606.02577",
+      "title": "RoboDream: Compositional World Models for Scalable Robot Data Synthesis",
+      "abstract": "Scaling robot learning requires large-scale, diverse demonstrations, yet real-world data collection via teleoperation remains prohibitively expensive and time-consuming. While video diffusion models offer a promising avenue for data scaling, existing generative approaches are often limited to superficial visual augmentation, or suffer from embodiment hallucinations that yield physically infeasible motions. We present a generalizable embodiment-centric world model that achieves scalable data generation by synthesizing photorealistic demonstrations with novel objects, in novel scenes, and from novel viewpoints. Our approach anchors generation to rendered robot motion while conditioning on explicit scene and object priors, effectively decoupling trajectory execution from environment synthesis. This formulation has the potential to unlock two powerful data scaling capabilities: (1) retrieval and rebirth, which repurposes existing trajectories into entirely new contexts without new motion data; and (2) prop-free teleoperation, where operators manipulate empty air and the model hallucinates the target objects and scene afterwards, eliminating reset time. We demonstrate with real-world experiments that our generated data consistently improves downstream policy performance and significantly reduces real-world data requirements across diverse manipulation tasks.",
+      "authors": [
+        "Junjie Ye",
+        "Rong Xue",
+        "Basile Van Hoorick",
+        "Runhao Li",
+        "Harshitha Rajaprakash",
+        "Pavel Tokmakov",
+        "Muhammad Zubair Irshad",
+        "Vitor Guizilini",
+        "Yue Wang"
+      ],
+      "published": "2026-06-01T17:59:38Z",
+      "updated": "2026-06-01T17:59:38Z",
+      "url": "https://arxiv.org/abs/2606.02577",
+      "pdf_url": "https://arxiv.org/pdf/2606.02577.pdf",
+      "primary_category": "cs.RO",
+      "categories": [
+        "cs.RO",
+        "cs.CV"
+      ],
+      "tags": [
+        "cs.CV",
+        "cs.RO"
+      ],
+      "domain": "Vision",
+      "pdf_downloaded": true,
+      "pdf_size_bytes": 1148227,
+      "pdf_path": "2026-06-02/vision/2606.02577.pdf"
+    },
+    {
+      "id": "2606.02575",
+      "title": "From Zero to Hero: Training-Free Custom Concept Spawning in World Models",
+      "abstract": "Autoregressive world models have emerged as a powerful paradigm for interactive video generation, allowing users to navigate dynamically generated environments through actions. These models are typically conditioned on a text prompt and/or a single reference frame, from which the entire world is generated. Yet the moment the user navigates beyond what is visible in that frame, the unseen regions are populated by the base model's priors, with no mechanism for the user to specify what should appear and where. This is a fundamental limitation for applications such as gaming, interactive storytelling, and simulation, where controllable scene composition is essential. We refer to this missing capability as concept spawning; introducing a user-specified visual concept into a world model, analogous to spawning in a game engine. We introduce SPAWN (Swapping Pinned Anchor with Windowed iNjection), a training-free method for concept spawning. SPAWN exploits a structural property of image-to-video backbones: the first slot of the context memory is pinned to the reference frame and acts as a foundational anchor for every generated chunk. By swapping this anchor with an external concept latent over a short injection window and letting the original anchor return, we cause the concept to propagate naturally through the rollout via the model's own memory. SPAWN supports concepts from fine-grained entities such as characters and props to large-scale elements such as buildings and landmarks, and accepts either a concept image or a text description as input. Experiments show that SPAWN integrates concepts with consistent lighting, scale, and perspective while preserving identity and temporal coherence, demonstrating that controllable concept spawning is achievable in existing autoregressive world models without any training.",
+      "authors": [
+        "Kiymet Akdemir",
+        "Pinar Yanardag"
+      ],
+      "published": "2026-06-01T17:59:05Z",
+      "updated": "2026-06-01T17:59:05Z",
+      "url": "https://arxiv.org/abs/2606.02575",
+      "pdf_url": "https://arxiv.org/pdf/2606.02575.pdf",
+      "primary_category": "cs.CV",
+      "categories": [
+        "cs.CV"
+      ],
+      "tags": [
+        "cs.CV"
+      ],
+      "domain": "Vision",
+      "pdf_downloaded": false,
+      "pdf_size_bytes": null,
+      "pdf_path": null
+    },
+    {
+      "id": "2606.02573",
+      "title": "HumanNOVA: Photorealistic, Universal and Rapid 3D Human Avatar Modeling from a Single Image",
+      "abstract": "In this paper, we present HumanNOVA, a photorealistic, universal, and rapid model for generating 3D human avatars from a single RGB image. Achieving both photorealism and generalization is challenging due to the scarcity of diverse, high-quality 3D human data. To address this, we build a scalable data generation pipeline that follows two strategies. The first one is to leverage existing rigged assets and animate them with extensive poses from daily life. The second strategy is to utilize existing multi-camera captures of humans and employ fitting to generate more diverse views for training. These two strategies enable us to scale up to 100k assets, significantly enhancing both the quantity and the diversity of data for robust model training. In terms of the architecture, HumanNOVA adopts a feed-forward, token-conditioned avatar modeling framework that allows fast inference in less than one second and requires no test-time optimization. Given an input image and an estimated simplified human mesh (SMPL) without detailed geometry or appearance, the model first encodes both inputs into compact token representations. These tokens then act as conditioning signals and are fused through cross-attention to construct a triplane-based 3D avatar representation. Extensive experiments on multiple benchmarks demonstrate the superiority of our approach, both quantitatively and qualitatively, as well as its robustness under diverse input image conditions. Project page at https://HumanNOVA.github.io .",
+      "authors": [
+        "Hezhen Hu",
+        "Wangbo Zhao",
+        "Lanqing Guo",
+        "Hanwen Jiang",
+        "Jonathan C. Liu",
+        "Zhiwen Fan",
+        "Kai Wang",
+        "Zhangyang Wang",
+        "Georgios Pavlakos"
+      ],
+      "published": "2026-06-01T17:58:11Z",
+      "updated": "2026-06-01T17:58:11Z",
+      "url": "https://arxiv.org/abs/2606.02573",
+      "pdf_url": "https://arxiv.org/pdf/2606.02573.pdf",
+      "primary_category": "cs.CV",
+      "categories": [
+        "cs.CV"
+      ],
+      "tags": [
+        "cs.CV"
+      ],
+      "domain": "Vision",
+      "pdf_downloaded": true,
+      "pdf_size_bytes": 5915903,
+      "pdf_path": "2026-06-02/vision/2606.02573.pdf"
+    },
+    {
+      "id": "2606.02572",
+      "title": "VISReg: Variance-Invariance-Sketching Regularization for JEPA training",
+      "abstract": "Self-supervised learning methods prevent embedding collapse via modeling heuristics or explicit regularization of the embedding space. Among the latter, VICReg decomposes regularization into variance and covariance objectives, offering flexibility and interpretability. However, covariance captures only second-order statistics -- encouraging decorrelation but failing to enforce the full distributional shape needed for stable training. Sketching-based methods such as SIGReg address this by aligning embeddings to an isotropic Gaussian, but lack flexibility and suffer from vanishing gradients under collapse. We propose Variance-Invariance-Sketching Regularization (VISReg), which replaces covariance with a Sliced-Wasserstein-based sketching objective that enforces full distributional shape, while retaining a variance term for scale control. By decoupling scale and shape, VISReg combines VICReg's flexibility with the distributional rigor of sketching methods, providing robust gradients even under collapse. We show that VISReg scales linearly, outperforms existing regularization on low-quality datasets, and is resilient to long-tailed and low-rank regimes. Pre-trained on ImageNet-1K, VISReg achieves state-of-the-art performance on out-of-distribution datasets. Pre-trained on ImageNet-22K, it matches DINOv2's OOD performance despite the latter using 10x more data (LVD-142M). Project and code: https://haiyuwu.github.io/visreg.",
+      "authors": [
+        "Haiyu Wu",
+        "Randall Balestriero",
+        "Morgan Levine"
+      ],
+      "published": "2026-06-01T17:58:01Z",
+      "updated": "2026-06-01T17:58:01Z",
+      "url": "https://arxiv.org/abs/2606.02572",
+      "pdf_url": "https://arxiv.org/pdf/2606.02572.pdf",
+      "primary_category": "cs.CV",
+      "categories": [
+        "cs.CV"
+      ],
+      "tags": [
+        "cs.CV"
+      ],
+      "domain": "Vision",
+      "pdf_downloaded": true,
+      "pdf_size_bytes": 16013623,
+      "pdf_path": "2026-06-02/vision/2606.02572.pdf"
+    },
+    {
+      "id": "2606.02565",
+      "title": "Policy-based Foveated Imaging and Perception",
+      "abstract": "Ultra-high-resolution image sensors offer the potential to capture fine spatial details critical for many visual perception tasks, but acquiring and processing all pixels at full resolution is often infeasible under realistic bandwidth, latency, and power constraints. Existing approaches address this challenge through acquisition strategies such as spatial or temporal downsampling, which irrevocably discard information before task relevance can be assessed. In this work, we introduce a real-time, predictive, and task-aware foveated imaging system that operates directly at image acquisition time. Leveraging emerging dual-stream sensor architectures, our method dynamically allocates limited pixel bandwidth to task-relevant regions of interest while maintaining a low-resolution global context. We formulate foveated acquisition as a sensor attention policy-learning problem, in which past observations guide actions that determine future measurements, closing the perception-acquisition loop. Through extensive simulation across multiple perception tasks, we demonstrate that our approach achieves high task performance under strict pixel budgets and significantly outperforms relevant baselines operating at the same bandwidth. We further validate our system on a 200-megapixel dual-stream sensor, capturing real-world videos under realistic bandwidth and latency constraints, demonstrating the practical feasibility of task-driven, acquisition-time foveated imaging.",
+      "authors": [
+        "Howard Xiao",
+        "Jan Ackermann",
+        "Boyang Deng",
+        "Gordon Wetzstein"
+      ],
+      "published": "2026-06-01T17:55:05Z",
+      "updated": "2026-06-01T17:55:05Z",
+      "url": "https://arxiv.org/abs/2606.02565",
+      "pdf_url": "https://arxiv.org/pdf/2606.02565.pdf",
+      "primary_category": "cs.CV",
+      "categories": [
+        "cs.CV"
+      ],
+      "tags": [
+        "cs.CV"
+      ],
+      "domain": "Vision",
+      "pdf_downloaded": false,
+      "pdf_size_bytes": null,
+      "pdf_path": null
+    },
+    {
+      "id": "2606.02564",
+      "title": "VLMs are Good Teachers for Video Reasoning via Adaptive Test-Time Optimization",
+      "abstract": "The recent \"Reasoning with Video\" paradigm utilizes Video Generation Models (VGMs) to generate temporally coherent visual trajectories to complete reasoning tasks. Although state-of-the-art VGMs excel at visual quality, they often struggle to understand and follow task-specific rules, leading to logical failures across diverse reasoning scenarios. Existing efforts try to utilize Vision-Language Models (VLMs) as problem pre-solvers to produce or refine textual guidance for the VGM. However, textual descriptions fail to capture intricate spatiotemporal details, and VGMs often struggle to faithfully execute fine-grained or long-tail instructions even with a valid plan. While VLMs struggle as solvers, they possess strong perception capabilities to evaluate process-constraint satisfaction and final-goal achievement. Leveraging this strength, we introduce a paradigm shift that transitions the role of VLMs to \"teachers\". Specifically, a VLM teacher extracts task-specific rules to formulate differentiable rewards, guiding a VGM Reasoner via test-time online optimization of a lightweight LoRA module. This strategy enables adaptive test-time optimization and extends the reasoning capabilities beyond the VGM's intrinsic boundaries. Evaluations on symbolic (VBVR-Bench) and general-purpose (RULER-Bench) video reasoning benchmarks show that the proposed method yields a 16.7-point average performance gain, outperforming the VLM-as-Solver paradigm (+0.4 points) and Best-of-N scaling (+2.2 points) by a large margin at comparable test-time cost. These findings reveal that integrating VLMs as test-time teachers offers a promising paradigm for achieving generalizable video reasoning. Project Page: https://VLM-as-Teacher.github.io/",
+      "authors": [
+        "Junhao Cheng",
+        "Liang Hou",
+        "Tianxiong Zhong",
+        "Xin Tao",
+        "Pengfei Wan",
+        "Kun Gai",
+        "Jing Liao"
+      ],
+      "published": "2026-06-01T17:54:26Z",
+      "updated": "2026-06-01T17:54:26Z",
+      "url": "https://arxiv.org/abs/2606.02564",
+      "pdf_url": "https://arxiv.org/pdf/2606.02564.pdf",
+      "primary_category": "cs.CV",
+      "categories": [
+        "cs.CV"
+      ],
+      "tags": [
+        "cs.CV"
+      ],
+      "domain": "Vision",
+      "pdf_downloaded": true,
+      "pdf_size_bytes": 4755308,
+      "pdf_path": "2026-06-02/vision/2606.02564.pdf"
+    },
+    {
+      "id": "2606.02553",
+      "title": "LongLive-RAG: A General Retrieval-Augmented Framework for Long Video Generation",
+      "abstract": "Autoregressive (AR) video diffusion enables variable-length synthesis, but long-horizon generation often suffers from accumulated errors and identity drift. For efficiency, existing methods commonly adopt sliding-window attention during generation. This creates an irreversible generation trajectory: once the active window accumulates appearance errors, subsequent generations can only condition on this degraded trajectory and drift further away. We address this limitation by formulating long video generation as a retrieval-augmented generation (RAG) problem. Rather than relying solely on the recent window, we treat previously generated latents as a dynamic, searchable history. We propose LongLive-RAG, a general retrieval framework for AR video generation. At each new block, LongLive-RAG uses a query embedding to retrieve relevant historical latents. This lightweight retrieval step adds only a small overhead relative to generation and lets the generator condition on non-local context instead of only the recent window. To make retrieval more discriminative, we introduce the Window Temporal Delta Loss that suppresses redundant local similarity and encourages embeddings to capture meaningful temporal changes. Together, these components help reduce error accumulation caused by sliding-window attention. Experiments across multiple AR backbones and generation lengths show improved long-video quality and the best average VBench-Long rank. To our knowledge, among open-ended AR long video generation methods, LongLive-RAG is the first to formulate self-generated latent history as content-addressable retrieval memory. Code is available at https://github.com/qixinhu11/LongLive-RAG.",
+      "authors": [
+        "Qixin Hu",
+        "Shuai Yang",
+        "Wei Huang",
+        "Song Han",
+        "Yukang Chen"
+      ],
+      "published": "2026-06-01T17:50:49Z",
+      "updated": "2026-06-01T17:50:49Z",
+      "url": "https://arxiv.org/abs/2606.02553",
+      "pdf_url": "https://arxiv.org/pdf/2606.02553.pdf",
+      "primary_category": "cs.CV",
+      "categories": [
+        "cs.CV"
+      ],
+      "tags": [
+        "cs.CV"
+      ],
+      "domain": "Vision",
+      "pdf_downloaded": true,
+      "pdf_size_bytes": 9945501,
+      "pdf_path": "2026-06-02/vision/2606.02553.pdf"
+    },
+    {
+      "id": "2606.02551",
+      "title": "AFUN: Towards an Affordance Foundation Model for Functionality Understanding",
+      "abstract": "Affordance understanding bridges visual perception and physical action, serving as an explainable interface for robot manipulation in open and unstructured real-world environments. Yet, building an affordance foundation model that not only understands where and how the interaction should happen, but also generalizes across diverse environments, objects, and tasks, remains a long-standing research challenge. Existing methods typically address only part of this challenge, either localizing task-relevant regions without specifying executable motion, or predicting motion but with limited scalability. In this paper, we present ourmodel, a step towards an affordance foundation model for functionality understanding. From a single RGB-D observation and a language task description, ourmodel predicts a task-conditional functional mask (where to interact) and a 3D post-contact motion curve (how to interact). To support open-world generalization, we build a large-scale standardized data pipeline that converts heterogeneous robot, human, simulation, and real-world scan data into a shared affordance schema with language, masks, and object-centric 3D motion labels. We evaluate ourmodel from three aspects: for affordance segmentation, ourmodel outperforms all baselines by a large margin across 8 test sets from 4 benchmarks, improving mean gIoU/cIoU by +23.9/+26.3; for contact-point prediction, it predicts substantially more accurate points, with a 12.7--61.3% hit-rate gain over the best baseline; and for 3D motion, it achieves the best performance on all three test sets. ourmodel can be deployed for real-world robot manipulation without finetuning for robot embodiment or using task-specific heuristics, demonstrating the ability to adapt to open-world affordance tasks. Project page: https://www.zhaoningwang.com/AFUN",
+      "authors": [
+        "Zhaoning Wang",
+        "Yi Zhong",
+        "Jiawei Fu",
+        "Henrik I. Christensen",
+        "Jun Gao"
+      ],
+      "published": "2026-06-01T17:50:16Z",
+      "updated": "2026-06-01T17:50:16Z",
+      "url": "https://arxiv.org/abs/2606.02551",
+      "pdf_url": "https://arxiv.org/pdf/2606.02551.pdf",
+      "primary_category": "cs.RO",
+      "categories": [
+        "cs.RO",
+        "cs.CV"
+      ],
+      "tags": [
+        "cs.CV",
+        "cs.RO"
+      ],
+      "domain": "Vision",
+      "pdf_downloaded": false,
+      "pdf_size_bytes": null,
+      "pdf_path": null
+    },
+    {
+      "id": "2606.02535",
+      "title": "LL-Bench: Rethinking Low-Level Vision Evaluation in the Era of Large-Scale Generative Models",
+      "abstract": "Large-scale generative models have demonstrated remarkable capabilities across image generation and editing tasks. However, their performance in low-level vision tasks, which require pixel-wise control, remains insufficiently studied. To address this gap, we introduce \\textbf{LL-Bench}, a comprehensive \\textbf{Benchmark} for evaluating the capabilities of large-scale generative models on \\textbf{L}ow-\\textbf{L}evel vision tasks. The benchmark comprises 2,469 real-world degraded images covering 16 low-level degradation tasks, and 28,919 restored images produced by 10 state-of-the-art large-scale generative models and 21 conventional restoration models, which are annotated with 152,020 expert-level pairwise human preferences and 28,334 quality scores. Built upon LL-Bench, we present a systematic diagnosis that reveals the performance boundaries and unique failure modes of large-scale generative models across diverse low-level vision tasks, compared with conventional representative restoration approaches. Moreover, we investigate the effectiveness of current quality evaluation metrics on LL-Bench, which exhibit significant discrepancy with human ratings. To better align restored-image quality assessment with human preferences, we further propose \\textbf{LL-Score}, an MLLM-based evaluator that captures both restoration quality and hallucination existence. Extensive experiments demonstrate that LL-score not only outperforms existing image quality assessment metrics, but also serves as a promising reward model for training generative models on low-level vision tasks.",
+      "authors": [
+        "Lu Liu",
+        "Huiyu Duan",
+        "Chenxin Zhu",
+        "Jintong Lu",
+        "Haoyun Jiang",
+        "Liu Yang",
+        "Qiang Hu",
+        "Guangtao Zhai",
+        "Xiaoyun Zhang"
+      ],
+      "published": "2026-06-01T17:40:09Z",
+      "updated": "2026-06-01T17:40:09Z",
+      "url": "https://arxiv.org/abs/2606.02535",
+      "pdf_url": "https://arxiv.org/pdf/2606.02535.pdf",
+      "primary_category": "cs.CV",
+      "categories": [
+        "cs.CV"
+      ],
+      "tags": [
+        "cs.CV"
+      ],
+      "domain": "Vision",
+      "pdf_downloaded": true,
+      "pdf_size_bytes": 4321127,
+      "pdf_path": "2026-06-02/vision/2606.02535.pdf"
+    },
+    {
+      "id": "2606.02532",
+      "title": "Improving Combined Detection and Classification of TEM Defects via Mask-Conditioned Latent Diffusion Augmentation",
+      "abstract": "Analyzing microstructural defects in transmission electron microscopy (TEM) images, particularly in irradiated metal alloys, is often limited by the availability of high-quality, labeled data. To address this, we introduce a generative data augmentation approach using a mask-conditioned latent diffusion model (LDM) for synthesizing realistic TEM images with controllable, automatically labeled multi-class defect masks. Without requiring manual annotations for generation, our method enables the creation of synthetic image-mask pairs by sampling distributions learned from experimental masks. These generated data were used to augment small experimental datasets of varying sizes (10, 50, and 100 labeled experimental images) to train a Mask Regional Convolutional Neural Network (R-CNN) model for defect detection and classification. Our results show that generative augmentation yields small overall model performance improvements, with up to a 0.02 gain in the harmonic mean of detection and classification F1 scores. However, we also find that the relative contributions to detection and classification improvement depend on the specific train/test data split. These findings highlight the potential of targeted generative models to enhance deep learning performance in data-scarce microscopy-based image quantification tasks.",
+      "authors": [
+        "Ni Li",
+        "Nuohao Liu",
+        "Ryan Jacobs",
+        "Ajay Annamareddy",
+        "Maciej P. Polak",
+        "Kevin Field",
+        "Izabela Szlufarska",
+        "Dane Morgan"
+      ],
+      "published": "2026-06-01T17:38:47Z",
+      "updated": "2026-06-01T17:38:47Z",
+      "url": "https://arxiv.org/abs/2606.02532",
+      "pdf_url": "https://arxiv.org/pdf/2606.02532.pdf",
+      "primary_category": "cs.CV",
+      "categories": [
+        "cs.CV"
+      ],
+      "tags": [
+        "cs.CV"
+      ],
+      "domain": "Vision",
+      "pdf_downloaded": true,
+      "pdf_size_bytes": 11597962,
+      "pdf_path": "2026-06-02/vision/2606.02532.pdf"
+    },
+    {
+      "id": "2606.02523",
+      "title": "FigSIM: A Dataset for Fine-grained Suicide Severity and Figurative Language in Suicide Memes",
+      "abstract": "Suicide memes are memes used to express suicide-related thoughts or comment on suicide-related issues. Suicide memes are increasingly common on social media, yet remain poorly understood and potentially harmful. There is an urgent need to better understand their characteristics and to develop appropriate content moderation strategies that limits users' exposure to potentially harmful content. Currently, the absence of annotated datasets of suicide memes remains a key barrier to developing and evaluating automated moderation approaches. In this paper, we introduce FigSIM, the first dataset designed for fine-grained analysis of suicide memes. The dataset consists of 1049 memes, each annotated for (1) fine-grained suicide severity levels, (2) figurative phenomena (e.g., metaphors), and (3) suicide-related content (e.g., suicide method depiction). We benchmark 16 unimodal and multimodal models across three tasks: figurative language, suicide severity, and suicide-related content detection. Overall, FigSIM demonstrates that suicide memes pose unique challenges for both modeling and content moderation. Analysis revealed biases, such as underprediction of higher suicide severity levels, especially for figurative memes. The dataset (including splits used for analyses) is publicly available. Content Warning: This paper contains suicide-related content that may be triggering.",
+      "authors": [
+        "Liuliu Chen",
+        "Elise R. Carrotte",
+        "Brian E. Chapman",
+        "Jo Robinson",
+        "Mike Conway"
+      ],
+      "published": "2026-06-01T17:32:29Z",
+      "updated": "2026-06-01T17:32:29Z",
+      "url": "https://arxiv.org/abs/2606.02523",
+      "pdf_url": "https://arxiv.org/pdf/2606.02523.pdf",
+      "primary_category": "cs.CL",
+      "categories": [
+        "cs.CL",
+        "cs.CV",
+        "cs.CY"
+      ],
+      "tags": [
+        "cs.CL",
+        "cs.CV",
+        "cs.CY"
+      ],
+      "domain": "Vision",
+      "pdf_downloaded": true,
+      "pdf_size_bytes": 3929978,
+      "pdf_path": "2026-06-02/vision/2606.02523.pdf"
+    },
+    {
+      "id": "2606.02518",
+      "title": "ToolFG: Towards Well-Grounded Fine-Grained Image Classification",
+      "abstract": "Fine-grained image classification (FGIC) has broad applications and has attracted significant research attention. In this paper, we explore a novel paradigm for solving FGIC by proposing \\textbf{ToolFG}, the first tool-integrated MLLM-based framework tailored to FGIC. ToolFG enables MLLMs to autonomously and flexibly use external tools during the reasoning process, actively interact with images, and collect verifiable visual cues for distinguishing highly similar categories in a more \\textit{reliable} and \\textit{well-grounded} manner. To equip the model with such tool-use ability, we design a novel \\textbf{MCTS-guided tool-use knowledge distillation mechanism}, which effectively mines tool-use- and FGIC-relevant knowledge from advanced proprietary MLLMs for model training. Furthermore, we propose a \\textbf{model-tool co-evolution mechanism} that jointly refines the toolset and the model's tool-use policy, driving them toward a mutually adapted and FGIC-specialized state. Extensive experiments demonstrate the effectiveness of our framework.",
+      "authors": [
+        "Yu Xue",
+        "Haoxuan Qu",
+        "Zhuoling Li",
+        "Yihang Lou",
+        "Yan Bai",
+        "Hossein Rahmani",
+        "Jun Liu"
+      ],
+      "published": "2026-06-01T17:27:48Z",
+      "updated": "2026-06-01T17:27:48Z",
+      "url": "https://arxiv.org/abs/2606.02518",
+      "pdf_url": "https://arxiv.org/pdf/2606.02518.pdf",
+      "primary_category": "cs.CV",
+      "categories": [
+        "cs.CV"
+      ],
+      "tags": [
+        "cs.CV"
+      ],
+      "domain": "Vision",
+      "pdf_downloaded": true,
+      "pdf_size_bytes": 477714,
+      "pdf_path": "2026-06-02/vision/2606.02518.pdf"
+    },
+    {
+      "id": "2606.02510",
+      "title": "Not All Points Are Equal: Uncertainty-Aware 4D LiDAR Scene Synthesis",
+      "abstract": "Constructing faithful 4D worlds from LiDAR-acquired sequences is crucial for embodied AI, yet current generative frameworks apply uniform modeling capacity across all spatial regions. This ignores that perceptual difficulty varies dramatically within a single scan: distant surfaces, occluded boundaries, and small-scale objects carry far higher uncertainty than well-observed structures. We present U4D, a new framework that explicitly leverages spatial uncertainty to guide LiDAR scene generation in a \"hard-to-easy\" schedule. U4D derives per-point uncertainty maps via Shannon Entropy from a pretrained segmentor, then applies an unconditional diffusion stage to synthesize high-entropy areas with precise geometry, followed by a conditional completion stage that fills in the remaining regions using these structures as priors. A MoST (Mixture of Spatio-Temporal) block further maintains cross-frame coherence by dynamically balancing spatial detail and temporal continuity. Extensive experiments on nuScenes and SemanticKITTI demonstrate state-of-the-art scene fidelity, temporal consistency, and downstream performance.",
+      "authors": [
+        "Xiang Xu",
+        "Alan Liang",
+        "Youquan Liu",
+        "Xian Sun",
+        "Linfeng Li",
+        "Lingdong Kong",
+        "Ziwei Liu",
+        "Qingshan Liu"
+      ],
+      "published": "2026-06-01T17:24:14Z",
+      "updated": "2026-06-01T17:24:14Z",
+      "url": "https://arxiv.org/abs/2606.02510",
+      "pdf_url": "https://arxiv.org/pdf/2606.02510.pdf",
+      "primary_category": "cs.CV",
+      "categories": [
+        "cs.CV",
+        "cs.RO"
+      ],
+      "tags": [
+        "cs.CV",
+        "cs.RO"
+      ],
+      "domain": "Vision",
+      "pdf_downloaded": true,
+      "pdf_size_bytes": 3340494,
+      "pdf_path": "2026-06-02/vision/2606.02510.pdf"
+    },
+    {
+      "id": "2606.02506",
+      "title": "Question-Aware Evidence Ledgers for Video Relational Reasoning",
+      "abstract": "The VRR-QA challenge evaluates visual relational reasoning in videos, where answers often depend on implicit spatial relations, event boundaries, target identity, and dialogue context rather than a single salient frame. We present a test-time reasoning pipeline built around a strong GPT-5.5 video QA solver and a set of question-aware evidence ledgers. The initial solver answers each question from a uniform video representation, while routed ledgers are prompted to make the required targets, count units, reference frames, and temporal or spatial scope explicit for counting, spatial, endpoint, viewpoint, and dialogue reasoning. External tools such as open-vocabulary detection, depth cues, pair crops, ASR, and scene-graph ledgers are used only as evidence sources. A conservative gate keeps the current answer unless independent evidence uniquely supports a different option. The final evidence-gated pipeline achieves 92.95% overall accuracy and 93.79% macro accuracy on the challenge test split.",
+      "authors": [
+        "Yilin Ou",
+        "Mengshi Qi",
+        "Huadong Ma"
+      ],
+      "published": "2026-06-01T17:18:03Z",
+      "updated": "2026-06-01T17:18:03Z",
+      "url": "https://arxiv.org/abs/2606.02506",
+      "pdf_url": "https://arxiv.org/pdf/2606.02506.pdf",
+      "primary_category": "cs.CV",
+      "categories": [
+        "cs.CV"
+      ],
+      "tags": [
+        "cs.CV"
+      ],
+      "domain": "Vision",
+      "pdf_downloaded": true,
+      "pdf_size_bytes": 184889,
+      "pdf_path": "2026-06-02/vision/2606.02506.pdf"
+    },
+    {
+      "id": "2606.02498",
+      "title": "GloResNet: A lightweight 3D CNN with global topological features for preterm brain injury prediction",
+      "abstract": "This study introduces an automated deep learning framework for predicting brain injury (BI) in preterm infants from T2-weighted MRI (dHCP dataset). We propose GloResNet, a lightweight 3D CNN based on ResNet-10, pretrained on MedicalNet to address data scarcity. A global manifold mapping strategy first resamples each 3D volume to 128x128x128 and then applies subject-wise z-score intensity normalization, thereby preserving global topology while standardizing appearance. Training integrates mixup, class weighting, and test-time augmentation for robustness. In 5-fold cross-validation, GloResNet achieved 75.18% average accuracy (peak 81.82%), with specificity 0.81 and sensitivity 0.76. Results demonstrate that a topology-aware lightweight CNN has the capability to effectively predict neonatal BI, offering a non-invasive screening tool. The source code of this paper can be obtained from the GitHub repository: https://github.com/ICL-SUST/GloResNet-Preterm-Brain",
+      "authors": [
+        "Boyu Yuan",
+        "Jiamiao Lu",
+        "Weichuan Zhang",
+        "Benqing Wu",
+        "Tuo Wang",
+        "Changshan Wang",
+        "Changming Sun",
+        "Liang Guo"
+      ],
+      "published": "2026-06-01T17:04:43Z",
+      "updated": "2026-06-01T17:04:43Z",
+      "url": "https://arxiv.org/abs/2606.02498",
+      "pdf_url": "https://arxiv.org/pdf/2606.02498.pdf",
+      "primary_category": "cs.CV",
+      "categories": [
+        "cs.CV"
+      ],
+      "tags": [
+        "cs.CV"
+      ],
+      "domain": "Vision",
+      "pdf_downloaded": true,
+      "pdf_size_bytes": 1587885,
+      "pdf_path": "2026-06-02/vision/2606.02498.pdf"
+    },
+    {
+      "id": "2606.02491",
+      "title": "MORPHOS: Autoregressive 4D Generation with Temporal Structured Latents",
+      "abstract": "We present MORPHOS, a novel autoregressive framework that generates dynamic 3D assets from videos across diverse representations, including meshes, 3D Gaussians, and radiance fields. Existing methods are typically limited to a single representation, struggle to model topological changes, or fail to maintain temporal consistency over long videos. To address these limitations, we introduce the Temporal Structured Latents (T-SLAT), a unified 4D representation that jointly encodes geometry and appearance along the temporal dimension. Leveraging T-SLAT, MORPHOS autoregressively generates dynamic 3D assets via causal attention, conditioning each frame on its preceding history to ensure temporal consistency while handling evolving topologies. We also propose a temporal-structural augmentation to mitigate error accumulation in autoregressive generation. MORPHOS achieves state-of-the-art performance in appearance and competitive results in geometry across multiple benchmarks, demonstrating superior generalization across various representations and robustness in long-horizon generation.",
+      "authors": [
+        "Minkyung Kwon",
+        "Jinhyeok Choi",
+        "Youngjin Shin",
+        "Jaeyeong Kim",
+        "JongMin Lee",
+        "Seungryong Kim"
+      ],
+      "published": "2026-06-01T17:01:21Z",
+      "updated": "2026-06-01T17:01:21Z",
+      "url": "https://arxiv.org/abs/2606.02491",
+      "pdf_url": "https://arxiv.org/pdf/2606.02491.pdf",
+      "primary_category": "cs.CV",
+      "categories": [
+        "cs.CV"
+      ],
+      "tags": [
+        "cs.CV"
+      ],
+      "domain": "Vision",
+      "pdf_downloaded": true,
+      "pdf_size_bytes": 16346239,
+      "pdf_path": "2026-06-02/vision/2606.02491.pdf"
+    },
+    {
+      "id": "2606.02482",
+      "title": "X-Stream: Exploring MLLMs as Multiplexers for Multi-Stream Understanding",
+      "abstract": "While video streaming understanding has made significant strides, real-world applications, such as live sports broadcasting, autonomous driving, and multi-screen collaboration, inherently demand continuous, multi-stream interactions. However, existing benchmarks are confined to single-stream paradigms, leaving a critical gap in evaluating online, cross-stream reasoning. To bridge this, we introduce X-Stream, the first benchmark dedicated to multi-stream streaming understanding. Comprising 4,220 rigorously curated QA pairs across 932 videos, X-Stream evaluates 11 subtasks across multi-window, multi-view, and multi-device scenarios. Crucially, our dataset is constructed using a novel dual-verification pipeline that prevents over-reliance on a single stream. Furthermore, we pioneer the conceptualization of multi-modal large language models (MLLMs) as naive multiplexers, systematically evaluating their performance through the lens of Signal Multiplexing Theory. Our extensive online inference experiments reveal a stark reality: state-of-the-art MLLMs struggle significantly with concurrent streams, achieving only about 50% score and exhibiting poor proactive ability. Ultimately, X-Stream exposes the trade-off of current multiplexing schemes, providing both a practical evaluation protocol and empirical guidance for next-generation multi-stream agents.",
+      "authors": [
+        "Peiwen Sun",
+        "Xudong Lu",
+        "Huadai Liu",
+        "Yang Bo",
+        "Dongming Wu",
+        "Huankang Guan",
+        "Minghong Cai",
+        "Jinpeng Chen",
+        "Xintong Guo",
+        "Shuhan Li",
+        "Rui Liu",
+        "Xiangyu Yue"
+      ],
+      "published": "2026-06-01T16:52:11Z",
+      "updated": "2026-06-01T16:52:11Z",
+      "url": "https://arxiv.org/abs/2606.02482",
+      "pdf_url": "https://arxiv.org/pdf/2606.02482.pdf",
+      "primary_category": "cs.CV",
+      "categories": [
+        "cs.CV"
+      ],
+      "tags": [
+        "cs.CV"
+      ],
+      "domain": "Vision",
+      "pdf_downloaded": true,
+      "pdf_size_bytes": 8619731,
+      "pdf_path": "2026-06-02/vision/2606.02482.pdf"
+    },
+    {
+      "id": "2606.02481",
+      "title": "Places in the Wild: A Large, High-Resolution RAW Photograph Dataset for Ecologically Valid Vision Research",
+      "abstract": "Large image datasets have accelerated progress in cognitive neuroscience and computer vision. However, most datasets are low-resolution, internet-sourced JPEGs with unknown capture conditions and limited spatial context. Places in the Wild is a dataset of 67,574 high-resolution photographs collected in situ across 810 physical locations spanning 260 basic-level scene categories, including indoor, urban, and natural environments. At each location, a 45-megapixel Canon EOS R5 mounted on a panoramic tripod captured 72 images at 5-degree horizontal intervals plus 12 images at varying elevations, yielding dense 360-degree viewpoint sampling. All images were recorded simultaneously as 14-bit RAW (CR3) files and compressed JPEGs, preserving sensor-level detail for analyses of luminance, contrast, color, and other image statistics. The dataset is accompanied by complete EXIF metadata and a suite of image-quality metrics. Places in the Wild supports research on viewpoint-dependent recognition in humans and models, training and evaluation of scene-understanding systems under realistic conditions, characterization of natural scene statistics, and experiments requiring near-full-field visual displays.",
+      "authors": [
+        "Michelle R. Greene"
+      ],
+      "published": "2026-06-01T16:51:20Z",
+      "updated": "2026-06-01T16:51:20Z",
+      "url": "https://arxiv.org/abs/2606.02481",
+      "pdf_url": "https://arxiv.org/pdf/2606.02481.pdf",
+      "primary_category": "cs.CV",
+      "categories": [
+        "cs.CV"
+      ],
+      "tags": [
+        "cs.CV"
+      ],
+      "domain": "Vision",
+      "pdf_downloaded": true,
+      "pdf_size_bytes": 8889059,
+      "pdf_path": "2026-06-02/vision/2606.02481.pdf"
+    },
+    {
+      "id": "2606.02479",
+      "title": "Retrieve What's Missing: Coverage-Maximizing Retrieval for Consistent Long Video Generation",
+      "abstract": "Maintaining long-term geometric consistency remains challenging for long-horizon autoregressive video generation. Memory-augmented generative models address this by retrieving historical frames, but their effectiveness depends on two key design choices: what 3D-geometric evidence should represent past observations, and how memory frames should be selected from this evidence. Existing methods often rely on camera poses or field-of-view overlap, which are lightweight but too coarse to reason about pixel-wise visibility, or use explicit 3D reconstruction, which provides fine-grained evidence but is costly to maintain over long rollouts. We propose Coverage-Maximizing Retrieval-Augmented Generation (COVRAG), a depth-based memory retrieval framework that uses pretrained 3D priors to construct a target-view coverage map as lightweight 3D memory evidence. For frame selection, COVRAG maximizes residual coverage gain, iteratively retrieving frames that explain target-view regions not covered by the current context or previously selected memories. To improve scalability in long-video generation, we introduce sliding-window depth caching for efficient geometry estimation. Experiments on RealEstate10K and DL3DV10K show that COVRAG improves long-horizon geometric consistency while maintaining low latency compared to baselines.",
+      "authors": [
+        "Minseok Joo",
+        "Dogyun Park",
+        "Taehoon Lee",
+        "Kyujin Lee",
+        "Hyunwoo J. Kim"
+      ],
+      "published": "2026-06-01T16:49:58Z",
+      "updated": "2026-06-01T16:49:58Z",
+      "url": "https://arxiv.org/abs/2606.02479",
+      "pdf_url": "https://arxiv.org/pdf/2606.02479.pdf",
+      "primary_category": "cs.CV",
+      "categories": [
+        "cs.CV"
+      ],
+      "tags": [
+        "cs.CV"
+      ],
+      "domain": "Vision",
+      "pdf_downloaded": true,
+      "pdf_size_bytes": 8465311,
+      "pdf_path": "2026-06-02/vision/2606.02479.pdf"
+    },
+    {
+      "id": "2606.02459",
+      "title": "Active Exploring like a Pigeon: Reinforcing Spatial Reasoning via Agentic Vision-Language Models",
+      "abstract": "Enabling Vision-Language Models (VLMs) to perform spatial reasoning remains challenging. Existing approaches treat VLMs as passive observers, which is difficult for real-world applications. Moreover, reinforcement learning methods rely on sparse rewards, limiting their effectiveness for complex reasoning tasks. Inspired by pigeons' building and exploiting cognitive maps for navigation, we propose a novel agentic pipeline for spatial reasoning. First, we introduce a new \\emph{dynamic cognitive map} parameterizing scene layout as object positions and orientations, serving as persistent memory for new observations. Second, we propose a novel \\emph{Spatial Assertion Codes (SAC)}, Python expressions programmatically describing spatial relationships. By collaborating with the dynamic cognitive map, SAC enables verification of intermediate reasoning steps, providing dense reward signals. We optimize the model via supervised and reinforcement finetuning. Experiments on the MindCube benchmark demonstrate state-of-the-art performance with \\emph{80.5\\%} overall accuracy, outperforming the best current method by \\emph{29.5} accuracy points (a relative improvement of \\emph{53.2\\%}) on the challenging \\textsc{Rotation} subset. Our code and data are open-sourced at https://github.com/dw-dengwei/active-spatial-reasoning.git.",
+      "authors": [
+        "Wei Deng",
+        "Xianlin Zhang",
+        "Mengshi Qi"
+      ],
+      "published": "2026-06-01T16:30:56Z",
+      "updated": "2026-06-01T16:30:56Z",
+      "url": "https://arxiv.org/abs/2606.02459",
+      "pdf_url": "https://arxiv.org/pdf/2606.02459.pdf",
+      "primary_category": "cs.CV",
+      "categories": [
+        "cs.CV"
+      ],
+      "tags": [
+        "cs.CV"
+      ],
+      "domain": "Vision",
+      "pdf_downloaded": true,
+      "pdf_size_bytes": 1060467,
+      "pdf_path": "2026-06-02/vision/2606.02459.pdf"
+    },
+    {
+      "id": "2606.02453",
+      "title": "Initialization is Half the Battle: Generating Diverse Images from a Guidance Potential Posterior",
+      "abstract": "Despite the remarkable fidelity of generative models, they frequently suffer from mode collapse. Existing strategies for enhancing diversity predominantly focus on intervening during the generation trajectory. We identify a critical oversight that the standard Gaussian initialization often causes trajectories to collapse into dominant modes because it is agnostic to the guidance potential landscape. In this work, we formulate selecting the initial noise from a guidance potential posterior, which effectively re-weights the prior towards diversity-rich regions. To sample from this distribution efficiently, we introduce Diversity-inducing Initialization (DivIn), which leverages Langevin dynamics to actively navigate the initialization landscape, steering initial noise away from collapsing regions while anchoring them to the valid data manifold. Our method serves as an inference-time diversity enhancement compatible with both diffusion and flow matching models. Extensive experiments show that DivIn exhibits a superior performance in both class-to-image and text-to-image scenarios. Furthermore, we highlight that as DivIn is orthogonal to trajectory-based methods, combining them significantly expands the diversity-quality Pareto frontier beyond what either achieves in isolation.",
+      "authors": [
+        "Xiang Li",
+        "Dianbo Liu",
+        "Kenji Kawaguchi"
+      ],
+      "published": "2026-06-01T16:25:10Z",
+      "updated": "2026-06-01T16:25:10Z",
+      "url": "https://arxiv.org/abs/2606.02453",
+      "pdf_url": "https://arxiv.org/pdf/2606.02453.pdf",
+      "primary_category": "cs.CV",
+      "categories": [
+        "cs.CV",
+        "cs.AI"
+      ],
+      "tags": [
+        "cs.AI",
+        "cs.CV"
+      ],
+      "domain": "Vision",
+      "pdf_downloaded": true,
+      "pdf_size_bytes": 10003215,
+      "pdf_path": "2026-06-02/vision/2606.02453.pdf"
+    }
+  ]
+}
