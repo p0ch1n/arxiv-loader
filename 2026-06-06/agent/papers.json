@@ -1,0 +1,623 @@
+{
+  "domain": "Agent",
+  "date": "2026-06-06",
+  "count": 22,
+  "papers": [
+    {
+      "id": "2606.06461",
+      "title": "Flow-based Policy Adaptation without Policy Updates",
+      "abstract": "Leveraging prior knowledge from pretrained policies, foundation models, or human operators offers an efficient alternative to learning robot skills from scratch. However, these agents often provide actions that are suboptimal, noisy, or misaligned with task-specific expert behavior. We propose GLOVES, a family of flow-based adaptation methods that correct non-expert actions by transporting them toward an expert action distribution. Rather than replacing agentic control with full autonomy, GLOVES performs selective action-level adaptation, improving task success while preserving agent intent. The learned flow also provides a natural in-distribution scoring mechanism through reverse flow evaluation. We use this signal as an intervention gate: actions that appear consistent with the expert distribution are passed through unchanged, while anomalous or out-of-distribution (OOD) actions are corrected. In this way, assistance is only provided when necessary. GLOVES requires only limited expert supervision, using a small number of demonstrations or reusable successful skill segments. By learning local expert action patterns and stitching them during execution, GLOVES provides a lightweight shared-control module for robust action adaptation across tasks and environments. Code and demos are available at ripl.github.io/GLOVES_web.",
+      "authors": [
+        "Luzhe Sun",
+        "Jingtian Ji",
+        "Haoran Chen",
+        "Jiawei Zhou",
+        "Matthew R. Walter"
+      ],
+      "published": "2026-06-04T17:51:12Z",
+      "updated": "2026-06-04T17:51:12Z",
+      "url": "https://arxiv.org/abs/2606.06461",
+      "pdf_url": "https://arxiv.org/pdf/2606.06461.pdf",
+      "primary_category": "cs.RO",
+      "categories": [
+        "cs.RO"
+      ],
+      "tags": [
+        "cs.RO"
+      ],
+      "domain": "Agent",
+      "pdf_downloaded": false,
+      "pdf_size_bytes": null,
+      "pdf_path": null
+    },
+    {
+      "id": "2606.06380",
+      "title": "Emergent Language as an Approach to Conscious AI",
+      "abstract": "The question of whether artificial systems can be conscious remains open, in part because existing approaches either evaluate systems against theory-derived checklists (discriminative) or engineer consciousness-inspired modules directly (architectural); both leave open whether observed structures are artifacts of human language priors. We propose a generative methodology: emergent language (EL) in multi-agent reinforcement learning, where agents start from minimal (no language, no concept of self, minimal exposure to human text) and develop communication under task pressure alone, ensuring causal attributability to task demands rather than inherited human language priors. We position our methodology by discussing how EL serves as a generative tool for studying consciousness-relevant structure, including the role of environment complexity and the interpretation of emergent communication. As a proof of concept, we instantiate this methodology in a minimal environment and show that agents develop self-referential communication, including an echo-mismatch detection circuit that is not predicted by task structure or architecture alone but emerges from a specific environmental affordance.",
+      "authors": [
+        "Zengqing Wu",
+        "Chuan Xiao"
+      ],
+      "published": "2026-06-04T16:47:41Z",
+      "updated": "2026-06-04T16:47:41Z",
+      "url": "https://arxiv.org/abs/2606.06380",
+      "pdf_url": "https://arxiv.org/pdf/2606.06380.pdf",
+      "primary_category": "cs.CL",
+      "categories": [
+        "cs.CL",
+        "cs.AI",
+        "cs.MA",
+        "cs.NE"
+      ],
+      "tags": [
+        "cs.AI",
+        "cs.CL",
+        "cs.MA",
+        "cs.NE"
+      ],
+      "domain": "Agent",
+      "pdf_downloaded": true,
+      "pdf_size_bytes": 765292,
+      "pdf_path": "2026-06-06/agent/2606.06380.pdf"
+    },
+    {
+      "id": "2606.06370",
+      "title": "Ensuring Interaction Safety in Multitask Exoskeleton Control: A Simulation-Trained Variable Impedance Framework",
+      "abstract": "Wearable exoskeletons can augment human phys ical capabilities during complex activities. However, ensuring adaptation across diverse tasks while guaranteeing interaction safety remains a critical challenge. To address this, a simulation trained variable impedance control approach with stability guarantees is proposed. First, a simulation-based human exoskeleton motion data generation pipeline is established, utilizing Proximal Policy Optimization (PPO) to synthesize human muscle activations while the exoskeleton provides direct compensation for human biological joint torques. Subsequently, the generated dataset is used to train a dual modality policy that fuses semantic instructions with proprioceptive history, enabling the prediction of reference trajectories and variable impedance gains for nine different motion tasks. To guarantee safety, the network outputs are constrained by a stability criterion derived from Lyapunov stability theory, which bounds stiffness variations to ensure the asymptotic stability of the coupled system. Experimental results indicate that the proposed framework reduces metabolic cost in real-world scenarios com pared with standard baseline methods. These findings suggest the feasibility of the proposed framework for safe, multitask exoskeleton control.",
+      "authors": [
+        "Muyuan Ma",
+        "Houcheng Li",
+        "Haotian Zhai",
+        "Lijun Han",
+        "Xinpan Meng",
+        "Xiuze Xia",
+        "Long Cheng"
+      ],
+      "published": "2026-06-04T16:37:01Z",
+      "updated": "2026-06-04T16:37:01Z",
+      "url": "https://arxiv.org/abs/2606.06370",
+      "pdf_url": "https://arxiv.org/pdf/2606.06370.pdf",
+      "primary_category": "cs.RO",
+      "categories": [
+        "cs.RO"
+      ],
+      "tags": [
+        "cs.RO"
+      ],
+      "domain": "Agent",
+      "pdf_downloaded": true,
+      "pdf_size_bytes": 3278525,
+      "pdf_path": "2026-06-06/agent/2606.06370.pdf"
+    },
+    {
+      "id": "2606.06366",
+      "title": "Waypoints Matter: A Systematic Study for Sampling-Based Trajectory Planning",
+      "abstract": "Real-time autonomous driving commonly relies on sampling-based trajectory planners that link candidate trajectories to target waypoints along the road centerline. The placement of these waypoints directly impacts both the existence and quality of feasible trajectories. Yet, its effect on planner performance remains largely unexplored. In this paper, we treat waypoint placement as a first-class design variable. We hold the trajectory primitive and candidate budget fixed, and systematically sweep three placement strategies (uniform spacing, an augmented Ramer-Douglas-Peucker variant (RDP*), and a novel curvature-conditioned allocation) across 449 configurations and five CommonRoad maps of increasing geometric complexity. Our results show that the nominal inter-waypoint spacing $d_s$ is the primary performance driver, with large differences in planner reliability attributed to placement alone. Uniform sampling at a well-tuned spacing matches or surpasses both RDP* and the centered curvature variant. The curvature variant offers a small but consistent advantage on geometrically complex roads under reliability-first and balanced weightings, while RDP* never outperforms uniform sampling. These findings suggest that $d_s$ should be treated as the dominant tuning parameter, with geometry-aware strategies reserved for curvature-rich corridors where feasibility is the limiting factor.",
+      "authors": [
+        "Josep M. Barbera",
+        "Antonio Artu\u00f1edo",
+        "Jorge Villagra"
+      ],
+      "published": "2026-06-04T16:35:30Z",
+      "updated": "2026-06-04T16:35:30Z",
+      "url": "https://arxiv.org/abs/2606.06366",
+      "pdf_url": "https://arxiv.org/pdf/2606.06366.pdf",
+      "primary_category": "cs.RO",
+      "categories": [
+        "cs.RO"
+      ],
+      "tags": [
+        "cs.RO"
+      ],
+      "domain": "Agent",
+      "pdf_downloaded": true,
+      "pdf_size_bytes": 2112239,
+      "pdf_path": "2026-06-06/agent/2606.06366.pdf"
+    },
+    {
+      "id": "2606.06324",
+      "title": "From Failed Trajectories to Reliable LLM Agents: Diagnosing and Repairing Harness Flaws",
+      "abstract": "LLM-based agents increasingly rely on harnesses that provide execution environments, tool interfaces, context, lifecycle orchestration, observability, verification, and governance. Existing self-improving agents and automatic harness evolution methods mainly improve agents through runtime supervision, prompt optimization, workflow search, or harness modification based on final outcomes. However, they often fail to diagnose where the responsible evidence lies in failed trajectories and which harness layer causes the unreliable behavior, resulting in broad, indirect, or poorly scoped changes. This paper proposes HarnessFix, a trace-guided framework for diagnosing agent failures and repairing agent harnesses. HarnessFix compiles raw execution traces and harness code into a Harness-aware Trace Intermediate Representation (HTIR), which normalizes fragmented trajectory evidence and captures step-level provenance and control-flow relations. It then attributes failures to responsible trajectory steps and harness layers, consolidates recurring diagnoses into actionable flaw records, and maps them to scoped repair operators. Finally, HarnessFix generates and validates harness patches under flaw-specific repair specifications to reduce target flaws without introducing unacceptable regressions. We evaluate HarnessFix on SWE-Bench Verified, Terminal-Bench 2.0 Verified, GAIA and AppWorld. Across these benchmarks, HarnessFix improves held-out test performance over the initial harnesses by 15.2%--50.0%, outperforms human-designed and self-evolution baselines, and reveals recurring harness-flaw patterns across ETCLOVG layers.",
+      "authors": [
+        "Mengzhuo Chen",
+        "Junjie Wang",
+        "Zhe Liu",
+        "Yawen Wang",
+        "Qing Wang"
+      ],
+      "published": "2026-06-04T15:58:30Z",
+      "updated": "2026-06-04T15:58:30Z",
+      "url": "https://arxiv.org/abs/2606.06324",
+      "pdf_url": "https://arxiv.org/pdf/2606.06324.pdf",
+      "primary_category": "cs.SE",
+      "categories": [
+        "cs.SE",
+        "cs.MA"
+      ],
+      "tags": [
+        "cs.MA",
+        "cs.SE"
+      ],
+      "domain": "Agent",
+      "pdf_downloaded": true,
+      "pdf_size_bytes": 2363715,
+      "pdf_path": "2026-06-06/agent/2606.06324.pdf"
+    },
+    {
+      "id": "2606.06323",
+      "title": "VOLT: Vision and Language Trajectory Segmentation for Faster-than-Demonstration Policies",
+      "abstract": "Humans often take longer to demonstrate a task than a robot would need to execute it. Rather than learning to replicate the demonstration at the same pace, many industrial and practical applications require robots to perform tasks as quickly as possible. In this paper, we investigate several hypotheses for learning policies that operate faster-than-demonstrations. Our experiments show that the most effective strategy is to downsample recorded demonstrations and train the robot's policy on this accelerated data. However, uniformly downsampling an entire trajectory can be problematic. Some parts of a task can be safely sped up (e.g., unconstrained motion), while others demand slower, more precise motion (e.g., object interactions or fine manipulation). To address this challenge, we introduce VOLT, a vision-and-language trajectory segmentation method that reasons over video demonstrations, and leverages contextual cues to determine when acceleration is appropriate and when careful precision is required. VOLT identifies segments where slow, deliberate motion is necessary, then selectively downsamples the remaining segments. The resulting reformatted trajectories can be used with standard imitation learning approaches, such as diffusion policies. Our results highlight that segmentation quality is critical -- baseline methods often misidentify when acceleration is possible, leading to overly cautious or unreliable policies. Compared to state-of-the-art alternatives, VOLT allows robots to execute tasks faster while maintaining strong performance.",
+      "authors": [
+        "Robert Ramirez Sanchez",
+        "Daniel J. Evans",
+        "Dylan P. Losey",
+        "Siddarth Jain"
+      ],
+      "published": "2026-06-04T15:57:29Z",
+      "updated": "2026-06-04T15:57:29Z",
+      "url": "https://arxiv.org/abs/2606.06323",
+      "pdf_url": "https://arxiv.org/pdf/2606.06323.pdf",
+      "primary_category": "cs.RO",
+      "categories": [
+        "cs.RO"
+      ],
+      "tags": [
+        "cs.RO"
+      ],
+      "domain": "Agent",
+      "pdf_downloaded": true,
+      "pdf_size_bytes": 5715305,
+      "pdf_path": "2026-06-06/agent/2606.06323.pdf"
+    },
+    {
+      "id": "2606.06312",
+      "title": "Meridian: Metric-Semantic Primitive Matching for Cross-View Geo-Localization Beyond Urban Environments",
+      "abstract": "Successful robot automation requires accurate global localization to support repeatability, task planning, goal specification, and safe operation. However, reliable localization in GNSS-denied environments remains an open problem. Overhead aerial imagery offers a promising solution, but existing approaches primarily target structured urban environments and have been rarely demonstrated in unstructured natural terrain. Limitations of the state-of-the-art include a reliance on models trained for specific environments, as well as difficulty handling repetitive geometries and featureless landscapes commonly found in natural outdoor areas. To overcome these challenges, we present Meridian, a method for matching high-level metric-semantic primitives across aerial images and ground robot RGB-D camera data that achieves accurate global localization and generalizes well across diverse environments, all without any training or algorithmic fine-tuning on area-specific data. We formulate novel consistency metrics to estimate a distribution over robot submap poses and to reject outlier hypotheses in a robust pose graph optimization step for accurate robot trajectory estimation. We demonstrate that our algorithm can localize a ground robot across a wide variety of environments, including an autonomous driving dataset, a park and campus area, and a wilderness camp, with an average optimized trajectory error of 2.4 m over 19 km of ground traversal.",
+      "authors": [
+        "Mason Peterson",
+        "Qingyuan Li",
+        "Yixuan Jia",
+        "Fernando Cladera",
+        "Carlos Nieto-Granda",
+        "Camillo Jose Taylor",
+        "Jonathan P. How"
+      ],
+      "published": "2026-06-04T15:52:40Z",
+      "updated": "2026-06-04T15:52:40Z",
+      "url": "https://arxiv.org/abs/2606.06312",
+      "pdf_url": "https://arxiv.org/pdf/2606.06312.pdf",
+      "primary_category": "cs.RO",
+      "categories": [
+        "cs.RO"
+      ],
+      "tags": [
+        "cs.RO"
+      ],
+      "domain": "Agent",
+      "pdf_downloaded": true,
+      "pdf_size_bytes": 4630202,
+      "pdf_path": "2026-06-06/agent/2606.06312.pdf"
+    },
+    {
+      "id": "2606.06308",
+      "title": "Attitude-Aided Linear Calibration of Triaxial Accelerometers",
+      "abstract": "Triaxial MEMS accelerometers are widely used for inertial sensing, navigation, and sensor fusion, but existing calibration methods often rely on costly reference setups or nonlinear iterative optimization, limiting their efficiency and applicability to low-cost or self-calibrating systems. We present attitude-aided linear accelerometer calibration (ALAC), a method that operates on any platform providing orientation information, such as turntables, robotic arms, or inertial measurement units. ALAC constructs a combined error matrix (CEM) to represent sensor errors in a unified calibration model and enables linear least-squares estimation. The bias and gravity vector are jointly estimated, implicitly accounting for platform misalignment, and matrix decomposition of the CEM recovers scale, non-orthogonality, and alignment rotation parameters. Under static gravity, calibration is formulated as a constrained homogeneous least-squares (CHLS) problem and solved in closed form using standard linear algebra. Only five arbitrarily oriented measurements are required, and a recursive extension supports online or in-field calibration. Experiments on a stationary robot-mounted accelerometer and a quasi-static public IMU trajectory show that ALAC, in both offline and online modes, outperforms reference-based and online baselines in accuracy and robustness to sensor noise. On the same dataset, it matches iterative self-calibration under filtered conditions and surpasses all evaluated baselines on raw measurements. These results demonstrate a robust and practical calibration scheme for MEMS-based inertial platforms, especially low-cost IMUs and online calibration scenarios.",
+      "authors": [
+        "Yongqiang Yu",
+        "Tian Huang",
+        "Yipeng Yang"
+      ],
+      "published": "2026-06-04T15:48:16Z",
+      "updated": "2026-06-04T15:48:16Z",
+      "url": "https://arxiv.org/abs/2606.06308",
+      "pdf_url": "https://arxiv.org/pdf/2606.06308.pdf",
+      "primary_category": "cs.RO",
+      "categories": [
+        "cs.RO"
+      ],
+      "tags": [
+        "cs.RO"
+      ],
+      "domain": "Agent",
+      "pdf_downloaded": true,
+      "pdf_size_bytes": 854301,
+      "pdf_path": "2026-06-06/agent/2606.06308.pdf"
+    },
+    {
+      "id": "2606.06281",
+      "title": "Multi-Resolution Tactile Imitation Learning for Contact-Rich Robotic Manipulation",
+      "abstract": "Touch sensing is beneficial for solving a wide variety of manipulation tasks. While there exists a wide range of tactile sensors with different properties, exploiting the fusion of multiple heterogeneous tactile sensors to improve manipulation learning remains underexplored. We present Multi-Resolution Tactile Sensing (MiTaS), a representation framework that leverages multiple tactile sensors operating at different temporal resolutions in order to solve complex contact-rich manipulation tasks. We propose a novel architecture using modality-specific convolutional stems and transformer-based fusion that effectively fuses information from an RGB camera stream, a vision-based GelSight Mini sensor and a high-frequency event-based Evetac sensor. This multi-sensor representation then conditions a flow-matching policy for solving downstream tasks. Experimental results across five contact-rich manipulation tasks demonstrate the effectiveness of multi-resolution tactile features in imitation learning. MiTaS achieves an average success rate of 80 %, while vision-only (31 %) and visual-tactile (54 %) baselines cannot solve the task reliably. Co-training a visuo-tactile model with multi-tactile data boosts performance by over 10 \\% in certain tasks, without having access to the Evetac sensor during policy evaluation. A detailed sensor-reading and attention analysis reveals the importance of different sensors throughout task execution, validating our multi-resolution tactile sensing approach. Project Page: http://mitas-touch.github.io.",
+      "authors": [
+        "Rickmer Krohn",
+        "Erik Helmut",
+        "Niklas Funk",
+        "Jan Peters",
+        "Vignesh Prasad",
+        "Georgia Chalvatzaki"
+      ],
+      "published": "2026-06-04T15:23:03Z",
+      "updated": "2026-06-04T15:23:03Z",
+      "url": "https://arxiv.org/abs/2606.06281",
+      "pdf_url": "https://arxiv.org/pdf/2606.06281.pdf",
+      "primary_category": "cs.RO",
+      "categories": [
+        "cs.RO"
+      ],
+      "tags": [
+        "cs.RO"
+      ],
+      "domain": "Agent",
+      "pdf_downloaded": false,
+      "pdf_size_bytes": null,
+      "pdf_path": null
+    },
+    {
+      "id": "2606.06261",
+      "title": "DAST: A VLM-LLM Framework for Cross-Interface Anomaly Detection in O-RAN",
+      "abstract": "O-RAN enables a disaggregated baseband stack with programmable functions that communicate over standardized open interfaces. The same openness that enables multi-vendor composition also expands the attack surface across logically decoupled tiers that make up the compute continuum. Among these threats, Denial-of-Service and performance-degradation attacks, which account for the majority of catalogued O-RAN threats, are particularly difficult to detect. Traditional Time-Series Anomaly Detection (TSAD) methods fail in this new regime where labelled baselines are scarce, threats evolve faster than detectors can be retrained, and the high-dimensional multivariate telemetry overwhelms monolithic inference models. To address these challenges, we present DAST, a zero-shot multi-agent framework for cross-interface anomaly detection in O-RAN that chains a three-stage VLM $\\rightarrow$ LLM $\\rightarrow$ VLM pipeline. DAST converts multivariate KPI streams into visual representations, scores textual per-interface descriptions against O-RAN domain knowledge, and verifies suspects on high-resolution heatmaps to output the problematic interfaces, the anomalous time intervals, an indicative O-RAN WG11-aligned operational impact rating and the decision rationale. We evaluate DAST on real network traces collected from an O-RAN testbed under representative performance degradation scenarios, achieving 0.910 F1-Score and 0.843 Accuracy, outperforming state-of-the-art TSAD baselines.",
+      "authors": [
+        "Francesco Spinelli",
+        "Esteban Municio",
+        "Pau Baguer",
+        "Gines Garcia-Aviles",
+        "Xavier Costa-Perez"
+      ],
+      "published": "2026-06-04T15:05:04Z",
+      "updated": "2026-06-04T15:05:04Z",
+      "url": "https://arxiv.org/abs/2606.06261",
+      "pdf_url": "https://arxiv.org/pdf/2606.06261.pdf",
+      "primary_category": "cs.NI",
+      "categories": [
+        "cs.NI",
+        "cs.AI",
+        "cs.ET",
+        "cs.MA"
+      ],
+      "tags": [
+        "cs.AI",
+        "cs.ET",
+        "cs.MA",
+        "cs.NI"
+      ],
+      "domain": "Agent",
+      "pdf_downloaded": true,
+      "pdf_size_bytes": 1498817,
+      "pdf_path": "2026-06-06/agent/2606.06261.pdf"
+    },
+    {
+      "id": "2606.06250",
+      "title": "Breaking Time: A Fully Gaussian Framework for Distributed and Continuous-Time SLAM",
+      "abstract": "Continuous-time SLAM provides a principled framework for fusing heterogeneous sensors while estimating smooth trajectories, and is particularly well-suited for handling heterogeneous, asynchronous sensor streams with non-uniform readout patterns, such as rolling shutter cameras, LiDAR scanners, radar sweeps, or event-based sensors. In this work, we introduce G-solver, a fully Gaussian and distributed framework that combines Gaussian Belief Propagation (GBP) with Gaussian Process (GP) motion priors for continuous-time trajectory estimation. Our GP model provides a probabilistic representation of the trajectory, enabling consistent interpolation and the use of data-driven hyperparameters, while GBP offers a scalable message-passing formulation well-suited for decentralized settings. The resulting solver naturally extends to multi-camera scenarios without specialized synchronization or engineering effort. We evaluate the approach on synthetic and real data, including rolling shutter and distributed multi-camera optimization, demonstrating accurate and stable estimation with runtimes comparable to existing continuous-time methods. An open-source implementation is released.",
+      "authors": [
+        "Davide Ceriola",
+        "Simone Ferrari",
+        "Luca Di Giammarino",
+        "Leonardo Brizi",
+        "Giorgio Grisetti"
+      ],
+      "published": "2026-06-04T14:52:25Z",
+      "updated": "2026-06-04T14:52:25Z",
+      "url": "https://arxiv.org/abs/2606.06250",
+      "pdf_url": "https://arxiv.org/pdf/2606.06250.pdf",
+      "primary_category": "cs.RO",
+      "categories": [
+        "cs.RO"
+      ],
+      "tags": [
+        "cs.RO"
+      ],
+      "domain": "Agent",
+      "pdf_downloaded": true,
+      "pdf_size_bytes": 12972385,
+      "pdf_path": "2026-06-06/agent/2606.06250.pdf"
+    },
+    {
+      "id": "2606.06245",
+      "title": "MPCoT: Reward-Guided Multi-Path Latent Reasoning for Test-Time Scalable Vision-Language-Action",
+      "abstract": "Vision-Language-Action (VLA) policies remain brittle in long-horizon and high-uncertainty control, where one-pass action decoding provides limited inference-time deliberation. Explicit chain-of-thought can increase reasoning depth, but introduces token latency and an indirect text-to-action interface. We propose MPCoT, a reward-guided multi-path latent reasoning framework that initializes $M$ hypotheses, refines them for K weight-tied steps, and softly aggregates them before action decoding. A training-only path-preference objective evaluates candidate action branches with expert-action consistency, world-model/VLM-based progress, and success feedback to align the latent path scorer with downstream execution quality. MPCoT preserves the original 8-step action interface, generates zero reasoning tokens, and exposes configurable inference controls (K,M). Under matched protocols on LIBERO and CALVIN, MPCoT improves long-horizon performance, with ablations confirming depth-width effects, confidence-weighted aggregation, and reward-guided path supervision.",
+      "authors": [
+        "Boyang Zhang",
+        "Lianlei Shan"
+      ],
+      "published": "2026-06-04T14:48:44Z",
+      "updated": "2026-06-04T14:48:44Z",
+      "url": "https://arxiv.org/abs/2606.06245",
+      "pdf_url": "https://arxiv.org/pdf/2606.06245.pdf",
+      "primary_category": "cs.RO",
+      "categories": [
+        "cs.RO",
+        "cs.AI"
+      ],
+      "tags": [
+        "cs.AI",
+        "cs.RO"
+      ],
+      "domain": "Agent",
+      "pdf_downloaded": true,
+      "pdf_size_bytes": 859542,
+      "pdf_path": "2026-06-06/agent/2606.06245.pdf"
+    },
+    {
+      "id": "2606.06219",
+      "title": "CLEAR: Cognition and Latent Evaluation for Adaptive Routing in End-to-End Autonomous Driving",
+      "abstract": "End-to-end autonomous driving models often struggle to balance multi-modal maneuver generation with real-time inference constraints. While diffusion models successfully capture diverse driving behaviors, their iterative denoising process incurs unacceptable latency for safety-critical deployment. To address this, we propose CLEAR (Cognition and Latent Evaluation for Adaptive Routing), a framework that combines ultra-fast generative planning with deep semantic reasoning. CLEAR employs Drive-JEPA as the visual encoder and replaces the multi-step denoising chain with a single-step conditional drift in a VAE latent space, introducing a conditioning coefficient to balance diversity and expert precision. Meanwhile, we fully fine-tune Qwen~3.5~0.8B on driving QA pairs to extract scene-aware hidden states. These states guide both an Adaptive Scheduler, which selects the conditioning coefficient $\u03b1$ and sample count $N$ from a discrete set of predefined schemes, and a cross-attention scorer that selects the optimal trajectory from candidates. On the NAVSIM v1 benchmark, CLEAR achieves a state-of-the-art PDMS of 93.7. Our results demonstrate that high-fidelity, multi-modal planning can be executed efficiently without dense geometric annotations or iterative sampling.",
+      "authors": [
+        "Yining Xing",
+        "Zehong Ke",
+        "Zhiyuan Liu",
+        "Yanbo Jiang",
+        "Wenhao Yu",
+        "Jianqiang Wang"
+      ],
+      "published": "2026-06-04T14:32:10Z",
+      "updated": "2026-06-04T14:32:10Z",
+      "url": "https://arxiv.org/abs/2606.06219",
+      "pdf_url": "https://arxiv.org/pdf/2606.06219.pdf",
+      "primary_category": "cs.RO",
+      "categories": [
+        "cs.RO",
+        "cs.AI"
+      ],
+      "tags": [
+        "cs.AI",
+        "cs.RO"
+      ],
+      "domain": "Agent",
+      "pdf_downloaded": true,
+      "pdf_size_bytes": 1409300,
+      "pdf_path": "2026-06-06/agent/2606.06219.pdf"
+    },
+    {
+      "id": "2606.06218",
+      "title": "TAM: Torque Adaptation Module for Robust Motion Transfer in Manipulation",
+      "abstract": "A policy tuned for one robot often behaves differently on another, whether due to the sim-to-real gap, unknown payloads, or the differing dynamics of two instances of the same robot. In contact-rich, dynamic manipulation, even small motion discrepancies can result in failure to track reference motion, since they disrupt the timing and modes of contact. Common remedies, such as domain randomization or system identification, either produce overly conservative task policies or require data that must be recollected for each robot or payload. We introduce the Torque Adaptation Module (TAM), a learned module that adapts the torque commands sent to the robot to match the behavior of an ideal robot. TAM operates between the low-level controller that tracks the policy's actions and the robot's torque interface. It includes a history encoder that embeds proprioceptive history into a latent state and a torque adaptor that computes residual torque corrections. Because TAM depends only on proprioceptive history and not on policy observations, or the action space, the same TAM weights can be reused to adapt policies with different action spaces (joint targets, end-effector targets, or direct torques). The policies themselves do not need to be trained with domain randomization of robot parameters. Instead, we offload the need for domain randomization to TAM by training it entirely in randomized simulation, using multi-robot pretraining followed by a robot-specific fine-tuning step that still requires no real-robot data. We evaluate TAM zero-shot on a real Franka Panda robot across dynamic manipulation tasks that include a vision-based box pushing policy (from RL), a flip policy (from BC), and an MPC ball-on-plate balancing. Our experiments show that TAM improves zero-shot real-robot execution compared to online system identification and RMA baselines and enables robust dynamic manipulation performance.",
+      "authors": [
+        "Dongwon Son",
+        "Florian Shkurti",
+        "Jason Lee",
+        "Naman Shah",
+        "Beomjoon Kim",
+        "Dieter Fox"
+      ],
+      "published": "2026-06-04T14:31:54Z",
+      "updated": "2026-06-04T14:31:54Z",
+      "url": "https://arxiv.org/abs/2606.06218",
+      "pdf_url": "https://arxiv.org/pdf/2606.06218.pdf",
+      "primary_category": "cs.RO",
+      "categories": [
+        "cs.RO",
+        "cs.AI"
+      ],
+      "tags": [
+        "cs.AI",
+        "cs.RO"
+      ],
+      "domain": "Agent",
+      "pdf_downloaded": true,
+      "pdf_size_bytes": 5889246,
+      "pdf_path": "2026-06-06/agent/2606.06218.pdf"
+    },
+    {
+      "id": "2606.06189",
+      "title": "A Swarm Approach to Public Transit Using On-demand Routing in a Slime-Mold-Inspired Framework",
+      "abstract": "Demand-responsive transit (DRT) is a flexible alternative to traditional, fixed-route mass-transit networks. Although DRT can function well in low-density communities, high operating costs and low reliability are common issues. We propose that these issues can be mitigated by moving from a centralized, manually-scheduled scheme to a distributed system capable of dynamically routing multiple vehicles using a slime-mold-inspired routing algorithm to maximize network effectiveness. We additionally introduce the method of dynamic transfers to further optimize transit network efficiency. All passenger allocation and dynamic transfers are handled via a continual cooperative bidding process by the buses. In this paper, we present simulated results for a swarm-driven transit network in suburban, urban, and semi-rural scenarios, using map networks pulled from OpenStreetMap. We show that our approach increases passenger delivery rates relative to a fixed-network approach by 28%, 49%, and 101%, respectively, and results in over 75% reduction in walking time in all cases.",
+      "authors": [
+        "Lindsay Burke",
+        "Maxfield Comstock",
+        "Jason Graham",
+        "Ruth Malenda",
+        "Simon Garnier",
+        "Petras Swissler"
+      ],
+      "published": "2026-06-04T13:59:24Z",
+      "updated": "2026-06-04T13:59:24Z",
+      "url": "https://arxiv.org/abs/2606.06189",
+      "pdf_url": "https://arxiv.org/pdf/2606.06189.pdf",
+      "primary_category": "cs.MA",
+      "categories": [
+        "cs.MA"
+      ],
+      "tags": [
+        "cs.MA"
+      ],
+      "domain": "Agent",
+      "pdf_downloaded": true,
+      "pdf_size_bytes": 1518436,
+      "pdf_path": "2026-06-06/agent/2606.06189.pdf"
+    },
+    {
+      "id": "2606.06162",
+      "title": "Learning to Contest: Decentralized Robust Fairness in Cooperative MARL via Cross-Attention",
+      "abstract": "Fair cooperative multi-agent RL (MARL) teams maximizing egalitarian welfare are exploitable: a single selfish agent free-rides on the surplus fair agents forgo to raise the worst-off. A centralized need-based allocator removes it, but only by taking allocation out of agents' hands; whether decentralized policies can be robust was left open. We show this futility is an artifact of all-or-nothing contention. Under graded contention (a contested resource delivers $1-c$, wasting $c$), we prove that for any $c<1$ a worst-off cooperator that contests a free-rider strictly improves on yielding, so decentralized leverage exists (Prop. 1). Realizing it is a coordination problem under uncertainty: the number of free-riders is unknown and variable, so any fixed rule is dominated. We introduce CAN, a permutation-equivariant cross-attention policy over agents' observed behaviour that infers the number of free-riders and responds proportionally: turn-taking when none, contesting just enough when some. Trained against an adversarial league (PSRO), CAN keeps best-response exploitability low ($\u03c1\\approx1.2$-$1.5$, vs. $\u03c1=N$ unprotected) across the contention range, wasting almost nothing at $D=0$ (efficiency $\\approx1.0$) and retaining most of it at $D\\geq1$ (efficiency 0.83-0.96), approaching the centralized oracle on both axes, no central allocator. Fair-MARL learners fail on complementary axes (GGF/FEN yield and are exploitable, SOTO all-contests and wastes), while CAN is both. On two further games we find clear scope, not blanket generality: CAN stays efficient and Pareto-dominates the fair learners, but its robustness holds only in proportion to the contest leverage: strong on a multi-server game, partial when it weakens, absent under winner-take-all (Prop. 1 fails). We also report its fragilities: weak leverage and zero-shot transfer to larger teams degrade it at high contention.",
+      "authors": [
+        "Can Savc\u0131"
+      ],
+      "published": "2026-06-04T13:34:50Z",
+      "updated": "2026-06-04T13:34:50Z",
+      "url": "https://arxiv.org/abs/2606.06162",
+      "pdf_url": "https://arxiv.org/pdf/2606.06162.pdf",
+      "primary_category": "cs.MA",
+      "categories": [
+        "cs.MA",
+        "cs.GT"
+      ],
+      "tags": [
+        "cs.GT",
+        "cs.MA"
+      ],
+      "domain": "Agent",
+      "pdf_downloaded": true,
+      "pdf_size_bytes": 767893,
+      "pdf_path": "2026-06-06/agent/2606.06162.pdf"
+    },
+    {
+      "id": "2606.06139",
+      "title": "MotionDisco: Motion Discovery for Extreme Humanoid Loco-Manipulation",
+      "abstract": "We present MotionDisco, a framework that discovers contact-rich, long-horizon humanoid loco-manipulation motions from scratch, without relying on teleoperation or motion retargeting from human demonstrations. This is challenging because the space of possible contact interactions grows combinatorially with the task horizon and the number of objects in the scene. MotionDisco enables rapid discovery of novel motions by coupling a large language model (LLM) guided evolutionary search over sequences of interactions with an efficient sequential kinodynamic trajectory optimizer and pruning strategy, enabling the rapid discovery of novel skills. Through extensive ablation studies, we show that our LLM-guided search discovers successful whole-body trajectories across several challenging long-horizon tasks. Finally, by training reinforcement learning tracking policies on the discovered trajectories, we transfer the motions to a real humanoid robot. This is the first work to discover and deploy long-horizon humanoid loco-manipulation skills entirely through automated evolutionary search. Supplementary videos of the experiments are available at: https://youtu.be/DHiVz34QYlw.",
+      "authors": [
+        "Ilyass Taouil",
+        "Michal Ciebelski",
+        "Shafeef Omar",
+        "Haizhou Zhao",
+        "Angela Dai",
+        "Aaron M. Johnson",
+        "Majid Khadiv"
+      ],
+      "published": "2026-06-04T13:19:49Z",
+      "updated": "2026-06-04T13:19:49Z",
+      "url": "https://arxiv.org/abs/2606.06139",
+      "pdf_url": "https://arxiv.org/pdf/2606.06139.pdf",
+      "primary_category": "cs.RO",
+      "categories": [
+        "cs.RO"
+      ],
+      "tags": [
+        "cs.RO"
+      ],
+      "domain": "Agent",
+      "pdf_downloaded": false,
+      "pdf_size_bytes": null,
+      "pdf_path": null
+    },
+    {
+      "id": "2606.06130",
+      "title": "Towards Realistic 3D Sonar Simulation",
+      "abstract": "As underwater robotics research increasingly addresses complex 3D perception and autonomous navigation, the fidelity of sonar simulation has become a key factor in algorithm development. Current simulation frameworks typically rely on geometry-driven rendering, approximating 3D sonar as an underwater equivalent to LiDAR, which fails to account for fundamental acoustic phenomena such as refraction, multi-path interference, and phase-dependent signal formation. This paper proposes a modular architecture for realistic 3D sonar simulation that integrates GPU-accelerated graphics engines with physically grounded acoustic propagation principles. We implement a volumetric 3D sonar model within the NVIDIA Isaac Sim environment, modeled after the Water Linked 3D-15 sensor, and integrate it into a comprehensive underwater simulation framework. The system is validated through a hardware-in-the-loop configuration, where a modified FastLIO2 SLAM pipeline, executed on an NVIDIA Jetson Orin Nano, performs sensor fusion using synthetic 3D sonar, DVL, IMU, and pressure data. Finally, a qualitative comparison between simulated outputs and real-world data from harbor sheet-pile inspections is provided, characterizing the remaining sim-to-real gap and establishing a roadmap toward fully acoustics-driven volumetric sensing.",
+      "authors": [
+        "Youssef Attia",
+        "Davide Costa",
+        "Francesco Wanderlingh",
+        "Filippo Campagnaro",
+        "Enrico Simetti"
+      ],
+      "published": "2026-06-04T13:16:32Z",
+      "updated": "2026-06-04T13:16:32Z",
+      "url": "https://arxiv.org/abs/2606.06130",
+      "pdf_url": "https://arxiv.org/pdf/2606.06130.pdf",
+      "primary_category": "cs.RO",
+      "categories": [
+        "cs.RO"
+      ],
+      "tags": [
+        "cs.RO"
+      ],
+      "domain": "Agent",
+      "pdf_downloaded": true,
+      "pdf_size_bytes": 2063474,
+      "pdf_path": "2026-06-06/agent/2606.06130.pdf"
+    },
+    {
+      "id": "2606.06077",
+      "title": "3D Underwater Path Planning via Generative Flow Field Surrogates",
+      "abstract": "Autonomous underwater vehicle (AUV) launch and recovery (LAR) into the hull of an advancing host platform requires traversal of a complex, three-dimensional propeller wake whose hydrodynamic structure cannot be characterised by a uniform current model. High-fidelity Reynolds-Averaged Navier-Stokes (RANS) Computational Fluid Dynamics (CFD) simulations resolve this structure with sufficient accuracy for path planning, but their computational cost renders them impractical for onboard use. We address this gap by integrating two conditional generative adversarial network (cGAN) architectures -- a regularised PatchGAN and a 2D3DGAN with self-attention -- as drop-in replacements for RANS CFD data within a three-dimensional, energy-weighted A* path planning framework. Both generators are driven by a hierarchical pipeline that synthesises full $128^3$ voxel flow field volumes from scalar operating condition inputs alone, with end-to-end inference times of approximately 28-146 $\u03bc$s, compared to hours for a single RANS computation. We benchmark all four environmental knowledge levels: uniform current, ground-truth CFD, PatchGAN, and 2D3DGAN~SA across 19,800 independently generated trajectories spanning 550 distinct flow conditions. Full CFD wake knowledge reduces energy expenditure by 5.7-12.5% and high-velocity wake-core encounters by up to 77.8% relative to uniform-current planning, with both benefits scaling with operating severity. The cGAN surrogates recover approximately 45-60% of the CFD energy benefit and high-velocity cell avoidance benefit while operating at inference speeds compatible with edge device use. These results provide the first systematic quantification of the downstream path planning value of cGAN-predicted hydrodynamic fields in a three-dimensional maritime robotics application.",
+      "authors": [
+        "Zachary Cooper-Baldock",
+        "Paulo E. Santos",
+        "Russell S. A. Brinkworth",
+        "Karl Sammut"
+      ],
+      "published": "2026-06-04T12:14:59Z",
+      "updated": "2026-06-04T12:14:59Z",
+      "url": "https://arxiv.org/abs/2606.06077",
+      "pdf_url": "https://arxiv.org/pdf/2606.06077.pdf",
+      "primary_category": "cs.RO",
+      "categories": [
+        "cs.RO",
+        "cs.LG"
+      ],
+      "tags": [
+        "cs.LG",
+        "cs.RO"
+      ],
+      "domain": "Agent",
+      "pdf_downloaded": true,
+      "pdf_size_bytes": 2058859,
+      "pdf_path": "2026-06-06/agent/2606.06077.pdf"
+    },
+    {
+      "id": "2606.06061",
+      "title": "A Conversational Framework for Human-Robot Collaborative Manipulation with Distributed Generative AI models",
+      "abstract": "This paper presents a distributed conversational framework for human-robot collaborative manipulation that integrates local language and vision-language models (VLMs) with a Robot Operating System 2 (ROS 2)-based execution stack. Language understanding, visual grounding, orchestration, and motion execution run as separate ROS 2 nodes, enabling flexible deployment across distributed hardware while maintaining a responsive control loop. From free-form user commands, the system generates structured action requests for pick, place, and handover. It uses a VLM to return image-space targets, which are converted into metric robot-frame goals using depth and calibration. A web dashboard exposes intermediate intent and grounding overlays (pixel, depth, and robot-frame) and requires explicit operator confirmation before any motion is executed. Experiments on a Franka FR3 platform evaluate end-to-end task reliability and latency under increasing working table scene ambiguity and compare alternative LLM/VLM configurations in the same pipeline. Code and full documentation are available at [github.com/cogrob-tuni/franka-llm](https://github.com/cogrob-tuni/franka-llm).",
+      "authors": [
+        "Arash Ghasemzadeh Kakroudi",
+        "Roel Pieters"
+      ],
+      "published": "2026-06-04T12:00:41Z",
+      "updated": "2026-06-04T12:00:41Z",
+      "url": "https://arxiv.org/abs/2606.06061",
+      "pdf_url": "https://arxiv.org/pdf/2606.06061.pdf",
+      "primary_category": "cs.RO",
+      "categories": [
+        "cs.RO"
+      ],
+      "tags": [
+        "cs.RO"
+      ],
+      "domain": "Agent",
+      "pdf_downloaded": true,
+      "pdf_size_bytes": 6097306,
+      "pdf_path": "2026-06-06/agent/2606.06061.pdf"
+    },
+    {
+      "id": "2606.06049",
+      "title": "L-SDPPO: Policy Optimization of Spiking Diffusion Policy for Intra-vehicular Robotic Manipulation",
+      "abstract": "Intra-vehicular robots in spacecraft help reduce astronaut workload and improve mission efficiency. Recent research focuses on using deep learning methods to achieve the acute control required for operations in these complex environments. However, objects exhibit unpredictable, unconstrained drift without gravitational damping. These factors demand robustness against complex multimodal action distributions. Diffusion policies (DP) can model these complex actions, but their iterative sampling process consumes too much energy for the limited power budgets of spacecraft. We therefore propose a low-energy intra-vehicular robotic manipulation framework, L-SDPPO, in which the Spiking Diffusion Policy (SDP) is optimized with a reinforcement learning (RL) algorithm. Furthermore, to address the insufficient perception of dynamic spatiotemporal features in microgravity, we propose the statedependent latency injection (SDLI) mechanism, which mimics biological neural delays to dynamically regulate the timing of input information. Evaluation on five representative intra-vehicular daily tasks (e.g., hatch opening and precision container capping) shows that our method consistently achieves higher success rates and lower energy consumption, compared to the state-of-the-art robotic manipulation methods. These results demonstrate our method is a viable intra-vehicular robotic manipulation method.",
+      "authors": [
+        "Liwen Zhang",
+        "Dong Zhou",
+        "Guanghui Sun",
+        "Yifei Zheng",
+        "Yuhui Hu",
+        "Kaihong Ouyang",
+        "Zuoquan Zhao"
+      ],
+      "published": "2026-06-04T11:45:37Z",
+      "updated": "2026-06-04T11:45:37Z",
+      "url": "https://arxiv.org/abs/2606.06049",
+      "pdf_url": "https://arxiv.org/pdf/2606.06049.pdf",
+      "primary_category": "cs.RO",
+      "categories": [
+        "cs.RO"
+      ],
+      "tags": [
+        "cs.RO"
+      ],
+      "domain": "Agent",
+      "pdf_downloaded": true,
+      "pdf_size_bytes": 18727063,
+      "pdf_path": "2026-06-06/agent/2606.06049.pdf"
+    },
+    {
+      "id": "2606.06041",
+      "title": "Sample-efficient Low-level Motion Planning for Robotic Manipulation Tasks via Zero-shot Transfer Learning",
+      "abstract": "As robotic systems become more sophisticated, the growing complexity of their motion planning models and the longer training times pose substantial challenges. Evolutionary algorithms such as the Sample-efficient Cross-Entropy Method (iCEM) have recently demonstrated promising potential for low-level real-time planning by leveraging efficient knowledge reuse strategies to improve performance. Although effective in many control tasks, iCEM's performance can be constrained in more complex scenarios, particularly those requiring stacking, sliding, and shelf placement. In this work, we propose a novel iCEM+TL framework that explicitly leverages Transfer Learning (TL), where key iCEM parameters are transferred from simpler upstream tasks to guide more complex downstream tasks. Additionally, we applied Reward Redesign (RR) through task decomposition for stacking objects and shelf placement to optimize task-specific performance. Results from the simulation show that our framework achieves success rate improvements of up to 23%. The framework is further validated on a real Franka Emika robot in a stacking task, demonstrating its practical feasibility for real-world deployment.",
+      "authors": [
+        "Yuanzhi He",
+        "Victor Romero-Cano",
+        "Jos\u00e9 J. Pati\u00f1o",
+        "Juan David Hern\u00e1ndez",
+        "William Sawtell",
+        "Gualtiero Colombo"
+      ],
+      "published": "2026-06-04T11:34:50Z",
+      "updated": "2026-06-04T11:34:50Z",
+      "url": "https://arxiv.org/abs/2606.06041",
+      "pdf_url": "https://arxiv.org/pdf/2606.06041.pdf",
+      "primary_category": "cs.RO",
+      "categories": [
+        "cs.RO",
+        "cs.AI",
+        "cs.NE"
+      ],
+      "tags": [
+        "cs.AI",
+        "cs.NE",
+        "cs.RO"
+      ],
+      "domain": "Agent",
+      "pdf_downloaded": true,
+      "pdf_size_bytes": 3508498,
+      "pdf_path": "2026-06-06/agent/2606.06041.pdf"
+    }
+  ]
+}
