@@ -1,0 +1,856 @@
+{
+  "domain": "Vision",
+  "date": "2026-06-10",
+  "count": 27,
+  "papers": [
+    {
+      "id": "2606.11188",
+      "title": "ARM: An AutoRegressive Large Multimodal Model with Unified Discrete Representations",
+      "abstract": "This paper introduces ARM, a discrete representation-based AutoRegressive Model that unifies image understanding, generation, and editing within a next-token prediction framework. ARM is built on three efforts: first, we train a discrete semantic visual tokenizer that maps images into compact token sequences. Our tokenizer is supervised with multiple objectives that jointly promote semantic discriminability, language alignment and faithful reconstruction, thereby supporting diverse tasks in a shared latent space. With this, we train a 7B autoregressive model over large-scale text and image token sequences, seamlessly developing vision-language perception and generation capabilities. Finally, to further improve preference-aligned behavior for text-to-image generation and instruction-guided editing, ARM applies reinforcement learning (RL) to optimize task-level objectives such as visual quality, instruction adherence, and edit consistency. Surprisingly, the results show that RL not only substantially improves performance on the target tasks (e.g., raising WISE overall from 0.50 to 0.56, GEdit-Bench-EN G_O from 5.75 to 6.68), but also induces cross-task synergy between text-to-image generation and editing. Collectively, these findings highlight autoregressive modeling, when paired with strong representations and preference optimization, as a scalable foundation for multimodal intelligence. Code: https://github.com/wdrink/ARM.",
+      "authors": [
+        "Junke Wang",
+        "Xiao Wang",
+        "Jiacheng Pan",
+        "Xuefeng Hu",
+        "Feng Li",
+        "Jingxiang Sun",
+        "Chaorui Deng",
+        "Zilong Chen",
+        "Yunpeng Chen",
+        "Kaibin Tian",
+        "Matthew Gwilliam",
+        "Hao Chen",
+        "Danhui Guan",
+        "Kun Xu",
+        "Weilin Huang",
+        "Zuxuan Wu",
+        "Haoqi Fan",
+        "Yu-Gang Jiang",
+        "Zhenheng Yang"
+      ],
+      "published": "2026-06-09T17:59:28Z",
+      "updated": "2026-06-09T17:59:28Z",
+      "url": "https://arxiv.org/abs/2606.11188",
+      "pdf_url": "https://arxiv.org/pdf/2606.11188.pdf",
+      "primary_category": "cs.CV",
+      "categories": [
+        "cs.CV"
+      ],
+      "tags": [
+        "cs.CV"
+      ],
+      "domain": "Vision",
+      "pdf_downloaded": true,
+      "pdf_size_bytes": 7988231,
+      "pdf_path": "2026-06-10/vision/2606.11188.pdf"
+    },
+    {
+      "id": "2606.11187",
+      "title": "Next Forcing: Causal World Modeling with Multi-Chunk Prediction",
+      "abstract": "Autoregressive video generation has emerged as a powerful paradigm for World Action Models (WAMs). However, existing approaches suffer from slow training convergence and limited converged accuracy, particularly at high frame rates, as the training supervision is confined to the current chunk without explicit signals about future dynamics; they also suffer from slow inference due to iterative video denoising. In this paper, we present Next Forcing, a multi-chunk prediction (MCP) framework for causal world modeling that enables faster training, higher accuracy, and accelerated inference. Inspired by multi-token prediction in large language models, Next Forcing introduces an MCP training objective that augments the main model with lightweight auxiliary MCP modules to simultaneously denoise video chunks at multiple future temporal horizons (next$^1$, next$^2$, next$^3$ chunks). These MCP modules form a causal chain across prediction depths, where intermediate features fused from multiple layers of the main model are leveraged to predict future dynamics, allowing near-future predictions to inform farther-future ones and providing dense multi-scale temporal supervision back to the main model. During training, the MCP modules significantly accelerate convergence and improve converged accuracy, especially at high frame rates: at 50 fps, Next Forcing achieves a 93.1% relative improvement over LingBot-VA at 5k training steps and 2.3x faster convergence, and establishes new state-of-the-art results on the RoboTwin benchmark (94.1/93.5% on Clean/Random). At inference, the MCP modules can be retained to predict the next video chunk in parallel with the current one, achieving 2x inference acceleration. Next Forcing also demonstrates significant improvements on PhyWorld, a benchmark evaluating adherence to physical laws in video generation, and over 50% FVD reduction on general video pretraining.",
+      "authors": [
+        "Gangwei Xu",
+        "Qihang Zhang",
+        "Jiaming Zhou",
+        "Xing Zhu",
+        "Yujun Shen",
+        "Xin Yang",
+        "Yinghao Xu"
+      ],
+      "published": "2026-06-09T17:59:22Z",
+      "updated": "2026-06-09T17:59:22Z",
+      "url": "https://arxiv.org/abs/2606.11187",
+      "pdf_url": "https://arxiv.org/pdf/2606.11187.pdf",
+      "primary_category": "cs.CV",
+      "categories": [
+        "cs.CV"
+      ],
+      "tags": [
+        "cs.CV"
+      ],
+      "domain": "Vision",
+      "pdf_downloaded": true,
+      "pdf_size_bytes": 1950137,
+      "pdf_path": "2026-06-10/vision/2606.11187.pdf"
+    },
+    {
+      "id": "2606.11186",
+      "title": "AnyMod-LLVE: Low-Light Video Enhancement with Modality-Agnostic Inference",
+      "abstract": "Low-light video enhancement (LLVE) remains a challenging task due to severe information degradation under low-illumination conditions. Recent multimodal approaches have significantly improved enhancement performance by incorporating auxiliary modalities, such as event streams and infrared images. However, these methods typically assume the availability of these modalities at inference, which is often not feasible in real-world scenarios. To solve this problem, in this work, we propose AMNet, a unified multimodal framework for LLVE, to support flexible modality-agnostic inference, where auxiliary modalities may be unavailable. To address the issue of modality absence, we introduce a Spatial-Spectral Dual-Gated Translator that learns the correspondence between auxiliary modalities and RGB inputs, producing implicit auxiliary representations to support the robust enhancement. Additionally, to fully facilitate the learning of cross-modal correspondence, we conduct large-scale multimodal pretraining based on the RGB-only dataset with synthetic auxiliary modalities. Extensive experiments demonstrate that AMNet could handle arbitrary inference-time modality combinations and exhibits superior performance for LLVE under modality absence conditions. Code and models are available on the project page.",
+      "authors": [
+        "Hangfeng Liang",
+        "Yutao Hu",
+        "Yanhan Hu",
+        "Xiaohan Wu",
+        "Wenqi Shao",
+        "Ying Fu"
+      ],
+      "published": "2026-06-09T17:59:05Z",
+      "updated": "2026-06-09T17:59:05Z",
+      "url": "https://arxiv.org/abs/2606.11186",
+      "pdf_url": "https://arxiv.org/pdf/2606.11186.pdf",
+      "primary_category": "cs.CV",
+      "categories": [
+        "cs.CV"
+      ],
+      "tags": [
+        "cs.CV"
+      ],
+      "domain": "Vision",
+      "pdf_downloaded": true,
+      "pdf_size_bytes": 4947565,
+      "pdf_path": "2026-06-10/vision/2606.11186.pdf"
+    },
+    {
+      "id": "2606.11180",
+      "title": "Lip Forcing: Few-Step Autoregressive Diffusion for Real-time Lip Synchronization",
+      "abstract": "Diffusion-based lip synchronization models achieve strong visual quality and audio-visual alignment, but full-sequence bidirectional attention and many denoising steps make them impractical for real-time inference. We present Lip Forcing, to our knowledge the first autoregressive diffusion method for video-to-video (V2V) lip synchronization, which distills a 14B audio-conditioned bidirectional video diffusion teacher into causal students. At inference, the students generate each chunk in only two denoising steps without inference-time CFG, enabling real-time lip synchronization. A lip-sync-specific teacher-trajectory analysis reveals a CFG fidelity-sync tradeoff: no-CFG predictions favor reference fidelity, whereas CFG-guided predictions favor synchronization within a mid-trajectory band. Lip Forcing translates this finding into three analysis-derived components: Sync-Window DMD, a two-step inference schedule, and a SyncNet-based reward. We validate Lip Forcing at two student scales, both distilled from the 14B teacher. The 1.3B student crosses into real-time streaming at 31 FPS, $17.6\\times$ faster than its same-scale bidirectional model. The 14B student, the largest diffusion model reported for V2V lip synchronization, runs $39.8\\times$ faster than its teacher at comparable reference fidelity. Time-to-first-frame is sub-millisecond at both scales, far below every diffusion baseline.",
+      "authors": [
+        "Paul Hyunbin Cho",
+        "Jinhyuk Jang",
+        "SeokYoung Lee",
+        "Joungbin Lee",
+        "Siyoon Jin",
+        "Heeseong Shin",
+        "Jung Yi",
+        "Yunjin Park",
+        "Chulmin Park",
+        "Seungryong Kim"
+      ],
+      "published": "2026-06-09T17:56:36Z",
+      "updated": "2026-06-09T17:56:36Z",
+      "url": "https://arxiv.org/abs/2606.11180",
+      "pdf_url": "https://arxiv.org/pdf/2606.11180.pdf",
+      "primary_category": "cs.CV",
+      "categories": [
+        "cs.CV"
+      ],
+      "tags": [
+        "cs.CV"
+      ],
+      "domain": "Vision",
+      "pdf_downloaded": false,
+      "pdf_size_bytes": null,
+      "pdf_path": null
+    },
+    {
+      "id": "2606.11176",
+      "title": "Data Journalist Agent: Transforming Data into Verifiable Multimodal Stories",
+      "abstract": "Data tells stories that shape society; the data journalist's job is to turn raw information into stories non-experts can trust. A high-quality news feature takes a newsroom team weeks: hunting for context, running statistics, choosing an angle, and designing visuals. Recent agents handle individual steps well: data-science agents close the analysis loop, while design agents synthesize beautiful websites. But can an agent serve as a data journalist end to end? We introduce Data Journalist Agent (Data2Story), a multi-agent framework that orchestrates specialized roles into a single virtual newsroom. Data2Story contributes two innovations. (i) Claims are evidence-grounded: an Inspector links every number, angle, and asset back to data, code, or an external reference. (ii) Articles are multimodally generative: rather than defaulting to plain text and static charts, Data2Story reasons about what readers will want to see, then deploys multimodal tools, such as interactive maps for geography and audio for music. We evaluate Data2Story on 18 articles, each paired with the originally published expert piece, along four axes: (a) human-agent angle coverage; (b) rubric evaluation with 53 participants across five dimensions; (c) computer-use agents as judges, a cost-saving proxy for how readers navigate interactive articles; and (d) verifiability, where a coding verifier re-executes statements against the data and checks claims against references. Data2Story produces competitive, evidence-traceable multimedia stories, with particular strength in transparency and auditability. Human articles retain an edge in editorial angle, creative design, and presentation. We position Data2Story as a collaborator for journalists, enabling more evidence-based, transparent, and verifiable reporting. Code and demos are available at https://data2story.github.io.",
+      "authors": [
+        "Kevin Qinghong Lin",
+        "Batu EI",
+        "Yuhong Shi",
+        "Pan Lu",
+        "Philip Torr",
+        "James Zou"
+      ],
+      "published": "2026-06-09T17:51:55Z",
+      "updated": "2026-06-09T17:51:55Z",
+      "url": "https://arxiv.org/abs/2606.11176",
+      "pdf_url": "https://arxiv.org/pdf/2606.11176.pdf",
+      "primary_category": "cs.CV",
+      "categories": [
+        "cs.CV",
+        "cs.CL",
+        "cs.CY",
+        "cs.HC"
+      ],
+      "tags": [
+        "cs.CL",
+        "cs.CV",
+        "cs.CY",
+        "cs.HC"
+      ],
+      "domain": "Vision",
+      "pdf_downloaded": false,
+      "pdf_size_bytes": null,
+      "pdf_path": null
+    },
+    {
+      "id": "2606.11155",
+      "title": "Mean Flow Distillation: Robust and Stable Distillation for Flow Matching Models",
+      "abstract": "Flow Matching models have demonstrated strong performance across a wide range of generative tasks. However, their reliance on ODE-based iterative sampling incurs substantial computational overhead in inference, which limits their applicability in real-time scenes. While distillation is a promising solution, existing approaches largely borrow from diffusion-based score matching, often failing to exploit the intrinsic geometric structure of flows and suffering from training instability, high variance, and degraded generation quality. In this paper, we propose Mean Flow Distillation (MFD), a novel distillation framework tailored for flow matching models. We theoretically demonstrate that MFD acts as a temporal low-pass filter, effectively suppressing the high-frequency optimization noise inherent in variational score distillation (VSD) while ensuring global trajectory consistency. We further prove the Mean Flow Matching Theorem, establishing that matching expected average velocities is sufficient for strict distribution alignment. Empirically, on challenging tasks of high-dimensional manifolds including 4D occupancy forecasting and text-to-image generation, MFD achieves state-of-the-art performance, enabling high-fidelity single-step generation.",
+      "authors": [
+        "An Zhao",
+        "Shengyuan Zhang",
+        "Zhongjian Sun",
+        "Yixiang Zhou",
+        "Zejian Li",
+        "Ling Yang",
+        "Tianrun Chen",
+        "Lingyun Sun"
+      ],
+      "published": "2026-06-09T17:39:19Z",
+      "updated": "2026-06-09T17:39:19Z",
+      "url": "https://arxiv.org/abs/2606.11155",
+      "pdf_url": "https://arxiv.org/pdf/2606.11155.pdf",
+      "primary_category": "cs.CV",
+      "categories": [
+        "cs.CV"
+      ],
+      "tags": [
+        "cs.CV"
+      ],
+      "domain": "Vision",
+      "pdf_downloaded": true,
+      "pdf_size_bytes": 9595085,
+      "pdf_path": "2026-06-10/vision/2606.11155.pdf"
+    },
+    {
+      "id": "2606.11152",
+      "title": "P3D-Bench: Benchmarking MLLMs for Parametric 3D Generation and Structural Reasoning",
+      "abstract": "Multimodal large language models can write code to produce complex programs as well as use programs to do 3D modeling, which opens up a new avenue for 3D generation powered by their priors, world knowledge and reasoning. Yet existing benchmarks rarely evaluate 3D modeling through code. Such modeling demands more than runnable code: from a text or visual specification, a model must generate a parametric 3D program that is geometrically precise, semantically aligned and assembly-consistent. We introduce P3D-Bench, a benchmark for parametric 3D generation. Unlike a 3D mesh, a parametric 3D program exposes explicit dimensions, construction operations and part relations, revealing whether a model recovers a design's structure, not just its appearance. Under a unified protocol, P3D-Bench covers three task families (Text-to-3D, Image-to-3D and Assembly-3D) and scores each output for executability, geometric fidelity, topology, text-grounded constraints, multiview semantic alignment and part-level structure. We evaluate frontier MLLMs and text-only LLMs on 400 text cases, 400 image cases and 203 annotated assemblies, with domain-specific models as reference points. Our extensive evaluation yields three findings. First, assemblies are the hardest setting, where models still fail to compose multiple parts into a coherent structure. Second, models can often recover the global shape and semantic identity of the target object, yet fail to reproduce the precise parametric geometry specified by the input. Third, part-level modeling remains weak on assemblies, where models recover neither the geometry of each part nor the right number of parts. These results position P3D-Bench as a benchmark for evaluating precise parametric geometry and part-level structure in parametric 3D generation.",
+      "authors": [
+        "Yikang Yang",
+        "Zhanpeng Hu",
+        "Youtian Lin",
+        "Mengqi Zhou",
+        "Jingxi Xu",
+        "Feihu Zhang",
+        "Jiaheng Liu",
+        "Yao Yao"
+      ],
+      "published": "2026-06-09T17:36:34Z",
+      "updated": "2026-06-09T17:36:34Z",
+      "url": "https://arxiv.org/abs/2606.11152",
+      "pdf_url": "https://arxiv.org/pdf/2606.11152.pdf",
+      "primary_category": "cs.CV",
+      "categories": [
+        "cs.CV"
+      ],
+      "tags": [
+        "cs.CV"
+      ],
+      "domain": "Vision",
+      "pdf_downloaded": true,
+      "pdf_size_bytes": 17349194,
+      "pdf_path": "2026-06-10/vision/2606.11152.pdf"
+    },
+    {
+      "id": "2606.11148",
+      "title": "MOFA-VTON: More Fashion Possibilities with Fine-Grained Adaptations in Virtual Try-On",
+      "abstract": "Virtual try-on aims to fit an in-shop clothing image onto a specific human body. An optimal virtual try-on method should provide diverse and flexible dressing options, accurately reflecting the varied wearing styles encountered in real-life scenarios, tailored to individual preferences and fashion aspirations. However, current methods predominantly perform a direct replacement of the original clothing with the target clothing, following the same dressing pattern. This limited control over clothing adaptation may result in fixed and monotonous try-on outputs. To delve into More Fashion Possibilities with Fine-Grained Adaptations in Virtual Try-On, we propose a novel virtual try-on method, termed MOFA-VTON, which allows adjustment for clothing adaptations in try-on results through simple sketches by users. Specifically, we first design a mask construction strategy that transforms user-drawn curve sketches into a dual-region mask, replacing the traditional clothing-agnostic mask and providing fine-grained layout guidance for the subsequent generation process. Further, we propose layout adjustment blocks that utilize the cross-attention mechanism to independently learn layout correspondences for upper and lower regions of the human body, refining the spatial arrangement of the two regions. With these implementations, our method enables flexible and fine-grained adaptations of target clothing, overcoming the constraints of a fixed layout. Extensive experiments on VITON-HD and DressCode datasets demonstrate that our proposed MOFA-VTON outperforms previous state-of-the-art methods and provides more fashion possibilities for virtual try-on.",
+      "authors": [
+        "Xiaoyu Han",
+        "Chenyang Wang",
+        "Jing Wang",
+        "Shunyuan Zheng",
+        "Quanling Meng",
+        "Shengping Zhang"
+      ],
+      "published": "2026-06-09T17:34:25Z",
+      "updated": "2026-06-09T17:34:25Z",
+      "url": "https://arxiv.org/abs/2606.11148",
+      "pdf_url": "https://arxiv.org/pdf/2606.11148.pdf",
+      "primary_category": "cs.CV",
+      "categories": [
+        "cs.CV"
+      ],
+      "tags": [
+        "cs.CV"
+      ],
+      "domain": "Vision",
+      "pdf_downloaded": true,
+      "pdf_size_bytes": 4416518,
+      "pdf_path": "2026-06-10/vision/2606.11148.pdf"
+    },
+    {
+      "id": "2606.11131",
+      "title": "UniPET: a universal network for high-quality PET image denoising across varied dose reduction factors",
+      "abstract": "Most existing deep learning-based PET image denoising methods assume a fixed and known dose reduction factor (DRF) for low-dose PET images. However, these methods encounter significant performance degradation when the DRF varies beyond the assumed one in practical applications. To address the challenge posed by varied DRFs, several preliminary studies focus on the task of universal PET image denoising, aiming to train a universal model over low-dose data across DRFs. Nonetheless, these vanilla universal models often struggle with misaligned styles present in different DRF data, leading to the \\textit{style elimination issue} with a significant over-smoothing effect. To deal with this issue, we innovatively introduce domain generalization to PET image denoising and propose a universal PET image denoising network (UniPET) to achieve high-quality PET image denoising across diverse DRFs. UniPET comprises two primary innovations: a style alignment network (SAN) and a region-aware learning strategy (RALS). Specifically, SAN utilizes style alignment techniques derived from domain generalization to align and recover styles across different DRFs, ensuring the model's generalizability across various DRFs while effectively preserving styles. Furthermore, to enhance style recovery, RALS distinguishes between flat and stylized regions, exclusively conducting adversarial learning on the latter, thereby more effectively guiding the model's focus towards learning stylized regions. It is demonstrated that our proposed UniPET can adaptively recover different DRF styles and achieve high-quality PET image denoising across DRFs. Comprehensive experiments show that UniPET exhibits comparable performance to individual DRF-specific models at specific DRFs and realizes state-of-the-art performance in universal PET image denoising quantitatively, perceptually, and clinically.",
+      "authors": [
+        "Zhiwen Yang",
+        "Yang Zhou",
+        "Haowei Chen",
+        "Hui Zhang",
+        "Dan Zhao",
+        "Bingzheng Wei",
+        "Yan Xu"
+      ],
+      "published": "2026-06-09T17:25:02Z",
+      "updated": "2026-06-09T17:25:02Z",
+      "url": "https://arxiv.org/abs/2606.11131",
+      "pdf_url": "https://arxiv.org/pdf/2606.11131.pdf",
+      "primary_category": "cs.CV",
+      "categories": [
+        "cs.CV"
+      ],
+      "tags": [
+        "cs.CV"
+      ],
+      "domain": "Vision",
+      "pdf_downloaded": true,
+      "pdf_size_bytes": 3780482,
+      "pdf_path": "2026-06-10/vision/2606.11131.pdf"
+    },
+    {
+      "id": "2606.11129",
+      "title": "WorldOlympiad: Can Your World Model Survive a Triathlon?",
+      "abstract": "We introduce WorldOlympiad, a benchmark for diagnosing video-based world models across physical faithfulness, geometric consistency, and interaction fidelity. While existing benchmarks often focus on visual quality, semantic alignment, or short-term temporal coherence, they provide limited insight into whether generated videos obey physical rules, preserve coherent 3D structure, and sustain controllable interactions over long horizons. To address this gap, WorldOlympiad decomposes world-model evaluation into three complementary dimensions. The physical track uses object segmentation and MLLM-as-judge to assess whether generated videos follow interpretable rules in mechanics, thermal phenomena, and material properties. The geometry track reconstructs generated videos with Gaussian splatting and evaluates structural consistency, cross-view coherence, and camera-trajectory alignment. The interaction track assesses whether generated rollouts follow complex action prompts and maintain smooth, coherent transitions across consecutive video chunks. WorldOlympiad further covers three major downstream scenarios, including gaming, robotics, and general real-world videos, capturing diverse challenges from interactive control and embodied manipulation to open-domain motion and camera dynamics. Together, these tracks and scenarios form a scalable and interpretable evaluation suite that exposes failure modes beyond generic video quality. Experiments on state-of-the-art models reveal substantial gaps in physical reasoning, 3D consistency, and long-horizon interaction, underscoring the need for more structured evaluation protocols for generative world models.",
+      "authors": [
+        "Yuke Zhao",
+        "Wangbo Zhao",
+        "Weijie Wang",
+        "Zeyu Zhang",
+        "Dakai An",
+        "Akide Liu",
+        "Yinghao Yu",
+        "Jiasheng Tang",
+        "Fan Wang",
+        "Wei Wang",
+        "Bohan Zhuang"
+      ],
+      "published": "2026-06-09T17:24:36Z",
+      "updated": "2026-06-09T17:24:36Z",
+      "url": "https://arxiv.org/abs/2606.11129",
+      "pdf_url": "https://arxiv.org/pdf/2606.11129.pdf",
+      "primary_category": "cs.CV",
+      "categories": [
+        "cs.CV"
+      ],
+      "tags": [
+        "cs.CV"
+      ],
+      "domain": "Vision",
+      "pdf_downloaded": true,
+      "pdf_size_bytes": 19830642,
+      "pdf_path": "2026-06-10/vision/2606.11129.pdf"
+    },
+    {
+      "id": "2606.11096",
+      "title": "IDEAL: In-DEpth ALignment Makes A Discrete Representation AutoEncoder",
+      "abstract": "Built on pretrained vision foundation models (VFMs), representation autoencoders (RAEs) have recently emerged as a promising approach for constructing semantically rich latent spaces for image generation. However, their reconstruction quality often remains suboptimal, largely because deep VFM representations do not preserve sufficient fine-grained visual detail. This limitation becomes even more severe after discretization, where missing low-level information is difficult to recover. In fact, we observe that shallow VFM features retain considerably richer local appearance and structural detail, which complements the high-level semantics carried by deep features used in existing RAEs. Motivated by this complementary property, we propose Ideal, an In-depth Alignment framework for discrete representation autoencoding. By jointly aligning quantized tokens with both shallow and deep VFM features, Ideal enables the resulting discrete visual tokens to preserve both visual fidelity and rich semantics. Extensive experiments demonstrate that Ideal yields superior reconstruction performance, achieving 0.61 rFID on ImageNet and outperforming the previous best method by 0.28. When used for autoregressive image generation, Ideal further produces a gFID of 1.89, establishing a new state of the art for autoregressive image generation.",
+      "authors": [
+        "Yitong Chen",
+        "Zijie Diao",
+        "Junke Wang",
+        "Lingyu Kong",
+        "Yixuan Ren",
+        "Bo He",
+        "Yu-Gang Jiang",
+        "Zuxuan Wu"
+      ],
+      "published": "2026-06-09T16:53:30Z",
+      "updated": "2026-06-09T16:53:30Z",
+      "url": "https://arxiv.org/abs/2606.11096",
+      "pdf_url": "https://arxiv.org/pdf/2606.11096.pdf",
+      "primary_category": "cs.CV",
+      "categories": [
+        "cs.CV"
+      ],
+      "tags": [
+        "cs.CV"
+      ],
+      "domain": "Vision",
+      "pdf_downloaded": true,
+      "pdf_size_bytes": 2997283,
+      "pdf_path": "2026-06-10/vision/2606.11096.pdf"
+    },
+    {
+      "id": "2606.11078",
+      "title": "A History-Aware Visually Grounded Critic for Computer Use Agents",
+      "abstract": "Various test-time interventions for Computer Use Agents (CUAs), including critic models, have been developed to improve performance through pre-execution action evaluation in complex Graphical User Interface (GUI) environments. However, existing critics suffer from two key limitations: they (1) focus primarily on short-sighted decision loops (e.g., forgetting earlier actions) and (2) lack the visual grounding needed to detect flawed actions (e.g., clicking wrong UI elements). To address these, we introduce HiViG, a History-aware Visually Grounded test-time framework, built around a multimodal critic trained on real GUI trajectories to abstract past interactions into a compact record and to evaluate actions with visual grounding. At test time, HiViG integrates the critic into the policy decision loop to provide macro-action history, which summarizes the policy's completed achievements, and visually grounded critique, which verifies raw execution coordinates against the current screenshot to intercept errors before execution. Across web, mobile, and desktop benchmarks, HiViG consistently outperforms existing scalar and verbal critics, improving average success rates over the strongest baseline by 5.8% for Qwen3-VL-32B and 9.0% for Gemini-3-Flash, and demonstrates strong cross-platform generalization. Ablations show that macro-action history mitigates short-sighted planning and visually grounded critique reduces execution errors, with both components being critical for test-time scaling in long-horizon GUI tasks.",
+      "authors": [
+        "Jaewoo Lee",
+        "Zaid Khan",
+        "Archiki Prasad",
+        "Justin Chih-Yao Chen",
+        "Supriyo Chakraborty",
+        "Kartik Balasubramaniam",
+        "Sambit Sahu",
+        "Elias Stengel-Eskin",
+        "Hyunji Lee",
+        "Mohit Bansal"
+      ],
+      "published": "2026-06-09T16:39:10Z",
+      "updated": "2026-06-09T16:39:10Z",
+      "url": "https://arxiv.org/abs/2606.11078",
+      "pdf_url": "https://arxiv.org/pdf/2606.11078.pdf",
+      "primary_category": "cs.AI",
+      "categories": [
+        "cs.AI",
+        "cs.CL",
+        "cs.CV"
+      ],
+      "tags": [
+        "cs.AI",
+        "cs.CL",
+        "cs.CV"
+      ],
+      "domain": "Vision",
+      "pdf_downloaded": true,
+      "pdf_size_bytes": 4054049,
+      "pdf_path": "2026-06-10/vision/2606.11078.pdf"
+    },
+    {
+      "id": "2606.11032",
+      "title": "U-TTT: Towards Generalizable PET Image Denoising via Test-Time Training",
+      "abstract": "Existing deep learning models for Positron Emission Tomography (PET) image denoising often suffer from severe performance degradation under distribution shifts, fundamentally restricting their robust clinical deployment. This lack of generalization stems from the conventional paradigm of fixed-parameter models that cannot adapt to variations in test data (e.g., dose levels or scanner types) after training. To overcome this limitation and achieve robust generalization, we introduce U-TTT, a novel U-shaped model that integrates Test-Time Training (TTT) layers to dynamically adjust model parameters during inference through self-supervision, thereby adapting to the specific characteristics of each test instance. Furthermore, to comprehensively capture the complex degradations of 3D PET data, U-TTT features a dual-domain adaptation mechanism comprising a Spatial Test-Time Training (S-TTT) layer and a Frequency Test-Time Training (F-TTT) layer. The S-TTT layer captures and corrects spatial structural degradations, while the F-TTT layer suppresses global noise spectra and restores delicate high-frequency details. Extensive experiments demonstrate that U-TTT achieves state-of-the-art PET denoising performance and exhibits superior generalization under challenging distribution shifts, including both unseen dose levels and unseen scanners. Our code will be available at https://github.com/Yaziwel/U-TTT.",
+      "authors": [
+        "Zhiwen Yang",
+        "Jiayin Li",
+        "Hao Lu",
+        "Hui Zhang",
+        "Zihua Wang",
+        "Bingzheng Wei",
+        "Yan Xu"
+      ],
+      "published": "2026-06-09T16:02:48Z",
+      "updated": "2026-06-09T16:02:48Z",
+      "url": "https://arxiv.org/abs/2606.11032",
+      "pdf_url": "https://arxiv.org/pdf/2606.11032.pdf",
+      "primary_category": "cs.CV",
+      "categories": [
+        "cs.CV"
+      ],
+      "tags": [
+        "cs.CV"
+      ],
+      "domain": "Vision",
+      "pdf_downloaded": true,
+      "pdf_size_bytes": 1736472,
+      "pdf_path": "2026-06-10/vision/2606.11032.pdf"
+    },
+    {
+      "id": "2606.11012",
+      "title": "An Uncertainty Estimation Framework for Dose Accumulation in Adaptive Radiotherapy: Application to CBCT-Guided Radiotherapy for Cervical Cancer",
+      "abstract": "Background and purpose: oART enables daily plan adaptation to interfraction anatomical variations, but cumulative dose estimation remains limited by DIR, segmentation, and anatomical uncertainties. We introduce IMPACT-DoseAcc, an uncertainty-aware dose accumulation framework, within IMPACT for semantic feature-driven image analysis. The framework is modality- and disease-agnostic and is applied to CBCT-guided oART for cervical cancer (LACC). Material and Methods: Nine LACC patients were retrospectively analyzed using daily CBCT-derived virtual CTs for dose recalculation. IMPACT-DoseAcc focuses on uncertainty from DIR, without modeling vCT-generation uncertainty. Two DIR uncertainty strategies were tested within IMPACT-Reg: a Bayesian segmentation-guided approach using one probabilistic model to quantify anatomical uncertainty, and an ensemble of segmentation models targeting structures to capture epistemic variability. Voxel-wise uncertainty maps were propagated through dose warping and accumulation to generate probabilistic dose-volume histograms. Ensemble uncertainty was quantified from voxel-wise standard deviation across deformation fields, and geometric error was assessed using surface distance between warped and validated contours. Anatomical-variability weighting refined aggregation. Results: Ensemble DIR uncertainty correlated with geometric error, with Pearson coefficients of 0.63 for CTVt and 0.66 for bladder. For CTVt, pDVHs achieved 96.3 +/- 3.9% coverage, showing calibration of propagated uncertainty. Weighting stabilized estimates across fractions and organs. Conclusions: IMPACT-DoseAcc propagates registration-driven uncertainty to cumulative dose metrics, improving interpretation of accumulated dose under anatomical variations. Its 3DSlicer integration supports reproducible, uncertainty-informed ART workflows.",
+      "authors": [
+        "Cedric Hemon",
+        "Delphine Lebret",
+        "Jean-Claude Nunes",
+        "Valentin Boussot",
+        "Karine Peignaux",
+        "Nathalie Mesgouez-Nebout",
+        "Chantal Hanzen",
+        "Antoine Simon",
+        "Ana\u00efs Barateau",
+        "Renaud de Crevoisier",
+        "Caroline Lafond"
+      ],
+      "published": "2026-06-09T15:52:58Z",
+      "updated": "2026-06-09T15:52:58Z",
+      "url": "https://arxiv.org/abs/2606.11012",
+      "pdf_url": "https://arxiv.org/pdf/2606.11012.pdf",
+      "primary_category": "cs.CV",
+      "categories": [
+        "cs.CV"
+      ],
+      "tags": [
+        "cs.CV"
+      ],
+      "domain": "Vision",
+      "pdf_downloaded": true,
+      "pdf_size_bytes": 12959699,
+      "pdf_path": "2026-06-10/vision/2606.11012.pdf"
+    },
+    {
+      "id": "2606.11001",
+      "title": "IPSM-Bench: A New Intermediate Phase Segmentation Benchmark in Microstructure Images of Zinc-Based Absorbable Biomaterials",
+      "abstract": "Zinc-based alloys are indispensable emerging absorbable metallic biomaterials, and their macroscopic performance is governed by microstructural characteristics. Intermediate phases-key microstructural constituents-are pivotal in regulating mechanical and functional properties. However, intermediate phase segmentation in zinc alloy microstructures faces formidable challenges: scarce annotated datasets, low contrast, difficulty detecting small targets, and heterogeneous morphologies. To this end, we construct IPSM-Bench, the largest high-quality dataset for zinc-alloy intermediate phase segmentation. Furthermore, we propose SCoP-SAM, a new Spatial Context Prior-guided SAM method that leverages the gradient structure and grayscale properties of intermediate phases to capture spatial context priors and incorporates them into the entire SAM encoding-decoding process, improving segmentation performance. Based on the proposed IPSM-Bench, we establish a new benchmark for intermediate phase segmentation to systematically evaluate state-of-the-art (SOTA) methods and advance research on zinc alloy microstructure analysis. Extensive experiments on IPSM-Bench and additional public alloy benchmarks demonstrate that our SCoP-SAM not only achieves SOTA performance for zinc-alloy intermediate phase segmentation but also generalizes remarkably well to other alloy scenarios.",
+      "authors": [
+        "Jinglin Xu",
+        "Shangyan Zhao",
+        "Jiabo Wang",
+        "Xinghong Mu",
+        "Yulong Lei",
+        "Jiacheng Zhang",
+        "Hongbo Sun",
+        "Yageng Li"
+      ],
+      "published": "2026-06-09T15:34:20Z",
+      "updated": "2026-06-09T15:34:20Z",
+      "url": "https://arxiv.org/abs/2606.11001",
+      "pdf_url": "https://arxiv.org/pdf/2606.11001.pdf",
+      "primary_category": "cs.CV",
+      "categories": [
+        "cs.CV"
+      ],
+      "tags": [
+        "cs.CV"
+      ],
+      "domain": "Vision",
+      "pdf_downloaded": true,
+      "pdf_size_bytes": 7912675,
+      "pdf_path": "2026-06-10/vision/2606.11001.pdf"
+    },
+    {
+      "id": "2606.10988",
+      "title": "AnimaSpark: A Feed-Forward Method for Animating Arbitrary 3D Objects",
+      "abstract": "While recent advancements in generative AI have substantially accelerated static 3D model creation workflows, the synthesis of category-agnostic 3D animations remains a significant bottleneck in 3D asset production. Current methods for category-agnostic animation generation exhibit critical limitations in inference speed, motion quality, and adherence to textual prompts, thereby leaving the process dependent on labor-intensive manual artistry. To address these challenges, this paper introduces AnimaSpark, a novel pipeline for category-agnostic 3D animation generation. Our approach is motivated by the key insight that for many fundamental motions in the 3D world, the corresponding joint transformations can often be effectively modeled within a two-dimensional subspace. The pipeline begins by rendering a rigged static 3D model into multi-layered image representations of its mesh and skeleton, which are subsequently fed into a video generation model. We then employ a keypoint tracking algorithm on the generated video to capture the motion of the skeletal joints projected onto the camera's viewing plane. In the final stage, we distill the planar translations and rotations from these tracked keypoints and lift them from the 2D domain into 3D space to animate the character. Comprehensive evaluations reveal that our method achieves superior performance over existing state-of-the-art techniques across key metrics, including text-motion alignment, quality of motion, and computational efficiency.",
+      "authors": [
+        "Yiming Zhao",
+        "Haoyu Sun",
+        "Aoyu Wang"
+      ],
+      "published": "2026-06-09T15:25:39Z",
+      "updated": "2026-06-09T15:25:39Z",
+      "url": "https://arxiv.org/abs/2606.10988",
+      "pdf_url": "https://arxiv.org/pdf/2606.10988.pdf",
+      "primary_category": "cs.CV",
+      "categories": [
+        "cs.CV",
+        "cs.GR"
+      ],
+      "tags": [
+        "cs.CV",
+        "cs.GR"
+      ],
+      "domain": "Vision",
+      "pdf_downloaded": true,
+      "pdf_size_bytes": 6938372,
+      "pdf_path": "2026-06-10/vision/2606.10988.pdf"
+    },
+    {
+      "id": "2606.10967",
+      "title": "Quo Vadis, Visual In-Context Learning? A Unified Benchmark Across Domains and Tasks",
+      "abstract": "Visual in-context learning has been proposed as a pathway towards dynamic models that can generate predictions based on a provided context and thereby can adapt to new vision tasks at test-time. Yet, the evaluation of the adaptation capabilities of these models has been limited to narrow setups that mainly mirror tasks or image domains from pre-training for which real adaptation is not required. We address this gap by constructing a broad Visual In-Context BEnchmark (VIBE) with a focus on diverse imaging domains and a wide range of tasks. With this, we are able to get a much clearer picture of the adaptive capabilities of visual in-context models when faced with new image- and task distributions. We stress test six models on $14$ datasets and $12$ tasks (in total, we explore $106$ dataset-task combinations) and compare them under a unified, reproducible evaluation protocol, in an one-shot setting. Our evaluation uncovers key insights on the state of visual in-context learning, including limitations, systematic failure modes and promising directions. To foster broader evaluation, we will openly release our VIBE toolkit.",
+      "authors": [
+        "Pradnya Halady",
+        "Jiale Wei",
+        "Zdravko Marinov",
+        "Alexander Jaus",
+        "Simon Rei\u00df"
+      ],
+      "published": "2026-06-09T15:08:43Z",
+      "updated": "2026-06-09T15:08:43Z",
+      "url": "https://arxiv.org/abs/2606.10967",
+      "pdf_url": "https://arxiv.org/pdf/2606.10967.pdf",
+      "primary_category": "cs.CV",
+      "categories": [
+        "cs.CV"
+      ],
+      "tags": [
+        "cs.CV"
+      ],
+      "domain": "Vision",
+      "pdf_downloaded": false,
+      "pdf_size_bytes": null,
+      "pdf_path": null
+    },
+    {
+      "id": "2606.10953",
+      "title": "Architect-Ant: Editable Automatic Furnishing of Architectural Floor Plans",
+      "abstract": "Furnished floor plans are fundamental to real estate visualization, interior design, and architectural workflows. However, progress in automatic furniture arrangement has been limited by the lack of real, professionally designed floor-plan datasets with object-level furniture annotations. To address this gap, we introduce AntPlan-270, a curated dataset of 270 architectural floor plans with per-room furniture bounding box annotations across ten residential room categories. Building on this dataset, we present Architect-Ant, an editable automatic furnishing framework powered by a fine-tuned vision-language model. Furniture layouts are represented using a compact, coordinate-based domain-specific language (DSL) that encodes object categories and placements relative to the room geometry. To improve spatial reasoning, we generate procedural reasoning traces that capture architectural constraints such as wall alignment, door and window clearance, circulation, fixture compatibility, and room-specific furniture inventories, and use them to supervise fine-tuning of the model. We then apply preference optimization over candidate object placements to further refine layout quality. The generated DSL can be rasterized into semantic masks and used to condition a Flux-based LoRA renderer, producing realistic blueprint-style furnished floor-plan images while preserving the editable symbolic layout. Experiments on layout furnishing show that Architect-Ant produces geometrically valid and functionally plausible layouts, and suggest a scalable path for furnishing larger structure-only floor-plan datasets.",
+      "authors": [
+        "Fedor Rodionov",
+        "Aleksandar Cvejic",
+        "Michael Birsak",
+        "John Femiani",
+        "Peter Wonka"
+      ],
+      "published": "2026-06-09T14:55:43Z",
+      "updated": "2026-06-09T14:55:43Z",
+      "url": "https://arxiv.org/abs/2606.10953",
+      "pdf_url": "https://arxiv.org/pdf/2606.10953.pdf",
+      "primary_category": "cs.AI",
+      "categories": [
+        "cs.AI",
+        "cs.CV"
+      ],
+      "tags": [
+        "cs.AI",
+        "cs.CV"
+      ],
+      "domain": "Vision",
+      "pdf_downloaded": true,
+      "pdf_size_bytes": 15337183,
+      "pdf_path": "2026-06-10/vision/2606.10953.pdf"
+    },
+    {
+      "id": "2606.10940",
+      "title": "Democratising Camera Trap AI: An Open-Source Model for Detecting UK Mammals",
+      "abstract": "Camera traps have become a cornerstone of biodiversity monitoring, but the artificial intelligence that turns vast quantities of images into usable ecological data is often locked behind commercial platforms or trained on fauna that does not match that of the British Isles. In an attempt to remove barriers and increase uptake, we release an open-source object detection model for 31 classes, 28 common UK mammal and bird species, plus utility classes for humans, calibration poles, and vehicles, drawn from a curated dataset of 48,165 labelled instances assembled from multiple sites over a decade of operational deployment through Conservation AI and its successor, Trap Tracker. The model, a YOLO26x detector trained and tested on an 80/10/10 class-stratified split, achieves a mean Average Precision of 0.984 at Intersection over Union (IoU) of 0.5 (0.956 at IoU 0.5-0.95) on the held-out validation set, with precision 0.988 and recall 0.965. On an unseen held-out test split, mean per-species confidence ranged from 0.96 to 0.99 across the 31 classes, with a 0.17% false-negative rate concentrated in difficult night-time, distant, or occluded images. These metrics are from data from the same pool of sites and cameras as training, so performance at entirely new sites is left to future work. We release the trained weights in ONNX format under a non-commercial licence, with local desktop and real-time camera support, aimed explicitly at ecologists with no machine-learning experience. This release is a deliberate counterweight to the multiple paid for models that have developed over the last decade.",
+      "authors": [
+        "Paul Fergus",
+        "Philip Stephens",
+        "Russell A. Hill",
+        "Lee Oliver",
+        "Katie Appleby",
+        "Sarah Beatham",
+        "Naomi Davies Walsh",
+        "Stuart Nixon",
+        "Naomi Matthews",
+        "Chris Sutherland",
+        "Kelly Hitchcock"
+      ],
+      "published": "2026-06-09T14:47:24Z",
+      "updated": "2026-06-09T14:47:24Z",
+      "url": "https://arxiv.org/abs/2606.10940",
+      "pdf_url": "https://arxiv.org/pdf/2606.10940.pdf",
+      "primary_category": "cs.CV",
+      "categories": [
+        "cs.CV",
+        "cs.AI",
+        "cs.LG"
+      ],
+      "tags": [
+        "cs.AI",
+        "cs.CV",
+        "cs.LG"
+      ],
+      "domain": "Vision",
+      "pdf_downloaded": true,
+      "pdf_size_bytes": 3501087,
+      "pdf_path": "2026-06-10/vision/2606.10940.pdf"
+    },
+    {
+      "id": "2606.10939",
+      "title": "PENet+: A Lightweight Residual Transformer Framework for Efficient Image Steganalysis",
+      "abstract": "Image steganalysis, the detection of hidden information embedded in digital images, is a core component of modern cybersecurity and digital forensics. Recent residual Transformer architectures, such as the Pixel-Difference-Convolution and Enhanced-Transformer-Network (PENet) [1], achieve strong detection accuracy, but their computational and memory demands hinder deployment in resource-constrained settings. We present PENet+, a lightweight steganalysis framework that preserves PENet's discriminative structure while substantially improving efficiency. Rather than redesigning or compressing the attention blocks, we retain PENet's self-attention topology for reproducibility and add a classifier-streamlining stage that progressively narrows the SPP-to-FC1 input channels (SPP: spatial pyramid pooling; FC1: first fully connected layer), yielding large reductions in parameters and FLOPs with negligible accuracy loss. We further refine the high-pass-filter (HPF) stem with an activation-aware mechanism that aggregates HPF responses early and selects a balanced SRM-Gabor top-K subset, and we replace PENet's backbone with a MobileNetV2-style inverted residual network. A balanced configuration with K=31 filters (16 Gabor + 15 SRM) matches or surpasses heavier settings at lower compute. Finally, we motivate PReLU from a steganalysis standpoint, arguing that preserving negative responses helps capture weak stego cues that ReLU suppresses. On a disjoint ALASKA2 JPEG QF90 protocol at 512x512 resolution (5,000 cover images for training, validation, and internal testing; a separate 19,000-cover evaluation set), PENet+ achieves up to 45.5% fewer parameters and about 97% fewer FLOPs than the re-evaluated PENet baseline, offering a computationally efficient direction for resource-constrained steganalysis. Device-level latency and power measurements remain future work.",
+      "authors": [
+        "Jincheol AN",
+        "Dongsu Kim",
+        "Haneol Jang",
+        "YoungJoon Yoo"
+      ],
+      "published": "2026-06-09T14:47:16Z",
+      "updated": "2026-06-09T14:47:16Z",
+      "url": "https://arxiv.org/abs/2606.10939",
+      "pdf_url": "https://arxiv.org/pdf/2606.10939.pdf",
+      "primary_category": "cs.CV",
+      "categories": [
+        "cs.CV"
+      ],
+      "tags": [
+        "cs.CV"
+      ],
+      "domain": "Vision",
+      "pdf_downloaded": true,
+      "pdf_size_bytes": 6658741,
+      "pdf_path": "2026-06-10/vision/2606.10939.pdf"
+    },
+    {
+      "id": "2606.10905",
+      "title": "Beyond Model Size: Probing the Gaps in Visual in-Context Learning by Training a Tiny Model",
+      "abstract": "Visual in-Context Learning (VICL) aims at making progress towards adaptive vision models, that can -- based on a few examples -- adapt to a new task at test-time. With the history of in-context learning in natural language processing research, where large, parameter-heavy models are in use, one pathway that current VICL methods take is model- and data-scaling as key ingredients. Yet, it is not clear, whether these ingredients are the key for in-context learning to take shape in vision models. To stress-test such large models, we challenge them with an extreme counterexample: we train a tiny visual in-context model with merely $1$ million parameters and a modest amount of $70,000$ images. We compare the results of this severely capacity capped tiny model to $7,000\\times$ larger VICL models in different adaptive settings, (1) on image data with small distribution shifts, (2) on unseen task encodings and (3) on a completely new task, i.e., the setting VICL envisions. With the chasm of training resources between the tiny- and large models, our experiments showcase a lack in how adaptive capabilities are measured, with respect to how tasks are encoded, which tasks were used in pre-training and the choice of metrics. These gaps in current VICL benchmarking underscore a need for innovation in evaluation of adaptive capabilities.",
+      "authors": [
+        "Sunil Khatri",
+        "Steven Landgraf",
+        "Markus Ulrich",
+        "Simon Rei\u00df"
+      ],
+      "published": "2026-06-09T14:13:58Z",
+      "updated": "2026-06-09T14:13:58Z",
+      "url": "https://arxiv.org/abs/2606.10905",
+      "pdf_url": "https://arxiv.org/pdf/2606.10905.pdf",
+      "primary_category": "cs.CV",
+      "categories": [
+        "cs.CV"
+      ],
+      "tags": [
+        "cs.CV"
+      ],
+      "domain": "Vision",
+      "pdf_downloaded": true,
+      "pdf_size_bytes": 7222378,
+      "pdf_path": "2026-06-10/vision/2606.10905.pdf"
+    },
+    {
+      "id": "2606.10902",
+      "title": "Pose-ICL: 3D-Aware In-Context Learning for Pose-Controllable Subject Customization",
+      "abstract": "Subject Customization is a foundational task in modern image generation. By providing a few reference images and a text prompt, users can generate images of a specific object in any desired scene. However, existing methods still struggle to achieve effective pose control for customized subjects. In practice, they often exhibit inaccurate poses or inconsistent cross-pose appearances. These limitations suggest that understanding objects in a volumetric manner remains a significant challenge for 2D-native backbones. To address this challenge, we propose Pose-ICL, a tuning-free framework that leverages 3D-aware In-Context Learning (ICL) to directly adapt to new subjects through multiple paired image-pose references. Its core mechanism,Surface-Anchored Position Embedding (SAPE), equips the model with explicit 3D awareness by anchoring image tokens to the surface coordinates of a volumetric bounding box. Dedicated refinements ensure its seamless compatibility with existing DiT models. Extensive evaluations on both 3D assets and real-world subjects demonstrate that Pose-ICL significantly outperforms current methods in both pose accuracy and identity consistency.",
+      "authors": [
+        "Xuan Han",
+        "Yihao Zhao",
+        "Mingyu You"
+      ],
+      "published": "2026-06-09T14:13:40Z",
+      "updated": "2026-06-09T14:13:40Z",
+      "url": "https://arxiv.org/abs/2606.10902",
+      "pdf_url": "https://arxiv.org/pdf/2606.10902.pdf",
+      "primary_category": "cs.CV",
+      "categories": [
+        "cs.CV",
+        "cs.AI"
+      ],
+      "tags": [
+        "cs.AI",
+        "cs.CV"
+      ],
+      "domain": "Vision",
+      "pdf_downloaded": true,
+      "pdf_size_bytes": 9803224,
+      "pdf_path": "2026-06-10/vision/2606.10902.pdf"
+    },
+    {
+      "id": "2606.10894",
+      "title": "The 1st PortraitCraft Challenge: A CVPR 2026 Workshop Competition on Portrait Composition Understanding and Generation",
+      "abstract": "This paper presents an overview of the inaugural PortraitCraft Challenge, held as one of the official competitions at CVPR 2026. The challenge focuses on portrait composition understanding and generation, aiming to advance AI research in portrait aesthetics analysis and controllable image synthesis. Unlike existing datasets and tasks that primarily focus on global aesthetic scoring, PortraitCraft introduces a unified evaluation framework comprising two complementary tracks. Track 1 requires models to perform structured portrait composition understanding, and Track 2 requires models to generate portrait images from structured composition descriptions under explicit compositional constraints. To support the challenge, we constructed and publicly released a large-scale portrait composition dataset consisting of approximately 50,000 curated real portrait images, providing multi-level supervision. This report describes the challenge setup, evaluation protocols, dataset composition, and final results, along with an analysis of the technical characteristics of the submitted solutions. The PortraitCraft Challenge provides a standardized and reproducible platform for research on portrait composition understanding and generation, and is expected to foster further progress in the fields of portrait aesthetics and controllable image generation.",
+      "authors": [
+        "Zijie Lou",
+        "Youyun Tang",
+        "Xiaochao Qu",
+        "Haoxiang Li",
+        "Ting Liu",
+        "Luoqi Liu",
+        "Xun Zhu",
+        "Zheng Zhang",
+        "Xi Chen",
+        "Miao Li",
+        "Ji Wu",
+        "Dizhe Zhang",
+        "Xian Ge",
+        "Sujia Wang",
+        "Ruiyang Zhang",
+        "Jiaming Wang",
+        "Xianshun Wang",
+        "Lu Qi",
+        "Boao Kang",
+        "Wei Zhou",
+        "Jinghui Sun",
+        "Zhenyu Yan",
+        "Jiliang Zhao",
+        "Rui Yang",
+        "Yipo Huang",
+        "Boyuan Liu",
+        "Shanglin Li",
+        "Zifan Xie",
+        "Yichen Zhang",
+        "Anlan Wang",
+        "Wenfeng Lin",
+        "Mingyu Guo",
+        "Dong Li",
+        "Xinghao Wang",
+        "Yanting Li",
+        "Shanzhao Tong",
+        "Shuai He",
+        "Qiu Zhou",
+        "Yongqi Yang",
+        "Taoyang Mu",
+        "Dianqiao Lei",
+        "Anlong Ming",
+        "Huadong Ma"
+      ],
+      "published": "2026-06-09T14:05:48Z",
+      "updated": "2026-06-09T14:05:48Z",
+      "url": "https://arxiv.org/abs/2606.10894",
+      "pdf_url": "https://arxiv.org/pdf/2606.10894.pdf",
+      "primary_category": "cs.CV",
+      "categories": [
+        "cs.CV"
+      ],
+      "tags": [
+        "cs.CV"
+      ],
+      "domain": "Vision",
+      "pdf_downloaded": true,
+      "pdf_size_bytes": 12394030,
+      "pdf_path": "2026-06-10/vision/2606.10894.pdf"
+    },
+    {
+      "id": "2606.10892",
+      "title": "Improving Text-Instance Alignment Of Foreground Conditioned Out-Painting Via Customized Concept Embedding",
+      "abstract": "To showcase products, merchants often incur substantial costs creating high-quality display images. Foreground Conditioned Outpainting (FCO) meets this demand, allowing users to create desired backgrounds for foreground instances at a low cost by adjusting the text prompt. However, existing text-driven FCO methods exhibit critical flaws in their outputs, most notably the presence of artifacts, which refer to regions in the synthesized background that share the same semantics as the foreground instance. Such artifacts diminish the object's prominence and degrade image quality. We attribute the issue to the misalignment between the given instance and text-derived concept embeddings. To address this, we propose the Customized Concept Embedding Diffusion (CCE-Diffusion) framework. Its core is a CCE-Module to customize concept embeddings, bridging the gap between generic noun semantics and a specific visual instance. An Instance-Aware Loss guides the module's optimization, while a Semantic-Preserving Prompt Template prevents customized embeddings from distorting other words in the prompt. Both qualitative and quantitative evaluations demonstrate that CCE-Diffusion significantly reduces artifacts in the outputs. As a plug-and-play component, the CCE-Module can integrate with various FCO methods, enhancing their performance.",
+      "authors": [
+        "Yihao Zhao",
+        "Xuan Han",
+        "Bin He",
+        "Mingyu You"
+      ],
+      "published": "2026-06-09T14:04:51Z",
+      "updated": "2026-06-09T14:04:51Z",
+      "url": "https://arxiv.org/abs/2606.10892",
+      "pdf_url": "https://arxiv.org/pdf/2606.10892.pdf",
+      "primary_category": "cs.CV",
+      "categories": [
+        "cs.CV",
+        "cs.AI"
+      ],
+      "tags": [
+        "cs.AI",
+        "cs.CV"
+      ],
+      "domain": "Vision",
+      "pdf_downloaded": true,
+      "pdf_size_bytes": 4646877,
+      "pdf_path": "2026-06-10/vision/2606.10892.pdf"
+    },
+    {
+      "id": "2606.10887",
+      "title": "Listen, Look, and Learn: Learning Without Forgetting through SAM-Audio",
+      "abstract": "Class-Incremental Learning (CIL) aims to continuously learn new classes without forgetting previously acquired knowledge. While recent CIL advances have spurred significant interest across various modalities, the audio-visual setting remains underexplored. Furthermore, although foundational multimodal models like SAM-Audio encapsulate rich static priors, our empirical analysis reveals that these representations struggle in incremental settings. This work bridges this gap by integrating SAM-Audio's audio-visual priors into the CIL setting. Specifically, we leverage its dense audio and visual representations and employ a novel guided attention strategy where the audio features contextually guide the visual representations. To further mitigate catastrophic forgetting, we introduce dual-level distillation objectives at both the feature and logit levels. Extensive evaluations on audio-visual CIL benchmarks demonstrate that our approach consistently outperforms state-of-the-art methods.",
+      "authors": [
+        "Avi Gupta",
+        "Nilotpal Sinha",
+        "Vishnu Raj",
+        "Sambuddha Saha",
+        "Pratik Joshi",
+        "Koteswar Rao Jerripothula",
+        "Tammam Tillo"
+      ],
+      "published": "2026-06-09T14:01:49Z",
+      "updated": "2026-06-09T14:01:49Z",
+      "url": "https://arxiv.org/abs/2606.10887",
+      "pdf_url": "https://arxiv.org/pdf/2606.10887.pdf",
+      "primary_category": "cs.CV",
+      "categories": [
+        "cs.CV"
+      ],
+      "tags": [
+        "cs.CV"
+      ],
+      "domain": "Vision",
+      "pdf_downloaded": true,
+      "pdf_size_bytes": 2248740,
+      "pdf_path": "2026-06-10/vision/2606.10887.pdf"
+    },
+    {
+      "id": "2606.10877",
+      "title": "XtrAIn: Training-Guided Occlusion for Feature Attribution",
+      "abstract": "Occlusion-based attribution methods provide an intuitive way to estimate feature importance by perturbing input features and measuring the resulting change in model output. However, their reliability is strongly affected by how feature removal is implemented: externally selected baselines can introduce bias, out-of-distribution samples, and unstable explanations, while in nonlinear models the occlusion of a set of features can also alter the contribution of non-occluded features. We refer to this effect as attribution shift, as the attribution scores of the non-occluded features drift from their initial values. To challenge these major issues that render explanations unstable, we introduce XtrAIn, a training-guided attribution method that transfers the occlusion operation from the input space to the parameter space. Instead of replacing input values with hand-crafted baselines, XtrAIn follows the model's training trajectory and measures how feature-associated parameter updates affect the output logits. We further introduce Xstep, a lightweight approximation for reducing computational cost, and XtrAIn+, a target-focused variant that emphasizes updates aligned with the target class. Experiments on controlled image datasets and PAM50 breast-cancer subtype classification show that the proposed methods produce cleaner and more interpretable attribution patterns than standard attribution baselines. Overall, XtrAIn provides a training-aware perspective on feature attribution and offers a useful diagnostic tool for studying how feature-level evidence is formed during training.",
+      "authors": [
+        "Thodoris Lymperopoulos",
+        "Ioannis Kakogeorgiou",
+        "Denia Kanellopoulou"
+      ],
+      "published": "2026-06-09T13:52:05Z",
+      "updated": "2026-06-09T13:52:05Z",
+      "url": "https://arxiv.org/abs/2606.10877",
+      "pdf_url": "https://arxiv.org/pdf/2606.10877.pdf",
+      "primary_category": "cs.LG",
+      "categories": [
+        "cs.LG",
+        "cs.CV"
+      ],
+      "tags": [
+        "cs.CV",
+        "cs.LG"
+      ],
+      "domain": "Vision",
+      "pdf_downloaded": true,
+      "pdf_size_bytes": 3547956,
+      "pdf_path": "2026-06-10/vision/2606.10877.pdf"
+    },
+    {
+      "id": "2606.10876",
+      "title": "Advancing Wood Identification in the Philippines: Utilizing the Xylorix Platform for Efficient AI Model Development and Deployment for Five Key Species",
+      "abstract": "Illegal logging and timber trade continue to pose significant challenges in the Philippines, where accurate wood species identification is essential for enforcement but limited by the need for specialised equipment and expertise. This study aims to evaluate whether AI models for macroscopic wood identification can be developed and deployed by wood scientists without programming expertise using the Xylorix platform, focusing on five Philippine hardwood species: Mangium (Acacia mangium Willd.), Rain Tree [Samanea saman (Jacq.) Merr.], Banuyo (Wallaceodendron celebicum Koord.), Tindalo [Afzelia rhomboidea (Blanco) Vidal], and Ipil [Intsia bijuga (Colebr.) O. Kuntze]. Binary classifiers were trained on 10,663 verified cross-section images from 260 specimens and evaluated using specimen-level mean scoring to mirror operational field conditions. Area Under the ROC Curve (AUC) values ranged from 0.969 (Ipil) to 1.000 (Mangium), and Average Precision (AP) values ranged from 0.589 (Samanea) to 1.000 (Mangium). Four of five species achieved AA grade (AUC and AP both \\geq 0.90); Rain Tree received AE (AUC \\geq 0.90, AP < 0.60) due to AP compression from its small positive test set (3 specimens). All five classifiers rank their target specimens above non-target specimens with near-perfect fidelity. Specimen-level error analysis revealed 9 false negatives from Ipil, primarily stemming from localized image artifacts and 3 false positives for Rain Tree and 1 false positive for Tindalo caused by shared tribal-level anatomical traits. These findings demonstrate that Xylorix non-programmers can leverage the Xylorix platform to construct operationally reliable wood identification models suitable for field deployment at supply chain checkpoints.",
+      "authors": [
+        "Rosalie C. Mendoza",
+        "Vivian C. Daracan",
+        "Arlene D. Romano",
+        "Ronniel D. Manalo",
+        "Xin Jie Tang",
+        "Yi Hong Wong",
+        "Yong Haur Tay"
+      ],
+      "published": "2026-06-09T13:51:36Z",
+      "updated": "2026-06-09T13:51:36Z",
+      "url": "https://arxiv.org/abs/2606.10876",
+      "pdf_url": "https://arxiv.org/pdf/2606.10876.pdf",
+      "primary_category": "cs.CV",
+      "categories": [
+        "cs.CV"
+      ],
+      "tags": [
+        "cs.CV"
+      ],
+      "domain": "Vision",
+      "pdf_downloaded": true,
+      "pdf_size_bytes": 8903390,
+      "pdf_path": "2026-06-10/vision/2606.10876.pdf"
+    }
+  ]
+}
