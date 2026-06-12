@@ -1,0 +1,590 @@
+{
+  "domain": "Agent",
+  "date": "2026-06-12",
+  "count": 20,
+  "papers": [
+    {
+      "id": "2606.13675",
+      "title": "Improving Robotic Generalist Policies via Flow Reversal Steering",
+      "abstract": "Generalist policies can learn a wide range of skills from diverse robot datasets. In order to solve or improve on challenging news tasks, we need a way to infer and invoke the appropriate actions from the policy's rich behavioral prior, especially when directly commanding the policy fails. We focus on flow matching generalists and propose Flow Reversal Steering (FRS): a method that takes suboptimal but ``reasonable'' actions, finds their latent noises by passing them through the flow policy in reverse, and maps them to nearby generalist action modes. We evaluate FRS across many simulated and real-world manipulation settings. First, FRS can turn coarse semantic guidance from humans or vision-language models (VLMs) into corresponding good robot actions, improving zero-shot control. These gains can be distilled with behavioral cloning by training an auxiliary policy to output noises that the generalist maps to good actions -- showing up to 95% absolute task success rate boosts in under a minute of training. Finally, FRS enables policy improvement by bootstrapping reinforcement learning with semantic knowledge, improving on several tasks that standard RL fails to improve on.",
+      "authors": [
+        "Andy Tang",
+        "William Chen",
+        "Andrew Wagenmaker",
+        "Chelsea Finn",
+        "Sergey Levine"
+      ],
+      "published": "2026-06-11T17:59:45Z",
+      "updated": "2026-06-11T17:59:45Z",
+      "url": "https://arxiv.org/abs/2606.13675",
+      "pdf_url": "https://arxiv.org/pdf/2606.13675.pdf",
+      "primary_category": "cs.RO",
+      "categories": [
+        "cs.RO"
+      ],
+      "tags": [
+        "cs.RO"
+      ],
+      "domain": "Agent",
+      "pdf_downloaded": true,
+      "pdf_size_bytes": 4676342,
+      "pdf_path": "2026-06-12/agent/2606.13675.pdf"
+    },
+    {
+      "id": "2606.13672",
+      "title": "$\\texttt{WEAVER}$, Better, Faster, Longer: An Effective World Model for Robotic Manipulation",
+      "abstract": "The potential impacts of world models (WMs, i.e., learned simulators) on robotics are far-reaching -- policy evaluation, policy improvement, and test-time planning -- all with limited real-world interaction. To unlock these downstream capabilities, a WM needs to jointly satisfy three desiderata: $\\textit{(i)}$ fidelity (i.e., producing simulated trajectories that correlate with reality), $\\textit{(ii)}$ consistency (i.e., producing simulated trajectories that are coherent over long horizons), and $\\textit{(iii)}$ efficiency (i.e., producing simulated trajectories quickly). We propose $\\texttt{WEAVER}$ (World Estimation Across Views for Embodied Reasoning): a WM architecture that simultaneously achieves all three desiderata, providing state-of-the-art results on robotic manipulation tasks. $\\texttt{WEAVER}$ is a multi-view WM trained to predict future latents and reward values via a flow-matching loss. We distill the key design decisions across model architecture, memory, and prediction objectives required to unlock the kinds of long-horizon dynamic manipulation tasks that have confounded prior world modeling approaches. We apply $\\texttt{WEAVER}$ in robotic hardware, demonstrating its effectiveness at policy evaluation ($\u03c1$=0.870 correlation with real-world success rate), policy improvement (real-world success rate improvement of $38\\%$ on top of the $\u03c0_{0.5}$ robot foundation model), and test-time planning (real-world success rate improvement of $14\\%$ with a $5-10\\times$ speedup over prior WMs). $\\texttt{WEAVER}$ also demonstrates better performance than prior WMs when evaluated on out-of-distribution scenarios. Code, models, and videos at: https://arnavkj1995.github.io/WEAVER/ .",
+      "authors": [
+        "Arnav Kumar Jain",
+        "Yilin Wu",
+        "Jesse Farebrother",
+        "Gokul Swamy",
+        "Andrea Bajcsy"
+      ],
+      "published": "2026-06-11T17:59:15Z",
+      "updated": "2026-06-11T17:59:15Z",
+      "url": "https://arxiv.org/abs/2606.13672",
+      "pdf_url": "https://arxiv.org/pdf/2606.13672.pdf",
+      "primary_category": "cs.RO",
+      "categories": [
+        "cs.RO"
+      ],
+      "tags": [
+        "cs.RO"
+      ],
+      "domain": "Agent",
+      "pdf_downloaded": true,
+      "pdf_size_bytes": 7442224,
+      "pdf_path": "2026-06-12/agent/2606.13672.pdf"
+    },
+    {
+      "id": "2606.13639",
+      "title": "Tuning Agent-Based Predator-Prey Models Toward Lotka-Volterra Dynamics",
+      "abstract": "Recent growth in compute power has made it increasingly feasible to use large-scale agent-based models to simulate complex adaptive systems. A central difficulty is that such models contain many local rules and parameters, where small changes can lead to runaway behaviour, population collapse, or saturation at artificial bounds. We study this problem in a continuous predator-prey system where sheep and wolves are active agents with local sensing, internal energy, and recurrent neural network-based controllers. We ask whether environmental and demographic parameters can be tuned so that the resulting population dynamics resemble classical Lotka-Volterra cycles. We optimise these parameters with a feature-based loss that rewards sustained oscillations, phase lag, bounded populations, and long-term persistence, first for random controllers and then for evolved controllers in a more naturalistic setting. The model is implemented in ABMax, a JAX-based agent-based modelling framework that enables efficient batched simulation on hardware accelerators.",
+      "authors": [
+        "Corinna Mandl",
+        "Siddharth Chaturvedi",
+        "Marcel van Gerven"
+      ],
+      "published": "2026-06-11T17:46:59Z",
+      "updated": "2026-06-11T17:46:59Z",
+      "url": "https://arxiv.org/abs/2606.13639",
+      "pdf_url": "https://arxiv.org/pdf/2606.13639.pdf",
+      "primary_category": "cs.MA",
+      "categories": [
+        "cs.MA"
+      ],
+      "tags": [
+        "cs.MA"
+      ],
+      "domain": "Agent",
+      "pdf_downloaded": true,
+      "pdf_size_bytes": 1851731,
+      "pdf_path": "2026-06-12/agent/2606.13639.pdf"
+    },
+    {
+      "id": "2606.13601",
+      "title": "MCR-Bionic Hand: Anatomical Structural Priors for Dexterous Manipulation",
+      "abstract": "Dexterous robotic hands are usually formulated as high dimensional active control systems governed by degrees of freedom, actuation, and algorithms. Human hand dexterity, however, is partly encoded in the physical architecture of bones, ligaments, tendons, aponeuroses, and intrinsic muscles. This work describes that contribution as two linked forms of structural intelligence: structural prior generation, in which wrist to finger tenodesis, FDS/FDP routing, and the dorsal extensor hood transform low dimensional posture inputs into default grasp configurations and PIP to DIP coordination; and muscle mediated modulation, in which extrinsic muscles, lumbricals, and interossei regulate MCP posture, distal stability, fingertip force paths, and contact states around that default state. Based on this framework, MCR-Bionic Hand is developed as a 1:1 musculoskeletal biomimetic hand integrating a two row eight bone wrist, cross wrist tendons, anatomical flexor routing, volar plate and collateral ligament constraints, the dorsal extensor hood, and intrinsic muscle pathways within one body. Functional demonstrations and geometric mechanical models show that wrist posture induces multi joint pre shaping, the extensor hood maps PIP posture to a coupled DIP response, and intrinsic plus pathways modulate distal stability and fingertip action direction after grasp formation. Contact rich tasks, including coin rotation, pen transfer, dorsal coin flipping, and cube manipulation, show that MCR-Bionic links low dimensional state generation with fine post contact modulation. These results suggest that anatomical biomimetics is valuable not for visual similarity, but for identifying human hand structures that perform part of control.",
+      "authors": [
+        "Haosen Yang",
+        "Guowu Wei"
+      ],
+      "published": "2026-06-11T17:20:15Z",
+      "updated": "2026-06-11T17:20:15Z",
+      "url": "https://arxiv.org/abs/2606.13601",
+      "pdf_url": "https://arxiv.org/pdf/2606.13601.pdf",
+      "primary_category": "cs.RO",
+      "categories": [
+        "cs.RO",
+        "eess.SY"
+      ],
+      "tags": [
+        "cs.RO",
+        "eess.SY"
+      ],
+      "domain": "Agent",
+      "pdf_downloaded": true,
+      "pdf_size_bytes": 3036871,
+      "pdf_path": "2026-06-12/agent/2606.13601.pdf"
+    },
+    {
+      "id": "2606.13594",
+      "title": "See What I See, Know What I Think: Dense Latent Communication Across Heterogeneous Agents",
+      "abstract": "Multi-agent systems communicate mostly through text, paying a lossy and expensive decode and re-encode cost. KV-cache communication is a promising alternative, yet most prior work is homogeneous, using duplicate copies of the same model, and avoids the central challenge of cross-model latent alignment; existing heterogeneous methods are also restrictive, typically assuming shared input and using transferred caches mainly for steering. We study a more fundamental question: can heterogeneous agents be aligned well enough to perform real \"mind reading\" and transfer both what one agent sees and how it thinks? Our information-structure analysis reveals a duality: context-aware transfer is driven by sparse reasoning signals, while context-unaware transfer, where the receiver sees no input, requires dense contextual knowledge preservation. Motivated by this, we propose dense alignment for heterogeneous KV-cache communication via a lightweight cross-model cache transformation and two-phase training: reconstruction followed by generation. Across all six directions of {Qwen3-4B, 8B, 14B} and six in-domain and out-of-domain benchmarks, our method outperforms prior heterogeneous baselines, matches or exceeds text communication in context-aware settings at roughly 2 to 3 times lower compute, and remains effective in context-unaware transfer where prior methods collapse.",
+      "authors": [
+        "Siyi Chen",
+        "Xiaoyan Zhang",
+        "Meng Wu",
+        "Jonathan Tremblay",
+        "Valts Blukis",
+        "Stan Birchfield",
+        "Rene Vidal",
+        "Alvaro Velasquez",
+        "Sijia Liu",
+        "Qing Qu"
+      ],
+      "published": "2026-06-11T17:12:42Z",
+      "updated": "2026-06-11T17:12:42Z",
+      "url": "https://arxiv.org/abs/2606.13594",
+      "pdf_url": "https://arxiv.org/pdf/2606.13594.pdf",
+      "primary_category": "cs.MA",
+      "categories": [
+        "cs.MA"
+      ],
+      "tags": [
+        "cs.MA"
+      ],
+      "domain": "Agent",
+      "pdf_downloaded": true,
+      "pdf_size_bytes": 3310807,
+      "pdf_path": "2026-06-12/agent/2606.13594.pdf"
+    },
+    {
+      "id": "2606.13435",
+      "title": "GIVE: Grounding Human Gestures in Vision-Language-Action Models",
+      "abstract": "Human communication is inherently multimodal, where language is often accompanied by non-verbal cues such as gestures to convey intentions. However, current Vision-Language-Action (VLA) models treat robotic manipulation as a pure text-driven task, overlooking the important role of gestures in Human-Robot Interaction (HRI). This often leads to inaccurate intent grounding and unreliable manipulation when language instructions are ambiguous or underspecified. To address this challenge, we propose GIVE (Gesture Intent via Visual-Semantic Enhancement), an effective approach that enhances pre-trained VLA models with human gesture understanding without architectural modifications. Specifically, GIVE incorporates gesture information through two complementary pathways: a visual pathway that overlays hand skeletons and fingertip rays onto robot observations for explicit object grounding, and a semantic pathway that generates high-level descriptions of human gestures and task instructions for robust intent grounding. By jointly leveraging visual and semantic guidance, GIVE enables VLA policies to better associate gestures with manipulation behaviors and adapt to dynamic interaction intents. In real-world HRI experiments, GIVE substantially outperforms the baseline, improving target object recognition accuracy by 40% and overall task success rate by 80%, while demonstrating strong robustness and generalization to unseen spatial layouts and diverse participants.",
+      "authors": [
+        "Pengfei Liu",
+        "Gen Li",
+        "Junqiao Fan",
+        "Boyu Ma",
+        "Jindou Jia",
+        "Yang Xiao",
+        "Jianfei Yang"
+      ],
+      "published": "2026-06-11T14:59:38Z",
+      "updated": "2026-06-11T14:59:38Z",
+      "url": "https://arxiv.org/abs/2606.13435",
+      "pdf_url": "https://arxiv.org/pdf/2606.13435.pdf",
+      "primary_category": "cs.RO",
+      "categories": [
+        "cs.RO"
+      ],
+      "tags": [
+        "cs.RO"
+      ],
+      "domain": "Agent",
+      "pdf_downloaded": true,
+      "pdf_size_bytes": 3938177,
+      "pdf_path": "2026-06-12/agent/2606.13435.pdf"
+    },
+    {
+      "id": "2606.13405",
+      "title": "Neuro-Symbolic Agents for Regulated Process Automation: Challenges and Research Agenda",
+      "abstract": "LLM-based agents are entering regulated industries where they automate judgment intensive quality management processes. We argue that symbolic structures already embedded in these domains, including regulations, typed process models, and compliance constraints, should be treated not merely as external monitoring mechanisms but as core architectural components that shape the agent's decision-making and behavior. We propose compliance-by-construction as a complementary paradigm to guardrail-based monitoring: a structural foundation that prevents control-flow violations, while guardrails remain essential for catching semantic errors. We identify a structured set of neuro-symbolic research challenges on foundational and capability level and show that addressing them jointly enables compliance-by-construction. We call on the neuro-symbolic community to engage with regulated process automation as a high impact research domain.",
+      "authors": [
+        "Alexander Rombach",
+        "Chantale Lauer",
+        "Nijat Mehdiyev"
+      ],
+      "published": "2026-06-11T14:34:11Z",
+      "updated": "2026-06-11T14:34:11Z",
+      "url": "https://arxiv.org/abs/2606.13405",
+      "pdf_url": "https://arxiv.org/pdf/2606.13405.pdf",
+      "primary_category": "cs.AI",
+      "categories": [
+        "cs.AI",
+        "cs.MA"
+      ],
+      "tags": [
+        "cs.AI",
+        "cs.MA"
+      ],
+      "domain": "Agent",
+      "pdf_downloaded": true,
+      "pdf_size_bytes": 2615468,
+      "pdf_path": "2026-06-12/agent/2606.13405.pdf"
+    },
+    {
+      "id": "2606.13400",
+      "title": "PolyFlow: Safe and Efficient Polytope-Constrained Flow Matching with Constraint Embedding and Projection-free Update",
+      "abstract": "While flow-based generative models have demonstrated strong performance across a wide range of domains, deploying them in safety-critical physical systems remains challenging due to strict constraint requirements. Existing approaches typically enforce safety through post-hoc corrections, which incur substantial computational overhead and may distort the learned distribution. We propose PolyFlow, a polytope-constrained flow matching framework that embeds constraints directly into the model and flow dynamics. PolyFlow introduces a discrete-time flow formulation and a projection-free architecture, which eliminate the discretization error and guarantee strict satisfaction of arbitrary polyhedral constraints, without the need for expensive iterative solvers. Experimental results show that PolyFlow achieves zero constraint violation while maintaining high distributional fidelity across a range of planning and control tasks. Compared to state-of-the-art constrained generation baselines, PolyFlow significantly reduces inference latency and demonstrates a favorable trade-off between safety, efficiency, and generative quality. Code is available on https://github.com/MJianM/PolyFlow.",
+      "authors": [
+        "Jianming Ma",
+        "Qiyue Yang",
+        "Yang Zhang",
+        "Liyun Yan",
+        "Zhanxiang Cao",
+        "Yazhou Zhang",
+        "Yue Gao"
+      ],
+      "published": "2026-06-11T14:30:50Z",
+      "updated": "2026-06-11T14:30:50Z",
+      "url": "https://arxiv.org/abs/2606.13400",
+      "pdf_url": "https://arxiv.org/pdf/2606.13400.pdf",
+      "primary_category": "cs.LG",
+      "categories": [
+        "cs.LG",
+        "cs.AI",
+        "cs.RO"
+      ],
+      "tags": [
+        "cs.AI",
+        "cs.LG",
+        "cs.RO"
+      ],
+      "domain": "Agent",
+      "pdf_downloaded": true,
+      "pdf_size_bytes": 4811709,
+      "pdf_path": "2026-06-12/agent/2606.13400.pdf"
+    },
+    {
+      "id": "2606.13394",
+      "title": "GeoHAT: Geometry-Adaptive Hybrid Action Transformer for Mobile Manipulation",
+      "abstract": "Whole-body mobile manipulation requires coordinating mobile base and manipulator under shifting viewpoints, posing challenges in geometric perception and action generation. Current policies either rely on 2D features or sparse 3D representations that lack dense spatial structure, and typically encode arm and base within one action vector that ignores their distinct control demands. Moreover, existing dense fusion strategies risk corrupting pretrained representations under noisy depth while incurring heavy computational overhead. We present GeoHAT, an end-to-end diffusion-based framework built on a simple principle: geometry should be injected only where reliable and attended to only where needed. GeoHAT employs a lightweight Fourier spatial encoder that maps dense per-pixel 3D coordinates into geometric tokens without an additional 3D vision backbone. These tokens are then selectively injected into vision foundation model features through per-token gated fusion modulated by depth validity, preserving the semantic prior while enriching spatial understanding. For action generation, a Hybrid Whole-Body Action Decoder decomposes arm and base into distinct subspaces and lets each action modality attend to its task-relevant visual context through sparse cross-attention, while causal temporal modeling captures intra-timestep coordination and inter-timestep dependencies. Experiments on the ManiSkill-HAB simulation benchmark demonstrate that GeoHAT achieves a 79.3% mean success rate, surpassing the strongest baseline by 23.7%. Furthermore, real-world experiments on diverse tasks also confirm consistent improvements over all baselines.",
+      "authors": [
+        "Xiangyu Zhu",
+        "Renjun Wu",
+        "Luzhou Ge",
+        "Jinyan Liu",
+        "Xuesong Li"
+      ],
+      "published": "2026-06-11T14:25:09Z",
+      "updated": "2026-06-11T14:25:09Z",
+      "url": "https://arxiv.org/abs/2606.13394",
+      "pdf_url": "https://arxiv.org/pdf/2606.13394.pdf",
+      "primary_category": "cs.RO",
+      "categories": [
+        "cs.RO"
+      ],
+      "tags": [
+        "cs.RO"
+      ],
+      "domain": "Agent",
+      "pdf_downloaded": true,
+      "pdf_size_bytes": 10886541,
+      "pdf_path": "2026-06-12/agent/2606.13394.pdf"
+    },
+    {
+      "id": "2606.13361",
+      "title": "Can I Buy Your KV Cache?",
+      "abstract": "Right now, across the world, AI agents are repeating the same absurd act: to read one document, they each recompute it from scratch. Every agent re-runs prefill, the most compute-intensive step a large model takes, over identical text, only to rebuild a key-value (KV) cache identical to the one the agent before it just built. The same answer, computed a million times. We make a proposal that is almost offensively simple: compute it once. Let a publisher precompute a document's KV cache, and let every other agent buy the right to load it and skip prefill. It works, and it is token-exact: loading a precomputed KV and continuing matches prefilling from scratch (24/24 greedy tokens, and at the logits level), with no accuracy cost. On Qwen3-4B, reuse is 9-50x cheaper in compute than prefill, and the gap widens with length (prefill's attention scales with L^2), so a single reuse already pays it back. Then the part that matters: where the KV lives. Shipping it fails, because KV is nearly incompressible, so per-load egress costs more than the prefill it saves. Hosting it provider-side, exactly as production prompt-caching works, removes egress entirely. The size of the prize is set by our measured compute saving: serving one hot 3774-token document to 80M agents costs ~$1.5M to re-prefill but only ~$0.03M of reuse compute (49.7x less). The 0.1x cache-read tariff APIs charge passes a 10x discount to users while sitting inside this measured envelope, so the 10x is a floor that the measured ~50x compute saving clears, and the gap to the physical ~50x is provider margin: millions of dollars per popular document. We frame the resulting agent-native prefill CDN and leave lossless KV compression and a cross-party payment layer as the open problems.",
+      "authors": [
+        "Luoyuan Zhang"
+      ],
+      "published": "2026-06-11T13:47:33Z",
+      "updated": "2026-06-11T13:47:33Z",
+      "url": "https://arxiv.org/abs/2606.13361",
+      "pdf_url": "https://arxiv.org/pdf/2606.13361.pdf",
+      "primary_category": "cs.AI",
+      "categories": [
+        "cs.AI",
+        "cs.CE",
+        "cs.MA"
+      ],
+      "tags": [
+        "cs.AI",
+        "cs.CE",
+        "cs.MA"
+      ],
+      "domain": "Agent",
+      "pdf_downloaded": true,
+      "pdf_size_bytes": 341437,
+      "pdf_path": "2026-06-12/agent/2606.13361.pdf"
+    },
+    {
+      "id": "2606.13355",
+      "title": "Real-Time Execution with Autoregressive Policies",
+      "abstract": "Real-time execution, enabled by asynchronous inference that ensures both smooth action trajectories and fast reactivity, is critical for realistic deployments of large-scale Vision-Language-Action models. However, recent work on real-time execution primarily focuses on variants of diffusion policies, even though it is more critical for autoregressive policies given their slower rollout speed in synchronous inference. In contrast, we demonstrate that autoregressive policies can achieve real-time execution by adjusting the tokenization horizon and applying constrained decoding, thereby guaranteeing strict latency bounds that enable multi-trajectory decoding to maximize performance. Across simulated and real-world environments, we find that the autoregressive policy consistently outperforms its equivalent-level flow-matching policy counterpart while achieving significantly improved task completion speeds from synchronous inference. Coupled with the inherent advantages of autoregressive policies, such as faster convergence and better generalizability in instruction-following, these results confirm that autoregressive policies can remain a competitive policy type supporting real-time execution.",
+      "authors": [
+        "Sangkyu Lee",
+        "Seohyeon Park",
+        "Tackgeun You",
+        "Avi Caciularu",
+        "Idan Szpektor",
+        "Hwasup Lim",
+        "Youngjae Yu"
+      ],
+      "published": "2026-06-11T13:43:01Z",
+      "updated": "2026-06-11T13:43:01Z",
+      "url": "https://arxiv.org/abs/2606.13355",
+      "pdf_url": "https://arxiv.org/pdf/2606.13355.pdf",
+      "primary_category": "cs.RO",
+      "categories": [
+        "cs.RO",
+        "cs.AI"
+      ],
+      "tags": [
+        "cs.AI",
+        "cs.RO"
+      ],
+      "domain": "Agent",
+      "pdf_downloaded": true,
+      "pdf_size_bytes": 10918762,
+      "pdf_path": "2026-06-12/agent/2606.13355.pdf"
+    },
+    {
+      "id": "2606.13352",
+      "title": "Low cost, easily manufactured, highly flexible strain and touch sensitive fiber for robotics applications",
+      "abstract": "Existing stretch and touch sensors for robots are generally expensive with respect to at least one of material costs, required manufacturing equipment, or manufacturing time. We present and experimentally characterize a conductive fiber made using only inexpensive commercial off-the-shelf parts (conductive thread at $0.07/ft, silicone tubing at $0.94/ft) and tools (loop-style needle threader at $2), which can be manufactured quickly (20 cm length in 2 minutes.) We demonstrate its use as a resistive strain sensor with three applications: Triggering a grasp in a pneumatically actuated assistive finger, sensing the pose of a pneumatically actuated robotic strap, and estimating the pose of a flexible solid. We also demonstrate that it can be used as a capacitive sensor with two applications: First, as a touch sensor which triggers a commercial robot arm to move, and second, as a near-field sensor enabling the robot arm to follow a moving hand. The capacitive sensors are knitted, showcasing the high flexibility of the fiber. We discuss methods for improving manufacturing scalability and their cost trade-offs. Finally, we demonstrate a method for repairing a cut fiber.",
+      "authors": [
+        "Christian Diaz Herrera",
+        "Srushti Raste",
+        "Simin Liu",
+        "Miles Modeste",
+        "Jiyang",
+        "Yin",
+        "Katelyn McCall",
+        "Yuxing Jared Yao",
+        "Roopkamal Chahal",
+        "Simon Chidley",
+        "Trung Ha",
+        "T. David Westmoreland",
+        "Sonia Roberts"
+      ],
+      "published": "2026-06-11T13:40:30Z",
+      "updated": "2026-06-11T13:40:30Z",
+      "url": "https://arxiv.org/abs/2606.13352",
+      "pdf_url": "https://arxiv.org/pdf/2606.13352.pdf",
+      "primary_category": "cs.RO",
+      "categories": [
+        "cs.RO"
+      ],
+      "tags": [
+        "cs.RO"
+      ],
+      "domain": "Agent",
+      "pdf_downloaded": true,
+      "pdf_size_bytes": 14979688,
+      "pdf_path": "2026-06-12/agent/2606.13352.pdf"
+    },
+    {
+      "id": "2606.13340",
+      "title": "EMG-Based Adaptation of Anisotropic Virtual Fixtures for Robot-Assisted Surgical Resection and Dissection",
+      "abstract": "In this paper, we address the development of an adaptive assistance system for robot-assisted laparoscopic surgery, specifically for delicate tasks such as Resection and Dissection. Even if Virtual Fixtures offer significant advantages for guiding a surgeon's movements, conventional Virtual Fixtures are often defined by fixed geometries, lacking the flexibility to adapt to the surgical workflow or the surgeon's immediate intent. To address these limitations, we propose a novel framework for an adaptive and anisotropic virtual fixture. In addition, we introduce an intuitive control interface that modulates the fixture's geometry in real-time based on the surgeon's intent, inferred from EMG signals. This approach allows the surgeon to dynamically expand or disengage the constraint by contracting their forearm muscles, enabling seamless transitions between precise guided motion and free repositioning of the tool. Experimental results from a pilot user study, based on a standardized surgical training task, demonstrate the effectiveness of the proposed method. The system showed significant improvements in task accuracy and movement consistency, alongside a reduction in perceived cognitive load, effort, and frustration.",
+      "authors": [
+        "Dario Onfiani",
+        "Michael Dyck",
+        "Luigi Biagiotti",
+        "Julian Klodmann"
+      ],
+      "published": "2026-06-11T13:29:55Z",
+      "updated": "2026-06-11T13:29:55Z",
+      "url": "https://arxiv.org/abs/2606.13340",
+      "pdf_url": "https://arxiv.org/pdf/2606.13340.pdf",
+      "primary_category": "cs.RO",
+      "categories": [
+        "cs.RO"
+      ],
+      "tags": [
+        "cs.RO"
+      ],
+      "domain": "Agent",
+      "pdf_downloaded": true,
+      "pdf_size_bytes": 6758464,
+      "pdf_path": "2026-06-12/agent/2606.13340.pdf"
+    },
+    {
+      "id": "2606.13279",
+      "title": "See Selectively, Act Adaptively: Dual-Level Structural Decomposition for Bimanual Robot Manipulation",
+      "abstract": "In bimanual robotic manipulation, task-relevant visual information varies with the task stage and context, while the interaction of the two arms shifts between independent and coordinated modes, making policy learning challenging. However, existing monolithic Vision-Language-Action (VLA) policies process diverse visual inputs and interaction patterns through a single shared representation and action generation pathway, often failing to separately account for visual relevance and bimanual interaction structure. To address this issue, we propose a bimanual manipulation VLA framework based on Dual-Level Structural Decomposition. The View-Selective Visual Router dynamically adjusts wrist-view contributions to emphasize relevant visual cues, while the Interaction-Aware Action Mixture-of-Experts (MoE) decomposes action generation into coordinated and arm-wise pathways to adapt to varying bimanual interaction modes. We evaluate the proposed method on six simulated bimanual manipulation tasks in RoboTwin 2.0 and three long-horizon real-world tasks. Our model improves the overall average success rate over a monolithic baseline by 27.7% in simulation and 43.3% in real-world evaluation, while consistently outperforming single-module variants across both settings. These results demonstrate that jointly considering selective visual processing and explicit decomposition of bimanual interaction structures provides an effective inductive bias for robust bimanual manipulation.",
+      "authors": [
+        "Yoon-Ji Choi",
+        "Young-Chae Son",
+        "Soo-Chul Lim"
+      ],
+      "published": "2026-06-11T12:33:55Z",
+      "updated": "2026-06-11T12:33:55Z",
+      "url": "https://arxiv.org/abs/2606.13279",
+      "pdf_url": "https://arxiv.org/pdf/2606.13279.pdf",
+      "primary_category": "cs.RO",
+      "categories": [
+        "cs.RO"
+      ],
+      "tags": [
+        "cs.RO"
+      ],
+      "domain": "Agent",
+      "pdf_downloaded": true,
+      "pdf_size_bytes": 24766548,
+      "pdf_path": "2026-06-12/agent/2606.13279.pdf"
+    },
+    {
+      "id": "2606.13256",
+      "title": "Humor Style Drives Laughter, Topic Shapes Acceptability: Evaluating Bilingual Personal and Political Robot-Delivered AI Jokes",
+      "abstract": "Humor plays a central role in human social relationships, and recent advances in computational humor create new opportunities for integrating humor into human-robot interaction (HRI). While large language models (LLMs) can generate diverse forms of humor, it remains unclear how humor style, joke content, and language preference shape perceptions of robot-delivered humor in group settings. In this exploratory study, we employed a mixed factorial design in which participants evaluated AI-generated jokes delivered by a robot in a university classroom. We examined the effects of humor type (Affiliative, Self-Enhancing, Aggressive, Self-Defeating) and joke content (person-related vs. political) on perceived funniness and appropriateness, as well as preferred language. Results show that humor type significantly influences funniness, with Aggressive and Affiliative humor rated higher, while joke content primarily affects appropriateness, with person-related jokes preferred over political ones. Language preference was shaped by both joke content and participants' self-reported fluency and humor practices.",
+      "authors": [
+        "Anna-Maria Velentza",
+        "Anne-Gwenn Bosser"
+      ],
+      "published": "2026-06-11T12:13:43Z",
+      "updated": "2026-06-11T12:13:43Z",
+      "url": "https://arxiv.org/abs/2606.13256",
+      "pdf_url": "https://arxiv.org/pdf/2606.13256.pdf",
+      "primary_category": "cs.RO",
+      "categories": [
+        "cs.RO",
+        "cs.AI"
+      ],
+      "tags": [
+        "cs.AI",
+        "cs.RO"
+      ],
+      "domain": "Agent",
+      "pdf_downloaded": true,
+      "pdf_size_bytes": 1067436,
+      "pdf_path": "2026-06-12/agent/2606.13256.pdf"
+    },
+    {
+      "id": "2606.13232",
+      "title": "WT-UMI: Tactile-based Whole-Body Manipulation via Force-Supervised Contact-Aware Planning",
+      "abstract": "Whole-body humanoid manipulation of bulky, deformable, and shared-load objects requires distributed contact sensing and explicit force regulation, yet most imitation policies treat contact force only implicitly. On the other hand, different demonstration sources provide complementary modalities with inherent trade-offs: human demonstrations capture natural contact forces but not robot-executable actions, while teleoperation directly records robot actions but with less natural force regulation. This paper presents \\textbf{WT-UMI}, a wearable whole-body tactile interface worn by human operators or mounted on humanoids, providing accurate observations of tactile images, contact forces, and end-effector poses across both human demonstration and humanoid teleoperation modes. We introduce a force-conditioned target-pose correction module that converts measured human poses into contact-aware robot targets by learning corrections from teleoperation data. To leverage the natural force interaction in human data, we propose a force-supervised planner that predicts end-effector pose chunks and contact-force trajectories. The predicted contact force serves as the reference for a tactile-based admittance controller. Across five contact-rich tasks spanning deformable objects, bulky rigid objects, and human--humanoid collaboration, WT-UMI improves success rate and reduces contact-position tracking error over four policy baselines. Our project page is available at https://wt-umi.github.io/WTUMI/.",
+      "authors": [
+        "Jaehwi Jang",
+        "Zhaoyuan Gu",
+        "Alfred Cueva",
+        "Zimeng Chai",
+        "Junjie Sheng",
+        "Thong Nguyen",
+        "Himank Galundia",
+        "Yifan Wu",
+        "Huishu Xue",
+        "Isaac Legene",
+        "Ojas Mediratta",
+        "Davin Doan",
+        "Andrew Collins",
+        "Sarah Sadegh",
+        "KyoungMok Kim",
+        "Rishita Dhalbisoi",
+        "Zun Chen",
+        "Ye Zhao"
+      ],
+      "published": "2026-06-11T11:45:58Z",
+      "updated": "2026-06-11T11:45:58Z",
+      "url": "https://arxiv.org/abs/2606.13232",
+      "pdf_url": "https://arxiv.org/pdf/2606.13232.pdf",
+      "primary_category": "cs.RO",
+      "categories": [
+        "cs.RO"
+      ],
+      "tags": [
+        "cs.RO"
+      ],
+      "domain": "Agent",
+      "pdf_downloaded": true,
+      "pdf_size_bytes": 21267283,
+      "pdf_path": "2026-06-12/agent/2606.13232.pdf"
+    },
+    {
+      "id": "2606.13222",
+      "title": "Proprioceptive-visual correspondence enables self-other distinction in humanoid robots",
+      "abstract": "Distinguishing self from others is a prerequisite for social intelligence, yet humanoid robots that increasingly share workspaces with humans still lack this ability. Here we show that a humanoid robot can learn self-other distinction from proprioceptive-visual correspondence, without any identity labels or kinematic models. Once established, this distinction bootstraps a predictive self-model that maps joint configurations to three-dimensional body occupancy, capturing how the robot's body changes with action. In multi-agent scenes involving humans or morphologically identical robots, the system reliably identifies itself, learns a 3D self-model, and supports downstream tasks including target reaching, collision-aware motion planning, and human-to-robot motion retargeting. Together, these results outline a route toward bodily self-representation in robots that act and coordinate alongside others in shared physical environments. Project page: https://euron-zc.github.io/humanoid-self-model/.",
+      "authors": [
+        "Yurun Chen",
+        "Tianyuan Gao",
+        "Yizhong Ge",
+        "Shikun Ban",
+        "Yizhou Wang",
+        "Hongkai Xiong",
+        "Wenjun Zeng",
+        "Wentao Zhu"
+      ],
+      "published": "2026-06-11T11:38:34Z",
+      "updated": "2026-06-11T11:38:34Z",
+      "url": "https://arxiv.org/abs/2606.13222",
+      "pdf_url": "https://arxiv.org/pdf/2606.13222.pdf",
+      "primary_category": "cs.RO",
+      "categories": [
+        "cs.RO",
+        "cs.AI"
+      ],
+      "tags": [
+        "cs.AI",
+        "cs.RO"
+      ],
+      "domain": "Agent",
+      "pdf_downloaded": true,
+      "pdf_size_bytes": 8812760,
+      "pdf_path": "2026-06-12/agent/2606.13222.pdf"
+    },
+    {
+      "id": "2606.13220",
+      "title": "LLM-as-an-Investigator: Evidence-First Reasoning for Robust Interactive Problem Diagnosis",
+      "abstract": "Large language models (LLMs) are increasingly used as interactive assistants for technical problem solving. However, when users provide incomplete descriptions or plausible but unverified explanations, LLMs may prematurely align with these assumptions and propose solutions before collecting sufficient evidence. We refer to this behavior as user-driven sycophancy: the tendency of an LLM to reinforce a user-provided hypothesis instead of testing alternative explanations. This paper introduces LLM-as-an-Investigator, an evidence-first agentic AI methodology for robust problem diagnosis. The approach is implemented through a Solution Investigator Agent, which estimates the ambiguity of an initial problem description, generates candidate hypotheses, asks targeted clarification questions, and updates hypothesis probabilities after each answer. Rather than producing an immediate response, the agent continues the investigation until the evidence makes one candidate explanation stronger than the alternatives. To evaluate the approach, we build a benchmark from solved technical forum threads in mechanical, electrical, and hydraulic domains. We use a three-agent evaluation pipeline in which a Problem-Solution Extractor Agent converts solved threads into structured cases, a Ground-Truth Evaluator Agent simulates the user while hiding the known solution, and the tested assistant attempts to recover the solution through dialogue. The experiments compare standard assistants, reasoning-oriented LLMs, and the proposed investigator-based model across LLM backbones. In addition to diagnostic accuracy, we analyze how standard assistants follow misleading user hypotheses in diagnostic cases. The results show that the proposed approach identifies the problem more accurately than direct prompting and reasoning-only baselines, while its evidence-first protocol helps reduce user-induced conversational bias.",
+      "authors": [
+        "Fabrizio Marozzo",
+        "Pietro Li\u00f2"
+      ],
+      "published": "2026-06-11T11:37:07Z",
+      "updated": "2026-06-11T11:37:07Z",
+      "url": "https://arxiv.org/abs/2606.13220",
+      "pdf_url": "https://arxiv.org/pdf/2606.13220.pdf",
+      "primary_category": "cs.AI",
+      "categories": [
+        "cs.AI",
+        "cs.CE",
+        "cs.ET",
+        "cs.LG",
+        "cs.MA"
+      ],
+      "tags": [
+        "cs.AI",
+        "cs.CE",
+        "cs.ET",
+        "cs.LG",
+        "cs.MA"
+      ],
+      "domain": "Agent",
+      "pdf_downloaded": true,
+      "pdf_size_bytes": 685192,
+      "pdf_path": "2026-06-12/agent/2606.13220.pdf"
+    },
+    {
+      "id": "2606.13206",
+      "title": "Visual Place Recognition in Forests with Depth-Aware Distillation",
+      "abstract": "Visual place recognition in natural forest environments remains challenging due to repetitive vegetation, weak structural cues, and significant appearance variation across traversals. To address this limitation, this paper proposes a lightweight depth-aware distillation framework that injects geometric cues into a DINOv2-based place recognition model, while maintaining its pre-trained descriptor space. Evaluated on the recent WildCross benchmark, the proposed approach yields gains over an appearance-only counterpart, providing robustness to appearance variations. These results demonstrate the importance of depth as a strong complementary modality for place recognition in natural environments and identify depth-aware distillation as a promising direction for more robust forest perception.",
+      "authors": [
+        "Walter Nedov",
+        "Saimunur Rahman",
+        "Kavindie Katuwandeniya",
+        "David Hall",
+        "Kaushik Roy",
+        "Peyman Moghadam"
+      ],
+      "published": "2026-06-11T11:17:26Z",
+      "updated": "2026-06-11T11:17:26Z",
+      "url": "https://arxiv.org/abs/2606.13206",
+      "pdf_url": "https://arxiv.org/pdf/2606.13206.pdf",
+      "primary_category": "cs.CV",
+      "categories": [
+        "cs.CV",
+        "cs.RO"
+      ],
+      "tags": [
+        "cs.CV",
+        "cs.RO"
+      ],
+      "domain": "Agent",
+      "pdf_downloaded": true,
+      "pdf_size_bytes": 9071900,
+      "pdf_path": "2026-06-12/agent/2606.13206.pdf"
+    },
+    {
+      "id": "2606.13203",
+      "title": "Embedding ISO 10218 Safety Compliance in Robots via Control Barrier Functions for Human-Robot Collaboration",
+      "abstract": "Human-Robot Collaboration (HRC) requires strict adherence to safety standards, such as ISO 10218, to prevent harmful interactions. Standard Speed and Separation Monitoring (SSM) filters calculate safe robotic speeds based on conservative assumptions, such as constant human velocity, which prevents accurate predictions of minimum separation distances and causes unnecessary operational halts. This paper proposes a Control Barrier Function (CBF) that explicitly incorporates human acceleration data to analytically forward-predict the minimum human-robot separation distance during a worst-case robotic stopping trajectory. To guarantee safety at the control level, this predictive CBF is integrated as an inequality constraint within a Sequential Quadratic Programming (SQP) framework. Specifically, two methods are proposed: Method I, a CBF-constrained PD safety filter; and Method II, a task-scaling SQP controller that enforces a spatial tube constraint. Simulated and real-world experiments on a UR10e robot evaluate the two proposed methods against a standard industrial SSM module baseline. Results demonstrate that Method II dynamically modulates execution speed and confines spatial deviations. Compared to Method I, Method II achieves a 63\\% reduction in mean trajectory error and avoids excessive evasive manoeuvres, ensuring high task throughput while complying with ISO 10218 SSM guidelines.",
+      "authors": [
+        "Federico Parma",
+        "Cesare Tonola",
+        "Nicola Pedrocchi",
+        "Manuel Beschi"
+      ],
+      "published": "2026-06-11T11:13:59Z",
+      "updated": "2026-06-11T11:13:59Z",
+      "url": "https://arxiv.org/abs/2606.13203",
+      "pdf_url": "https://arxiv.org/pdf/2606.13203.pdf",
+      "primary_category": "cs.RO",
+      "categories": [
+        "cs.RO"
+      ],
+      "tags": [
+        "cs.RO"
+      ],
+      "domain": "Agent",
+      "pdf_downloaded": true,
+      "pdf_size_bytes": 933000,
+      "pdf_path": "2026-06-12/agent/2606.13203.pdf"
+    }
+  ]
+}
