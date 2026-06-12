@@ -1,0 +1,787 @@
+{
+  "domain": "Vision",
+  "date": "2026-06-12",
+  "count": 27,
+  "papers": [
+    {
+      "id": "2606.13679",
+      "title": "InterleaveThinker: Reinforcing Agentic Interleaved Generation",
+      "abstract": "Recent image generators have demonstrated impressive photorealism and instruction-following capabilities in single-image generation and editing. However, constrained by their architectures, they cannot achieve interleaved generation (text-image sequence), which has crucial applications in visual narratives, guidance, and embodied manipulation. Even the latest open-source Unified Multimodal Models (UMMs) exhibit limited performance in this regard. In this paper, we introduce InterleaveThinker, the first multi-agent pipeline designed to endow any existing image generator with interleaved generation capabilities. Specifically, we employ a planner agent to organize the image-text input sequence, instructing the image generator on the required execution at each step. Subsequently, we introduce a critic agent to evaluate the generator's outputs, identify samples that deviate from the planned instructions, and refine the instructions for regeneration. To implement this pipeline, we construct the Interleave-Planner-SFT-80k and Interleave-Critic-SFT-112k to perform a format cold-start. Then we develop Interleave-Critic-RL-13k to reinforce the step-wise instruction correction capability within a generation trajectory using GRPO. Since a single interleaved generation trajectory may involve over 25 generator calls, optimizing the entire trajectory is computationally impractical. Therefore, we propose accuracy reward and step-wise reward, allowing single-step RL to effectively guide the entire generation trajectory. The results show that InterleaveThinker improves performance across various image generators. On interleaved generation benchmarks, it achieves performance comparable to Nano Banana and GPT-5. Surprisingly, it also significantly enhances the base model on reasoning-based benchmarks; for example, on 4-step FLUX.2-klein, we observe substantial gains on WISE and RISE.",
+      "authors": [
+        "Dian Zheng",
+        "Harry Lee",
+        "Manyuan Zhang",
+        "Kaituo Feng",
+        "Zoey Guo",
+        "Ray Zhang",
+        "Hongsheng Li"
+      ],
+      "published": "2026-06-11T17:59:50Z",
+      "updated": "2026-06-11T17:59:50Z",
+      "url": "https://arxiv.org/abs/2606.13679",
+      "pdf_url": "https://arxiv.org/pdf/2606.13679.pdf",
+      "primary_category": "cs.CV",
+      "categories": [
+        "cs.CV"
+      ],
+      "tags": [
+        "cs.CV"
+      ],
+      "domain": "Vision",
+      "pdf_downloaded": true,
+      "pdf_size_bytes": 5153733,
+      "pdf_path": "2026-06-12/vision/2606.13679.pdf"
+    },
+    {
+      "id": "2606.13676",
+      "title": "Modality Forcing for Scalable Spatial Generation",
+      "abstract": "Text-to-image (T2I) models contain rich spatial priors. Synthesizing photorealistic, cluttered scenes requires an understanding of geometry, including perspective and relative scale. Prior works adapt T2I models to leverage this prior for depth prediction, but they require dense depth data and involve complex recipes. We propose Modality Forcing, a simple, scalable post-training recipe for joint image-depth generation using a single DiT trained on sparse depth data. Modality Forcing enables conditional and joint generation of image and depth in any permutation by assigning separate noise levels per modality. Per-modality decoders let us train on sparse, real-world depth and achieve strong, generalizable depth prediction. We further show that Modality Forcing inherits the scalability of T2I pre-training: by training a set of T2I models from scratch (370M to 3.3B parameters), we find that larger models trained on more image data produce more accurate depth. Our strongest model is competitive with state-of-the-art monocular depth estimators and reduces AbsRel by 57% relative to existing joint image-depth generative models. These results provide strong evidence that image generation is a scalable pre-training objective for spatial perception. https://modality-forcing.github.io/",
+      "authors": [
+        "Bardienus Pieter Duisterhof",
+        "Deva Ramanan",
+        "Jeffrey Ichnowski",
+        "Justin Johnson",
+        "Keunhong Park"
+      ],
+      "published": "2026-06-11T17:59:45Z",
+      "updated": "2026-06-11T17:59:45Z",
+      "url": "https://arxiv.org/abs/2606.13676",
+      "pdf_url": "https://arxiv.org/pdf/2606.13676.pdf",
+      "primary_category": "cs.CV",
+      "categories": [
+        "cs.CV"
+      ],
+      "tags": [
+        "cs.CV"
+      ],
+      "domain": "Vision",
+      "pdf_downloaded": true,
+      "pdf_size_bytes": 5725518,
+      "pdf_path": "2026-06-12/vision/2606.13676.pdf"
+    },
+    {
+      "id": "2606.13674",
+      "title": "RepWAM: World Action Modeling with Representation Visual-Action Tokenizers",
+      "abstract": "This work presents RepWAM, a representation-centric world action model (WAM) built on representation visual-action tokenizers. Existing WAMs typically inherit reconstruction-oriented video tokenizers from pretrained video generation models. Although these tokenizers preserve visual fidelity, pixel reconstruction alone provides limited guidance for learning instruction-following dynamics that connect future prediction with robot control. To address this, we explore a semantic visual-action latent space for representation-centric world action modeling. Specifically, we train a representation visual-action tokenizer that maps visual inputs into aligned visual and latent action tokens. We then pretrain our WAM to jointly model future visual states and the latent actions that connect them under language instructions, followed by adaptation to real robot trajectories for closed-loop manipulation. Experiments on real-world manipulation tasks and simulation benchmarks show that RepWAM delivers strong performance across diverse manipulation settings, while ablations highlight the value of semantic visual-action tokenization over reconstruction-oriented alternatives. These results establish representation visual-action tokenization as a promising foundation for world action models and a step toward generalist robot policies. Code and weights will be available at https://github.com/wdrink/RepWAM.",
+      "authors": [
+        "Junke Wang",
+        "Qihang Zhang",
+        "Shuai Yang",
+        "Yiming Luo",
+        "Yujun Shen",
+        "Zuxuan Wu",
+        "Yu-Gang Jiang",
+        "Yinghao Xu"
+      ],
+      "published": "2026-06-11T17:59:43Z",
+      "updated": "2026-06-11T17:59:43Z",
+      "url": "https://arxiv.org/abs/2606.13674",
+      "pdf_url": "https://arxiv.org/pdf/2606.13674.pdf",
+      "primary_category": "cs.CV",
+      "categories": [
+        "cs.CV"
+      ],
+      "tags": [
+        "cs.CV"
+      ],
+      "domain": "Vision",
+      "pdf_downloaded": true,
+      "pdf_size_bytes": 4618657,
+      "pdf_path": "2026-06-12/vision/2606.13674.pdf"
+    },
+    {
+      "id": "2606.13655",
+      "title": "Flex4DHuman: Flexible Multi-view Video Diffusion for 4D Human Reconstruction",
+      "abstract": "We present Flex4DHuman, a multi-view video diffusion model that transforms a monocular or sparse multi-view video of a dynamic subject into synchronized dense multi-view videos using only relative camera-pose conditioning. Unlike prior human-centric methods that rely on skeletons, depth maps, normals, or rendered target-view geometry, Flex4DHuman requires no explicit geometry priors and instead conditions generation through relative camera-pose positional encoding. The generated videos can be directly ingested by downstream reconstruction pipelines to create dynamic 4D Gaussian splats. Built on the Wan 2.1 1.3B text-to-video model, Flex4DHuman preserves the backbone architecture and encodes camera and view information through a five-axis positional encoding that extends spatio-temporal RoPE with view indices and continuous SE(3) relative camera geometry. A three-stage curriculum progressively trains the model for pose following, flexible reference-to-target view generation, and temporal rollout. To support temporal rollout, we train with clean historical target-view tokens. We also add multi-view captions to enable test-time text control. Combined with an off-the-shelf 4D Gaussian Splatting stage, our framework lifts monocular static-camera videos into dynamic 4D Gaussian splats. Experiments on DNA-Rendering and ActorsHQ show that Flex4DHuman surpasses prior state-of-the-art methods, while the same formulation generalizes to animal categories after mixed human-animal training. These capabilities make Flex4DHuman a practical step toward scalable 4D content creation from casual monocular videos for simulation, gaming, AR/VR, and video re-shooting.",
+      "authors": [
+        "Jen-Hao Cheng",
+        "Yipeng Wang",
+        "Hao Zhang",
+        "Gengshan Yang",
+        "Jenq-Neng Hwang"
+      ],
+      "published": "2026-06-11T17:54:05Z",
+      "updated": "2026-06-11T17:54:05Z",
+      "url": "https://arxiv.org/abs/2606.13655",
+      "pdf_url": "https://arxiv.org/pdf/2606.13655.pdf",
+      "primary_category": "cs.CV",
+      "categories": [
+        "cs.CV",
+        "cs.GR"
+      ],
+      "tags": [
+        "cs.CV",
+        "cs.GR"
+      ],
+      "domain": "Vision",
+      "pdf_downloaded": true,
+      "pdf_size_bytes": 5175170,
+      "pdf_path": "2026-06-12/vision/2606.13655.pdf"
+    },
+    {
+      "id": "2606.13652",
+      "title": "World Tracing: Generative Pixel-Aligned Geometry Beyond the Visible",
+      "abstract": "Image-to-3D methods often trade off faithfulness and completeness: depth estimators are anchored to input pixels but stop at the visible surface, while image-to-3D models generate complete shapes that are often misaligned with the input. We introduce World Tracing, a generative pixel-aligned geometry representation that predicts 3D points aligned with observed pixels while completing geometry beyond the visible surface. For each input pixel, World Tracing predicts an ordered stack of camera-space 3D points, where the first layer represents the visible surface and subsequent layers represent front-to-back intersections with occluded surfaces. We instantiate this representation with a world-tracing diffusion transformer, WT-DiT, which treats multiple geometry layers as separate denoising tokens coupled through factorized and global attention. WT-DiT is trained with pixel-space flow matching and a mixed noise schedule that balances visible-surface reconstruction with occluded-geometry generation. World Tracing achieves strong performance on visible-surface reconstruction and complete geometry generation across object, scene, and dynamic benchmarks, outperforming both depth predictors and image-to-3D generators. It also preserves 2D-to-3D correspondence, enabling text-driven 3D scene editing, geometry-conditioned novel-view video synthesis, and training-free integration with textured-mesh generators.",
+      "authors": [
+        "Hao Zhang",
+        "Mohamed El Banani",
+        "Jen-Hao Cheng",
+        "Paul Zhang",
+        "Yi Hua",
+        "Ben Mildenhall",
+        "Christoph Lassner",
+        "Narendra Ahuja",
+        "Gengshan Yang"
+      ],
+      "published": "2026-06-11T17:52:48Z",
+      "updated": "2026-06-11T17:52:48Z",
+      "url": "https://arxiv.org/abs/2606.13652",
+      "pdf_url": "https://arxiv.org/pdf/2606.13652.pdf",
+      "primary_category": "cs.CV",
+      "categories": [
+        "cs.CV",
+        "cs.GR"
+      ],
+      "tags": [
+        "cs.CV",
+        "cs.GR"
+      ],
+      "domain": "Vision",
+      "pdf_downloaded": true,
+      "pdf_size_bytes": 16087898,
+      "pdf_path": "2026-06-12/vision/2606.13652.pdf"
+    },
+    {
+      "id": "2606.13644",
+      "title": "Surflo: Consistent 3D Surface Flow Model with Global State",
+      "abstract": "Geometry is invariant to viewpoint, which makes any collection of images a redundant encoding of a single 3D state. Existing feed-forward reconstruction models fail to exploit this: per-view methods emit overlapping, unaligned pointmaps that grow linearly with input count, while global-latent methods commit to a fixed, low-resolution output. We introduce Surflo, which compresses a variable number of unposed RGB views into K latent tokens-one global state-and decodes oriented 3D surface points by independently transporting them from noise onto the surface via flow matching. This frees the output from any fixed grid or token budget: the same latent yields from a few thousand to a million points in a single forward pass. To suppress the local inconsistencies inherent to independent per-point decoding, an inference-time guidance term correlates nearby points by injecting a photometric gradient during ODE integration. Surflo matches or surpasses feed-forward baselines on surface metrics, runs an order of magnitude faster than optimization-based methods that require hundreds of views, and is the only feed-forward approach to combine a global latent with arbitrary-resolution decoding.",
+      "authors": [
+        "Antoine Gu\u00e9don",
+        "Shu Nakamura",
+        "Nicolas Dufour",
+        "Jiahui Lei",
+        "Ko Nishino",
+        "Angjoo Kanazawa"
+      ],
+      "published": "2026-06-11T17:48:38Z",
+      "updated": "2026-06-11T17:48:38Z",
+      "url": "https://arxiv.org/abs/2606.13644",
+      "pdf_url": "https://arxiv.org/pdf/2606.13644.pdf",
+      "primary_category": "cs.CV",
+      "categories": [
+        "cs.CV"
+      ],
+      "tags": [
+        "cs.CV"
+      ],
+      "domain": "Vision",
+      "pdf_downloaded": true,
+      "pdf_size_bytes": 18209273,
+      "pdf_path": "2026-06-12/vision/2606.13644.pdf"
+    },
+    {
+      "id": "2606.13625",
+      "title": "Revisiting Vehicle Color Recognition in Long-Tailed Surveillance Scenarios",
+      "abstract": "Vehicle color recognition is an important cue for vehicle identification in surveillance systems, especially when license plates are illegible due to low resolution, occlusion, motion blur, or poor illumination. However, real-world vehicle color distributions are highly imbalanced, making overall accuracy insufficient to assess performance on rare but operationally relevant colors. This paper presents a comprehensive study of vehicle color recognition under severe class imbalance using UFPR-VeSV, a challenging real-world surveillance dataset. We investigate synthetic minority-class augmentation through two off-the-shelf generative strategies: text-conditioned image generation with RunDiffusion/JuggernautXL and image-conditioned color editing with Gemini 2.0 Flash. The curated synthetic data are combined with modern visual representations, loss reweighting, learning-rate scheduling, color-safe augmentation, foreground-aware preprocessing, and ensemble fusion. The bestperforming approach achieves 94.6% micro accuracy and 79.7% macro accuracy, improving macro accuracy by 8.2 percentage points over recent literature. A manual error analysis further shows that many remaining failures are visually ambiguous even for human annotators, highlighting the practical limits of color-based vehicle identification in unconstrained surveillance imagery. The generated images and source code are publicly available at https://github.com/viniciusorru/vcr-synthetic",
+      "authors": [
+        "Vin\u00edcius Orr\u00fa",
+        "Bruno H. Foggiatto",
+        "Gabriel E. Lima",
+        "David Menotti",
+        "Rayson Laroca"
+      ],
+      "published": "2026-06-11T17:39:40Z",
+      "updated": "2026-06-11T17:39:40Z",
+      "url": "https://arxiv.org/abs/2606.13625",
+      "pdf_url": "https://arxiv.org/pdf/2606.13625.pdf",
+      "primary_category": "cs.CV",
+      "categories": [
+        "cs.CV"
+      ],
+      "tags": [
+        "cs.CV"
+      ],
+      "domain": "Vision",
+      "pdf_downloaded": true,
+      "pdf_size_bytes": 3914405,
+      "pdf_path": "2026-06-12/vision/2606.13625.pdf"
+    },
+    {
+      "id": "2606.13587",
+      "title": "Towards Effective Waste Segmentation for Automated Waste Recycling in Cluttered Background",
+      "abstract": "Rapid expansion of urban areas and population growth is causing an immense increase in waste production, which demands the need for efficient and automated waste management. In this scenario, automated waste recycling (AWR) using deep learning methods can assist humans in optimal waste management. Recent deep learning approaches for AWR provide promising waste segmentation performance, however, these methods rely on large backbone networks that are inefficient for AWR systems and suffer from performance deterioration in cluttered scenes. To this end, an optimal waste segmentation network is introduced which effectively utilizes the spatial domain to capture localized structural dependencies and the spectral domain to efficiently extract global contextual relationships. This cascaded design allows the network to progressively leverage both local and global representations across complementary domains to highlight the semantic information necessary for effective segmentation of various waste objects. Furthermore, auxiliary feature enhancement module (AFEM) is introduced to enhance the target objects' boundaries and blob amplification for better segmentation in cluttered scenarios. Extensive experimentation on ZeroWaste-aug, ZeroWaste-f and SpectralWaste datasets reveals the merits of the proposed method.",
+      "authors": [
+        "Mamoona Javaid",
+        "Mubashir Noman",
+        "Abdul Hannan",
+        "Shah Nawaz",
+        "Mustansar Fiaz",
+        "Sajid Ghuffar"
+      ],
+      "published": "2026-06-11T17:11:04Z",
+      "updated": "2026-06-11T17:11:04Z",
+      "url": "https://arxiv.org/abs/2606.13587",
+      "pdf_url": "https://arxiv.org/pdf/2606.13587.pdf",
+      "primary_category": "cs.CV",
+      "categories": [
+        "cs.CV"
+      ],
+      "tags": [
+        "cs.CV"
+      ],
+      "domain": "Vision",
+      "pdf_downloaded": true,
+      "pdf_size_bytes": 8493301,
+      "pdf_path": "2026-06-12/vision/2606.13587.pdf"
+    },
+    {
+      "id": "2606.13562",
+      "title": "Contrast-Informed Augmentation and Domain-Adversarial Training for Adult-to-Neonatal MR Reconstruction Generalization",
+      "abstract": "Purpose: To investigate whether contrast-informed data augmentation and domain-adversarial training improve the adult-to-neonatal generalization of the E2E-VarNet. Methods: Three training regimes were investigated: (1) adult-only training with unaugmented adult data, (2) mixed training with paired unaugmented and neonatal-informed augmented adult data, and (3) mixed training with a domain-adversarial objective. Models were trained on retrospectively undersampled multi-coil adult T2-weighted brain MR data and evaluated on neonatal and adult test data at acceleration factors $R=4$ and $R=8$ using quantitative metrics and qualitative evaluation. Feature analyses assessed whether domain-adversarial training altered the latent representations of unaugmented adult, augmented adult, and neonatal test samples. Results: Mixed training (Mixed) and mixed domain-adversarial training (Mixed-DAT) outperformed unaugmented adult-only training (Unaug-Only) when evaluated on neonatal data. At R=4, Mixed-DAT achieved the best performance (SSIM = 0.924 +/- 0.027, PSNR = 33.98 +/- 1.15 dB). At R=8, Mixed-DAT performed best when measured using SSIM (0.848 +/- 0.031 vs. 0.766 +/- 0.037 for Unaug-Only and 0.814 +/- 0.035 for Mixed) and Mixed performed best when measured using PSNR (29.56 +/- 0.83 dB vs. 26.26 +/- 0.78 dB for Unaug-Only and 29.43 +/- 0.83 dB for Mixed-DAT). Qualitative assessment of t-SNE plots suggested that Mixed-DAT increased the overlap among the latent representations of the unaugmented adult, augmented adult, and neonatal test data. Conclusion: Contrast-informed augmentation and domain-adversarial training improved adult-to-neonatal generalization of deep learning-based MR reconstruction. These findings suggest that contrast-informed data augmentation combined with adversarial training may improve robustness to domain shift in undersampled neonatal MR reconstruction.",
+      "authors": [
+        "Stephen Moore",
+        "Lara Leijser",
+        "Richard Frayne",
+        "Roberto Souza"
+      ],
+      "published": "2026-06-11T16:47:53Z",
+      "updated": "2026-06-11T16:47:53Z",
+      "url": "https://arxiv.org/abs/2606.13562",
+      "pdf_url": "https://arxiv.org/pdf/2606.13562.pdf",
+      "primary_category": "cs.CV",
+      "categories": [
+        "cs.CV",
+        "cs.AI"
+      ],
+      "tags": [
+        "cs.AI",
+        "cs.CV"
+      ],
+      "domain": "Vision",
+      "pdf_downloaded": true,
+      "pdf_size_bytes": 4352676,
+      "pdf_path": "2026-06-12/vision/2606.13562.pdf"
+    },
+    {
+      "id": "2606.13558",
+      "title": "Edit the Bits, Diff the Codes: Bitwise Residual Editing for Visual Autoregressive Models",
+      "abstract": "Text-guided image editing with visual autoregressive (VAR) generators requires controlling both what the model samples and where the sampled change is written back into the image code. Existing VAR editors mainly operate on token streams, features, or flat next-token logits, leaving two native structures of bitwise-residual VAR models underused: the per-bit Bernoulli prediction head and the additive multi-scale residual code field from which the image is assembled. We propose BitResEdit, a training-free editor for bitwise-residual VAR generators such as Infinity. BitEdit performs source-negative guidance by tilting the post-CFG per-bit log-odds along a source--target contrast computed on a shared edited prefix, then projects each update into a closed-form Bernoulli-KL trust region around the clean CFG sampler. ResEdit converts the sampled bits into per-scale continuous-code residuals, gates them with a localization mask, and re-injects them through the generator's native sum-of-scales. Together they couple decision-time bit guidance with combination-time code composition, so masked-out latent features are preserved exactly by code arithmetic while localized, scale-aware edits are applied inside the target region. On PIE-Bench with Infinity-2B, BitResEdit attains the strongest text alignment among same-backbone VAR editors, improving CLIP on the edited region by +1.07 over the strongest prior editor while keeping background preservation competitive with it. Ablations show BitEdit and ResEdit play complementary roles in target alignment and background preservation.",
+      "authors": [
+        "Shengqiang Zhang",
+        "Ruotong Liao",
+        "Volker Tresp",
+        "Barbara Plank",
+        "Hinrich Sch\u00fctze"
+      ],
+      "published": "2026-06-11T16:41:25Z",
+      "updated": "2026-06-11T16:41:25Z",
+      "url": "https://arxiv.org/abs/2606.13558",
+      "pdf_url": "https://arxiv.org/pdf/2606.13558.pdf",
+      "primary_category": "cs.CV",
+      "categories": [
+        "cs.CV",
+        "cs.CL"
+      ],
+      "tags": [
+        "cs.CL",
+        "cs.CV"
+      ],
+      "domain": "Vision",
+      "pdf_downloaded": true,
+      "pdf_size_bytes": 16589049,
+      "pdf_path": "2026-06-12/vision/2606.13558.pdf"
+    },
+    {
+      "id": "2606.13528",
+      "title": "What's Old is New Again: Classical Dimensionality Reduction for Efficient Saliency-Guided Biometric Attack Detection",
+      "abstract": "Saliency-guided training is a paradigm in visual recognition that encourages models to focus on the most relevant image regions during learning. While its application in biometric presentation attack detection (PAD) has shown strong benefits in robustness and generalization, adoption is often limited by the high cost, domain specificity, and limited scalability of existing saliency acquisition methods, such as human annotations over a limited dataset. We present a novel, cost-efficient, and highly-scalable approach to saliency acquisition using maps inspired by classical dimensionality reduction techniques: PCA and LDA. Our proposed methods generate saliency maps directly from raw training data, requiring no human annotation nor domain knowledge. We contextualize the effectiveness of these saliency sources in three saliency-explored domains (iris PAD, synthetic face detection, fingerprint PAD) and demonstrate its scalability in two saliency-novel domains (fingerprint vein PAD and ID card PAD). Across all domains tested, models trained using dimensionality reduction-sourced saliency maps exceed baseline and sometimes SOTA saliency methods without any resource investment or domain-specific tooling. Our findings overcome an important yet unaddressed barrier to saliency-guided training for biometric attack detection and beyond.",
+      "authors": [
+        "Samuel Webster",
+        "Walter Scheirer"
+      ],
+      "published": "2026-06-11T16:18:06Z",
+      "updated": "2026-06-11T16:18:06Z",
+      "url": "https://arxiv.org/abs/2606.13528",
+      "pdf_url": "https://arxiv.org/pdf/2606.13528.pdf",
+      "primary_category": "cs.CV",
+      "categories": [
+        "cs.CV"
+      ],
+      "tags": [
+        "cs.CV"
+      ],
+      "domain": "Vision",
+      "pdf_downloaded": true,
+      "pdf_size_bytes": 1484984,
+      "pdf_path": "2026-06-12/vision/2606.13528.pdf"
+    },
+    {
+      "id": "2606.13515",
+      "title": "MaskWAM: Unifying Mask Prompting and Prediction for World-Action Models",
+      "abstract": "World Action Models (WAMs) present a promising paradigm for robotic control via video prediction. However, current WAMs suffer from fundamental spatial bottlenecks: standard text inputs introduce referential ambiguity in cluttered scenes, while unstructured RGB predictions lack semantic grounding and remain biased by task-irrelevant backgrounds. To overcome these limitations, we introduce MaskWAM, an object-centric world-action model. By jointly integrating masks as both explicit inputs and predictions via a unified Mixture of Transformers (MoT), MaskWAM unlocks robust policy generalization. This design provides two key benefits: (1) predicting future masks yields object-centric semantic supervision that suppresses visual noise, significantly enhancing even standard text-conditioned WAMs; and (2) coupling this predictive supervision with first-frame visual prompts, such as target object masks, establishes a precise spatial anchor that substantially reduces language ambiguity. Crucially, as WAMs are inherently vision-driven architectures, direct mask conditioning yields substantially stronger guidance than text alone, establishing a precise and robust paradigm for manipulating unseen objects. Evaluations on LIBERO, RoboTwin, and real-world tasks demonstrate that MaskWAM significantly outperforms baselines in both language-clear and language-ambiguous tasks.",
+      "authors": [
+        "Hanyang Yu",
+        "Haitao Lin",
+        "Jingbo Zhang",
+        "Wenyao Zhang",
+        "Chenghao Gu",
+        "Heng Li",
+        "Ping Tan"
+      ],
+      "published": "2026-06-11T16:02:42Z",
+      "updated": "2026-06-11T16:02:42Z",
+      "url": "https://arxiv.org/abs/2606.13515",
+      "pdf_url": "https://arxiv.org/pdf/2606.13515.pdf",
+      "primary_category": "cs.CV",
+      "categories": [
+        "cs.CV",
+        "cs.LG",
+        "cs.RO"
+      ],
+      "tags": [
+        "cs.CV",
+        "cs.LG",
+        "cs.RO"
+      ],
+      "domain": "Vision",
+      "pdf_downloaded": true,
+      "pdf_size_bytes": 9542048,
+      "pdf_path": "2026-06-12/vision/2606.13515.pdf"
+    },
+    {
+      "id": "2606.13509",
+      "title": "Measurement-Calibrated Multi-Camera Fusion for Vision-Based Indoor Localization",
+      "abstract": "Indoor vision-based localization systems are affected by detection noise, occlusions, and limited camera coverage, leading to uncertainty at multiple stages of the pipeline. While multi-camera data fusion is widely used to mitigate these issues, it is typically treated as a black-box component and evaluated solely end-to-end, obscuring its mechanistic contributions. To address this gap, this work investigates whether explicitly characterizing single-camera localization errors can be leveraged to calibrate and optimize multi-camera data fusion. We introduce a measurement-calibrated fusion approach that integrates component-wise error quantification, specifically isolating homography calibration, human detection, and motion tracking. A component-wise evaluation is conducted to quantify error contributions from homography calibration, human detection, and motion tracking. Experimental results show that data fusion improves localization accuracy compared to single-camera baselines. While measurement-calibrated fusion provides only limited improvement in absolute accuracy over standard fusion, it substantially reduces trajectory variance and improves motion smoothness, which are critical for applications requiring stable and continuous motion estimates. These results highlight the value of explicit error characterization when designing data fusion strategies for vision-based indoor positioning systems.",
+      "authors": [
+        "Mateo Toro Diz",
+        "Jonathan Hoss",
+        "Noah Klarmann"
+      ],
+      "published": "2026-06-11T15:56:02Z",
+      "updated": "2026-06-11T15:56:02Z",
+      "url": "https://arxiv.org/abs/2606.13509",
+      "pdf_url": "https://arxiv.org/pdf/2606.13509.pdf",
+      "primary_category": "cs.CV",
+      "categories": [
+        "cs.CV",
+        "cs.AI"
+      ],
+      "tags": [
+        "cs.AI",
+        "cs.CV"
+      ],
+      "domain": "Vision",
+      "pdf_downloaded": true,
+      "pdf_size_bytes": 347675,
+      "pdf_path": "2026-06-12/vision/2606.13509.pdf"
+    },
+    {
+      "id": "2606.13503",
+      "title": "Heterogeneous LiDAR Early Fusion and Learned Re-Ranking Strategy for Robust Long-Term Place Recognition in Unstructured Environments",
+      "abstract": "Robust localization in unstructured environments, such as agricultural fields, is a critical challenge for autonomous systems. LiDAR sensors provide detailed 3D information about the environment and are invariant to lighting conditions. For this reason, LiDAR-based place recognition methods have gained significant attention. In this paper, we propose MinkUNeXt-VINE++, a novel approach that combines early fusion of heterogeneous LiDAR data from two sensors (Livox Mid-360 and Velodyne VLP-16) and a learned re-ranking strategy in inference time. This fusion leverages the strengths of each sensor to provide a more comprehensive representation of the environment. Additionally, the re-ranking approach is particularly important in repetitive environments, such as vineyards, as finding true positives is a major challenge. We evaluated our approach using the TEMPO-VINE dataset, which provides heterogeneous LiDAR data in vineyard environments across different phenological stages. Our results demonstrate that MinkUNeXt-VINE++ significantly improves place recognition performance compared to single-sensor approaches and state-of-the-art methods. MinkUNeXt-VINE++ achieves a 20% improvement in the Recall@1 metric compared to single-sensor approaches, and +30% including re-ranking. The code of our method is publicly available for reproduction.",
+      "authors": [
+        "Judith Vilella-Cantos",
+        "Juan Jos\u00e9 Cabrera",
+        "M\u00f3nica Ballesta",
+        "David Valiente",
+        "Luis Pay\u00e1"
+      ],
+      "published": "2026-06-11T15:52:16Z",
+      "updated": "2026-06-11T15:52:16Z",
+      "url": "https://arxiv.org/abs/2606.13503",
+      "pdf_url": "https://arxiv.org/pdf/2606.13503.pdf",
+      "primary_category": "cs.CV",
+      "categories": [
+        "cs.CV",
+        "cs.AI",
+        "cs.RO"
+      ],
+      "tags": [
+        "cs.AI",
+        "cs.CV",
+        "cs.RO"
+      ],
+      "domain": "Vision",
+      "pdf_downloaded": true,
+      "pdf_size_bytes": 1777513,
+      "pdf_path": "2026-06-12/vision/2606.13503.pdf"
+    },
+    {
+      "id": "2606.13497",
+      "title": "SPARC: Reliable Spatial Annotations from Robot Demonstrations at Scale",
+      "abstract": "This work introduces Spatial Annotations from Robot Demonstrations with Reliability Calibration (SPARC), a risk-aware framework that automatically labels robot demonstrations with structured spatial annotations and assigns each annotation a reliability score. Structured spatial annotations, such as bounding boxes, object trajectories, and manipulation phase labels, benefit a broad range of robotics applications from training grounded robot policies and embodied foundation models to motion planning and hierarchical task composition. Existing automated pipelines generate such annotations at scale but provide no reliable quality signal: detector confidence is poorly calibrated for annotation correctness, forcing a choice between accepting noisy labels or discarding useful samples. In contrast to existing automated pipelines, SPARC leverages the spatio-temporal structure inherent to robot tasks to generate a reliability signal, reducing noisy labels and retaining more useful samples. We further introduce Interaction-Aware Bench (IA-Bench), a benchmark that measures model accuracy in grounding the locations of interacted objects in robot demonstrations. On 1.7k human-annotated demonstrations spanning diverse embodiments and scenarios, SPARC significantly outperforms detection-only baselines in localization accuracy while retaining three times more samples at high-precision operating points. Our experiments demonstrate that models finetuned on our annotations achieve state-of-the-art results on object-grounding and pointing benchmarks among similarly sized models, while remaining competitive on broader spatial-reasoning suites without manually verified or annotated training data. Furthermore, policies trained on SPARC-generated annotations outperform baselines in cluttered, visually ambiguous real-world scenes. Code, data, and models are available at intuitive-robots.github.io/sparc-labeling.",
+      "authors": [
+        "Nils Blank",
+        "Paul Mattes",
+        "Maximilian Xiling Li",
+        "Jakub Suliga",
+        "Thomas Roth",
+        "Moritz Reuss",
+        "Pankhuri Vanjani",
+        "Rudolf Lioutikov"
+      ],
+      "published": "2026-06-11T15:46:28Z",
+      "updated": "2026-06-11T15:46:28Z",
+      "url": "https://arxiv.org/abs/2606.13497",
+      "pdf_url": "https://arxiv.org/pdf/2606.13497.pdf",
+      "primary_category": "cs.RO",
+      "categories": [
+        "cs.RO",
+        "cs.CV"
+      ],
+      "tags": [
+        "cs.CV",
+        "cs.RO"
+      ],
+      "domain": "Vision",
+      "pdf_downloaded": true,
+      "pdf_size_bytes": 17295031,
+      "pdf_path": "2026-06-12/vision/2606.13497.pdf"
+    },
+    {
+      "id": "2606.13496",
+      "title": "Budget-Constrained Step-Level Diffusion Caching",
+      "abstract": "Step-level caching accelerates diffusion models by exploiting temporal redundancy across denoising steps. Existing methods make per-step cache decisions using threshold-based heuristics, without directly optimizing for final output quality. As a result, their inference latency varies across inputs and is difficult to control at deployment. In this work, we propose BudCache, which inverts this formulation: rather than letting per-step error thresholds dictate the runtime cost, we fix the compute budget in advance and search for the cache policy that best preserves the final output. To tackle the combinatorial complexity of step selection, we combine Simulated Annealing with deterministic Hill Climbing. This offline search identifies high-quality cache policies within minutes and introduces no online search or thresholding overhead during inference. When the compute budget is very tight, we further introduce cache-aware schedule alignment, which adapts the time discretization to the selected cache policy to reduce cache-induced trajectory mismatch. Experiments on FLUX.1-dev and Wan2.1 show that BudCache achieves better generation quality than heuristic caching baselines under the same inference budgets. Code is available at https://github.com/Westlake-AGI-Lab/BudCache",
+      "authors": [
+        "Mingkun Lei",
+        "Tong Zhao",
+        "Liangyu Yuan",
+        "Chi Zhang"
+      ],
+      "published": "2026-06-11T15:45:05Z",
+      "updated": "2026-06-11T15:45:05Z",
+      "url": "https://arxiv.org/abs/2606.13496",
+      "pdf_url": "https://arxiv.org/pdf/2606.13496.pdf",
+      "primary_category": "cs.CV",
+      "categories": [
+        "cs.CV"
+      ],
+      "tags": [
+        "cs.CV"
+      ],
+      "domain": "Vision",
+      "pdf_downloaded": true,
+      "pdf_size_bytes": 11312773,
+      "pdf_path": "2026-06-12/vision/2606.13496.pdf"
+    },
+    {
+      "id": "2606.13494",
+      "title": "NavWAM: A Navigation World Action Model for Goal-Conditioned Visual Navigation",
+      "abstract": "Goal-conditioned visual navigation requires a robot to act under partial observability by anticipating how its motion will change the future egocentric view and whether that change brings it closer to the goal. Navigation world models provide such visual foresight, but they remain prediction modules that require an external planner to convert predicted futures into closed-loop control. We propose Navigation World Action Model (NavWAM), a diffusion-transformer policy that turns navigation world-model prediction into executable action by representing future observations, goal-progress values, and action chunks in a shared latent sequence. By learning future prediction jointly with the action and value targets that determine closed-loop behavior, NavWAM makes visual foresight directly usable for robot control. We build NavWAM through simulation pretraining and real-robot adaptation, and evaluate it on image-goal navigation against planning-based world models and a representative direct navigation policy. Across offline benchmarks and closed-loop real-robot deployment, NavWAM improves over planning-based world-model baselines in our evaluations while using the default policy mode without CEM-style action search. Project page: https://dachii-azm.github.io/navwam/",
+      "authors": [
+        "Daichi Azuma",
+        "Taiki Miyanishi",
+        "Koya Sakamoto",
+        "Shuhei Kurita",
+        "Yaonan Zhu",
+        "Petr Khrapchenkov",
+        "Motoaki Kawanabe",
+        "Yusuke Iwasawa",
+        "Yutaka Matsuo"
+      ],
+      "published": "2026-06-11T15:44:36Z",
+      "updated": "2026-06-11T15:44:36Z",
+      "url": "https://arxiv.org/abs/2606.13494",
+      "pdf_url": "https://arxiv.org/pdf/2606.13494.pdf",
+      "primary_category": "cs.RO",
+      "categories": [
+        "cs.RO",
+        "cs.CV"
+      ],
+      "tags": [
+        "cs.CV",
+        "cs.RO"
+      ],
+      "domain": "Vision",
+      "pdf_downloaded": true,
+      "pdf_size_bytes": 2506214,
+      "pdf_path": "2026-06-12/vision/2606.13494.pdf"
+    },
+    {
+      "id": "2606.13488",
+      "title": "Point-Wise Geometry-Aware Transformer for Partial-to-Full Point Cloud Registration in Computer-Assisted Surgery",
+      "abstract": "Partial-to-full registration remains challenging due to varying overlap ratios, fluctuating point densities, and the presence of noise. While transformers have shown strong potential for point cloud processing, prior methods typically confine them to global context aggregation, overlooking fine-grained local geometry crucial for accurate correspondence. We propose \\emph{GAPR-Net}, a learning-based point cloud registration framework with a coarse-to-fine architecture that combines convolution and transformer modules, in which local and global information is fused between the partial and full point clouds using a cross-attention mechanism. To achieve this, a transformation-invariant point-wise geometric feature representation is proposed, which can robustly capture relative geometric features for individual points with respect to their neighboring points. To evaluate the effectiveness of the proposed approach, experiments are conducted on four geometrically distinct bones, including the tibia, femur, pelvis, and thoracic cartilage. The overall registration recall reaches 94.2\\%, the method results in a low RMSE of 1.992 mm and $R^2$ values of 0.908 and 0.974 for rotation and translation, respectively. The results demonstrate that the proposed method effectively addresses the partial-to-full point cloud registration problem. The proposed method enables highly accurate 3D point cloud registration using partial observation, providing a critical foundation for precise surgical navigation and robotic interventions in computer-assisted surgery. The code will be accessed after the double-blind review process.",
+      "authors": [
+        "Siyu Zhou",
+        "Zhongliang Jiang"
+      ],
+      "published": "2026-06-11T15:37:53Z",
+      "updated": "2026-06-11T15:37:53Z",
+      "url": "https://arxiv.org/abs/2606.13488",
+      "pdf_url": "https://arxiv.org/pdf/2606.13488.pdf",
+      "primary_category": "cs.CV",
+      "categories": [
+        "cs.CV"
+      ],
+      "tags": [
+        "cs.CV"
+      ],
+      "domain": "Vision",
+      "pdf_downloaded": true,
+      "pdf_size_bytes": 1609199,
+      "pdf_path": "2026-06-12/vision/2606.13488.pdf"
+    },
+    {
+      "id": "2606.13461",
+      "title": "Reinforcement Learning for Neural Model Editing",
+      "abstract": "Editing pretrained neural networks requires specialized algorithms tailored to specific objectives. Designing such algorithms is often time-consuming and demands significant effort. We present an exploratory framework that formulates neural model editing as a reinforcement learning problem, where agents modify models using reward feedback. We introduce two environments: MaskWorld, where agents scale weights multiplicatively, and ShiftWorld, where agents apply additive weight updates. The reward function combines a utility-preservation objective with a task-specific editing objective, enabling agents to learn targeted modifications while maintaining overall model performance. We evaluate the framework on bias mitigation in text classification and machine unlearning in image classification, both of which traditionally rely on specialized algorithms. Our results show that the learned policies reduce forget set accuracy to nearly 0% while preserving over 90% retain set accuracy on the unlearning task. In the bias mitigation setting, the learned policies improve bias-related performance by more than 5% while maintaining general classification utility. Our findings show that neural model editing can be cast as a reinforcement learning problem, allowing editing policies to be learned from reward feedback rather than manually engineered for each task.",
+      "authors": [
+        "Shaivi Malik"
+      ],
+      "published": "2026-06-11T15:16:42Z",
+      "updated": "2026-06-11T15:16:42Z",
+      "url": "https://arxiv.org/abs/2606.13461",
+      "pdf_url": "https://arxiv.org/pdf/2606.13461.pdf",
+      "primary_category": "cs.LG",
+      "categories": [
+        "cs.LG",
+        "cs.CV"
+      ],
+      "tags": [
+        "cs.CV",
+        "cs.LG"
+      ],
+      "domain": "Vision",
+      "pdf_downloaded": true,
+      "pdf_size_bytes": 460956,
+      "pdf_path": "2026-06-12/vision/2606.13461.pdf"
+    },
+    {
+      "id": "2606.13460",
+      "title": "VISA: VLM-Guided Instance Semantic Auditing for 3D Occupancy World Models",
+      "abstract": "Semantic 3D occupancy provides a voxelized world state for autonomous driving and robot decision making, but object and rare-class errors can affect free-space interpretation, collision checking, and temporal state propagation. We show that a common VLM strategy, aligning 3D voxel or object features with crop-caption embeddings, improves text-space similarity without reliably improving closed-set occupancy mIoU. Motivated by this mismatch, we propose VISA, a training-time semantic auditing approach for existing occupancy world models. VISA queries an offline VLM on a representative crop of each physical object instance, obtains a structured audit with class hypotheses, plausible confusions, reliability, attributes, and evidence, and propagates it along the object track. The audit is grounded to matched 3D object voxels and distilled into semantic logits through reliability-weighted taxonomy, attribute-factor, and scene-level audit graph losses, while inference remains unchanged and requires no VLM. On nuScenes, averaged across three runs, VISA improves OccWorld from 19.06 to 20.05 mIoU and GaussianWorld from 21.36 to 21.91 mIoU; on GaussianWorld, object mIoU improves from 18.18 to 19.16 and rare-class mIoU from 15.60 to 16.79. These results suggest that VLMs are better suited to closed-set occupancy as reliability-aware semantic auditors than as generic caption-embedding targets.",
+      "authors": [
+        "Ruiqi Xian",
+        "Yuehan Xian",
+        "Jing Liang",
+        "Xuewei Qi",
+        "Dinesh Manocha"
+      ],
+      "published": "2026-06-11T15:15:34Z",
+      "updated": "2026-06-11T15:15:34Z",
+      "url": "https://arxiv.org/abs/2606.13460",
+      "pdf_url": "https://arxiv.org/pdf/2606.13460.pdf",
+      "primary_category": "cs.CV",
+      "categories": [
+        "cs.CV"
+      ],
+      "tags": [
+        "cs.CV"
+      ],
+      "domain": "Vision",
+      "pdf_downloaded": true,
+      "pdf_size_bytes": 1809576,
+      "pdf_path": "2026-06-12/vision/2606.13460.pdf"
+    },
+    {
+      "id": "2606.13432",
+      "title": "OmniDirector: General Multi-Shot Camera Cloning without Cross-Paired Data",
+      "abstract": "Cloning camera motion from reference videos is an important task in video generation, as videos provide intuitive and precise control. Existing methods either directly use parametric representations that fail to handle multi-shot generation or synthesize cross-paired data, which suffer from data scarcity, resulting in poor performance in complicated camera motion cloning. To address these issues, we introduce a general camera motion representation that encodes cameras as grid motion videos. This camera grid represents the camera parameters visually and supports the integration of diverse trajectories for multi-shot video generation. Building upon this, we propose OmniDirector, a unified framework trained on a million-scale camera grid-video pairs that coordinates characters, actions, and cameras to provide director-level control for multimodal diffusion transformers. Furthermore, we design a novel hierarchical prompt expansion agent that harmoniously integrates different control signals by systematically describing camera motion and visual content through understanding signal relationships. Extensive experiments demonstrate the superior performance and outstanding controllability of our framework. Project page: https://ymlinfeng.github.io/OmniDirector.github.io/",
+      "authors": [
+        "Jiwen Liu",
+        "Shujuan Li",
+        "Zhixue Fang",
+        "Xiaohan Li",
+        "Yan Zhou",
+        "Zijie Meng",
+        "Zhimin Zhang",
+        "Yawen Luo",
+        "Guoxin Zhang",
+        "Yu-Shen Liu",
+        "Pengfei Wan"
+      ],
+      "published": "2026-06-11T14:58:28Z",
+      "updated": "2026-06-11T14:58:28Z",
+      "url": "https://arxiv.org/abs/2606.13432",
+      "pdf_url": "https://arxiv.org/pdf/2606.13432.pdf",
+      "primary_category": "cs.CV",
+      "categories": [
+        "cs.CV",
+        "cs.AI"
+      ],
+      "tags": [
+        "cs.AI",
+        "cs.CV"
+      ],
+      "domain": "Vision",
+      "pdf_downloaded": true,
+      "pdf_size_bytes": 6266945,
+      "pdf_path": "2026-06-12/vision/2606.13432.pdf"
+    },
+    {
+      "id": "2606.13427",
+      "title": "VietFashion: Benchmarking Sketch-Text Composed Image Retrieval for Cultural Outfits",
+      "abstract": "Cultural garments pose a unique challenge for visual retrieval systems, as their identity often depends on subtle structural and symbolic details that are poorly captured by standard AI models. We introduce VietFashion, a new benchmark for sketch-text composed image retrieval centered on the Ao Dai, a traditional Vietnamese garment. VietFashion enables designers and researchers to retrieve culturally meaningful outfits using a combination of hand-drawn sketches, which convey garment structure, and textual descriptions, which encode cultural semantics. The dataset is initialized with 650 sketches and expanded using generative models to produce over 21,000 photorealistic images with aligned captions. Textual prompts that describe detailed outfit attributes, which are extracted from fashion magazines to ensure authenticity and diversity. To better reflect the inherent ambiguity of design intent, VietFashion adopts a multi-target retrieval setting, where a single query may correspond to multiple valid results. We establish standardized evaluation protocols and benchmark state-of-the-art composed image retrieval methods. Experimental results reveal significant performance gaps in modeling fine-grained cultural semantics and multi-modal composition, positioning VietFashion as a challenging benchmark for fine-grained fashion retrieval. The dataset is publicly available at: https://hng0303.github.io/VietFashion.",
+      "authors": [
+        "Hoang-Nguyen Cao",
+        "Le-Hoang Bui",
+        "Dinh-Khoi Vo",
+        "Minh-Triet Tran",
+        "Trung-Nghia Le"
+      ],
+      "published": "2026-06-11T14:54:54Z",
+      "updated": "2026-06-11T14:54:54Z",
+      "url": "https://arxiv.org/abs/2606.13427",
+      "pdf_url": "https://arxiv.org/pdf/2606.13427.pdf",
+      "primary_category": "cs.CV",
+      "categories": [
+        "cs.CV"
+      ],
+      "tags": [
+        "cs.CV"
+      ],
+      "domain": "Vision",
+      "pdf_downloaded": true,
+      "pdf_size_bytes": 3609844,
+      "pdf_path": "2026-06-12/vision/2606.13427.pdf"
+    },
+    {
+      "id": "2606.13410",
+      "title": "Person Identification from Contextual Motion",
+      "abstract": "We consider the problem of identifying people based on their motion styles. We present a generative model describing the action instance creation process and derive a probabilistic identity inference scheme for two common person identification scenarios motivated by the surveillance and authentication applications. We introduce a novel, \\emph{interactive}, scenario for person identification from motion patterns. To this end, we formalize the identification process in the context of a sequential message exchange session between the subject and the system. The subject's behavior is modeled using a probabilistic generative model inspired by the Human Information Processing (HIP) paradigm. At each stage, the system presents a visual stimulus (a cue) to the subject and records their motion response. The cue is selected so as to maximize the mutual information of the expected response and the subject's identity. Once recorded, the response is used to update the a posteriori probability over possible subjects' identities. The process terminates once a sufficient classification confidence level is reached. To the best of our knowledge, this is the first time person identification is addressed in such interactive setting. We report high recognition rates on five publicly available datasets and our own novel dataset consisting of 4,476 recordings of 22 test subjects responding to 15 cues.",
+      "authors": [
+        "Igor Kviatkovsky",
+        "Ehud Rivlin",
+        "Ilan Shimshoni"
+      ],
+      "published": "2026-06-11T14:39:25Z",
+      "updated": "2026-06-11T14:39:25Z",
+      "url": "https://arxiv.org/abs/2606.13410",
+      "pdf_url": "https://arxiv.org/pdf/2606.13410.pdf",
+      "primary_category": "cs.CV",
+      "categories": [
+        "cs.CV",
+        "cs.HC"
+      ],
+      "tags": [
+        "cs.CV",
+        "cs.HC"
+      ],
+      "domain": "Vision",
+      "pdf_downloaded": true,
+      "pdf_size_bytes": 1287583,
+      "pdf_path": "2026-06-12/vision/2606.13410.pdf"
+    },
+    {
+      "id": "2606.13382",
+      "title": "SmartFont: Dynamic Condition Allocation for Few-Shot Font Generation",
+      "abstract": "Few-shot font generation simultaneously requires global structural completeness and fine-grained local style fidelity. Existing methods usually either rely on global content-style modeling, which is robust but imperfectly disentangled, or emphasize component/local modeling, which captures fine details but relies heavily on local priors and reference coverage. We argue that the key challenge is not merely to learn purer conditions, but to organize complementary yet biased global and local conditions through multi-level allocation during generation. To this end, we propose SmartFont, a diffusion-based few-shot font generation framework that combines global content-style generation with weakly supervised local corrective experts. The local branch performs semantic-spatial allocation by learning expert-wise local concepts and semantically meaningful spatial maps under weak component supervision, enabling fine-grained correction without requiring explicit component-conditioned inference. On top of this, a denoising-state condition allocation module adaptively weights global content, global style, and local corrective feature across timesteps and injection blocks. Extensive experiments show that SmartFont achieves better global-local balance, improves glyph quality and local detail fidelity.",
+      "authors": [
+        "Zian Yang",
+        "Zixin Wang"
+      ],
+      "published": "2026-06-11T14:10:05Z",
+      "updated": "2026-06-11T14:10:05Z",
+      "url": "https://arxiv.org/abs/2606.13382",
+      "pdf_url": "https://arxiv.org/pdf/2606.13382.pdf",
+      "primary_category": "cs.CV",
+      "categories": [
+        "cs.CV",
+        "cs.AI"
+      ],
+      "tags": [
+        "cs.AI",
+        "cs.CV"
+      ],
+      "domain": "Vision",
+      "pdf_downloaded": true,
+      "pdf_size_bytes": 1962074,
+      "pdf_path": "2026-06-12/vision/2606.13382.pdf"
+    },
+    {
+      "id": "2606.13376",
+      "title": "MoVerse: Real-Time Video World Modeling with Panoramic Gaussian Scaffold",
+      "abstract": "We present MoVerse, a real-time video world model that creates an interactively navigable scene from a single narrow-field-of-view image. This setting is challenging because the input observes only a small fraction of the environment, while interactive roaming requires a complete surrounding world, persistent geometry, controllable camera motion, and temporally coherent high-fidelity observations. MoVerse addresses this problem by separating world construction from observation rendering. It first expands the input into a gravity-aligned 360$^\\circ$ panorama with topology-aware diffusion, closing the missing field of view before 3D reasoning. It then lifts the panorama into a persistent 3D Gaussian scaffold using panoramic geometry-aware residual prediction, yielding a dense and directly renderable spatial memory. Finally, a Gaussian-conditioned video renderer translates scaffold renderings along user-specified camera trajectories into photorealistic video. To make this renderer practical for interaction, we train a bidirectional diffusion teacher for high-quality conditional rendering and distill it into a causal autoregressive student for bounded-latency streaming. This design combines the controllability and long-range consistency of explicit 3D representations with the perceptual quality of generative video models. MoVerse supports real-time scene roaming at 8~FPS on a single NVIDIA RTX~4090 GPU, demonstrating a practical path toward single-image world creation with interactive video output.",
+      "authors": [
+        "Yang Zhou",
+        "Ziheng Wang",
+        "Yuqin Lu",
+        "Haofeng Liu",
+        "Jun Liang",
+        "Shengfeng He",
+        "Jing Li"
+      ],
+      "published": "2026-06-11T14:01:02Z",
+      "updated": "2026-06-11T14:01:02Z",
+      "url": "https://arxiv.org/abs/2606.13376",
+      "pdf_url": "https://arxiv.org/pdf/2606.13376.pdf",
+      "primary_category": "cs.CV",
+      "categories": [
+        "cs.CV"
+      ],
+      "tags": [
+        "cs.CV"
+      ],
+      "domain": "Vision",
+      "pdf_downloaded": false,
+      "pdf_size_bytes": null,
+      "pdf_path": null
+    },
+    {
+      "id": "2606.13368",
+      "title": "IterCAD: An Iterative Multimodal Agent for Visually-Grounded CAD Generation and Editing",
+      "abstract": "Computer-Aided Design is pivotal in modern manufacturing, yet existing automated methods predominantly rely on open-loop, one-shot generation, creating a mismatch with iterative real-world practices. In this paper, we present IterCAD, a unified multimodal agent framework for closed-loop, interactive CAD generation and editing. We formulate the task as a multi-turn interaction between a multimodal agent and an executable CAD sandbox, covering three tasks: Drawing-to-Code, Text-to-Code, and Interactive Editing. To support this, we develop a data synthesis pipeline incorporating advanced industrial manufacturing features to generate standard-compliant multi-view engineering drawings, complex code-editing tasks, and high-fidelity interaction trajectories. We optimize the agent via progressive SFT followed by geometry-aware reinforcement learning with viable-prefix masking to enhance code executability and geometric fidelity. Finally, we introduce the IterCAD-Bench evaluation suite and propose the Chamfer Distance Tolerance-Recall (CD-TR) curve alongside its AUC-TR metric, establishing a survivor-bias-free standard that unifies code validity and geometric precision. Extensive experiments demonstrate that IterCAD achieves highly competitive performance across multiple benchmarks, significantly outperforming existing approaches in both code executability and geometric precision, while exhibiting superior capabilities in closed-loop iterative refinement.",
+      "authors": [
+        "Tao Hu",
+        "Jiaxin Ai",
+        "Licheng Wen",
+        "Xueheng Li",
+        "Shu Zou",
+        "Siqi Li",
+        "Nianchen Deng",
+        "Xinyu Cai",
+        "Hongbin Zhou",
+        "Pinlong Cai",
+        "Daocheng Fu",
+        "Yu Yang",
+        "Hairong Zhang",
+        "Botian Shi",
+        "Xuemeng Yang"
+      ],
+      "published": "2026-06-11T13:53:21Z",
+      "updated": "2026-06-11T13:53:21Z",
+      "url": "https://arxiv.org/abs/2606.13368",
+      "pdf_url": "https://arxiv.org/pdf/2606.13368.pdf",
+      "primary_category": "cs.AI",
+      "categories": [
+        "cs.AI",
+        "cs.CV"
+      ],
+      "tags": [
+        "cs.AI",
+        "cs.CV"
+      ],
+      "domain": "Vision",
+      "pdf_downloaded": true,
+      "pdf_size_bytes": 12435186,
+      "pdf_path": "2026-06-12/vision/2606.13368.pdf"
+    },
+    {
+      "id": "2606.13366",
+      "title": "Dual-Constrained Diffusion Image Compression for Operational Rate-Distortion-Perception Optimization",
+      "abstract": "The rate-distortion-perception (RDP) trade-off extends classical rate--distortion theory by imposing a distributional constraint on reconstructions, providing a unified framework for neural image compression that jointly governs fidelity and perceptual realism. While prior work achieves near-optimal rate--perception trade-offs, practical frameworks explicitly realizing the full RDP surface remain scarce, primarily due to the difficulty of introducing common randomness at the decoder. We propose DCIC (Dual-Constrained Diffusion Image Compression), which integrates a learned codec with a diffusion-based decoder governed by joint distortion and idempotence constraints. The distortion constraint bounds reconstruction fidelity relative to the base codec output; the idempotence constraint -- requiring that re-encoding the restored image recovers the base codec reconstruction -- serves as a tractable surrogate for the distributional perception requirement. Together, they steer the reverse denoising process via iterative optimization with consistent noise injection, realizing common randomness without additional rate overhead. At fixed rate, dual attenuation factors $(K_D, K_P)$ jointly navigate the Pareto frontier of the distortion-perception plane, enabling continuously adjustable fidelity-realism trade-offs from a single bitstream. DCIC$_{RD}$ ($K_P{=}0$) and DCIC$_{RP}$ ($K_D{=}0$) arise as boundary curves, with DCIC$_{RDP}$ ($K_D = K_P=1$) realizing the optimal interior operating point. Experiments on CelebA-HQ, CLIC2020, and ImageNet-1K across CNN, Transformer, and hybrid architectures confirm that DCIC$_{RDP}$ achieves superior BD-PSNR over all perceptual codecs, while DCIC$_{RP}$ matches dedicated perception-oriented methods in BD-FID, validating the practical value of full RDP surface navigation.",
+      "authors": [
+        "Sanxin Jiang",
+        "Jiro Katto",
+        "Heming Sun"
+      ],
+      "published": "2026-06-11T13:53:02Z",
+      "updated": "2026-06-11T13:53:02Z",
+      "url": "https://arxiv.org/abs/2606.13366",
+      "pdf_url": "https://arxiv.org/pdf/2606.13366.pdf",
+      "primary_category": "cs.CV",
+      "categories": [
+        "cs.CV",
+        "cs.MM"
+      ],
+      "tags": [
+        "cs.CV",
+        "cs.MM"
+      ],
+      "domain": "Vision",
+      "pdf_downloaded": true,
+      "pdf_size_bytes": 11875664,
+      "pdf_path": "2026-06-12/vision/2606.13366.pdf"
+    }
+  ]
+}
