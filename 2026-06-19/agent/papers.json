@@ -1,0 +1,791 @@
+{
+  "domain": "Agent",
+  "date": "2026-06-19",
+  "count": 27,
+  "papers": [
+    {
+      "id": "2606.20562",
+      "title": "MemoryWAM: Efficient World Action Modeling with Persistent Memory",
+      "abstract": "Robust robotic manipulation in the real world requires not only an understanding of the current observation, but also memory and dynamics modeling. World action models (WAMs) possess these capabilities by jointly modeling visual foresight and actions conditioned on both current and historical observations, making them a promising paradigm for robotic manipulation. However, existing WAMs face a fundamental trade-off: methods with efficient inference typically condition only on a bounded window of recent observations and therefore struggle in non-Markovian environments, whereas methods that preserve long histories incur time and space costs that grow substantially with sequence length. To address this challenge, we introduce MemoryWAM, a world action model with efficient persistent memory. MemoryWAM uses a hybrid memory design that combines recent frames, event-boundary anchor frames, and compact gist tokens that summarize long-range history. A tailored attention mechanism enables retrieval of both detailed short-term context and compressed long-term context, supporting memory-dependent decision-making with reduced inference latency and GPU memory usage. Across long-horizon, memory-dependent manipulation tasks in both simulation and the real world, MemoryWAM outperforms strong vision-language-action (VLA) and WAM baselines while maintaining favorable computational efficiency.",
+      "authors": [
+        "Sizhe Yang",
+        "Juncheng Mu",
+        "Tianming Wei",
+        "Chenhao Lu",
+        "Xiaofan Li",
+        "Linning Xu",
+        "Zhengrong Xue",
+        "Zhecheng Yuan",
+        "Dahua Lin",
+        "Jiangmiao Pang",
+        "Huazhe Xu"
+      ],
+      "published": "2026-06-18T17:59:51Z",
+      "updated": "2026-06-18T17:59:51Z",
+      "url": "https://arxiv.org/abs/2606.20562",
+      "pdf_url": "https://arxiv.org/pdf/2606.20562.pdf",
+      "primary_category": "cs.RO",
+      "categories": [
+        "cs.RO"
+      ],
+      "tags": [
+        "cs.RO"
+      ],
+      "domain": "Agent",
+      "pdf_downloaded": true,
+      "pdf_size_bytes": 1243230,
+      "pdf_path": "2026-06-19/agent/2606.20562.pdf"
+    },
+    {
+      "id": "2606.20549",
+      "title": "Generating Robot Hands from Human Demonstrations",
+      "abstract": "Robot learning has advanced rapidly in learning control, but learning the physical body of a robot remains much more difficult because jointly searching over design and control creates a very large combinatorial problem. Here, we present a data-driven framework for generating robot hands from human demonstrations. Instead of learning a complex controller together with each candidate design, we generate robot hand designs using the same simple control policy used after fabrication: matching fingertip positions through inverse kinematics. Using more than 4 million frames of human fingertip motion from everyday manipulation, our algorithm optimizes tree-structured robot hands to reproduce desired target motions. The framework produced both a 6-degree-of-freedom (DoF) general-purpose hand and lower-DoF task-specific hands with spatial four-bar mimic joints. To accelerate the search over designs, we trained a reinforcement-learning (RL) actor to propose good hand designs and joint angles, reducing search time from hours to minutes. We fabricated the mechanisms directly as one-piece articulated structures with print-in-place joints. In real-world experiments, the 6-DoF hand achieved highly accurate teleoperated fingertip tracking better than available commercial robot hands, whereas the specialized 3-DoF hands reproduced structured human and synthetic trajectories with reduced mechanical complexity. These results showed that large-scale human motion data can be used not only to train robot controllers but also as a reference for optimizing and generating the physical embodiment of robots.",
+      "authors": [
+        "Sha Yi",
+        "Nicklas Hansen",
+        "Xueqian Bai",
+        "Carmelo Sferrazza",
+        "Michael T. Tolley",
+        "Xiaolong Wang"
+      ],
+      "published": "2026-06-18T17:57:21Z",
+      "updated": "2026-06-18T17:57:21Z",
+      "url": "https://arxiv.org/abs/2606.20549",
+      "pdf_url": "https://arxiv.org/pdf/2606.20549.pdf",
+      "primary_category": "cs.RO",
+      "categories": [
+        "cs.RO"
+      ],
+      "tags": [
+        "cs.RO"
+      ],
+      "domain": "Agent",
+      "pdf_downloaded": true,
+      "pdf_size_bytes": 8947153,
+      "pdf_path": "2026-06-19/agent/2606.20549.pdf"
+    },
+    {
+      "id": "2606.20495",
+      "title": "Increasing Resilience of Continuum Robots via Motion Planning Algorithms",
+      "abstract": "This paper presents an experimental study of motion planning for resilient continuum robots. In this study we mainly focused on multi-criteria decision-making, its application for path-planning algorithms, impact on the generated path and execution time. To do this, we used two well-known algorithms for path planning, namely Genetic algorithm and A star algorithm, and modified them by adding the Analytical Hierarchy Process algorithm to evaluate the quality of the paths generated. In our experiment the Analytical Hierarchy Process considers four different criteria, i.e. distance, motors damage, mechanical damage of the robot's arm and accuracy, each considered to contribute to the resilience of a continuum robot. The use of different criteria is necessary to increase the time to maintenance operations of the continuum robot. We conducted the experiments using two different simulated environments of the robot. Although we significantly simplified the robot's model and its environment, we still implemented some of the features of the environment based on the real robot prototype. In particular, one of the environments has single- as well as multi-path points, and other consists of the multi-path points only. The results show that, in contrast to A star, the performance time of Genetic algorithm does not depend on the environment's cardinality. It generates more diverse paths, which increases the robot's resilience.",
+      "authors": [
+        "Oxana Shamilyan",
+        "Ievgen Kabin",
+        "Zoya Dyka",
+        "Oleksandr Sudakov",
+        "Peter Langendoerfer"
+      ],
+      "published": "2026-06-18T17:10:13Z",
+      "updated": "2026-06-18T17:10:13Z",
+      "url": "https://arxiv.org/abs/2606.20495",
+      "pdf_url": "https://arxiv.org/pdf/2606.20495.pdf",
+      "primary_category": "cs.RO",
+      "categories": [
+        "cs.RO"
+      ],
+      "tags": [
+        "cs.RO"
+      ],
+      "domain": "Agent",
+      "pdf_downloaded": true,
+      "pdf_size_bytes": 3505317,
+      "pdf_path": "2026-06-19/agent/2606.20495.pdf"
+    },
+    {
+      "id": "2606.20479",
+      "title": "GroundControl: Anticipating Navigation Failures in Vision-Language Agents via Trajectory-Consistent Uncertainty Estimates",
+      "abstract": "Vision-language navigation agents achieve competitive average success on benchmark tasks, yet failures often arise through predictable trajectory-level breakdowns such as oscillation, stagnation, or inefficient detours. Reliable deployment, therefore, requires uncertainty signals that anticipate emerging failure dynamics during execution rather than reflect only instantaneous action entropy. We introduce \\emph{GroundControl}, a trajectory-consistent uncertainty estimator defined as statistical deviation from nominal goal-directed distance-to-goal dynamics aggregated over an episode. GroundControl models distance evolution using a constant-velocity Kalman filter and combines normalized innovation statistics with complementary trajectory features capturing progress, monotonicity, path efficiency, and oscillatory behavior. The resulting uncertainty score reflects geometric and temporal inconsistency in navigation behavior rather than local prediction dispersion. To evaluate uncertainty quality independently of task success, we formalize \\emph{Selective Risk--Coverage Navigation (SRCN)}, a protocol that measures how effectively an uncertainty score ranks episodes by failure or inefficiency using risk--coverage curves and AURC / E-AURC summaries. Across five EB-Navigation splits ($N=300$ episodes), trajectory-consistent uncertainty achieves near-oracle ordering under success-based selective risk, with weighted-average $\\mathrm{E\\text{-}AURC}_{\\mathrm{SR}}=0.0024$ for the GPT-4o model, substantially outperforming entropy-, conformal-, and heuristic baselines. Under SPL-based selective evaluation, GroundControl consistently achieves the lowest AURC and E-AURC across models and navigation splits. These results show that modeling deviation from goal-directed dynamics provides an interpretable and robust signal for anticipating navigation failures in vision-language agents.",
+      "authors": [
+        "Nastaran Darabi",
+        "Divake Kumar",
+        "Sina Tayebati",
+        "Devashri Naik",
+        "Amit Ranjan Trivedi"
+      ],
+      "published": "2026-06-18T16:56:20Z",
+      "updated": "2026-06-18T16:56:20Z",
+      "url": "https://arxiv.org/abs/2606.20479",
+      "pdf_url": "https://arxiv.org/pdf/2606.20479.pdf",
+      "primary_category": "cs.RO",
+      "categories": [
+        "cs.RO"
+      ],
+      "tags": [
+        "cs.RO"
+      ],
+      "domain": "Agent",
+      "pdf_downloaded": true,
+      "pdf_size_bytes": 1627532,
+      "pdf_path": "2026-06-19/agent/2606.20479.pdf"
+    },
+    {
+      "id": "2606.20458",
+      "title": "Slow Brain, Fast Planner: Latency-Resilient VLM-Augmented Urban Navigation",
+      "abstract": "Learning-based planners for sidewalk navigation can generate diverse candidate trajectories in real time, yet their scoring functions often fail to select the best trajectory in challenging situations, outputting trajectories that make the mobile robot drive onto grass, toward pedestrians, or in the wrong direction, even when better candidates exist in the same set. We call this the trajectory scoring gap: in real-world sidewalk navigation, the gap between an anchor-based planner's top choice and the best possible candidate is substantial, likely due to limited high-level scene understanding capability of the planner. Rather than replacing the planner with an end-to-end Vision-Language-Action model, we propose a VLM-Planner interface that uses a VLM to select a candidate index from the planner's proposal set and then fuse it with the planner's initial output. However, VLMs take 1--3s per query and so cannot directly drive a 5--20Hz control loop. We contribute a training-free, latency-resilient trajectory-level fusion layer that turns a stale VLM selection into real-time planner scoring via geometric similarity with exponential decay. On $\\sim$2,000 challenging real-world scenarios (e.g., junctions, pedestrian encounters), VLM selection achieves 30% ADE reduction versus the planner's best selection, while the planner remains competitive in routine situations. In simulation, Score Fusion maintains >80% success rate with delays up to 5s. We demonstrate the full system on a mobile robot navigating challenging campus sidewalks with varied network latency.",
+      "authors": [
+        "Zhenghao \"Mark'' Peng",
+        "Honglin He",
+        "Quanyi Li",
+        "Yukai Ma",
+        "Bolei Zhou"
+      ],
+      "published": "2026-06-18T16:40:07Z",
+      "updated": "2026-06-18T16:40:07Z",
+      "url": "https://arxiv.org/abs/2606.20458",
+      "pdf_url": "https://arxiv.org/pdf/2606.20458.pdf",
+      "primary_category": "cs.RO",
+      "categories": [
+        "cs.RO"
+      ],
+      "tags": [
+        "cs.RO"
+      ],
+      "domain": "Agent",
+      "pdf_downloaded": true,
+      "pdf_size_bytes": 19417131,
+      "pdf_path": "2026-06-19/agent/2606.20458.pdf"
+    },
+    {
+      "id": "2606.20428",
+      "title": "ARC: Adaptive Robust Joint State and Covariance Estimation",
+      "abstract": "Sensor measurements are frequently corrupted by outliers and non-Gaussian noise. These imperfections in the sensor data can cause classical state estimators to generate biased and unreliable state and uncertainty estimates. Robust estimators reject or downweight outliers but do not perform measurement covariance estimation, whereas joint state and covariance estimators assume Gaussian residuals and fixed loss shape parameters. Integrating these two capabilities into a single framework is an opportunity to simultaneously estimate both state and covariance in the presence of outliers. This paper proposes a unified Block-Coordinate Descent framework that combines a norm-aware adaptive robust loss, an Iteratively Reweighted Least-Squares state update, and a Minimum Weighted Covariance Determinant covariance estimator, yielding a self-tuning joint state and covariance estimator. The framework is evaluated in a Monte-Carlo simulation and on real-world ultra-wideband localization experiments in cluttered non-line-of-sight environments. Results show that the proposed estimator consistently recovers the true inlier measurement covariance and matches or exceeds the state estimation accuracy of all baselines, without requiring any manual parameter tuning.",
+      "authors": [
+        "Alexandre Hadji-Thomas",
+        "Andrew Stirling",
+        "James R. Forbes"
+      ],
+      "published": "2026-06-18T16:09:50Z",
+      "updated": "2026-06-18T16:09:50Z",
+      "url": "https://arxiv.org/abs/2606.20428",
+      "pdf_url": "https://arxiv.org/pdf/2606.20428.pdf",
+      "primary_category": "cs.RO",
+      "categories": [
+        "cs.RO"
+      ],
+      "tags": [
+        "cs.RO"
+      ],
+      "domain": "Agent",
+      "pdf_downloaded": true,
+      "pdf_size_bytes": 3988203,
+      "pdf_path": "2026-06-19/agent/2606.20428.pdf"
+    },
+    {
+      "id": "2606.20426",
+      "title": "TaCauchy: An Extensible FEM Framework for Vision-Based Tactile Simulation",
+      "abstract": "Vision-based tactile sensors require high-fidelity simulation for reinforcement learning, yet existing approaches struggle to provide accurate mechanical stress fields within GPU-accelerated robotics platforms. We present TaCauchy, an extensible Finite Element Method (FEM) framework that integrates rigorous physics-based force computation into Isaac Sim. Built on the Unified Incremental Potential Contact (UIPC) solver, TaCauchy directly computes Cauchy stress tensors from hyperelastic constitutive laws and projects them onto contact surfaces to obtain traction forces and pressure distributions, providing mechanical ground truth from first principles rather than empirical estimation. Our framework features automatic mesh generation with geometry-aware adaptive refinement and a modular sensor interface enabling rapid integration of diverse sensors (GelSight Mini, DIGIT, 9DTact) with minimal configuration. Performance benchmarks demonstrate 33.40 FPS for single environments and 555 FPS aggregate throughput across 60 parallel environments, with stress extraction overhead under 1 ms. Physical validation experiments show strong agreement between simulated and real tactile responses across force ranges from 1.2556 N to 4.7332 N, achieving SSIM above 0.93, confirming the framework's capability to provide accurate, physically-grounded force supervision for downstream robotic manipulation tasks.",
+      "authors": [
+        "Hengfei Zhao",
+        "Yifan Xie",
+        "Junhao Gong",
+        "Yue Sun",
+        "Kai Zhu",
+        "Weihua He",
+        "Shoujie Li",
+        "Haohuan Fu",
+        "Wenbo Ding"
+      ],
+      "published": "2026-06-18T16:08:45Z",
+      "updated": "2026-06-18T16:08:45Z",
+      "url": "https://arxiv.org/abs/2606.20426",
+      "pdf_url": "https://arxiv.org/pdf/2606.20426.pdf",
+      "primary_category": "cs.RO",
+      "categories": [
+        "cs.RO"
+      ],
+      "tags": [
+        "cs.RO"
+      ],
+      "domain": "Agent",
+      "pdf_downloaded": true,
+      "pdf_size_bytes": 2493792,
+      "pdf_path": "2026-06-19/agent/2606.20426.pdf"
+    },
+    {
+      "id": "2606.20424",
+      "title": "LIT-GS: LiDAR-Inertial-Thermal Gaussian Splatting for Illumination-Robust Mapping",
+      "abstract": "Gaussian Splatting has enabled real-time neural rendering, yet existing LiDAR-inertial-visual (LIV) Gaussian mapping pipelines remain fragile under illumination changes and texture-deficient scenes due to their reliance on RGB photometric cues. We present LIT-GS, a LiDAR-inertial-thermal Gaussian Splatting framework that injects LiDAR-derived plane geometry as an explicit constraint in both pose/structure refinement and Gaussian optimization. Specifically, we exploit LIV visual map points as confidence-aware cross-modal anchors to establish reliable thermal-LiDAR associations, and incorporate weighted LiDAR point-to-plane residuals into bundle adjustment to jointly refine camera poses and 3D points under weak thermal supervision. Building on the refined structure, we further introduce a LiDAR-plane-regularized differentiable splatting objective that constrains rendered 3D points to align with locally observed planes, mitigating surface thickening and structural drift in low-contrast thermal imagery. Experiments on proprietary sequences and public datasets demonstrate that LIT-GS consistently improves geometric accuracy and rendering quality over state-of-the-art LIV-based Gaussian Splatting baselines, particularly in challenging lighting conditions.",
+      "authors": [
+        "Shikuan Shi",
+        "Chunran Zheng",
+        "Jiaming Xu",
+        "Tianyong Ye",
+        "Tao Yu",
+        "Yukang Cui"
+      ],
+      "published": "2026-06-18T16:06:52Z",
+      "updated": "2026-06-18T16:06:52Z",
+      "url": "https://arxiv.org/abs/2606.20424",
+      "pdf_url": "https://arxiv.org/pdf/2606.20424.pdf",
+      "primary_category": "cs.RO",
+      "categories": [
+        "cs.RO"
+      ],
+      "tags": [
+        "cs.RO"
+      ],
+      "domain": "Agent",
+      "pdf_downloaded": true,
+      "pdf_size_bytes": 2091276,
+      "pdf_path": "2026-06-19/agent/2606.20424.pdf"
+    },
+    {
+      "id": "2606.20394",
+      "title": "Agentic AutoResearch forSpace Autonomy: An Auditable, LLM-Driven Research Agent for Aerospace Control Problems",
+      "abstract": "Spacecraft guidance, navigation, and control functions are increasingly realized as learned policies distilled from expert solvers. Developing such a policy is itself a research process: an investigator selects an architecture and hyperparameters, runs experiments, and must determine whether an apparent improvement is genuine or merely seed noise. This paper presents AutoResearch, a framework in which a large language model autonomously drives that loop for aerospace control problems, coupled with a credibility layer, built into the loop, that certifies each reported result against the problem's own measured seed noise. The language model serves only as the offline research agent that develops the control policy; the trained policy it produces is then deployed onboard the spacecraft, while the model itself never operates the vehicle. At each iteration the agent reads a plain-language problem description and the run history, proposes a single edit to the training script, executes it, and logs the outcome. No reported result is credited until it passes the same three checks: measured per-problem seed noise, reseeded verification of the best configuration, and leave-one-out pruning of the agent's edits. The same loop is applied, unchanged, to two aerospace control problems: a Clohessy-Wiltshire relative rendezvous and a safety-constrained collision-avoidance docking past a keep-out zone, each calibrated against a known optimal control benchmark. In both, the audited policy clears the measured seed noise by many standard deviations; an undirected search over the same parameters does not. On the docking problem the gap becomes categorical: undirected search yields no feasible policy, while the learned policy stays outside the keep-out zone on every seed.",
+      "authors": [
+        "Amit Jain",
+        "Richard Linares"
+      ],
+      "published": "2026-06-18T15:48:25Z",
+      "updated": "2026-06-18T15:48:25Z",
+      "url": "https://arxiv.org/abs/2606.20394",
+      "pdf_url": "https://arxiv.org/pdf/2606.20394.pdf",
+      "primary_category": "cs.RO",
+      "categories": [
+        "cs.RO",
+        "math.OC"
+      ],
+      "tags": [
+        "cs.RO",
+        "math.OC"
+      ],
+      "domain": "Agent",
+      "pdf_downloaded": true,
+      "pdf_size_bytes": 971075,
+      "pdf_path": "2026-06-19/agent/2606.20394.pdf"
+    },
+    {
+      "id": "2606.20389",
+      "title": "CoLI: A Reproducible Platform for Continuum Robot Learning via Monolithic 3D Printing and Isomorphic Teleoperation",
+      "abstract": "Continuum robots offer strong potential for manipulation tasks due to their high degrees of freedom, compliant structures, and operational safety. However, their adoption in both research and practical applications has been hindered by reproducibility issues arising from complex fabrication and assembly processes, challenging kinematic modeling, and a lack of intuitive control interfaces. To address these challenges, we present a novel open-source continuum robot design. The platform features a simplified fabrication pipeline enabled by multi-material 3D printing, allowing the arm to be fabricated as a monolithic compliant structure with minimal assembly. Control is achieved through an isomorphic teleoperation interface that establishes a direct actuator-level mapping, eliminating the need for explicit kinematic modeling and providing a singularity-free mapping. Building on this hardware design, the platform further supports imitation-learning-based autonomous control. The proposed system is evaluated through hardware characterization and a set of manipulation tasks. Experimental results demonstrate that the platform provides a reproducible, learning-ready continuum robot system, accelerating algorithmic development and systematic benchmarking for the continuum robotics community.",
+      "authors": [
+        "Ziyuan Tang",
+        "Chenxi Xiao*"
+      ],
+      "published": "2026-06-18T15:45:10Z",
+      "updated": "2026-06-18T15:45:10Z",
+      "url": "https://arxiv.org/abs/2606.20389",
+      "pdf_url": "https://arxiv.org/pdf/2606.20389.pdf",
+      "primary_category": "cs.RO",
+      "categories": [
+        "cs.RO"
+      ],
+      "tags": [
+        "cs.RO"
+      ],
+      "domain": "Agent",
+      "pdf_downloaded": true,
+      "pdf_size_bytes": 4893901,
+      "pdf_path": "2026-06-19/agent/2606.20389.pdf"
+    },
+    {
+      "id": "2606.20365",
+      "title": "An Infrastructure-less, Control-Independent Solution to Relative Localisation of a Team of Mobile Robots using Ranging Measurements",
+      "abstract": "The ability to localise teams of robots is essential for applications ranging from robotic fleets in unstructured environments to cooperative control and navigation tasks. In such contexts, fixed infrastructure is often unavailable, deployments must be fast and flexible, and system requirements must be minimal. We present a decentralised cooperative localisation algorithm that addresses all these challenges at once. The method is anchor-less, fully decentralised, and, unlike most existing approaches, does not require controlling the robots motion to ensure team observability. It relies only on local odometry, sparse inter-agent ranging measurements, and short-range communication, all of which are widely available in practice. The algorithm adopts a multi-hypothesis Bayesian framework that maintains the entire set of feasible solutions, ensuring robustness under transient unobservable conditions. Moreover, through information sharing, each agent benefits from the estimates of the entire group, even in partially connected conditions.",
+      "authors": [
+        "Paolo Golinelli",
+        "Tommaso Faraci",
+        "Daniele Fontanelli"
+      ],
+      "published": "2026-06-18T15:27:43Z",
+      "updated": "2026-06-18T15:27:43Z",
+      "url": "https://arxiv.org/abs/2606.20365",
+      "pdf_url": "https://arxiv.org/pdf/2606.20365.pdf",
+      "primary_category": "cs.RO",
+      "categories": [
+        "cs.RO",
+        "cs.MA"
+      ],
+      "tags": [
+        "cs.MA",
+        "cs.RO"
+      ],
+      "domain": "Agent",
+      "pdf_downloaded": true,
+      "pdf_size_bytes": 1389128,
+      "pdf_path": "2026-06-19/agent/2606.20365.pdf"
+    },
+    {
+      "id": "2606.20336",
+      "title": "Autonomous Driving with Priority-Ordered STL Specifications Under Multimodal Uncertainty",
+      "abstract": "Autonomous vehicles must plan trajectories that satisfy a multitude of requirements on safety, passenger comfort, and compliance with traffic rules. However, in safety-critical scenarios, it is not always possible to satisfy all requirements simultaneously, necessitating their prioritization based on importance. At the same time, in these safety-critical scenarios, the uncertainty in trajectory predictions of the surrounding traffic, such as other vehicles and pedestrians, should be explicitly accounted for. In this work, we propose an uncertainty-aware trajectory planning framework that incorporates a predefined lexicographic ordering over Signal Temporal Logic (STL) specifications that stays valid under uncertainty. We implement this formulation with Model Predictive Path Integral (MPPI) control and we demonstrate the effectiveness of our method on simulation scenarios, showing that our framework efficiently handles conflicting objectives under realistic multi-modal uncertainty.",
+      "authors": [
+        "Taha Bouzid",
+        "Shuhao Qi",
+        "Mircea Lazar",
+        "Sofie Haesaert"
+      ],
+      "published": "2026-06-18T15:06:40Z",
+      "updated": "2026-06-18T15:06:40Z",
+      "url": "https://arxiv.org/abs/2606.20336",
+      "pdf_url": "https://arxiv.org/pdf/2606.20336.pdf",
+      "primary_category": "cs.RO",
+      "categories": [
+        "cs.RO"
+      ],
+      "tags": [
+        "cs.RO"
+      ],
+      "domain": "Agent",
+      "pdf_downloaded": true,
+      "pdf_size_bytes": 2602496,
+      "pdf_path": "2026-06-19/agent/2606.20336.pdf"
+    },
+    {
+      "id": "2606.20322",
+      "title": "Towards 3D karst underwater scene reconstruction from rotating sonar data",
+      "abstract": "Karst aquifers provide critical freshwater resources but pose significant hazards due to their complex and poorly understood subsurface geometry. Mapping these environments is challenging because sonar data from underwater exploration is sparse and noisy, while navigation estimates suffer from drift limiting standard 3D reconstruction methods. We present a pipeline for reconstructing underwater karst conduits from a sonar profiler. We combine a continuous-time SLAM approach to correct trajectory drift with a novel two-stage deep learning method for surface reconstruction, producing an immersive and navigable 3D mesh for hydrogeological analysis.",
+      "authors": [
+        "Georgios Evangelos Margaritis",
+        "Lionel Lapierre",
+        "Simon Rohou",
+        "Zhi Yan",
+        "Andreas N\u00fcchter",
+        "Fran\u00e7ois Goulette"
+      ],
+      "published": "2026-06-18T15:02:00Z",
+      "updated": "2026-06-18T15:02:00Z",
+      "url": "https://arxiv.org/abs/2606.20322",
+      "pdf_url": "https://arxiv.org/pdf/2606.20322.pdf",
+      "primary_category": "cs.RO",
+      "categories": [
+        "cs.RO"
+      ],
+      "tags": [
+        "cs.RO"
+      ],
+      "domain": "Agent",
+      "pdf_downloaded": true,
+      "pdf_size_bytes": 3539694,
+      "pdf_path": "2026-06-19/agent/2606.20322.pdf"
+    },
+    {
+      "id": "2606.20285",
+      "title": "Co-VLA: Coordination-Aware Structured Action Modeling for Dual-Arm Vision-Language-Action Systems",
+      "abstract": "Vision-language-action (VLA) models show strong capabilities in single and dual-arm robotic manipulation. Prior works show coordinated bimanual behaviors can emerge from end-to-end learning, leveraging large vision-language backbones with continuous action prediction. However, as bimanual tasks become tightly coupled and execution constraints become critical, implicit coordination alone is insufficient to ensure reliable, interpretable, and stable behavior. In this work, we propose Co-VLA, a coordination-aware bimanual manipulation framework introducing explicit structural priors into VLA models. We instantiate our method on a state-of-the-art vision-language backbone by replacing its monolithic action head with a Structured Action Expert (SAE) designed for bimanual coordination. Specifically, we introduce explicit structure at the action generation level with a modular coordination-aware loss that shapes shared and residual latents according to task-specific structures. The shared latent encodes task-level coordination intent, while residual latents capture execution adjustments for each arm. At deployment, a Latent-Aware Controller (LAC) interprets the learned representations to modulate synchronization strength, execution asymmetry, smoothness, and safety constraints in real time. LAC operates at the joint-command level and remains compatible with standard control pipelines without requiring force or impedance control. Experiments across simulation and real-world benchmarks show Co-VLA significantly outperforms monolithic baselines, achieving a 27% success rate gain in tight-coordination tasks, more than doubling performance in OOD real-world scenarios (from 13% to 27%), and reducing task completion time by up to 25%.",
+      "authors": [
+        "Yandong Wang",
+        "Jiaqian Yu",
+        "Xiongfeng Peng",
+        "Lu Xu",
+        "Yamin Mao",
+        "Weiming Li",
+        "Jaewook Yoo",
+        "Dongwook Lee",
+        "Daehyun Ji",
+        "Mingbo Zhao",
+        "Chao Zhang"
+      ],
+      "published": "2026-06-18T14:28:37Z",
+      "updated": "2026-06-18T14:28:37Z",
+      "url": "https://arxiv.org/abs/2606.20285",
+      "pdf_url": "https://arxiv.org/pdf/2606.20285.pdf",
+      "primary_category": "cs.RO",
+      "categories": [
+        "cs.RO"
+      ],
+      "tags": [
+        "cs.RO"
+      ],
+      "domain": "Agent",
+      "pdf_downloaded": true,
+      "pdf_size_bytes": 3739646,
+      "pdf_path": "2026-06-19/agent/2606.20285.pdf"
+    },
+    {
+      "id": "2606.20272",
+      "title": "Efficiently Linking Real Scenes with Synthetic Data Generation for AI-based Cognitive Robotics and Computer Vision Applications",
+      "abstract": "AI vision models are a driving factor for the potential use case scenarios of cognitive robotics within in the industry and household applications. A large array of methods from semantic environment analysis towards 6D and grasping pose estimation have been proposed based on the latest AI achievements. However, such advancements require further strong and efficient methods w.r.t. training data and AI-architectures, which are capable in synergy to tackle current challenges, precision limits, and scalability beyond domain gaps. In this paper, we discuss these current limits and trends in the related state-of-the-art which are challenging those. Further we discuss our current work in progress on bridging the domain gap between simulations and real world applications by linking those in the training data generation.",
+      "authors": [
+        "Paul Koch",
+        "Vivek Chavan",
+        "Andr\u00e9 Sers",
+        "Adem Karakurt",
+        "Paul Hofmann",
+        "Mohamad Zaher Ziadeh",
+        "J\u00f6rg Kr\u00fcger"
+      ],
+      "published": "2026-06-18T14:17:38Z",
+      "updated": "2026-06-18T14:17:38Z",
+      "url": "https://arxiv.org/abs/2606.20272",
+      "pdf_url": "https://arxiv.org/pdf/2606.20272.pdf",
+      "primary_category": "cs.RO",
+      "categories": [
+        "cs.RO",
+        "cs.CV"
+      ],
+      "tags": [
+        "cs.CV",
+        "cs.RO"
+      ],
+      "domain": "Agent",
+      "pdf_downloaded": true,
+      "pdf_size_bytes": 9721143,
+      "pdf_path": "2026-06-19/agent/2606.20272.pdf"
+    },
+    {
+      "id": "2606.20246",
+      "title": "Finetuning Vision-Language-Action Models Requires Fewer Layers Than You Think",
+      "abstract": "Vision-Language-Action (VLA) models pre-trained on massive video-robot datasets have revolutionized robotic manipulation, yet their multi-billion parameter architectures impose prohibitive computational burdens during downstream fine-tuning and real-time inference. In this work, we reveal a highly non-trivial architectural characteristic of these continuous control foundation policies (e.g., pi_0, GR00T-N1.5): despite being trained on diverse physical trajectories, they exhibit severe layer-wise representational redundancy. To exploit this, we introduce a structural compression pipeline that is entirely training-free, bypassing the need of existing methods to load full-scale models to learn optimized token reductions or dynamic layer selectors. Instead, using only a single forward pass via Centered Kernel Alignment to identify redundant layer features, we remove twin layers to permanently compress the model depth by up to 50% across both the VLM backbone and the continuous control policy head. Downstream fine-tuning of this streamlined architecture yields a dual acceleration benefit: a 40-50% reduction in training time and up to 30% faster real-time inference, while matching or exceeding full-scale base model performance. We comprehensively validate our method across three simulation benchmarks (LIBERO, RoboCasa, SimplerEnv) and 10 diverse real-world manipulation tasks across 4 unique robotic embodiments. These results prove that advanced VLAs require significantly fewer layers than previously assumed, offering a highly compute-efficient paradigm for scalable robot learning.",
+      "authors": [
+        "Gia-Binh Nguyen",
+        "Trong-Bao Ho",
+        "Thien-Loc Ha",
+        "Khoa Vo",
+        "Philip Lund M\u00f8ller",
+        "Quang T. Nguyen",
+        "Long Dinh",
+        "Tuan Dam",
+        "Vu Duong",
+        "Tung M. Luu",
+        "Trung Le",
+        "Tran Nguyen Le",
+        "Minh Vu",
+        "An Thai Le",
+        "Ngan Le",
+        "Daniel Sonntag",
+        "James Zou",
+        "Jan Peters",
+        "Duy M. H. Nguyen",
+        "Ngo Anh Vien"
+      ],
+      "published": "2026-06-18T13:57:12Z",
+      "updated": "2026-06-18T13:57:12Z",
+      "url": "https://arxiv.org/abs/2606.20246",
+      "pdf_url": "https://arxiv.org/pdf/2606.20246.pdf",
+      "primary_category": "cs.RO",
+      "categories": [
+        "cs.RO",
+        "cs.AI"
+      ],
+      "tags": [
+        "cs.AI",
+        "cs.RO"
+      ],
+      "domain": "Agent",
+      "pdf_downloaded": true,
+      "pdf_size_bytes": 15049993,
+      "pdf_path": "2026-06-19/agent/2606.20246.pdf"
+    },
+    {
+      "id": "2606.20243",
+      "title": "Phoenix: Safe GitHub Issue Resolution via Multi-Agent LLMs",
+      "abstract": "We present Phoenix, a multi-agent LLM system that resolves GitHub issues from triage through pull-request creation, combining seven layered safety controls with a baseline-aware test evaluation strategy. Phoenix decomposes the work across six specialized agents. Planner, reproducer, coder, tester, failure analyst and Pull Request (PR) agent, all coordinated by a label-based GitHub webhook state machine. Every change is checked against a baseline test run before a pull request is opened. On a 24-instance slice of SWE-bench Lite. run on the production webhook path, Phoenix oracle-resolves 75% of instances with no pass-to-pass regressions on successful runs; this curated slice is not directly comparable to full-split leaderboard results, and we discuss the limits of the comparison. A complementary pilot on 42 real issues across 14 repositories yields 100% correctness preservation (CP; mean 122s on the hard tier). Manual inspection shows that about half of the resulting pull requests are well-targeted fixes. The other half place code at incorrect paths, a planner localization limitation we are addressing with retrieval. We also report the deployment failure modes (WAF filtering, token expiry, permission boundaries, flaky CI) that motivated each safety mechanism.",
+      "authors": [
+        "Kipngeno Koech",
+        "Muhammad Adam",
+        "Baimam Boukar Jean Jacques",
+        "Joao Barros"
+      ],
+      "published": "2026-06-18T13:56:12Z",
+      "updated": "2026-06-18T13:56:12Z",
+      "url": "https://arxiv.org/abs/2606.20243",
+      "pdf_url": "https://arxiv.org/pdf/2606.20243.pdf",
+      "primary_category": "cs.SE",
+      "categories": [
+        "cs.SE",
+        "cs.MA"
+      ],
+      "tags": [
+        "cs.MA",
+        "cs.SE"
+      ],
+      "domain": "Agent",
+      "pdf_downloaded": true,
+      "pdf_size_bytes": 641482,
+      "pdf_path": "2026-06-19/agent/2606.20243.pdf"
+    },
+    {
+      "id": "2606.20236",
+      "title": "A Multi-Agent system for Multi-Objective constrained optimization",
+      "abstract": "Many decision-making problems in computing and networking systems can be naturally formulated as cost-minimization problems under performance constraints. In dynamic environments, reinforcement learning (RL) is often used to solve such problems at runtime by embedding both costs and constraint violations into a single scalar reward through weighted penalty terms, following a Lagrangian-inspired formulation. However, in this context the behavior of the learned policy critically depends on the choice of these weights, which are typically selected manually. This makes it difficult to identify an appropriate trade-off between optimizing the primary objective and effectively avoiding constraint violations, particularly in non-stationary environments where their relative importance may change. This paper presents MAMO (Multi-Agent system for Multi-Objective constrained optimization), an approach to tackle this balancing problem through multi-agent RL. MAMO decouples task execution from objective design by formulating the selection of reward weights as a learning problem, providing a !rst step towards more autonomous and robust RL-based solutions for constrained optimization problems in dynamic environments.",
+      "authors": [
+        "Federica Filippini"
+      ],
+      "published": "2026-06-18T13:47:28Z",
+      "updated": "2026-06-18T13:47:28Z",
+      "url": "https://arxiv.org/abs/2606.20236",
+      "pdf_url": "https://arxiv.org/pdf/2606.20236.pdf",
+      "primary_category": "cs.AI",
+      "categories": [
+        "cs.AI",
+        "cs.LG",
+        "cs.MA"
+      ],
+      "tags": [
+        "cs.AI",
+        "cs.LG",
+        "cs.MA"
+      ],
+      "domain": "Agent",
+      "pdf_downloaded": true,
+      "pdf_size_bytes": 5264832,
+      "pdf_path": "2026-06-19/agent/2606.20236.pdf"
+    },
+    {
+      "id": "2606.20232",
+      "title": "Mobile Target Search with Imperfect Perception: A Partially Observable Stochastic Game Theoretical Approach",
+      "abstract": "This paper investigates mobile target search under imperfect perceptions caused by sensor limitations, malicious jamming, or communication noise. Searchers and targets operate in a grid-shaped area with bounded mobility, leading to a dynamic interplay between search and evasion. To capture this adversarial interaction under imperfect perceptions, we adopt the partially observable stochastic game (POSG) approach, which generalizes partially observable Markov decision processes (POMDPs) by incorporating target intelligence. To handle false alarms and missed detections caused by perceptual uncertainties, we propose a novel detectability concept to determine whether a search strategy guarantees eventual detection, and provide sufficient detectability criteria based on stochastic recurrence analysis. We further develop a server-assisted distributed algorithm that utilizes the aggregative potential game structure for searchers and a KL-divergence-based reduction for target prediction. Numerical simulations validate the effectiveness of the proposed algorithm and support the detectability analysis.",
+      "authors": [
+        "Hanzheng Zhang",
+        "Shu Liang",
+        "Shuyu Liu"
+      ],
+      "published": "2026-06-18T13:44:12Z",
+      "updated": "2026-06-18T13:44:12Z",
+      "url": "https://arxiv.org/abs/2606.20232",
+      "pdf_url": "https://arxiv.org/pdf/2606.20232.pdf",
+      "primary_category": "cs.RO",
+      "categories": [
+        "cs.RO",
+        "cs.GT"
+      ],
+      "tags": [
+        "cs.GT",
+        "cs.RO"
+      ],
+      "domain": "Agent",
+      "pdf_downloaded": true,
+      "pdf_size_bytes": 580288,
+      "pdf_path": "2026-06-19/agent/2606.20232.pdf"
+    },
+    {
+      "id": "2606.20209",
+      "title": "FlowMaps: Modeling Long-Term Multimodal Object Dynamics with Flow Matching",
+      "abstract": "Joint spatial and temporal understanding of 3D scenes is a crucial requirement for robots deployed in everyday household environments. Such agents must not only comprehend and navigate spatial layouts, but also reason about how these spaces evolve over time. In particular, humans interact with objects daily, causing them to change position throughout the environment and making it difficult for robots to reliably associate current observations with previously seen objects. However, these interactions are not random: human habits and routines induce spatio-temporally consistent patterns in object locations, which robotic agents can potentially learn and then exploit for downstream tasks such as navigation. To this end, we introduce FlowMaps, a latent flow matching model for estimating multimodal distributions over the future locations of dynamic objects in a continuous 3D space. By learning the implicit dependencies among objects and their temporal evolution, FlowMaps predicts likely changes in object locations conditioned on past human interactions, while supporting generalization across previously unseen environments that share similar object routines. To demonstrate the utility of this method, we deploy FlowMaps in a downstream dynamic Object Navigation task in both simulated and real-world environments. Across more than 600 episodes, FlowMaps outperforms state-of-the-art approaches, showing that modeling object dynamics through continuous, multimodal spatio-temporal distributions improves robotic search and navigation in changing household environments. Code and additional material is available at https://fra-tsuna.github.io/flowmaps/.",
+      "authors": [
+        "Francesco Argenziano",
+        "Miguel Saavedra-Ruiz",
+        "Sacha Morin",
+        "Charlie Gauthier",
+        "Daniele Nardi",
+        "Liam Paull"
+      ],
+      "published": "2026-06-18T13:21:40Z",
+      "updated": "2026-06-18T13:21:40Z",
+      "url": "https://arxiv.org/abs/2606.20209",
+      "pdf_url": "https://arxiv.org/pdf/2606.20209.pdf",
+      "primary_category": "cs.RO",
+      "categories": [
+        "cs.RO",
+        "cs.AI"
+      ],
+      "tags": [
+        "cs.AI",
+        "cs.RO"
+      ],
+      "domain": "Agent",
+      "pdf_downloaded": false,
+      "pdf_size_bytes": null,
+      "pdf_path": null
+    },
+    {
+      "id": "2606.20197",
+      "title": "Stable Transformer-Actor-Critic Model Predictive Control: A Contraction Analysis Approach",
+      "abstract": "Actor-Critic Model Predictive Control (MPC) effectively addresses complex, non-convex control problems, but guaranteeing the closed-loop stability of sequence-based learning models within these pipelines remains challenging. This paper introduces a novel Transformer-Actor-Critic MPC architecture with formal robustness guarantees. First, we prove that Transformer networks can satisfy global incremental Input-to-State Stability ($\u03b4$ISS). We then leverage Riemannian contraction theory to analyze the interconnected dynamics between the physical plant and the predictive neural network. Finally, we integrate these theoretical bounds as a training regularizer to yield a certifiably robust policy. The framework is validated on a nonlinear 3D drone model executing target-reaching and obstacle-avoidance maneuvers.",
+      "authors": [
+        "Antonio Marino",
+        "Valerio Modugno",
+        "Marco Cognetti"
+      ],
+      "published": "2026-06-18T13:11:21Z",
+      "updated": "2026-06-18T13:11:21Z",
+      "url": "https://arxiv.org/abs/2606.20197",
+      "pdf_url": "https://arxiv.org/pdf/2606.20197.pdf",
+      "primary_category": "cs.RO",
+      "categories": [
+        "cs.RO"
+      ],
+      "tags": [
+        "cs.RO"
+      ],
+      "domain": "Agent",
+      "pdf_downloaded": true,
+      "pdf_size_bytes": 4106211,
+      "pdf_path": "2026-06-19/agent/2606.20197.pdf"
+    },
+    {
+      "id": "2606.20193",
+      "title": "Belt-Finger: An Affordable Soft Belt-Driven Gripper for Dexterous In-Hand Manipulation",
+      "abstract": "Parallel-jaw grippers are the default manipulator choice in robotics because they are simple, robust, and inexpensive. Their limited in-hand mobility, however, often forces large arm motions and restricts dexterous manipulation in confined workspaces. We present a parallel-gripper upgrade: a double-soft-belt-based finger module that preserves standard opening/closing while adding three in-hand degrees of freedom (DoF): translation, pitch, and roll. The mechanism is deliberately kept simple and engineered for inexpensive manufacturing and straightforward integration, preserving the reliability and precise control of traditional parallel grippers while greatly broadening the range of manipulation capabilities. To demonstrate the utility of the added DoFs, we integrate the gripper in two control pipelines. First, we adapt a model predictive controller for in-hand manipulation of known objects. Second, we introduce a lightweight teleoperation interface that enables simultaneous control of the robot arm and gripper (10 DoFs total) with minimal hardware. Across a suite of challenging manipulation tasks executed via teleoperation, MPC, and trained policies, the proposed gripper consistently improves dexterity and task feasibility compared to a conventional parallel gripper",
+      "authors": [
+        "Boya Zhang",
+        "Andreas Zell",
+        "Georg Martius"
+      ],
+      "published": "2026-06-18T13:07:04Z",
+      "updated": "2026-06-18T13:07:04Z",
+      "url": "https://arxiv.org/abs/2606.20193",
+      "pdf_url": "https://arxiv.org/pdf/2606.20193.pdf",
+      "primary_category": "cs.RO",
+      "categories": [
+        "cs.RO"
+      ],
+      "tags": [
+        "cs.RO"
+      ],
+      "domain": "Agent",
+      "pdf_downloaded": false,
+      "pdf_size_bytes": null,
+      "pdf_path": null
+    },
+    {
+      "id": "2606.20189",
+      "title": "HilDA: Hierarchical Distillation with Diffusion for Advancing Self-Supervised LiDAR Pre-trainin",
+      "abstract": "Leveraging Vision Foundation Models (VFMs) for camera-to-LiDAR knowledge distillation offers a promising solution to the scarcity of annotated data needed to represent the immense geometric and kinematic diversity of real-world autonomous driving (AD). However, current approaches typically treat VFMs as black-box teachers, relying exclusively on frame-wise feature similarity. Consequently, they do not fully exploit the teacher's layer-wise semantic structure and global context, as well as the rich spatiotemporal information inherent in LiDAR sequences. We propose HilDA, a self-supervised pretraining framework for LiDAR backbones that better captures the semantic what and geometric where needed for driving tasks. HilDA combines hierarchical distillation comprising multi-layer distillation for progressive semantic alignment and global context distillation for scene-level semantics, with a temporal occupancy diffusion objective promoting spatiotemporal consistency. Models pre-trained with HilDA achieve state-of-the-art results on cross-modal distillation benchmarks and outperform models trained via prior distillation approaches on 3D object detection, scene flow, and semantic occupancy prediction. Code available at: https://maxiuw.github.io/hilda.",
+      "authors": [
+        "Maciej Wozniak",
+        "Jesper Ericsson",
+        "Hariprasath Govindarajan",
+        "Truls Nyberg",
+        "Thomas Gustafsson",
+        "Patric Jensfelt",
+        "Olov Andersson"
+      ],
+      "published": "2026-06-18T13:01:40Z",
+      "updated": "2026-06-18T13:01:40Z",
+      "url": "https://arxiv.org/abs/2606.20189",
+      "pdf_url": "https://arxiv.org/pdf/2606.20189.pdf",
+      "primary_category": "cs.CV",
+      "categories": [
+        "cs.CV",
+        "cs.AI",
+        "cs.RO"
+      ],
+      "tags": [
+        "cs.AI",
+        "cs.CV",
+        "cs.RO"
+      ],
+      "domain": "Agent",
+      "pdf_downloaded": false,
+      "pdf_size_bytes": null,
+      "pdf_path": null
+    },
+    {
+      "id": "2606.20150",
+      "title": "Robust Assembly State Reasoning from Action Recognition for Human-Robot Collaboration",
+      "abstract": "Human Action Recognition (HAR) is frequently investigated in Human-Robot Collaboration (HRC) research to understand what actions have been performed and hence the state of a collaborative task. Accurately tracking an assembly state from HAR is however not fully investigated, and in realistic scenarios is not a trivial task. This research systematically investigates and compares methods for tracking assembly state using action recognition inputs. Investigations using two diverse datasets and five state tracking approaches, including logic-based, Hidden Markov Model (HMM), and neural network (NN) methods, show that optimal approaches are not uniform across different tasks and that different methods fail under different circumstances. Testing is performed using both simulated inputs with varying noise levels and realistic inputs from a HAR model. Results show NN and HMM methods can perform well in tasks with limited variability, but for other scenarios logic-based approaches can be more robust. Methods which model expected action duration are also important for tasks with repeated actions where no additional sensing is provided.",
+      "authors": [
+        "James Fant-Male",
+        "Roel Pieters"
+      ],
+      "published": "2026-06-18T12:11:36Z",
+      "updated": "2026-06-18T12:11:36Z",
+      "url": "https://arxiv.org/abs/2606.20150",
+      "pdf_url": "https://arxiv.org/pdf/2606.20150.pdf",
+      "primary_category": "cs.RO",
+      "categories": [
+        "cs.RO"
+      ],
+      "tags": [
+        "cs.RO"
+      ],
+      "domain": "Agent",
+      "pdf_downloaded": true,
+      "pdf_size_bytes": 5500310,
+      "pdf_path": "2026-06-19/agent/2606.20150.pdf"
+    },
+    {
+      "id": "2606.20142",
+      "title": "RACL: Reasoning-Agent Control Layers for Continuous Metaheuristic Learning",
+      "abstract": "This paper introduces RACL, a Reasoning-Agent Control Layer for metaheuristics. RACL places a reasoning agent above an existing optimizer. The agent does not replace the optimizer and does not modify business constraints. Instead, it controls the optimizer's internal search behavior by observing operational memory, reasoning over past behavior, formulating bounded hypotheses, testing interventions, evaluating outcomes, applying guardrails, consolidating useful policies and explaining its decisions. The experiment uses vehicle routing as a testbed, but the contribution is not a new routing solver, a particular ALNS configuration or a specific set of routing rules. The contribution is the RACL method: a way for a reasoning agent to discover, validate, consolidate and explain algorithmic control rules for a metaheuristic. In the current experimental setting, RACL improves or ties the Operational Memory Policy in 21 of 21 feasible cases and improves or ties a non-reasoning Stagnation-Triggered Policy in 18 of 21 feasible cases, with an average RACL vs STP cost delta of -0.641%. In the Sevilla-9/10 runtime sample, RACL improves average cost by -8.337% versus Fixed and -1.605% versus STP without showing material computational overhead. During the proof-of-concept, Codex was used as an in-the-loop reasoning agent observing executions, interpreting logs and proposing live bounded interventions. The policy proxy was later used only to make quantitative evaluation reproducible.",
+      "authors": [
+        "Ant\u00f3n Asla Manz\u00e1rraga"
+      ],
+      "published": "2026-06-18T12:05:16Z",
+      "updated": "2026-06-18T12:05:16Z",
+      "url": "https://arxiv.org/abs/2606.20142",
+      "pdf_url": "https://arxiv.org/pdf/2606.20142.pdf",
+      "primary_category": "cs.AI",
+      "categories": [
+        "cs.AI",
+        "cs.MA"
+      ],
+      "tags": [
+        "cs.AI",
+        "cs.MA"
+      ],
+      "domain": "Agent",
+      "pdf_downloaded": true,
+      "pdf_size_bytes": 285305,
+      "pdf_path": "2026-06-19/agent/2606.20142.pdf"
+    },
+    {
+      "id": "2606.20135",
+      "title": "Frequency-Aware Flow Matching for Continuous and Consistent Robotic Action Generation",
+      "abstract": "Flow matching has emerged as a standard paradigm for robotic manipulation owing to its strong expressive power for modelling complex, multimodal action distributions, alongside similar approaches like diffusion policy. However, existing methods rely on discretized action chunks, making them brittle to demonstrations collected at heterogeneous control frequencies and prone to temporally inconsistent actions that degrade control stability. In this paper, we propose Frequency-Aware Flow Matching (FAFM), which outputs continuous, temporally consistent actions. To handle heterogeneous frequency input, we transform discrete action sequences into the frequency domain with the discrete cosine transform (DCT), perform flow matching over the resulting coefficients, and reconstruct continuous actions via cosine basis expansion. To generate temporally consistent actions, we regularize the first-order temporal derivative to promote smooth actions. This corresponds to a Sobolev-type constraint that suppresses high-frequency errors and discourages abrupt action changes. Our FAFM is simple, introduces no additional network parameters and applies to standalone flow-matching policies and vision-language action models. Across synthetic toy benchmark, obstacle avoidance, LapGym, and LIBERO, FAFM improves success rates, multimodal expressivity, motion smoothness, convergence speed, robustness to mechanical bias and mixed-frequency input. These gains are consistent when deployed on a real-world Franka robot. Code available at https://anonymous.4open.science/r/FAFM.",
+      "authors": [
+        "Jianing Guo",
+        "Fangzheng Chen",
+        "Zihao Mao",
+        "Wong Lik Hang Kenny",
+        "Zhenhong Wu",
+        "Yu Li",
+        "Yishuai Cai",
+        "Yuanpei Chen",
+        "Yikun Ban",
+        "Kai Chen",
+        "Qi Dou",
+        "Yaodong Yang",
+        "Xianglong Liu",
+        "Huijie Zhao",
+        "Simin Li"
+      ],
+      "published": "2026-06-18T11:58:30Z",
+      "updated": "2026-06-18T11:58:30Z",
+      "url": "https://arxiv.org/abs/2606.20135",
+      "pdf_url": "https://arxiv.org/pdf/2606.20135.pdf",
+      "primary_category": "cs.RO",
+      "categories": [
+        "cs.RO",
+        "cs.AI"
+      ],
+      "tags": [
+        "cs.AI",
+        "cs.RO"
+      ],
+      "domain": "Agent",
+      "pdf_downloaded": true,
+      "pdf_size_bytes": 9677364,
+      "pdf_path": "2026-06-19/agent/2606.20135.pdf"
+    },
+    {
+      "id": "2606.20122",
+      "title": "ScaffoldAgent: Utility-Guided Dynamic Outline Optimization for Open-Ended Deep Research",
+      "abstract": "Open-ended deep research (OEDR) requires systems to acquire knowledge through multi-round retrieval and generate coherent long-form reports. The outline plays a central role as a structural scaffold that coordinates retrieval, evidence organization, and generation. However, existing methods either fix the outline before writing or refine it with local heuristics, leading to scaffold drift under continuous information accumulation and delayed feedback for evaluating outline modifications. We propose ScaffoldAgent, a utility-guided dynamic outline optimization framework for OEDR. ScaffoldAgent models outline evolution as a structured decision process with three operations: Expansion, Contraction, and Revision, enabling controlled updates to the report scaffold. It further introduces a utility-guided feedback mechanism that estimates the downstream value of each outline operation from retrieval gain, structural coherence, and trial-generation quality. The resulting utility signal guides node selection, operation scheduling, and termination during inference. Experiments on DeepResearch Bench and DeepResearch Gym show that ScaffoldAgent consistently improves long-form report generation and factual grounding over existing deep research agents.",
+      "authors": [
+        "Zhibang Yang",
+        "Xinke Jiang",
+        "Yuzhen Xiao",
+        "Ruizhe Zhang",
+        "Yue Fang",
+        "XinFei Wan",
+        "Zhengxing Song",
+        "Yuxuan Liu",
+        "Yuheng Huang",
+        "Xu Chu",
+        "Junfeng Zhao",
+        "Yasha Wang"
+      ],
+      "published": "2026-06-18T11:47:13Z",
+      "updated": "2026-06-18T11:47:13Z",
+      "url": "https://arxiv.org/abs/2606.20122",
+      "pdf_url": "https://arxiv.org/pdf/2606.20122.pdf",
+      "primary_category": "cs.AI",
+      "categories": [
+        "cs.AI",
+        "cs.MA"
+      ],
+      "tags": [
+        "cs.AI",
+        "cs.MA"
+      ],
+      "domain": "Agent",
+      "pdf_downloaded": true,
+      "pdf_size_bytes": 1945909,
+      "pdf_path": "2026-06-19/agent/2606.20122.pdf"
+    }
+  ]
+}
