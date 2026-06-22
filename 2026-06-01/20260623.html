@@ -1,0 +1,749 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>TradingBot 分析報告 — 2026/06/23</title>
+<style>
+  :root {
+    --bg: #0d1117;
+    --surface: #161b22;
+    --surface2: #1c2128;
+    --border: #30363d;
+    --text: #e6edf3;
+    --text-muted: #8b949e;
+    --green: #3fb950;
+    --green-dim: #1a3a24;
+    --red: #f85149;
+    --red-dim: #3a1a1a;
+    --yellow: #e3b341;
+    --yellow-dim: #3a2e10;
+    --blue: #58a6ff;
+    --blue-dim: #1a2a3a;
+    --purple: #bc8cff;
+    --orange: #ffa657;
+  }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body {
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Noto Sans TC', sans-serif;
+    background: var(--bg);
+    color: var(--text);
+    line-height: 1.6;
+    padding: 2rem 1rem;
+  }
+  .container { max-width: 1100px; margin: 0 auto; }
+
+  /* Header */
+  .report-header {
+    border-bottom: 1px solid var(--border);
+    padding-bottom: 1.5rem;
+    margin-bottom: 2rem;
+  }
+  .report-header h1 {
+    font-size: 1.5rem;
+    font-weight: 600;
+    color: var(--blue);
+    letter-spacing: 0.02em;
+  }
+  .report-header .meta {
+    color: var(--text-muted);
+    font-size: 0.875rem;
+    margin-top: 0.25rem;
+  }
+
+  /* Section titles */
+  .section-title {
+    font-size: 0.75rem;
+    font-weight: 600;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--text-muted);
+    margin-bottom: 1rem;
+  }
+
+  /* Ticker cards */
+  .ticker-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1.25rem;
+    margin-bottom: 2rem;
+  }
+  @media (max-width: 700px) { .ticker-grid { grid-template-columns: 1fr; } }
+
+  .ticker-card {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    overflow: hidden;
+  }
+  .ticker-card-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 1rem 1.25rem;
+    border-bottom: 1px solid var(--border);
+  }
+  .ticker-name { font-size: 1.1rem; font-weight: 700; }
+  .ticker-fullname { font-size: 0.75rem; color: var(--text-muted); margin-top: 0.1rem; }
+
+  .action-badge {
+    font-size: 0.8rem;
+    font-weight: 700;
+    letter-spacing: 0.08em;
+    padding: 0.3rem 0.8rem;
+    border-radius: 20px;
+  }
+  .badge-buy    { background: var(--green-dim); color: var(--green); border: 1px solid var(--green); }
+  .badge-hold   { background: var(--yellow-dim); color: var(--yellow); border: 1px solid var(--yellow); }
+  .badge-sell   { background: var(--red-dim); color: var(--red); border: 1px solid var(--red); }
+
+  .ticker-card-body { padding: 1.25rem; }
+
+  /* Metrics grid */
+  .metrics { display: grid; grid-template-columns: repeat(3, 1fr); gap: 0.75rem; margin-bottom: 1.25rem; }
+  .metric {
+    background: var(--surface2);
+    border: 1px solid var(--border);
+    border-radius: 6px;
+    padding: 0.6rem 0.75rem;
+  }
+  .metric-label { font-size: 0.7rem; color: var(--text-muted); text-transform: uppercase; letter-spacing: 0.06em; }
+  .metric-value { font-size: 1rem; font-weight: 600; margin-top: 0.15rem; }
+  .metric-value.green { color: var(--green); }
+  .metric-value.red   { color: var(--red); }
+  .metric-value.yellow { color: var(--yellow); }
+  .metric-value.blue  { color: var(--blue); }
+  .metric-value.muted { color: var(--text-muted); }
+
+  /* Signal row */
+  .signals { display: flex; flex-wrap: wrap; gap: 0.5rem; margin-bottom: 1.25rem; }
+  .signal-chip {
+    font-size: 0.72rem;
+    font-weight: 600;
+    padding: 0.2rem 0.6rem;
+    border-radius: 4px;
+    display: flex;
+    align-items: center;
+    gap: 0.3rem;
+  }
+  .chip-bull   { background: var(--green-dim); color: var(--green); }
+  .chip-bear   { background: var(--red-dim); color: var(--red); }
+  .chip-neutral { background: var(--blue-dim); color: var(--blue); }
+  .chip-warn   { background: var(--yellow-dim); color: var(--yellow); }
+  .chip-purple { background: #2a1a3a; color: var(--purple); }
+
+  /* Verdict box */
+  .verdict {
+    border-radius: 6px;
+    padding: 0.9rem 1rem;
+    font-size: 0.85rem;
+    line-height: 1.5;
+  }
+  .verdict-hold { background: var(--yellow-dim); border-left: 3px solid var(--yellow); }
+  .verdict-buy  { background: var(--green-dim); border-left: 3px solid var(--green); }
+  .verdict-warn { background: var(--red-dim); border-left: 3px solid var(--red); }
+
+  /* Risk table */
+  .risk-table { width: 100%; border-collapse: collapse; font-size: 0.83rem; }
+  .risk-table th {
+    text-align: left;
+    padding: 0.5rem 0.75rem;
+    background: var(--surface2);
+    color: var(--text-muted);
+    font-weight: 600;
+    font-size: 0.72rem;
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+    border-bottom: 1px solid var(--border);
+  }
+  .risk-table td {
+    padding: 0.6rem 0.75rem;
+    border-bottom: 1px solid var(--border);
+    vertical-align: top;
+  }
+  .risk-table tr:last-child td { border-bottom: none; }
+  .risk-table tr:hover td { background: var(--surface2); }
+  .sev-high   { color: var(--red); font-weight: 700; }
+  .sev-medium { color: var(--yellow); font-weight: 600; }
+  .sev-low    { color: var(--text-muted); }
+
+  /* Comparison section */
+  .compare-table { width: 100%; border-collapse: collapse; font-size: 0.83rem; }
+  .compare-table th {
+    text-align: left;
+    padding: 0.5rem 0.75rem;
+    background: var(--surface2);
+    color: var(--text-muted);
+    font-weight: 600;
+    font-size: 0.72rem;
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+    border-bottom: 1px solid var(--border);
+  }
+  .compare-table td { padding: 0.6rem 0.75rem; border-bottom: 1px solid var(--border); }
+  .compare-table tr:last-child td { border-bottom: none; }
+  .compare-table th:not(:first-child), .compare-table td:not(:first-child) { text-align: center; }
+
+  /* Action steps */
+  .action-steps { list-style: none; }
+  .action-steps li {
+    display: flex;
+    gap: 0.75rem;
+    padding: 0.65rem 0;
+    border-bottom: 1px solid var(--border);
+    font-size: 0.85rem;
+    align-items: flex-start;
+  }
+  .action-steps li:last-child { border-bottom: none; }
+  .step-num {
+    min-width: 1.5rem;
+    height: 1.5rem;
+    border-radius: 50%;
+    background: var(--blue);
+    color: #000;
+    font-weight: 700;
+    font-size: 0.72rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 0.1rem;
+  }
+  .step-num.green { background: var(--green); }
+  .step-num.yellow { background: var(--yellow); }
+  .step-num.red { background: var(--red); }
+
+  /* Bug section */
+  .bug-card {
+    background: #1e1a0a;
+    border: 1px solid var(--yellow);
+    border-radius: 8px;
+    padding: 1rem 1.25rem;
+    margin-bottom: 0.75rem;
+  }
+  .bug-card-title { font-size: 0.85rem; font-weight: 700; color: var(--yellow); margin-bottom: 0.4rem; }
+  .bug-card-body  { font-size: 0.82rem; color: var(--text-muted); line-height: 1.6; }
+  .bug-card code  { background: var(--surface2); padding: 0.1rem 0.4rem; border-radius: 3px; font-family: monospace; font-size: 0.8rem; color: var(--orange); }
+
+  .section { margin-bottom: 2.5rem; }
+  .card {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    overflow: hidden;
+  }
+  .card-header {
+    padding: 0.75rem 1.25rem;
+    border-bottom: 1px solid var(--border);
+    font-size: 0.85rem;
+    font-weight: 600;
+    color: var(--text-muted);
+  }
+  .card-body { padding: 1.25rem; }
+
+  .divider { border: none; border-top: 1px solid var(--border); margin: 2rem 0; }
+
+  .pill {
+    display: inline-block;
+    font-size: 0.7rem;
+    padding: 0.15rem 0.5rem;
+    border-radius: 10px;
+    font-weight: 600;
+  }
+  .pill-green  { background: var(--green-dim); color: var(--green); }
+  .pill-red    { background: var(--red-dim);   color: var(--red); }
+  .pill-yellow { background: var(--yellow-dim); color: var(--yellow); }
+  .pill-blue   { background: var(--blue-dim);  color: var(--blue); }
+
+  .earnings-banner {
+    background: linear-gradient(135deg, #1a2a1a 0%, #0d1117 100%);
+    border: 1px solid var(--green);
+    border-radius: 8px;
+    padding: 1rem 1.25rem;
+    margin-bottom: 1.25rem;
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+  }
+  .earnings-banner-icon { font-size: 1.5rem; }
+  .earnings-banner-text h3 { font-size: 0.9rem; font-weight: 700; color: var(--green); }
+  .earnings-banner-text p  { font-size: 0.8rem; color: var(--text-muted); margin-top: 0.2rem; }
+
+  footer {
+    margin-top: 3rem;
+    padding-top: 1.5rem;
+    border-top: 1px solid var(--border);
+    font-size: 0.75rem;
+    color: var(--text-muted);
+    text-align: center;
+  }
+</style>
+</head>
+<body>
+<div class="container">
+
+  <!-- Header -->
+  <div class="report-header">
+    <h1>TradingBot 分析報告</h1>
+    <div class="meta">2026/06/23 &nbsp;·&nbsp; GEV &amp; MU &nbsp;·&nbsp; 由 LangGraph + LiteLLM 生成</div>
+  </div>
+
+  <!-- ══════ TICKER CARDS ══════ -->
+  <div class="section">
+    <div class="section-title">決策摘要</div>
+    <div class="ticker-grid">
+
+      <!-- GEV -->
+      <div class="ticker-card">
+        <div class="ticker-card-header">
+          <div>
+            <div class="ticker-name">GEV</div>
+            <div class="ticker-fullname">GE Vernova Inc.</div>
+          </div>
+          <span class="action-badge badge-hold">HOLD</span>
+        </div>
+        <div class="ticker-card-body">
+
+          <div class="metrics">
+            <div class="metric">
+              <div class="metric-label">進場價</div>
+              <div class="metric-value">$1,122.26</div>
+            </div>
+            <div class="metric">
+              <div class="metric-label">止損</div>
+              <div class="metric-value red">$1,027.56</div>
+            </div>
+            <div class="metric">
+              <div class="metric-label">目標價</div>
+              <div class="metric-value green">$1,264.31</div>
+            </div>
+            <div class="metric">
+              <div class="metric-label">VaR(95)</div>
+              <div class="metric-value">0.46%</div>
+            </div>
+            <div class="metric">
+              <div class="metric-label">Kelly</div>
+              <div class="metric-value blue">24.58%</div>
+            </div>
+            <div class="metric">
+              <div class="metric-label">MaxPos</div>
+              <div class="metric-value muted">9.7%</div>
+            </div>
+          </div>
+
+          <div class="signals">
+            <span class="signal-chip chip-neutral">Sage: NEUTRAL 65%</span>
+            <span class="signal-chip chip-bear">Insider MSPR −42 &#9660;</span>
+            <span class="signal-chip chip-warn">Weekly MA20 +19.66%</span>
+            <span class="signal-chip chip-neutral">Regime: ranging</span>
+            <span class="signal-chip chip-bull">Bull:BUY</span>
+            <span class="signal-chip chip-neutral">Neutral:BUY</span>
+            <span class="signal-chip chip-bear">Bear:HOLD</span>
+            <span class="signal-chip chip-warn">辯論 3 輪</span>
+          </div>
+
+          <div class="verdict verdict-hold">
+            <strong>系統理由：</strong>技術面強勢但過度延伸，成交量未確認，聚合訊號中性。無既有部位，無明確優勢，維持觀望。
+          </div>
+
+        </div>
+      </div>
+
+      <!-- MU -->
+      <div class="ticker-card">
+        <div class="ticker-card-header">
+          <div>
+            <div class="ticker-name">MU</div>
+            <div class="ticker-fullname">Micron Technology, Inc.</div>
+          </div>
+          <span class="action-badge badge-buy">BUY</span>
+        </div>
+        <div class="ticker-card-body">
+
+          <div class="earnings-banner">
+            <div class="earnings-banner-icon">📣</div>
+            <div class="earnings-banner-text">
+              <h3>財報明天公布（6/24 收盤後）</h3>
+              <p>IV 103–120%，選擇權定價 ±14–17% 波動</p>
+            </div>
+          </div>
+
+          <div class="metrics">
+            <div class="metric">
+              <div class="metric-label">成交價（模擬）</div>
+              <div class="metric-value green">$1,198.57</div>
+            </div>
+            <div class="metric">
+              <div class="metric-label">止損</div>
+              <div class="metric-value red">$1,039.66</div>
+            </div>
+            <div class="metric">
+              <div class="metric-label">目標價</div>
+              <div class="metric-value green">$1,435.43</div>
+            </div>
+            <div class="metric">
+              <div class="metric-label">VaR(95)</div>
+              <div class="metric-value">0.54%</div>
+            </div>
+            <div class="metric">
+              <div class="metric-label">Kelly</div>
+              <div class="metric-value blue">25.00%</div>
+            </div>
+            <div class="metric">
+              <div class="metric-label">MaxPos</div>
+              <div class="metric-value muted">12.0%</div>
+            </div>
+          </div>
+
+          <div class="signals">
+            <span class="signal-chip chip-neutral">Sage: NEUTRAL 70%</span>
+            <span class="signal-chip chip-bear">Insider MSPR −33 &#9660;</span>
+            <span class="signal-chip chip-warn">Weekly MA20 +105.20%</span>
+            <span class="signal-chip chip-bull">HBM 2026 全年售罄</span>
+            <span class="signal-chip chip-bull">Bull:BUY</span>
+            <span class="signal-chip chip-neutral">Neutral:BUY</span>
+            <span class="signal-chip chip-bear">Bear:HOLD</span>
+            <span class="signal-chip chip-warn">辯論 3 輪</span>
+          </div>
+
+          <div class="verdict verdict-buy">
+            <strong>系統理由：</strong>主趨勢上升、基本面支撐，但技術面過度延伸、聚合訊號中性，保守規模做趨勢跟隨多倉。
+          </div>
+
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- ══════ COMPARE TABLE ══════ -->
+  <div class="section">
+    <div class="section-title">指標比較</div>
+    <div class="card">
+      <table class="compare-table">
+        <thead>
+          <tr>
+            <th>項目</th>
+            <th>GEV</th>
+            <th>MU</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>最終決策</td>
+            <td><span class="pill pill-yellow">HOLD</span></td>
+            <td><span class="pill pill-green">BUY qty=6</span></td>
+          </tr>
+          <tr>
+            <td>當前股價</td>
+            <td>$1,122.26</td>
+            <td>$1,184.65（盤前 +4.47%）</td>
+          </tr>
+          <tr>
+            <td>Sage 模型</td>
+            <td>NEUTRAL 65%（3×NEUTRAL）</td>
+            <td>NEUTRAL 70%（2×NEUTRAL + 1×LONG）</td>
+          </tr>
+          <tr>
+            <td>Insider MSPR</td>
+            <td><span class="pill pill-red">−42.0 BEARISH</span></td>
+            <td><span class="pill pill-red">−33.3 BEARISH</span></td>
+          </tr>
+          <tr>
+            <td>週線 MA20 偏離</td>
+            <td><span class="pill pill-yellow">+19.66%</span></td>
+            <td><span class="pill pill-red">+105.20% !</span></td>
+          </tr>
+          <tr>
+            <td>HMM 主要狀態</td>
+            <td>ranging（49% conf）</td>
+            <td>ranging + trending_up</td>
+          </tr>
+          <tr>
+            <td>分析師共識目標</td>
+            <td>~$1,211（+8%）</td>
+            <td>$1,300–$1,550（已升）</td>
+          </tr>
+          <tr>
+            <td>當前價 vs 目標價</td>
+            <td><span class="pill pill-yellow">低於目標</span></td>
+            <td><span class="pill pill-red">部分已超出舊目標</span></td>
+          </tr>
+          <tr>
+            <td>Kelly / MaxPos</td>
+            <td>24.58% / 9.7%</td>
+            <td>25.00% / 12.0%</td>
+          </tr>
+          <tr>
+            <td>辯論輪數</td>
+            <td>3 輪（滿輪）</td>
+            <td>3 輪（滿輪）</td>
+          </tr>
+          <tr>
+            <td>人工審查觸發</td>
+            <td><span class="pill pill-yellow">是（auto-approved）</span></td>
+            <td><span class="pill pill-yellow">是（auto-approved）</span></td>
+          </tr>
+          <tr>
+            <td>近期催化劑</td>
+            <td>能源轉型 / AI 資料中心用電</td>
+            <td>HBM3e/4 sold-out，財報 6/24</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+
+  <!-- ══════ GEV EXTERNAL RESEARCH ══════ -->
+  <div class="section">
+    <div class="section-title">GEV — 外部研究重點</div>
+    <div class="card">
+      <div class="card-header">GE Vernova Inc. — 基本面 &amp; 市場資訊</div>
+      <div class="card-body">
+        <div class="metrics" style="grid-template-columns: repeat(4,1fr);">
+          <div class="metric">
+            <div class="metric-label">2026 EPS 共識</div>
+            <div class="metric-value green">$30.93</div>
+          </div>
+          <div class="metric">
+            <div class="metric-label">2026 營收預估</div>
+            <div class="metric-value">$45.5B</div>
+          </div>
+          <div class="metric">
+            <div class="metric-label">氣渦輪機 Backlog</div>
+            <div class="metric-value blue">110 GW+</div>
+          </div>
+          <div class="metric">
+            <div class="metric-label">DCF 估值區間</div>
+            <div class="metric-value yellow">$700–$1,191</div>
+          </div>
+        </div>
+        <div style="font-size:0.83rem; color:var(--text-muted); line-height:1.7; margin-top:0.75rem;">
+          <p>✅ <strong>Finnhub MSPR −42 完全驗證</strong>：Q2 2026 Wind 部門 CEO Victor Abate 自願賣出 <strong>72%</strong> 直接持股；CAO Matthew Potvin 賣出 <strong>40%</strong>，均為裁量性出售（非 10b5-1 計劃）。</p>
+          <p style="margin-top:0.5rem;">⚠️ 當前 $1,122 逼近 DCF 估值上限 $1,191，安全邊際僅剩 6%。</p>
+          <p style="margin-top:0.5rem;">⚠️ 分析師 24 人 Strong Buy，但目標均值 $1,211 僅提供 +8% 上漲空間。</p>
+          <p style="margin-top:0.5rem;">🎯 <strong>最佳進場等候區：$1,050–$1,100</strong>（週線回踩 MA20 附近，接近系統止損 $1,028）。</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ══════ MU EXTERNAL RESEARCH ══════ -->
+  <div class="section">
+    <div class="section-title">MU — 外部研究重點 &amp; 財報策略</div>
+    <div class="card">
+      <div class="card-header">Micron Technology — Q3 FY2026 財報預覽（6/24 收盤後）</div>
+      <div class="card-body">
+        <div class="metrics" style="grid-template-columns: repeat(4,1fr);">
+          <div class="metric">
+            <div class="metric-label">Q3 營收指引</div>
+            <div class="metric-value green">$33.5B ±$0.75B</div>
+          </div>
+          <div class="metric">
+            <div class="metric-label">Q3 EPS 共識</div>
+            <div class="metric-value green">$19.72</div>
+          </div>
+          <div class="metric">
+            <div class="metric-label">最準確估計 (MAE)</div>
+            <div class="metric-value blue">$20.87</div>
+          </div>
+          <div class="metric">
+            <div class="metric-label">選擇權隱含波動</div>
+            <div class="metric-value red">±14–17%</div>
+          </div>
+        </div>
+
+        <div style="margin-top:1rem; margin-bottom:0.75rem; font-size:0.78rem; font-weight:600; letter-spacing:0.06em; text-transform:uppercase; color:var(--text-muted);">財報操作策略</div>
+        <ul class="action-steps">
+          <li>
+            <div class="step-num yellow">1</div>
+            <div><strong>今天不追盤前</strong>：盤前已 +4.47%，好消息提前定價。等開盤後觀察是否回穩再評估。</div>
+          </li>
+          <li>
+            <div class="step-num yellow">2</div>
+            <div><strong>財報前減倉 30–50%</strong>（若已持有）：鎖定部分利潤，保留核心部位賭 Q4 指引亮眼。</div>
+          </li>
+          <li>
+            <div class="step-num red">3</div>
+            <div><strong>財報日（6/24）不碰選擇權</strong>：IV 高達 120%，買 call/put 等於直接支付溢價；IV crush 後即使漲也可能虧損。</div>
+          </li>
+          <li>
+            <div class="step-num green">4</div>
+            <div><strong>財報後看 Q4 guidance 決定方向</strong>：指引 ≥$35B → 加倉追多；指引 &lt;$33B → 清倉止損。</div>
+          </li>
+          <li>
+            <div class="step-num green">5</div>
+            <div><strong>最佳補倉機會</strong>：若財報後出現 sell-the-news 回踩 <strong>$1,040–1,100</strong>，是更優質的長期進場點。</div>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+  <!-- ══════ RISK TABLES ══════ -->
+  <div class="section">
+    <div class="section-title">風險矩陣</div>
+
+    <div style="margin-bottom:0.5rem; font-size:0.8rem; font-weight:600; color:var(--text-muted);">GEV 風險</div>
+    <div class="card" style="margin-bottom:1.25rem;">
+      <table class="risk-table">
+        <thead>
+          <tr><th>風險因素</th><th>嚴重度</th><th>說明</th></tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>內部人大量裁量出清</td>
+            <td><span class="sev-high">高</span></td>
+            <td>Wind CEO 賣出 72%、CAO 賣出 40%，均非 10b5-1 計劃，訊號強烈</td>
+          </tr>
+          <tr>
+            <td>技術面過熱（+19.66% vs MA20）</td>
+            <td><span class="sev-high">高</span></td>
+            <td>股價顯著偏離週線均線，回踩均值機率高</td>
+          </tr>
+          <tr>
+            <td>估值逼近 DCF 上限</td>
+            <td><span class="sev-medium">中</span></td>
+            <td>內含價值上限 $1,191，當前 $1,122 安全邊際僅 6%</td>
+          </tr>
+          <tr>
+            <td>分析師上漲空間有限</td>
+            <td><span class="sev-medium">中</span></td>
+            <td>共識目標 $1,211，距現價僅 +8%</td>
+          </tr>
+          <tr>
+            <td>風電部門持續虧損</td>
+            <td><span class="sev-medium">中</span></td>
+            <td>輸入成本通膨、供應鏈瓶頸、電網接入延遲</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <div style="margin-bottom:0.5rem; font-size:0.8rem; font-weight:600; color:var(--text-muted);">MU 風險</div>
+    <div class="card">
+      <table class="risk-table">
+        <thead>
+          <tr><th>風險因素</th><th>嚴重度</th><th>說明</th></tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Q4 指引不夠強</td>
+            <td><span class="sev-high">高</span></td>
+            <td>市場看的是下季展望；Q3 再大的 beat 若 Q4 guidance 平淡，股票照跌</td>
+          </tr>
+          <tr>
+            <td>選擇權 IV Crush（±14–17%）</td>
+            <td><span class="sev-high">高</span></td>
+            <td>IV 120% 在財報後崩回 40%，期權部位即使股票漲也可能虧 40–60%</td>
+          </tr>
+          <tr>
+            <td>Sell-the-News 風險</td>
+            <td><span class="sev-high">高</span></td>
+            <td>股票已從月初 $1,034 漲至 $1,185（+14.6%），好消息大量提前定價</td>
+          </tr>
+          <tr>
+            <td>週線 MA20 偏離 +105%</td>
+            <td><span class="sev-high">高</span></td>
+            <td>歷史性過熱水位，僅出現在趨勢末段或泡沫期</td>
+          </tr>
+          <tr>
+            <td>記憶體周期轉折</td>
+            <td><span class="sev-medium">中</span></td>
+            <td>AI capex 若收縮或三星 HBM4 量產提速，定價權快速削弱</td>
+          </tr>
+          <tr>
+            <td>中國出口管制升級</td>
+            <td><span class="sev-medium">中</span></td>
+            <td>美國對中國半導體設備管制若升級，影響 Micron 中國廠房運作</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+
+  <!-- ══════ SYSTEM BUGS ══════ -->
+  <div class="section">
+    <div class="section-title">系統問題 &amp; 改善建議</div>
+
+    <div class="bug-card">
+      <div class="bug-card-title">⚠️ BUG 1：MU 幽靈 P&amp;L 污染決策（嚴重）</div>
+      <div class="bug-card-body">
+        <code>trade_memory.db</code> 存有 2026-05-20 以 <code>$100.05</code> 買入的歷史紀錄（當時 MU 約 $100），本次系統讀取後產生「+1097.4% gain」的上下文餵給 portfolio manager，可能使其以「我有巨大浮盈」的視角而非客觀零基評估進場。<br>
+        <strong>建議修正：</strong>在 <code>local_store.py get_pnl_context()</code> 加入合理性檢查，若 <code>fill_price &lt; current_price × 0.3</code>，標記為異常並忽略。
+      </div>
+    </div>
+
+    <div class="bug-card">
+      <div class="bug-card-title">⚠️ BUG 2：MTF 信號分級不足（中度）</div>
+      <div class="bug-card-body">
+        週線 MA20 偏離 +105% 被標記為 <code>signal=bullish</code>，與 +10% 的普通多頭相同級別。應加入分級：<code>extended_bullish (15–30%)</code>、<code>dangerously_overbought (&gt;30%)</code>，並對後者自動降低 Kelly fraction。
+      </div>
+    </div>
+
+    <div class="bug-card">
+      <div class="bug-card-title">⚠️ BUG 3：Peer 比較對美股查台灣股號（低度）</div>
+      <div class="bug-card-body">
+        風控的 peer 分析對 GEV / MU 均嘗試查詢 <code>6139, 2324, 3363, 2327</code>（台灣股票代號），每次都 404 error，增加執行延遲與日誌雜訊。應依 <code>ticker.info["exchange"]</code> 動態篩選同市場標的。
+      </div>
+    </div>
+
+    <div class="bug-card">
+      <div class="bug-card-title">⚠️ BUG 4：Human Review 靜默跳過（GEV &amp; MU 皆觸發）</div>
+      <div class="bug-card-body">
+        兩支股票均觸發 conviction &lt; 60% → 人工審查，但因無 <code>--checkpoint</code> 旗標而自動通過，僅留一行 WARNING。建議記錄觸發原因（哪個條件：VaR &gt; 5% / 部位 &gt; 20% / conviction &lt; 60%）並寫入報告，便於事後審查。
+      </div>
+    </div>
+
+    <div class="bug-card">
+      <div class="bug-card-title">💡 建議：建立 GEV Wiki 知識庫</div>
+      <div class="bug-card-body">
+        GEV 於 2024/4 才從 GE 分拆，<code>data/wiki/asset_profiles/GEV.md</code> 尚不存在。Sage 模型在無公司背景知識下執行，可能低估能源轉型主題的重要性。建議加入：分拆背景、氣渦輪機訂單結構、風電虧損原因、AI 資料中心用電需求。
+      </div>
+    </div>
+  </div>
+
+  <!-- ══════ FINAL VERDICT ══════ -->
+  <div class="section">
+    <div class="section-title">最終推論總結</div>
+    <div class="card">
+      <div class="card-body">
+
+        <div style="display:grid; grid-template-columns:1fr 1fr; gap:1rem;">
+
+          <div>
+            <div style="font-size:0.8rem; font-weight:700; color:var(--yellow); margin-bottom:0.5rem;">GEV — 等待回調再進場</div>
+            <div style="font-size:0.83rem; color:var(--text-muted); line-height:1.7;">
+              長期故事完整（能源轉型 + AI 用電）但<strong>現在進場條件差</strong>：估值無安全邊際、內部人大量套現、技術面過熱。<br><br>
+              最佳等候進場：<strong style="color:var(--text);">$1,050–$1,100</strong>（週線 MA20 附近）<br>
+              中期目標：$1,264（系統 TP）/ $1,211（分析師共識）
+            </div>
+          </div>
+
+          <div>
+            <div style="font-size:0.8rem; font-weight:700; color:var(--green); margin-bottom:0.5rem;">MU — 方向正確，時機需謹慎</div>
+            <div style="font-size:0.83rem; color:var(--text-muted); line-height:1.7;">
+              HBM sold-out + 81% 毛利 + FY26 EPS $58 是真實的基本面支撐，BUY <strong>方向正確</strong>。但 +105% MA20 偏離 + 財報前高 IV + sell-the-news 風險讓時機偏進取。<br><br>
+              財報後理想補倉區：<strong style="color:var(--text);">$1,040–$1,100</strong><br>
+              中期目標：$1,435（系統 TP）/ $1,500+（升級後分析師目標）
+            </div>
+          </div>
+
+        </div>
+
+        <div style="margin-top:1.25rem; padding-top:1.25rem; border-top:1px solid var(--border); font-size:0.83rem; line-height:1.6; color:var(--text-muted);">
+          <strong style="color:var(--text);">明天（6/24）最重要的事</strong>：Micron Q3 財報收盤後公布。市場看的不是 Q3 數字本身（大概率超預期），而是 <strong style="color:var(--orange);">Q4 revenue guidance</strong>。
+          <span class="pill pill-green" style="margin-left:0.4rem;">≥$35B → 追多</span>
+          <span class="pill pill-red" style="margin-left:0.4rem;">&lt;$33B → 清倉</span>
+        </div>
+
+      </div>
+    </div>
+  </div>
+
+  <footer>
+    TradingBot Report &nbsp;·&nbsp; 2026/06/23 &nbsp;·&nbsp; 本報告由系統自動生成，僅供研究參考，不構成投資建議。
+  </footer>
+
+</div>
+</body>
+</html>
