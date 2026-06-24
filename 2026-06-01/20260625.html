@@ -1,0 +1,841 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>TradingBot 分析報告 — 2026/06/25</title>
+<style>
+  :root {
+    --bg: #0d1117;
+    --surface: #161b22;
+    --surface2: #1c2128;
+    --surface3: #21262d;
+    --border: #30363d;
+    --text: #e6edf3;
+    --text-muted: #8b949e;
+    --green: #3fb950;
+    --green-dim: #0f2a18;
+    --red: #f85149;
+    --red-dim: #2a0f0f;
+    --yellow: #e3b341;
+    --yellow-dim: #2a200a;
+    --blue: #58a6ff;
+    --blue-dim: #0d1f33;
+    --purple: #bc8cff;
+    --purple-dim: #1e0f33;
+    --orange: #ffa657;
+    --orange-dim: #2a1800;
+    --teal: #39d353;
+  }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body {
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Noto Sans TC', sans-serif;
+    background: var(--bg);
+    color: var(--text);
+    line-height: 1.6;
+    padding: 2rem 1rem;
+  }
+  .container { max-width: 1180px; margin: 0 auto; }
+
+  /* ── Header ── */
+  .report-header {
+    display: flex;
+    align-items: flex-end;
+    justify-content: space-between;
+    border-bottom: 1px solid var(--border);
+    padding-bottom: 1.25rem;
+    margin-bottom: 2rem;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+  }
+  .report-header h1 { font-size: 1.4rem; font-weight: 700; color: var(--blue); }
+  .report-header .meta { font-size: 0.8rem; color: var(--text-muted); margin-top: 0.2rem; }
+  .theme-badge {
+    background: var(--purple-dim);
+    border: 1px solid var(--purple);
+    color: var(--purple);
+    font-size: 0.72rem;
+    font-weight: 700;
+    padding: 0.25rem 0.75rem;
+    border-radius: 20px;
+    letter-spacing: 0.06em;
+  }
+
+  /* ── Section ── */
+  .section { margin-bottom: 2.5rem; }
+  .section-title {
+    font-size: 0.7rem;
+    font-weight: 700;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--text-muted);
+    margin-bottom: 1rem;
+    padding-bottom: 0.4rem;
+    border-bottom: 1px solid var(--border);
+  }
+
+  /* ── Overview table ── */
+  .overview-table { width: 100%; border-collapse: collapse; font-size: 0.82rem; }
+  .overview-table th {
+    text-align: left;
+    padding: 0.5rem 0.75rem;
+    background: var(--surface2);
+    color: var(--text-muted);
+    font-size: 0.7rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+    border-bottom: 2px solid var(--border);
+    white-space: nowrap;
+  }
+  .overview-table td {
+    padding: 0.6rem 0.75rem;
+    border-bottom: 1px solid var(--border);
+    vertical-align: middle;
+  }
+  .overview-table tr:last-child td { border-bottom: none; }
+  .overview-table tr:hover td { background: var(--surface2); }
+  .overview-table td:not(:first-child):not(:nth-child(2)):not(:nth-child(3)) { text-align: center; }
+
+  /* ── Action badges ── */
+  .badge {
+    display: inline-block;
+    font-size: 0.72rem;
+    font-weight: 700;
+    letter-spacing: 0.06em;
+    padding: 0.2rem 0.65rem;
+    border-radius: 12px;
+  }
+  .badge-buy  { background: var(--green-dim); color: var(--green); border: 1px solid var(--green); }
+  .badge-hold { background: var(--yellow-dim); color: var(--yellow); border: 1px solid var(--yellow); }
+  .badge-sell { background: var(--red-dim); color: var(--red); border: 1px solid var(--red); }
+  .badge-warn { background: var(--orange-dim); color: var(--orange); border: 1px solid var(--orange); }
+
+  /* ── Stock cards grid ── */
+  .cards-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 1rem;
+  }
+  @media (max-width: 900px) { .cards-grid { grid-template-columns: 1fr 1fr; } }
+  @media (max-width: 560px) { .cards-grid { grid-template-columns: 1fr; } }
+
+  .stock-card {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+  }
+  .stock-card.alert-card { border-color: var(--red); }
+  .stock-card.top-card   { border-color: var(--blue); }
+
+  .card-header {
+    padding: 0.9rem 1rem;
+    border-bottom: 1px solid var(--border);
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+  }
+  .card-ticker { font-size: 1.05rem; font-weight: 800; }
+  .card-name   { font-size: 0.72rem; color: var(--text-muted); margin-top: 0.1rem; }
+  .card-sector { font-size: 0.68rem; color: var(--purple); background: var(--purple-dim); padding: 0.1rem 0.45rem; border-radius: 8px; display: inline-block; margin-top: 0.25rem; }
+
+  .card-body { padding: 1rem; flex: 1; display: flex; flex-direction: column; gap: 0.75rem; }
+
+  /* ── Mini metrics ── */
+  .mini-metrics { display: grid; grid-template-columns: repeat(3, 1fr); gap: 0.5rem; }
+  .mini-metric {
+    background: var(--surface2);
+    border-radius: 5px;
+    padding: 0.45rem 0.55rem;
+    border: 1px solid var(--border);
+  }
+  .mm-label { font-size: 0.63rem; color: var(--text-muted); text-transform: uppercase; letter-spacing: 0.05em; }
+  .mm-value { font-size: 0.9rem; font-weight: 700; margin-top: 0.1rem; }
+  .c-green  { color: var(--green); }
+  .c-red    { color: var(--red); }
+  .c-yellow { color: var(--yellow); }
+  .c-blue   { color: var(--blue); }
+  .c-orange { color: var(--orange); }
+  .c-muted  { color: var(--text-muted); }
+  .c-purple { color: var(--purple); }
+
+  /* ── Signal chips ── */
+  .chips { display: flex; flex-wrap: wrap; gap: 0.35rem; }
+  .chip {
+    font-size: 0.67rem;
+    font-weight: 600;
+    padding: 0.15rem 0.5rem;
+    border-radius: 4px;
+  }
+  .chip-bull   { background: var(--green-dim);  color: var(--green); }
+  .chip-bear   { background: var(--red-dim);    color: var(--red); }
+  .chip-neutral{ background: var(--blue-dim);   color: var(--blue); }
+  .chip-warn   { background: var(--yellow-dim); color: var(--yellow); }
+  .chip-orange { background: var(--orange-dim); color: var(--orange); }
+  .chip-purple { background: var(--purple-dim); color: var(--purple); }
+
+  /* ── Verdict ── */
+  .verdict {
+    font-size: 0.78rem;
+    line-height: 1.55;
+    padding: 0.65rem 0.75rem;
+    border-radius: 5px;
+    margin-top: auto;
+  }
+  .verdict-buy  { background: var(--green-dim);  border-left: 3px solid var(--green); }
+  .verdict-hold { background: var(--yellow-dim); border-left: 3px solid var(--yellow); }
+  .verdict-warn { background: var(--red-dim);    border-left: 3px solid var(--red); }
+  .verdict-info { background: var(--blue-dim);   border-left: 3px solid var(--blue); }
+
+  /* ── Alert banner ── */
+  .alert-banner {
+    background: var(--red-dim);
+    border: 1px solid var(--red);
+    border-radius: 8px;
+    padding: 1rem 1.25rem;
+    font-size: 0.84rem;
+    line-height: 1.6;
+    margin-bottom: 1.25rem;
+    display: flex;
+    gap: 0.75rem;
+    align-items: flex-start;
+  }
+  .alert-icon { font-size: 1.2rem; flex-shrink: 0; }
+
+  /* ── PnL bar ── */
+  .pnl-bar {
+    border-radius: 4px;
+    padding: 0.4rem 0.6rem;
+    font-size: 0.75rem;
+    font-weight: 700;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  .pnl-gain { background: var(--green-dim); color: var(--green); }
+  .pnl-loss { background: var(--red-dim);   color: var(--red); }
+
+  /* ── Risk table ── */
+  .risk-table { width: 100%; border-collapse: collapse; font-size: 0.8rem; }
+  .risk-table th {
+    text-align: left;
+    padding: 0.5rem 0.75rem;
+    background: var(--surface2);
+    color: var(--text-muted);
+    font-size: 0.68rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+    border-bottom: 1px solid var(--border);
+  }
+  .risk-table td { padding: 0.55rem 0.75rem; border-bottom: 1px solid var(--border); vertical-align: top; }
+  .risk-table tr:last-child td { border-bottom: none; }
+  .risk-table tr:hover td { background: var(--surface2); }
+  .sev-critical { color: var(--red);    font-weight: 700; }
+  .sev-high     { color: var(--orange); font-weight: 700; }
+  .sev-medium   { color: var(--yellow); font-weight: 600; }
+  .sev-low      { color: var(--text-muted); }
+
+  /* ── Bug cards ── */
+  .bug-card {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    padding: 1rem 1.25rem;
+    margin-bottom: 0.75rem;
+  }
+  .bug-card.critical { border-left: 3px solid var(--red); }
+  .bug-card.warning  { border-left: 3px solid var(--yellow); }
+  .bug-card.info     { border-left: 3px solid var(--blue); }
+  .bug-title { font-size: 0.85rem; font-weight: 700; margin-bottom: 0.4rem; }
+  .bug-title.critical { color: var(--red); }
+  .bug-title.warning  { color: var(--yellow); }
+  .bug-title.info     { color: var(--blue); }
+  .bug-body  { font-size: 0.8rem; color: var(--text-muted); line-height: 1.65; }
+  .bug-body code { background: var(--surface2); padding: 0.1rem 0.35rem; border-radius: 3px; font-family: monospace; font-size: 0.78rem; color: var(--orange); }
+
+  /* ── Ranking ── */
+  .rank-list { list-style: none; }
+  .rank-item {
+    display: flex;
+    gap: 0.9rem;
+    padding: 0.8rem 0;
+    border-bottom: 1px solid var(--border);
+    align-items: flex-start;
+    font-size: 0.83rem;
+  }
+  .rank-item:last-child { border-bottom: none; }
+  .rank-medal { font-size: 1.1rem; flex-shrink: 0; width: 1.5rem; text-align: center; margin-top: 0.05rem; }
+  .rank-body h4 { font-size: 0.88rem; font-weight: 700; margin-bottom: 0.15rem; }
+  .rank-body p  { color: var(--text-muted); line-height: 1.55; font-size: 0.79rem; }
+
+  /* ── Generic card shell ── */
+  .card {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    overflow: hidden;
+  }
+  .card-head {
+    padding: 0.65rem 1.1rem;
+    border-bottom: 1px solid var(--border);
+    font-size: 0.78rem;
+    font-weight: 600;
+    color: var(--text-muted);
+  }
+  .card-content { padding: 1.1rem; }
+
+  .pill {
+    display: inline-block;
+    font-size: 0.67rem;
+    padding: 0.1rem 0.45rem;
+    border-radius: 8px;
+    font-weight: 700;
+  }
+  .pill-green  { background: var(--green-dim); color: var(--green); }
+  .pill-red    { background: var(--red-dim);   color: var(--red); }
+  .pill-yellow { background: var(--yellow-dim);color: var(--yellow); }
+  .pill-blue   { background: var(--blue-dim);  color: var(--blue); }
+  .pill-orange { background: var(--orange-dim);color: var(--orange); }
+
+  footer {
+    margin-top: 3rem;
+    padding-top: 1.25rem;
+    border-top: 1px solid var(--border);
+    font-size: 0.73rem;
+    color: var(--text-muted);
+    text-align: center;
+  }
+</style>
+</head>
+<body>
+<div class="container">
+
+  <!-- ══ HEADER ══ -->
+  <div class="report-header">
+    <div>
+      <h1>TradingBot 分析報告</h1>
+      <div class="meta">2026/06/25 &nbsp;·&nbsp; 6 支台股 &nbsp;·&nbsp; LangGraph + LiteLLM 生成</div>
+    </div>
+    <span class="theme-badge">AI 光通訊 / CCL / 廠務工程</span>
+  </div>
+
+  <!-- ══ ALERT: 3363 ══ -->
+  <div class="alert-banner">
+    <div class="alert-icon">🚨</div>
+    <div>
+      <strong style="color:var(--red);">停損警示：3363 上詮</strong><br>
+      組合持倉買入 $884.44（2026-06-04）→ 目前 $685，<strong style="color:var(--red);">浮虧 -22.6%</strong>。Sage 三次取樣全數投 SHORT 77%，週線跌破 MA20（-2.31%），HMM trending_down 佔 47%。系統因缺乏 SELL 動作僅輸出 HOLD，建議人工評估是否立即停損出場。
+    </div>
+  </div>
+
+  <!-- ══ OVERVIEW TABLE ══ -->
+  <div class="section">
+    <div class="section-title">決策總覽</div>
+    <div class="card">
+      <table class="overview-table">
+        <thead>
+          <tr>
+            <th>代號</th>
+            <th>公司名</th>
+            <th>產業</th>
+            <th>決策</th>
+            <th>現價</th>
+            <th>止損</th>
+            <th>目標</th>
+            <th>Sage</th>
+            <th>MA20偏離</th>
+            <th>Kelly</th>
+            <th>VaR95</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><strong>4991</strong></td>
+            <td>環宇-KY</td>
+            <td><span class="pill pill-blue">III-V光半導體</span></td>
+            <td><span class="badge badge-hold">HOLD</span></td>
+            <td>$536</td>
+            <td class="c-red">$429</td>
+            <td class="c-green">$697</td>
+            <td class="c-yellow">NEUTRAL 79%</td>
+            <td>+5.30%</td>
+            <td>20.83%</td>
+            <td>0.73%</td>
+          </tr>
+          <tr>
+            <td><strong>3105</strong></td>
+            <td>穩懋</td>
+            <td><span class="pill pill-blue">GaAs晶圓代工</span></td>
+            <td><span class="badge badge-buy">BUY</span></td>
+            <td>$522</td>
+            <td class="c-red">$442</td>
+            <td class="c-green">$642</td>
+            <td class="c-green">LONG 66%</td>
+            <td class="c-yellow">+25.29%</td>
+            <td class="c-yellow">2.36%</td>
+            <td>0.53%</td>
+          </tr>
+          <tr>
+            <td><strong>6451</strong></td>
+            <td>訊芯-KY</td>
+            <td><span class="pill pill-blue">SiP/光模組</span></td>
+            <td><span class="badge badge-buy">BUY</span></td>
+            <td>$596</td>
+            <td class="c-red">$496</td>
+            <td class="c-green">$746</td>
+            <td class="c-green">LONG 65%</td>
+            <td class="c-orange">+55.49%</td>
+            <td class="c-yellow">2.08%</td>
+            <td>0.58%</td>
+          </tr>
+          <tr>
+            <td><strong>6274</strong></td>
+            <td>台燿</td>
+            <td><span class="pill pill-blue">高階CCL基板</span></td>
+            <td><span class="badge badge-buy">BUY</span></td>
+            <td>$1,735</td>
+            <td class="c-red">$1,463</td>
+            <td class="c-green">$2,143</td>
+            <td class="c-green">LONG 70%</td>
+            <td class="c-red">+79.23%</td>
+            <td class="c-yellow">4.17%</td>
+            <td>0.61%</td>
+          </tr>
+          <tr>
+            <td><strong>6139</strong></td>
+            <td>亞翔</td>
+            <td><span class="pill pill-blue">廠務工程</span></td>
+            <td><span class="badge badge-hold">HOLD</span></td>
+            <td>$791</td>
+            <td class="c-red">$693</td>
+            <td class="c-green">$938</td>
+            <td class="c-yellow">NEUTRAL 59%</td>
+            <td class="c-yellow">+20.98%</td>
+            <td>23.75%</td>
+            <td>0.39%</td>
+          </tr>
+          <tr style="background:rgba(248,81,73,0.05);">
+            <td><strong>3363</strong></td>
+            <td>上詮</td>
+            <td><span class="pill pill-blue">光纖通訊</span></td>
+            <td><span class="badge badge-hold">HOLD</span> <span class="pill pill-red">⚠ 虧損中</span></td>
+            <td>$685</td>
+            <td class="c-red">$578</td>
+            <td class="c-green">$846</td>
+            <td class="c-red">SHORT 77%</td>
+            <td class="c-red">−2.31%</td>
+            <td>7.22%</td>
+            <td>0.50%</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+
+  <!-- ══ STOCK CARDS ══ -->
+  <div class="section">
+    <div class="section-title">個股詳細分析</div>
+    <div class="cards-grid">
+
+      <!-- 4991 -->
+      <div class="stock-card top-card">
+        <div class="card-header">
+          <div>
+            <div class="card-ticker">4991</div>
+            <div class="card-name">環宇-KY (GCS Holdings)</div>
+            <div class="card-sector">III-V光半導體代工</div>
+          </div>
+          <span class="badge badge-hold">HOLD</span>
+        </div>
+        <div class="card-body">
+          <div class="mini-metrics">
+            <div class="mini-metric"><div class="mm-label">現價</div><div class="mm-value">$536</div></div>
+            <div class="mini-metric"><div class="mm-label">止損</div><div class="mm-value c-red">$429</div></div>
+            <div class="mini-metric"><div class="mm-label">目標</div><div class="mm-value c-green">$697</div></div>
+            <div class="mini-metric"><div class="mm-label">VaR95</div><div class="mm-value">0.73%</div></div>
+            <div class="mini-metric"><div class="mm-label">Kelly</div><div class="mm-value c-muted">20.83%</div></div>
+            <div class="mini-metric"><div class="mm-label">MA20偏離</div><div class="mm-value">+5.30%</div></div>
+          </div>
+          <div class="chips">
+            <span class="chip chip-neutral">Sage NEUTRAL 79%</span>
+            <span class="chip chip-warn">ATR 10.02%</span>
+            <span class="chip chip-warn">HMM:ranging主導</span>
+            <span class="chip chip-bull">Bull:BUY</span>
+            <span class="chip chip-neutral">Neutral:HOLD</span>
+            <span class="chip chip-bear">Bear:HOLD</span>
+          </div>
+          <div style="font-size:0.77rem;color:var(--text-muted);line-height:1.6;padding:0.5rem 0.6rem;background:var(--surface2);border-radius:5px;border:1px solid var(--border);">
+            <strong style="color:var(--green);">外部亮點：</strong>Q1 EPS $1.67（YoY +339%），毛利率 <strong style="color:var(--green);">54.5% 歷史新高</strong>，訂單能見度至 2027 Q1，下半年優於上半年。
+          </div>
+          <div class="verdict verdict-info">
+            <strong>系統：</strong>技術訊號混合，無明確突破確認，等待進場。<br>
+            <strong>推論：</strong>基本面最扎實，等回調至 <strong>$480–500</strong> 再進場。
+          </div>
+        </div>
+      </div>
+
+      <!-- 3105 -->
+      <div class="stock-card">
+        <div class="card-header">
+          <div>
+            <div class="card-ticker">3105</div>
+            <div class="card-name">穩懋 (WIN Semiconductors)</div>
+            <div class="card-sector">GaAs PA / 光傳輸 VCSEL</div>
+          </div>
+          <span class="badge badge-buy">BUY</span>
+        </div>
+        <div class="card-body">
+          <div class="mini-metrics">
+            <div class="mini-metric"><div class="mm-label">現價</div><div class="mm-value">$522</div></div>
+            <div class="mini-metric"><div class="mm-label">止損</div><div class="mm-value c-red">$442</div></div>
+            <div class="mini-metric"><div class="mm-label">目標</div><div class="mm-value c-green">$642</div></div>
+            <div class="mini-metric"><div class="mm-label">VaR95</div><div class="mm-value">0.53%</div></div>
+            <div class="mini-metric"><div class="mm-label">Kelly</div><div class="mm-value c-yellow">2.36%</div></div>
+            <div class="mini-metric"><div class="mm-label">MA20偏離</div><div class="mm-value c-yellow">+25.29%</div></div>
+          </div>
+          <div class="chips">
+            <span class="chip chip-bull">Sage LONG 66%</span>
+            <span class="chip chip-bear">HMM:趨勢下跌 69%</span>
+            <span class="chip chip-warn">MaxPos 僅 1.9%</span>
+            <span class="chip chip-bull">Bull:BUY</span>
+            <span class="chip chip-neutral">Neutral:BUY</span>
+            <span class="chip chip-bear">Bear:HOLD</span>
+          </div>
+          <div style="font-size:0.77rem;color:var(--text-muted);line-height:1.6;padding:0.5rem 0.6rem;background:var(--surface2);border-radius:5px;border:1px solid var(--border);">
+            <strong style="color:var(--yellow);">外部警示：</strong>FactSet 分析師共識目標 <strong style="color:var(--red);">$324</strong> vs 現價 $522（已高出 <strong style="color:var(--red);">+61%</strong>）。Q1 EPS $1.26，5月營收年增 +40.3%，光傳輸為新成長引擎。
+          </div>
+          <div class="verdict verdict-buy">
+            <strong>系統：</strong>試探性小部位多單（Kelly 2.36% 自動保守）。<br>
+            <strong>推論：</strong>方向對但超漲；等回調至 <strong>$420–440</strong>（分析師目標區）。
+          </div>
+        </div>
+      </div>
+
+      <!-- 6451 -->
+      <div class="stock-card">
+        <div class="card-header">
+          <div>
+            <div class="card-ticker">6451</div>
+            <div class="card-name">訊芯-KY (ShunSin Technology)</div>
+            <div class="card-sector">SiP封裝 / CPO光模組</div>
+          </div>
+          <span class="badge badge-buy">BUY</span>
+        </div>
+        <div class="card-body">
+          <div class="mini-metrics">
+            <div class="mini-metric"><div class="mm-label">現價</div><div class="mm-value">$596</div></div>
+            <div class="mini-metric"><div class="mm-label">止損</div><div class="mm-value c-red">$496</div></div>
+            <div class="mini-metric"><div class="mm-label">目標</div><div class="mm-value c-green">$746</div></div>
+            <div class="mini-metric"><div class="mm-label">VaR95</div><div class="mm-value">0.58%</div></div>
+            <div class="mini-metric"><div class="mm-label">Kelly</div><div class="mm-value c-yellow">2.08%</div></div>
+            <div class="mini-metric"><div class="mm-label">MA20偏離</div><div class="mm-value c-orange">+55.49%</div></div>
+          </div>
+          <div class="chips">
+            <span class="chip chip-bull">Sage LONG 65%</span>
+            <span class="chip chip-orange">MA20 +55.5%過熱</span>
+            <span class="chip chip-warn">MaxPos 僅 2.1%</span>
+            <span class="chip chip-bear">Q1 EPS −1.45虧損</span>
+            <span class="chip chip-bull">CPO主題概念</span>
+          </div>
+          <div style="font-size:0.77rem;color:var(--text-muted);line-height:1.6;padding:0.5rem 0.6rem;background:var(--surface2);border-radius:5px;border:1px solid var(--border);">
+            <strong style="color:var(--red);">外部警示：</strong>Q1 2026 EPS <strong style="color:var(--red);">-1.45 元（虧損）</strong>，2025 全年 EPS 僅 0.26 元。股價上漲純靠 CPO 主題預期，獲利尚未兌現。鴻海集團旗下，1.6T CPO CAGR 146%。
+          </div>
+          <div class="verdict verdict-buy">
+            <strong>系統：</strong>技術動能+ML支持小部位多單。<br>
+            <strong>推論：</strong>高風險投機；嚴守 SL $496，不追高。
+          </div>
+        </div>
+      </div>
+
+      <!-- 6274 -->
+      <div class="stock-card">
+        <div class="card-header">
+          <div>
+            <div class="card-ticker">6274</div>
+            <div class="card-name">台燿 (Taiwan Union Technology)</div>
+            <div class="card-sector">高階CCL/Prepreg材料</div>
+          </div>
+          <span class="badge badge-buy">BUY</span>
+        </div>
+        <div class="card-body">
+          <div class="mini-metrics">
+            <div class="mini-metric"><div class="mm-label">現價</div><div class="mm-value">$1,735</div></div>
+            <div class="mini-metric"><div class="mm-label">止損</div><div class="mm-value c-red">$1,463</div></div>
+            <div class="mini-metric"><div class="mm-label">目標</div><div class="mm-value c-green">$2,143</div></div>
+            <div class="mini-metric"><div class="mm-label">VaR95</div><div class="mm-value">0.61%</div></div>
+            <div class="mini-metric"><div class="mm-label">Kelly</div><div class="mm-value c-yellow">4.17%</div></div>
+            <div class="mini-metric"><div class="mm-label">MA20偏離</div><div class="mm-value c-red">+79.23%</div></div>
+          </div>
+          <div class="chips">
+            <span class="chip chip-bull">Sage LONG 70%最高</span>
+            <span class="chip chip-bear">MA20 +79%嚴重過熱</span>
+            <span class="chip chip-bull">Q1 EPS $4.36 YoY+79%</span>
+            <span class="chip chip-warn">MaxPos 4.2%</span>
+            <span class="chip chip-purple">高盛目標$1,165→$1,165</span>
+          </div>
+          <div style="font-size:0.77rem;color:var(--text-muted);line-height:1.6;padding:0.5rem 0.6rem;background:var(--surface2);border-radius:5px;border:1px solid var(--border);">
+            <strong style="color:var(--green);">外部亮點：</strong>Q1 EPS $4.36（QoQ +16%、YoY +79%），高階 M7/M8 材料佔比升至 36%，高盛目標 $1,165，「全產全銷、能見度達 2028」。現價 $1,735 已超高盛目標 <strong style="color:var(--red);">+49%</strong>。
+          </div>
+          <div class="verdict verdict-buy">
+            <strong>系統：</strong>ML全票LONG，動能確認，小部位試單。<br>
+            <strong>推論：</strong>最強基本面；等回調 <strong>$1,450–1,500</strong> 再加碼。
+          </div>
+        </div>
+      </div>
+
+      <!-- 6139 -->
+      <div class="stock-card">
+        <div class="card-header">
+          <div>
+            <div class="card-ticker">6139</div>
+            <div class="card-name">亞翔 (L&K Engineering)</div>
+            <div class="card-sector">半導體廠務工程</div>
+          </div>
+          <span class="badge badge-hold">HOLD</span>
+        </div>
+        <div class="card-body">
+          <div class="pnl-gain">
+            <span>持倉 P&amp;L</span>
+            <span>買入 $784.39 (2026-05-30) → 現 $791 &nbsp;<strong>+0.8%</strong></span>
+          </div>
+          <div class="mini-metrics">
+            <div class="mini-metric"><div class="mm-label">現價</div><div class="mm-value">$791</div></div>
+            <div class="mini-metric"><div class="mm-label">止損</div><div class="mm-value c-red">$693</div></div>
+            <div class="mini-metric"><div class="mm-label">目標</div><div class="mm-value c-green">$938</div></div>
+            <div class="mini-metric"><div class="mm-label">VaR95</div><div class="mm-value">0.39%</div></div>
+            <div class="mini-metric"><div class="mm-label">Kelly</div><div class="mm-value c-green">23.75%</div></div>
+            <div class="mini-metric"><div class="mm-label">MA20偏離</div><div class="mm-value c-yellow">+20.98%</div></div>
+          </div>
+          <div class="chips">
+            <span class="chip chip-neutral">Sage NEUTRAL 59%最低</span>
+            <span class="chip chip-warn">HMM:ranging主導</span>
+            <span class="chip chip-bull">AI資料中心廠建</span>
+            <span class="chip chip-neutral">低本益比受惠股</span>
+          </div>
+          <div style="font-size:0.77rem;color:var(--text-muted);line-height:1.6;padding:0.5rem 0.6rem;background:var(--surface2);border-radius:5px;border:1px solid var(--border);">
+            <strong>外部資訊：</strong>亞翔為半導體廠房無塵室工程整合商，被列為 AI 受惠「低基期、低本益比、業績成長」個股，受益於全球 AI 資料中心大量建置潮。
+          </div>
+          <div class="verdict verdict-hold">
+            <strong>系統：</strong>訊號中性，近期動能降溫，持倉微盈，等待確認。<br>
+            <strong>推論：</strong>繼續持有，SL $693，等半導體廠建訂單業績確認。
+          </div>
+        </div>
+      </div>
+
+      <!-- 3363 -->
+      <div class="stock-card alert-card">
+        <div class="card-header" style="background:rgba(248,81,73,0.05);">
+          <div>
+            <div class="card-ticker" style="color:var(--red);">3363 ⚠</div>
+            <div class="card-name">上詮 (FOCI Fiber Optic)</div>
+            <div class="card-sector">矽光子 / 光纖通訊</div>
+          </div>
+          <span class="badge badge-hold">HOLD</span>
+        </div>
+        <div class="card-body">
+          <div class="pnl-loss">
+            <span>持倉 P&amp;L</span>
+            <span>買入 $884.44 (2026-06-04) → 現 $685 &nbsp;<strong>−22.6%</strong></span>
+          </div>
+          <div class="mini-metrics">
+            <div class="mini-metric"><div class="mm-label">現價</div><div class="mm-value">$685</div></div>
+            <div class="mini-metric"><div class="mm-label">止損</div><div class="mm-value c-red">$578</div></div>
+            <div class="mini-metric"><div class="mm-label">目標</div><div class="mm-value c-muted">$846</div></div>
+            <div class="mini-metric"><div class="mm-label">VaR95</div><div class="mm-value">0.50%</div></div>
+            <div class="mini-metric"><div class="mm-label">Kelly</div><div class="mm-value c-muted">7.22%</div></div>
+            <div class="mini-metric"><div class="mm-label">MA20偏離</div><div class="mm-value c-red">−2.31%</div></div>
+          </div>
+          <div class="chips">
+            <span class="chip chip-bear">Sage SHORT 77%全票</span>
+            <span class="chip chip-bear">週線跌破 MA20</span>
+            <span class="chip chip-bear">HMM:趨勢下跌 47%</span>
+            <span class="chip chip-bear">Q1 EPS −0.98虧損</span>
+            <span class="chip chip-warn">2月增資稀釋股本</span>
+          </div>
+          <div style="font-size:0.77rem;color:var(--text-muted);line-height:1.6;padding:0.5rem 0.6rem;background:var(--surface2);border-radius:5px;border:1px solid var(--border);">
+            <strong style="color:var(--red);">外部警示：</strong>Q1 EPS <strong style="color:var(--red);">-0.98 元</strong>，2025 全年 EPS 0.16 元（極低）。2026/02 完成 31.6 億現金增資（稀釋），矽光子/CPO 故事未兌現獲利，技術面全面轉空。
+          </div>
+          <div class="verdict verdict-warn">
+            <strong>系統缺陷：</strong>Sage SHORT 77% 卻無 SELL 動作可執行。<br>
+            <strong>人工建議：</strong>評估 <strong>立即停損出場</strong>，避免擴大至 SL $578（再虧 -15.7%）。
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- ══ RISK MATRIX ══ -->
+  <div class="section">
+    <div class="section-title">風險矩陣</div>
+    <div class="card">
+      <table class="risk-table">
+        <thead>
+          <tr><th>代號</th><th>風險因素</th><th>嚴重度</th><th>說明</th></tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><strong>3363</strong></td>
+            <td>持倉已虧 22.6%，Sage 全票 SHORT</td>
+            <td><span class="sev-critical">嚴重</span></td>
+            <td>虧損持倉 + ML 空頭信號 + 週線破位 + EPS 虧損，系統無停損機制，需人工介入</td>
+          </tr>
+          <tr>
+            <td><strong>3105</strong></td>
+            <td>股價超分析師目標 61%</td>
+            <td><span class="sev-high">高</span></td>
+            <td>FactSet 目標 $324 vs 現價 $522，且 HMM 顯示歷史 69% 為趨勢下跌狀態</td>
+          </tr>
+          <tr>
+            <td><strong>6274</strong></td>
+            <td>週線 MA20 偏離 +79%</td>
+            <td><span class="sev-high">高</span></td>
+            <td>技術面歷史性過熱，雖基本面強勁，但均值回歸風險高；系統以 Kelly 4.17% 限制</td>
+          </tr>
+          <tr>
+            <td><strong>6451</strong></td>
+            <td>EPS 虧損（−1.45）+週線偏離 +55%</td>
+            <td><span class="sev-high">高</span></td>
+            <td>無獲利支撐的純概念股，若 CPO 商業化延遲，估值修正風險極大</td>
+          </tr>
+          <tr>
+            <td><strong>4991</strong></td>
+            <td>HMM trending_down 比例偏高</td>
+            <td><span class="sev-medium">中</span></td>
+            <td>ranging(470) 主導但 trending_down(240) 仍顯著，短期突破未確認</td>
+          </tr>
+          <tr>
+            <td><strong>6139</strong></td>
+            <td>Sage 信心僅 59%（最低）</td>
+            <td><span class="sev-medium">中</span></td>
+            <td>訊號最不確定，廠務工程業績確認速度慢；持倉安全但潛力待驗證</td>
+          </tr>
+          <tr>
+            <td><strong>全部</strong></td>
+            <td>同主題集中風險（AI光通訊 / CCL）</td>
+            <td><span class="sev-medium">中</span></td>
+            <td>6 支均受 AI 資料中心建置主題驅動；若 AI capex 收縮或光通訊供給過剩，同步下跌風險</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+
+  <!-- ══ SYSTEM BUGS ══ -->
+  <div class="section">
+    <div class="section-title">系統問題 &amp; 改善建議</div>
+
+    <div class="bug-card critical">
+      <div class="bug-title critical">🔴 BUG 1（致命）：缺少 SELL / EXIT 動作</div>
+      <div class="bug-body">
+        3363 持倉 −22.6%，Sage 全票 SHORT 77%，週線破 MA，但系統只能輸出 HOLD，無法主動停損。<br>
+        <strong>根本原因：</strong><code>portfolio_manager</code> 的 action 空間只有 BUY / HOLD，沒有 SELL。<br>
+        <strong>建議修正：</strong>在 portfolio_manager prompt 中新增規則：「若 P&amp;L context 顯示浮虧 &gt;15% <strong>且</strong> Sage 信號為 SHORT，action 應為 SELL（平倉）而非 HOLD」。同時在 <code>TradingState</code> 加入 <code>action: Literal["BUY","HOLD","SELL"]</code>，並在 execution engine 支援 SELL 訂單。
+      </div>
+    </div>
+
+    <div class="bug-card warning">
+      <div class="bug-title warning">⚠️ BUG 2：HMM 趨勢下跌主導仍輸出 BUY（3105）</div>
+      <div class="bug-body">
+        3105 共 706 根 bar 中，489 根（69.3%）為 <code>trending_down</code>，系統仍輸出 BUY（僅靠 Kelly 2.36% 自動限制規模）。<br>
+        <strong>建議：</strong>當 <code>trending_down</code> 比例 &gt; 60% 時，在 risk_manager 自動降低 Kelly multiplier 至 0.5x，並在 research_memo 加入醒目警示標籤。
+      </div>
+    </div>
+
+    <div class="bug-card warning">
+      <div class="bug-title warning">⚠️ BUG 3：Peer 比較重複查詢無效台股代號（第 4 次出現）</div>
+      <div class="bug-body">
+        6 支股票的風控分析全部嘗試查詢 <code>6139, 2324, 3363, 2327</code>（無副檔名），全部 404。<br>
+        <strong>建議：</strong>peer list 應依 <code>ticker.info["exchange"]</code> 動態篩選，TWSE 股票的 peer 應使用 <code>*.TW</code> / <code>*.TWO</code> 格式，且排除 OTC 代號錯誤。
+      </div>
+    </div>
+
+    <div class="bug-card info">
+      <div class="bug-title info">💡 改善：MTF 信號應有過熱分級</div>
+      <div class="bug-body">
+        6274 (+79.23%)、6451 (+55.49%)、3105 (+25.29%) 週線偏離全部標為 <code>signal=bullish</code>，與 +5% 的正常多頭相同。<br>
+        <strong>建議加入分級：</strong>
+        <code>0–15%: bullish</code> →
+        <code>15–30%: extended</code> →
+        <code>30–60%: overbought</code> →
+        <code>&gt;60%: extreme_overbought</code>，並對後兩級自動降 Kelly。
+      </div>
+    </div>
+
+    <div class="bug-card info">
+      <div class="bug-title info">💡 改善：Human Review 觸發原因未記錄</div>
+      <div class="bug-body">
+        4 支股票觸發 human review 但自動通過，日誌僅一行 WARNING，未記錄是哪個條件觸發（VaR &gt;5% / 部位 &gt;20% / conviction &lt;60%）。建議在報告輸出中明確標示觸發原因，便於事後審查。
+      </div>
+    </div>
+  </div>
+
+  <!-- ══ RANKING ══ -->
+  <div class="section">
+    <div class="section-title">最終推論總結 &amp; 操作優先順序</div>
+    <div class="card">
+      <div class="card-content">
+        <ul class="rank-list">
+          <li class="rank-item">
+            <div class="rank-medal">🥇</div>
+            <div class="rank-body">
+              <h4>6274 台燿 — 等回調 $1,450–1,500 再建倉</h4>
+              <p>6 支中基本面最強：Q1 EPS $4.36（YoY+79%）、Sage 全票 LONG 70%、高階 CCL 下半年持續漲價、能見度至 2028。MA20 偏離 +79% 是唯一硬傷，待修正後是最佳長線標的。</p>
+            </div>
+          </li>
+          <li class="rank-item">
+            <div class="rank-medal">🥈</div>
+            <div class="rank-body">
+              <h4>4991 環宇-KY — 等回調 $480–500 進場</h4>
+              <p>EPS 年增 +339%、毛利率創歷史新高 54.5%、訂單能見度至 2027 Q1。技術訊號偏中性（Sage NEUTRAL 79%）是系統觀望的原因，但基本面是這 6 支中最扎實的。等待動能確認後是最安全的進場標的。</p>
+            </div>
+          </li>
+          <li class="rank-item">
+            <div class="rank-medal">🥉</div>
+            <div class="rank-body">
+              <h4>6139 亞翔 — 繼續持有，SL $693</h4>
+              <p>既有部位微盈（+0.8%），AI 資料中心廠建趨勢受惠，廠務工程訂單週期長且穩定。等 Q2 業績確認再決定是否加碼。</p>
+            </div>
+          </li>
+          <li class="rank-item">
+            <div class="rank-medal">⚠️</div>
+            <div class="rank-body">
+              <h4>3363 上詮 — 人工評估立即停損</h4>
+              <p>浮虧 −22.6%、Sage SHORT 77%、週線跌破 MA、EPS 虧損。系統因功能限制無法輸出 SELL。若繼續持有，下一個支撐在 $578（再跌 −15.7%）。長線修復期估計超過 2 季，機會成本高。<span class="pill pill-red">建議出場</span></p>
+            </div>
+          </li>
+          <li class="rank-item">
+            <div class="rank-medal">📌</div>
+            <div class="rank-body">
+              <h4>3105 穩懋 — 持有小部位，SL $442</h4>
+              <p>光傳輸主題真實（50G VCSEL 量產、Broadcom 合作），Q1 EPS 成長，但 $522 已超分析師目標 $324 的 61%。系統自動限制 MaxPos 1.9%，方向對但空間有限。</p>
+            </div>
+          </li>
+          <li class="rank-item">
+            <div class="rank-medal">📌</div>
+            <div class="rank-body">
+              <h4>6451 訊芯-KY — 持有小部位，嚴守 SL $496</h4>
+              <p>CPO 市場 CAGR 146% 是真實主題，鴻海集團背景有加分，但 Q1 EPS −1.45 元代表獲利仍遙遠。週線偏離 +55% 風險高。純主題投機倉，規模須小（MaxPos 2.1%）。</p>
+            </div>
+          </li>
+        </ul>
+
+        <div style="margin-top:1.25rem; padding:1rem; background:var(--surface2); border-radius:6px; border:1px solid var(--border); font-size:0.82rem; line-height:1.65; color:var(--text-muted);">
+          <strong style="color:var(--text);">共同主題風險提示：</strong>這 6 支股票全數受 AI 資料中心建置主題驅動（光通訊元件 / 高階基板材料 / 廠務工程），具有高度相關性。若 AI capex 出現收縮訊號、光通訊供應過剩（三星 / 日商擴產）、或台美貿易政策生變，6 支可能同步下跌。<strong style="color:var(--orange);">切勿將此視為分散投資組合。</strong>
+        </div>
+
+      </div>
+    </div>
+  </div>
+
+  <footer>
+    TradingBot Report &nbsp;·&nbsp; 2026/06/25 &nbsp;·&nbsp; 本報告由系統自動生成，僅供研究參考，不構成投資建議。
+  </footer>
+
+</div>
+</body>
+</html>
