@@ -1,0 +1,637 @@
+{
+  "domain": "Agent",
+  "date": "2026-06-25",
+  "count": 22,
+  "papers": [
+    {
+      "id": "2606.26093",
+      "title": "ForceBand: Learning Forceful Manipulation with sEMG",
+      "abstract": "Human demonstrations are a scalable data source for learning robot manipulation policies. However, common sources of human demonstration data, such as motion-capture trajectories and internet videos, capture mostly motion and appearance while missing the contact forces that are critical for force-sensitive manipulation. In this paper, we introduce ForceBand, a low-cost wrist-worn sEMG system that turns human muscle activity into force-enriched demonstrations. We first collect a 10-hour multimodal dataset containing egocentric video, sEMG, IMU, and fingertip force measurements across diverse actions and objects. Using this dataset, we pre-train an EMG2Force model that predicts per-finger forces from sEMG and IMU signals. After a short user-specific calibration, users can collect target-task demonstrations using only ForceBand and video; EMG2Force then labels these demonstrations with per-finger force traces, producing force-augmented demonstrations for robot policy learning. Experiments show that ForceBand recovers fine-grained fingertip interactions with over 50% lower force prediction error than vision-based baselines and achieves an 87% success rate on pick, squeeze, and place tasks that require object-specific force control across objects with diverse shapes, sizes, and weights. Project website: https://forceband-emg.github.io",
+      "authors": [
+        "Botao He",
+        "Zhi Wang",
+        "Linna Kuang",
+        "Ishaan Ghosh",
+        "Jitendra Malik",
+        "Cornelia Fermuller",
+        "Tingfan Wu",
+        "Jiayuan Mao",
+        "Ruoshi Liu",
+        "Haozhi Qi",
+        "Yiannis Aloimonos"
+      ],
+      "published": "2026-06-24T17:59:35Z",
+      "updated": "2026-06-24T17:59:35Z",
+      "url": "https://arxiv.org/abs/2606.26093",
+      "pdf_url": "https://arxiv.org/pdf/2606.26093.pdf",
+      "primary_category": "cs.RO",
+      "categories": [
+        "cs.RO"
+      ],
+      "tags": [
+        "cs.RO"
+      ],
+      "domain": "Agent",
+      "pdf_downloaded": true,
+      "pdf_size_bytes": 14822594,
+      "pdf_path": "2026-06-25/agent/2606.26093.pdf"
+    },
+    {
+      "id": "2606.26048",
+      "title": "Deep Reinforcement Learning-Enhanced Event-Triggered Data-Driven Predictive Control for a 3D Cable-Driven Soft Robotic Arm",
+      "abstract": "Soft robots are challenging to control due to their nonlinear and time-varying dynamics. Data-enabled predictive control (DeePC) offers a model-free alternative by directly leveraging measured input-output trajectories to construct a predictive controller. However, its receding-horizon formulation requires solving a constrained optimization problem at every sampling instant, which can be computationally demanding for real-time deployment on resource-limited robotic platforms.To address this limitation, we propose an adaptive reinforcement-learning-based event-triggered DeePC (RL-ET-DeePC) framework for soft robotic control. A model-free RL policy is trained to determine when to invoke the DeePC optimizer based on the current system state representation, thereby reducing unnecessary optimization calls while preserving closed-loop performance.Simulation results show that RL-ET-DeePC reduces optimization frequency by up to 66% compared to periodic DeePC, while maintaining comparable tracking accuracy. Hardware experiments on a three-dimensional cable-driven soft robotic arm demonstrate zero-shot transfer, achieving a 34% reduction in optimization frequency with tracking accuracy comparable to periodic DeePC and more consistent performance than a static threshold-based event-triggered baseline.",
+      "authors": [
+        "Cheng Ouyang",
+        "Moeen Ul Islam",
+        "Kaixiang Zhang",
+        "Zhaojian Li",
+        "Xiaobo Tan",
+        "Dong Chen"
+      ],
+      "published": "2026-06-24T17:26:18Z",
+      "updated": "2026-06-24T17:26:18Z",
+      "url": "https://arxiv.org/abs/2606.26048",
+      "pdf_url": "https://arxiv.org/pdf/2606.26048.pdf",
+      "primary_category": "cs.RO",
+      "categories": [
+        "cs.RO",
+        "eess.SY"
+      ],
+      "tags": [
+        "cs.RO",
+        "eess.SY"
+      ],
+      "domain": "Agent",
+      "pdf_downloaded": true,
+      "pdf_size_bytes": 11705483,
+      "pdf_path": "2026-06-25/agent/2606.26048.pdf"
+    },
+    {
+      "id": "2606.26047",
+      "title": "Learning Robot Visual Navigation in Crowds via Intention-Aware Scene Representations",
+      "abstract": "Robot crowd navigation requires the ability to infer human intentions while accounting for the structural constraints of the environment. Currently, deep reinforcement learning (DRL) provides a promising method for learning navigation policies that understand human intentions. However, most of them rely on limited scene representations, treating pedestrians as simple 2D points and ignoring rich visual cues from both humans and the environment. To address this issue, we introduce iCrowdNav, a novel visual crowd navigation method with intention-aware scene representations, to encode behavioral and structural context from egocentric visual observations. Our method employs two key components: a spatio-temporal encoder for extracting occupancy features of the scene, and Intent-Interact Former (I$^2$ Former), an attention-based module that encodes human poses to infer pedestrians' motion intentions. These features are integrated into a compact state embedding that supports effective DRL policy training. Extensive experiments show that our method achieves superior performance over baselines, and real-world deployment demonstrates vision-based crowd navigation.",
+      "authors": [
+        "Han Bao",
+        "Bingyi Xia",
+        "Hanjing Ye",
+        "Yu Zhan",
+        "Hao Cheng",
+        "Baozhi Jia",
+        "Wenjun Xu",
+        "Jiankun Wang"
+      ],
+      "published": "2026-06-24T17:26:17Z",
+      "updated": "2026-06-24T17:26:17Z",
+      "url": "https://arxiv.org/abs/2606.26047",
+      "pdf_url": "https://arxiv.org/pdf/2606.26047.pdf",
+      "primary_category": "cs.RO",
+      "categories": [
+        "cs.RO"
+      ],
+      "tags": [
+        "cs.RO"
+      ],
+      "domain": "Agent",
+      "pdf_downloaded": true,
+      "pdf_size_bytes": 6075094,
+      "pdf_path": "2026-06-25/agent/2606.26047.pdf"
+    },
+    {
+      "id": "2606.26017",
+      "title": "G2DP: Diffusion Planning with Spatio-Temporal Grid Guidance",
+      "abstract": "In autonomous driving, diffusion-based planners have emerged as a promising paradigm for robust motion planning in dense and interactive traffic, as they can effectively model diverse driving behaviors. However, their inherent stochasticity often requires explicit guidance during denoising to ensure safety and route adherence for robust closed-loop execution. Existing guidance typically relies on sparse, entity-centric geometric queries or post-hoc refinement, yielding limited situational awareness and fragile performance in interactive scenes. To address this issue, we propose G2DP (Grid-Guided Diffusion Planning), a diffusion-based planner that directly enforces dense environmental constraints through inference-time guidance. Specifically, G2DP constructs a differentiable spatio-temporal cost volume by fusing probabilistic future occupancy distributions with a route-progress map. By formulating this volume as a continuous safety energy functional, it injects dense gradients directly into the denoising loop, actively steering trajectory generation toward collision-free and progress-optimal regions. Extensive closed-loop evaluations show that G2DP achieves state-of-the-art performance on nuPlan, outperforming the strongest imitation-learning baseline by +7.2 points in reactive score. It further maintains top scores in zero-shot transfers to interPlan and DeepScenario benchmarks, with collision avoidance improving by +10.15 over the unguided approach on interPlan. These results demonstrate that spatio-temporal cost grids serve as an effective representation for robust guidance in diffusion-based planning.",
+      "authors": [
+        "Hang Yu",
+        "Ye Jin",
+        "Alessandro Canevaro",
+        "Julian Schmidt",
+        "Julian Jordan",
+        "Peizheng Li",
+        "Marc Kaufeld",
+        "Silvan Lindner",
+        "Johannes Betz",
+        "Wilhelm Stork"
+      ],
+      "published": "2026-06-24T16:38:55Z",
+      "updated": "2026-06-24T16:38:55Z",
+      "url": "https://arxiv.org/abs/2606.26017",
+      "pdf_url": "https://arxiv.org/pdf/2606.26017.pdf",
+      "primary_category": "cs.RO",
+      "categories": [
+        "cs.RO"
+      ],
+      "tags": [
+        "cs.RO"
+      ],
+      "domain": "Agent",
+      "pdf_downloaded": true,
+      "pdf_size_bytes": 1960853,
+      "pdf_path": "2026-06-25/agent/2606.26017.pdf"
+    },
+    {
+      "id": "2606.26010",
+      "title": "FAR-LIO: Enabling High-Speed Autonomy through Fast, Accurate, and Robust LiDAR-Inertial Odometry",
+      "abstract": "Robust and accurate odometry estimation is essential in modern robotics. In environments characterized by highly dynamic motion and sensor noise, odometry estimation becomes increasingly challenging. Autonomous racing combines both factors in an unstructured setting, where minimizing odometry latency is essential for stable closed-loop control. This paper introduces FAR-LIO, a highly optimized CUDA-accelerated LiDAR-inertial odometry framework developed for Fast, Accurate, and Robust performance. Our system leverages a novel CUDA-based voxel hashmap to enable parallelized nearest-neighbor search and efficient map updates. We employ a sparsity-aware Generalized Iterative Closest Point algorithm with adaptive thresholding on top of the CUDA-based voxel hashmap with adaptive density to achieve low-latency without compromising accuracy. An Extended Kalman Filter serves as a robust backend. It utilizes an upsampling and delay compensation strategy to fuse the LiDAR odometry with high-frequency IMU data, thereby ensuring a robust and smooth odometry output. We evaluate FAR-LIO across four different sensor setups, using both public datasets and data from two autonomous racecars driving at speeds of up to 250 km/h. FAR-LIO achieves an average 6.9% reduction in the positional error and 38.4% lower runtime compared to state-of-the-art baselines on target hardware using a single parameter set. This demonstrates its computational efficiency and broad applicability. To build upon our work, our code is available open-source on https://github.com/TUMFTM/FAR-LIO.",
+      "authors": [
+        "Maximilian Leitenstern",
+        "Marcel Weinmann",
+        "Patrick Haft",
+        "Tobias Lasser",
+        "Dominik Kulmer",
+        "Markus Lienkamp"
+      ],
+      "published": "2026-06-24T16:30:51Z",
+      "updated": "2026-06-24T16:30:51Z",
+      "url": "https://arxiv.org/abs/2606.26010",
+      "pdf_url": "https://arxiv.org/pdf/2606.26010.pdf",
+      "primary_category": "cs.RO",
+      "categories": [
+        "cs.RO"
+      ],
+      "tags": [
+        "cs.RO"
+      ],
+      "domain": "Agent",
+      "pdf_downloaded": true,
+      "pdf_size_bytes": 2096308,
+      "pdf_path": "2026-06-25/agent/2606.26010.pdf"
+    },
+    {
+      "id": "2606.26008",
+      "title": "Emcar: Embodied Controller for Animating Robots",
+      "abstract": "This chapter describes EMCAR, a novel software tool for programming robot motion that leverages the unique affordances of artistic practices such as puppetry and drawing to conceive, design, and program novel interactions and realize new use cases for HRI. The advantage of this no-code platform is that it expands creative applications for collaborative robots - putting robots directly in the hands of artists - and provides an inclusive environment that enables individuals with little or no technical backgrounds to engage meaningfully in collaborations and robotics research.",
+      "authors": [
+        "Carlos Gomez Cubero",
+        "Elizabeth Jochum"
+      ],
+      "published": "2026-06-24T16:29:19Z",
+      "updated": "2026-06-24T16:29:19Z",
+      "url": "https://arxiv.org/abs/2606.26008",
+      "pdf_url": "https://arxiv.org/pdf/2606.26008.pdf",
+      "primary_category": "cs.RO",
+      "categories": [
+        "cs.RO"
+      ],
+      "tags": [
+        "cs.RO"
+      ],
+      "domain": "Agent",
+      "pdf_downloaded": true,
+      "pdf_size_bytes": 13253759,
+      "pdf_path": "2026-06-25/agent/2606.26008.pdf"
+    },
+    {
+      "id": "2606.25985",
+      "title": "Action ControlNet: A Lightweight Delay-Aware Adapter for Smooth Asynchronous Control in Vision-Language-Action Models",
+      "abstract": "Vision-language-action (VLA) models have shown strong potential for general-purpose robot manipulation, but their inference latency remains a major obstacle to stable high-frequency control. Asynchronous execution mitigates this bottleneck by overlapping policy inference with action execution, yet the next action chunk is still predicted from stale observations while the robot continues to move. Direct chunk stitching therefore introduces handoff discontinuities, action jitter, and failures in contact-rich manipulation. Existing remedies typically require either full-policy retraining or architecture-specific runtime logic. This work proposes Action ControlNet (ACNet), a lightweight delay-aware adapter that uses the executed motion suffix as a residual condition for a mostly frozen action head. ACNet leaves the pretrained backbone unchanged, introduces few trainable parameters, and remains compatible with generative action heads such as diffusion and flow matching. On Kinetix, Meta-World MT50, and a real-world SO-ARM101 platform, ACNet improves robustness under inference delay and yields smoother asynchronous trajectories than direct chunk stitching, while remaining more lightweight than full delay-conditioned retraining.",
+      "authors": [
+        "Tiecheng Guo",
+        "Meng Guo"
+      ],
+      "published": "2026-06-24T15:53:43Z",
+      "updated": "2026-06-24T15:53:43Z",
+      "url": "https://arxiv.org/abs/2606.25985",
+      "pdf_url": "https://arxiv.org/pdf/2606.25985.pdf",
+      "primary_category": "cs.RO",
+      "categories": [
+        "cs.RO"
+      ],
+      "tags": [
+        "cs.RO"
+      ],
+      "domain": "Agent",
+      "pdf_downloaded": true,
+      "pdf_size_bytes": 3274715,
+      "pdf_path": "2026-06-25/agent/2606.25985.pdf"
+    },
+    {
+      "id": "2606.25966",
+      "title": "A Sensorised Lattice Footplate for a Semi-Active Prosthetic Foot",
+      "abstract": "This paper investigates whether magnetic plantar sensing can be embedded directly inside the load-bearing compliant element of a low-cost semi-active prosthetic foot. We present a prototype integrating a sensorised 3D-printed lattice footplate, a servo-adjustable hydraulic damper, and a reduced-order ankle model. The damper is experimentally characterised to relate adjustment angle to damping coefficient. Controlled compression tests show tunable lattice stiffness, while cyclic normal loading shows that the embedded sensor tracks the testing-machine reference force, supporting plantar-force estimation without an external insole layer. Static-posture trials under approximately body-weight loading show that forefoot and rearfoot loading distributions are separable across four prescribed stance configurations, providing a preliminary check of the sensing pipeline. A feedforward damping schedule approximates the dorsiflexion trend of a reference ankle trajectory through early-to-mid stance, while exposing the expected limitation that a purely dissipative mechanism cannot generate active push-off. Together, these results demonstrate that sensing can be embedded inside the load-bearing compliant element of a prosthetic foot and used to drive semi-active damping.",
+      "authors": [
+        "Jinze Ge",
+        "Jingcheng Sun",
+        "Chengxu Zhou"
+      ],
+      "published": "2026-06-24T15:35:49Z",
+      "updated": "2026-06-24T15:35:49Z",
+      "url": "https://arxiv.org/abs/2606.25966",
+      "pdf_url": "https://arxiv.org/pdf/2606.25966.pdf",
+      "primary_category": "cs.RO",
+      "categories": [
+        "cs.RO"
+      ],
+      "tags": [
+        "cs.RO"
+      ],
+      "domain": "Agent",
+      "pdf_downloaded": true,
+      "pdf_size_bytes": 3283946,
+      "pdf_path": "2026-06-25/agent/2606.25966.pdf"
+    },
+    {
+      "id": "2606.25965",
+      "title": "Mixture-of-Experts RL for Fault-Tolerant Legged Locomotion",
+      "abstract": "Legged robots deployed in planetary exploration and other remote environments must maintain reliable locomotion despite actuator failures and challenging terrain conditions. Although reinforcement learning has achieved strong results in legged locomotion, monolithic policies can struggle to efficiently represent the diverse control strategies required to compensate for different fault conditions. In this work, we propose a fault-aware modular control architecture that explicitly leverages fault-diagnosis information to activate specialized control experts associated with distinct actuator failure modes. Experimental results show that explicit fault-conditioned modular policies consistently outperform monolithic policies of comparable size, achieving higher locomotion performance across failure scenarios. Moreover, the proposed modular architecture retains competitive performance even under significantly reduced network capacity, highlighting its suitability for compute-constrained robotic platforms, such as those typically employed in space applications. The code associated with this work is available at: https://github.com/iit-DLSLab/fault-locomotion-isaaclab.",
+      "authors": [
+        "Giulio Turrisi",
+        "Ozan Pali",
+        "Luca Oneto",
+        "Claudio Semini"
+      ],
+      "published": "2026-06-24T15:35:30Z",
+      "updated": "2026-06-24T15:35:30Z",
+      "url": "https://arxiv.org/abs/2606.25965",
+      "pdf_url": "https://arxiv.org/pdf/2606.25965.pdf",
+      "primary_category": "cs.RO",
+      "categories": [
+        "cs.RO"
+      ],
+      "tags": [
+        "cs.RO"
+      ],
+      "domain": "Agent",
+      "pdf_downloaded": true,
+      "pdf_size_bytes": 5721869,
+      "pdf_path": "2026-06-25/agent/2606.25965.pdf"
+    },
+    {
+      "id": "2606.25957",
+      "title": "From Rubble Simulation to Active Magnetic Mapping: Quantum Sensing for Disaster Response",
+      "abstract": "Locating survivors of building collapses within the first 72 hours is a critical challenge in disaster response, and existing sensing modalities provide only partial information about the structure beneath the rubble. This paper proposes drone-based quantum magnetometry as a complementary modality and develops a simulation pipeline spanning rubble physics, sensor-array deployment, and active spatial reconstruction. We use Unreal Engine to generate a steel-reinforced concrete parking-garage collapse and compute the induced magnetic field via a per-triangle dipole approximation, establishing that meaningful magnetic structure is recoverable in the sub-pT to sub-nT range from roughly 1 m above the roofline. Then, we feed sparse multi-sensor samples into a Gaussian Process Regression back-end driven by Bayesian active sampling and validate the pipeline across multiple independent collapse realizations; a three-sensor array optimizes the trade-off between gradient resolution and UAV payload constraints, and active sampling reaches peak structural correlation in roughly $100$ samples. Together, these results indicate that quantum-grade sensing could become a useful tool for drone-based structural analysis and potentially void detection in collapsed buildings.",
+      "authors": [
+        "Samuel Tovey",
+        "Stefan Prestel",
+        "Hiroshi Yamauchi"
+      ],
+      "published": "2026-06-24T15:29:26Z",
+      "updated": "2026-06-24T15:29:26Z",
+      "url": "https://arxiv.org/abs/2606.25957",
+      "pdf_url": "https://arxiv.org/pdf/2606.25957.pdf",
+      "primary_category": "cs.RO",
+      "categories": [
+        "cs.RO",
+        "physics.app-ph",
+        "quant-ph"
+      ],
+      "tags": [
+        "cs.RO",
+        "physics.app-ph",
+        "quant-ph"
+      ],
+      "domain": "Agent",
+      "pdf_downloaded": true,
+      "pdf_size_bytes": 2353122,
+      "pdf_path": "2026-06-25/agent/2606.25957.pdf"
+    },
+    {
+      "id": "2606.25939",
+      "title": "DeformGen: Dynamics-Based Topology Augmentation for Deformable Manipulation Policy Learning",
+      "abstract": "Demonstration augmentation is proposed for cost-efficient data acquisition, but existing methods are fundamentally limited in deformable manipulation due to two challenges: (1) the state space is high-dimensional with physics-induced constraints, making valid configurations impossible to reach via low-dimensional pose perturbations; and (2) trajectory transfer is non-equivariant, as material points no longer move rigidly together under deformation. We present DeformGen, a dynamics-based augmentation framework that achieves topological diversity for deformable objects. For the state challenge, DeformGen expands the valid state distribution by applying localized physical disturbances and forward-simulating the dynamics to obtain topology-coherent, physically plausible deformable states. For the trajectory challenge, DeformGen transfers source manipulation trajectories via deformation-field warping, which lifts per-particle displacements into a continuous spatial function to adapt the end-effector trajectory consistently with the deformed geometry. In this way, our method jointly augments the state distribution and its associated manipulation behavior. Experiments on high-fidelity deformable manipulation benchmarks show that DeformGen generally improves policy learning compared with training on the original demonstrations alone and with rigid-style augmentation baselines.",
+      "authors": [
+        "Zili Lin",
+        "Wenyao Zhang",
+        "Yuyang Zhang",
+        "Zekun Qi",
+        "Junyan Lin",
+        "Hanxin Zhu",
+        "Jiaolong Yang",
+        "Zhibo Chen",
+        "Yao Mu",
+        "Xiaokang Yang",
+        "Xin Jin",
+        "Wenjun Zeng"
+      ],
+      "published": "2026-06-24T15:15:38Z",
+      "updated": "2026-06-24T15:15:38Z",
+      "url": "https://arxiv.org/abs/2606.25939",
+      "pdf_url": "https://arxiv.org/pdf/2606.25939.pdf",
+      "primary_category": "cs.RO",
+      "categories": [
+        "cs.RO"
+      ],
+      "tags": [
+        "cs.RO"
+      ],
+      "domain": "Agent",
+      "pdf_downloaded": true,
+      "pdf_size_bytes": 9865790,
+      "pdf_path": "2026-06-25/agent/2606.25939.pdf"
+    },
+    {
+      "id": "2606.25899",
+      "title": "Manipulation Is Task-Dependent: A Multi-Axis, Multi-Environment Evaluation of Frontier LLMs",
+      "abstract": "We evaluate manipulative behavior in six frontier language models across six environments, ranging from negotiation tasks to agentic workflows, resulting in 13{,}590 individual scenarios. Manipulation rates are measured across three axes: framing (mandate honesty or permit manipulation), incentive structure (from no incentives to substantial ones), and task difficulty. Existing benchmarks typically vary a single axis within a single environment, an approach our results show is insufficient. We rank models by manipulation rate and find Spearman rank correlations across environments average $\u03c1= 0.055$, indicating manipulative tendencies in one task do not necessarily predict those in another. Additionally, we find the axis that drives manipulation varies across different environments. In environments where models are incentivized to misrepresent future actions, instructional framing and structurally binding incentives are the primary drivers; in environments where models are incentivized to misrepresent a ground truth, task difficulty dominates. This split was identified in five environments and validated against a sixth held-out environment. Together, these findings illustrate the importance of rigorous multi-dimensional evaluations when measuring manipulative propensities.",
+      "authors": [
+        "Adeeb Zaman",
+        "Erik Nordby",
+        "Fred Heiding"
+      ],
+      "published": "2026-06-24T14:47:47Z",
+      "updated": "2026-06-24T14:47:47Z",
+      "url": "https://arxiv.org/abs/2606.25899",
+      "pdf_url": "https://arxiv.org/pdf/2606.25899.pdf",
+      "primary_category": "cs.MA",
+      "categories": [
+        "cs.MA"
+      ],
+      "tags": [
+        "cs.MA"
+      ],
+      "domain": "Agent",
+      "pdf_downloaded": true,
+      "pdf_size_bytes": 682224,
+      "pdf_path": "2026-06-25/agent/2606.25899.pdf"
+    },
+    {
+      "id": "2606.25888",
+      "title": "Robustness and Leadership in Markov-switching Consensus Networks",
+      "abstract": "We investigate how time-varying interactions, modeled via a Markov switching graph (MSG), impact the robustness of noisy multi-agent dynamics in both continuous- and discrete-time settings. Our focus is on the steady-state performance of consensus and leader-follower tracking dynamics subject to stochastic noise. Using the framework of Markov jump linear systems (MJLS), we derive expressions for the steady-state covariance of each agent's deviation from consensus and tracking error, respectively, and use them to quantify individual and group performance as a function of the interaction graphs and the switching dynamics. We extend established notions of robustness, certainty indices, and joint centrality from static graphs to the MSG setting. To gain analytical insight, we specialize our results to systems switching between two topologies and characterize how switching influences performance. Numerical simulations further illustrate how switching topologies affects system robustness in both coordination tasks.",
+      "authors": [
+        "Sarah H. Cen",
+        "Vaibhav Srivastava",
+        "Naomi Ehrich Leonard"
+      ],
+      "published": "2026-06-24T14:30:54Z",
+      "updated": "2026-06-24T14:30:54Z",
+      "url": "https://arxiv.org/abs/2606.25888",
+      "pdf_url": "https://arxiv.org/pdf/2606.25888.pdf",
+      "primary_category": "eess.SY",
+      "categories": [
+        "eess.SY",
+        "cs.MA"
+      ],
+      "tags": [
+        "cs.MA",
+        "eess.SY"
+      ],
+      "domain": "Agent",
+      "pdf_downloaded": true,
+      "pdf_size_bytes": 706885,
+      "pdf_path": "2026-06-25/agent/2606.25888.pdf"
+    },
+    {
+      "id": "2606.25886",
+      "title": "A 3D-Printable Dataset for Fair Testing and Comparisons of Tactile Sensors",
+      "abstract": "Existing texture datasets for tactile sensing primarily consist of sensor readings from a specific sensor interacting with available surfaces/objects rather than describing the textures themselves, limiting fair comparison between tactile sensors and hindering reproducible research. In this work, we introduce a 3D-printable dataset of mathematically defined textures designed to be fabricated reliably across different printers and filament types. The dataset consists of six parametrically generated surface patterns derived from combinations of sine-wave and Fourier-based functions, giving controlled variation in spatial frequency, amplitude, and directional structure. We evaluate the reproducibility of these textures across three popular 3D printers and multiple filament types by measuring variance in images captured using an optical TacTip sensor under controlled contact conditions. Our results show that print quality, particularly peak sharpness and stringing, affects tactile variance, with higher-end printers producing significantly more consistent signatures. Classification experiments using neural networks and PCA-based models further demonstrate that high-quality prints support strong within-printer generalisation, while cross-printer generalisation remains challenging due to geometric inconsistencies. This work establishes the first openly available, physically reproducible 3D-printed texture benchmark, providing a foundation for fair comparison of tactile sensors.",
+      "authors": [
+        "Dexter R. Shepherd",
+        "Nicolas Herzig",
+        "Phil Husbands",
+        "Andrew Philippides",
+        "Chris Johnson",
+        "William Kimbell"
+      ],
+      "published": "2026-06-24T14:27:16Z",
+      "updated": "2026-06-24T14:27:16Z",
+      "url": "https://arxiv.org/abs/2606.25886",
+      "pdf_url": "https://arxiv.org/pdf/2606.25886.pdf",
+      "primary_category": "cs.RO",
+      "categories": [
+        "cs.RO",
+        "cs.LG"
+      ],
+      "tags": [
+        "cs.LG",
+        "cs.RO"
+      ],
+      "domain": "Agent",
+      "pdf_downloaded": true,
+      "pdf_size_bytes": 12855131,
+      "pdf_path": "2026-06-25/agent/2606.25886.pdf"
+    },
+    {
+      "id": "2606.25877",
+      "title": "TacVerse: A Multi-Sensor Dataset and Benchmark for Cross-Sensor Vision-Based Tactile Perception",
+      "abstract": "Vision-based tactile sensors (VBTSs) enable robots to infer contact geometry and force-related cues by imaging deformation through an internal camera, yet generalisation across sensor designs remains poorly understood. We present TacVerse, a multi-sensor dataset and benchmark for cross-sensor vision-based tactile perception. The dataset contains 106,800 tactile images from seven VBTSs and supports three downstream tasks: shape classification, grating classification, and force regression. Experiments are conducted under three settings: within-sensor training, zero-shot cross-sensor transfer, and few-shot adaptation. Strong within-sensor performance across all tasks indicates that the collected tactile observations are informative for the target objectives. Direct cross-sensor transfer, however, leads to substantial degradation. Shape classification is comparatively robust, whereas grating classification and force regression are more sensitive to sensor shift. Few-shot adaptation for force regression consistently improves performance on unseen target sensors but does not fully close the gap to within-sensor upper bounds. A representation study further shows that MAE (Masked Autoencoder) pretraining provides the most consistent gains across tasks and sensors. TacVerse provides a controlled testbed for studying sensor shift, data-efficient adaptation, and self-supervised learning in tactile perception.",
+      "authors": [
+        "Lan Wei",
+        "Gurmeher Khurana",
+        "Sirine Bhouri",
+        "Wenhao Hong",
+        "Zeyuan Xin",
+        "Qingzheng Cong",
+        "Wen Fan",
+        "Yanzheng Xiang",
+        "Dandan Zhang"
+      ],
+      "published": "2026-06-24T14:22:48Z",
+      "updated": "2026-06-24T14:22:48Z",
+      "url": "https://arxiv.org/abs/2606.25877",
+      "pdf_url": "https://arxiv.org/pdf/2606.25877.pdf",
+      "primary_category": "cs.RO",
+      "categories": [
+        "cs.RO"
+      ],
+      "tags": [
+        "cs.RO"
+      ],
+      "domain": "Agent",
+      "pdf_downloaded": true,
+      "pdf_size_bytes": 4879560,
+      "pdf_path": "2026-06-25/agent/2606.25877.pdf"
+    },
+    {
+      "id": "2606.25829",
+      "title": "Beyond a Shadow of a Doubt: Close Proximity Geometry Reconstruction Using FMCW Radar Shadow Effects",
+      "abstract": "Reliable perception in adverse conditions remains challenging for autonomous systems, as cameras and LiDAR degrade in poor lighting or weather. Millimetre-wave FMCW radar is robust to such conditions, but its elevation collapse limits geometric reasoning. We observe that vehicle chassis occlude radar rays and form a distinctive geometric shadow, and its consistency can enable us to infer useful information about objects whose returns intersect this shadow. Motivated by this observation, we propose a method to recover the 3D, in-plane inclination of nearby slender vertical objects from this cue. The object inclination is retrieved without assumptions about the wider scene, but through an analytical, closed-form mapping between its radar return boundaries and the opening angle. Validation in simulation and experimentation on a Navtech CTS350-X radar shows that inclinations can be estimated under practical conditions, with segmentation of the object in the radar scan emerging as the main bottleneck. This work highlights chassis shadows as a novel geometric cue, extending the role of 2D rotating radar beyond localisation and toward 3D scene reconstruction.",
+      "authors": [
+        "Felix de Trogoff du Boisguezennec",
+        "Benjamin Ramtoula",
+        "Daniele De Martini"
+      ],
+      "published": "2026-06-24T13:47:28Z",
+      "updated": "2026-06-24T13:47:28Z",
+      "url": "https://arxiv.org/abs/2606.25829",
+      "pdf_url": "https://arxiv.org/pdf/2606.25829.pdf",
+      "primary_category": "cs.RO",
+      "categories": [
+        "cs.RO"
+      ],
+      "tags": [
+        "cs.RO"
+      ],
+      "domain": "Agent",
+      "pdf_downloaded": true,
+      "pdf_size_bytes": 3123085,
+      "pdf_path": "2026-06-25/agent/2606.25829.pdf"
+    },
+    {
+      "id": "2606.25800",
+      "title": "ROAD-VLA: Robust Online Adaptation via Self-Distillation for Vision-Language-Action Models",
+      "abstract": "Effective online adaptation of vision-language-action (VLA) models remains challenging, as sparse rewards provide weak supervision for high-dimensional autoregressive action policies. Although self-distillation can in principle provide denser training signals, we find that text-based privileged teachers conditioned on demonstrations, retrieved experiences, or high-level plans are ineffective for VLA adaptation, exposing a modality gap between symbolic guidance and low-level robot actions. We propose ROAD-VLA, an advantage-guided self-distillation framework that constructs a proximal teacher directly in action space by perturbing action-token logits with calibrated advantage estimates. This converts sparse rewards into dense token-level supervision while keeping the teacher close to the current policy. We further derive a policy-improvement lower bound under calibrated advantages and accurate teacher matching. Across seven robotic manipulation environments with in-distribution and out-of-distribution shifts, ROADVLA outperforms PPO in nearly all settings, demonstrating robust online VLA adaptation.",
+      "authors": [
+        "Kejing Wang",
+        "Toan Nguyen",
+        "Minh Hoang Nguyen",
+        "Simon Khan",
+        "Flora D. Salim"
+      ],
+      "published": "2026-06-24T13:17:59Z",
+      "updated": "2026-06-24T13:17:59Z",
+      "url": "https://arxiv.org/abs/2606.25800",
+      "pdf_url": "https://arxiv.org/pdf/2606.25800.pdf",
+      "primary_category": "cs.LG",
+      "categories": [
+        "cs.LG",
+        "cs.RO"
+      ],
+      "tags": [
+        "cs.LG",
+        "cs.RO"
+      ],
+      "domain": "Agent",
+      "pdf_downloaded": true,
+      "pdf_size_bytes": 5307105,
+      "pdf_path": "2026-06-25/agent/2606.25800.pdf"
+    },
+    {
+      "id": "2606.25796",
+      "title": "MIL-LC: A Robust Magnetometer-Inertial-LiDAR Fusion Multimodal Localization Framework",
+      "abstract": "Localization in challenging environments, such as GNSS-denied, geometrically repetitive, or textureless scenes commonly found in offices, hotels, and underground parking facilities, remains an open problem for reliable autonomous mobile robot (AMR) deployment. Single-modality localization methods are inherently limited by the constraints of individual sensors. Although multimodal fusion frameworks have shown improved robustness, most existing approaches still rely heavily on geometric or texture features, or on infrastructure-based beacons, which increase installation and maintenance costs while reducing deployment flexibility. Recently, ambient magnetic field (AMF)-based localization has attracted growing attention because it does not depend on geometric or texture features, nor does it require additional infrastructure, making it a promising complementary modality for AMR localization. However, existing studies have only explored such fusion in pedestrian scenarios using smartphone-mounted sensor suites, and practical solutions for AMR systems remain largely unexplored. To address this gap, this article proposes a magnetometer-inertial-LiDAR fused multimodal localization framework with a custom-designed sensor suite, termed MIL-LC, which provides reliable localization even when LiDAR suffers from geometric degeneration or when the magnetic map changes during long-term deployment. Extensive experiments in both simulation and real-world environments demonstrate that the proposed MIL-LC framework achieves robust and accurate localization performance.",
+      "authors": [
+        "Qiyang Lyu",
+        "Zhenyu Wu",
+        "Wei Wang",
+        "Hongming Shen",
+        "Danwei Wang"
+      ],
+      "published": "2026-06-24T13:14:11Z",
+      "updated": "2026-06-24T13:14:11Z",
+      "url": "https://arxiv.org/abs/2606.25796",
+      "pdf_url": "https://arxiv.org/pdf/2606.25796.pdf",
+      "primary_category": "cs.RO",
+      "categories": [
+        "cs.RO"
+      ],
+      "tags": [
+        "cs.RO"
+      ],
+      "domain": "Agent",
+      "pdf_downloaded": true,
+      "pdf_size_bytes": 11369916,
+      "pdf_path": "2026-06-25/agent/2606.25796.pdf"
+    },
+    {
+      "id": "2606.25765",
+      "title": "StairMaster: Learning to Conquer Risky Hollow Stairs for Agile Quadrupedal Robots",
+      "abstract": "Climbing hollow stairs remains a challenging problem for quadruped robots due to the high risk of leg trapping, severe depth sparsity, and high-frequency depth-sensing noise. In this paper, we propose StairMaster, a novel three-stage reinforcement learning framework for stable locomotion on such extreme discontinuous terrains. Our architecture integrates a Cross-Attention mechanism to extract structural features from noisy depth data, alongside a Spatial-aware Recurrent Unit (SRU) that maintains robust spatio-temporal memory to mitigate perception blind spots. To bridge the sim-to-real gap in depth perception, we propose a high-fidelity sim-to-real depth sensor modeling pipeline that faithfully replicates real-world sensor artifacts. Additionally, we employ a 3D waypoint-guided active perception reward for proactive sensing, alongside hollow gap kinematic and stair edge penalties to ensure precise foothold placement. We successfully deployed StairMaster on a Unitree Go2 robot, demonstrating its ability to conquer hollow stairs with an unprecedented incline of up to 55$^\\circ$ through zero-shot transfer. To the best of our knowledge, this is the first RL-based policy to achieve such steep hollow stair climbing in real-world environments. Project Website: https://sivan666666.github.io/StairMaster/.",
+      "authors": [
+        "Xincheng Tang",
+        "Youhan Xie",
+        "Zhengjie Shu",
+        "Wanyu Li",
+        "Lai Jiang",
+        "Wenkang Hu",
+        "Yitong Li",
+        "Ruigang Yang"
+      ],
+      "published": "2026-06-24T12:42:06Z",
+      "updated": "2026-06-24T12:42:06Z",
+      "url": "https://arxiv.org/abs/2606.25765",
+      "pdf_url": "https://arxiv.org/pdf/2606.25765.pdf",
+      "primary_category": "cs.RO",
+      "categories": [
+        "cs.RO"
+      ],
+      "tags": [
+        "cs.RO"
+      ],
+      "domain": "Agent",
+      "pdf_downloaded": true,
+      "pdf_size_bytes": 6365015,
+      "pdf_path": "2026-06-25/agent/2606.25765.pdf"
+    },
+    {
+      "id": "2606.25754",
+      "title": "Stage-Aware and Roughness-Constrained Diffusion Policy for Multi-Stage Robotic Polishing",
+      "abstract": "Polishing is a critical finishing process in high-end manufacturing fields such as aerospace, where surface quality directly affects the service performance and reliability of components. Robotic imitation learning provides a flexible solution for such tasks, but current methods remain limited in industrial polishing because of long-horizon dependencies, uncertain stage transitions, and the difficulty of modeling and regulating coupled process parameters. To address these issues, this paper proposes a Stage-Aware and Roughness-Constrained Diffusion Policy (SRDP) for robotic polishing. SRDP infers the process-stage posterior from multimodal observation histories and uses it to condition the shared reverse denoising process, enabling stage-consistent action generation without external stage labels during execution. Furthermore, a roughness-oriented process-constrained diffusion sampling method is incorporated to generate constrained feed speed and normal contact force under stage-wise preset spindle speeds, thereby improving process consistency and physical feasibility. Systematic experiments are conducted on two representative scenarios, namely spacecraft cabin coating-surface polishing and inner-cavity structural surface finishing. Comparisons with advanced baselines, ablation studies, and real-robot validations comprehensively evaluate the proposed method. The results show that SRD improves stage-transition stability, process-parameter consistency, and final surface quality across different polishing scenarios.",
+      "authors": [
+        "Shuai Ke",
+        "Jiexin Zhang",
+        "Huan Zhao",
+        "Zhiao Wei",
+        "Yikun Guo",
+        "Tiange Wu",
+        "Guoqiang Guo",
+        "Haoyuan Zhou",
+        "Jie Pan",
+        "Han Ding"
+      ],
+      "published": "2026-06-24T12:23:00Z",
+      "updated": "2026-06-24T12:23:00Z",
+      "url": "https://arxiv.org/abs/2606.25754",
+      "pdf_url": "https://arxiv.org/pdf/2606.25754.pdf",
+      "primary_category": "cs.RO",
+      "categories": [
+        "cs.RO"
+      ],
+      "tags": [
+        "cs.RO"
+      ],
+      "domain": "Agent",
+      "pdf_downloaded": true,
+      "pdf_size_bytes": 8863798,
+      "pdf_path": "2026-06-25/agent/2606.25754.pdf"
+    },
+    {
+      "id": "2606.25706",
+      "title": "Learning Asynchronous Upper-body Task-space Trajectory Tracking Policy for Humanoid Robots",
+      "abstract": "High-level humanoid planners often output sparse task-space, low-rate trajectories, whereas whole-body controllers run at high frequency. This creates temporal asynchrony between the planning and execution, and structural incompleteness for full-body control. We propose an asynchronous upper body task-space tracking framework for humanoids. A student policy is initialized by teacher-student distillation, conditioned on the full cached future trajectory and an execution-time index, and trained with a sliding-window global reward to reduce frame drift without explicit frame estimation. For task-specific post-training, an MPC module completes sparse references into floating-base and upper-body guidance, while action- and FK level self-guidance constrain policy drift. Simulation and Unitree G1 hardware experiments show improved tracking under low update rates, stronger performance than synchronous and decoupled baselines, and safer adaptation to out-of-distribution motions.",
+      "authors": [
+        "Yumeng Liu",
+        "Dongqi Wang",
+        "Jiyu Yu",
+        "Yijun Fan",
+        "Rong Xiong",
+        "Yue Wang"
+      ],
+      "published": "2026-06-24T11:19:38Z",
+      "updated": "2026-06-24T11:19:38Z",
+      "url": "https://arxiv.org/abs/2606.25706",
+      "pdf_url": "https://arxiv.org/pdf/2606.25706.pdf",
+      "primary_category": "cs.RO",
+      "categories": [
+        "cs.RO"
+      ],
+      "tags": [
+        "cs.RO"
+      ],
+      "domain": "Agent",
+      "pdf_downloaded": true,
+      "pdf_size_bytes": 13561884,
+      "pdf_path": "2026-06-25/agent/2606.25706.pdf"
+    },
+    {
+      "id": "2606.25700",
+      "title": "Memory-Efficient Policy Libraries with Low-Rank Adaptation in Reinforcement Learning",
+      "abstract": "When fine-tuning Large Language Models (LLMs), there has been success in minimizing both memory usage and computation with Parameter-Efficient Fine-Tuning (PEFT), like Low Rank Adaptation (LoRA). In this article, we have explored whether this approach is transferable to the world of robotics and Reinforcement Learning (RL), allowing learning with reduced memory usage and improved computational performance. Specifically, we focused on a version of multi-task robotics, where a library of specialist policies are created. In such a library memory efficiency is especially important. We used a Proximal Policy Optimization (PPO) algorithm and fine-tuned a baseline model to different tasks using LoRA. Our results demonstrate that, depending on the hyperparameters, LoRA can minimize memory usage by a factor of 20-160 compared to full fine-tuning of all layers. This implies a 90-95% storage saving when deploying a library of many (10-50) specialized policies, which can be the differentiating factor between being able to store the entire library in memory or having to use swap-memory in an applied robotics setting. At the same time, our results indicate that there is no significant difference in the success-rate between full fine-tuning and LoRA fine-tuning for the selected tasks.",
+      "authors": [
+        "Samuel Valland Lyngset",
+        "Tor Viljen Raanaas",
+        "Gard Sveipe",
+        "Eirik M\u00f8ller Nilsen",
+        "Jim Torresen",
+        "Kai Olav Ellefsen",
+        "Tobias L\u00f8mo"
+      ],
+      "published": "2026-06-24T11:15:42Z",
+      "updated": "2026-06-24T11:15:42Z",
+      "url": "https://arxiv.org/abs/2606.25700",
+      "pdf_url": "https://arxiv.org/pdf/2606.25700.pdf",
+      "primary_category": "cs.LG",
+      "categories": [
+        "cs.LG",
+        "cs.RO"
+      ],
+      "tags": [
+        "cs.LG",
+        "cs.RO"
+      ],
+      "domain": "Agent",
+      "pdf_downloaded": true,
+      "pdf_size_bytes": 1394344,
+      "pdf_path": "2026-06-25/agent/2606.25700.pdf"
+    }
+  ]
+}
