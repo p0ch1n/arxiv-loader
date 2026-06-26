@@ -1,0 +1,681 @@
+{
+  "domain": "Agent",
+  "date": "2026-06-26",
+  "count": 23,
+  "papers": [
+    {
+      "id": "2606.27375",
+      "title": "Scalable Behavior Cloning with Open Data, Training, and Evaluation",
+      "abstract": "We introduce ABC, a fully open-source stack for manipulation with behavior cloning. At its core is ABC-130K: the largest open-source teleoperation dataset to date, featuring 3,500 hours of data spanning over 130K episodes across 195 diverse tasks. Furthermore, we open-source our accessible hardware setup, training infrastructure, and simulation pipeline. We also release 400 hours of sim-teleop data and provide a co-training recipe that produces correlated simulation and real-world evaluation, offering a reliable proxy for ablating model-design and training decisions before costly real-world evaluation. We explore various training recipes and compare common architectural choices for Diffusion Transformers (DiT) and Vision-Language-Action (VLA) models, grounding our findings in real-world evaluations. The resulting policies successfully execute dexterous tasks such as box folding and extracting credit cards from wallets. By providing a reproducible toolkit, we aim to place researchers on an equal footing, establishing the necessary foundation to learn the ABCs of Behavior Cloning together as a community.",
+      "authors": [
+        "Arthur Allshire",
+        "Himanshu Gaurav Singh",
+        "Ritvik Singh",
+        "Adam Rashid",
+        "Hongsuk Choi",
+        "David McAllister",
+        "Justin Yu",
+        "Yiyuan Chen",
+        "Huang Huang",
+        "Pieter Abbeel",
+        "Xi Chen",
+        "Rocky Duan",
+        "Phillip Isola",
+        "Jitendra Malik",
+        "Fred Shentu",
+        "Guanya Shi",
+        "Philipp Wu",
+        "Angjoo Kanazawa"
+      ],
+      "published": "2026-06-25T17:59:57Z",
+      "updated": "2026-06-25T17:59:57Z",
+      "url": "https://arxiv.org/abs/2606.27375",
+      "pdf_url": "https://arxiv.org/pdf/2606.27375.pdf",
+      "primary_category": "cs.RO",
+      "categories": [
+        "cs.RO"
+      ],
+      "tags": [
+        "cs.RO"
+      ],
+      "domain": "Agent",
+      "pdf_downloaded": false,
+      "pdf_size_bytes": null,
+      "pdf_path": null
+    },
+    {
+      "id": "2606.27355",
+      "title": "RouterVLA: Turning Smoke Tests into Supervision for Heterogeneous VLA Selection",
+      "abstract": "We study whether pre-deployment evaluation rollouts can be reused to supervise policy selection. Robot teams routinely smoke test candidate vision-language-action (VLA) policies, then compress those trials into a global winner. RouterVLA evaluates this idea with outcome-disjoint cross-fitting: recorded probes build a profile for each frozen expert, and a separate trial scores the selected expert without entering its profile. Across 34,752 LIBERO-Plus rollout records, a transparent probe-success rule raises held-out success from 0.4686 to 0.6149, a +14.64pp gain. Under the scalar-only profiles studied here, learned scorers are statistically indistinguishable from this rule, showing that commissioning carries the routing value while extra scalar scorer capacity does not create it. Reusing the scored trial inflates the measured gain by $1.87\\times$, so credible ledger routing needs outcome separation; model scaling improves individual policies, while commissioning-aware routing improves the system built from them.",
+      "authors": [
+        "Xingyu Ren",
+        "Chugang Yi",
+        "Ge Ma",
+        "Youran Sun"
+      ],
+      "published": "2026-06-25T17:56:33Z",
+      "updated": "2026-06-25T17:56:33Z",
+      "url": "https://arxiv.org/abs/2606.27355",
+      "pdf_url": "https://arxiv.org/pdf/2606.27355.pdf",
+      "primary_category": "cs.RO",
+      "categories": [
+        "cs.RO"
+      ],
+      "tags": [
+        "cs.RO"
+      ],
+      "domain": "Agent",
+      "pdf_downloaded": true,
+      "pdf_size_bytes": 3675423,
+      "pdf_path": "2026-06-26/agent/2606.27355.pdf"
+    },
+    {
+      "id": "2606.27353",
+      "title": "Continual Robot Policy Learning via Variational Neural Dynamics",
+      "abstract": "Robots deployed in the real world rarely operate under a single fixed dynamics model: wind changes, payloads vary, batteries drain, contacts shift, and hardware wears. Yet most learning-based controllers are trained once and deployed as if learning were complete. This prevents the robot from using deployment experience to further improve task performance. In this work, we propose a continual learning framework that uses real-world experience to improve robot policies under hidden and recurring dynamics. Our method learns a condition-aware dynamics model from real state-action trajectories by combining an analytical physics prior with a neural residual for unmodeled effects. A recurrent encoder infers the current hidden condition from recent interaction, and this estimate conditions both the residual model and the policy. Policy learning is performed via differentiable simulation using diverse learned dynamics sampled from the latent model. At deployment, these sampled conditions are replaced by conditions inferred online from recent real interaction, allowing the policy to recover recurring dynamics by recognition rather than residual re-fitting. Through extensive simulation studies and real-world experiments, we demonstrate that the framework improves policy performance under diverse unobserved disturbances. On real quadrotor trajectory tracking under changing wind, the policy recovers from recurring disturbances in roughly 1s, about 5x faster than online residual re-fitting. It also reduces large-disturbance hover and tracking errors by 65.7% and 53.3% over the state-of-the-art online adaptation approaches",
+      "authors": [
+        "Jiaxu Xing",
+        "Zhiyuan Zhu",
+        "Yunfan Ren",
+        "Ismail Geles",
+        "Yifan Zhai",
+        "Rudolf Reiter",
+        "Davide Scaramuzza"
+      ],
+      "published": "2026-06-25T17:56:04Z",
+      "updated": "2026-06-25T17:56:04Z",
+      "url": "https://arxiv.org/abs/2606.27353",
+      "pdf_url": "https://arxiv.org/pdf/2606.27353.pdf",
+      "primary_category": "cs.RO",
+      "categories": [
+        "cs.RO"
+      ],
+      "tags": [
+        "cs.RO"
+      ],
+      "domain": "Agent",
+      "pdf_downloaded": true,
+      "pdf_size_bytes": 3318372,
+      "pdf_path": "2026-06-26/agent/2606.27353.pdf"
+    },
+    {
+      "id": "2606.27348",
+      "title": "Bridging Performance and Generalization in Reinforcement Learning for Agile Flight",
+      "abstract": "Autonomous drone racing is a fundamentally challenging regime for autonomous aerial robots, requiring time-optimal control while operating under persistent actuation saturation. While reinforcement learning (RL) has achieved human-level performance in this domain, current methods fail to generalize; policies trained on specific environments often crash immediately in unseen configurations. This failure reflects the intrinsic difficulty of zero-shot generalization in agile flight, arising from high-dimensional task variation and the tight coupling between safety and performance at high speeds. Existing approaches that improve generalization impose a substantial cost on flight speed: control policies must significantly degrade performance to achieve even modest levels of generalization. In this work, we propose a framework for zero-shot generalization in agile flight for RL-based drone racing. By combining task-aware switching based on learning progress with a physically informed procedural track generator, the framework produces a fast and robust generalist policy without test-time adaptation. Our method achieves strong zero-shot performance across a wide range of unseen racetracks in the real world, demonstrating a 7.4x improvement in generalization over the state-of-the-art approaches, while maintaining competitive racing speeds. We validate our method's results in both simulation and real-world settings, including a challenging vision-based, end-to-end control setting that operates without explicit state estimation, where all prior approaches fail to generalize.",
+      "authors": [
+        "Jonathan Green",
+        "Jiaxu Xing",
+        "Nico Messikommer",
+        "Angel Romero",
+        "Davide Scaramuzza"
+      ],
+      "published": "2026-06-25T17:54:36Z",
+      "updated": "2026-06-25T17:54:36Z",
+      "url": "https://arxiv.org/abs/2606.27348",
+      "pdf_url": "https://arxiv.org/pdf/2606.27348.pdf",
+      "primary_category": "cs.RO",
+      "categories": [
+        "cs.RO"
+      ],
+      "tags": [
+        "cs.RO"
+      ],
+      "domain": "Agent",
+      "pdf_downloaded": true,
+      "pdf_size_bytes": 3482027,
+      "pdf_path": "2026-06-26/agent/2606.27348.pdf"
+    },
+    {
+      "id": "2606.27344",
+      "title": "VibeAct: Vibration to Actions for Contact-Rich Reactive Robot Dexterity",
+      "abstract": "Dexterous manipulation depends on contact events that are fast, local, and often visually occluded. Piezoelectric microphones offer a compact and high-bandwidth way to sense these interactions, but the resulting vibro-acoustic signals are difficult to simulate faithfully enough for end-to-end sim-to-real policy learning on dexterous robot hands. We propose VibeAct, a framework that bridges real vibrotactile sensing and simulation-based reinforcement learning through a shared physical representation of contact and slip. In the real world, we embed piezoelectric microphones into a dexterous robot hand and collect vibro-acoustic data through teleoperation, then replay the recordings in a calibrated digital clone to automatically label per-finger contact and slip. A tactile estimator learns to predict contact and slip from real microphone waveforms, while manipulation policies are trained in simulation on the same representation computed directly from simulated contacts. This decoupling lets policies exploit rapid tactile feedback without simulating raw audio. Across five contact-rich tasks spanning regrasping, in-hand reorientation, and insertion, VibeAct consistently outperforms a proprioception-and-point-cloud baseline in simulation, with the largest gains on tasks requiring sustained reactive control, where the continuous slip-magnitude channel proves the most informative observation. The learned policies transfer to a physical dexterous hand-arm platform, improving success rates on deployed tasks. Project videos and additional details are at https://vibeact.github.io/.",
+      "authors": [
+        "Yuemin Mao",
+        "Uksang Yoo",
+        "Jean Oh",
+        "Jonathan Francis",
+        "Jeffrey Ichnowski"
+      ],
+      "published": "2026-06-25T17:50:07Z",
+      "updated": "2026-06-25T17:50:07Z",
+      "url": "https://arxiv.org/abs/2606.27344",
+      "pdf_url": "https://arxiv.org/pdf/2606.27344.pdf",
+      "primary_category": "cs.RO",
+      "categories": [
+        "cs.RO"
+      ],
+      "tags": [
+        "cs.RO"
+      ],
+      "domain": "Agent",
+      "pdf_downloaded": true,
+      "pdf_size_bytes": 8548988,
+      "pdf_path": "2026-06-26/agent/2606.27344.pdf"
+    },
+    {
+      "id": "2606.27295",
+      "title": "LA4VLA: Learning to Act without Seeing via Language-Action Pretraining",
+      "abstract": "Vision-Language-Action (VLA) models are commonly pretrained on robot demonstrations by jointly mapping visual observations and language instructions to actions. However, dense visual-action supervision can dominate the comparatively sparse language-action signal. As a result, policies may rely on visual shortcuts rather than learn how language conditions action execution, making them sensitive to visual variations. To address this limitation, we propose LA4VLA, a language-action pretraining framework that enables policies to acquire language-conditioned action priors without visual observations. These priors capture reusable manipulation skills shared across tasks and scenes, reducing reliance on scene-specific visual cues. Specifically, LA4VLA decomposes expert demonstration trajectories into atomic action segments and pairs each segment with a corresponding low-level action description. This yields LA4-33K, a dataset of 33K Language-Action (LA) episodes derived entirely from existing demonstrations without additional robot data collection. We further develop LA4VLA-1B, a lightweight 1B-parameter VLA model, and investigate three paradigms for incorporating language-action supervision into VLA learning: LA-only pretraining, sequential LA-to-VLA pretraining, and mixed LA-VLA pretraining. Across simulation and real-world tasks, LA-pretrained policies consistently outperform matched VLA-pretrained counterparts, while combining LA and VLA supervision leads to further gains. In particular, mixed LA-VLA pretraining improves the average success rate of LA4VLA-1B over the no-pretraining baseline by up to 17.8 and 45.0 percentage points in simulation and real-world tasks, respectively. These results establish LA4VLA as an effective and complementary pretraining strategy for building stronger and more robust VLA policies.",
+      "authors": [
+        "Tao Lin",
+        "Yuxin Du",
+        "Yiran Mao",
+        "Zewei Ye",
+        "Yilei Zhong",
+        "Bing Cheng",
+        "Yiming Wang",
+        "Jiting Liu",
+        "Yang Tian",
+        "Junchi Yan",
+        "Feiran Wu",
+        "Zenan Meng",
+        "Hu Wei",
+        "Yuqian Fu",
+        "Gen Li",
+        "Bo Zhao"
+      ],
+      "published": "2026-06-25T17:13:02Z",
+      "updated": "2026-06-25T17:13:02Z",
+      "url": "https://arxiv.org/abs/2606.27295",
+      "pdf_url": "https://arxiv.org/pdf/2606.27295.pdf",
+      "primary_category": "cs.RO",
+      "categories": [
+        "cs.RO"
+      ],
+      "tags": [
+        "cs.RO"
+      ],
+      "domain": "Agent",
+      "pdf_downloaded": true,
+      "pdf_size_bytes": 11872131,
+      "pdf_path": "2026-06-26/agent/2606.27295.pdf"
+    },
+    {
+      "id": "2606.27292",
+      "title": "BOWConnect: Parallel Bayesian Optimization over Windows with Learned Local Cost Maps for Sample-Efficient Kinodynamic Motion Planning",
+      "abstract": "This paper presents BOWConnect, a bidirectional parallel kinodynamic motion planner that addresses three fundamental limitations of existing sampling-based methods: sample inefficiency in high-dimensional state spaces, unreliable cost heuristics under dynamic constraints, and poor performance in narrow passage environments. Unlike classical planners that rely on random control sampling and geometric distance heuristics, BOWConnect integrates Bayesian Optimization over Windows (BOW) as a learning-based steering function within a parallel tree-based exploration framework, enabling each worker to learn local cost maps and constraints to guide sampling toward dynamically feasible and collision-free controls. A bidirectional architecture simultaneously grows forward and backward trees from the start and goal regions in parallel threads, with a spatial hashing mechanism enabling fast connection queries and a boundary value problem solver generating kinodynamically consistent bridge trajectories. Extensive evaluations across ten benchmark environments demonstrate that BOWConnect achieves 100\\% success while delivering the fastest or near-fastest planning time in complex scenarios, including narrow passages and non-convex spaces where state-of-the-art planners fail or degrade substantially. Real-world deployment on a ground vehicle and a quadrotor confirms real-time planning with no collisions. Videos of real-world and simulated experiments, high-resolution versions of the figures, and the open-source code are available at https://bow-connect.github.io/.",
+      "authors": [
+        "Sourav Raxit",
+        "Abdullah Al Redwan Newaz",
+        "Jose Fuentes",
+        "Leonardo Bobadilla"
+      ],
+      "published": "2026-06-25T17:11:33Z",
+      "updated": "2026-06-25T17:11:33Z",
+      "url": "https://arxiv.org/abs/2606.27292",
+      "pdf_url": "https://arxiv.org/pdf/2606.27292.pdf",
+      "primary_category": "cs.RO",
+      "categories": [
+        "cs.RO"
+      ],
+      "tags": [
+        "cs.RO"
+      ],
+      "domain": "Agent",
+      "pdf_downloaded": true,
+      "pdf_size_bytes": 4016370,
+      "pdf_path": "2026-06-26/agent/2606.27292.pdf"
+    },
+    {
+      "id": "2606.27257",
+      "title": "Resilient Output Containment under Undisclosed Leader Dynamics and Actuator Attacks",
+      "abstract": "This work studies resilient output containment for heterogeneous linear multi-agent systems with actuator cyber-attacks over directed network topologies. The leaders generate bounded locally absolutely continuous trajectories; however, their dynamics, velocity bounds, and motion envelopes are undisclosed to the followers. The cyber-attack model includes state- and input-correlated, as well as bounded exogenous actuator false-data terms. A continuous two-layer adaptive control architecture is proposed. The first layer is a virtual-actuator reconfiguration layer that uses partial state measurements to compensate for actuator attacks in the local tracking-error dynamics. The second layer is a network interface that generates task-space commands via an adaptive interaction protocol. This protocol uses only neighbor-exchanged network-interface states whose dimensions match those of the plant output, and it does not require global graph knowledge for parameter tuning. For directed graphs, under a leader-rooted united spanning-tree condition, a nonsmooth Lyapunov analysis yields asymptotic containment at the command level. The physical outputs then converge to the leader convex hull up to a residual determined by the command-tracking local controllers. Simulation results using a network of quadrotors with damped suspended loads illustrate the performance of attack recovery and containment tracking.",
+      "authors": [
+        "Mohammadreza Nematollahi",
+        "Khashayar Khorasani",
+        "Nader Meskin"
+      ],
+      "published": "2026-06-25T16:42:13Z",
+      "updated": "2026-06-25T16:42:13Z",
+      "url": "https://arxiv.org/abs/2606.27257",
+      "pdf_url": "https://arxiv.org/pdf/2606.27257.pdf",
+      "primary_category": "eess.SY",
+      "categories": [
+        "eess.SY",
+        "cs.MA"
+      ],
+      "tags": [
+        "cs.MA",
+        "eess.SY"
+      ],
+      "domain": "Agent",
+      "pdf_downloaded": false,
+      "pdf_size_bytes": null,
+      "pdf_path": null
+    },
+    {
+      "id": "2606.27239",
+      "title": "HumanoidUMI: Bridging Robot-Free Demonstrations and Humanoid Whole-Body Manipulation",
+      "abstract": "High-quality demonstration data are essential for humanoid robot skill learning, especially for whole-body behaviors that require coordinated perception, locomotion, and manipulation. Existing data-collection methods largely rely on robot teleoperation, which is constrained by hardware accessibility, operator expertise, and limited efficiency. Inspired by the Universal Manipulation Interface (UMI), we propose HumanoidUMI, a portable and robot-free framework for humanoid whole-body data collection. HumanoidUMI uses lightweight VR devices and UMI-inspired grippers to collect sparse human keypoint trajectories, wrist-view observations, and gripper actions. These demonstrations train a high-level policy to predict future keypoints, which are retargeted to robot-native whole-body references and executed by a whole-body controller. Experiments in five real-world scenarios demonstrate the effectiveness of the proposed framework and validate the collected demonstrations for transferable humanoid whole-body skill learning.",
+      "authors": [
+        "Hongwu Wang",
+        "Chenhao Yu",
+        "Youhao Hu",
+        "Jiachen Zhang",
+        "Yuanyuan Li",
+        "Shaqi Luo"
+      ],
+      "published": "2026-06-25T16:23:56Z",
+      "updated": "2026-06-25T16:23:56Z",
+      "url": "https://arxiv.org/abs/2606.27239",
+      "pdf_url": "https://arxiv.org/pdf/2606.27239.pdf",
+      "primary_category": "cs.RO",
+      "categories": [
+        "cs.RO"
+      ],
+      "tags": [
+        "cs.RO"
+      ],
+      "domain": "Agent",
+      "pdf_downloaded": true,
+      "pdf_size_bytes": 11963088,
+      "pdf_path": "2026-06-26/agent/2606.27239.pdf"
+    },
+    {
+      "id": "2606.27180",
+      "title": "Automating Potential-based Reward Shaping with Vision Language Model Guidance",
+      "abstract": "Sparse rewards are inherently challenging for reinforcement learning agents as they lack intermediate feedback to guide exploration and to correctly attribute the sparse success rewards to relevant parts of the trajectory. Naive reward shaping can induce reward hacking, yielding policies that exploit auxiliary signals instead of solving the intended task. Potential-based reward shaping (PBRS) guarantees preservation of the optimal policy set, but requires the definition of a heuristic potential function over the state space. In this work, we introduce the VLM-guided PBRS framework VLM-PBRS that learns the potential function directly from vision language model (VLM) feedback. We query a lightweight VLM to obtain preferences over image pairs and train a model of the potential function using these preferences. As this approach is based on potential-based reward shaping, it preserves the original optimal policies, and removes the need for expert-designed reward shaping terms. Because large VLMs are prohibitively expensive to invoke repeatedly during policy learning, we employ smaller, more computationally efficient VLMs. Although the resulting preference labels are less accurate, empirical evidence shows that the preference labels can still be used to accelerate learning. We validate our method empirically in the Meta-World and Franka Kitchen environments and highlight the connection between VLM preference label accuracy and sample efficiency improvements. Our contributions are threefold: (1) the first application of VLM preference-based learning to synthesize a potential function for PBRS, (2) a principled, low-cost solution that leverages small VLMs, and (3) extensive empirical demonstration of improved sample efficiency and robustness to reward hacking.",
+      "authors": [
+        "Henrik M\u00fcller",
+        "Daniel Kudenko"
+      ],
+      "published": "2026-06-25T15:45:57Z",
+      "updated": "2026-06-25T15:45:57Z",
+      "url": "https://arxiv.org/abs/2606.27180",
+      "pdf_url": "https://arxiv.org/pdf/2606.27180.pdf",
+      "primary_category": "cs.LG",
+      "categories": [
+        "cs.LG",
+        "cs.AI",
+        "cs.RO"
+      ],
+      "tags": [
+        "cs.AI",
+        "cs.LG",
+        "cs.RO"
+      ],
+      "domain": "Agent",
+      "pdf_downloaded": true,
+      "pdf_size_bytes": 11712887,
+      "pdf_path": "2026-06-26/agent/2606.27180.pdf"
+    },
+    {
+      "id": "2606.27163",
+      "title": "Learning to Fold: prizewinning solution at LeHome Challenge 2026 (1st place online, 2nd offline)",
+      "abstract": "I describe my solution to the LeHome Challenge 2026, an ICRA 2026 competition on bimanual garment folding. The system placed 1st of 62 teams in the online (simulation) round and 2nd in the real-world final. It improves a vision-language-action (VLA) policy with a reinforcement-learning loop. The policy is its own value function: the same network that predicts actions also predicts success, progress, and a few task-relevant future quantities, and those predictions drive advantage estimation, live failure detection, and candidate selection. The work mostly recombines existing RL ideas with engineering and optimization contributions that can be used together as one recipe or individually: AWR + RECAP combined for flow-matching VLA; an asynchronous distributed training / rollout pipeline through HuggingFace Hub; inference-time hyperparameters optimization via Thompson sampling; a sim-to-real recipe with camera-alignment tooling, heavy augmentation and DAgger-like HIL data collection.",
+      "authors": [
+        "Ilia Larchenko"
+      ],
+      "published": "2026-06-25T15:31:23Z",
+      "updated": "2026-06-25T15:31:23Z",
+      "url": "https://arxiv.org/abs/2606.27163",
+      "pdf_url": "https://arxiv.org/pdf/2606.27163.pdf",
+      "primary_category": "cs.RO",
+      "categories": [
+        "cs.RO",
+        "cs.AI",
+        "cs.LG"
+      ],
+      "tags": [
+        "cs.AI",
+        "cs.LG",
+        "cs.RO"
+      ],
+      "domain": "Agent",
+      "pdf_downloaded": true,
+      "pdf_size_bytes": 9157564,
+      "pdf_path": "2026-06-26/agent/2606.27163.pdf"
+    },
+    {
+      "id": "2606.27146",
+      "title": "PhysReflect-VLA: Physical Feasibility and Self-Reflective Regulation for Reliable Vision-Language-Action Policies",
+      "abstract": "Long-horizon robotic manipulation is highly sensitive to physically infeasible transitions, contact-induced disturbances, and the lack of effective self-correction during execution. Although Vision-Language-Action (VLA) models provide strong task grounding through multimodal learning, they typically generate actions in a feed-forward manner without explicitly checking physical feasibility or diagnosing execution errors online. We present PhysReflect-VLA, a plug-and-play execution-time reliability framework that augments VLA policies with physical feasibility evaluation and structured self-reflection in a closed-loop control pipeline. A Feasibility Operator evaluates whether candidate actions induce dynamically consistent state transitions; an Action Explanation Operator verifies transition coherence; and an LLM-based Reflection Module analyzes state discrepancies to generate corrective guidance for subsequent actions. A two-stage training procedure stabilizes feasibility modeling and integrates reflection into the control loop. Experiments on multi-stage, contact-rich real-world manipulation tasks show consistent improvements in stage-wise stability and overall task success compared with representative VLA baselines with an average gain of 5.4\\%. Ablation results further indicate that feasibility checking and reflection-based correction both contribute to improved execution robustness. These results highlight the importance of embedding physical consistency checks and online self-reflection for reliable long-horizon robotic manipulation.",
+      "authors": [
+        "Jiayu Yang",
+        "Tao Yang",
+        "Weijun Li",
+        "Xiang Chang",
+        "Fei Chao",
+        "Changjing Shang",
+        "Qiang Shen"
+      ],
+      "published": "2026-06-25T15:18:10Z",
+      "updated": "2026-06-25T15:18:10Z",
+      "url": "https://arxiv.org/abs/2606.27146",
+      "pdf_url": "https://arxiv.org/pdf/2606.27146.pdf",
+      "primary_category": "cs.RO",
+      "categories": [
+        "cs.RO"
+      ],
+      "tags": [
+        "cs.RO"
+      ],
+      "domain": "Agent",
+      "pdf_downloaded": true,
+      "pdf_size_bytes": 2939380,
+      "pdf_path": "2026-06-26/agent/2606.27146.pdf"
+    },
+    {
+      "id": "2606.27144",
+      "title": "PAMAE: Phase-Aware-MoE Action Experts Towards Reliable Flow-Matching Vision-Language-Action Policies",
+      "abstract": "Reliable action generation for multi-stage robotic manipulation remains challenging for Vision-Language-Action (VLA) models. While existing flow-matching VLA policies offer strong multimodal grounding and generalization, they typically employ a single shared action expert, limiting their ability to capture phase-specific control patterns across distinct execution stages. We propose a plug-and-play Phase-Aware Mixture-of-Experts Action Module (PAMAE), as a step towards more reliable phase-consistent action generation. PAMAE replaces the original flow-matching action expert with a sparse expert mixture while preserving the pretrained VLA backbone. PAMAE introduces a phase-aware router that leverages execution-phase cues to allocate action generation across experts, supported by a lightweight phase prediction head and a routing alignment objective. To stabilize specialization, we adopt a two-stage training scheme that first warms up the expert module under the standard flow-matching loss and then optimizes phase-consistent routing under auxiliary supervision. On multi-stage manipulation simulation tasks, PAMAE improves task success by up to \\textbf{9.2\\%} over strong VLA baselines. Further ablations show that both phase-supervised routing and staged optimization are essential for the observed gains. Our results highlight phase-consistent expert allocation as an effective mechanism for improving the reliability and action quality of flow-matching VLA policies.",
+      "authors": [
+        "Jiayu Yang",
+        "Tao Yang",
+        "Xiang Chang",
+        "Fei Chao",
+        "Changjing Shang",
+        "Qiang Shen"
+      ],
+      "published": "2026-06-25T15:17:43Z",
+      "updated": "2026-06-25T15:17:43Z",
+      "url": "https://arxiv.org/abs/2606.27144",
+      "pdf_url": "https://arxiv.org/pdf/2606.27144.pdf",
+      "primary_category": "cs.RO",
+      "categories": [
+        "cs.RO"
+      ],
+      "tags": [
+        "cs.RO"
+      ],
+      "domain": "Agent",
+      "pdf_downloaded": true,
+      "pdf_size_bytes": 431302,
+      "pdf_path": "2026-06-26/agent/2606.27144.pdf"
+    },
+    {
+      "id": "2606.27122",
+      "title": "Mostly Automatic Translation of Language Interpreters from C to Safe Rust",
+      "abstract": "Translating C programs to safe Rust is challenging owing to significant differences in typing constraints, ownership, and borrowing rules. Interpreter programs are particularly important targets for such translation, as they often handle untrusted inputs and suffer from memory-related vulnerabilities. We present Reboot, a mostly-automatic technique that translates real-world interpreter programs from C to safe Rust. Using Reboot, we have translated six interpreters ranging from 6k to 23k lines of C code to safe Rust, with each translation requiring only 1 to 11 brief user interventions. All translations pass 100% of the provided test suites, and achieve 62%--92% pass rates on separately created validation tests that were never exposed to the system. A security case study on mujs shows that memory vulnerabilities such as heap buffer overflows and use-after-free present in C are eliminated in the safe Rust translation. Two ideas underpin Reboot. First, feature reduction decomposes the translation by program features, creating a sequence of milestones where each is a complete, testable program; the translation starts from the simplest version and incrementally restores features, with each milestone validated before proceeding. Second, a multi-agent architecture orchestrates inherently unreliable coding agents through automated validation and feedback, keeping long-running translation workflows on track with minimal human involvement. An ablation study confirms that feature reduction improves translation correctness compared to using multi-agent translation alone, with 6%--20% improvements in pass rates on validation test suites.",
+      "authors": [
+        "Bo Wang",
+        "Brandon Paulsen",
+        "Joey Dodds",
+        "Daniel Kroening",
+        "Umang Mathur",
+        "Prateek Saxena"
+      ],
+      "published": "2026-06-25T14:59:08Z",
+      "updated": "2026-06-25T14:59:08Z",
+      "url": "https://arxiv.org/abs/2606.27122",
+      "pdf_url": "https://arxiv.org/pdf/2606.27122.pdf",
+      "primary_category": "cs.PL",
+      "categories": [
+        "cs.PL",
+        "cs.MA",
+        "cs.SE"
+      ],
+      "tags": [
+        "cs.MA",
+        "cs.PL",
+        "cs.SE"
+      ],
+      "domain": "Agent",
+      "pdf_downloaded": true,
+      "pdf_size_bytes": 6077341,
+      "pdf_path": "2026-06-26/agent/2606.27122.pdf"
+    },
+    {
+      "id": "2606.27079",
+      "title": "ForesightSafety-VLA: A Unified Diagnostic Safety Benchmark for Vision-Language-Action Models",
+      "abstract": "In embodied intelligence, safety is a prerequisite for reliable robot deployment in the physical world. Current vision-language-action (VLA) models continue to advance toward general-purpose task capability, yet their embodied safety limits remain poorly understood. To address this gap, we introduce ForesightSafety-VLA, a diagnostic benchmark that makes safety the primary evaluation target for VLA systems. We define a 13-category safety taxonomy covering physical interaction safety (Safe-Core), instruction-side safety (Safe-Lang), and perception-side safety (Safe-Vis), and evaluate policies under three controlled dimensions of variation -- scene structure, language command, and visual observation -- so that failure sources can be diagnosed rather than hidden in a single aggregate score. Beyond binary task success, ForesightSafety-VLA measures process-level risk through cumulative safety cost (CC) and risk exposure time (RET), together with a four-quadrant decomposition of safe/unsafe success and failure. We instantiate 66 safety-augmented base scenarios in RoboTwin across 5 embodiments and report results on representative VLA baselines. Across the evaluated baselines, even the strongest policy incurs non-trivial safety cost and unsafe nominal success, while structure and visual variation induce substantially stronger safety degradation than ordinary language variation. These results suggest that embodied safety is tightly coupled to perception, grounding, and control competence rather than being reducible to post-hoc safety filtering alone.",
+      "authors": [
+        "Mingyang Lyu",
+        "Yinqian Sun",
+        "Yiyang Jia",
+        "Sicheng Shen",
+        "Moquan Sha",
+        "Huangrui Li",
+        "Feifei Zhao",
+        "Yi Zeng"
+      ],
+      "published": "2026-06-25T14:19:36Z",
+      "updated": "2026-06-25T14:19:36Z",
+      "url": "https://arxiv.org/abs/2606.27079",
+      "pdf_url": "https://arxiv.org/pdf/2606.27079.pdf",
+      "primary_category": "cs.RO",
+      "categories": [
+        "cs.RO"
+      ],
+      "tags": [
+        "cs.RO"
+      ],
+      "domain": "Agent",
+      "pdf_downloaded": true,
+      "pdf_size_bytes": 2534697,
+      "pdf_path": "2026-06-26/agent/2606.27079.pdf"
+    },
+    {
+      "id": "2606.27039",
+      "title": "Scalability of Morality: A Particle-Based Numerical Study on the Decoupling of Law and Ethics in Large-Scale Populations",
+      "abstract": "This study introduces a particle-based computational framework to investigate the scalability of morality and the systemic decoupling of formal law from decentralized social ethics in expanding populations. While micro-societies reinforce ethical conduct through local reciprocity, macroscale systems introduce anonymity that strains cognitive memory limitations. We model individual agents as discrete particles with finite memory capacities ($L$) and dynamically evolving, stochastic choice profiles ($\u03bc$) regulated by non-linear social pressure switches. Monte Carlo ensemble simulations demonstrate a distinct, non-linear phase transition as the population scales ($N \\to \\infty$). When the population metric outpaces memory capacity ($N \\gg L$), the local re-encounter probability drops as $\\mathcal{O}(L/N)$. This structural dilution neutralizes decentralized peer-to-peer accountability, causing global behavioral norms to decouple from moral baselines and drift toward a minimalist legal floor. Furthermore, cyclic scale experiments expose a prominent, path-dependent hysteresis loop, mathematically formalizing the non-Markovian inertia and irreversible nature of moral decay in self-organizing social systems.",
+      "authors": [
+        "Amir Arslan Haghrah",
+        "Amir Aslan Haghrah"
+      ],
+      "published": "2026-06-25T13:44:46Z",
+      "updated": "2026-06-25T13:44:46Z",
+      "url": "https://arxiv.org/abs/2606.27039",
+      "pdf_url": "https://arxiv.org/pdf/2606.27039.pdf",
+      "primary_category": "eess.SY",
+      "categories": [
+        "eess.SY",
+        "cs.MA"
+      ],
+      "tags": [
+        "cs.MA",
+        "eess.SY"
+      ],
+      "domain": "Agent",
+      "pdf_downloaded": true,
+      "pdf_size_bytes": 676525,
+      "pdf_path": "2026-06-26/agent/2606.27039.pdf"
+    },
+    {
+      "id": "2606.27036",
+      "title": "RelAfford6D: Relational 6D Affordance Graphs for Constraint-Driven Robotic Manipulation",
+      "abstract": "Bridging abstract semantics and precise physical control remains a fundamental challenge in open-world robotic manipulation. While recent data-driven policies show promise, their reliance on isolated contact points or latent affordance embeddings lacks the rigorous kinematic constraints necessary for complex articulated objects.To overcome the limitation, we introduce RelAfford6D, a novel training-free framework centered on a Relational 6D Affordance Graph. Given a free-form instruction, our system deduces a semantic topology linking a primary interacting part to its physical anchor. By elevating these topological nodes into precise metric $SE(3)$ poses via vision foundation models, we analytically formulate downstream execution as a kinematic constraint satisfaction problem. The robot synthesizes continuous trajectories by tracking strictly defined physical manifolds (e.g., revolute or prismatic orbits). Coupled with a closed-loop tracking mechanism for dynamic replanning against disturbances, our physically grounded approach achieves superior zero-shot success rates, cross-category generalization and execution robustness in both simulation and the real world environments, outperforming existing data-driven baselines.",
+      "authors": [
+        "Guodong Zhang",
+        "Qichen He",
+        "Wenyuan Xie",
+        "Shaokai Wu",
+        "Yanbiao Ji",
+        "Qiuchang Li",
+        "Bayram Bayramli",
+        "Yue Ding",
+        "Hongtao Lu"
+      ],
+      "published": "2026-06-25T13:42:26Z",
+      "updated": "2026-06-25T13:42:26Z",
+      "url": "https://arxiv.org/abs/2606.27036",
+      "pdf_url": "https://arxiv.org/pdf/2606.27036.pdf",
+      "primary_category": "cs.RO",
+      "categories": [
+        "cs.RO"
+      ],
+      "tags": [
+        "cs.RO"
+      ],
+      "domain": "Agent",
+      "pdf_downloaded": true,
+      "pdf_size_bytes": 1832327,
+      "pdf_path": "2026-06-26/agent/2606.27036.pdf"
+    },
+    {
+      "id": "2606.27009",
+      "title": "Semantic Early-Stopping for Iterative LLM Agent Loops",
+      "abstract": "Multi-agent large language model (LLM) loops, for example a Writer that drafts and a Critic that revises, are almost always terminated by a fixed iteration cap (max_iterations). This is a syntactic kill-switch: it is blind to whether the answer is still improving, so it over-spends tokens on easy inputs and truncates hard ones. We study semantic early-stopping: the loop halts when consecutive draft embeddings stop changing in meaning (cosine distance with a patience window) and the answer's measured quality stops improving. Our work makes three contributions. First, an honest theoretical footing: we prove deterministic termination and well-definedness and machine-check these claims, while treating the convergence of the distance sequence as an empirically tested conjecture rather than a (previously over-claimed) Banach contraction. Second, a judge-efficient evaluation protocol: we generate each question's full trajectory once, replay every stopping policy over the identical drafts, and cache every LLM-judge call, yielding a strictly paired efficiency-versus-quality comparison at low cost; we further separate operational tokens (charged to a policy) from evaluation tokens (a measurement instrument). Third, an empirical study on multi-hop retrieval-augmented question answering (HotpotQA). On the 60-question test split, a judge-free semantic stopper reduces operational tokens by 38% relative to max_iterations at parity quality (Delta-IS = -0.004, p = 0.81), whereas the full quality-gated variant is counter-productive because its per-round judging dominates cost. An oracle that selects the best round attains +0.115 Information Score over every practical policy (p ~ 4e-11), reframing the problem from \"when to stop\" (easy) to \"which round is best\" (open).",
+      "authors": [
+        "Sahil Shrivastava"
+      ],
+      "published": "2026-06-25T13:24:21Z",
+      "updated": "2026-06-25T13:24:21Z",
+      "url": "https://arxiv.org/abs/2606.27009",
+      "pdf_url": "https://arxiv.org/pdf/2606.27009.pdf",
+      "primary_category": "cs.AI",
+      "categories": [
+        "cs.AI",
+        "cs.LG",
+        "cs.MA"
+      ],
+      "tags": [
+        "cs.AI",
+        "cs.LG",
+        "cs.MA"
+      ],
+      "domain": "Agent",
+      "pdf_downloaded": true,
+      "pdf_size_bytes": 935957,
+      "pdf_path": "2026-06-26/agent/2606.27009.pdf"
+    },
+    {
+      "id": "2606.26981",
+      "title": "In-Context Model Predictive Generation: Open-Vocabulary Motion Synthesis from Language Models to Physics",
+      "abstract": "Synthesizing human motion from textual descriptions is essential for immersive digital applications, yet existing methods face a persistent trade-off between semantic fidelity and physical realism. Large language model (LLM)-based approaches can interpret diverse open-vocabulary instructions and compose high-level action plans, but they often generate motions that violate physical constraints. Physics-aware models improve realism through simulation or control, but they struggle with semantic complexity, fine-grained instructions, and novel concepts. To address this gap, we propose In-Context Model Predictive Generation (ICMPG), a framework that integrates language-model planning with inference-time physical feedback. ICMPG reformulates motion synthesis as a Model Predictive Control (MPC)-like process with two modules. The Context-Aware Motion Generation (CAMG) module uses an LLM as a planner to decompose textual commands and generate candidate motion sequences from motion tokens. The Model Predictive Generation (MPG) module evaluates these candidates through physical simulation and semantic alignment, estimates a composite reward, and selects the best sequence to guide subsequent generation steps. Unlike open-loop generation, this closed-loop refinement enables ICMPG to adapt motions to both the input semantics and the simulated physical environment without task-specific policy retraining. Extensive experiments across standard and zero-shot open-vocabulary settings show that ICMPG generalizes robustly to diverse commands and produces motions that are more physically plausible and semantically faithful than representative baselines on the evaluated benchmarks. The framework bridges semantic interpretation and physical simulation while remaining flexible enough to incorporate different LLM backbones, enabling more versatile and controllable text-driven motion synthesis.",
+      "authors": [
+        "Xiaomeng Fu",
+        "Junfan Lin",
+        "Yang Liu",
+        "Yaowei Wang",
+        "Guanbin Li",
+        "Liang Lin",
+        "Ziliang Chen"
+      ],
+      "published": "2026-06-25T12:50:33Z",
+      "updated": "2026-06-25T12:50:33Z",
+      "url": "https://arxiv.org/abs/2606.26981",
+      "pdf_url": "https://arxiv.org/pdf/2606.26981.pdf",
+      "primary_category": "cs.RO",
+      "categories": [
+        "cs.RO",
+        "cs.AI"
+      ],
+      "tags": [
+        "cs.AI",
+        "cs.RO"
+      ],
+      "domain": "Agent",
+      "pdf_downloaded": true,
+      "pdf_size_bytes": 20870569,
+      "pdf_path": "2026-06-26/agent/2606.26981.pdf"
+    },
+    {
+      "id": "2606.26955",
+      "title": "RobOralScan: Learning Active Intraoral Scanning for Robotic Dental Reconstruction",
+      "abstract": "Intraoral scanning is widely used for digital optical impressions in prosthodontic, implant, and orthodontic treatment, but full-arch and long-span scanning remain labor-intensive tasks with limited automation. In the confined oral cavity, operators must continuously adjust scanner motion while accumulating narrow field-of-view observations, making reconstruction quality sensitive to missing tooth surfaces and operator workload. We propose RobOralScan, which, to the best of our knowledge, is the first reinforcement learning (RL)-based pipeline for robotic automatic intraoral scanning. RobOralScan introduces a geometric memory-based observation space that accumulates partial scan observations into a tri-state geometric representation, allowing the policy to reason over scan history and insufficiently observed regions. It further introduces tooth-wise coverage learning, combining coverage-aware reward signals and a progressive training scheme to improve global reconstruction coverage while reducing uneven coverage across individual teeth. The learned policy selects relative scanner motions from accumulated geometric memory and robot proprioception for closed-loop scan control within the oral workspace. RobOralScan achieves a Chamfer Distance of 0.00838, an average coverage of 92.58%, a lower-tail per-tooth coverage of 88.45%, and a normalized AUC of 0.6674, completing the scan criterion in 8 of 10 evaluation episodes. Furthermore, zero-shot sim-to-real experiments demonstrate its practical feasibility on a physical robot-scanner setup.",
+      "authors": [
+        "Jinhyung Lee",
+        "Haeun Yun",
+        "Siwon Kim",
+        "Gihyun Baek",
+        "Sungho Moon",
+        "Sehyun Hwang",
+        "Sunghoon Im"
+      ],
+      "published": "2026-06-25T12:29:36Z",
+      "updated": "2026-06-25T12:29:36Z",
+      "url": "https://arxiv.org/abs/2606.26955",
+      "pdf_url": "https://arxiv.org/pdf/2606.26955.pdf",
+      "primary_category": "cs.RO",
+      "categories": [
+        "cs.RO"
+      ],
+      "tags": [
+        "cs.RO"
+      ],
+      "domain": "Agent",
+      "pdf_downloaded": true,
+      "pdf_size_bytes": 7766159,
+      "pdf_path": "2026-06-26/agent/2606.26955.pdf"
+    },
+    {
+      "id": "2606.26928",
+      "title": "UAV-MapFusion: RTK-Aligned Uncertainty-Aware Coarse-to-Fine Multi-Session UAV Mapping",
+      "abstract": "Large-scale point cloud maps are essential for robotics and spatial intelligence tasks. UAVs provide an efficient means for large-scale map acquisition; however, due to limited flight endurance and onboard storage, mapping a large-scale scene within a single flight remains difficult. Existing multi-session map merging methods can extend the mapping range, yet in UAV scenarios they still struggle to simultaneously suppress long-range drift and preserve local geometric accuracy. To address this issue, an uncertainty-aware multi-session point cloud map merging and coarse-to-fine optimization system is proposed. The proposed method first performs initial multi-session map merging based on a scene graph, and then incorporates RTK observations through an RTK spatiotemporal alignment module, where temporal offsets are estimated using Dynamic Time Warping (DTW), and continuous RTK constraints are recovered using Multi-Output Gaussian Processes (MOGP) under incomplete sampling and frame dropouts. On this basis, a unified uncertainty-aware factor graph is constructed, and local geometric accuracy is further improved through iterative plane-factor refinement. Experiments on real-world datasets validate the effectiveness and robustness of the proposed method. To facilitate further research and development in the community, our code and dataset will be publicly released.",
+      "authors": [
+        "Feng Pan",
+        "Chunran Zheng",
+        "Bing Xue",
+        "Yukang Cui",
+        "Jiayu Wen",
+        "Zhiyu Chen",
+        "Wei Wang"
+      ],
+      "published": "2026-06-25T12:03:29Z",
+      "updated": "2026-06-25T12:03:29Z",
+      "url": "https://arxiv.org/abs/2606.26928",
+      "pdf_url": "https://arxiv.org/pdf/2606.26928.pdf",
+      "primary_category": "cs.RO",
+      "categories": [
+        "cs.RO",
+        "cs.SI"
+      ],
+      "tags": [
+        "cs.RO",
+        "cs.SI"
+      ],
+      "domain": "Agent",
+      "pdf_downloaded": true,
+      "pdf_size_bytes": 9067445,
+      "pdf_path": "2026-06-26/agent/2606.26928.pdf"
+    },
+    {
+      "id": "2606.26922",
+      "title": "Risk-Aware Selective Multimodal Driver Monitoring with Driver-State World Modeling",
+      "abstract": "Continuous driver monitoring in automated vehicles requires low-latency inference while avoiding unsafe decisions under uncertain driver states. Large vision-language models provide broad multimodal priors, but their latency and limited reliability in this setting make them unsuitable as always-on in-cabin monitors. We propose a cost-aware selective inference framework for deployable multimodal driver monitoring. The core system is a lightweight RGB-physiological student that combines in-cabin visual observations with window-level HR/EDA signals, and a learned gate that decides when to accept the fast prediction or abstain for safety intervention. Additional controls show that the learned scores contain sample-level information beyond scenario priors, while exact physiological synchronization remains a limitation. To incorporate predictive evidence, we further study a compact driver-state world modeling module that rolls out latent driver-state features and estimates future fast-model errors and counterfactual system-level action costs. On scenario-induced driver-demand recognition, the RGB-physiological student improves over RGB-only and physiology-only baselines, reaching 0.7440 Macro-F1 and 0.9099 balanced accuracy with 11.39M parameters and 3.08ms inference latency. Cost-aware selective inference reduces unsafe false negatives from 17.37% under always-fast inference to approximately 5% across seeds, while maintaining deployment-level latency. While driver-state world modeling offers valuable predictive signals, worst-group evaluations highlight persistent operating-point calibration drift. Ultimately, reliable edge driver monitoring requires advancing not only perception backbones, but also risk-aware selective control and group-robust calibration.",
+      "authors": [
+        "Daosheng Qiu",
+        "Haozhuang Chi",
+        "Hao Su",
+        "Shu Long",
+        "Xinyue Miao",
+        "Yongle Dong",
+        "Wei Zhang"
+      ],
+      "published": "2026-06-25T11:59:21Z",
+      "updated": "2026-06-25T11:59:21Z",
+      "url": "https://arxiv.org/abs/2606.26922",
+      "pdf_url": "https://arxiv.org/pdf/2606.26922.pdf",
+      "primary_category": "cs.RO",
+      "categories": [
+        "cs.RO",
+        "cs.AI"
+      ],
+      "tags": [
+        "cs.AI",
+        "cs.RO"
+      ],
+      "domain": "Agent",
+      "pdf_downloaded": true,
+      "pdf_size_bytes": 1829426,
+      "pdf_path": "2026-06-26/agent/2606.26922.pdf"
+    },
+    {
+      "id": "2606.26858",
+      "title": "PlanRL: A Trajectory Planning Architecture for Reinforcement Learning-based Driving Experts",
+      "abstract": "Reinforcement learning (RL) has become a prominent framework for developing driving experts in autonomous vehicles. However, most existing RL-based experts are designed to output direct control commands (e.g., throttle, steering), which suffer from a lack of interpretability, high spatial complexity in learning road geometries, and poor compatibility with modern end-to-end planning architectures. To address these limitations, we propose a novel trajectory planning architecture for RL driving experts that integrates an RL policy with a polynomial-based trajectory planner. By employing a Frenet-frame coordinate system, our method simplifies complex road geometries into a curvilinear framework, offering a structured coordinate prior that facilitates policy learning. Furthermore, we incorporate a kinematic feasibility check into the planning stage to ensure that generated trajectories remain within the vehicle's physical limits, effectively mitigating cumulative tracking errors typically found in planning-based systems. We evaluate our approach on key CARLA benchmarks, where it significantly outperforms existing state-of-the-art control-based RL experts. On the CARLA Offline Leaderboard v1 and NoCrash benchmarks, our method improves the driving score by 5% and 11%, respectively, and increases the success rate by 8% and 19%.",
+      "authors": [
+        "Joonhee Lim",
+        "Yongjae Lee",
+        "Jangho Shin",
+        "Dongsuk Kum"
+      ],
+      "published": "2026-06-25T10:42:15Z",
+      "updated": "2026-06-25T10:42:15Z",
+      "url": "https://arxiv.org/abs/2606.26858",
+      "pdf_url": "https://arxiv.org/pdf/2606.26858.pdf",
+      "primary_category": "cs.RO",
+      "categories": [
+        "cs.RO"
+      ],
+      "tags": [
+        "cs.RO"
+      ],
+      "domain": "Agent",
+      "pdf_downloaded": true,
+      "pdf_size_bytes": 708555,
+      "pdf_path": "2026-06-26/agent/2606.26858.pdf"
+    }
+  ]
+}
