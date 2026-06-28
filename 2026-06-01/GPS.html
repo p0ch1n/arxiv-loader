@@ -1,0 +1,1027 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>VLM 安全監控設計指南</title>
+  <style>
+    :root {
+      --bg: #0d1117;
+      --bg-card: #161b22;
+      --bg-code: #0d1117;
+      --border: #30363d;
+      --accent: #58a6ff;
+      --accent-green: #3fb950;
+      --accent-yellow: #d29922;
+      --accent-red: #f85149;
+      --accent-purple: #bc8cff;
+      --text: #e6edf3;
+      --text-muted: #8b949e;
+      --text-code: #79c0ff;
+      --tag-bg: rgba(88,166,255,0.1);
+    }
+
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", system-ui, sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      line-height: 1.7;
+      font-size: 15px;
+    }
+
+    /* ── Layout ── */
+    .layout { display: grid; grid-template-columns: 240px 1fr; min-height: 100vh; }
+
+    /* ── Sidebar ── */
+    nav {
+      position: sticky;
+      top: 0;
+      height: 100vh;
+      overflow-y: auto;
+      padding: 2rem 1.25rem;
+      border-right: 1px solid var(--border);
+      background: var(--bg-card);
+    }
+
+    .nav-logo {
+      display: flex;
+      align-items: center;
+      gap: 0.6rem;
+      margin-bottom: 2rem;
+    }
+
+    .nav-logo .icon {
+      width: 32px; height: 32px;
+      background: linear-gradient(135deg, #1f6feb, #58a6ff);
+      border-radius: 8px;
+      display: flex; align-items: center; justify-content: center;
+      font-size: 16px;
+    }
+
+    .nav-logo span { font-weight: 700; font-size: 15px; color: var(--text); }
+
+    .nav-section {
+      font-size: 11px;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      color: var(--text-muted);
+      margin: 1.5rem 0 0.4rem;
+      padding-left: 0.5rem;
+    }
+
+    nav a {
+      display: block;
+      padding: 0.4rem 0.75rem;
+      border-radius: 6px;
+      color: var(--text-muted);
+      text-decoration: none;
+      font-size: 13.5px;
+      transition: background 0.15s, color 0.15s;
+    }
+    nav a:hover { background: rgba(88,166,255,0.1); color: var(--accent); }
+    nav a.active { background: rgba(88,166,255,0.15); color: var(--accent); font-weight: 500; }
+
+    /* ── Main ── */
+    main { padding: 3rem 3.5rem; max-width: 900px; }
+
+    .page-header { margin-bottom: 3rem; }
+    .page-header h1 {
+      font-size: 2rem;
+      font-weight: 700;
+      background: linear-gradient(90deg, #58a6ff, #bc8cff);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+      line-height: 1.3;
+      margin-bottom: 0.6rem;
+    }
+    .page-header p { color: var(--text-muted); font-size: 15px; }
+
+    .badge {
+      display: inline-block;
+      padding: 2px 10px;
+      border-radius: 20px;
+      font-size: 12px;
+      font-weight: 500;
+      margin-right: 6px;
+    }
+    .badge-blue  { background: rgba(88,166,255,0.15);  color: #58a6ff; }
+    .badge-green { background: rgba(63,185,80,0.15);   color: #3fb950; }
+    .badge-yellow{ background: rgba(210,153,34,0.15);  color: #d29922; }
+    .badge-red   { background: rgba(248,81,73,0.15);   color: #f85149; }
+    .badge-purple{ background: rgba(188,140,255,0.15); color: #bc8cff; }
+
+    /* ── Section ── */
+    section { margin-bottom: 3.5rem; scroll-margin-top: 1.5rem; }
+
+    h2 {
+      font-size: 1.3rem;
+      font-weight: 700;
+      color: var(--text);
+      margin-bottom: 1.25rem;
+      padding-bottom: 0.6rem;
+      border-bottom: 1px solid var(--border);
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+    }
+    h2 .h2-num {
+      width: 26px; height: 26px;
+      background: linear-gradient(135deg, #1f6feb, #388bfd);
+      border-radius: 6px;
+      display: flex; align-items: center; justify-content: center;
+      font-size: 13px; font-weight: 700; color: white;
+      flex-shrink: 0;
+    }
+
+    h3 {
+      font-size: 1rem;
+      font-weight: 600;
+      color: var(--text);
+      margin: 1.5rem 0 0.75rem;
+    }
+
+    p { margin-bottom: 0.75rem; color: var(--text); }
+
+    /* ── Card ── */
+    .card {
+      background: var(--bg-card);
+      border: 1px solid var(--border);
+      border-radius: 10px;
+      padding: 1.25rem 1.5rem;
+      margin-bottom: 1rem;
+    }
+    .card-title {
+      font-weight: 600;
+      font-size: 14px;
+      margin-bottom: 0.5rem;
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+    }
+
+    /* ── Table ── */
+    .table-wrap { overflow-x: auto; margin: 1rem 0; }
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      font-size: 13.5px;
+    }
+    thead th {
+      background: rgba(88,166,255,0.08);
+      color: var(--text-muted);
+      font-weight: 600;
+      text-align: left;
+      padding: 0.6rem 1rem;
+      border-bottom: 1px solid var(--border);
+      font-size: 12px;
+      text-transform: uppercase;
+      letter-spacing: 0.04em;
+    }
+    tbody td {
+      padding: 0.65rem 1rem;
+      border-bottom: 1px solid rgba(48,54,61,0.5);
+      vertical-align: top;
+    }
+    tbody tr:last-child td { border-bottom: none; }
+    tbody tr:hover td { background: rgba(88,166,255,0.04); }
+
+    /* ── Code ── */
+    pre {
+      background: var(--bg-code);
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      padding: 1.2rem 1.4rem;
+      overflow-x: auto;
+      margin: 1rem 0;
+      font-size: 13px;
+      line-height: 1.6;
+    }
+    code {
+      font-family: "JetBrains Mono", "Fira Code", "Cascadia Code", monospace;
+      color: var(--text-code);
+    }
+    pre code { color: #e6edf3; }
+
+    .code-comment { color: #8b949e; }
+    .code-string  { color: #a5d6ff; }
+    .code-keyword { color: #ff7b72; }
+    .code-number  { color: #79c0ff; }
+    .code-func    { color: #d2a8ff; }
+
+    .code-header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      background: rgba(48,54,61,0.5);
+      border: 1px solid var(--border);
+      border-bottom: none;
+      border-radius: 8px 8px 0 0;
+      padding: 0.5rem 1rem;
+      font-size: 12px;
+      color: var(--text-muted);
+    }
+    .code-header + pre {
+      border-radius: 0 0 8px 8px;
+      margin-top: 0;
+    }
+
+    /* ── Prompt block ── */
+    .prompt-block {
+      background: #0c1a2e;
+      border: 1px solid #1f4080;
+      border-left: 3px solid var(--accent);
+      border-radius: 0 8px 8px 0;
+      padding: 1.2rem 1.4rem;
+      margin: 1rem 0;
+      font-size: 13.5px;
+      line-height: 1.8;
+      white-space: pre-wrap;
+      font-family: inherit;
+      color: #cdd9e5;
+    }
+
+    /* ── Alert / Note ── */
+    .note {
+      border-radius: 8px;
+      padding: 0.9rem 1.2rem;
+      margin: 1rem 0;
+      font-size: 13.5px;
+      display: flex;
+      gap: 0.6rem;
+      align-items: flex-start;
+    }
+    .note-blue   { background: rgba(88,166,255,0.08);  border: 1px solid rgba(88,166,255,0.2);  color: #cdd9e5; }
+    .note-yellow { background: rgba(210,153,34,0.08);  border: 1px solid rgba(210,153,34,0.25); color: #cdd9e5; }
+    .note-green  { background: rgba(63,185,80,0.08);   border: 1px solid rgba(63,185,80,0.2);   color: #cdd9e5; }
+    .note-red    { background: rgba(248,81,73,0.08);   border: 1px solid rgba(248,81,73,0.2);   color: #cdd9e5; }
+    .note .icon  { font-size: 16px; flex-shrink: 0; line-height: 1.6; }
+
+    /* ── Priority list ── */
+    .priority-list { list-style: none; padding: 0; }
+    .priority-list li {
+      display: flex;
+      align-items: flex-start;
+      gap: 0.75rem;
+      padding: 0.75rem 0;
+      border-bottom: 1px solid rgba(48,54,61,0.5);
+      font-size: 13.5px;
+    }
+    .priority-list li:last-child { border-bottom: none; }
+    .p-num {
+      width: 22px; height: 22px; border-radius: 50%;
+      display: flex; align-items: center; justify-content: center;
+      font-size: 12px; font-weight: 700; flex-shrink: 0;
+      margin-top: 1px;
+    }
+    .p-num.high   { background: rgba(248,81,73,0.2);  color: #f85149; }
+    .p-num.medium { background: rgba(210,153,34,0.2); color: #d29922; }
+    .p-num.low    { background: rgba(63,185,80,0.2);  color: #3fb950; }
+    .p-content strong { display: block; color: var(--text); margin-bottom: 2px; }
+    .p-content span { color: var(--text-muted); font-size: 12.5px; }
+
+    /* ── Tabs for prompts ── */
+    .tabs { margin: 1rem 0; }
+    .tab-btns { display: flex; gap: 0; border-bottom: 1px solid var(--border); margin-bottom: 0; }
+    .tab-btn {
+      padding: 0.55rem 1.1rem;
+      font-size: 13px;
+      background: none;
+      border: none;
+      border-bottom: 2px solid transparent;
+      color: var(--text-muted);
+      cursor: pointer;
+      transition: color 0.15s, border-color 0.15s;
+      margin-bottom: -1px;
+    }
+    .tab-btn:hover { color: var(--text); }
+    .tab-btn.active { color: var(--accent); border-bottom-color: var(--accent); }
+    .tab-panel { display: none; }
+    .tab-panel.active { display: block; }
+
+    /* ── FPS Calc ── */
+    .calc-box {
+      background: var(--bg-card);
+      border: 1px solid var(--border);
+      border-radius: 10px;
+      padding: 1.5rem;
+      margin: 1rem 0;
+    }
+    .calc-formula {
+      font-family: monospace;
+      font-size: 14px;
+      color: var(--accent);
+      background: rgba(88,166,255,0.08);
+      padding: 0.5rem 1rem;
+      border-radius: 6px;
+      display: inline-block;
+      margin: 0.4rem 0;
+    }
+
+    /* ── Grid cards ── */
+    .grid2 { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; margin: 1rem 0; }
+    @media (max-width: 700px) { .grid2 { grid-template-columns: 1fr; } }
+
+    .approach-card {
+      background: var(--bg-card);
+      border: 1px solid var(--border);
+      border-radius: 10px;
+      padding: 1.1rem 1.25rem;
+    }
+    .approach-card .ac-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+      margin-bottom: 0.5rem;
+    }
+    .approach-card .ac-title { font-weight: 600; font-size: 14px; }
+    .approach-card .ac-body { font-size: 13px; color: var(--text-muted); line-height: 1.6; }
+
+    /* ── Footer ── */
+    footer {
+      margin-top: 4rem;
+      padding: 1.5rem 0;
+      border-top: 1px solid var(--border);
+      color: var(--text-muted);
+      font-size: 12.5px;
+      text-align: center;
+    }
+
+    @media (max-width: 900px) {
+      .layout { grid-template-columns: 1fr; }
+      nav { position: static; height: auto; border-right: none; border-bottom: 1px solid var(--border); }
+      main { padding: 2rem 1.5rem; }
+    }
+  </style>
+</head>
+<body>
+
+<div class="layout">
+
+  <!-- ── Sidebar ── -->
+  <nav>
+    <div class="nav-logo">
+      <div class="icon">🎥</div>
+      <span>VLM 監控指南</span>
+    </div>
+
+    <div class="nav-section">概覽</div>
+    <a href="#overview" class="active">方案總覽</a>
+
+    <div class="nav-section">System Prompt</div>
+    <a href="#prompt-design">設計策略</a>
+    <a href="#prompt-examples">三種範本</a>
+
+    <div class="nav-section">準確率</div>
+    <a href="#hallucination">減少幻覺</a>
+    <a href="#input">輸入優化</a>
+    <a href="#pipeline">多步驟分析</a>
+
+    <div class="nav-section">Token 預算</div>
+    <a href="#fps">FPS 計算</a>
+    <a href="#fps-table">建議對照表</a>
+
+    <div class="nav-section">總結</div>
+    <a href="#priority">優先順序</a>
+  </nav>
+
+  <!-- ── Main ── -->
+  <main>
+    <div class="page-header">
+      <h1>VLM 安全監控設計指南</h1>
+      <p>使用 Qwen-VL 等開源模型偵測安全違規影片的完整策略整理</p>
+      <div style="margin-top:0.75rem;">
+        <span class="badge badge-blue">Qwen2-VL</span>
+        <span class="badge badge-purple">Prompt Engineering</span>
+        <span class="badge badge-green">Token Optimization</span>
+      </div>
+    </div>
+
+    <!-- ── 1. Overview ── -->
+    <section id="overview">
+      <h2><span class="h2-num">1</span> 方案總覽</h2>
+      <p>使用者輸入「影片中是否有異常」等模糊問題時，以下六個層面可以提升系統效果：</p>
+
+      <div class="table-wrap">
+        <table>
+          <thead>
+            <tr>
+              <th>方案</th>
+              <th>複雜度</th>
+              <th>效果</th>
+              <th>適合時機</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><strong>System Prompt 強化</strong></td>
+              <td><span class="badge badge-green">低</span></td>
+              <td><span class="badge badge-blue">中高</span></td>
+              <td>第一步，必做</td>
+            </tr>
+            <tr>
+              <td><strong>Structured Output (JSON)</strong></td>
+              <td><span class="badge badge-green">低</span></td>
+              <td><span class="badge badge-blue">高</span></td>
+              <td>需要程式處理結果時</td>
+            </tr>
+            <tr>
+              <td><strong>Chain-of-Thought 引導</strong></td>
+              <td><span class="badge badge-green">低</span></td>
+              <td><span class="badge badge-blue">高</span></td>
+              <td>複雜場景判斷</td>
+            </tr>
+            <tr>
+              <td><strong>Few-shot 示例注入</strong></td>
+              <td><span class="badge badge-yellow">中</span></td>
+              <td><span class="badge badge-blue">高</span></td>
+              <td>有標註好的案例時</td>
+            </tr>
+            <tr>
+              <td><strong>多幀 / 關鍵幀分析</strong></td>
+              <td><span class="badge badge-yellow">中</span></td>
+              <td><span class="badge badge-blue">高</span></td>
+              <td>長影片</td>
+            </tr>
+            <tr>
+              <td><strong>多步驟 Agent Pipeline</strong></td>
+              <td><span class="badge badge-red">高</span></td>
+              <td><span class="badge badge-purple">最高</span></td>
+              <td>準確率要求高</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <div class="note note-blue">
+        <span class="icon">💡</span>
+        <span>System Prompt + 幀採樣調整 是成本最低、效果最顯著的起點，建議優先實作這兩項再評估是否需要更複雜的架構。</span>
+      </div>
+    </section>
+
+    <!-- ── 2. Prompt Design ── -->
+    <section id="prompt-design">
+      <h2><span class="h2-num">2</span> System Prompt 設計策略</h2>
+
+      <div class="grid2">
+        <div class="approach-card">
+          <div class="ac-header">
+            <div class="ac-title">🎭 角色設定</div>
+            <span class="badge badge-blue">必要</span>
+          </div>
+          <div class="ac-body">告訴模型它是安全專家，不是通用助手。角色設定會影響模型的注意力分配。</div>
+        </div>
+        <div class="approach-card">
+          <div class="ac-header">
+            <div class="ac-title">📋 違規清單</div>
+            <span class="badge badge-blue">必要</span>
+          </div>
+          <div class="ac-body">明確列出要偵測的行為類型（尾隨、未刷卡進入等），避免模型自行定義「異常」。</div>
+        </div>
+        <div class="approach-card">
+          <div class="ac-header">
+            <div class="ac-title">🔍 思考步驟</div>
+            <span class="badge badge-yellow">建議</span>
+          </div>
+          <div class="ac-body">強制模型先描述場景、再判斷，減少跳步驟推斷造成的幻覺。</div>
+        </div>
+        <div class="approach-card">
+          <div class="ac-header">
+            <div class="ac-title">📊 輸出格式</div>
+            <span class="badge badge-yellow">建議</span>
+          </div>
+          <div class="ac-body">指定結構化輸出格式（Markdown / JSON），確保每次回應包含必要欄位。</div>
+        </div>
+        <div class="approach-card">
+          <div class="ac-header">
+            <div class="ac-title">🎯 置信度要求</div>
+            <span class="badge badge-yellow">建議</span>
+          </div>
+          <div class="ac-body">要求模型表達不確定性（high/medium/low），減少假陽性誤報。</div>
+        </div>
+        <div class="approach-card">
+          <div class="ac-header">
+            <div class="ac-title">⚖️ 平衡約束</div>
+            <span class="badge badge-red">重要</span>
+          </div>
+          <div class="ac-body">加入「大多數影片是正常的，正確回報無違規也是好答案」，防止確認偏誤。</div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ── 3. Prompt Examples ── -->
+    <section id="prompt-examples">
+      <h2><span class="h2-num">3</span> System Prompt 範本</h2>
+
+      <div class="tabs">
+        <div class="tab-btns">
+          <button class="tab-btn active" onclick="switchTab(event,'t1')">範本一：通用監控</button>
+          <button class="tab-btn" onclick="switchTab(event,'t2')">範本二：JSON 輸出</button>
+          <button class="tab-btn" onclick="switchTab(event,'t3')">範本三：Chain-of-Thought</button>
+        </div>
+
+        <div id="t1" class="tab-panel active">
+          <div style="margin:0.5rem 0 0.3rem; font-size:13px; color:var(--text-muted);">
+            推薦入門用。結構清晰，適合直接給使用者看的場景。
+          </div>
+          <div class="prompt-block">你是一位專業的安全監控分析師，負責分析監控影像中的安全違規事件。
+
+你的任務：
+即使使用者的問題很簡短，也要主動、全面地分析以下違規行為：
+- 未授權穿越禁制區（未刷卡、翻越欄杆、從未授權出口進入）
+- 尾隨入侵（tailgating）：一人刷卡後另一人緊跟進入
+- 借用他人門禁卡（piggybacking）：持卡人為他人刷卡開門
+- 人員在非工作時段出現於限制區域
+- 其他異常行為（打架、遺留物品、長時間徘徊）
+
+分析步驟（請依序思考）：
+1. 描述場景：環境類型、人數、時間線索
+2. 追蹤人員動線：每個人如何移動、是否接近門禁或限制區
+3. 辨識門禁設備與標誌：刷卡機、閘門、禁止進入標誌
+4. 判斷是否有違規行為，並說明視覺依據
+5. 給出最終結論
+
+輸出格式：
+**場景描述**：[簡短描述]
+**違規判斷**：有 / 無 / 可疑
+**違規類型**：[若有，列出類型]
+**視覺依據**：[具體描述你看到的畫面]
+**置信度**：高 / 中 / 低
+**建議行動**：[通報 / 持續監控 / 無需動作]
+
+重要原則：大多數監控影片是正常的，正常回報「無違規」是正確答案。</div>
+        </div>
+
+        <div id="t2" class="tab-panel">
+          <div style="margin:0.5rem 0 0.3rem; font-size:13px; color:var(--text-muted);">
+            適合串接後端告警系統，輸出可直接 JSON.parse()。
+          </div>
+          <div class="prompt-block">你是安全監控 AI，專門分析影像中的門禁與限制區違規行為。
+
+無論使用者如何描述問題，你都必須分析以下場景並以 JSON 格式輸出：
+
+偵測範圍：
+- access_violation：未授權進入（未刷卡、強行進入）
+- tailgating：尾隨他人通過門禁
+- card_sharing：持卡人替他人刷卡
+- loitering：可疑徘徊超過 30 秒
+- after_hours：非工作時間出現
+
+輸出格式（嚴格遵守，不要輸出其他文字）：
+{
+  "violation_detected": true 或 false,
+  "confidence": "high" 或 "medium" 或 "low",
+  "violations": [
+    {
+      "type": "violation_type",
+      "description": "具體行為描述",
+      "location": "畫面中的位置描述",
+      "persons_involved": 涉及人數
+    }
+  ],
+  "scene_summary": "場景概述",
+  "recommended_action": "建議行動"
+}
+
+若無違規，violations 為空陣列。
+若影像不清楚，confidence 設為 "low" 並在 scene_summary 說明原因。</div>
+        </div>
+
+        <div id="t3" class="tab-panel">
+          <div style="margin:0.5rem 0 0.3rem; font-size:13px; color:var(--text-muted);">
+            準確率最高，強制逐步推理，適合複雜場景或高誤報敏感環境。
+          </div>
+          <div class="prompt-block">你是資深安全稽核員，擅長從監控影片中發現微小的安全違規跡象。
+
+使用者可能只問「有沒有問題」等模糊問題，但你必須執行完整的安全稽核分析。
+
+【分析框架】
+
+第一步 — 場景建立：
+- 這是什麼地點？（辦公室入口、機房、倉庫、停車場？）
+- 畫面中有幾個人？各自的位置？
+- 有無門禁設備（刷卡機、指紋機、閘門）？
+
+第二步 — 行為追蹤：
+- 每個人的行動路線為何？
+- 是否有人靠近門禁或限制區？
+- 門是否被打開？誰打開的？打開後誰進去了？
+
+第三步 — 違規比對：
+針對以下每一項明確回答「有 / 無 / 不確定」：
+□ 未刷卡 / 認證直接進入
+□ 刷卡後有額外人員跟進（tailgating）
+□ 持卡人替他人刷卡（card sharing）
+□ 進入有禁止標誌的區域
+□ 其他可疑行為
+
+第四步 — 結論：
+- 最終判斷：有違規 / 無違規 / 需進一步確認
+- 信心程度：高（清楚可見）/ 中（部分遮擋）/ 低（影像不清）
+- 若無法確定，說明原因（角度、光線、遮擋等）
+
+禁止在沒有明確視覺依據的情況下判定違規。</div>
+        </div>
+      </div>
+
+      <h3>在 Qwen2-VL 中接入</h3>
+      <div class="code-header">
+        <span>Python · Qwen2-VL</span>
+      </div>
+      <pre><code><span class="code-comment"># 將 SYSTEM_PROMPT 替換為上方任一範本</span>
+messages = [
+    {
+        <span class="code-string">"role"</span>: <span class="code-string">"system"</span>,
+        <span class="code-string">"content"</span>: SYSTEM_PROMPT
+    },
+    {
+        <span class="code-string">"role"</span>: <span class="code-string">"user"</span>,
+        <span class="code-string">"content"</span>: [
+            {
+                <span class="code-string">"type"</span>: <span class="code-string">"video"</span>,
+                <span class="code-string">"video"</span>: <span class="code-string">"file:///path/to/video.mp4"</span>,
+                <span class="code-string">"max_pixels"</span>: <span class="code-number">256</span> * <span class="code-number">256</span>,   <span class="code-comment"># 節省 token</span>
+                <span class="code-string">"fps"</span>: <span class="code-number">1.0</span>
+            },
+            {
+                <span class="code-string">"type"</span>: <span class="code-string">"text"</span>,
+                <span class="code-string">"text"</span>: user_input   <span class="code-comment"># 使用者輸入的任意問題</span>
+            }
+        ]
+    }
+]</code></pre>
+    </section>
+
+    <!-- ── 4. Hallucination ── -->
+    <section id="hallucination">
+      <h2><span class="h2-num">4</span> 減少幻覺：讓輸出貼近真實</h2>
+
+      <div class="note note-red">
+        <span class="icon">⚠️</span>
+        <span><strong>核心問題：</strong> VLM 容易「補腦」——模型會根據 system prompt 的違規清單，在畫面不清楚的情況下仍傾向給出「有違規」的答案，造成大量假陽性。</span>
+      </div>
+
+      <h3>技術 1：強制「先描述、再判斷」</h3>
+      <p>要求模型在下結論前必須先引用視覺證據：</p>
+      <div class="prompt-block">【規則】在給出任何違規判斷之前，你必須先完成：
+1. 逐字描述你「實際看到」的畫面內容
+2. 指出判斷依據的具體視覺證據（位置、動作、物件）
+3. 才能得出結論
+
+禁止推測你「沒有清楚看到」的事情。
+若畫面不清楚、被遮擋、或無法確認，必須說明「無法判斷原因：XXX」。</div>
+
+      <h3>技術 2：加入反幻覺約束語</h3>
+      <div class="prompt-block">重要限制：
+- 只描述畫面中實際可見的行為，不要根據直覺推測
+- 若畫面解析度不足以判斷，請如實說明，不要猜測
+- 不要因為「看起來可疑」就判定違規，需要明確的視覺證據
+- 若整段影片無違規，請直接回答「無違規」並描述你看到的正常行為</div>
+
+      <h3>技術 3：自我驗證步驟</h3>
+      <div class="prompt-block">在輸出結論後，再次確認：
+- 你描述的行為，是否在影片中有清楚的視覺支撐？
+- 如果不確定，請降低 confidence 或改為「可疑，建議人工確認」</div>
+
+      <h3>技術 4：跨幀一致性驗證（後端）</h3>
+      <div class="code-header">
+        <span>Python · 一致性檢查</span>
+      </div>
+      <pre><code><span class="code-comment"># 同一段影片取 3 組不同幀分析，結論不一致則標記人工複查</span>
+<span class="code-keyword">def</span> <span class="code-func">cross_frame_verify</span>(video_path, analyzer):
+    results = [
+        analyzer(sample_frames(video_path, offset=<span class="code-number">0</span>)),
+        analyzer(sample_frames(video_path, offset=<span class="code-number">0.5</span>)),
+        analyzer(sample_frames(video_path, offset=<span class="code-number">1.0</span>)),
+    ]
+
+    violations = [r[<span class="code-string">"violation_detected"</span>] <span class="code-keyword">for</span> r <span class="code-keyword">in</span> results]
+
+    <span class="code-keyword">if</span> <span class="code-func">len</span>(<span class="code-func">set</span>(violations)) > <span class="code-number">1</span>:
+        <span class="code-keyword">return</span> {<span class="code-string">"status"</span>: <span class="code-string">"needs_human_review"</span>, <span class="code-string">"results"</span>: results}
+
+    <span class="code-keyword">return</span> results[<span class="code-number">0</span>]</code></pre>
+    </section>
+
+    <!-- ── 5. Input ── -->
+    <section id="input">
+      <h2><span class="h2-num">5</span> 輸入優化：幀採樣策略</h2>
+
+      <p>模型看到的幀品質直接決定輸出品質，固定 fps 的最大問題是可能剛好錯過 2-3 秒的關鍵事件。</p>
+
+      <div class="table-wrap">
+        <table>
+          <thead>
+            <tr><th>問題</th><th>症狀</th><th>解法</th></tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>採樣率太低</td>
+              <td>錯過尾隨事件（只發生 2 秒）</td>
+              <td>提高 fps 至 2-4fps，或用動作偵測採樣</td>
+            </tr>
+            <tr>
+              <td>採樣率太高</td>
+              <td>超過 token 上限，模型只看前幾幀</td>
+              <td>場景變化偵測採樣，或切片分析</td>
+            </tr>
+            <tr>
+              <td>關鍵幀模糊</td>
+              <td>運動模糊、低光，模型無法判斷</td>
+              <td>預處理銳化或跳過模糊幀</td>
+            </tr>
+            <tr>
+              <td>時間跨度太長</td>
+              <td>模型注意力分散到整段影片</td>
+              <td>切成 30 秒片段分批分析再彙整</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <h3>動作區間採樣（推薦）</h3>
+      <div class="code-header">
+        <span>Python · OpenCV 動作偵測採樣</span>
+      </div>
+      <pre><code><span class="code-keyword">import</span> cv2
+
+<span class="code-keyword">def</span> <span class="code-func">extract_motion_frames</span>(video_path, threshold=<span class="code-number">1000</span>):
+    <span class="code-string">"""只保留有人移動的幀，節省 token 又不漏事件"""</span>
+    cap = cv2.<span class="code-func">VideoCapture</span>(video_path)
+    prev_frame = <span class="code-keyword">None</span>
+    key_frames = []
+
+    <span class="code-keyword">while</span> cap.<span class="code-func">isOpened</span>():
+        ret, frame = cap.<span class="code-func">read</span>()
+        <span class="code-keyword">if not</span> ret:
+            <span class="code-keyword">break</span>
+
+        gray = cv2.<span class="code-func">cvtColor</span>(frame, cv2.COLOR_BGR2GRAY)
+        <span class="code-keyword">if</span> prev_frame <span class="code-keyword">is not None</span>:
+            diff = cv2.<span class="code-func">absdiff</span>(prev_frame, gray)
+            motion = diff.<span class="code-func">sum</span>()
+            <span class="code-keyword">if</span> motion > threshold:   <span class="code-comment"># 有移動才保留</span>
+                key_frames.<span class="code-func">append</span>(frame)
+
+        prev_frame = gray
+
+    cap.<span class="code-func">release</span>()
+    <span class="code-keyword">return</span> key_frames</code></pre>
+    </section>
+
+    <!-- ── 6. Pipeline ── -->
+    <section id="pipeline">
+      <h2><span class="h2-num">6</span> 多步驟分析 Pipeline</h2>
+
+      <p>單次問「有沒有違規」準確率不如拆步驟，每個 prompt 聚焦一件事：</p>
+
+      <div class="card">
+        <div class="card-title">🔵 步驟 1 — 人員偵測</div>
+        <div class="prompt-block" style="margin:0.5rem 0 0;">"影片中有幾個人？描述每個人的位置與移動方向。"</div>
+      </div>
+
+      <div class="card">
+        <div class="card-title">🟡 步驟 2 — 門禁事件偵測（條件觸發）</div>
+        <div class="prompt-block" style="margin:0.5rem 0 0;">"有人接近入口區域。描述他們如何通過：
+(a) 刷卡後進入  (b) 跟隨他人  (c) 未刷卡直接進入  (d) 無法判斷"</div>
+      </div>
+
+      <div class="card">
+        <div class="card-title">🔴 步驟 3 — 違規判斷（基於前兩步輸出）</div>
+        <div class="prompt-block" style="margin:0.5rem 0 0;">"根據以上觀察：
+[注入步驟 1+2 的輸出]
+是否符合違規定義？給出最終判斷與置信度。"</div>
+      </div>
+
+      <div class="note note-green">
+        <span class="icon">✅</span>
+        <span>這樣每步驟的 prompt 更聚焦，模型不需要同時做偵測 + 推理 + 格式化，準確率明顯提升，代價是 API 呼叫次數增加 2-3 倍。</span>
+      </div>
+    </section>
+
+    <!-- ── 7. FPS ── -->
+    <section id="fps">
+      <h2><span class="h2-num">7</span> FPS 與 Token 計算</h2>
+
+      <h3>每幀消耗多少 Token？</h3>
+
+      <div class="calc-box">
+        <div style="color:var(--text-muted); font-size:13px; margin-bottom:0.5rem;">Qwen2-VL 計算公式</div>
+        <div class="calc-formula">每幀 token 數 = (width × height) / (14 × 14)</div>
+        <div style="margin-top:1rem; font-size:13.5px;">
+          <div style="display:flex; gap:1rem; flex-wrap:wrap; margin-top:0.5rem;">
+            <div class="card" style="flex:1; min-width:160px; margin:0;">
+              <div style="color:var(--text-muted); font-size:12px; margin-bottom:0.3rem;">max_pixels = 360×420</div>
+              <div style="font-size:1.3rem; font-weight:700; color:var(--accent-red);">~770 tok/幀</div>
+              <div style="font-size:12px; color:var(--text-muted);">高畫質，快速消耗 budget</div>
+            </div>
+            <div class="card" style="flex:1; min-width:160px; margin:0;">
+              <div style="color:var(--text-muted); font-size:12px; margin-bottom:0.3rem;">max_pixels = 256×256</div>
+              <div style="font-size:1.3rem; font-weight:700; color:var(--accent-yellow);">~330 tok/幀</div>
+              <div style="font-size:12px; color:var(--text-muted);">推薦，兼顧畫質與效率</div>
+            </div>
+            <div class="card" style="flex:1; min-width:160px; margin:0;">
+              <div style="color:var(--text-muted); font-size:12px; margin-bottom:0.3rem;">max_pixels = 224×224</div>
+              <div style="font-size:1.3rem; font-weight:700; color:var(--accent-green);">~256 tok/幀</div>
+              <div style="font-size:12px; color:var(--text-muted);">最省 token，安監攝影機可用</div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <h3>模型安全幀數上限</h3>
+
+      <div class="table-wrap">
+        <table>
+          <thead>
+            <tr>
+              <th>模型</th>
+              <th>Context</th>
+              <th>可用幀數（770 tok/幀）</th>
+              <th>可用幀數（256 tok/幀）</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><strong>Qwen2-VL-7B</strong></td>
+              <td>32K</td>
+              <td><span style="color:var(--accent-red);">~36 幀</span></td>
+              <td><span style="color:var(--accent-green);">~109 幀</span></td>
+            </tr>
+            <tr>
+              <td><strong>Qwen2-VL-72B</strong></td>
+              <td>128K</td>
+              <td><span style="color:var(--accent-yellow);">~161 幀</span></td>
+              <td><span style="color:var(--accent-green);">~484 幀</span></td>
+            </tr>
+            <tr>
+              <td><strong>Qwen2.5-VL-7B</strong></td>
+              <td>32K</td>
+              <td><span style="color:var(--accent-red);">~36 幀</span></td>
+              <td><span style="color:var(--accent-green);">~109 幀</span></td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <h3>動態 FPS 計算</h3>
+      <div class="code-header">
+        <span>Python · 自動計算安全 FPS</span>
+      </div>
+      <pre><code><span class="code-keyword">def</span> <span class="code-func">calculate_fps</span>(video_duration_sec, model=<span class="code-string">"7B"</span>):
+    max_frames = <span class="code-number">36</span> <span class="code-keyword">if</span> model == <span class="code-string">"7B"</span> <span class="code-keyword">else</span> <span class="code-number">161</span>
+    safe_frames = <span class="code-func">int</span>(max_frames * <span class="code-number">0.9</span>)   <span class="code-comment"># 保留 10% buffer</span>
+
+    fps = safe_frames / video_duration_sec
+
+    <span class="code-comment"># 安全監控最低不能低於 0.5fps（否則漏掉 2 秒內的尾隨事件）</span>
+    fps = <span class="code-func">max</span>(fps, <span class="code-number">0.5</span>)
+
+    <span class="code-keyword">return</span> <span class="code-func">round</span>(fps, <span class="code-number">2</span>)
+
+<span class="code-keyword">def</span> <span class="code-func">should_split</span>(duration_sec):
+    <span class="code-keyword">return</span> duration_sec > <span class="code-number">60</span>   <span class="code-comment"># 超過 60 秒建議切片</span></code></pre>
+    </section>
+
+    <!-- ── 8. FPS Table ── -->
+    <section id="fps-table">
+      <h2><span class="h2-num">8</span> FPS 建議對照表</h2>
+
+      <p>以 Qwen2-VL-7B（32K context）、上限 36 幀計算：</p>
+
+      <div class="table-wrap">
+        <table>
+          <thead>
+            <tr>
+              <th>影片長度</th>
+              <th>建議 FPS</th>
+              <th>實際幀數</th>
+              <th>備注</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>10 秒</td>
+              <td><strong>2 fps</strong></td>
+              <td>20 幀</td>
+              <td><span class="badge badge-green">充裕</span></td>
+            </tr>
+            <tr>
+              <td>30 秒</td>
+              <td><strong>1 fps</strong></td>
+              <td>30 幀</td>
+              <td><span class="badge badge-green">理想</span></td>
+            </tr>
+            <tr>
+              <td>60 秒</td>
+              <td><strong>0.5 fps</strong></td>
+              <td>30 幀</td>
+              <td><span class="badge badge-yellow">可接受</span></td>
+            </tr>
+            <tr>
+              <td>5 分鐘</td>
+              <td><strong>切片</strong></td>
+              <td>—</td>
+              <td><span class="badge badge-red">直接分析太稀疏，建議切成 30 秒片段</span></td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <div class="note note-yellow">
+        <span class="icon">⚡</span>
+        <div>
+          <strong>最佳組合（7B 模型）：</strong><br/>
+          <code>max_pixels = 256×256</code>（安監攝影機解析度本來就不高）
+          + <code>fps = 1</code>
+          + 影片切成 <strong>30 秒片段</strong>
+        </div>
+      </div>
+    </section>
+
+    <!-- ── 9. Priority ── -->
+    <section id="priority">
+      <h2><span class="h2-num">9</span> 優先實作順序</h2>
+
+      <ul class="priority-list">
+        <li>
+          <div class="p-num high">1</div>
+          <div class="p-content">
+            <strong>加入 System Prompt（任選一範本）</strong>
+            <span>成本最低，效果最顯著。角色設定 + 違規清單 + 先描述再判斷規則三件套。</span>
+          </div>
+        </li>
+        <li>
+          <div class="p-num high">2</div>
+          <div class="p-content">
+            <strong>調整幀採樣：換用動作觸發採樣或降低 max_pixels</strong>
+            <span>幀品質直接影響模型判斷，固定 fps 容易錯過關鍵 2 秒事件。</span>
+          </div>
+        </li>
+        <li>
+          <div class="p-num medium">3</div>
+          <div class="p-content">
+            <strong>加入反幻覺約束語 + 平衡條款</strong>
+            <span>防止 system prompt 的違規清單造成確認偏誤，大幅降低假陽性。</span>
+          </div>
+        </li>
+        <li>
+          <div class="p-num medium">4</div>
+          <div class="p-content">
+            <strong>超過 60 秒的影片改為切片分析</strong>
+            <span>需要一點工程，但效果明顯，避免模型因 token 超限只看前幾幀。</span>
+          </div>
+        </li>
+        <li>
+          <div class="p-num low">5</div>
+          <div class="p-content">
+            <strong>加入跨幀一致性驗證</strong>
+            <span>對同一段影片多次採樣，結論不一致時標記人工複查。</span>
+          </div>
+        </li>
+        <li>
+          <div class="p-num low">6</div>
+          <div class="p-content">
+            <strong>改為多步驟 Pipeline + Few-shot 反例</strong>
+            <span>收集 false positive 案例加入 system prompt，長期效果最好但需要標注資料。</span>
+          </div>
+        </li>
+      </ul>
+    </section>
+
+    <footer>
+      整理自 VLM 安全監控研究 · 2026-06-26 · 適用 Qwen2-VL / Qwen2.5-VL 等開源模型
+    </footer>
+  </main>
+</div>
+
+<script>
+  function switchTab(e, id) {
+    const tabs = e.target.closest('.tabs');
+    tabs.querySelectorAll('.tab-btn').forEach(b => b.classList.remove('active'));
+    tabs.querySelectorAll('.tab-panel').forEach(p => p.classList.remove('active'));
+    e.target.classList.add('active');
+    document.getElementById(id).classList.add('active');
+  }
+
+  // Sidebar active highlight on scroll
+  const sections = document.querySelectorAll('section[id]');
+  const navLinks = document.querySelectorAll('nav a');
+
+  const observer = new IntersectionObserver(entries => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        const id = entry.target.id;
+        navLinks.forEach(a => {
+          a.classList.toggle('active', a.getAttribute('href') === '#' + id);
+        });
+      }
+    });
+  }, { rootMargin: '-30% 0px -60% 0px' });
+
+  sections.forEach(s => observer.observe(s));
+</script>
+</body>
+</html>
