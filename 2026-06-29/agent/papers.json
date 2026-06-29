@@ -1,0 +1,608 @@
+{
+  "domain": "Agent",
+  "date": "2026-06-29",
+  "count": 21,
+  "papers": [
+    {
+      "id": "2606.28320",
+      "title": "WARP-RM: A Warp-Augmented Relative Progress Reward Model for Data Curation",
+      "abstract": "Scaling imitation learning requires large datasets, yet human teleoperation inevitably produces mixed-quality demonstrations containing hesitations and recoveries. Prior frame-level progress reward models supervise on absolute temporal progress proxies that suffer from label noise, or require costly human annotations to define subtask boundaries. We present WARP (Warp-Augmented Relative Progress), a novel fully self-supervised algorithm for learning dense, signed relative progress magnitudes directly from successful demonstrations. WARP generates per-frame progress targets via time-warp augmentations of demonstrations (variable playback speeds and reversals) and we train WARP-RM to predict the normalized elapsed time between input frames. Aggregating these predictions across overlapping windows yields a dense frame-level progress signal. We then introduce WARP-BC, which leverages these scalar reward estimates to upweight high-advantage action chunks during behavior cloning, where chunk-level advantage is obtained by aggregating per-frame rewards. We evaluate our approach on a physical bimanual robot system performing a long-horizon deformable object manipulation task: folding T-shirts from a random crumpled start. To evaluate policy robustness against suboptimal data, we construct training datasets of varying quality using episode length as a proxy for teleoperation sub-optimality. As the dataset is widened to admit more inefficiencies, WARP-BC maintains a 19/20 success rate compared to vanilla BC's collapse to 2/20, improving throughput by up to 18x.",
+      "authors": [
+        "Justin Yu",
+        "Andrew Goldberg",
+        "Kavish Kondap",
+        "Karim El-Refai",
+        "Ethan Ransing",
+        "Qianzhong Chen",
+        "Mac Schwager",
+        "Fred Shentu",
+        "Philipp Wu",
+        "Ken Goldberg"
+      ],
+      "published": "2026-06-26T17:58:06Z",
+      "updated": "2026-06-26T17:58:06Z",
+      "url": "https://arxiv.org/abs/2606.28320",
+      "pdf_url": "https://arxiv.org/pdf/2606.28320.pdf",
+      "primary_category": "cs.RO",
+      "categories": [
+        "cs.RO"
+      ],
+      "tags": [
+        "cs.RO"
+      ],
+      "domain": "Agent",
+      "pdf_downloaded": true,
+      "pdf_size_bytes": 19058218,
+      "pdf_path": "2026-06-29/agent/2606.28320.pdf"
+    },
+    {
+      "id": "2606.28300",
+      "title": "CacheMPC: Certified Cached Model Predictive Control for Quadruped Locomotion",
+      "abstract": "Model Predictive Control (MPC) is the standard predictive layer in hierarchical quadruped controllers, but the per-cycle QP solve limits the update rate achievable on embedded processors. Because legged gaits revisit a bounded region of state space, MPC solutions admit caching and reuse. This paper proposes \\emph{Certified CacheMPC}: a Locality-Sensitive-Hashed cache of horizon contact-force trajectories, partitioned by contact mode, retrieved at query time and accepted only when an a-posteriori per-query certificate confirms primal feasibility and a Lagrangian dual-gap upper bound on cost suboptimality. A bounded-budget controller schedule combines top-$K$ certified retrieval, a deadline-bounded QP solve, and a shifted last-certified fallback. The framework is evaluated on a Unitree Go2 across $2{,}038$ usable cold-controller MuJoCo trials, including a $600$-trial $n\\!=\\!50$ campaign at three failure-boundary cells, and a first-deploy session on the on-robot NVIDIA Orin NX. The un-gated cache delivers a $25\\times$ median solve-time speedup in simulation and an $18.7\\times$ median speedup on hardware. At $n\\!=\\!50$ no statistically significant difference in closed-loop stable rate is detected between the cache variants and the no-cache baseline at any tested cell. The certificate's contribution to closed-loop safety is not resolvable at the present sample size.",
+      "authors": [
+        "Nimesh Khandelwal",
+        "Mehul Anand",
+        "Shakti S. Gupta",
+        "Mangal Kothari"
+      ],
+      "published": "2026-06-26T17:47:05Z",
+      "updated": "2026-06-26T17:47:05Z",
+      "url": "https://arxiv.org/abs/2606.28300",
+      "pdf_url": "https://arxiv.org/pdf/2606.28300.pdf",
+      "primary_category": "cs.RO",
+      "categories": [
+        "cs.RO"
+      ],
+      "tags": [
+        "cs.RO"
+      ],
+      "domain": "Agent",
+      "pdf_downloaded": true,
+      "pdf_size_bytes": 931248,
+      "pdf_path": "2026-06-29/agent/2606.28300.pdf"
+    },
+    {
+      "id": "2606.28276",
+      "title": "SimFoundry: Modular and Automated Scene Generation for Policy Learning and Evaluation",
+      "abstract": "Training and evaluating robot policies in the real world is costly and difficult to scale. We introduce SimFoundry, a modular and automated system for zero-shot real-to-sim scene construction from a video. SimFoundry generates sim-ready digital twins and supports object, scene, and task editing, enabling the automated generation of diverse digital cousins: affordance-preserving variations of reconstructed real-world scenes. Policies trained on SimFoundry data transfer zero-shot to challenging real tasks involving multi-step manipulation, articulated object interaction, and bimanual interaction, and its digital cousins (variations of the original scene, objects, and tasks) facilitate generalization to new real-world conditions. Across 7 manipulation tasks and 5 policy architectures, SimFoundry simulation evaluations strongly predict real-world performance, with mean Pearson correlation 0.911 and mean maximum ranking violation 0.018. When evaluating sim-trained policies zero-shot in the real world, policies trained with object, scene, and task cousins in simulation show average task success rate improvements of 17%, 21%, and 40%, respectively. Additional details at https://research.nvidia.com/labs/gear/simfoundry/ .",
+      "authors": [
+        "Nadun Ranawaka",
+        "Josiah Wong",
+        "Wei-Lin Pai",
+        "Wei-Teng Chu",
+        "Tianyuan Dai",
+        "Masoud Moghani",
+        "Hang Yin",
+        "Yunfan Jiang",
+        "Wesley Durbano",
+        "Brandon Huynh",
+        "Yu Fang",
+        "Linxi Fan",
+        "Danfei Xu",
+        "Ruohan Zhang",
+        "Li Fei-Fei",
+        "Bowen Wen",
+        "Ajay Mandlekar",
+        "Yuke Zhu"
+      ],
+      "published": "2026-06-26T17:18:43Z",
+      "updated": "2026-06-26T17:18:43Z",
+      "url": "https://arxiv.org/abs/2606.28276",
+      "pdf_url": "https://arxiv.org/pdf/2606.28276.pdf",
+      "primary_category": "cs.RO",
+      "categories": [
+        "cs.RO"
+      ],
+      "tags": [
+        "cs.RO"
+      ],
+      "domain": "Agent",
+      "pdf_downloaded": false,
+      "pdf_size_bytes": null,
+      "pdf_path": null
+    },
+    {
+      "id": "2606.28237",
+      "title": "Unleashing Infinite Motion: Scaling Expressive Quadrupedal Motion via Generative Video Priors",
+      "abstract": "Quadruped robots have achieved remarkable locomotion, yet their behavioral repertoire remains confined to a few gaits--far from the expressive, companion-like presence long envisioned for them. Attempts to import the humanoid recipe of large-scale motion data have inherited one tacit assumption: that robot motion must first pass through an animal body, making data collection dependent on cooperative animals, reconstruction fragile across species, and retargeting ill-posed across incompatible morphologies. We propose Uni-Mo, a fully automated pipeline that removes the animal from the loop by reframing data scarcity as a generation problem: an LLM proposes motion prompts, a video diffusion model synthesizes the corresponding robot behaviors, and the generated videos are lifted into 3D reference trajectories used to train tracking policies deployed on a real Unitree Go2. To make naively-drifting generations reliably extractable, we introduce an Identity Consistency Loss that enforces appearance coherence across frames. We release Quad-Imaginarium at https://github.com/GaoLii/Quad-Imaginarium.git, the resulting open-source dataset of 7,488 language-annotated quadruped motions (18.5 hours) spanning acrobatic and performative behaviors. We validate 392 randomly sampled motions on a real Unitree Go2 with a 96.7% deployment success rate, complemented by a 97.6% success rate across the full dataset in simulation.",
+      "authors": [
+        "Youzhi Liu",
+        "Li Gao",
+        "Yifei Qian",
+        "Liu Liu",
+        "Yang Cai",
+        "Ziqiao Li"
+      ],
+      "published": "2026-06-26T16:23:40Z",
+      "updated": "2026-06-26T16:23:40Z",
+      "url": "https://arxiv.org/abs/2606.28237",
+      "pdf_url": "https://arxiv.org/pdf/2606.28237.pdf",
+      "primary_category": "cs.RO",
+      "categories": [
+        "cs.RO"
+      ],
+      "tags": [
+        "cs.RO"
+      ],
+      "domain": "Agent",
+      "pdf_downloaded": true,
+      "pdf_size_bytes": 11848776,
+      "pdf_path": "2026-06-29/agent/2606.28237.pdf"
+    },
+    {
+      "id": "2606.28196",
+      "title": "Learning Stable In-Grasp Manipulation in a Non-Dropping Action Space",
+      "abstract": "Traditionally, dexterous manipulation controllers are designed using analytic models constrained by strong assumptions about the hand and the objects being manipulated. Reinforcement learning (RL) has become another common approach in which skills are explored openly in an end-to-end manner but is inefficient because of unnoticeable instability and conflicts in learning objectives. This paper attempts to efficiently explore stable and accurate manipulation skills by decomposing dexterous skills into multiple simpler/analyzable components. Each skill component is subsequently learned with constraints and guidance from classical physics and control theory. Our work shows that for stable grasp, in-grasp reposition/reorientation with different objects, sensor/motor noise, latency, and frictional conditions, skill learning becomes efficient and stable with prior knowledge from theory.",
+      "authors": [
+        "Ha Thang Long Doan",
+        "Hikaru Arita",
+        "Kazuto Nakashima",
+        "Kenji Tahara"
+      ],
+      "published": "2026-06-26T15:43:55Z",
+      "updated": "2026-06-26T15:43:55Z",
+      "url": "https://arxiv.org/abs/2606.28196",
+      "pdf_url": "https://arxiv.org/pdf/2606.28196.pdf",
+      "primary_category": "cs.RO",
+      "categories": [
+        "cs.RO"
+      ],
+      "tags": [
+        "cs.RO"
+      ],
+      "domain": "Agent",
+      "pdf_downloaded": true,
+      "pdf_size_bytes": 21740005,
+      "pdf_path": "2026-06-29/agent/2606.28196.pdf"
+    },
+    {
+      "id": "2606.28192",
+      "title": "PA-BiCoop: A Primary-Auxiliary Cooperative Framework for General Bimanual Manipulation",
+      "abstract": "Bimanual manipulation is essential for advanced robotic systems because it offers higher efficiency and flexibility compared to single-arm configurations. However, existing approaches either lack inter-arm interaction or ignore the need for a dynamic division of labor, treating the arms as functionally equivalent. To address these limitations, this paper draws inspiration from human bimanual manipulation where one arm handles core operations and the other provides auxiliary support, and proposes PA-BiCoop, a new single-model bimanual cooperation framework with dynamic primary-auxiliary arm differentiation. PA-BiCoop categorizes robotic arms into primary and auxiliary arms with adaptively adjustable roles across task stages, employs two specialized decoders that share a global feature encoder: the primary decoder generates the primary arm's base-coordinate pose and core-task affordance heatmaps, and the auxiliary decoder outputs the auxiliary arm's relative pose in the primary arm's coordinate system. Moreover, we design a dynamic role assignment module to automatically map roles to left/right arms without manual pre-definition. This design facilitates inter-arm knowledge sharing and coordinated manipulation. Extensive experiments demonstrate that our PA-BiCoop achieves superior performance: it outperforms state-of-the-art baselines by 48% on average in RLBench2 simulation tasks and by over 50% on average in real world tasks, thereby verifying its effectiveness and advancement in bimanual manipulation.",
+      "authors": [
+        "Bai Qicheng",
+        "Wang Ziru",
+        "Ma Teli",
+        "Dai Guang",
+        "Wang Jingdong",
+        "Wang Mengmeng"
+      ],
+      "published": "2026-06-26T15:38:00Z",
+      "updated": "2026-06-26T15:38:00Z",
+      "url": "https://arxiv.org/abs/2606.28192",
+      "pdf_url": "https://arxiv.org/pdf/2606.28192.pdf",
+      "primary_category": "cs.RO",
+      "categories": [
+        "cs.RO"
+      ],
+      "tags": [
+        "cs.RO"
+      ],
+      "domain": "Agent",
+      "pdf_downloaded": true,
+      "pdf_size_bytes": 3067096,
+      "pdf_path": "2026-06-29/agent/2606.28192.pdf"
+    },
+    {
+      "id": "2606.28187",
+      "title": "GBC: Gradient-Based Connections for Optimizing Multi-Agent Systems",
+      "abstract": "Multi-agent systems (MAS) built on large language models (LLMs) provide a promising framework for solving complex tasks through role specialization and structured interaction. However, their performance is often limited by miscoordination and, more fundamentally, the lack of fine-grained credit assignment across agents. Existing approaches typically rely on coarse-grained feedback, making it difficult to identify which agents or interaction steps are responsible for errors. We propose Gradient-Based Connections (GBC), an approach for fine-grained attribution and optimization of multi-agent systems. GBC models a MAS as a computational graph and introduces gradient-based connection weights to quantify the influence of each agent's output on downstream agents at the token level. By constructing an attribution graph and propagating task-specific loss signals backward, our method enables precise identification of error sources and targeted prompt optimization. We further develop AgentChord, an efficient implementation that leverages prefix-based gradient computation. Experiments on MultiWOZ and \u03c4-bench show that GBC improves multi-agent performance and outperforms strong single-agent and multi-agent baselines, and higher attribution quality is associated with greater optimization effectiveness. Code is available at: https://github.com/yxc-cyber/AgentChord.",
+      "authors": [
+        "Xiaocheng Yang",
+        "Abdulrahman Alrabah",
+        "Dilek Hakkani-T\u00fcr",
+        "Gokhan Tur"
+      ],
+      "published": "2026-06-26T15:32:33Z",
+      "updated": "2026-06-26T15:32:33Z",
+      "url": "https://arxiv.org/abs/2606.28187",
+      "pdf_url": "https://arxiv.org/pdf/2606.28187.pdf",
+      "primary_category": "cs.MA",
+      "categories": [
+        "cs.MA"
+      ],
+      "tags": [
+        "cs.MA"
+      ],
+      "domain": "Agent",
+      "pdf_downloaded": true,
+      "pdf_size_bytes": 3578785,
+      "pdf_path": "2026-06-29/agent/2606.28187.pdf"
+    },
+    {
+      "id": "2606.28152",
+      "title": "Regularized Reward-Punishment Reinforcement Learning",
+      "abstract": "We propose KL-Coupled Policy Regularization (KCPR), a policy coordination framework for Reward-Punishment Reinforcement Learning (RPRL). Based on KCPR, we derive KL-Coupled Soft Optimality (KCSO) and develop its deep realization, klDMP. Unlike existing RPRL approaches that optimize reward-seeking and punishment-related policies largely independently, KCPR enables direct interactions between companion policies by treating each as a dynamically learned prior for the other. KCSO yields coupled soft-optimal policies and KL-regularized Bellman operators, allowing reward and punishment information to jointly influence value propagation. To improve learning stability, we introduce a companion-prior softening mechanism and evaluate separate replay-buffer designs for balancing reward- and punishment-related experience. Experiments in grid-world and Gazebo robotic navigation tasks demonstrate that klDMP improves safety and learning stability while maintaining competitive task performance compared with DQN, SQL and softDMP. These results suggest that policy-level coordination provides an effective mechanism for integrating multiple behavioral objectives and may serve as a useful design principle for reinforcement learning systems with interacting motivational processes.",
+      "authors": [
+        "Jiexin Wang",
+        "Eiji Uchibe"
+      ],
+      "published": "2026-06-26T14:50:16Z",
+      "updated": "2026-06-26T14:50:16Z",
+      "url": "https://arxiv.org/abs/2606.28152",
+      "pdf_url": "https://arxiv.org/pdf/2606.28152.pdf",
+      "primary_category": "cs.LG",
+      "categories": [
+        "cs.LG",
+        "cs.RO"
+      ],
+      "tags": [
+        "cs.LG",
+        "cs.RO"
+      ],
+      "domain": "Agent",
+      "pdf_downloaded": true,
+      "pdf_size_bytes": 6876204,
+      "pdf_path": "2026-06-29/agent/2606.28152.pdf"
+    },
+    {
+      "id": "2606.28126",
+      "title": "AI-Driven Synthesis for High-Tech System Design: Automating Innovation",
+      "abstract": "This article addresses the combinatorial complexity inherent in modern high-tech system design by presenting automation-in-design (AiD) as a transformative paradigm. We propose computational design synthesis (CDS), a framework utilising deep learning and generative AI to automate the creation of novel systems. Two case studies (e-drive system design and spatial dimensioning problem) serve as proof-points for this approach. The AI-driven methods used in the case studies represent a fundamental shift in engineering, advancing from simulation-based optimisation towards autonomous design with minimal human supervision.",
+      "authors": [
+        "Luuk Oerlemans",
+        "Steven Westerhof",
+        "Theo Hofman"
+      ],
+      "published": "2026-06-26T14:26:48Z",
+      "updated": "2026-06-26T14:26:48Z",
+      "url": "https://arxiv.org/abs/2606.28126",
+      "pdf_url": "https://arxiv.org/pdf/2606.28126.pdf",
+      "primary_category": "cs.AI",
+      "categories": [
+        "cs.AI",
+        "cs.AR",
+        "cs.CE",
+        "cs.ET",
+        "cs.RO"
+      ],
+      "tags": [
+        "cs.AI",
+        "cs.AR",
+        "cs.CE",
+        "cs.ET",
+        "cs.RO"
+      ],
+      "domain": "Agent",
+      "pdf_downloaded": true,
+      "pdf_size_bytes": 19702639,
+      "pdf_path": "2026-06-29/agent/2606.28126.pdf"
+    },
+    {
+      "id": "2606.28109",
+      "title": "MMAO: A Metabolic Multi-Agent Optimizer with Endogenous Resource Allocation for Continuous and Discrete Optimization",
+      "abstract": "Traditional meta-heuristics often rely on fixed population sizes, manually chosen search scales, and externally attached parameter-control modules. This paper presents the \\textit{Metabolic Multi-Agent Optimizer} (MMAO), a cross-domain optimization framework in which adaptation is derived endogenously from a private-public metabolic resource loop. Each agent carries internal energy, a continuous role state, motion or structural memory, and local search history, while the population shares a communal resource pool. Fitness improvements are converted into normalized metabolic gains through a robust progress scale and a recent success statistic; the same closed loop then regulates sensing intensity, search amplitude, role drift, branching, pruning, respawning, and elite reinvestment. In the continuous setting, MMAO uses energy-regulated symmetric zero-order probing and role-interpolated motion. In the discrete setting, the same control law is instantiated through structural sensing, local route improvement, guided perturbation, and energy-weighted edge reuse. The paper combines an implementation-faithful formulation with a reproducible experimental study on a CEC2017 subset (10D/30D, 20 seeds) and five TSPLIB instances (100 discrete runs in total). The current evidence supports MMAO primarily as a parameter-light, self-calibrating optimization framework whose main validated originality lies in metabolically endogenous resource allocation across heterogeneous search behaviors, rather than as a universally superior optimizer.",
+      "authors": [
+        "Jinliang Xu",
+        "Liping Ma"
+      ],
+      "published": "2026-06-26T14:10:34Z",
+      "updated": "2026-06-26T14:10:34Z",
+      "url": "https://arxiv.org/abs/2606.28109",
+      "pdf_url": "https://arxiv.org/pdf/2606.28109.pdf",
+      "primary_category": "cs.NE",
+      "categories": [
+        "cs.NE",
+        "cs.MA"
+      ],
+      "tags": [
+        "cs.MA",
+        "cs.NE"
+      ],
+      "domain": "Agent",
+      "pdf_downloaded": true,
+      "pdf_size_bytes": 443477,
+      "pdf_path": "2026-06-29/agent/2606.28109.pdf"
+    },
+    {
+      "id": "2606.27962",
+      "title": "Building a Scalable, Reproducible, Evaluatable, and Closed-Loop Simulation Environment Foundation for Embodied Intelligence Cloud-Native Simulation Infrastructure for Embodied Intelligence Training, Evaluation, and Data Collection",
+      "abstract": "This paper presents a cloud-native simulation infrastructure framework for embodied intelligence that supports large-scale training, standardized evaluation, and simulation-based data collection. The framework unifies simulation environment generation, task execution, trajectory collection, model evaluation, data management, and cloud services into a scalable and reproducible platform. To address the high cost, limited scalability, and poor reproducibility of real-world robotic data collection, the framework adopts cloud-native technologies including elastic resource scheduling, containerized simulation, unified data management, and service-oriented system design, enabling efficient large-scale simulation for multi-model and multi-task workloads. Built on a four-layer architecture, the framework provides standardized environment assets, automated task generation, trajectory collection, benchmark evaluation, and closed-loop data optimization. It further integrates representative systems including D-VLA, RL-VLA3, Sword, and Pre-VLA to support scalable simulation, dynamic scheduling, visual augmentation, and real-time data filtering. We argue that cloud-native simulation infrastructure provides a unified foundation for data generation, model training, standardized evaluation, and real-world deployment, and will play a key role in the future development of embodied intelligence.",
+      "authors": [
+        "Junwu Xiong",
+        "Yongjian Guo",
+        "Mingxi Luo",
+        "Ning Qiao",
+        "Lei Kang",
+        "Song Wang",
+        "Yince Gao"
+      ],
+      "published": "2026-06-26T11:04:34Z",
+      "updated": "2026-06-26T11:04:34Z",
+      "url": "https://arxiv.org/abs/2606.27962",
+      "pdf_url": "https://arxiv.org/pdf/2606.27962.pdf",
+      "primary_category": "cs.RO",
+      "categories": [
+        "cs.RO"
+      ],
+      "tags": [
+        "cs.RO"
+      ],
+      "domain": "Agent",
+      "pdf_downloaded": true,
+      "pdf_size_bytes": 555299,
+      "pdf_path": "2026-06-29/agent/2606.27962.pdf"
+    },
+    {
+      "id": "2606.27929",
+      "title": "When Multi-Robot Systems Meet Agentic AI:Towards Embodied Collective Intelligence",
+      "abstract": "Embodied AI is increasingly becoming agentic, shifting robots from perception--control pipelines towards closed-loop systems that can retrieve context, deliberate during execution, monitor feedback, and refine future behavior. In parallel, robotics research has also moved from single-robot autonomy towards multi-robot systems, driven by the need for wider sensing, distributed action, heterogeneous capabilities, and fault tolerance. As AI agents move from single-agent use towards multi-agent collaboration, robotics faces a parallel challenge: robot teams must move beyond sharing maps, task assignments, and datasets towards sharing the state produced by embodied agent loops. This article explores Embodied Collective Intelligence (ECI), a future multi-robot paradigm in which a robot team accumulates and uses world context, task progress, and skill experience as shared resources. Specifically, we first review how embodied AI is becoming agentic and how multi-robot cooperation has evolved. We then present Embodied Collective Intelligence through Co-Perception, Co-Action, and Co-Evolution. Finally, we use an illustrative navigation study to examine one concrete component of the concept: shared world-memory inheritance. The study shows that a newly added robot can benefit from merged team memory, but it is not intended as a full evaluation of the ECI framework. Taken together, the review and conceptual framework motivate Embodied Collective Intelligence as a direction for embodied multi-agent intelligence, while the case study grounds one measurable part of the concept.",
+      "authors": [
+        "Yuxuan Yan",
+        "Yuanyuan Jia",
+        "Qianqian Yang"
+      ],
+      "published": "2026-06-26T10:21:52Z",
+      "updated": "2026-06-26T10:21:52Z",
+      "url": "https://arxiv.org/abs/2606.27929",
+      "pdf_url": "https://arxiv.org/pdf/2606.27929.pdf",
+      "primary_category": "cs.RO",
+      "categories": [
+        "cs.RO"
+      ],
+      "tags": [
+        "cs.RO"
+      ],
+      "domain": "Agent",
+      "pdf_downloaded": true,
+      "pdf_size_bytes": 5878758,
+      "pdf_path": "2026-06-29/agent/2606.27929.pdf"
+    },
+    {
+      "id": "2606.27914",
+      "title": "Drifting in the Future: Stabilizing Path Following Drifting on High-Latency Vehicle Systems",
+      "abstract": "Autonomously controlling and handling a vehicle at and beyond its stability limit is a mathematically and computationally demanding task. Prior demonstrations of automated drifting have been limited to research platforms with instantaneous torque delivery and independently actuated wheels, leaving their applicability to production vehicles with actuator latencies and mechanically coupled axles uncertain. To overcome these issues, we design a predictor to compensate for powertrain delays, develop a revised control formulation to accommodate higher actuation latencies as well as a differential coupling on the driven axle, and introduce brake-based velocity stabilization. This paper presents the controller framework, the model extensions, and real-world experimental results. We observe that our controller enables a production sports car with a combustion engine to robustly sustain circular and figure-eight drifts, limiting lateral error to 1.1 m and sideslip overshoot to 0.06 rad despite actuator delays exceeding 250 ms, while mitigating oscillations and maintaining stable path and sideslip tracking. In conclusion, our results establish that autonomous drifting is feasible on production-ready vehicles, opening pathways to advanced safety systems capable of stabilizing cars in scenarios where traditional control fails.",
+      "authors": [
+        "Frederik Werner",
+        "Till Heintzenberg",
+        "Markus Lienkamp",
+        "Johannes Betz"
+      ],
+      "published": "2026-06-26T10:05:30Z",
+      "updated": "2026-06-26T10:05:30Z",
+      "url": "https://arxiv.org/abs/2606.27914",
+      "pdf_url": "https://arxiv.org/pdf/2606.27914.pdf",
+      "primary_category": "cs.RO",
+      "categories": [
+        "cs.RO",
+        "eess.SY"
+      ],
+      "tags": [
+        "cs.RO",
+        "eess.SY"
+      ],
+      "domain": "Agent",
+      "pdf_downloaded": true,
+      "pdf_size_bytes": 2909398,
+      "pdf_path": "2026-06-29/agent/2606.27914.pdf"
+    },
+    {
+      "id": "2606.27909",
+      "title": "Triadic Werewolf: A Jester Role for Multi-Hop Theory of Mind in LLMs",
+      "abstract": "Theory-of-mind evaluations of large language models typically use dyadic social-deduction games, where every observable cue points to a single hidden side, so a model with strong language priors can score well without ever simulating opponents' incentives. We extend the Werewolf game with a Jester, a third faction whose utility on peer suspicion is inverted because it wins by being voted out, so optimal play requires reasoning across three opposing utility functions. Across 60 games on GPT-4.1, DeepSeek-V3.1, and Llama-3.3-70B with Jester self-learning on and off, the Jester wins 60-70% of games while Werewolves never exceed 20%, and GPT-4.1 wolves vote the Jester out on day 1 in 60-70% of games, a strictly self-defeating action. Self-learning helps DeepSeek and Llama but hurts GPT-4.1, with the cost landing on Villagers rather than Werewolves. Only DeepSeek learns the subtle strategy of looking suspicious without looking intentionally suspicious, and it gains the most from the loop. Triadic incentive structure exposes a layer of multi-agent reasoning that dyadic deduction games leave invisible.",
+      "authors": [
+        "Avni Mittal"
+      ],
+      "published": "2026-06-26T09:59:35Z",
+      "updated": "2026-06-26T09:59:35Z",
+      "url": "https://arxiv.org/abs/2606.27909",
+      "pdf_url": "https://arxiv.org/pdf/2606.27909.pdf",
+      "primary_category": "cs.CL",
+      "categories": [
+        "cs.CL",
+        "cs.AI",
+        "cs.GT",
+        "cs.MA"
+      ],
+      "tags": [
+        "cs.AI",
+        "cs.CL",
+        "cs.GT",
+        "cs.MA"
+      ],
+      "domain": "Agent",
+      "pdf_downloaded": true,
+      "pdf_size_bytes": 7152551,
+      "pdf_path": "2026-06-29/agent/2606.27909.pdf"
+    },
+    {
+      "id": "2606.27883",
+      "title": "Swarm sign language: motion-based communication between drones",
+      "abstract": "In stealth-constrained swarm robotics, visual communication provides a critical alternative to active radio transmissions, which might be jammed. This research investigates motion-based communication for non-active information exchange, utilizing modular, dynamically feasible planar trajectories as visual cues. On the receiver drone end, a pose estimator tracks the transmitting drone's pose, feeding it into our custom 3DTrajDecoder. The decoder is designed to classify and segment the spatiotemporal sequence while simultaneously regressing its size and normal vector. To robustly train the decoder on both communicative and non-communicative trajectories, we developed a configurable online procedural generation pipeline. We validate our system through real-world testing and simulation to define its operating domain, supported by an extensive ablation study detailing our architectural choices and system limitations.",
+      "authors": [
+        "Thomas Rey",
+        "Julien Moras",
+        "Alexandre Eudes",
+        "Antoine Manzanera"
+      ],
+      "published": "2026-06-26T09:25:22Z",
+      "updated": "2026-06-26T09:25:22Z",
+      "url": "https://arxiv.org/abs/2606.27883",
+      "pdf_url": "https://arxiv.org/pdf/2606.27883.pdf",
+      "primary_category": "cs.RO",
+      "categories": [
+        "cs.RO"
+      ],
+      "tags": [
+        "cs.RO"
+      ],
+      "domain": "Agent",
+      "pdf_downloaded": true,
+      "pdf_size_bytes": 2576039,
+      "pdf_path": "2026-06-29/agent/2606.27883.pdf"
+    },
+    {
+      "id": "2606.27872",
+      "title": "S$^2$-VLA: State-Space Guided Vision-Language-Action Models for Long-Horizon Manipulation",
+      "abstract": "Vision-Language-Action (VLA) models have demonstrated strong capabilities in robotic manipulation, but their performance degrades significantly in long-horizon tasks due to cumulative error propagation. This limitation largely arises from static feature fusion mechanisms that rely on fixed weights to combine visual, language, and action representations, preventing the model from adapting to different phases of task execution. To address this limitation, we propose S$^2$-VLA, a framework that introduces a State-Space Guided Adaptive Attention (SSGAA) mechanism. SSGAA maintains a belief state that tracks task progression and generates dynamic gating weights to adaptively fuse information from three complementary sources visual features for spatial perception, task intents for high-level task planning, and temporal action sequences for execution consistency. This adaptive fusion allows the model to shift its focus throughout task execution, aligning with the evolving requirements of different task stages. Despite its compact 2B parameter size, S$^2$-VLA consistently outperforms larger 7B-scale models and achieves state-of-the-art performance on long-horizon manipulation benchmarks, including LIBERO and SimplerEnv. highlighting the importance of adaptive feature fusion for long-horizon robotic manipulation.",
+      "authors": [
+        "Zhipeng Xie",
+        "Zongyi Han",
+        "Xiangyi Wei",
+        "Shiliang Sun",
+        "Yang Li",
+        "Jing Zhao"
+      ],
+      "published": "2026-06-26T09:13:16Z",
+      "updated": "2026-06-26T09:13:16Z",
+      "url": "https://arxiv.org/abs/2606.27872",
+      "pdf_url": "https://arxiv.org/pdf/2606.27872.pdf",
+      "primary_category": "cs.RO",
+      "categories": [
+        "cs.RO",
+        "cs.AI"
+      ],
+      "tags": [
+        "cs.AI",
+        "cs.RO"
+      ],
+      "domain": "Agent",
+      "pdf_downloaded": true,
+      "pdf_size_bytes": 2670453,
+      "pdf_path": "2026-06-29/agent/2606.27872.pdf"
+    },
+    {
+      "id": "2606.27871",
+      "title": "LocalNav: Distilling Frontier VLMs and Embodied RL for On-Device Object Goal Navigation",
+      "abstract": "Vision Language Models (VLMs) have emerged in the robotic domain as a powerful tool that enables environmental perception with language context, serving as a catalyst for open-vocabulary tasks like ObjectNav. Yet, their computational footprint typically confines them to cloud execution, hindering low-latency inference with local deployment on resource-constrained robots. To address this challenge, we present a distillation strategy that transfers complex spatial-semantic reasoning from large frontier models into a lightweight, 4B-parameter local VLM for edge execution on embedded GPU devices (e.g., Jetson Orin). We first establish a State of the Art (SotA), Scene Graph (SG)-based pipeline using Claude Sonnet 4.6, achieving a 39.7% Success Rate (SR) on the HM3D OVON benchmark. We then demonstrate that fine-tuning Qwen3.5-4B on just 500 frontier reasoning traces effectively enables navigation capabilities, yielding a SR of 34.5%, narrowing the gap to the performance of large cloud models. Finally, we introduce E-RLVR with Token Generation (TG) regularization to compress output sequence lengths for physical deployment while grounding the agent in its task. This downstream optimization reduces TG overhead by 72.1% and latency by 71.8%. Combined with quantization, this joint strategy yields a cumulative 82.8% reduction in overall inference latency without significantly sacrificing performance, presenting a viable paradigm for local, low-latency VLM execution on mobile robots.",
+      "authors": [
+        "Nicolas Baumann",
+        "Liam Boyle",
+        "Pu Deng",
+        "Edoardo Ghignone",
+        "Boyang Sun",
+        "Marc Pollefeys",
+        "Luca Benini",
+        "Michele Magno"
+      ],
+      "published": "2026-06-26T09:11:59Z",
+      "updated": "2026-06-26T09:11:59Z",
+      "url": "https://arxiv.org/abs/2606.27871",
+      "pdf_url": "https://arxiv.org/pdf/2606.27871.pdf",
+      "primary_category": "cs.RO",
+      "categories": [
+        "cs.RO"
+      ],
+      "tags": [
+        "cs.RO"
+      ],
+      "domain": "Agent",
+      "pdf_downloaded": true,
+      "pdf_size_bytes": 14843026,
+      "pdf_path": "2026-06-29/agent/2606.27871.pdf"
+    },
+    {
+      "id": "2606.27861",
+      "title": "PPO-EAL: Exact Augmented Lagrangian Proximal Policy Optimization for Safe Robotic Control",
+      "abstract": "Reinforcement learning (RL) has emerged as a promising solution to accomplish complex robotic control tasks; however, most of the current work ignores the safety requirements. Safe RL seeks to maximize task performance while satisfying explicit physical constraints, but current algorithms struggle to learn the policy efficiently with precise constraint satisfaction. This work proposes PPO-EAL, a novel first-order constrained policy optimization framework that integrates exact augmented Lagrangian optimization into proximal policy optimization for safe robotic control. By combining clipped policy updates with exact quadratic penalty terms, PPO-EAL achieves theoretically grounded constraint enforcement without requiring impractically large penalty factors. A momentum-regulated multiplier update further improves dual-variable stability, reducing constraint oscillation and unsafe behavior while preserving task performance. We provide exactness and convergence analysis under standard stochastic approximation assumptions. Extensive validation across diverse GPU-accelerated robotic benchmarks-including cart-pole balancing, cart-double-pendulum stabilization, 7-DoF Franka end-effector reaching, and quadrupedal locomotion-demonstrates superior safety precision and reward performance compared with state-of-the-art first-order safe RL baselines. Finally, we demonstrate zero-shot sim-to-real deployment in a contact-rich gear assembly task, where PPO-EAL substantially improves task success, reduces peak contact force, and enhances operational robustness. These results establish PPO-EAL as a general and practically deployable safe RL framework for diverse safety-critical robotic systems.",
+      "authors": [
+        "Jiatao Ding",
+        "Songqun Gao",
+        "Andrea Del Prete",
+        "Matteo Saveriano"
+      ],
+      "published": "2026-06-26T08:59:38Z",
+      "updated": "2026-06-26T08:59:38Z",
+      "url": "https://arxiv.org/abs/2606.27861",
+      "pdf_url": "https://arxiv.org/pdf/2606.27861.pdf",
+      "primary_category": "cs.RO",
+      "categories": [
+        "cs.RO"
+      ],
+      "tags": [
+        "cs.RO"
+      ],
+      "domain": "Agent",
+      "pdf_downloaded": true,
+      "pdf_size_bytes": 1359396,
+      "pdf_path": "2026-06-29/agent/2606.27861.pdf"
+    },
+    {
+      "id": "2606.27813",
+      "title": "Booster Lab: A Data-Centric Pipeline for Learning Deployable Humanoid Locomotion Policies",
+      "abstract": "Humanoid robot motion learning requires not only task-oriented control policies but also physically feasible and natural behaviors that can be transferred to real robots. However, robot-feasible motion data are often scarce: raw human demonstrations may be incompatible with the robot morphology, open-source clips vary in quality, and simulation-collected robot trajectories still require feasibility checking. To address these challenges, we propose a data-centric training and deployment pipeline that integrates motion data curation, real-to-sim model adaptation, AMP-based reinforcement learning, and sim-to-real deployment. We validate the framework on the Booster T1 robot and further provide preliminary cross-platform validation on Booster K1.",
+      "authors": [
+        "Penghui Chen",
+        "Tinglong Zheng",
+        "Yufeng Zhang",
+        "Mingguo Zhao"
+      ],
+      "published": "2026-06-26T07:55:15Z",
+      "updated": "2026-06-26T07:55:15Z",
+      "url": "https://arxiv.org/abs/2606.27813",
+      "pdf_url": "https://arxiv.org/pdf/2606.27813.pdf",
+      "primary_category": "cs.RO",
+      "categories": [
+        "cs.RO"
+      ],
+      "tags": [
+        "cs.RO"
+      ],
+      "domain": "Agent",
+      "pdf_downloaded": true,
+      "pdf_size_bytes": 9964928,
+      "pdf_path": "2026-06-29/agent/2606.27813.pdf"
+    },
+    {
+      "id": "2606.27811",
+      "title": "LXD-SLAM: LiDAR+X Dense SLAM with $\\sum_{i=0}^{5}C_5^i$ Configurable Sensor Combinations",
+      "abstract": "Simultaneous Localization and Mapping (SLAM) is essential for autonomous systems, yet achieving reliable, globally consistent pose estimation and dense mapping in complex environments remains challenging due to geometric degeneracy and sensor drift. While multi-sensor fusion addresses these issues, existing systems often lack the modularity to adapt to diverse platforms and rely on mathematically inconsistent fusion or suboptimal map representations. To address these limitations, we propose LXD-SLAM (LiDAR+X Dense SLAM), a highly versatile and unified multi-sensor fusion framework. Centered around 3D LiDAR, our system allows for the plug-and-play integration of LiDAR, Camera, IMU, Wheel Encoder, and GNSS, supporting up to 32 distinct sensor combinations. We employ a mathematically unified Iterative Error-Sate Kalman Filter with an adaptive hierarchical prediction strategy and an update step that minimizes point-to-mesh distances and visual reprojection errors. To support this, the environment is modeled using continuous multi-layered Gaussian Process (GP) sub-meshes, which enables efficient ray-to-mesh depth recovery for visual features. For global consistency, we introduce an Extended Scan Context (ESC) descriptor derived from the GP sub-meshes alongside a Bidirectional PnP optimization for robust multi-modal loop closure within a hybrid pose graph. Extensive evaluations on public datasets and real-world experiments demonstrate that LXD-SLAM matches or exceeds state-of-the-art specialized odometry solutions across various configurations while generating high-fidelity, globally consistent dense meshes in real-time. The relevant codes and data will be made available at https://github.com/peterWon/LXD-SLAM upon publication.",
+      "authors": [
+        "Zhong Wang",
+        "Lin Zhang",
+        "Linfei Li",
+        "Ying Shen",
+        "Shaoming Zhang",
+        "Pengcheng Shi",
+        "Shengjie Zhao"
+      ],
+      "published": "2026-06-26T07:53:09Z",
+      "updated": "2026-06-26T07:53:09Z",
+      "url": "https://arxiv.org/abs/2606.27811",
+      "pdf_url": "https://arxiv.org/pdf/2606.27811.pdf",
+      "primary_category": "cs.RO",
+      "categories": [
+        "cs.RO"
+      ],
+      "tags": [
+        "cs.RO"
+      ],
+      "domain": "Agent",
+      "pdf_downloaded": true,
+      "pdf_size_bytes": 13248113,
+      "pdf_path": "2026-06-29/agent/2606.27811.pdf"
+    },
+    {
+      "id": "2606.27807",
+      "title": "SpikeVLA: Vision-Language-Action Models with Spiking Neural Networks",
+      "abstract": "Vision-Language-Action (VLA) models have become a dominant paradigm for embodied intelligence. However, most existing approaches are built on large-scale transformers, resulting in substantial inference latency and energy consumption that limit their practical deployment in low-power, real-time scenarios. We propose SpikeVLA, a spiking VLA architecture for embodied navigation with energy-efficient inference, consisting of three key components. (i) A spiking vision encoder, Spike-V, that replaces dense continuous layers with event-driven spiking layers to reduce the energy consumption of visual representation learning. (ii) A multi-modal spiking large language model, Spike-L, that reformulates cross-modal reasoning with spiking dynamics and token-level event-driven sparsity to further lower computational cost. (iii) A spiking action policy network, Spike-A employs Laplacian-kernel population coding with a multi-layer fully connected SNN, and decodes spiking activities into stable and robust continuous control with energy-efficient inference under low-power constraints. Experiments on navigation and robotic control tasks show that SpikeVLA significantly reduces energy consumption and computational cost while maintaining competitive performance, highlighting its potential for low-power, real-time embodied intelligence.",
+      "authors": [
+        "Ruiqi Song",
+        "Dujun Nie",
+        "Siyu Teng",
+        "Baiyong Ding",
+        "Xiaotong Zhang",
+        "Dong Li",
+        "Chenming Zhang",
+        "Yuchen Li",
+        "Hangbin Wu",
+        "Long Chen"
+      ],
+      "published": "2026-06-26T07:45:45Z",
+      "updated": "2026-06-26T07:45:45Z",
+      "url": "https://arxiv.org/abs/2606.27807",
+      "pdf_url": "https://arxiv.org/pdf/2606.27807.pdf",
+      "primary_category": "cs.RO",
+      "categories": [
+        "cs.RO"
+      ],
+      "tags": [
+        "cs.RO"
+      ],
+      "domain": "Agent",
+      "pdf_downloaded": true,
+      "pdf_size_bytes": 19560216,
+      "pdf_path": "2026-06-29/agent/2606.27807.pdf"
+    }
+  ]
+}
