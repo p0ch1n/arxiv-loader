@@ -1,0 +1,730 @@
+{
+  "domain": "Vision",
+  "date": "2026-07-01",
+  "count": 24,
+  "papers": [
+    {
+      "id": "2606.32040",
+      "title": "FaceMoE: Mixture of Experts for Low-Resolution Face Recognition",
+      "abstract": "Low-resolution face recognition (LR-FR) remains a challenging task due to poor feature extraction and aggregation, as probe images often contain limited identity information resulting from extreme degradations such as blur, occlusion, and low contrast. Additionally, the domain gap between high-resolution (HR) gallery images and low-resolution (LR) probe images poses a significant challenge. A single feature encoder struggles to generalize effectively across both domains when fine-tuned on an LR dataset, and this issue is further magnified by catastrophic forgetting. To address these challenges, we propose FaceMoE, an effective adaptation of Mixture of Experts (MoE) transfomer architecture for low-resolution face-recognition . Specifically, we introduce multiple specialized feed-forward network (FFN) experts and incorporate a top-k router, which dynamically assigns tokens to appropriate experts. This design emergently promotes specialization across experts for different semantic regions of the face, which enables FaceMoE to perform resolution-aware feature extraction. Moreover, the top-k router facilitates sparse expert activation, enabling the model to preserve pretrained knowledge when finetuned on a LR dataset, while increasing model capacity without proportional computational overhead. FaceMoE is trained with a combined face recognition loss, router z-loss, and load balancing loss to ensure expert specialization and stable training. To the best of our knowledge, this is the first work leveraging MoE for LR-FR. Extensive experiments across eleven datasets, spanning HR, mixed-quality, and LR benchmarks, demonstrate that FaceMoE significantly outperforms state-of-the-art methods. Code: https://github.com/Kartik-3004/FaceMoE",
+      "authors": [
+        "Kartik Narayan",
+        "Vishal M. Patel"
+      ],
+      "published": "2026-06-30T17:59:57Z",
+      "updated": "2026-06-30T17:59:57Z",
+      "url": "https://arxiv.org/abs/2606.32040",
+      "pdf_url": "https://arxiv.org/pdf/2606.32040.pdf",
+      "primary_category": "cs.CV",
+      "categories": [
+        "cs.CV"
+      ],
+      "tags": [
+        "cs.CV"
+      ],
+      "domain": "Vision",
+      "pdf_downloaded": true,
+      "pdf_size_bytes": 1668915,
+      "pdf_path": "2026-07-01/vision/2606.32040.pdf"
+    },
+    {
+      "id": "2606.32039",
+      "title": "GEAR: Guided End-to-End AutoRegression for Image Synthesis",
+      "abstract": "Visual generative models are typically trained in two stages. A tokenizer is first trained for reconstruction and then frozen, after which a generator is trained on its discrete indices or continuous latents. This decoupling leaves the tokenizer unaware of what the generator finds easy to model. We present GEAR (Guided End-to-end AutoRegression), which trains a vector-quantized (VQ) tokenizer and an autoregressive (AR) generator jointly and end-to-end, guided by representation alignment. The key obstacle is that the VQ index fed to the AR model is non-differentiable, so gradients cannot reach the tokenizer, and a straight-through estimator collapses. GEAR resolves this with a dual read-out of the codebook assignment. A hard, one-hot branch trains the AR with next-token prediction, while a differentiable soft branch carries a representation-alignment loss that flows back to guide only the tokenizer. The AR model thereby steers its tokenizer toward an index distribution it can predict more easily. This shifts the alignment burden from the tokenizer to the AR: the tokenizer's own features become less DINOv2-like while the AR's become more so, the opposite of diffusion-side recipes that make the latent itself semantic. GEAR speeds up ImageNet gFID convergence by up to 10x relative to the strong LlamaGen-REPA baseline, learns markedly better patch-level and spatially-coherent features, and generalizes across quantizers (VQVAE, LFQ, IBQ) and to text-to-image generation.",
+      "authors": [
+        "Bin Lin",
+        "Zheyuan Liu",
+        "Chenguo Lin",
+        "Sixiang Chen",
+        "Yunyang Ge",
+        "Yunlong Lin",
+        "Jianwei Zhang",
+        "Miles Yang",
+        "Zhao Zhong",
+        "Liefeng Bo",
+        "Li Yuan"
+      ],
+      "published": "2026-06-30T17:59:57Z",
+      "updated": "2026-06-30T17:59:57Z",
+      "url": "https://arxiv.org/abs/2606.32039",
+      "pdf_url": "https://arxiv.org/pdf/2606.32039.pdf",
+      "primary_category": "cs.CV",
+      "categories": [
+        "cs.CV"
+      ],
+      "tags": [
+        "cs.CV"
+      ],
+      "domain": "Vision",
+      "pdf_downloaded": true,
+      "pdf_size_bytes": 2376009,
+      "pdf_path": "2026-07-01/vision/2606.32039.pdf"
+    },
+    {
+      "id": "2606.32036",
+      "title": "PointSplat: Compact Gaussian Splatting via Human-Centric Prediction",
+      "abstract": "Producing 3D human representations from input views on the fly is essential for immersive live streaming systems, where representation compactness is as critical as high fidelity given limited computational power and transmission bandwidth. Although recent feed-forward reconstruction methods achieve impressive quality through the view-centric prediction of 3D representations, they repeatedly encode the same subject content across multiple views, leading to significant inter-view redundancy. Our key insight is to perform predictions directly in 3D space, enabling the network to learn and produce a highly compact representation. To this end, we propose PointSplat, a novel human-centric approach that directly infers Gaussian primitives from an input point set. The proposed method first estimates a coarse geometric proxy and performs ray casting to prune redundant points and establish explicit 2D--3D correspondences. Subsequently, it employs a Point-Image Transformer to fuse appearance and geometry features, predicting Gaussian attributes in a single forward pass. This design restricts predictions to foreground regions of interest, substantially reducing the total number of Gaussians while improving novel-view rendering quality. Extensive experiments demonstrate that PointSplat achieves higher efficiency and quality while exhibiting strong robustness to variations in view count and image resolution across multiple datasets.",
+      "authors": [
+        "Yujie Guo",
+        "Yudong Jin",
+        "Lingteng Qiu",
+        "Zehong Shen",
+        "Zhen Xu",
+        "Jing Zhang",
+        "Xianchao Shen",
+        "Hujun Bao",
+        "Sida Peng",
+        "Xiaowei Zhou"
+      ],
+      "published": "2026-06-30T17:59:05Z",
+      "updated": "2026-06-30T17:59:05Z",
+      "url": "https://arxiv.org/abs/2606.32036",
+      "pdf_url": "https://arxiv.org/pdf/2606.32036.pdf",
+      "primary_category": "cs.CV",
+      "categories": [
+        "cs.CV"
+      ],
+      "tags": [
+        "cs.CV"
+      ],
+      "domain": "Vision",
+      "pdf_downloaded": true,
+      "pdf_size_bytes": 18264227,
+      "pdf_path": "2026-07-01/vision/2606.32036.pdf"
+    },
+    {
+      "id": "2606.32033",
+      "title": "SpheRoPE: Zero-Shot Optimization-Free 360 Panorama Generation with Spherical RoPE",
+      "abstract": "We present a zero-shot, training-free and optimization-free framework for generating 360 panoramic images and videos by directly injecting spherical priors into pre-trained diffusion transformers. Existing methods either rely on costly fine-tuning on scarce panoramic data that limits generalization, or leverage multi-step optimization that incurs prohibitive inference latency. We observe that contemporary generative models natively exhibit some panoramic priors from large-scale training. However, these emergent capabilities are insufficient, as the models fundamentally fail to satisfy the rigorous topological constraints imposed by equirectangular projection (ERP). We introduce a zero-shot and optimization-free approach that resolves these constraints at inference time. Spherical RoPE replaces standard rotary position embeddings: low-frequency channels are re-parameterized as 3D Cartesian coordinates to natively encode the spherical manifold, while high-frequency channels are harmonically quantized to enforce exact periodicity. Coupled with complementary Semantic Distortion classifier-free guidance (CFG) that explicitly steers geometry, we avoid retraining and inherit the full creative breadth of state-of-the-art models. Our approach generalizes across diverse backbones and 360 generation modalities. We demonstrate this across text-to-panorama using Flux.1, Flux.2, and LTX-Video backbones, achieving competitive performance against baselines, all while remaining training-free. Project page: https://orhir.github.io/SpheRoPE",
+      "authors": [
+        "Or Hirschorn",
+        "Aaron Olender",
+        "Eli Alshan",
+        "Ianir Ideses",
+        "Lior Fritz",
+        "Sagie Benaim"
+      ],
+      "published": "2026-06-30T17:57:04Z",
+      "updated": "2026-06-30T17:57:04Z",
+      "url": "https://arxiv.org/abs/2606.32033",
+      "pdf_url": "https://arxiv.org/pdf/2606.32033.pdf",
+      "primary_category": "cs.CV",
+      "categories": [
+        "cs.CV"
+      ],
+      "tags": [
+        "cs.CV"
+      ],
+      "domain": "Vision",
+      "pdf_downloaded": false,
+      "pdf_size_bytes": null,
+      "pdf_path": null
+    },
+    {
+      "id": "2606.32020",
+      "title": "Cross-Space Distillation: Teaching One-Step Students with Modern Diffusion Teachers",
+      "abstract": "Modern one-step diffusion models achieve impressive quality through distribution-based timestep distillation. Yet, they rely on a critical assumption: Teacher and Student must inhabit the same latent space. This Shared-Space constraint prevents knowledge transfer from modern high-capacity Teachers (e.g., SD 3.5 and Flux) into compact, deployment-friendly Students such as SD 1.5, whose latent resolution and VAE parameterization differ from the Teacher. We formalize this overlooked regime as Cross-Space Distillation, where Teacher and Student differ in both latent resolution and VAE space. To enable distillation under this mismatch, we introduce the Bridge, a lightweight latent interface that maps Student latents into the Teacher space without modifying the Student backbone. Bridge combines a frozen Student VAE decoder as a spatial prior with a compact learnable projector, and is trained with latent reconstruction and attention fidelity objectives for stable Teacher-space alignment. Across diverse modern Teachers, Bridge enables substantial gains for compact one-step Students; for example, it improves SD 1.5 from 5.4 to 9.4 HPSv3 while preserving one-step inference, low latency, and broad ecosystem compatibility. These results show that heterogeneous large Teachers can be distilled into efficient, deployable backbones through a lightweight latent-space interface.",
+      "authors": [
+        "Anh Nguyen",
+        "Ngan Nguyen",
+        "Duc Vu",
+        "Trung Dao",
+        "Viet Nguyen",
+        "Quan Dao",
+        "Kien Nguyen",
+        "Chi Tran",
+        "Phong Nguyen",
+        "Khoi Nguyen",
+        "Cuong Pham",
+        "Dimitris Metaxas",
+        "Vishal M. Patel",
+        "Anh Tran"
+      ],
+      "published": "2026-06-30T17:51:26Z",
+      "updated": "2026-06-30T17:51:26Z",
+      "url": "https://arxiv.org/abs/2606.32020",
+      "pdf_url": "https://arxiv.org/pdf/2606.32020.pdf",
+      "primary_category": "cs.CV",
+      "categories": [
+        "cs.CV"
+      ],
+      "tags": [
+        "cs.CV"
+      ],
+      "domain": "Vision",
+      "pdf_downloaded": false,
+      "pdf_size_bytes": null,
+      "pdf_path": null
+    },
+    {
+      "id": "2606.31986",
+      "title": "CoLT: Teaching Multi-Modal Models to Think with Chain of Latent Thoughts",
+      "abstract": "Chain-of-thought (CoT) reasoning has enabled multi-modal large language models (MLLMs) to tackle complex visual reasoning tasks by generating explicit intermediate reasoning steps in natural language. However, this text-based reasoning paradigm is inherently slow at inference time with even thousands of tokens and fundamentally constrained by the expressiveness of natural language. In this paper, we propose CoLT, (Chain of Latent Thoughts), a novel framework that teaches multi-modal models to reason through a chain of latent thought representations instead of verbose text tokens, which can perform thinking with as few as 3 steps. Naively forcing the model to think with latent states easily produces meaningless semantics and makes training unstable. To effectively regulate the latent reasoning process, we introduce a lightweight external decoder that provides step-level supervision for each latent reasoning step in two complementary directions: a forward mode that decodes latent thoughts into the textual reasoning of the next step, and a backward mode that aligns decoder hidden states with the model's latent thoughts given preceding textual context. We further incorporate internal supervision that encourages coherent step-by-step latent transitions. The decoder and internal supervision are removed during inference to maintain high efficiency of latent reasoning. Extensive experiments on eight benchmarks demonstrate that CoLT not only outperforms existing latent reasoning methods such as CODI and SIM-CoT, but also surpasses latent visual reasoning approaches that rely on auxiliary images with costly annotation requirements. Compared to text CoT methods, CoLT can notably reduce the inference time by 10.1$\\times$ and text decoding time by 22.6$\\times$. Code is released at https://github.com/hulianyuyy/CoLT.",
+      "authors": [
+        "Lianyu Hu",
+        "Shengqian Qin",
+        "Zeqin Liao",
+        "Qing Guo",
+        "Liang Wan",
+        "Wei Feng",
+        "Yang Liu"
+      ],
+      "published": "2026-06-30T17:24:40Z",
+      "updated": "2026-06-30T17:24:40Z",
+      "url": "https://arxiv.org/abs/2606.31986",
+      "pdf_url": "https://arxiv.org/pdf/2606.31986.pdf",
+      "primary_category": "cs.CV",
+      "categories": [
+        "cs.CV"
+      ],
+      "tags": [
+        "cs.CV"
+      ],
+      "domain": "Vision",
+      "pdf_downloaded": true,
+      "pdf_size_bytes": 1177544,
+      "pdf_path": "2026-07-01/vision/2606.31986.pdf"
+    },
+    {
+      "id": "2606.31982",
+      "title": "ERA: Entropy-Guided Visual Token Pruning with Rectified Attention for Efficient MLLMs",
+      "abstract": "Multimodal Large Language Models (MLLMs) incur prohibitive inference costs due to long visual token sequences. Training-free visual token reduction provides an efficient solution. However, existing methods distort attention distributions, giving rise to a phenomenon we term Attention Logit Collapse. To address this issue, we propose ERA, an Entropy-guided visual token pruning framework with Rectified Attention for efficient MLLMs. Specifically, ERA comprises three crucial components: Dual-view Entropy Pruning (DEP), Bias-aware Token Recycling (BTR), and Logit-preserving Attention Rectification (LAR). First, DEP identifies representative anchor tokens by jointly modeling visual diversity and head-wise saliency. BTR then recycles pruned tokens into their corresponding anchors while estimating a cluster-level logit bias. Building upon this, LAR injects the estimated bias into attention logits, effectively rectifying the collapse induced by token reduction. Together, these components preserve visual evidence even under aggressive compression, enabling robust performance across single-image, multi-image, and video settings on a wide range of MLLMs. Beyond delivering practical acceleration, ERA establishes logit-preserving visual token pruning as a principled framework for efficient MLLMs, unifying theoretical foundation, algorithmic design, and practical deployment. The code is at https://github.com/924973292/ERA.",
+      "authors": [
+        "Yuhao Wang",
+        "Mu Qiao",
+        "Haiwen Diao",
+        "Yunzhi Zhuge",
+        "Pingping Zhang",
+        "Xindong Zhang",
+        "Lei Zhang",
+        "Huchuan Lu"
+      ],
+      "published": "2026-06-30T17:20:29Z",
+      "updated": "2026-06-30T17:20:29Z",
+      "url": "https://arxiv.org/abs/2606.31982",
+      "pdf_url": "https://arxiv.org/pdf/2606.31982.pdf",
+      "primary_category": "cs.CV",
+      "categories": [
+        "cs.CV"
+      ],
+      "tags": [
+        "cs.CV"
+      ],
+      "domain": "Vision",
+      "pdf_downloaded": true,
+      "pdf_size_bytes": 10834897,
+      "pdf_path": "2026-07-01/vision/2606.31982.pdf"
+    },
+    {
+      "id": "2606.31979",
+      "title": "Planar-SfM: Camera Pose Estimation via Homography Graph Embeddings",
+      "abstract": "Structure from Motion (SfM) systems traditionally struggle with planar scenes, where standard epipolar geometry-based methods become degenerate. Rather than viewing planar surfaces as a limitation, we propose a unified framework that leverages them as a source of geometric constraints. Our key insight is that each planar surface visible across multiple views provides an independent estimate of relative camera poses through homography decomposition. By aggregating estimates from multiple planes or even from a single dominant plane we achieve robust pose recovery in scenarios where traditional methods fail. We introduce a novel graph-based approach that constructs a pose-graph from homography estimates and employs spectral embedding to identify and filter unreliable edges. Our method maps homography-based pose estimates onto the real line based on their geometric and visual consistency, enabling efficient extraction of a maximally consistent spanning tree for pose recovery. This approach naturally handles both highly planar scenes, such as indoor sports arenas, and general $3$D environments. We demonstrate superior performance on basketball court imagery where existing methods struggle, while matching or exceeding state-of-the-art results on unconstrained outdoor scenes from the IMC Phototourism benchmark.",
+      "authors": [
+        "Gabi Pragier",
+        "Matan Karklinsky",
+        "David Ungarish",
+        "Avi Ben-Cohen"
+      ],
+      "published": "2026-06-30T17:18:27Z",
+      "updated": "2026-06-30T17:18:27Z",
+      "url": "https://arxiv.org/abs/2606.31979",
+      "pdf_url": "https://arxiv.org/pdf/2606.31979.pdf",
+      "primary_category": "cs.CV",
+      "categories": [
+        "cs.CV"
+      ],
+      "tags": [
+        "cs.CV"
+      ],
+      "domain": "Vision",
+      "pdf_downloaded": true,
+      "pdf_size_bytes": 2848289,
+      "pdf_path": "2026-07-01/vision/2606.31979.pdf"
+    },
+    {
+      "id": "2606.31959",
+      "title": "AnyBokeh: Physics-Guided Any-to-Any Bokeh Editing with Optical Fingerprint Transfer",
+      "abstract": "Depth-of-field control is a fundamental tool in photography, yet post-capture bokeh editing from a single image remains challenging. A practical editor should handle images captured under arbitrary focus and aperture settings. Existing methods typically assume an all-in-focus input, or first recover an all-in-focus image before rendering new bokeh. Such pipelines can discard useful blur cues from the source image and propagate reconstruction artifacts into the final edit. We introduce AnyBokeh, a physics-guided framework for any-to-any bokeh editing. Instead of treating source blur merely as a degradation to be removed, AnyBokeh estimates the source blur state with a signed circle-of-confusion map and a disparity map. By modeling the linear relation between signed circle of confusion and disparity difference, AnyBokeh estimates a source-specific optical fingerprint and transfers the source optical characteristics to the desired focus and aperture setting. A generative editor conditioned on both source and target circle-of-confusion maps then performs relative blur synthesis, enabling spatially adaptive deblurring, preservation, and defocus rendering. To support physically supervised learning, we further construct a high-fidelity synthetic dataset with accurate depth, focus distance, and full EXIF metadata. Experiments on real-world benchmarks show that AnyBokeh achieves faithful and controllable editing across any-to-any bokeh editing, all-in-focus-to-bokeh rendering, and defocus deblurring, while avoiding all-in-focus reconstruction and test-time bokeh-level calibration commonly required by existing approaches. The code and dataset will be available at https://github.com/itsmag11/AnyBokeh.",
+      "authors": [
+        "Xinyu Hou",
+        "Xiaoming Li",
+        "Zongsheng Yue",
+        "Chen Change Loy"
+      ],
+      "published": "2026-06-30T17:01:28Z",
+      "updated": "2026-06-30T17:01:28Z",
+      "url": "https://arxiv.org/abs/2606.31959",
+      "pdf_url": "https://arxiv.org/pdf/2606.31959.pdf",
+      "primary_category": "cs.CV",
+      "categories": [
+        "cs.CV"
+      ],
+      "tags": [
+        "cs.CV"
+      ],
+      "domain": "Vision",
+      "pdf_downloaded": false,
+      "pdf_size_bytes": null,
+      "pdf_path": null
+    },
+    {
+      "id": "2606.31956",
+      "title": "DEMUN: Fast and accurate discovery of music notation in very large collections",
+      "abstract": "Much of written musical heritage is preserved and digitised at memory institutions: libraries, museums, and archives. Owing to their collection structures, sheet music tends to be concentrated in large subsets that are defined as collections of music, with corresponding metadata that makes the music findable. However, when studying musical life as opposed to individual works, relevant documents often lie outside of these specialised collections: in textbooks, newspapers, other periodicals, pamphlets, and other documents with extensive circulation. But these documents are typically not catalogued as musical documents, and though there may be a lot of such documents overall, in large library collections, they are still extremely sparse. Manual discovery is thus unfeasible. Automated discovery requires an extremely low false positive rate in order to be useful, and must also operate quickly. We present DEMUN: a two-stage lightweight detector of music notation with a false positive rate of 0.015 %. In the test scenario, 4 million images of a national-scale library were processed, out of which 1,500 pages with music notation were discovered, suggesting the entire collection may contain up to 20-30,000 unmarked documents of musical life.",
+      "authors": [
+        "Vojt\u011bch Dvo\u0159\u00e1k",
+        "Filip B\u00edm",
+        "Ji\u0159\u00ed Mayer",
+        "Martina Dvo\u0159\u00e1kov\u00e1",
+        "Mark\u00e9ta Herzanov\u00e1 Vlkov\u00e1",
+        "Pavel Pecina",
+        "Petr \u017dabi\u010dka",
+        "Jan Haji\u010d"
+      ],
+      "published": "2026-06-30T16:59:09Z",
+      "updated": "2026-06-30T16:59:09Z",
+      "url": "https://arxiv.org/abs/2606.31956",
+      "pdf_url": "https://arxiv.org/pdf/2606.31956.pdf",
+      "primary_category": "cs.DL",
+      "categories": [
+        "cs.DL",
+        "cs.CV"
+      ],
+      "tags": [
+        "cs.CV",
+        "cs.DL"
+      ],
+      "domain": "Vision",
+      "pdf_downloaded": true,
+      "pdf_size_bytes": 2233099,
+      "pdf_path": "2026-07-01/vision/2606.31956.pdf"
+    },
+    {
+      "id": "2606.31946",
+      "title": "World Narrative Model for Highly Controllable Video Generation: A Paradigm Shift from Pixel Sampling to Physical World Orchestration",
+      "abstract": "The fundamental obstacle to industrial grade video generation is the lack of controllability: existing models treat video as a pixel distribution sampling problem, bypassing the explicit, instance level $4D$ $(3D + T)$ physical world. Consequently, content creators cannot specify geometry, motion, camera parameters, or lighting in a deterministic, quantitative way, leading to the infamous ''gacha'' loop that makes professional content creation prohibitively inefficient and expensive. To address this, we introduce the World Narrative Model (WNM), a paradigm that decouples what to render -- the structured physical narrative -- from how to render -- the pixel generation process. WNM replaces end-to-end black-box sampling with orchestrated $4D$ pre-visualization for media generation. Collaborative agents translate sparse multimodal inputs, including text, reference videos, and sketches, into a fully editable world representation with scene geometry, object layouts, character/animal skeleton motion, trajectories, camera motion, and lighting at quantitative, physically meaningful granularity. This representation acts as a deterministic structural blueprint that drives existing video foundation models, either frozen or lightly adapted, to render final footage, turning the base model into a faithful neural shader. Built on this engine, our human-AI platform supports automatic world generation and pre-visualization aligned with professional filmmaking pipelines, while director consoles enable seamless human refinement. Experiments show that WNM greatly reduces probabilistic ``gacha'' calls and produces videos whose layout, motion, and cinematography closely follow creator intent. The framework is open and modular, allowing each component, such as world representation, control agents, and adapters, to be independently improved. Project website: https://glassroom.sjtu.edu.cn/WNM/.",
+      "authors": [
+        "Ye Chen",
+        "Xuanhong Chen",
+        "Yupeng Zhu",
+        "Liming Tan",
+        "Zhewen Wan",
+        "Yuxuan Xiong",
+        "Tielong Wang",
+        "Jinfan Liu",
+        "Wuze Zhang",
+        "Xiongzhen Zhang",
+        "Feifei Li",
+        "Xianglin Luo",
+        "Zhehan Zhao",
+        "Zhifan Zhang",
+        "Laisheng Kou",
+        "Zhujing Liang",
+        "Yugang Chen",
+        "Muchun Chen",
+        "Xu Miao",
+        "Yijing Zhang",
+        "Xiaojie Sheng",
+        "Qiang Hu",
+        "Jialiang Chen",
+        "Weimin Zhang",
+        "Wenjun Zhang",
+        "Bingbing Ni"
+      ],
+      "published": "2026-06-30T16:52:53Z",
+      "updated": "2026-06-30T16:52:53Z",
+      "url": "https://arxiv.org/abs/2606.31946",
+      "pdf_url": "https://arxiv.org/pdf/2606.31946.pdf",
+      "primary_category": "cs.CV",
+      "categories": [
+        "cs.CV"
+      ],
+      "tags": [
+        "cs.CV"
+      ],
+      "domain": "Vision",
+      "pdf_downloaded": true,
+      "pdf_size_bytes": 16983104,
+      "pdf_path": "2026-07-01/vision/2606.31946.pdf"
+    },
+    {
+      "id": "2606.31933",
+      "title": "No Place to Hide: Benchmarking Video Hallucination with Background-Controlled Pairs",
+      "abstract": "We introduce VidPair-Halluc, a new benchmark for evaluating video hallucination in large video models (LVMs) under rigorous and controlled conditions. Unlike previous benchmarks that primarily rely on text-based perturbations or adversarial questions while neglecting the consistency of visual backgrounds, VidPair-Halluc features video pairs with highly similar backgrounds but distinctly different foreground semantics, enabling precise attribution of model errors to genuine hallucination rather than background variation. The benchmark is constructed through PairFlow, a pipeline that leverages recent advances in text-to-image and video generation to systematically compose stories, generate coherent video clips, and assemble them into adversarial pairs. Covering both spatial and temporal reasoning across ten semantic aspects, VidPair-Halluc comprises 1K high-quality adversarial video pairs and 11K spatio-temporal QA pairs with control over background and foreground variations. Evaluations on mainstream LVMs show persistent difficulty with robust fine-grained video understanding in adversarial settings, and code and data are available at the https://jethrojames.github.io/VidPair-Halluc/.",
+      "authors": [
+        "Haojian Huang",
+        "Harold Haodong Chen",
+        "Meng Luo",
+        "Junjia Du",
+        "Shanqing Xu",
+        "Ziheng Chen",
+        "Yanxiang Huang",
+        "Yinchuan Li",
+        "Ying-Cong Chen"
+      ],
+      "published": "2026-06-30T16:38:41Z",
+      "updated": "2026-06-30T16:38:41Z",
+      "url": "https://arxiv.org/abs/2606.31933",
+      "pdf_url": "https://arxiv.org/pdf/2606.31933.pdf",
+      "primary_category": "cs.CV",
+      "categories": [
+        "cs.CV"
+      ],
+      "tags": [
+        "cs.CV"
+      ],
+      "domain": "Vision",
+      "pdf_downloaded": true,
+      "pdf_size_bytes": 21826680,
+      "pdf_path": "2026-07-01/vision/2606.31933.pdf"
+    },
+    {
+      "id": "2606.31924",
+      "title": "InstanceControl: Controllable Complex Image Generation without Instance Labeling",
+      "abstract": "Controllable image generation methods, such as ControlNet, have demonstrated a remarkable capacity to introduce visual conditions(e.g., depth maps) to guide image generation. However, these methods often struggle with complex multi-instance scenes, frequently leading to attribute confusion among instances. While recent approaches attempt to mitigate this via manual instance labeling, such requirements are labor-intensive. In this paper, we propose InstanceControl, a novel multi-instance controllable generation method that eliminates the need for instance labeling. We identify the primary bottleneck in existing methods as the inability to accurately associate instance descriptions with their corresponding regions within visual conditions. To address this, we leverage the Vision-Language Model (VLM) to establish instance-level correspondences between text prompts and visual conditions. Specifically, the VLM automatically parses instance descriptions from the text prompts and simultaneously predicts instance masks based on the visual conditions. Furthermore, since the predicted masks may contain noise, we introduce an adaptive mask refinement strategy that dynamically refines these instance masks during the generation process. Extensive experiments demonstrate that our approach outperforms state-of-the-art methods, achieving superior fidelity and precise instance-level control.",
+      "authors": [
+        "Xiaoyu Liu",
+        "Huan Wang",
+        "Fan Li",
+        "Zhixin Wang",
+        "Jiaqi Xu",
+        "Ming Liu",
+        "Wangmeng Zuo"
+      ],
+      "published": "2026-06-30T16:33:03Z",
+      "updated": "2026-06-30T16:33:03Z",
+      "url": "https://arxiv.org/abs/2606.31924",
+      "pdf_url": "https://arxiv.org/pdf/2606.31924.pdf",
+      "primary_category": "cs.CV",
+      "categories": [
+        "cs.CV"
+      ],
+      "tags": [
+        "cs.CV"
+      ],
+      "domain": "Vision",
+      "pdf_downloaded": true,
+      "pdf_size_bytes": 7707646,
+      "pdf_path": "2026-07-01/vision/2606.31924.pdf"
+    },
+    {
+      "id": "2606.31919",
+      "title": "MVP-Nav: Multi-layer Value Map Planner Navigator",
+      "abstract": "Zero-shot Object Goal Navigation (ZSON) with RGB-only perception poses a fundamental challenge for embodied agents, as the absence of explicit depth information introduces severe physical uncertainty and semantic-physical misalignment. Existing approaches either rely on high-level semantic reasoning without geometric grounding or learn end-to-end policies that lack explicit physical constraints, often resulting in semantically plausible but physically unsafe behaviors. In this paper, we propose MVP-Nav, a physical-aware RGB-only navigation framework that aligns perception, planning, and control with the real 3D world. MVP-Nav reconstructs explicit physical occupancy from monocular observations by leveraging 3D foundation models to project 2D semantic instances into 3D oriented bounding boxes, forming a global spatial semantic representation. To unify high-level semantic reasoning and low-level physical constraints, we introduce a Multi-layer Value Map (MVM) that integrates semantic priorities and reconstructed geometry into a shared cost space, enabling physically grounded geometric planning. Extensive experiments on zero-shot object navigation benchmarks demonstrate that MVP-Nav significantly outperforms existing depth-free methods, achieving state-of-the-art performance and validating that structured physical priors can effectively compensate for the absence of active depth sensors.",
+      "authors": [
+        "Wenyuan Xie",
+        "Shaokai Wu",
+        "Yijin Zhou",
+        "Yanbiao Ji",
+        "Guodong Zhang",
+        "Bayram Bayramli",
+        "Qiuchang Li",
+        "Xunchu Zhou",
+        "Yue Ding",
+        "Hongtao Lu"
+      ],
+      "published": "2026-06-30T16:25:47Z",
+      "updated": "2026-06-30T16:25:47Z",
+      "url": "https://arxiv.org/abs/2606.31919",
+      "pdf_url": "https://arxiv.org/pdf/2606.31919.pdf",
+      "primary_category": "cs.RO",
+      "categories": [
+        "cs.RO",
+        "cs.AI",
+        "cs.CV"
+      ],
+      "tags": [
+        "cs.AI",
+        "cs.CV",
+        "cs.RO"
+      ],
+      "domain": "Vision",
+      "pdf_downloaded": true,
+      "pdf_size_bytes": 22353155,
+      "pdf_path": "2026-07-01/vision/2606.31919.pdf"
+    },
+    {
+      "id": "2606.31918",
+      "title": "DriveWeaver: Point-Conditioned Video Inpainting for Controllable Vehicle Insertion in Autonomous Driving Simulation",
+      "abstract": "A pivotal step in autonomous driving simulation involves inserting foreground vehicles with predefined trajectories into simulated scenes. This process enhances scene diversity and facilitates the creation of various corner cases for testing and improving autonomous driving models. However, existing methods often rely on pre-reconstructed 3D assets, which frequently lead to lighting inconsistencies between the inserted foreground and the background. Moreover, the reliance on limited, manually-curated 3D assets hinders large-scale deployment. To address these challenges, we propose DriveWeaver, a novel framework for controllable vehicle insertion in autonomous driving simulation. Specifically, for a masked target insertion area, DriveWeaver performs video inpainting conditioned on vehicle point clouds to generate high-quality, temporally consistent vehicles. This video-inpainting-based approach ensures seamless blending between the foreground and background, while the readily available point cloud conditions enable superior generalization. To support long-term generation, we further design a global-to-local hierarchical inpainting strategy, ensuring the consistent identity and appearance of the inserted vehicles. Meanwhile, we extract explicit 3D Gaussian representations of the inserted vehicles through an urban reconstruction pipeline to enable real-time rendering for autonomous driving simulation. Extensive experiments across diverse datasets demonstrate that our method outperforms existing baselines in visual realism and geometric consistency, providing a robust tool for scalable autonomous driving scene augmentation.",
+      "authors": [
+        "Junzhe Jiang",
+        "Zipei Ma",
+        "Zijie Pan",
+        "Li Zhang"
+      ],
+      "published": "2026-06-30T16:23:32Z",
+      "updated": "2026-06-30T16:23:32Z",
+      "url": "https://arxiv.org/abs/2606.31918",
+      "pdf_url": "https://arxiv.org/pdf/2606.31918.pdf",
+      "primary_category": "cs.CV",
+      "categories": [
+        "cs.CV"
+      ],
+      "tags": [
+        "cs.CV"
+      ],
+      "domain": "Vision",
+      "pdf_downloaded": false,
+      "pdf_size_bytes": null,
+      "pdf_path": null
+    },
+    {
+      "id": "2606.31903",
+      "title": "Attend, Transform, or Silence: Operator-Level Visual Skipping for Efficient Multimodal LLM Inference",
+      "abstract": "Multimodal large language models (MLLMs) increasingly process long visual-token sequences, increasing the overall inference computation. Existing acceleration methods usually remove visual tokens or skip visual-token updates in entire layers, but these coarse strategies may discard fine-grained evidence or suppress useful operators together with redundant ones. In this paper, we study visual-token computation from an answer-observable perspective and find that late visual-token updates can remain large while having little effect on answer-token representations. Motivated by this answer-silent redundancy, we decompose each Transformer layer into attention and FFN operators and show that useful visual computation is often operator-dominant and layer-dependent. We propose an operator-level visual-token skipping framework that preserves the full visual-token sequence while selectively bypassing redundant attention, FFN, or both. Experiments across three MLLM architectures and 10 VQA benchmarks show that our method achieves strong efficiency-accuracy trade-offs, reducing \\textbf{33.7\\%} TFLOPs on Qwen3-VL while retaining \\textbf{99.5\\%} of the vanilla model performance.",
+      "authors": [
+        "Zhaoyang Luo",
+        "Runmin Dong",
+        "Miao Yang",
+        "Fan Wei",
+        "Yushan Lai",
+        "Bin Luo",
+        "Haohuan Fu"
+      ],
+      "published": "2026-06-30T16:08:29Z",
+      "updated": "2026-06-30T16:08:29Z",
+      "url": "https://arxiv.org/abs/2606.31903",
+      "pdf_url": "https://arxiv.org/pdf/2606.31903.pdf",
+      "primary_category": "cs.CV",
+      "categories": [
+        "cs.CV",
+        "cs.AI"
+      ],
+      "tags": [
+        "cs.AI",
+        "cs.CV"
+      ],
+      "domain": "Vision",
+      "pdf_downloaded": true,
+      "pdf_size_bytes": 3283031,
+      "pdf_path": "2026-07-01/vision/2606.31903.pdf"
+    },
+    {
+      "id": "2606.31895",
+      "title": "RESOLVE: A Multi-Resolution and Multi-Modal Dataset for Roadside Cooperative Perception",
+      "abstract": "LiDAR has increasingly been integrated into traffic cameras to expand coverage and mitigate occlusion in roadside cooperative perception. However, how unimodal and camera-LiDAR fusion architectures behave under variations in LiDAR point sparsity induced by sensor configurations and scene-dependent sensing conditions remains underexplored. We introduce RESOLVE, a large-scale real-world benchmark dataset featuring multi-resolution roadside LiDAR and synchronized camera-LiDAR sensing for systematic evaluation of unimodal and fusion-based architectures in roadside 3D detection and tracking. RESOLVE contains over 100k images and 26k point cloud frames with 220k manually annotated bounding boxes, captured at a real-world urban intersection across diverse lighting and weather conditions and spanning 10 classes of traffic participants. In particular, RESOLVE enables controlled evaluation across three LiDAR resolution levels while keeping all other sensing and environmental factors fixed. This allows fair cross-architecture comparisons under point cloud distribution shifts resulting from resolution variations, sensing distance, and training-inference resolution mismatches. Results from extensive benchmark experiments reveal insights into how multimodal fusion can compensate for LiDAR point sparsity, offering clues for designing cost-efficient roadside multimodal perception. The dataset and benchmark codes are available at https://github.com/ASU-Suo-Lab/RESOLVE.",
+      "authors": [
+        "Shaozu Ding",
+        "Linan Song",
+        "Marco De Vincenzi",
+        "Dajiang Suo"
+      ],
+      "published": "2026-06-30T16:04:33Z",
+      "updated": "2026-06-30T16:04:33Z",
+      "url": "https://arxiv.org/abs/2606.31895",
+      "pdf_url": "https://arxiv.org/pdf/2606.31895.pdf",
+      "primary_category": "cs.CV",
+      "categories": [
+        "cs.CV"
+      ],
+      "tags": [
+        "cs.CV"
+      ],
+      "domain": "Vision",
+      "pdf_downloaded": false,
+      "pdf_size_bytes": null,
+      "pdf_path": null
+    },
+    {
+      "id": "2606.31876",
+      "title": "Harnessing Textual Refusal Directions for Multimodal Safety",
+      "abstract": "To improve safety in Large Language Models (LLMs) we can either perform post-training alignment or exploit refusal directions in the activation space. Both strategies are less feasible in Multimodal LLMs (MLLMs) as they require unsafe multimodal data, harder to collect than their unimodal counterpart. In this work, we relax this constraint and investigate whether textual refusal directions, extracted directly from the LLM backbone, generalize across modalities (i.e., image, video). Preliminary findings confirm this ability, though effectiveness is conditioned by layer selection, steering strength, and cross-modal alignment, with the latter causing safe multimodal inputs to be spuriously steered toward refusal. Building on this, we introduce Modality-Agnostic Refusal Steering (MARS), a light-weight training-free approach that injects multimodal safety without the need for multimodal safety data. MARS corrects modality misalignment via activation re-centering, adaptively scales steering strength within a geometrically defined trust region, and selects the optimal intervention layer, operating at the first generated token. Evaluated on five SOTA MLLMs across safety, utility, and video jailbreak benchmarks, MARS achieves consistent safety gains while preserving utility. These results reveal that safety-relevant structure is shared across modalities and that textual refusal directions are a powerful and underexplored foundation for multimodal alignment.",
+      "authors": [
+        "Moreno D'Inc\u00e0",
+        "Massimiliano Mancini",
+        "Nicu Sebe"
+      ],
+      "published": "2026-06-30T15:57:50Z",
+      "updated": "2026-06-30T15:57:50Z",
+      "url": "https://arxiv.org/abs/2606.31876",
+      "pdf_url": "https://arxiv.org/pdf/2606.31876.pdf",
+      "primary_category": "cs.AI",
+      "categories": [
+        "cs.AI",
+        "cs.CV",
+        "cs.LG"
+      ],
+      "tags": [
+        "cs.AI",
+        "cs.CV",
+        "cs.LG"
+      ],
+      "domain": "Vision",
+      "pdf_downloaded": true,
+      "pdf_size_bytes": 9035623,
+      "pdf_path": "2026-07-01/vision/2606.31876.pdf"
+    },
+    {
+      "id": "2606.31875",
+      "title": "SENSE-VAD: Sentient and Semantic Video Anomaly Detection for Autonomous Driving",
+      "abstract": "Autonomous vehicles (AVs) must navigate not only motion-based hazards but also socially complex situations whose danger is constituted by inter-agent relationships rather than movement statistics alone. A child running away from a guardian, a person being carried by another, or a pursuer chasing a pedestrian across a sidewalk are all anomalous in social context, yet none produces an obvious motion signal that current anomaly detectors are equipped to flag. We introduce SENSE-VAD, the first synthetic video anomaly detection benchmark for autonomous driving explicitly designed around socially complex anomalies. Using the CARLA simulator and Unreal Engine (UE), we generate distinct anomaly scenarios across multiple categories: individual behaviors, group behaviors, person--object interactions, cyclist interactions, vehicle & agent, each annotated with per-frame binary labels. A key design principle is the separation of social anomaly from motion-based or appearance-based anomaly: many scenarios involve motion of objects that appears unremarkable in isolation but is anomalous in relational context. We additionally provide real-world normal and anomalous videos as a sim-to-real transfer probe. We evaluate state-of-the-art video anomaly detection baselines and demonstrate that socially complex anomalies constitute a distinct and currently unsolved challenge. Our dataset, annotations, and generation code are publicly available.",
+      "authors": [
+        "Nghia T. Nguyen",
+        "Lokman Bekit",
+        "Yasin Yilmaz"
+      ],
+      "published": "2026-06-30T15:57:50Z",
+      "updated": "2026-06-30T15:57:50Z",
+      "url": "https://arxiv.org/abs/2606.31875",
+      "pdf_url": "https://arxiv.org/pdf/2606.31875.pdf",
+      "primary_category": "cs.CV",
+      "categories": [
+        "cs.CV"
+      ],
+      "tags": [
+        "cs.CV"
+      ],
+      "domain": "Vision",
+      "pdf_downloaded": true,
+      "pdf_size_bytes": 1165105,
+      "pdf_path": "2026-07-01/vision/2606.31875.pdf"
+    },
+    {
+      "id": "2606.31839",
+      "title": "Towards Voxel Spacing Consistency for Medical Image Segmentation",
+      "abstract": "Volumetric medical image segmentation is essential for both preoperative diagnosis and intraoperative guidance. While recent years have witnessed rapid progress in segmentation architectures, comparatively little attention is paid to the physical voxel spacing of anatomical data. Indeed, volumetric image resampling is a ubiquitous preprocessing step before segmentation, yet its interaction with downstream segmentation has not been systematically exploited. In this work, we study the correlation between image resampling and segmentation, and propose Consispace, a semantic-aware resampling framework that achieves consistent voxel spacing in the axial direction while preserving anatomical and semantic consistency. Consispace introduces an ODE-based anatomical constraint to model inter-slice dynamics with a continuous interpolator, enabling faithful reconstruction under complex anatomical transitions beyond discrete interpolation. To further couple resampling with segmentation objectives, we leverage dense features from a pretrained vision model to build intra-slice semantic correlation maps and inject class-wise semantic consistency via feature reweighting during resampling. Both intra-slice and inter-slice constraints are integrated into an implicit neural network, supporting arbitrary-scale resampling. Extensive experiments on multiple datasets demonstrate that Consispace achieves superior reconstruction quality and perceptual fidelity, produces smoother inter-slice anatomy, and improves downstream segmentation performance when used as a preprocessing step.",
+      "authors": [
+        "Xin You",
+        "Runze Yang",
+        "Minghui Zhang",
+        "Hanxiao Zhang",
+        "Han Li",
+        "Yi Yu",
+        "Jie Yang",
+        "Nassir Navab",
+        "Yun Gu"
+      ],
+      "published": "2026-06-30T15:42:23Z",
+      "updated": "2026-06-30T15:42:23Z",
+      "url": "https://arxiv.org/abs/2606.31839",
+      "pdf_url": "https://arxiv.org/pdf/2606.31839.pdf",
+      "primary_category": "cs.CV",
+      "categories": [
+        "cs.CV"
+      ],
+      "tags": [
+        "cs.CV"
+      ],
+      "domain": "Vision",
+      "pdf_downloaded": true,
+      "pdf_size_bytes": 10990856,
+      "pdf_path": "2026-07-01/vision/2606.31839.pdf"
+    },
+    {
+      "id": "2606.31834",
+      "title": "Real-Time Source-Free Object Detection",
+      "abstract": "Real-world detectors for autonomous driving, surveillance, and robotics must handle domain-shifts under strict latency and memory constraints, yet existing source-free object detection (SFOD) methods rely on heavyweight architectures that prioritize accuracy alone. We show this trade-off is unnecessary: building on YOLOv10, an NMS-free dual-head detector, we achieve state-of-the-art adaptation accuracy while being faster and more compact. We observe that directly applying vanilla mean-teacher self-training to dual-head detectors leads to suboptimal adaptation performance due to two key factors. First, simple pseudo-label generation strategies, such as using a single head or directly combining high-confidence predictions from both heads, yield suboptimal supervision under domain-shift. We propose DHF (Dual-Head Pseudo-Label Fusion) which selectively admits one-to-one (O2O) and one-to-many (O2M) head predictions, preserving precision and recovering missed objects. Second, we observe domain-shift collapses multi-scale feature discriminability. We propose the use of our MARD (Multi-scale Adaptive Representation Diversification) loss which mitigates this by enforcing detection-aware variance and covariance constraints on multi-scale feature maps. Both modules are training-time only, leaving inference unchanged. Across domain-shift benchmarks, our method, RT-SFOD yields 1.4 to 3.5\\% mAP gains, 1.3$\\times$ higher throughput, with $\\sim$2$\\times$ fewer parameters than prior state-of-the-art SFOD methods, thus advancing the Pareto frontier of the speed-accuracy-model size trade-off. We report main results with YOLOv10, and demonstrate generalizability with additional YOLO- and DETR-based dual-head detectors. Code is available here: https://github.com/Sairam13001/RT-SFOD/",
+      "authors": [
+        "Sairam VCR",
+        "Varun Gopal",
+        "Poornima Jain",
+        "Vineeth N Balasubramanian",
+        "Muhammad Haris Khan"
+      ],
+      "published": "2026-06-30T15:38:56Z",
+      "updated": "2026-06-30T15:38:56Z",
+      "url": "https://arxiv.org/abs/2606.31834",
+      "pdf_url": "https://arxiv.org/pdf/2606.31834.pdf",
+      "primary_category": "cs.CV",
+      "categories": [
+        "cs.CV",
+        "cs.AI"
+      ],
+      "tags": [
+        "cs.AI",
+        "cs.CV"
+      ],
+      "domain": "Vision",
+      "pdf_downloaded": true,
+      "pdf_size_bytes": 18960926,
+      "pdf_path": "2026-07-01/vision/2606.31834.pdf"
+    },
+    {
+      "id": "2606.31830",
+      "title": "PriorEye: Geospatial Visual Priors for End-to-End Autonomous Driving",
+      "abstract": "Most end-to-end autonomous driving methods rely solely on instantaneous sensor observations, limiting them to reactive behavior without the anticipatory foresight human drivers employ through prior experience. We introduce geospatial visual priors, street-level visual context anchored to the intended driving route, providing visual-spatial foresight independent of real-time sensors. We propose a memory augmentation module featuring a dual-memory architecture and an adaptive memory gate, which can be easily integrated into existing end-to-end approaches. This design pairs a contextual memory for retrieved priors with a persistent fallback memory, and dynamically regulates the influence of memories based on current state compatibility. Evaluated on the NAVSIM-v2 benchmark, our approach consistently improves performance across diverse end-to-end baselines. Furthermore, because these priors are independent of onboard sensors, our method inherently improves robustness against sensor corruption, while the dual-memory design ensures safe fallback when the retrieved priors themselves become unreliable. Our project page is available at https://ori-mrg.github.io/PriorEye.",
+      "authors": [
+        "Kyuhwan Yeon",
+        "Benjamin Ramtoula",
+        "Daniele De Martini"
+      ],
+      "published": "2026-06-30T15:36:48Z",
+      "updated": "2026-06-30T15:36:48Z",
+      "url": "https://arxiv.org/abs/2606.31830",
+      "pdf_url": "https://arxiv.org/pdf/2606.31830.pdf",
+      "primary_category": "cs.CV",
+      "categories": [
+        "cs.CV",
+        "cs.RO"
+      ],
+      "tags": [
+        "cs.CV",
+        "cs.RO"
+      ],
+      "domain": "Vision",
+      "pdf_downloaded": false,
+      "pdf_size_bytes": null,
+      "pdf_path": null
+    },
+    {
+      "id": "2606.31825",
+      "title": "Breaking Failure Cascades: Step-Aware Reinforcement Learning for Medical Multimodal Reasoning",
+      "abstract": "Recent multimodal large language models have shown great promise in clinical image reasoning, but existing post-training pipelines remain predominantly outcome-centric, relying on final answer correctness or sequence-level preferences. This suffers from sparse credit assignment, making it difficult to optimize the reasoning process essential for clinical applications. Our analysis reveals that cascading errors from early-stage reasoning failures are a leading cause of incorrect predictions in medical visual question answering (VQA) benchmarks. Motivated by this, we propose Medical Reasoning-aware Policy Optimization (MRPO), an RL algorithm that incorporates step-wise process rewards. When the final answer is incorrect, MRPO assigns exponentially larger penalties to tokens in earlier invalid reasoning steps, breaking failure cascades without compromising successful paths. Across three multimodal LLM backbones, MRPO consistently outperforms standard GRPO and a recent RL baseline, and on Qwen3-VL-8B-Instruct even surpasses substantially larger medical MLLMs such as HuatuoGPT-Vision-34B by 2.79 points. Moreover, MRPO reduces early-stage reasoning failures from 64.0% to 13.0%, showing that targeted mitigation of cascading failures improves both reasoning quality and final answer accuracy. Our code is available at https://github.com/dmis-lab/MRPO",
+      "authors": [
+        "Junha Jung",
+        "Minbyul Jeong",
+        "Suhyeon Lim",
+        "Sungwook Jung",
+        "Jaehoon Yun",
+        "Taeyun Roh",
+        "Mujeen Sung",
+        "Jaewoo Kang"
+      ],
+      "published": "2026-06-30T15:35:19Z",
+      "updated": "2026-06-30T15:35:19Z",
+      "url": "https://arxiv.org/abs/2606.31825",
+      "pdf_url": "https://arxiv.org/pdf/2606.31825.pdf",
+      "primary_category": "cs.CV",
+      "categories": [
+        "cs.CV",
+        "cs.AI"
+      ],
+      "tags": [
+        "cs.AI",
+        "cs.CV"
+      ],
+      "domain": "Vision",
+      "pdf_downloaded": true,
+      "pdf_size_bytes": 3869704,
+      "pdf_path": "2026-07-01/vision/2606.31825.pdf"
+    },
+    {
+      "id": "2606.31824",
+      "title": "Absorption-Feature-Guided Distance-Decoupled Estimation and Band Selection for LWIR Hyperspectral Passive Ranging",
+      "abstract": "Long-wave infrared (LWIR) hyperspectral observations contain distance-dependent atmospheric absorption signatures, providing a physical basis for long-range passive ranging. However, in natural scenes, these signatures are nonlinearly coupled with target temperature, material emissivity, and path radiance, making distance inversion from observed radiance ill posed. Existing methods typically rely on full-band measurements and pixel-wise joint optimization, which is computationally expensive and does not explicitly exploit sharp atmospheric absorption structures. This paper proposes an Absorption-Guided Distance-Decoupled Estimation and Refinement (ADER) framework for LWIR hyperspectral passive ranging. ADER represents emissivity with B-spline control points under a smoothness prior, suppressing overfitting to atmospheric absorption structures and enabling distance-decoupled estimation. It further uses ozone-absorption cues to classify pixels into emission-dominant and reflection-dominant groups. For emission-dominant pixels, ADER compensates path radiance and transmittance and estimates distance by one-dimensional absorption-residual minimization. For reflection-dominant pixels, ADER refines the initial estimate using downwelling-radiance compensation based on the complete radiative model. To reduce spectral redundancy, ADER also introduces a greedy band selection strategy based on multi-scene effective Fisher information for the distance parameter. Experiments on real scenes show that ADER recovers LiDAR-consistent spatial distance structures under both full-band and 20-band settings, improves ranging accuracy in the evaluated regions, and achieves approximately two orders of magnitude speedup over a public full-band hyperspectral ranging method.",
+      "authors": [
+        "Shuo Liu",
+        "Chen Fan",
+        "Zhihe Chen",
+        "Xiaolin Huang",
+        "Lilian Zhang"
+      ],
+      "published": "2026-06-30T15:35:03Z",
+      "updated": "2026-06-30T15:35:03Z",
+      "url": "https://arxiv.org/abs/2606.31824",
+      "pdf_url": "https://arxiv.org/pdf/2606.31824.pdf",
+      "primary_category": "cs.CV",
+      "categories": [
+        "cs.CV"
+      ],
+      "tags": [
+        "cs.CV"
+      ],
+      "domain": "Vision",
+      "pdf_downloaded": true,
+      "pdf_size_bytes": 11563278,
+      "pdf_path": "2026-07-01/vision/2606.31824.pdf"
+    }
+  ]
+}
