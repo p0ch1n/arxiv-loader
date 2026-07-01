@@ -1,0 +1,690 @@
+{
+  "domain": "Agent",
+  "date": "2026-07-01",
+  "count": 24,
+  "papers": [
+    {
+      "id": "2606.32028",
+      "title": "DVG-WM: Disentangled Video Generation Enables Efficient Embodied World Model for Robotic Manipulation",
+      "abstract": "Video-based embodied world models provide an appealing substrate for robotic manipulation by predicting future states, yet current approaches remain limited by a fundamental entanglement: accurately modeling dynamics typically requires low-level temporal reasoning, while producing high-resolution frames demands expansive visual synthesis according to high-level semantics. This entanglement results in slow inference speed for iterative planning or too coarse predictions to retain contact-rich details. To solve this dilemma, we present Disentangled Video Generation World Model (DVG-WM), an efficient framework that explicitly decomposes world modeling into dynamics learning and visual synthesis. Conditioned on an initial observation and a language instruction, our model first generates a plausible sequence of intermediate visual states to preview the physical interaction and refines them to obtain high-fidelity videos. Furthermore, an efficient cascading mechanism is proposed, where DVG-WM uses flow matching to directly map the dynamics to video latents, and introduces a latent degradation mechanism to regenerate contact-rich details. Experiments on LIBERO and real-world platforms demonstrate improved video quality with up to 3.97 times acceleration, validating that disentangled video generation can be an efficient embodied world model for robotic manipulation.",
+      "authors": [
+        "Ziyu Shan",
+        "Zhenyu Wu",
+        "Xiaofeng Wang",
+        "Zheng Zhu",
+        "Ziwei Wang"
+      ],
+      "published": "2026-06-30T17:54:32Z",
+      "updated": "2026-06-30T17:54:32Z",
+      "url": "https://arxiv.org/abs/2606.32028",
+      "pdf_url": "https://arxiv.org/pdf/2606.32028.pdf",
+      "primary_category": "cs.RO",
+      "categories": [
+        "cs.RO"
+      ],
+      "tags": [
+        "cs.RO"
+      ],
+      "domain": "Agent",
+      "pdf_downloaded": true,
+      "pdf_size_bytes": 4652280,
+      "pdf_path": "2026-07-01/agent/2606.32028.pdf"
+    },
+    {
+      "id": "2606.32009",
+      "title": "Human-as-Humanoid: Enabling Zero-Shot Humanoid Learning from Ego-Exo Human Videos with Human-Aligned Embodiments",
+      "abstract": "Vision-language-action (VLA) models across robot embodiments require high-quality observation--action supervision to learn deployable action distributions, yet scaling such robot data remains difficult, especially for high-DoF humanoids. Teleoperation provides controller-aligned supervision, while human egocentric videos capture diverse bimanual manipulation but do not directly provide executable robot actions. We introduce Human-as-Humanoid, a human-to-humanoid supervision framework that enables near-real-time human-centric action generation, making human demonstrations usable for high-DoF humanoid VLA training by jointly aligning the robot embodiment, the sensing setup, and the action-label interface. Built on PrimeU, a human-aligned 60-DoF upper-body humanoid, Human-as-Humanoid uses synchronized ego-exo videos to pair deployment-aligned egocentric observations with exocentric motion recovery, retargets the recovered human motion through staged Inverse Kinematics (IK) into controller-aligned 60-DoF action chunks, and trains the VLA model with Forward Kinematics (FK)-aware supervision to preserve wrist and fingertip task-space geometry. This converts large-scale human demonstrations from visual observations into executable observation--action supervision for the target humanoid. Experiments validate the conversion chain at the motion-recovery, robot-action-space, and real-robot deployment levels. Human-as-Humanoid yields a 4.8--7.2x raw demonstration-throughput gain over humanoid teleoperation in our data-collection analysis, and on several downstream tasks, policies post-trained only with the converted human labels generalize to real-robot deployment without target-task robot demonstrations. The official project website is available at https://zgc-embodyai.github.io/Human-as-Humanoid.",
+      "authors": [
+        "Xiaopeng Lin",
+        "Ruoqi Yang",
+        "Shijie Lian",
+        "Zhaolong Shen",
+        "Bin Yu",
+        "Changti Wu",
+        "Haibao Liu",
+        "Yuxiang Zhang",
+        "Hong Li",
+        "Qiyuan Su",
+        "Haochen Liu",
+        "Xuguo He",
+        "Yukun Shi",
+        "Cong Huang",
+        "Zhirui Zhang",
+        "Bojun Cheng",
+        "Kai Chen"
+      ],
+      "published": "2026-06-30T17:44:16Z",
+      "updated": "2026-06-30T17:44:16Z",
+      "url": "https://arxiv.org/abs/2606.32009",
+      "pdf_url": "https://arxiv.org/pdf/2606.32009.pdf",
+      "primary_category": "cs.RO",
+      "categories": [
+        "cs.RO"
+      ],
+      "tags": [
+        "cs.RO"
+      ],
+      "domain": "Agent",
+      "pdf_downloaded": false,
+      "pdf_size_bytes": null,
+      "pdf_path": null
+    },
+    {
+      "id": "2606.31993",
+      "title": "OopsieVerse: A Safety Benchmark with Damage-Aware Simulation for Robot Manipulation",
+      "abstract": "While robotic manipulation capabilities have advanced rapidly, physical safety remains a major barrier to deploying household robots: task success is insufficient if the robot damages itself or its surroundings. Simulation offers a harm-free alternative to costly and dangerous real-world training and evaluation, yet existing simulators lack general mechanisms to detect, quantify, and represent damage. To address this gap, we introduce OOPSIEVERSE, a unified simulation framework and benchmark for damage-aware household manipulation. OOPSIEVERSE provides damage as an explicit, physically-grounded, and taskagnostic signal by converting sources such as contact forces, temperature changes, and liquid interactions into corresponding mechanical, thermal or fluid damage. OOPSIEVERSE comprises two core elements: (1) DAMAGESIM, a simulator-agnostic framework for detecting and quantifying damage during navigation and manipulation, and (2) a suite of household tasks designed to evaluate common damage modes and distinguish between task completion and safe execution. We demonstrate the generality of our framework by instantiating DAMAGESIM in two simulators with different physics backends, OmniGibson (Nvidia Omniverse) and RoboCasa (MuJoCo). We further showcase the utility of OOPSIEVERSE across multiple use cases, including (1) guiding safer demonstration collection via real-time damage feedback, (2) learning safer manipulation policies through damage-conditioned imitation learning and reinforcement learning, (3) benchmarking the safety of state-of-the-art Vision Language Action policies, and (4) improving real-world safety of sim-to-real transferred policies. Together, our results highlight the potential of OOPSIEVERSE as an open-source foundation for systematic, scalable research on safe robot manipulation. For code and more information, please refer to https://robin-lab.cs.utexas.edu/oopsieverse/",
+      "authors": [
+        "Arnav Balaji",
+        "Arpit Bahety",
+        "Sriniket Ambatipudi",
+        "Daniel Lam",
+        "Junhong Xu",
+        "Roberto Mart\u00edn-Mart\u00edn"
+      ],
+      "published": "2026-06-30T17:30:05Z",
+      "updated": "2026-06-30T17:30:05Z",
+      "url": "https://arxiv.org/abs/2606.31993",
+      "pdf_url": "https://arxiv.org/pdf/2606.31993.pdf",
+      "primary_category": "cs.RO",
+      "categories": [
+        "cs.RO"
+      ],
+      "tags": [
+        "cs.RO"
+      ],
+      "domain": "Agent",
+      "pdf_downloaded": false,
+      "pdf_size_bytes": null,
+      "pdf_path": null
+    },
+    {
+      "id": "2606.31958",
+      "title": "Adapting Generalist Robot Policies with Semantic Reinforcement Learning",
+      "abstract": "Generalist robot policies learn a diverse repertoire of behaviors from large-scale pretraining. In principle, this makes them excellent priors for downstream adaptation via reinforcement learning (RL). In practice, however, standard RL methods leveraging this prior optimize directly over robot actions, requiring the base policy's action distribution to be close to that of a performant policy from the start. This assumption breaks down for complex or long-horizon tasks that fall outside the pretraining distribution. Our key insight is that, for sufficiently expressive generalist policies, language prompts are an effective alternative space for learning to solve such tasks: modulating language inputs elicits skills already within the policy's repertoire, which can be composed to solve tasks beyond its zero-shot capabilities. We propose Semantic Action Reinforcement Learning (SARL), which learns to optimize this prompt space through online interaction, treating the generalist policy as a controllable skill prior. Importantly, leveraging pretrained skills rather than learning new ones from scratch yields structured, semantically meaningful exploration and highly efficient online improvement, and learning to modulate prompts through experience grounds them in induced real-world behaviors for robust task-solving. Across real-world settings and simulated benchmarks, we show SARL unlocks fundamentally new capabilities -- adapting VLA behavior to solve complex, long-horizon tasks -- and significantly outperforms existing approaches for improving robot behavior in deployment.",
+      "authors": [
+        "Jagdeep Singh Bhatia",
+        "Andrew Wagenmaker",
+        "William Chen",
+        "Sergey Levine"
+      ],
+      "published": "2026-06-30T17:00:33Z",
+      "updated": "2026-06-30T17:00:33Z",
+      "url": "https://arxiv.org/abs/2606.31958",
+      "pdf_url": "https://arxiv.org/pdf/2606.31958.pdf",
+      "primary_category": "cs.RO",
+      "categories": [
+        "cs.RO"
+      ],
+      "tags": [
+        "cs.RO"
+      ],
+      "domain": "Agent",
+      "pdf_downloaded": true,
+      "pdf_size_bytes": 10234912,
+      "pdf_path": "2026-07-01/agent/2606.31958.pdf"
+    },
+    {
+      "id": "2606.31948",
+      "title": "RRT-Rope: A deterministic shortening approach for fast near-optimal path planning in large-scale uncluttered 3D environments",
+      "abstract": "Many path planning algorithms have been introduced so far, but most are costly, in path cost and in processing time, in large-scale uncluttered 3D environments such as underground mining stopes explored by an unmanned aerial vehicle (UAV). Rapidly-exploring Random Tree (RRT) algorithms are popular because of their probabilistic completeness and rapidity in finding a feasible path in single-query problems. Many of the algorithms (e.g. Informed RRT*, RRT#) developed to improve RRT need considerable time to converge in large environments. Shortcutting an RRT is an old idea that has been proven to outperform RRT variants. This paper introduces a new method, RRT-Rope, that aims at finding a near-optimal solution in a drastically shorter amount of time. The proposed approach benefits from fast computation of a feasible path with an altered version of RRT-connect, and post-processes it quickly with a deterministic shortcutting technique, taking advantage of intermediate nodes added to each branch of the tree. This paper presents simulations and statistics carried out to show the efficiency of RRT-Rope, which gives better results in terms of path cost and computation time than other popular RRT variations and shortening techniques in all our simulation environments, and is up to 70% faster than the next best algorithm in a representative stope.",
+      "authors": [
+        "Louis Petit",
+        "Alexis Lussier Desbiens"
+      ],
+      "published": "2026-06-30T16:54:00Z",
+      "updated": "2026-06-30T16:54:00Z",
+      "url": "https://arxiv.org/abs/2606.31948",
+      "pdf_url": "https://arxiv.org/pdf/2606.31948.pdf",
+      "primary_category": "cs.RO",
+      "categories": [
+        "cs.RO"
+      ],
+      "tags": [
+        "cs.RO"
+      ],
+      "domain": "Agent",
+      "pdf_downloaded": true,
+      "pdf_size_bytes": 4666270,
+      "pdf_path": "2026-07-01/agent/2606.31948.pdf"
+    },
+    {
+      "id": "2606.31912",
+      "title": "Learning Locomotion on Discrete Terrain via Minimal Proximity Sensing",
+      "abstract": "Learning-based control has revolutionized dynamic locomotion, yet navigating unstructured terrain remains limited by a robot's incomplete awareness of imminent ground contact. While global perception systems such as LiDARs and depth cameras provide environmental context, they are frequently plagued by latencies, occlusions, and the high computational cost of dense geometric reconstruction. On the other hand, proprioceptive feedback is purely reactive, initiating corrections only after impact has occurred. This work explores embedding a minimal suite of low-cost, high-frequency infrared proximity sensors directly into the feet of a quadrupedal robot. These sensors provide \"pre-contact\" feedback that is robust to self-occlusions and significantly less computationally demanding than conventional vision-based pipelines. By integrating these localized signals into a reinforcement learning framework, we enable the robot to anticipate terrain discontinuities such as gaps and stepping stones that are problematic for traditional perception stacks due to occlusions or state estimation drift. We demonstrate that such sparse, near-field sensing can be reliably modeled in simulation and transferred to the real world with high fidelity. Experimental results show that local proximity sensing substantially improves traversal robustness over discrete terrain and offers a low-power, low-latency alternative or complement to complex global perception suites in unpredictable environments. For more information about results and methods, please see the project website: https://sites.google.com/view/foot-tof/home.",
+      "authors": [
+        "Jiale Fan",
+        "Connor Flynn",
+        "Tianao Xu",
+        "Junzhe He",
+        "Andrei Cramariuc",
+        "Marco Hutter",
+        "Robert Baines"
+      ],
+      "published": "2026-06-30T16:16:37Z",
+      "updated": "2026-06-30T16:16:37Z",
+      "url": "https://arxiv.org/abs/2606.31912",
+      "pdf_url": "https://arxiv.org/pdf/2606.31912.pdf",
+      "primary_category": "cs.RO",
+      "categories": [
+        "cs.RO"
+      ],
+      "tags": [
+        "cs.RO"
+      ],
+      "domain": "Agent",
+      "pdf_downloaded": true,
+      "pdf_size_bytes": 5530407,
+      "pdf_path": "2026-07-01/agent/2606.31912.pdf"
+    },
+    {
+      "id": "2606.31909",
+      "title": "CoDex: Learning Compositional Dexterous Functional Manipulation without Demonstrations",
+      "abstract": "In this work, we study Compositional Dexterous Functional Object Manipulation (CD-FOM): tasks such as aiming and actuating a spray bottle on a plant or a glue gun on wood, which require both actuating an object's internal mechanism and controlling its pose to apply the object's function to the environment. These tasks pose significant challenges for robots due to the demanding integration of semantic understanding of the object's function, actuation mode, and application area with intricate physical dexterity to manage grasp stability, movement trajectory, and actuation. We introduce CoDex, a zero-demonstration framework that autonomously discovers CD-FOM manipulation strategies. CoDex uses vision-language models (VLMs) to infer semantic constraints from the task and scene. These constraints guide analytic constrained optimization to generate a short list of functional grasp candidates that can be efficiently refined with reinforcement learning to generate full grasp-move-actuate policies transferable from simulation to the real world. We evaluate CoDex on a 7-DoF robot arm with a 16-DoF multi-fingered hand across six CD-FOM tasks involving previously unseen objects with internal mechanisms, including spray bottles, hot glue guns, air dusters, flashlights, and pepper grinders, and their application to unseen target objects, showcasing its ability to autonomously discover and execute complex, physically viable dexterous behaviors without human demonstrations. More information at https://robin-lab.cs.utexas.edu/CoDex/.",
+      "authors": [
+        "Bowen Jiang",
+        "William Painter Reger",
+        "Roberto Martin-Martin"
+      ],
+      "published": "2026-06-30T16:12:30Z",
+      "updated": "2026-06-30T16:12:30Z",
+      "url": "https://arxiv.org/abs/2606.31909",
+      "pdf_url": "https://arxiv.org/pdf/2606.31909.pdf",
+      "primary_category": "cs.RO",
+      "categories": [
+        "cs.RO"
+      ],
+      "tags": [
+        "cs.RO"
+      ],
+      "domain": "Agent",
+      "pdf_downloaded": true,
+      "pdf_size_bytes": 3038116,
+      "pdf_path": "2026-07-01/agent/2606.31909.pdf"
+    },
+    {
+      "id": "2606.31889",
+      "title": "Improving path-tracking performance of an articulated tractor-trailer system using a non-linear kinematic model",
+      "abstract": "This paper presents a novel non-linear mathematical model of an articulated tractor-trailer system that can be used, in combination with receding horizon techniques, to improve the performance of path tracking tasks of articulated systems. Due to its dual steering mechanisms, this type of vehicle can be very useful in precision agriculture, particularly for seeding, spraying and harvesting in small fields. The articulated tractor-trailer system model was embedded within a non-linear model predictive controller and the trailer position was monitored. When the kinematic of the trailer was considered, the deviation of trailer's position was reduced substantially alongside not only straight paths but also in headland turns. Using the proposed mathematical model, we were able to control the trailer's position itself rather than the tractor's position. The Robot Operating System (ROS) framework and Gazebo simulator were used to perform realistic simulations examples.",
+      "authors": [
+        "Marina Murillo",
+        "Guido Sanchez",
+        "Nestor Deniz",
+        "Lucas Genzelis",
+        "Leonardo Giovanini"
+      ],
+      "published": "2026-06-30T16:01:29Z",
+      "updated": "2026-06-30T16:01:29Z",
+      "url": "https://arxiv.org/abs/2606.31889",
+      "pdf_url": "https://arxiv.org/pdf/2606.31889.pdf",
+      "primary_category": "cs.RO",
+      "categories": [
+        "cs.RO"
+      ],
+      "tags": [
+        "cs.RO"
+      ],
+      "domain": "Agent",
+      "pdf_downloaded": true,
+      "pdf_size_bytes": 1178895,
+      "pdf_path": "2026-07-01/agent/2606.31889.pdf"
+    },
+    {
+      "id": "2606.31886",
+      "title": "Analytic Cut in Epistemic Logics with Distributed Knowledge",
+      "abstract": "Distributed knowledge is a notion of group knowledge studied in multi-agent epistemic logic. Semantically, the distributed knowledge of a group is interpreted via an accessibility relation given by the intersection of the epistemic accessibility relations of the agents in that group. This paper investigates sequent calculi for epistemic logics of distributed knowledge based on K45, KD45, and S5. While cut elimination holds in existing sequent calculi for modal logics K45 and KD45, it fails in all the systems mentioned above. Instead, we establish the analytic cut property for all three systems by adapting Takano' s (2018) strategy, which restricts the cut formulas to the set of subformulas of the conclusion of the cut rule. As a corollary, the Craig interpolation theorem holds for all logics considered. We also show that all proof-theoretic results remain valid when the empty group is allowed for the distributed-knowledge operator, in which case the distributed knowledge for the empty group is interpreted as the global modality.",
+      "authors": [
+        "Ryo Murai",
+        "Sizhuo Liu",
+        "Katsuhiko Sano"
+      ],
+      "published": "2026-06-30T16:00:53Z",
+      "updated": "2026-06-30T16:00:53Z",
+      "url": "https://arxiv.org/abs/2606.31886",
+      "pdf_url": "https://arxiv.org/pdf/2606.31886.pdf",
+      "primary_category": "cs.MA",
+      "categories": [
+        "cs.MA",
+        "cs.LO"
+      ],
+      "tags": [
+        "cs.LO",
+        "cs.MA"
+      ],
+      "domain": "Agent",
+      "pdf_downloaded": true,
+      "pdf_size_bytes": 306905,
+      "pdf_path": "2026-07-01/agent/2606.31886.pdf"
+    },
+    {
+      "id": "2606.31866",
+      "title": "Inquisitive Action Logic",
+      "abstract": "We introduce inquisitive action logic, InqAL, a multi-agent modal logic for reasoning about action. While traditional approaches focus on what properties of the outcome an agent can force, InqAL also captures what aspects of the outcome an agent determines through their actions. As we argue, such claims of agentive determination are naturally analyzed as modal claims involving questions. Technically, InqAL is a multi-agent extension of inquisitive neighborhood logic based on concurrent game structures. With respect to statements, it is expressively equivalent to the individual-agent fragment of the socially friendly coalition logic recently proposed by Goranko and Enqvist. We present an axiomatization of InqAL and prove completeness and decidability via the finite model property. Along the way, we establish a representation theorem for actual effectivity functions, associating to an agent the sets of outcomes corresponding to their possible actions; we give exact conditions under which a multi-agent neighborhood frame arises from a concurrent game structure.",
+      "authors": [
+        "Ivano Ciardelli"
+      ],
+      "published": "2026-06-30T15:55:16Z",
+      "updated": "2026-06-30T15:55:16Z",
+      "url": "https://arxiv.org/abs/2606.31866",
+      "pdf_url": "https://arxiv.org/pdf/2606.31866.pdf",
+      "primary_category": "cs.LO",
+      "categories": [
+        "cs.LO",
+        "cs.MA"
+      ],
+      "tags": [
+        "cs.LO",
+        "cs.MA"
+      ],
+      "domain": "Agent",
+      "pdf_downloaded": true,
+      "pdf_size_bytes": 353285,
+      "pdf_path": "2026-07-01/agent/2606.31866.pdf"
+    },
+    {
+      "id": "2606.31858",
+      "title": "The Logic of Data Access and Data Exchanges",
+      "abstract": "We investigate a new logic that extends Dynamic Epistemic Logic (DEL), by combining standard epistemic modalities for (individual and distributed) propositional knowledge with operators for (conditional) non-propositional knowledge of a number (in which an agent or a group have knowledge of the value of some variable x, conditional on some additional information). We also generalize these operators, by considering formulas that express the fact that an agent or group can (conditionally) narrow down the possible values of the variable x to at most N possibilities (for some natural number N). In order to name and compare such hypothetical values, we extend the logic further with definite descriptions based on minimization operators, denoting the least of the N possible values of x (according to some fixed order) that are considered possible by the agent or group. On this static base, we consider DEL-style extensions with dynamic modalities for general 'data-exchange events' (covering private and public propositional announcements, but also secret hacking of a private database, or public sharing of one's data via open-source repositories, etc.). In such scenarios, whole 'chunks' of information may be exchanged or modified: once access to a given source is gained, all the 'data' stored at that specific location becomes available. We give complete axiomatizations for the resulting logics, and prove their decidability and co-expressivity.",
+      "authors": [
+        "Alexandru Baltag",
+        "Sonja Smets"
+      ],
+      "published": "2026-06-30T15:53:23Z",
+      "updated": "2026-06-30T15:53:23Z",
+      "url": "https://arxiv.org/abs/2606.31858",
+      "pdf_url": "https://arxiv.org/pdf/2606.31858.pdf",
+      "primary_category": "cs.LO",
+      "categories": [
+        "cs.LO",
+        "cs.MA"
+      ],
+      "tags": [
+        "cs.LO",
+        "cs.MA"
+      ],
+      "domain": "Agent",
+      "pdf_downloaded": true,
+      "pdf_size_bytes": 362902,
+      "pdf_path": "2026-07-01/agent/2606.31858.pdf"
+    },
+    {
+      "id": "2606.31855",
+      "title": "Resolving Asynchronous Distributed Knowledge",
+      "abstract": "There are by now various epistemic modal logics with intersection modalities for distributed knowledge and intersection update modalities for dynamic phenomena like agents sharing (all their) information, agents receiving information from other agents, and full information protocols. One of those is the logic of Resolving Distributed Knowledge, by Agotnes and Wang. It has distributed knowledge modalities for arbitrary subsets of the set of all agents and it also has so-called resolution modalities for arbitrary subsets of agents sharing their knowledge. In that logic, the agents not involved in the knowledge sharing are aware of the agents sharing knowledge, agents are memory-less, and the kind of dynamics represents synchronous updates, where there is common awareness of the global clock. In contrast, in this contribution we present a logic for Resolving Asynchronous Distributed Knowledge. It is an asynchronous generalization of the synchronous logic of resolving distributed knowledge. The logical semantics is history-based: truth is not only with respect to a given world in a model, but also with respect to a given history of prior resolutions, of which each individual agent can only observe a part. In particular, an agent is unaware of resolutions for groups of agents not including her. As is to be expected, this comes with many technical complications, for example concerning the axiomatization. The synchronous axioms relating resolution to distributed knowledge are now invalid. The modelling advantages of such an asynchronous novel logic, for distributed computing and similar areas, are however substantial and a major asset.",
+      "authors": [
+        "Philippe Balbiani",
+        "Hans van Ditmarsch",
+        "Clara Lerouvillois"
+      ],
+      "published": "2026-06-30T15:53:07Z",
+      "updated": "2026-06-30T15:53:07Z",
+      "url": "https://arxiv.org/abs/2606.31855",
+      "pdf_url": "https://arxiv.org/pdf/2606.31855.pdf",
+      "primary_category": "cs.LO",
+      "categories": [
+        "cs.LO",
+        "cs.MA"
+      ],
+      "tags": [
+        "cs.LO",
+        "cs.MA"
+      ],
+      "domain": "Agent",
+      "pdf_downloaded": true,
+      "pdf_size_bytes": 305428,
+      "pdf_path": "2026-07-01/agent/2606.31855.pdf"
+    },
+    {
+      "id": "2606.31846",
+      "title": "Z-1: Efficient Reinforcement Learning for Vision-Language-Action Models",
+      "abstract": "Vision-Language-Action (VLA) models offer a promising framework for robotic manipulation by connecting language instructions, visual observations, and continuous control. However, most existing policies remain limited by behavior cloning or supervised fine-tuning (SFT) from fixed demonstrations, which provides limited opportunity to improve from the policy's own failures. In this paper, we present Z-1, a reinforcement learning (RL) post-training framework for flow-based VLA models. Built on top of $\u03c0_{0.5}$, Z-1 uses only publicly released RoboCasa demonstrations for SFT and then applies a task-wise Group Relative Policy Optimization (GRPO) strategy across $24$ standard RoboCasa tasks. To improve the efficiency and stability of online optimization, Z-1 combines shared-prefix rollout construction, tree-structured trajectory branching, completion-aware reward calibration, and selective joint training of VLM and Action Expert. Across all $24$ RoboCasa tasks, Z-1 achieves an average success rate of $80.6\\%$, improving over its SFT initialization by $13.2\\%$ points and outperforms the published sota models. These results show that systematic GRPO post-training can substantially improve flow-based VLA policies without additional private demonstrations.",
+      "authors": [
+        "Lang Cao",
+        "Renhong Chen",
+        "Luyi Li",
+        "Peng Wang",
+        "Mofan Peng",
+        "Yitong Li"
+      ],
+      "published": "2026-06-30T15:46:57Z",
+      "updated": "2026-06-30T15:46:57Z",
+      "url": "https://arxiv.org/abs/2606.31846",
+      "pdf_url": "https://arxiv.org/pdf/2606.31846.pdf",
+      "primary_category": "cs.RO",
+      "categories": [
+        "cs.RO",
+        "cs.AI"
+      ],
+      "tags": [
+        "cs.AI",
+        "cs.RO"
+      ],
+      "domain": "Agent",
+      "pdf_downloaded": true,
+      "pdf_size_bytes": 637872,
+      "pdf_path": "2026-07-01/agent/2606.31846.pdf"
+    },
+    {
+      "id": "2606.31844",
+      "title": "Bridging Local Observation and Global Simulation in Closed-Loop Traffic Modeling",
+      "abstract": "A local-to-global context mismatch arises when autoregressive traffic simulators trained on ego-centric driving logs are deployed in globally observable closed-loop environments. In such logs, the ego vehicle has rich local observations, while surrounding agents are only partially observed due to perception limits and occlusions. As a result, simulators may learn incomplete context--action mappings that remain hidden in log-based training but emerge during closed-loop rollouts, leading to unrealistic behaviors such as abnormal stops, unsafe interactions, and rule violations. We propose CRAFT, a Contextual pReference Alignment Framework for Traffic Simulation, to mitigate this mismatch via self-supervised failure discovery and preference-guided test-time alignment. CRAFT treats the base simulator as a globally observable sandbox, generating diverse what-if rollouts from logged initial states to expose context-induced failures. These failures are grounded with human-aligned driving priors and converted into preference supervision for training a Contextual Preference Evaluator (CPE). At inference time, CPE acts as a plug-in alignment module that scores candidate actions under complete scene context and reweights autoregressive decoding toward globally coherent behaviors. CRAFT mitigates this local-to-global contextual bias, reducing collisions by 31.2\\% and traffic violations by 33.2\\% without retraining the base simulator.",
+      "authors": [
+        "Ziyan Wang",
+        "Tan Xiang",
+        "Peng Chen",
+        "Xintao Yan"
+      ],
+      "published": "2026-06-30T15:45:34Z",
+      "updated": "2026-06-30T15:45:34Z",
+      "url": "https://arxiv.org/abs/2606.31844",
+      "pdf_url": "https://arxiv.org/pdf/2606.31844.pdf",
+      "primary_category": "cs.RO",
+      "categories": [
+        "cs.RO",
+        "cs.AI"
+      ],
+      "tags": [
+        "cs.AI",
+        "cs.RO"
+      ],
+      "domain": "Agent",
+      "pdf_downloaded": true,
+      "pdf_size_bytes": 13236006,
+      "pdf_path": "2026-07-01/agent/2606.31844.pdf"
+    },
+    {
+      "id": "2606.31836",
+      "title": "RoboTacDex: A Dexterous Visual-Tactile-Action Dataset for Humanoid Manipulation",
+      "abstract": "In the field of robot learning, large-scale and diverse demonstration trajectories provide the fundamental basis for enhancing robotic manipulation ability. We introduce RoboTacDex, a large, multi-modal, and diverse dataset of dexterous manipulation behaviors performed with a humanoid robot. Built on the publicly accessible humanoid robot Unitree G1, RoboTacDex consists of 6k trajectories covering 19 tasks, 23 skills, and interactions with 22 objects. RoboTacDex provides comprehensive records including multi-view RGB and depth information, tactile feedback, and detailed semantic annotations. Furthermore, the dataset features a variety of relatively challenging tasks that can only be completed by dual arms and dexterous hands, aiming to mimic human-like operational logic and simulate real-world manipulation complexity. To ensure data collection quality, we develop an improved multi-camera synchronization system to enable millisecond data synchronization and recording of modalities. In our experiments, we evaluate three representative imitation learning models on our dataset, analyzing their performance as well as their respective strengths and limitations across different task categories. Successful trial results and a moderate level of generalization capabilities across a suite of tasks indicate the effectiveness and diversity of the collected dataset. Our dataset will be open-sourced soon.",
+      "authors": [
+        "Xinyi Wang",
+        "Donghan Li",
+        "Zi'Ang Chen",
+        "Chong Yu",
+        "Chen Xin",
+        "Peng Ye",
+        "Yingkai Sun",
+        "Tao Chen"
+      ],
+      "published": "2026-06-30T15:39:29Z",
+      "updated": "2026-06-30T15:39:29Z",
+      "url": "https://arxiv.org/abs/2606.31836",
+      "pdf_url": "https://arxiv.org/pdf/2606.31836.pdf",
+      "primary_category": "cs.RO",
+      "categories": [
+        "cs.RO"
+      ],
+      "tags": [
+        "cs.RO"
+      ],
+      "domain": "Agent",
+      "pdf_downloaded": true,
+      "pdf_size_bytes": 6048974,
+      "pdf_path": "2026-07-01/agent/2606.31836.pdf"
+    },
+    {
+      "id": "2606.31807",
+      "title": "Reinforcement Learning-Based Control for an Inline Skating Humanoid Robot",
+      "abstract": "As humanoid robots become increasingly dynamic, coupling them with reinforcement learning offers a promising approach to solving the complex, underactuated mechanics of passive inline skating. Equipping a humanoid robot with passive inline skating wheels presents an opportunity to combine the versatile agility of humanoids with the high-speed, energy-efficient locomotion strategies utilized by human skaters. In this paper, we train and deploy a reinforcement learning control policy that enables novel locomotion strategies for a humanoid robot modified to equip consumer inline skates instead of conventional feet. Unlike previous work limited to quadrupedal robots or actively driven wheels, our system allows for precise 6-DoF control of the skates to execute dynamic, edge-driven propulsion strategies. Our skating strategies emerge entirely from our reward structure, without reliance on human motion data, imitation learning, or kinematic priors. We overcome the inherent instability of passive wheels and simulation contact artifacts by utilizing different geometric wheel models (spherical and ellipsoidal) during training and validation, along with a custom success-based command curriculum and a specialized rolling reward. Consequently, our policy demonstrates up to a 50% reduction in Cost of Transport (CoT) compared to standard walking gaits. The resulting policy successfully transfers zero-shot to the physical Booster T1 hardware. Real-world deployments demonstrate dynamic balance, the ability to reject active physical perturbations, and agile locomotion strategies capable of turning at speed. A video of our results can be found at https://www.youtube.com/watch?v=-_APcOS7uFo.",
+      "authors": [
+        "Ethan Marot",
+        "Thomas Bi",
+        "Clemens Schwarke",
+        "Victor Klemm",
+        "Marco Hutter",
+        "Raffaello D'Andrea"
+      ],
+      "published": "2026-06-30T15:25:06Z",
+      "updated": "2026-06-30T15:25:06Z",
+      "url": "https://arxiv.org/abs/2606.31807",
+      "pdf_url": "https://arxiv.org/pdf/2606.31807.pdf",
+      "primary_category": "cs.RO",
+      "categories": [
+        "cs.RO"
+      ],
+      "tags": [
+        "cs.RO"
+      ],
+      "domain": "Agent",
+      "pdf_downloaded": true,
+      "pdf_size_bytes": 16131247,
+      "pdf_path": "2026-07-01/agent/2606.31807.pdf"
+    },
+    {
+      "id": "2606.31772",
+      "title": "Autonomous UAV Navigation for Individual Wildlife Re-Identification",
+      "abstract": "Reliable individual re-identification (re-ID) of wildlife is essential for population monitoring, behavioral tracking, and conservation policy evaluation, yet large-scale data collection remains labor-intensive, relying on manual efforts by ecologists or citizen scientists. We propose an autonomous drone navigation system that actively optimizes image capture for downstream re-ID, moving beyond passive aerial sensing. The system combines YOLOv11 object detection with a DINOv2-based pose classifier to guide real-time flight decisions: detecting animals, orienting to expose the lateral flank (the surface of interest for pattern-based re-ID), and approaching until the subject meets a minimum bounding-box threshold. Unlike prior drone systems that optimize for group-level behavioral video, ours targets the specific image-quality requirements of individual-identification models. We demonstrate feasibility through a case study on zebra using footage collected in Kenya, and show the approach generalizes to other species with diagnostic surface patterns, including giraffes, tigers, and elephants. Our work establishes a framework for task-aware embodied AI for ecological data collection, in which downstream re-ID requirements drive real-time perception and control.",
+      "authors": [
+        "Claire Sun",
+        "Tanya Berger-Wolf",
+        "Jenna Kline"
+      ],
+      "published": "2026-06-30T14:56:04Z",
+      "updated": "2026-06-30T14:56:04Z",
+      "url": "https://arxiv.org/abs/2606.31772",
+      "pdf_url": "https://arxiv.org/pdf/2606.31772.pdf",
+      "primary_category": "cs.RO",
+      "categories": [
+        "cs.RO"
+      ],
+      "tags": [
+        "cs.RO"
+      ],
+      "domain": "Agent",
+      "pdf_downloaded": true,
+      "pdf_size_bytes": 9745856,
+      "pdf_path": "2026-07-01/agent/2606.31772.pdf"
+    },
+    {
+      "id": "2606.31723",
+      "title": "UniTacVLA: Unified Tactile Understanding and Prediction in Vision Language Action Models",
+      "abstract": "Vision-language-action (VLA) models have achieved strong performance in many robotic manipulation tasks, yet remain limited in contact-rich dexterous manipulation. To overcome this limitation, recent vision-tactile-language-action (VTLA) methods incorporate tactile sensing into VLA models to provide direct contact information. However, they typically treat tactile signals as passive auxiliary inputs, making it difficult to model tactile semantics and future physical interactions. To this end, we propose a unified tactile learning framework for contact-rich manipulation that models tactile signals as dynamic interaction cues for both contact understanding and prediction. Specifically, we construct a unified tactile latent space and jointly model current tactile states and future contact changes through tactile chain-of-thought reasoning and coarse-to-fine future tactile prediction, thereby forming a state-aware and dynamics-aware tactile prior. Based on this prior, we introduce a tactile-action mixed controller that combines real-time and predicted tactile feedback to refine low-frequency action chunks with high-frequency corrections. Real-world experiments on four categories of contact-rich tasks, including adjustment, insertion, wiping, and assembly, under both clean and externally perturbed settings, show that our method improves success rate, manipulation accuracy, and contact robustness over existing methods, demonstrating its effectiveness in dexterous physical interaction.",
+      "authors": [
+        "Xidong Zhang",
+        "Yichi Zhang",
+        "Jiaxin Shi",
+        "Fucai Zhu",
+        "Siyu Zhu",
+        "Michael Yu Wang",
+        "Xiaojun Wu",
+        "Weihao Yuan"
+      ],
+      "published": "2026-06-30T14:24:00Z",
+      "updated": "2026-06-30T14:24:00Z",
+      "url": "https://arxiv.org/abs/2606.31723",
+      "pdf_url": "https://arxiv.org/pdf/2606.31723.pdf",
+      "primary_category": "cs.RO",
+      "categories": [
+        "cs.RO"
+      ],
+      "tags": [
+        "cs.RO"
+      ],
+      "domain": "Agent",
+      "pdf_downloaded": true,
+      "pdf_size_bytes": 15425872,
+      "pdf_path": "2026-07-01/agent/2606.31723.pdf"
+    },
+    {
+      "id": "2606.31694",
+      "title": "RCT: A Robot-Collected Touch-Vision-Language Dataset for Tactile Generalization",
+      "abstract": "For robots manipulating open-world objects, tactile representations must generalize to unseen materials. We introduce RCT (Robotic Contact Tactile), a robot-collected touch-vision-language dataset with 29,279 tactile frames from full robot presses on 122 industrial reference materials in 7 categories, recorded with three DIGIT sensors at multiple contact positions. RCT preserves each press as a contact sequence, enabling held-out evaluation across materials, categories, sensors, contact positions, and contact sequences. Frames from one press are strongly correlated: frame-random splits can place near-duplicate observations of the same physical interaction in both training and test. With the encoder held fixed, removing contact-sequence overlap reduces tactile-to-text Recall@1 by 17.7 percentage points. When materials are additionally held out at training time, performance drops sharply, leaving held-out-material Recall@1 at 25.1 +/- 6.1% averaged over three held-out draws. The public TVL/HCT split shows the same structure: every test contact sequence appears in training, and raw-pixel nearest neighbors recover the correct sequence in 98.3% of cases. Uniformly sampling a press improves contrastive training, and RCT-trained embeddings improve category probes on unseen materials. RCT makes contact-sequence-aware, held-out-material evaluation reproducible and exposes novel-material generalization as a central challenge for robotic tactile perception. The RCT dataset is open-sourced at https://faerber-lab.github.io/RCT/",
+      "authors": [
+        "Jingbo He",
+        "Michael F\u00e4rber",
+        "Roberto Calandra"
+      ],
+      "published": "2026-06-30T14:05:33Z",
+      "updated": "2026-06-30T14:05:33Z",
+      "url": "https://arxiv.org/abs/2606.31694",
+      "pdf_url": "https://arxiv.org/pdf/2606.31694.pdf",
+      "primary_category": "cs.RO",
+      "categories": [
+        "cs.RO",
+        "cs.AI",
+        "cs.CL",
+        "cs.CV"
+      ],
+      "tags": [
+        "cs.AI",
+        "cs.CL",
+        "cs.CV",
+        "cs.RO"
+      ],
+      "domain": "Agent",
+      "pdf_downloaded": true,
+      "pdf_size_bytes": 1152996,
+      "pdf_path": "2026-07-01/agent/2606.31694.pdf"
+    },
+    {
+      "id": "2606.31691",
+      "title": "FastDSAC: Enhancing Policy Plasticity via Constrained Exploration for Scalable Humanoid Locomotion",
+      "abstract": "Scalable reinforcement learning has popularized high-throughput sampling architectures, which significantly compresses the training time for off-policy methods in robotic locomotion. However, the rapid increase of data volume and update frequency undermines the stability of value-based methods and diminishes the plasticity of policy networks. To address these challenges, this work presents FastDSAC, a fast and high-performance variant of the Distributional Actor-Critic algorithm designed for parallel sampling scenarios. Specifically, we introduce a truncated Gaussian distribution to approximate the learned policy, which effectively excludes out-of-distribution actions that strain target value estimation while keeping necessary stochasticity for exploration. The proposed action constraint functions as an implicit regularization, which counteracts the plasticity loss typically caused by aggressive gradient updates. This preservation of network adaptability enhances sample efficiency, particularly in scenarios with a high update-to-data ratio, and accelerates the early training process. In contrast to prior fast reinforcement learning approaches that rely on discrete value distributions, our method utilizes a continuous Gaussian representation equipped with adaptive variance regulation, which improves value estimation accuracy by sampling confident and informative transitions. Extensive experiments on MuJoCo Playground and HumanoidBench demonstrate that FastDSAC not only stabilizes the overall training process but also achieves superior asymptotic performance and faster convergence compared to state-of-the-art baselines.",
+      "authors": [
+        "Guanchen Lu",
+        "Yajuan Dun",
+        "Yi Zhou",
+        "Letian Tao",
+        "Jingliang Duan",
+        "Jie Li",
+        "Guofa Li"
+      ],
+      "published": "2026-06-30T14:04:26Z",
+      "updated": "2026-06-30T14:04:26Z",
+      "url": "https://arxiv.org/abs/2606.31691",
+      "pdf_url": "https://arxiv.org/pdf/2606.31691.pdf",
+      "primary_category": "cs.RO",
+      "categories": [
+        "cs.RO"
+      ],
+      "tags": [
+        "cs.RO"
+      ],
+      "domain": "Agent",
+      "pdf_downloaded": true,
+      "pdf_size_bytes": 947172,
+      "pdf_path": "2026-07-01/agent/2606.31691.pdf"
+    },
+    {
+      "id": "2606.31682",
+      "title": "HABIT: Human-Aware Behavior and Interaction Training Dataset for Robot Manipulation",
+      "abstract": "Large-scale demonstration datasets have been central to recent progress in general-purpose robot policies. However, existing datasets are collected in human-absent settings, and policies trained on such data may perform tasks competently in isolation but fail to exhibit human-aware behaviors. To address this gap, we introduce HABIT, a large-scale robot demonstration dataset for human-present environments. We organize tasks into three roles capturing distinct modes of human-robot interaction: Collaborator, where human and robot jointly accomplish a task; Coworker, where they pursue separate tasks in a shared space; and Supervisor, where the human directs the robot. The dataset comprises over 10K episodes and over 160 hours across 60 tasks. Our experiments show that training on human-present data elicits human-aware behaviors that robot-only data fails to produce: spatiotemporal synchronization in Collaborator tasks, yielding in Coworker tasks, and gesture grounding in Supervisor tasks. Moreover, training on HABIT enables rapid adaptation to new human-robot interaction tasks. By introducing human presence as a new axis of dataset diversity, HABIT extends robot policies to environments shared with humans.",
+      "authors": [
+        "Jaehwi Song",
+        "Suchae Jeong",
+        "Byeongguk Jeon",
+        "Sungdong Kim",
+        "Minjoon Seo",
+        "Hyungmok Son",
+        "Kimin Lee"
+      ],
+      "published": "2026-06-30T13:58:19Z",
+      "updated": "2026-06-30T13:58:19Z",
+      "url": "https://arxiv.org/abs/2606.31682",
+      "pdf_url": "https://arxiv.org/pdf/2606.31682.pdf",
+      "primary_category": "cs.RO",
+      "categories": [
+        "cs.RO"
+      ],
+      "tags": [
+        "cs.RO"
+      ],
+      "domain": "Agent",
+      "pdf_downloaded": true,
+      "pdf_size_bytes": 26209579,
+      "pdf_path": "2026-07-01/agent/2606.31682.pdf"
+    },
+    {
+      "id": "2606.31665",
+      "title": "ForecastAgentSearch: Towards a Multi-Expert Agent Search System for Geopolitical Event Forecasting",
+      "abstract": "Geopolitical event forecasting is a challenging task, as it requires understanding complex regional contexts, dynamic event signals, and uncertain future outcomes. Recent advances in large language model agents provide new opportunities for building forecasting systems that can reason with diverse sources and expert perspectives. In this paper, we present \\textit{ForecastAgentSearch}, a preliminary framework that formulates geopolitical event forecasting as a multi-expert agent search problem. Given a forecasting query, the system first analyzes the task context, then searches and ranks relevant expert agents based on their regional knowledge, domain expertise, reliability, and complementarity. The selected agents provide specialized analyses, which are further coordinated to generate a final forecast with explanations and uncertainty awareness. We discuss the key design challenges of agent profiling, expert retrieval, ranking, and multi-agent coordination, and outline possible evaluation protocols for future development. This work aims to provide an initial step toward searchable and reliable agent-based forecasting systems.",
+      "authors": [
+        "Miaomiao Cai",
+        "He Chang",
+        "Yunshan Ma",
+        "See-kiong Ng"
+      ],
+      "published": "2026-06-30T13:42:57Z",
+      "updated": "2026-06-30T13:42:57Z",
+      "url": "https://arxiv.org/abs/2606.31665",
+      "pdf_url": "https://arxiv.org/pdf/2606.31665.pdf",
+      "primary_category": "cs.MA",
+      "categories": [
+        "cs.MA"
+      ],
+      "tags": [
+        "cs.MA"
+      ],
+      "domain": "Agent",
+      "pdf_downloaded": true,
+      "pdf_size_bytes": 2147925,
+      "pdf_path": "2026-07-01/agent/2606.31665.pdf"
+    },
+    {
+      "id": "2606.31654",
+      "title": "DynFly: Dynamic-Aware Continuous Trajectory Generation for UAV Vision-Language Navigation in Urban Environments",
+      "abstract": "Recent advances in multimodal large models have significantly improved UAV vision-language navigation (UAV-VLN) by enhancing high-level perception and reasoning. However, existing methods mainly focus on predicting discrete actions, local targets, or sparse waypoints, while the continuous transition from navigation intent to executable UAV motion remains weakly modeled. This motion-interface gap limits the continuity, stability, and executability of generated UAV trajectories. To address this gap, we propose DynFly, a dynamic-aware continuous trajectory generation framework that bridges high-level navigation reasoning and executable UAV motion. DynFly bridges high-level navigation intent and continuous UAV motion through a lightweight trajectory generation layer. Specifically, it represents expert trajectories in B-spline control-point space and employs a Spline-DiT generator to learn conditional trajectory generation via flow matching. Furthermore, we introduce UAV-oriented dynamic-aware supervision over position, finite-difference velocity, finite-difference acceleration, heading consistency, and local target alignment, enabling the generated trajectories to better satisfy UAV motion characteristics. And our trajectory generation framework can also be integrated with an existing UAV-VLN framework while preserving its original visual-language reasoning pipeline. Extensive experiments on the OpenUAV UAV-VLN benchmark show that DynFly improves both navigation performance and trajectory quality. On the Test Unseen Full split, DynFly improves the strongest baseline by 4.69 NDTW, 2.40 SDTW, 2.14 SR points and 4.87 OSR points, while reducing NE by 4.51 m.",
+      "authors": [
+        "Wen Jiang",
+        "Hanfang Liang",
+        "Li Wang",
+        "Kangyao Huang",
+        "Wang Xu",
+        "Wei Fan",
+        "Jinyuan Liu",
+        "Shaoyu Liu",
+        "Hongwei Duan",
+        "Bin Xu",
+        "Xiangyang Ji",
+        "Huaping Liu"
+      ],
+      "published": "2026-06-30T13:33:48Z",
+      "updated": "2026-06-30T13:33:48Z",
+      "url": "https://arxiv.org/abs/2606.31654",
+      "pdf_url": "https://arxiv.org/pdf/2606.31654.pdf",
+      "primary_category": "cs.RO",
+      "categories": [
+        "cs.RO",
+        "cs.CV"
+      ],
+      "tags": [
+        "cs.CV",
+        "cs.RO"
+      ],
+      "domain": "Agent",
+      "pdf_downloaded": true,
+      "pdf_size_bytes": 7131623,
+      "pdf_path": "2026-07-01/agent/2606.31654.pdf"
+    },
+    {
+      "id": "2606.31635",
+      "title": "A Tutorial on Autonomous Fault-Tolerant Control Using Knowledge-Grounded LLM Agents",
+      "abstract": "Fault recovery in process plants still relies heavily on plant operators, especially when faults fall outside predefined supervisory logic. Operators interpret alarms, procedures, P\\&IDs, interlocks, and process trends, then decide how to move the plant to a safe operating mode without triggering a shutdown. This paper examines how Large Language Model (LLM) agents can support such recovery decisions. The proposed framework treats the LLM as a constrained supervisory planner. It uses plant-specific knowledge to propose recovery actions, and every proposal is checked by an external validator (symbolic or simulation-based) before actuation. The paper develops three design dimensions for applying the framework: the recovery patterns for which LLM agents are useful, the validation strategies that separate admissible from inadmissible proposals, and the deployment constraints imposed by latency, knowledge engineering, safety integration, and model lifecycle management. To make the framework directly usable, two openly available executable Python environments are provided. Both re-implement established case studies, a modular mixing module and a continuous stirred-tank reactor, extended with configurable faults and defined interfaces for custom recovery and validation methods.",
+      "authors": [
+        "Javal Vyas",
+        "Milapji Singh Gill",
+        "Artan Markaj",
+        "Felix Gehlhoff",
+        "Mehmet Mercang\u00f6z"
+      ],
+      "published": "2026-06-30T13:19:45Z",
+      "updated": "2026-06-30T13:19:45Z",
+      "url": "https://arxiv.org/abs/2606.31635",
+      "pdf_url": "https://arxiv.org/pdf/2606.31635.pdf",
+      "primary_category": "eess.SY",
+      "categories": [
+        "eess.SY",
+        "cs.AI",
+        "cs.MA"
+      ],
+      "tags": [
+        "cs.AI",
+        "cs.MA",
+        "eess.SY"
+      ],
+      "domain": "Agent",
+      "pdf_downloaded": true,
+      "pdf_size_bytes": 401889,
+      "pdf_path": "2026-07-01/agent/2606.31635.pdf"
+    }
+  ]
+}
