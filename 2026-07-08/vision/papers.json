@@ -1,0 +1,687 @@
+{
+  "domain": "Vision",
+  "date": "2026-07-08",
+  "count": 23,
+  "papers": [
+    {
+      "id": "2607.06564",
+      "title": "Lift3D-VLA: Lifting VLA Models to 3D Geometry and Dynamics-Aware Manipulation",
+      "abstract": "Recently, Vision-Language-Action (VLA) models have demonstrated strong generalization across diverse tasks. However, effective robotic manipulation in physical environments fundamentally requires geometric understanding and spatial reasoning. While some VLA approaches attempt to incorporate 3D information, they are constrained by limited data availability and geometric information loss in current 3D encoding pipelines, and fail to jointly capture 3D geometry and temporally structured actions in dynamic environments. To address these limitations, we introduce Lift3D-VLA, a unified VLA framework that equips models with explicit 3D point cloud reasoning and enables temporally coherent action generation. First, building upon our previous work Lift3D, an enhanced 2D model-lifting strategy is proposed to geometrically align 3D points with pretrained 2D positional embeddings. This design enables direct point-cloud encoding within the VLA vision encoder while minimizing spatial information loss. Based on explicit 3D inputs, we propose Geometry-Centric Masked Autoencoding (GC-MAE), a dual-objective self-supervised framework that reconstructs the current point cloud while predicting its future geometric evolution. This formulation allows the 2D vision encoder to internalize both 3D structure and physical dynamics. To fully exploit 3D representations, we further design layer-wise temporal action modeling, which leverages multiple layers of the LLM to collaboratively predict action chunks, enabling temporally consistent predictions. Across 22 simulated tasks and 8 real-world manipulation tasks, Lift3D-VLA achieves 10.8% and 11.1% higher mean success rates on MetaWorld and RLBench than the best-performing prior VLA methods, and outperforms the strongest real-world baseline by 4 percentage points, while exhibiting stronger generalization to out-of-distribution perturbations.",
+      "authors": [
+        "Jiaming Liu",
+        "Qingpo Wuwu",
+        "Nuowei Han",
+        "Hao Chen",
+        "Zhuoyang Liu",
+        "Fan Fei",
+        "Yueru Jia",
+        "Chenyang Gu",
+        "Yandong Guo",
+        "Boxin Shi",
+        "Shanghang Zhang"
+      ],
+      "published": "2026-07-07T17:59:47Z",
+      "updated": "2026-07-07T17:59:47Z",
+      "url": "https://arxiv.org/abs/2607.06564",
+      "pdf_url": "https://arxiv.org/pdf/2607.06564.pdf",
+      "primary_category": "cs.RO",
+      "categories": [
+        "cs.RO",
+        "cs.CV"
+      ],
+      "tags": [
+        "cs.CV",
+        "cs.RO"
+      ],
+      "domain": "Vision",
+      "pdf_downloaded": true,
+      "pdf_size_bytes": 6549831,
+      "pdf_path": "2026-07-08/vision/2607.06564.pdf"
+    },
+    {
+      "id": "2607.06560",
+      "title": "Vision as Unified Multimodal Generation",
+      "abstract": "We formulate computer vision as unified multimodal generation, where heterogeneous visual tasks are expressed in the native text and image generation spaces of a unified multimodal model, without task-specific architectures. Under this formulation, SenseNova-Vision uses natural-language instructions and optional visual prompts to specify tasks, target regions or views, and decoding conventions, and generates responses as text for symbolic outputs, images for dense spatial predictions, or mixed text-and-image outputs for compositional tasks. To support large-scale training, we convert diverse computer vision annotations into instruction-response examples compatible with these generation spaces, resulting in the SenseNova-Vision Corpus, a computer-vision instruction-response corpus spanning text, image, and mixed targets. Starting from an off-the-shelf pretrained unified multimodal model, SenseNova-Vision is trained primarily on this corpus, with auxiliary multimodal data used as a capability-preserving mixture, and requires no task-specific prediction heads or architectural modifications. The resulting model covers a broad range of vision tasks, including detection, OCR, keypoint estimation, segmentation, depth estimation, surface normal prediction, point maps, and camera pose estimation, while supporting language-defined variants that combine category, color, region, and other visual cues. Experiments show that a single unified model can match leading task-specialized systems across structured visual understanding, dense geometric prediction, segmentation, and multi-view visual geometry. These results suggest unified multimodal generation as a scalable route for integrating computer vision capabilities into general-purpose foundation models. The model and corpus are publicly available.",
+      "authors": [
+        "Xiaoyang Han",
+        "Jianhua Li",
+        "Kewang Deng",
+        "Zukai Chen",
+        "Xuanke Shi",
+        "Sihan Wang",
+        "Boxuan Li",
+        "Linyan Wang",
+        "Siyi Xie",
+        "Xin You",
+        "Jinsheng Quan",
+        "Zhongang Cai",
+        "Haiwen Diao",
+        "Ziwei Liu",
+        "Lei Yang",
+        "Dahua Lin",
+        "Quan Wang"
+      ],
+      "published": "2026-07-07T17:58:33Z",
+      "updated": "2026-07-07T17:58:33Z",
+      "url": "https://arxiv.org/abs/2607.06560",
+      "pdf_url": "https://arxiv.org/pdf/2607.06560.pdf",
+      "primary_category": "cs.CV",
+      "categories": [
+        "cs.CV"
+      ],
+      "tags": [
+        "cs.CV"
+      ],
+      "domain": "Vision",
+      "pdf_downloaded": false,
+      "pdf_size_bytes": null,
+      "pdf_path": null
+    },
+    {
+      "id": "2607.06555",
+      "title": "ProxyPose: 6-DoF Pose Tracking via Video-to-Video Translation",
+      "abstract": "Tracking the six-degree-of-freedom (6-DoF) pose of objects and surfaces from monocular video is a long-standing problem in computer vision. To tackle this problem, existing methods require inputs beyond the video itself-such as 3D models, depth maps, object masks, or task-specific learned features-and they struggle with textureless, transparent, reflective, or deformable surfaces. Here, we introduce ProxyPose, which recasts 6-DoF pose tracking as video-to-video translation. Given only a video and a single marked pixel in the first frame, a fine-tuned video diffusion model translates the input into a proxy video-a synthetic video depicting a colored polyhedron undergoing the same local rigid-body motion as the surface region at the marked pixel. Because the proxy's geometry and appearance are known by construction, recovering its full 6-DoF trajectory reduces to classical pose estimation with off-the-shelf solvers. This formulation leverages large-scale video pre-training to absorb the hardest aspects of pose tracking-handling challenging materials, occlusions, and deformations-into the translation step, while operating at the pixel level with no assumptions about object identity, boundaries, or global rigidity. ProxyPose achieves state-of-the-art 6-DoF pose tracking accuracy without the additional inputs required by competing methods and after fine-tuning the video model only on synthetic data. We further demonstrate that ProxyPose extends to face tracking, camera pose estimation, and challenging in-the-wild scenes that are beyond the reach of existing approaches. Project page: https://ruihangzhang97.github.io/proxypose/.",
+      "authors": [
+        "Ruihang Zhang",
+        "Felix Taubner",
+        "Pooja Ravi",
+        "Kiriakos N. Kutulakos",
+        "David B. Lindell"
+      ],
+      "published": "2026-07-07T17:56:07Z",
+      "updated": "2026-07-07T17:56:07Z",
+      "url": "https://arxiv.org/abs/2607.06555",
+      "pdf_url": "https://arxiv.org/pdf/2607.06555.pdf",
+      "primary_category": "cs.CV",
+      "categories": [
+        "cs.CV"
+      ],
+      "tags": [
+        "cs.CV"
+      ],
+      "domain": "Vision",
+      "pdf_downloaded": false,
+      "pdf_size_bytes": null,
+      "pdf_path": null
+    },
+    {
+      "id": "2607.06553",
+      "title": "From RGB Generation to Dense Field Readout: Pixel-Space Dense Prediction with Text-to-Image Models",
+      "abstract": "Large-scale text-to-image models are attractive backbones for dense prediction because RGB generation pretraining learns rich semantic, structural, and geometric priors. Existing generative and editing approaches reuse these priors by casting dense prediction as target generation: annotations such as depth, normals, alpha mattes, masks, and heatmaps are encoded into an RGB-trained VAE latent space and decoded back as image-like targets. We argue this inherits more of the generative output interface than dense prediction requires: unlike RGB synthesis, dense prediction asks for pixel-correct, task-native fields on the same image plane, not new RGB content to be rendered. Our key observation is that a pretrained DiT already organizes RGB inputs through a patch-to-token-to-patch lattice on the image plane, so each token indexes a fixed output patch whose channels can carry task-native quantities instead of RGB appearance. We instantiate this as ReChannel: we keep the VAE encoder for the DiT's input distribution but drop the target-side decoder, adapt the frozen DiT with task LoRA, and map each token to its p x p x K_t pixel-space patch through a shared token-local linear head--about 33K parameters, no spatial mixing. Using FLUX-Klein, we evaluate on six dense prediction tasks and over a dozen benchmarks. This minimal interface sets new state-of-the-art on trimap-free matting, KITTI depth, and referring segmentation, and stays competitive on normals, saliency, and pose. In a matched 4B setting it is more accurate and 2.48x faster than an edit-plus-latent-decode counterpart--dense perception can benefit from generative pretraining without inheriting its output interface.",
+      "authors": [
+        "Zanyi Wang",
+        "Xin Lin",
+        "Haodong Li",
+        "Dengyang Jiang",
+        "Yijiang Li",
+        "Pengtao Xie"
+      ],
+      "published": "2026-07-07T17:54:28Z",
+      "updated": "2026-07-07T17:54:28Z",
+      "url": "https://arxiv.org/abs/2607.06553",
+      "pdf_url": "https://arxiv.org/pdf/2607.06553.pdf",
+      "primary_category": "cs.CV",
+      "categories": [
+        "cs.CV"
+      ],
+      "tags": [
+        "cs.CV"
+      ],
+      "domain": "Vision",
+      "pdf_downloaded": true,
+      "pdf_size_bytes": 1553941,
+      "pdf_path": "2026-07-08/vision/2607.06553.pdf"
+    },
+    {
+      "id": "2607.06552",
+      "title": "MonoIR-RS: Infrared Remote Sensing Vision-Language Learning with CLIP and VLM Adaptation",
+      "abstract": "Infrared remote-sensing imagery captures intensity structure, object-background contrast, and illumination-invariant cues often invisible in RGB imagery. Yet, most remote-sensing vision-language resources and models focus on visible-band semantics, leaving infrared vision-language understanding underexplored. We introduce MonoIR-RS, a large-scale infrared remote-sensing vision-language dataset and benchmark that couples IR-aware data construction with CLIP-style contrastive adaptation and VLM instruction tuning. Built from the same source pool and split as FusionRS, MonoIR-RS retains the infrared image as the model-facing modality, yielding 600,000 synthesized infrared images and 59,032 retained IR-aware caption records. The model experiments use this retained language-supervision subset, whose captions rewrite supervision around grayscale structure and infrared-style contrast instead of RGB appearance. We show that the synthesized infrared imagery is markedly closer to real thermal imagery than a grayscale conversion on the AVIID benchmark. We fine-tune five CLIP backbones and six VLM backbones, and calibrate them against zero-shot behavior: IR-aware adaptation lifts CLIP mean recall by up to 12.8 points and drives VLM captioning IR-cue coverage to 100% while reducing residual RGB-color leakage to near zero. By isolating the infrared modality from RGB-IR dual-modal learning, MonoIR-RS offers a controlled, reproducible testbed for aligning infrared remote-sensing evidence with language.",
+      "authors": [
+        "Jiaju Han",
+        "Ma Yaqi",
+        "Yahui Chai",
+        "Xuemeng Sun",
+        "Xin Li",
+        "Qike Zhang",
+        "Yingying Zhao",
+        "Xiang Chen",
+        "Luwei Yang",
+        "Chengyin Hu",
+        "Jiahuan Long"
+      ],
+      "published": "2026-07-07T17:53:58Z",
+      "updated": "2026-07-07T17:53:58Z",
+      "url": "https://arxiv.org/abs/2607.06552",
+      "pdf_url": "https://arxiv.org/pdf/2607.06552.pdf",
+      "primary_category": "cs.CV",
+      "categories": [
+        "cs.CV"
+      ],
+      "tags": [
+        "cs.CV"
+      ],
+      "domain": "Vision",
+      "pdf_downloaded": true,
+      "pdf_size_bytes": 2840192,
+      "pdf_path": "2026-07-08/vision/2607.06552.pdf"
+    },
+    {
+      "id": "2607.06549",
+      "title": "Unsupervised Domain Adaptation for Calcification Classification in Mammography Across Multi-Site Datasets",
+      "abstract": "Deep learning-based computer-aided diagnosis (CAD) systems have shown strong performance in breast cancer diagnosis, particularly for classification tasks in mammography. However, domain shifts across multi-site datasets remain a challenge, especially when models are applied to unseen domains. In this work, we proposed a calcification classification framework to improve malignant versus benign breast disease classification across multi-site mammography datasets. The framework consisted of two components: (1) an unsupervised domain adaptation module based on style transfer models (AdaIN and CycleGAN) to generate vendor-specific and technique-specific training samples without additional annotations, and (2) a supervised classification module using Swin Transformer V2 as the backbone. We evaluated the proposed method on three datasets: cross-validation on OPTIMAM (National Health Service, United Kingdom; n=2994), followed by external validation on EMBED (Emory University; n=125), and Duke Calcification Dataset v1 (n=788). These datasets cover multiple vendors and include both full-field digital mammography and synthetic 2D images derived from digital breast tomosynthesis. The proposed framework improved cross-site performance for both EMBED (AUC 0.68 to 0.72) and the Duke Calcification Dataset (AUC 0.68 to 0.73). These findings indicate that domain adaptation can reduce domain shifts and improve the generalization for calcification classification across multi-site datasets.",
+      "authors": [
+        "Xuan Liu",
+        "Derek L. Nguyen",
+        "Emily C. Barre",
+        "Jennifer Thomas",
+        "Thomas Lynch",
+        "Jeffrey R. Marks",
+        "E. Shelley Hwang",
+        "Marc D. Ryser",
+        "Joseph Y. Lo",
+        "Lars J. Grimm"
+      ],
+      "published": "2026-07-07T17:53:49Z",
+      "updated": "2026-07-07T17:53:49Z",
+      "url": "https://arxiv.org/abs/2607.06549",
+      "pdf_url": "https://arxiv.org/pdf/2607.06549.pdf",
+      "primary_category": "cs.CV",
+      "categories": [
+        "cs.CV"
+      ],
+      "tags": [
+        "cs.CV"
+      ],
+      "domain": "Vision",
+      "pdf_downloaded": true,
+      "pdf_size_bytes": 15052106,
+      "pdf_path": "2026-07-08/vision/2607.06549.pdf"
+    },
+    {
+      "id": "2607.06534",
+      "title": "CAIRN: Cross-Room 3D Scene Understanding with Topology-Aware Large Multimodal Models",
+      "abstract": "Existing 3D scene-grounded Large Language Models (3D-LLMs) focus on answering questions grounded in simplified single-room 3D scenes, lacking the ability to reason over real-world household environments containing multiple interconnected rooms and diverse object categories. We introduce CAIRN, a topology-aware 3D-LLM for multi-room 3D scene understanding. CAIRN aligns transformer attention with scene hierarchy, giving the model explicit awareness of object-level relations and room-level connectivity. It enriches object tokens with room-local relational context via a graph neural network, introduces learned room tokens for room-level abstraction, and applies a hierarchical attention mask with geometric bias to route information according to scene topology. CAIRN is developed on CAIRN-MR, a benchmark we introduce on HM3D for multi-room 3D scene understanding, covering grounding, captioning, and four question-answering tasks that progressively evaluate from intra-room perception to cross-room reasoning. Experiments show that CAIRN outperforms prior 3D-LLMs by a large margin across all CAIRN-MR tasks while remaining competitive on five single-room benchmarks.",
+      "authors": [
+        "He Liang",
+        "Chenyang Ma",
+        "Yiming Zhang",
+        "Sangyun Shin",
+        "Andrew Markham",
+        "Niki Trigoni",
+        "Yuhang He"
+      ],
+      "published": "2026-07-07T17:39:41Z",
+      "updated": "2026-07-07T17:39:41Z",
+      "url": "https://arxiv.org/abs/2607.06534",
+      "pdf_url": "https://arxiv.org/pdf/2607.06534.pdf",
+      "primary_category": "cs.CV",
+      "categories": [
+        "cs.CV"
+      ],
+      "tags": [
+        "cs.CV"
+      ],
+      "domain": "Vision",
+      "pdf_downloaded": true,
+      "pdf_size_bytes": 3078612,
+      "pdf_path": "2026-07-08/vision/2607.06534.pdf"
+    },
+    {
+      "id": "2607.06516",
+      "title": "Point as Skeleton: Accumulated Point Cloud Enhanced Autoregressive Generation for Closed-Loop Autonomous Driving Simulation",
+      "abstract": "Evaluating end-to-end autonomous driving (E2E-AD) remains challenging, as existing driving simulation methods often trade off closed-loop interactivity (e.g., CARLA) and real-world visual fidelity (e.g., nuScenes). We present \\textbf{\\emph{Point as Skeleton}}, a generative sensor simulation framework for state-updated autoregressive driving video generation, in which an autoregressive generator synthesizes visual observations from step-wise updated ego states, actor states, scene maps, and point-cloud skeleton conditions. To support closed-loop rollout, we introduce Reset-and-Roll, which adapts rolling diffusion inference to simulation by preventing future-conditioned latent states from being committed across simulation steps. To stabilize error accumulation during step-wise autoregressive rollout, we introduce point-cloud skeletons that decouple foreground and background assets and project them into camera-view painted-point and template-depth conditions, providing appearance and geometric cues. We further implement a nuPlan-based renderer-level closed-loop generative interface for evaluating generation under ego deviations from the original log. Experiments on nuScenes and nuPlan show that \\textit{Point as Skeleton} improves autoregressive generation quality during closed-loop rollout, demonstrating its potential for visually faithful closed-loop driving simulation. The code is available at https://github.com/krauwu/point-as-skeleton.",
+      "authors": [
+        "Songbur Wong",
+        "Xiaosong Jia",
+        "Junqi You",
+        "Bo Zhang",
+        "Pei Xu",
+        "Renqiu Xia",
+        "Yuping Qiu",
+        "Shaofeng Zhang",
+        "Zelin Zhao",
+        "Xuechao Yan",
+        "Yuchen Zhou",
+        "Yurui Chen",
+        "Wen Guo",
+        "Hang Xu",
+        "Junchi Yan"
+      ],
+      "published": "2026-07-07T17:20:51Z",
+      "updated": "2026-07-07T17:20:51Z",
+      "url": "https://arxiv.org/abs/2607.06516",
+      "pdf_url": "https://arxiv.org/pdf/2607.06516.pdf",
+      "primary_category": "cs.CV",
+      "categories": [
+        "cs.CV"
+      ],
+      "tags": [
+        "cs.CV"
+      ],
+      "domain": "Vision",
+      "pdf_downloaded": true,
+      "pdf_size_bytes": 6873703,
+      "pdf_path": "2026-07-08/vision/2607.06516.pdf"
+    },
+    {
+      "id": "2607.06483",
+      "title": "Mitigating Domain Shift in Conditioned Floor Plan Generation: Synthetic Pre-training for Data-Efficient Adaptation",
+      "abstract": "Robustness to domain shift is a key requirement for floor plan generative models to be applicable beyond the single dataset they were trained on, as floor plans vary widely across regions due to distinct architectural cultures, spatial constraints, and construction practices, while acquiring new annotated datasets remains costly and domain-specific. Yet, no prior work has studied this robustness in the context of conditioned floor plan generation. In this paper, we evaluate state-of-the-art models from two fundamentally different generative paradigms across three public datasets (RPLAN, MagicPlan and Swiss Dwellings) and show that they are highly sensitive to domain shift, with up to an order of magnitude performance degradation when transferred across domains. To mitigate this with minimal target-domain supervision, we introduce a procedural method to generate a large-scale synthetic training dataset that enforces strict physical constraints (non-overlapping rooms, valid door placement, graph consistency) while intentionally sacrificing architectural realism through highly irregular spatial arrangements and aggressive geometric perturbation of room shapes. We show that pre-training on this synthetic data considerably improves zero-shot cross-domain performance, outperforming in-domain training on MagicPlan. Furthermore, it provides a highly effective initialization for fine-tuning, accelerating target domain adaptation and outperforming real-world initialization baselines by up to 40% in a low-data regime.",
+      "authors": [
+        "Matthieu Ospici",
+        "Arnaud Gueze",
+        "Luc Bourrat",
+        "Adrien Bernhardt"
+      ],
+      "published": "2026-07-07T16:45:24Z",
+      "updated": "2026-07-07T16:45:24Z",
+      "url": "https://arxiv.org/abs/2607.06483",
+      "pdf_url": "https://arxiv.org/pdf/2607.06483.pdf",
+      "primary_category": "cs.CV",
+      "categories": [
+        "cs.CV"
+      ],
+      "tags": [
+        "cs.CV"
+      ],
+      "domain": "Vision",
+      "pdf_downloaded": true,
+      "pdf_size_bytes": 8509370,
+      "pdf_path": "2026-07-08/vision/2607.06483.pdf"
+    },
+    {
+      "id": "2607.06478",
+      "title": "A VLM-Enhanced Framework for Comprehensive Traffic Sign Condition Assessment Integrating Daytime Visual Performance and Nighttime Retroreflectivity Evaluation",
+      "abstract": "Traffic signs are crucial components of road safety, serving as visual tools under all lighting conditions. The Manual on Uniform Traffic Control Devices (MUTCD) specifies daytime visual factors such as legibility and color contrast, and nighttime retroreflectivity requirements. Traditional assessment methods rely on manual inspections, which the Federal Highway Administration (FHWA) notes are subjective, labor-intensive and pose safety concerns, while retroreflectometers are expensive and unaffordable for smaller agencies. Most existing studies focus on either daytime factors or nighttime retroreflectivity but rarely integrate both aspects comprehensively. This study develops a novel framework that systematically evaluates traffic signs through integrated daytime-nighttime assessment. The methodology employs three fine-tuned Vision Language Models (VLMs) for daytime visual performance assessment across four key factors: legibility, color, surface and shape integrity, and surrounding environment conditions. VLM predictions are converted to numerical scores through sentiment analysis and Contrastive Language-Image Pre-Training (CLIP) scoring, while nighttime performance is assessed using LiDAR-derived retroreflectivity following established calibration procedures. The framework integrates these components into a comprehensive Sign Condition Index (SCI) for maintenance guidance. Evaluation results demonstrated that LLaVA and Qwen outperformed InternVL, achieving bidirectional cosine similarity scores of 0.67-0.76 across all factors. Among 462 validated traffic signs, 68 were flagged by the proposed framework as requiring immediate replacement due to inadequate retroreflectivity performance. This research provides a cost-effective alternative to traditional manual inspections for comprehensive traffic sign condition assessment.",
+      "authors": [
+        "Linlin Zhang",
+        "Neema Jakisa Owor",
+        "Xiang Yu",
+        "Abby Watts",
+        "Yaw Adu-Gyamfi"
+      ],
+      "published": "2026-07-07T16:33:48Z",
+      "updated": "2026-07-07T16:33:48Z",
+      "url": "https://arxiv.org/abs/2607.06478",
+      "pdf_url": "https://arxiv.org/pdf/2607.06478.pdf",
+      "primary_category": "cs.CV",
+      "categories": [
+        "cs.CV"
+      ],
+      "tags": [
+        "cs.CV"
+      ],
+      "domain": "Vision",
+      "pdf_downloaded": true,
+      "pdf_size_bytes": 19592347,
+      "pdf_path": "2026-07-08/vision/2607.06478.pdf"
+    },
+    {
+      "id": "2607.06468",
+      "title": "EgoPolice: A Benchmark for Egocentric Video Understanding in High-Stakes Police Body-Worn Camera Footage",
+      "abstract": "We introduce EgoPolice, a carefully curated dataset of real, egocentric police-civilian interactions, sourced from publicly available body-worn camera videos. We select police-civilian action labels that are critical for police behavioral research and annotate them at a second-by-second granularity. The videos feature rapid and irregular camera motion, dense human interactions, and rare high-stakes events, making the dataset a challenging benchmark for motion-robust and context-aware egocentric perception. We provide two different tasks, classification and multiple-choice question-answering, and benchmark both open-source and closed-source models. We find that even the best video models like Gemini 2.5 Pro still struggle to accurately predict high-risk actions such as \"Weapon Out\". Beyond serving as a benchmark, EgoPolice provides a foundation for developing models capable of identifying events of interest in large-scale body-worn camera video repositories, enabling more efficient downstream human review.",
+      "authors": [
+        "Max Gonzalez Saez-Diez",
+        "Jihoon Chung",
+        "Adam D. Wolsky",
+        "Gregory Lanzalotto",
+        "Dean Knox",
+        "Jonathan Mummolo",
+        "Brandon M. Stewart",
+        "Olga Russakovsky"
+      ],
+      "published": "2026-07-07T16:28:10Z",
+      "updated": "2026-07-07T16:28:10Z",
+      "url": "https://arxiv.org/abs/2607.06468",
+      "pdf_url": "https://arxiv.org/pdf/2607.06468.pdf",
+      "primary_category": "cs.CV",
+      "categories": [
+        "cs.CV"
+      ],
+      "tags": [
+        "cs.CV"
+      ],
+      "domain": "Vision",
+      "pdf_downloaded": false,
+      "pdf_size_bytes": null,
+      "pdf_path": null
+    },
+    {
+      "id": "2607.06466",
+      "title": "Verification of Dynamic Holographic Behavior in Identity Documents",
+      "abstract": "This paper addresses the remote verification of the authenticity of Optically Variable Devices (commonly known as holograms) on identity documents. Typically placed over the cardholder's photo, these devices provide strong and easily verifiable security for human inspection but pose challenges for automated verification. Existing approaches easily cover static frauds (e.g. paper photocopy) and can be evaluated for such, but their capacity to detect real, dynamic fraud cases (e.g. handcrafted hologram) has not been evaluated to date because of the lack of public datasets. Furthermore, they are usually trained to detect known attack types, and few of them can generalize to new, unseen attacks. This work features three contributions to address these limitations: 1) a new public dataset, MIDV-DynAttack, which extends the existing MIDV-Holo dataset with realistic, static and dynamic attacks against identity document specimens, tripling the number of attack samples compared to the original dataset, 2) a novel verification method which can assess the authenticity of a specific hologram thanks to the analysis of its dynamic behavior and appearance, can be trained without dynamic attack samples, and exhibits new state-of-the-art performance, 3) a benchmark of existing approaches which follows a clear evaluation protocol and emphasizes the inability of other approaches to deal with dynamic attacks, as well as new challenging attacks to deal with. Code and dataset are publicly available at https://github.com/EPITAResearchLab/pouliquen.25.icdar.",
+      "authors": [
+        "Glen Pouliquen",
+        "Joseph Chazalon",
+        "Guillaume Chiron",
+        "Thierry G\u00e9raud",
+        "Ahmad Montaser Awal"
+      ],
+      "published": "2026-07-07T16:27:28Z",
+      "updated": "2026-07-07T16:27:28Z",
+      "url": "https://arxiv.org/abs/2607.06466",
+      "pdf_url": "https://arxiv.org/pdf/2607.06466.pdf",
+      "primary_category": "cs.CV",
+      "categories": [
+        "cs.CV"
+      ],
+      "tags": [
+        "cs.CV"
+      ],
+      "domain": "Vision",
+      "pdf_downloaded": true,
+      "pdf_size_bytes": 7384272,
+      "pdf_path": "2026-07-08/vision/2607.06466.pdf"
+    },
+    {
+      "id": "2607.06457",
+      "title": "Andha-Dhun: A First Look at Audio Descriptions in Hindi",
+      "abstract": "Audio Descriptions (ADs) narrate visual content for Blind and Low Vision (BLV) audiences during gaps in audiovisual media. There is growing momentum around ADs in movies and TV shows, and with mandates from India's Central Board of Film Certification (CBFC), there is a need to expand ADs beyond English. Yet, there is no work that generates ADs for any Indian language. To address this gap, we present the first systematic study of ADs in Hindi, contributing to aspects such as data, generation, and evaluation. We introduce Andha-Dhun, the first dataset of human-authored Hindi ADs collected from 8 full-length movies. We explore two approaches for generating ADs in Hindi: (i) directly from English dense video descriptions, and (ii) translating English ADs into Hindi. We evaluate these approaches using perplexity and LLM-as-a-judge metrics to assess fluency and quality respectively. We also analyze movies that have both English and Hindi human-authored ADs and find that naive translation introduces artifacts and narrows diversity compared to original Hindi ADs. Direct machine translation fails to adapt cultural references, while human-translated ADs do better but still fall short. Our findings emphasize that the purpose of Hindi ADs is accessibility for Indian BLV audiences, and that this requires adapting content for the audience more than strict fidelity to the source.",
+      "authors": [
+        "Ritabrata Chakraborty",
+        "Divy Kala",
+        "Nisheeth Bhooshan Gupta",
+        "Ganji Sreeram",
+        "Pailla Balakrishna Reddy",
+        "Makarand Tapaswi"
+      ],
+      "published": "2026-07-07T16:15:46Z",
+      "updated": "2026-07-07T16:15:46Z",
+      "url": "https://arxiv.org/abs/2607.06457",
+      "pdf_url": "https://arxiv.org/pdf/2607.06457.pdf",
+      "primary_category": "cs.CV",
+      "categories": [
+        "cs.CV"
+      ],
+      "tags": [
+        "cs.CV"
+      ],
+      "domain": "Vision",
+      "pdf_downloaded": true,
+      "pdf_size_bytes": 1070931,
+      "pdf_path": "2026-07-08/vision/2607.06457.pdf"
+    },
+    {
+      "id": "2607.06440",
+      "title": "PIPBench: A Profile-Inclusive Framework for Personalized Image Generation Evaluation",
+      "abstract": "Recent text-to-image models such as DALLE-3 excel at following diverse prompts yet remain blind to individual aesthetic preferences. We study personalized image generation, where models must align outputs with a user's implicit visual preferences based on a few historically preferred images and a short prompt. To this end, we introduce PIPBench, the first profile-inclusive benchmark for evaluating personalized image generation. We further propose a novel data construction pipeline that leverages psychological and demographic profiling dimensions for both real-user data collection and scalable agent-based data generation. Using PIPBench, we conduct a thorough evaluation of representative line of methods. Our experiments reveal key limitations in existing methods, suggesting new challenges and opportunities for personalized text-to-image synthesis. Project page: https://wuyuhang05.github.io/PIPBench/",
+      "authors": [
+        "Yuhang Wu",
+        "Shuxiang Zhang",
+        "Wee Hian Ching",
+        "Chi Zhang",
+        "Miao Liu"
+      ],
+      "published": "2026-07-07T16:09:30Z",
+      "updated": "2026-07-07T16:09:30Z",
+      "url": "https://arxiv.org/abs/2607.06440",
+      "pdf_url": "https://arxiv.org/pdf/2607.06440.pdf",
+      "primary_category": "cs.CV",
+      "categories": [
+        "cs.CV"
+      ],
+      "tags": [
+        "cs.CV"
+      ],
+      "domain": "Vision",
+      "pdf_downloaded": true,
+      "pdf_size_bytes": 25992479,
+      "pdf_path": "2026-07-08/vision/2607.06440.pdf"
+    },
+    {
+      "id": "2607.06438",
+      "title": "WristMimic: Full-Body Humanoid Control with Wrist-Guided Manipulation",
+      "abstract": "Retargeting human object interaction demonstrations to physics based simulation requires reproducing not only body motion but also the object motion and contacts that make manipulation succeed. However, position only hand trajectories do not specify the contact forces needed to manipulate objects, and directly tracking them can overconstrain contact rich finger behavior. We introduce WristMimic, a wrist guided whole body control framework that explicitly separates contact free body motion from contact rich hand manipulation. The contact free body and wrist are guided by kinematic pose targets, whereas the fingers are not directly supervised by human hand pose. Instead, they learn grasping and manipulation behaviors from object tracking and contact outcomes. Our key insight is that the wrist is the natural gate between these two regimes. It is largely free from contact and can be tracked kinematically, yet it determines the global hand configuration and places the fingers within reachable grasp affordances. To ensure reliable wrist placement during interaction, we introduce wrist specific reset constraints and reward prioritization. Experiments show that WristMimic matches or surpasses methods using full finger pose supervision while enabling finger agnostic retargeting across diverse hand embodiments.",
+      "authors": [
+        "Wongyun Yu",
+        "Youngwoon Kim",
+        "Minsu Cho"
+      ],
+      "published": "2026-07-07T16:06:43Z",
+      "updated": "2026-07-07T16:06:43Z",
+      "url": "https://arxiv.org/abs/2607.06438",
+      "pdf_url": "https://arxiv.org/pdf/2607.06438.pdf",
+      "primary_category": "cs.RO",
+      "categories": [
+        "cs.RO",
+        "cs.CV",
+        "cs.GR"
+      ],
+      "tags": [
+        "cs.CV",
+        "cs.GR",
+        "cs.RO"
+      ],
+      "domain": "Vision",
+      "pdf_downloaded": true,
+      "pdf_size_bytes": 6426762,
+      "pdf_path": "2026-07-08/vision/2607.06438.pdf"
+    },
+    {
+      "id": "2607.06424",
+      "title": "XRFormer: Multiscale Tokenization for XRF Representation Learning",
+      "abstract": "X-ray fluorescence (XRF) spectroscopy is a key modality for material analysis in cultural heritage. However, automated learning from XRF spectra remains challenging: XRF spectra are complex one-dimensional signals composed of sharp elemental peaks, broader structures, and background variations that are not taken into account by existing learning-based models. This paper introduces XRFormer, a transformer architecture tailored to XRF spectra through a multiscale convolutional tokenizer that injects locality and multi-resolution inductive biases before global self-attention. The tokenizer progressively reduces spectral resolution while increasing embedding dimensionality, and the resulting token sequence is processed by a standard transformer encoder. We further investigate self-supervised pretraining for XRF representation learning using Masked Spectral modeling (MSM) and a physics-informed Peak Presence Prediction (PPP) objective. Experiments on the Pigments Checker STANDARD v.5 dataset for pigment identification and unmixing show that XRFormer consistently outperforms ViT, SpectralFormer (with and without CAF), and a 1D-CNN baseline for pigment identification. For pigment unmixing, XRFormer achieves robust abundance estimation while maintaining significantly higher parameter efficiency than SpectralFormer, operating at a lower token resolution (128 vs. 512 tokens) and with less than half the number of parameters (1.5M vs. 3.37M). MSM yields consistent gains across both tasks, while PPP further enhances performance for both identification and unmixing when tuned with an appropriate peak prominence. These results highlight multiscale, modality-aware tokenization as an effective and parameter efficient foundation for transformer-based XRF modeling under data-limited conditions. A GitHub repository is provided at https://github.com/sofiane1010/XRFormer.",
+      "authors": [
+        "Sofiane Daimellah",
+        "Sylvie Le H\u00e9garat-Mascle",
+        "Clotilde Boust"
+      ],
+      "published": "2026-07-07T15:51:06Z",
+      "updated": "2026-07-07T15:51:06Z",
+      "url": "https://arxiv.org/abs/2607.06424",
+      "pdf_url": "https://arxiv.org/pdf/2607.06424.pdf",
+      "primary_category": "cs.CV",
+      "categories": [
+        "cs.CV"
+      ],
+      "tags": [
+        "cs.CV"
+      ],
+      "domain": "Vision",
+      "pdf_downloaded": true,
+      "pdf_size_bytes": 3989000,
+      "pdf_path": "2026-07-08/vision/2607.06424.pdf"
+    },
+    {
+      "id": "2607.06420",
+      "title": "HoloCount: A Holistic Visual Counting Benchmark for MLLMs",
+      "abstract": "Visual counting is a fundamental pillar of multimodal intelligence, requiring a seamless integration of fine-grained grounding and spatial reasoning. While Multimodal Large Language Models (MLLMs) have achieved remarkable success in qualitative scene understanding, their quantitative precision remains a significant bottleneck, often characterized by persistent numerical hallucinations. Existing counting benchmarks primarily focus on basic perception in simplified contexts, failing to capture the complex failure modes that emerge under logical constraints or adversarial conditions. To address these limitations, we introduce HoloCount, a holistic and diagnostically rich benchmark structured around a three-level hierarchical taxonomy. HoloCount evaluates MLLMs across: (1) Semantic Counting, focusing on atomic and property-based enumeration; (2) Analytical Counting, assessing logical composition through spatial and set-based reasoning; and (3) Robustness Testing, probing model integrity against adverse scenarios and grounded counter-priors, such as high-density scenes and linguistic biases. Through an exhaustive evaluation of over 20 state-of-the-art MLLMs, we reveal a critical performance gap: even top-tier models degrade significantly as tasks transition from perception to complex analytical reasoning and adverse scenarios. Our findings provide a systematic landscape of current MLLM counting capabilities and offer a roadmap for developing more grounded and reliable multimodal systems. The dataset is available at https://mm-mvr.github.io/HoloCount/.",
+      "authors": [
+        "Jinhong Deng",
+        "Limeng Qiao",
+        "Guanglu Wan"
+      ],
+      "published": "2026-07-07T15:48:57Z",
+      "updated": "2026-07-07T15:48:57Z",
+      "url": "https://arxiv.org/abs/2607.06420",
+      "pdf_url": "https://arxiv.org/pdf/2607.06420.pdf",
+      "primary_category": "cs.CV",
+      "categories": [
+        "cs.CV"
+      ],
+      "tags": [
+        "cs.CV"
+      ],
+      "domain": "Vision",
+      "pdf_downloaded": true,
+      "pdf_size_bytes": 14428194,
+      "pdf_path": "2026-07-08/vision/2607.06420.pdf"
+    },
+    {
+      "id": "2607.06408",
+      "title": "Temporal Modeling of Optically Variable Devices in Identity Documents",
+      "abstract": "Robust remote verification of identity documents relies on analyzing faint, transparent security features like Optically Variable Devices (OVDs), or \"holograms\", within user-captured videos under uncontrolled conditions. Current systems, however, face critical limitations: existing methods often treat video frames in isolation, neglecting the intrinsic dynamic nature of OVDs and leaving systems vulnerable to swapping attacks, or focus on general holographic presence and lack the ability to verify specific OVD types. Moreover, the economic infeasibility of frame-by-frame video annotation makes supervised training impractical. In this work, we introduce two novel approaches for verifying the dynamic behavior of transparent OVDs protecting the holder's portrait, specifically designed for open-set scenarios where attack types are unknown during training. We demonstrate that these approaches can be trained without any attack samples in a self-supervised setting, surpassing previous state-of-the-art methods on public datasets while adhering strictly to industrial constraints. Our results confirm that modeling temporal dynamics is essential for defeating sophisticated attacks under realistic conditions, and underscores the promise of sequence modeling and anomaly detection for OVD verification. Code is available at https://github.com/EPITAResearchLab/pouliquen.26.icdar.",
+      "authors": [
+        "Glen Pouliquen",
+        "Joseph Chazalon",
+        "Guillaume Chiron",
+        "Oriol Ramos Terrades",
+        "Thierry G\u00e9raud",
+        "Ahmad Montaser Awal"
+      ],
+      "published": "2026-07-07T15:37:53Z",
+      "updated": "2026-07-07T15:37:53Z",
+      "url": "https://arxiv.org/abs/2607.06408",
+      "pdf_url": "https://arxiv.org/pdf/2607.06408.pdf",
+      "primary_category": "cs.CV",
+      "categories": [
+        "cs.CV"
+      ],
+      "tags": [
+        "cs.CV"
+      ],
+      "domain": "Vision",
+      "pdf_downloaded": true,
+      "pdf_size_bytes": 1622856,
+      "pdf_path": "2026-07-08/vision/2607.06408.pdf"
+    },
+    {
+      "id": "2607.06402",
+      "title": "What Images Cannot Say: Language-Guided Olfactory Representation Learning",
+      "abstract": "Images tell us what a scene looks like, but rarely what it would feel like to be there. While recent datasets pair visual scenes with electronic-nose measurements, aligning smell signals with images remains challenging because many olfactory cues arise from contextual environmental factors that are not directly visible in pixels. We introduce SCENT, a multimodal framework that uses language guidance as a semantic bridge between vision and olfaction. Our approach leverages Vision-Language Models (VLMs) to generate scene descriptors capturing objects, environmental context, and plausible ambient smell cues suggested by the visual scene. These descriptors provide semantic guidance for learning olfactory representations. We train a smell encoder that maps electronic-nose signals into a shared embedding space aligned with both visual and textual representations, and introduce a languageguided latent decomposition that separates object-specific odors from contextual environmental contributions. Experiments on the New York Smells dataset demonstrate that SCENT significantly improves crossmodal retrieval compared to vision-only baselines, achieving state-of-theart performance on smell-to-image and smell-to-text retrieval tasks. In addition, our framework produces interpretable olfactory representations that enable the disentanglement of complex smell mixtures. Our results reveal the importance of contextual semantic information for grounding olfactory perception in multimodal learning and pave the way for future research in this area.",
+      "authors": [
+        "Eleftherios Tsonis",
+        "Xi Wang",
+        "Vicky Kalogeiton"
+      ],
+      "published": "2026-07-07T15:31:55Z",
+      "updated": "2026-07-07T15:31:55Z",
+      "url": "https://arxiv.org/abs/2607.06402",
+      "pdf_url": "https://arxiv.org/pdf/2607.06402.pdf",
+      "primary_category": "cs.CV",
+      "categories": [
+        "cs.CV",
+        "cs.AI",
+        "cs.LG"
+      ],
+      "tags": [
+        "cs.AI",
+        "cs.CV",
+        "cs.LG"
+      ],
+      "domain": "Vision",
+      "pdf_downloaded": true,
+      "pdf_size_bytes": 11268878,
+      "pdf_path": "2026-07-08/vision/2607.06402.pdf"
+    },
+    {
+      "id": "2607.06389",
+      "title": "FADRA: Frequency-Aware Diffusion with Residual Adaptation for Video Face Restoration",
+      "abstract": "Video face restoration (VFR) aims to recover high-quality and temporally consistent facial details from severely degraded video sequences; however, existing methods still struggle to balance spatial fidelity and temporal coherence under complex degradations. To address this, we propose FADRA, a frequency-aware diffusion framework with iterative residual adaptation specifically tailored for robust VFR. We first leverage the strong temporal consistency of a pre-trained text-to-video diffusion model and introduce lightweight LoRA adapters together with a Low-Quality (LQ) Pixel-Alignment Feature Fusion module to efficiently adapt the frozen generative prior to the VFR task. To further adapt the frozen diffusion backbone to the downstream VFR task beyond LoRA-based adaptation, we introduce a Repeated Residual Adaptation Head (RRAH) for step-wise residual refinement after the diffusion backbone. To make this refinement explicitly guided by the degraded observation, RRAH further takes the LQ latent together with the current velocity prediction as input, allowing the model to repeatedly revisit LQ cues and predict residual updates at each flow-matching step. This LQ-guided repeated residual adaptation helps recover fine facial details while preserving the inherent temporal priors of the pre-trained model. Furthermore, to ensure the structural integrity of perceptually important details, we introduce a Frequency-Aware Loss that provides explicit supervision across multiple spectral bands, emphasizing visually sensitive frequency components that are crucial for perceptual quality and prone to temporal jittering. Extensive experiments demonstrate that FADRA recovers better facial structures and produces more temporally consistent videos than state-of-the-art methods, leading to clear gains in both quantitative metrics and visual perception.",
+      "authors": [
+        "Jin Jiang",
+        "Jia Wang",
+        "Panwen Hu",
+        "Weiran Zhao",
+        "Shengcai Liao"
+      ],
+      "published": "2026-07-07T15:24:42Z",
+      "updated": "2026-07-07T15:24:42Z",
+      "url": "https://arxiv.org/abs/2607.06389",
+      "pdf_url": "https://arxiv.org/pdf/2607.06389.pdf",
+      "primary_category": "cs.CV",
+      "categories": [
+        "cs.CV"
+      ],
+      "tags": [
+        "cs.CV"
+      ],
+      "domain": "Vision",
+      "pdf_downloaded": true,
+      "pdf_size_bytes": 9100628,
+      "pdf_path": "2026-07-08/vision/2607.06389.pdf"
+    },
+    {
+      "id": "2607.06388",
+      "title": "Learning to Throw Objects Safely in Multi-Obstacle Environments",
+      "abstract": "Robotic throwing enables fast and efficient object placement beyond the robot's immediate workspace, but reliable throwing in cluttered environments remains underexplored. Existing approaches, such as TossingBot, learn throwing strategies from visual input but assume obstacle-free settings. In this paper, we address the problem of throwing objects into a target basket while avoiding obstacles placed randomly in the scene. We introduce a potential field state representation that compactly encodes both basket attraction and obstacle repulsion on a fixed-size grid, enabling reinforcement learning (RL) policies to generalize across arbitrary numbers and configurations of obstacles. The policy is initialized from kinesthetic demonstrations and optimized in simulation using three state-of-the-art RL algorithms (SAC, DDPG, TD3). Among these, SAC achieves the most consistent performance across scenarios. We compare the potential field representation against explicit state encodings and demonstrate that it achieves higher success rates and better scalability to unseen obstacle configurations. Real-robot experiments with unseen throwable objects confirm robust sim-to-real transfer, achieving up to $90\\%$ success in cluttered scenes. These results demonstrate that PFR provides a practical and robust representation for safe and efficient robotic throwing in unstructured environments. A video showcasing our experiments is available at: https://youtu.be/ZZnJf8ua2dE",
+      "authors": [
+        "Mohammadreza Kasaei",
+        "Klemen Voncina",
+        "Hamidreza Kasaei"
+      ],
+      "published": "2026-07-07T15:24:12Z",
+      "updated": "2026-07-07T15:24:12Z",
+      "url": "https://arxiv.org/abs/2607.06388",
+      "pdf_url": "https://arxiv.org/pdf/2607.06388.pdf",
+      "primary_category": "cs.RO",
+      "categories": [
+        "cs.RO",
+        "cs.CV",
+        "cs.LG"
+      ],
+      "tags": [
+        "cs.CV",
+        "cs.LG",
+        "cs.RO"
+      ],
+      "domain": "Vision",
+      "pdf_downloaded": true,
+      "pdf_size_bytes": 5575243,
+      "pdf_path": "2026-07-08/vision/2607.06388.pdf"
+    },
+    {
+      "id": "2607.06374",
+      "title": "VaseMuseum: Digital Intelligent Museum for Ancient Greek Pottery",
+      "abstract": "Vision-language models (VLMs) have made interactive digital museums increasingly feasible by connecting 3D digitization with natural-language artifact exploration. However, in cultural heritage domains such as ancient Greek pottery, reliable VLM assistance is limited by two challenges. First, open-ended interpretation requires grounding fine-grained 2D/3D visual evidence in specialized curatorial knowledge, yet the retrieval process may introduce weak sources and unverifiable references. Second, when the available evidence is incomplete, noisy, or ambiguous, VLMs often produce confident but unsupported answers instead of calibrated uncertainty. To address these challenges, we propose VaseMuseum, a lightweight and modular multimodal agent framework for intelligent digital museums of ancient Greek pottery. VaseMuseum combines an interactive virtual museum with VaseAgent, which supports both 2D images and 3D artifacts through multimodal perception, 3D-aware reasoning, external knowledge retrieval, and inference-time reliability control. Specifically, VaseAgent retrieves evidence from authoritative web and museum knowledge sources, and source-level control selects diverse and verifiable evidence before generation. Meanwhile, response-level control checks generated claims against the evidence pool and encourages neutral, evidence-bounded answers when support is insufficient or conflicting. Moreover, a training-free GRPO-style selection mechanism favors responses with valid references and calibrated confidence without updating the VLM backbone. Experiments in a realistic digital museum simulation show that VaseMuseum improves citation validity, reduces hallucinations on knowledge-intensive queries, and produces more neutral answers under ambiguity compared with search-enabled VLM baselines.",
+      "authors": [
+        "Jiazi Wang",
+        "Nonghai Zhang",
+        "Qiushi Xie",
+        "Zeyu Zhang",
+        "Yufeng Chen",
+        "Yang Zhao",
+        "Ling Shao",
+        "Hao Tang"
+      ],
+      "published": "2026-07-07T15:11:56Z",
+      "updated": "2026-07-07T15:11:56Z",
+      "url": "https://arxiv.org/abs/2607.06374",
+      "pdf_url": "https://arxiv.org/pdf/2607.06374.pdf",
+      "primary_category": "cs.CV",
+      "categories": [
+        "cs.CV"
+      ],
+      "tags": [
+        "cs.CV"
+      ],
+      "domain": "Vision",
+      "pdf_downloaded": true,
+      "pdf_size_bytes": 24420797,
+      "pdf_path": "2026-07-08/vision/2607.06374.pdf"
+    },
+    {
+      "id": "2607.06370",
+      "title": "Training-Free Acceleration for Vision-Language-Action Models with Action Caching and Refinement",
+      "abstract": "Vision-Language-Action (VLA) models have emerged as a promising approach for generalizable robotic manipulations. In particular, flow matching-based VLA models have shown remarkable success due to their capability to generate precise and smooth action sequences and capture multimodal distributions. However, the iterative denoising process in the action head acts as a major computational bottleneck, posing a critical challenge for real-time deployment. To address this challenge, we propose ActionCache, a plug-and-play external cache that opportunistically reuses past intermediate actions to warm-start generations from the vicinity of target actions, thereby drastically reducing the inference latency. Specifically, ActionCache stores the intermediate actions with compact multimodal keys, which enables retrieval from similar past contexts across different episodes or even different tasks. Experimental results in simulation and real-world environments demonstrate that ActionCache maintains high task success rates in a low-latency regime, achieving inference acceleration of up to $11.75\\times$ and $34.43\\times$ for representative flow-based VLA models, $\u03c0_{0.5}$ and GR00T-N1.6, respectively.",
+      "authors": [
+        "Ryuji Oi",
+        "Hikari Otsuka",
+        "Kosuke Matsushima",
+        "Yuki Ichikawa",
+        "Masato Motomura",
+        "Tatsuya Kaneko",
+        "Daichi Fujiki"
+      ],
+      "published": "2026-07-07T15:10:15Z",
+      "updated": "2026-07-07T15:10:15Z",
+      "url": "https://arxiv.org/abs/2607.06370",
+      "pdf_url": "https://arxiv.org/pdf/2607.06370.pdf",
+      "primary_category": "cs.RO",
+      "categories": [
+        "cs.RO",
+        "cs.CV",
+        "cs.LG"
+      ],
+      "tags": [
+        "cs.CV",
+        "cs.LG",
+        "cs.RO"
+      ],
+      "domain": "Vision",
+      "pdf_downloaded": true,
+      "pdf_size_bytes": 2232327,
+      "pdf_path": "2026-07-08/vision/2607.06370.pdf"
+    }
+  ]
+}
