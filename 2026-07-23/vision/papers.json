@@ -1,0 +1,810 @@
+{
+  "domain": "Vision",
+  "date": "2026-07-23",
+  "count": 27,
+  "papers": [
+    {
+      "id": "2607.20417",
+      "title": "ATSplat: Compact Feed-forward 3D Gaussian Splatting with Adaptive Token Expansion",
+      "abstract": "3D Gaussian Splatting (3DGS) achieves high-quality novel-view synthesis by optimizing freely placed primitives in 3D and adaptively densifying them in under-reconstructed regions. However, this scene-adaptive capacity allocation is largely lost in existing feed-forward 3DGS methods, which commonly regress Gaussians at input pixels and lift them along camera rays. Such pixel-aligned formulations make the number and placement of primitives depend on image resolution and input viewpoints rather than scene complexity, resulting in dense and often redundant Gaussian sets. We present ATSplat, a feed-forward 3DGS framework that restores the adaptive allocation capability of 3DGS optimization through Adaptive 3D Tokens. ATSplat first lifts coarse patch-level depth and camera cues into sparse 3D anchor tokens, forming a compact scaffold of the scene. Each token is then regressed into local Gaussians with learnable 3D offsets, decoupling primitive placement from input image grids. An Adaptive Token Expansion module predicts a token-level uncertainty score, supervised by rendering error maps, and selectively expands high-uncertainty tokens through learnable expansion layers. This sparse-to-adaptive formulation enables ATSplat to concentrate primitives in challenging regions while maintaining a compact representation. Experiments on two representative datasets, RealEstate10K and DL3DV, show that ATSplat achieves state-of-the-art rendering quality while reducing the number of Gaussians by more than $5.7\\times$ compared with dense feed-forward 3DGS methods. From 12 input images at $512 \\times 960$ resolution, ATSplat completes reconstruction in less than a second using a single commercial GPU, and renders high-quality novel views at 1136 FPS ($512 \\times 960$) with only 311K Gaussians.",
+      "authors": [
+        "Cho In",
+        "Jeonghwan Cho",
+        "Mijin Yoo",
+        "Gim Hee Lee",
+        "Seon Joo Kim"
+      ],
+      "published": "2026-07-22T17:54:44Z",
+      "updated": "2026-07-22T17:54:44Z",
+      "url": "https://arxiv.org/abs/2607.20417",
+      "pdf_url": "https://arxiv.org/pdf/2607.20417.pdf",
+      "primary_category": "cs.CV",
+      "categories": [
+        "cs.CV"
+      ],
+      "tags": [
+        "cs.CV"
+      ],
+      "domain": "Vision",
+      "pdf_downloaded": true,
+      "pdf_size_bytes": 10290899,
+      "pdf_path": "2026-07-23/vision/2607.20417.pdf"
+    },
+    {
+      "id": "2607.20389",
+      "title": "PercepCap: Video Captioner with Structured Spatio-Temporal Perception",
+      "abstract": "Video captioning requires fine-grained spatio-temporal understanding of videos, including spatial perception of where objects are located and temporal perception of when events occur. Existing MLLMs usually generate captions directly from video inputs without exposing the perceptual evidence behind descriptions. As a result, mistakes in spatiotemporal perception are only observed in the final caption, making it difficult to identify the underlying perceptual errors directly. To address these issues, we present PercepCap, a perception-aware video captioning framework that makes perceptual evidence explicit before producing the final caption. Specifically, PercepCap follows a perceive-describe generation chain, where the model first produces a spatiotemporal perception trace comprising object trajectories and temporal events, and then generates the final caption conditioned on the perceived evidence. To support this, we design a two-stage training strategy. Perceive-then-Describe Supervised Fine-tuning adapts the model from caption-only generation to the proposed perceive-describe chain, while Perception-Grounded Reinforcement Learning optimizes perception trace and caption quality with joint rewards over perception chain and the final caption. To support our two-stage training, we introduce Caption-Anchored Perception Data Construction. This pipeline builds the SFT and RL training data by first generating a caption-only description, extracting the objects and events it mentions, and grounding them back in the video with boxes and timestamps. This yields caption-aligned perception data that provides solid training ground truth, ensuring that the explicit perception trace and final caption refer to the same objects and events. Across direct caption and caption-to-QA evaluation, PercepCap consistently improves upon the Qwen3-VL baseline and demonstrates leading caption quality.",
+      "authors": [
+        "Yifan Xu",
+        "Zihao Wang",
+        "Zhixiao Wang",
+        "Jiaming Zhang",
+        "Yichun Yang",
+        "Desen Meng",
+        "Yuanxing Zhang",
+        "Pengfei Wan",
+        "Limin Wang"
+      ],
+      "published": "2026-07-22T17:17:33Z",
+      "updated": "2026-07-22T17:17:33Z",
+      "url": "https://arxiv.org/abs/2607.20389",
+      "pdf_url": "https://arxiv.org/pdf/2607.20389.pdf",
+      "primary_category": "cs.CV",
+      "categories": [
+        "cs.CV"
+      ],
+      "tags": [
+        "cs.CV"
+      ],
+      "domain": "Vision",
+      "pdf_downloaded": false,
+      "pdf_size_bytes": null,
+      "pdf_path": null
+    },
+    {
+      "id": "2607.20368",
+      "title": "Self Gradient Forcing: Native Long Video Extrapolation",
+      "abstract": "Recent autoregressive video diffusion methods are increasingly built upon Self Forcing, where the student is trained on histories produced by its own rollout rather than ground-truth video contexts. This reduces exposure bias, but the historical key-value cache is still used by future frames only as frozen rollout state. As a result, future losses cannot supervise how earlier generated latents should be written into more useful keys and values for later video-latent generation. We call this the historical context-gradient gap. We propose Self Gradient Forcing (SGF), a two-pass training strategy that restores this missing supervision signal without backpropagating through the full serial rollout. Pass 1 performs a no-gradient autoregressive rollout matching inference and, at a sampled denoising exit step, records both the self-generated context and the noisy latents fed to the model. Pass 2 performs parallel context-gradient reconstruction for the recorded exit step. The generated context is used as stop-gradient clean-latent input, while the model recomputes the context KV representations and future-to-context causal attention. Thus, SGF provides the missing memory-writing supervision within the native autoregressive training objective, using losses on future video latents to train the model to encode context into more effective causal memory. Across extensive long-horizon frame-wise and chunk-wise experiments under different initializations, SGF achieves stronger native long-video extrapolation than Self Forcing, especially in subject identity, background/layout consistency, and temporal stability. Remarkably, using only a 5-second training window, SGF can extrapolate to videos lasting several minutes. Code and models will be released to advance research on autoregressive video generation.",
+      "authors": [
+        "Junhao Zhuang",
+        "Shiyi Zhang",
+        "Yuxuan Bian",
+        "Yaowei Li",
+        "Yawen Luo",
+        "Yijun Liu",
+        "Weiyang Jin",
+        "Songchun Zhang",
+        "Xianglong He",
+        "Xuying Zhang",
+        "Haoran Li",
+        "Haoyang Huang",
+        "Zeyue Xue",
+        "Nan Duan"
+      ],
+      "published": "2026-07-22T16:59:23Z",
+      "updated": "2026-07-22T16:59:23Z",
+      "url": "https://arxiv.org/abs/2607.20368",
+      "pdf_url": "https://arxiv.org/pdf/2607.20368.pdf",
+      "primary_category": "cs.CV",
+      "categories": [
+        "cs.CV"
+      ],
+      "tags": [
+        "cs.CV"
+      ],
+      "domain": "Vision",
+      "pdf_downloaded": false,
+      "pdf_size_bytes": null,
+      "pdf_path": null
+    },
+    {
+      "id": "2607.20357",
+      "title": "Look Less, Think Faster: Joint Token-Compute Adaptation for Multimodal LLMs",
+      "abstract": "Multimodal Large Language Models (MLLMs) have recently demonstrated strong performance across vision-language tasks. However, their high inference cost, arising from both the large number of input visual tokens and the heavy computation of the large language model (LLM), remains a key barrier to practical deployment. Recent work attempts to reduce the cost by adaptively optimizing individual dimensions, e.g., pruning redundant visual tokens or skipping LLM layers and heads. Nonetheless, prior approaches typically treat these dimensions independently and overlook a fundamental coupling: the available compute resources must be dynamically allocated across all dimensions based on the input content. To bridge the gap, we propose SmartVL, a unified adaptive inference framework that jointly controls vision token number and model compute capability in response to varying input contents and compute budgets. SmartVL introduces a vision-side token controller that dynamically selects informative visual tokens and an LLM-side compute controller that adaptively adjusts LLM computation. Importantly, these controllers are trained to coordinate with each other so that the overall inference cost satisfies a target budget. To allow this joint scheduling, we connect the controllers using a shared budget encoding and leverage a differentiable latency estimator for end-to-end training. This design enables SmartVL to learn cross-stage allocation strategies that adapt to both input complexity and runtime compute constraints. Experiments across multiple MLLM benchmarks demonstrate that, with joint scheduling, SmartVL consistently outperforms prior adaptive methods and achieves superior accuracy-efficiency Pareto frontiers. Project page: https://www.schaterji.io/publications/2026/jointtokencompute.",
+      "authors": [
+        "Pengcheng Wang",
+        "Zhiquan Wang",
+        "Jayoung Lee",
+        "Zhuoyan Xu",
+        "Ran Xu",
+        "Saurabh Bagchi",
+        "Yin Li",
+        "Somali Chaterji"
+      ],
+      "published": "2026-07-22T16:43:27Z",
+      "updated": "2026-07-22T16:43:27Z",
+      "url": "https://arxiv.org/abs/2607.20357",
+      "pdf_url": "https://arxiv.org/pdf/2607.20357.pdf",
+      "primary_category": "cs.CV",
+      "categories": [
+        "cs.CV"
+      ],
+      "tags": [
+        "cs.CV"
+      ],
+      "domain": "Vision",
+      "pdf_downloaded": false,
+      "pdf_size_bytes": null,
+      "pdf_path": null
+    },
+    {
+      "id": "2607.20351",
+      "title": "Test-Time Training for Modality Order Consistency in Vision-Language Models",
+      "abstract": "We find that vision-language models are sensitive to a specific semantically irrelevant change: the order in which the image and question are presented. Across three models and three benchmarks, image first prompting consistently outperforms question-first prompting, revealing a repeatable modality order failure. We use this gap to design an order-consistent test-time training method. Our method substantially closes the modality-order gap across all evaluated settings. Surprisingly, it also yields consistent improvements in the stronger image-first branch over the baseline, hence bootstrapping both orderings toward mutual consistency. Activation patching localizes the ordering failure to a narrow mid-network region where representations diverge sharply between prompt orders. We find that the test-time training method repairs this misalignment across layers. Together, our results identify modality-order sensitivity as a circuit-level failure in VLMs and demonstrate that simple, asymmetric test-time adaptation can effectively mitigate it and even improve performance over the baseline.",
+      "authors": [
+        "Aditi Gupta",
+        "Yossi Gandelsman"
+      ],
+      "published": "2026-07-22T16:37:02Z",
+      "updated": "2026-07-22T16:37:02Z",
+      "url": "https://arxiv.org/abs/2607.20351",
+      "pdf_url": "https://arxiv.org/pdf/2607.20351.pdf",
+      "primary_category": "cs.CV",
+      "categories": [
+        "cs.CV",
+        "cs.CL"
+      ],
+      "tags": [
+        "cs.CL",
+        "cs.CV"
+      ],
+      "domain": "Vision",
+      "pdf_downloaded": true,
+      "pdf_size_bytes": 1801301,
+      "pdf_path": "2026-07-23/vision/2607.20351.pdf"
+    },
+    {
+      "id": "2607.20293",
+      "title": "Evolving Cache Schedules for Fast Diffusion Policy Inference",
+      "abstract": "Diffusion policies achieve strong visuomotor control by iteratively denoising action chunks, but repeated denoising makes real-time deployment computationally demanding. Cache-based methods reduce inference cost by reusing intermediate activations, but existing training-free schedules typically allocate computation uniformly across blocks, ignoring heterogeneous redundancy across blocks and leading to a suboptimal performance-efficiency trade-off. To bridge this gap, we introduce Evolving Cache Schedules (EVO), a training-free acceleration framework that globally schedules cache refreshes via evolutionary search. EVO represents each candidate as a complete schedule over the block-timestep lattice. Thus, redundant transformer computations during iterative denoising can be skipped through cache reuse while preserving closed-loop rollout performance. To make the search practical, EVO introduces redundancy-aware initialization, which seeds the population with promising schedules, and target-conditioned early stopping, which verifies and terminates once a desired performance target is reached. The offline-optimized schedule can be directly plugged into pretrained diffusion policies without retraining. Extensive manipulation benchmarks show that EVO preserves near-full performance while substantially reducing computation, achieving up to 8.05x action-generation speedup and reducing FLOPs from 15.77G to as low as 1.96G. Source code is available at https://github.com/pillom/EVO.",
+      "authors": [
+        "Siying Wang",
+        "Kangye Ji",
+        "Di Wang",
+        "Fei Cheng"
+      ],
+      "published": "2026-07-22T15:40:11Z",
+      "updated": "2026-07-22T15:40:11Z",
+      "url": "https://arxiv.org/abs/2607.20293",
+      "pdf_url": "https://arxiv.org/pdf/2607.20293.pdf",
+      "primary_category": "cs.CV",
+      "categories": [
+        "cs.CV"
+      ],
+      "tags": [
+        "cs.CV"
+      ],
+      "domain": "Vision",
+      "pdf_downloaded": true,
+      "pdf_size_bytes": 811633,
+      "pdf_path": "2026-07-23/vision/2607.20293.pdf"
+    },
+    {
+      "id": "2607.20291",
+      "title": "Diverse-Intent Multi-Turn Fashion Image Retrieval",
+      "abstract": "Real-world fashion search involves interactive retrieval across multiple turns. However, existing multi-turn retrieval methods are built on a restrictive assumption that every interaction follows the same attribute-editing paradigm, leaving heterogeneous intent transitions unexplored. Moreover, existing approaches often rely on textification to bridge multimodal queries and visual retrieval, which may lose fine-grained visual cues. To address these gaps, we introduce DIM-Fashion, a benchmark of 26K multi-turn sessions constructed from 13 fashion retrieval datasets across 7 tasks, featuring diverse intent transitions and rollback behaviors. We further propose FashionAM, an MLLM-VLP framework that directly aligns multimodal conversational queries with a fashion-oriented gallery embedding space, avoiding intermediate textification. Extensive experiments demonstrate the effectiveness of FashionAM over existing approaches. The dataset and code will be made publicly available upon acceptance.",
+      "authors": [
+        "Mingqiang Tang",
+        "Haokun Wen",
+        "Meng Liu",
+        "Yupeng Hu",
+        "Weili Guan",
+        "Xuemeng Song"
+      ],
+      "published": "2026-07-22T15:38:56Z",
+      "updated": "2026-07-22T15:38:56Z",
+      "url": "https://arxiv.org/abs/2607.20291",
+      "pdf_url": "https://arxiv.org/pdf/2607.20291.pdf",
+      "primary_category": "cs.CV",
+      "categories": [
+        "cs.CV"
+      ],
+      "tags": [
+        "cs.CV"
+      ],
+      "domain": "Vision",
+      "pdf_downloaded": true,
+      "pdf_size_bytes": 1557616,
+      "pdf_path": "2026-07-23/vision/2607.20291.pdf"
+    },
+    {
+      "id": "2607.20284",
+      "title": "Multimodal Large Language Models for Remote Sensing Image Understanding: Domain-Specific or General-Purpose?",
+      "abstract": "The rapid development of multimodal large language models (MLLMs) has introduced a flexible paradigm for remote sensing image scene understanding (RSISU), enabling natural-language interaction with remote sensing imagery. However, a systematic understanding of the capability boundaries, cross-task generalization, and task-specific limitations of existing remote sensing MLLMs (RS-MLLMs) is still lacking. This paper presents a systematic survey and diagnostic evaluation of MLLMs for RSISU. We review the technical evolution of RS-MLLMs, focusing on model design, multimodal learning, training data, and downstream capabilities. We further compare RS-MLLMs with general-purpose computer vision MLLMs (CV-MLLMs) across diverse RSISU tasks and benchmarks. RS-MLLMs remain competitive in domain-specific settings, particularly remote sensing visual grounding and high-resolution visual question answering. More notably, general-purpose CV-MLLMs can match or even outperform these specialized models on several RSISU tasks without remote sensing-specific fine-tuning. These findings demonstrate the strong transferability of general-purpose CV-MLLMs and show that current RS-MLLMs do not consistently outperform them across diverse RSISU tasks. Current MLLMs also face limitations in spatial and relational reasoning, fine-grained visual understanding, instruction diversity, and generalization across heterogeneous task formats. Based on these findings, we outline future directions toward reliable evaluation, multimodal and high-resolution reasoning, efficient deployment, and tool-augmented remote sensing agents. This survey provides a systematic reference for developing robust, generalizable, and practical MLLMs for RSISU.",
+      "authors": [
+        "Qiwei Ma",
+        "Chunping Qiu",
+        "Xinjun Cheng",
+        "Xiaoyu Zhang",
+        "Puhong Duan",
+        "Ke Yang",
+        "Xudong Kang",
+        "Shutao Li"
+      ],
+      "published": "2026-07-22T15:30:08Z",
+      "updated": "2026-07-22T15:30:08Z",
+      "url": "https://arxiv.org/abs/2607.20284",
+      "pdf_url": "https://arxiv.org/pdf/2607.20284.pdf",
+      "primary_category": "cs.CV",
+      "categories": [
+        "cs.CV"
+      ],
+      "tags": [
+        "cs.CV"
+      ],
+      "domain": "Vision",
+      "pdf_downloaded": true,
+      "pdf_size_bytes": 3628447,
+      "pdf_path": "2026-07-23/vision/2607.20284.pdf"
+    },
+    {
+      "id": "2607.20263",
+      "title": "How Does Urban Context Relate to Residential Building Health? A Vision-POI Fusion Framework for Building-Level Housing Inspection",
+      "abstract": "Housing-level urban physical examination is essential for identifying residential building problems and supporting targeted urban renewal. Existing automated inspection studies primarily rely on individual images and rarely examine whether surrounding urban functional context can provide supplementary information for building-level assessment. This study proposes a vision-POI fusion framework that combines multi-view visual inspection with POI-derived neighborhood context for residential building health assessment. The empirical dataset covers 92 old residential communities, 3,237 residential buildings, and 25,608 field-acquired inspection images in Qingdao, China, encompassing seven categories of housing-related issues. First, multiple object detection models are evaluated to extract issue locations, categories, and confidence scores from individual images. The image-level outputs are subsequently aggregated across multiple views to construct interpretable building-level representations. Second, POI features are extracted within 500m, 1,000m, and 1,500m neighborhood buffers to characterize surrounding functional environments. Pearson and Spearman correlation analyses, combined with false discovery rate correction, are used to identify candidate contextual features. Finally, visual and POI features are integrated using a cost-sensitive Random Forest classifier under community-isolated spatial cross-validation. The results show that multi-view aggregation provides the main performance improvement, increasing the building-level Macro-F1 from 60.84% under Direct Detection to 74.95%. Incorporating POI context further increases Macro-F1 to 76.79%, although the additional gain is modest and category-dependent. POI information therefore functions as a supplementary contextual prior rather than a substitute for direct visual evidence or a causal determinant of building condition.",
+      "authors": [
+        "Kun Zhao",
+        "Helei Ren",
+        "Guilin Tang",
+        "Tianyi Chen",
+        "Zhehui Song",
+        "Xing Liu",
+        "Lijian Zhou",
+        "Yuhong Zhao",
+        "Xiang Gao",
+        "Jinming Jiang",
+        "Qichao Ban"
+      ],
+      "published": "2026-07-22T15:18:30Z",
+      "updated": "2026-07-22T15:18:30Z",
+      "url": "https://arxiv.org/abs/2607.20263",
+      "pdf_url": "https://arxiv.org/pdf/2607.20263.pdf",
+      "primary_category": "cs.CV",
+      "categories": [
+        "cs.CV"
+      ],
+      "tags": [
+        "cs.CV"
+      ],
+      "domain": "Vision",
+      "pdf_downloaded": false,
+      "pdf_size_bytes": null,
+      "pdf_path": null
+    },
+    {
+      "id": "2607.20247",
+      "title": "Vera: Identity-Faithful Human Subject-to-Video Generation",
+      "abstract": "Subject-to-video (S2V) generation has made substantial progress in preserving reference subjects across diverse categories, yet generic subject consistency remains insufficient for human-centric generation. A video may appear globally consistent while identity-critical human details still drift across frames, poses, and interactions. This issue becomes more severe in multi-person scenarios, where incorrect identity-role binding leads to subject confusion, attribute swapping, and excessive copying of reference-specific appearance cues. We propose Vera, a unified human-centric S2V framework for single- and multi-person generation. We first construct a million-pair identity-aligned human image-video dataset through person-level cross-clip retrieval, providing explicit identity correspondence and diverse references. Built on this dataset, Vera introduces two complementary designs. Identity-Focal Masked Supervision (IFMS) strengthens identity-aware learning with spatially focused supervision while reducing interference from irrelevant artifacts. Reference-Aware Layer-wise Attention (RALA) regulates how video tokens interact with reference identity cues in the DiT backbone, preserving stable identity anchors and enhancing layer-aware identity readout. Extensive experiments demonstrate that Vera improves human identity consistency, multi-person subject binding, and motion naturalness, while reducing identity confusion and excessive reference-image copying.",
+      "authors": [
+        "Yulong Xu",
+        "Xinyue Liu",
+        "Shujuan Li",
+        "huafeng shi",
+        "Yan Zhou",
+        "Jiwen Liu",
+        "Xintao Wang",
+        "Yu Shen Liu",
+        "Huaibo Huang"
+      ],
+      "published": "2026-07-22T15:08:30Z",
+      "updated": "2026-07-22T15:08:30Z",
+      "url": "https://arxiv.org/abs/2607.20247",
+      "pdf_url": "https://arxiv.org/pdf/2607.20247.pdf",
+      "primary_category": "cs.CV",
+      "categories": [
+        "cs.CV"
+      ],
+      "tags": [
+        "cs.CV"
+      ],
+      "domain": "Vision",
+      "pdf_downloaded": true,
+      "pdf_size_bytes": 22269209,
+      "pdf_path": "2026-07-23/vision/2607.20247.pdf"
+    },
+    {
+      "id": "2607.20238",
+      "title": "Not All Patches are Equal: Sampling Matters for Visible-Infrared Pre-Training",
+      "abstract": "Visible-infrared (VIS-IR) alignment is a key pre-training task for robust multi-sensor perception. Most existing methods use uniform patch-wise contrastive learning, but this can be unreliable in VIS-IR data because imaging-physics differences make some spatially paired regions inherently less comparable, and aligning them with equal strength hinders representation learning and downstream transfer. In this paper, we revisit VIS-IR pre-training from a sampling perspective and propose Importance-Aware Sampling (IAS), which adjusts training emphasis based on patch reliability. Specifically, IAS (i) derives patch weights from infrared structural cues and uses them to reweight the contrastive objective; (ii) learns a soft importance mask with a lightweight sampler, optionally warm-started from the hand-crafted prior; and (iii) employs a patch curriculum learning strategy that gradually expands from high-reliability regions to harder patches. It is worth noting that IAS is plug-and-play and works with both patch-/correlation-level alignment (e.g., UNIV-style) and image-level contrastive baselines (e.g., ImageBind-style). Extensive experiments on multiple VIS-IR benchmarks demonstrate consistent improvements over strong baselines, including for IR semantic segmentation, IR object detection and VIS semantic segmentation and cross-modal retrieval task. Code will be released on https://github.com/KlayMa527/IAS.",
+      "authors": [
+        "Qiwei Ma",
+        "Bin Deng",
+        "Junjie Zhu",
+        "Qiangjuan Huang",
+        "Puhong Duan",
+        "Ke Yang",
+        "Xudong Kang",
+        "Shutao Li"
+      ],
+      "published": "2026-07-22T14:59:02Z",
+      "updated": "2026-07-22T14:59:02Z",
+      "url": "https://arxiv.org/abs/2607.20238",
+      "pdf_url": "https://arxiv.org/pdf/2607.20238.pdf",
+      "primary_category": "cs.CV",
+      "categories": [
+        "cs.CV"
+      ],
+      "tags": [
+        "cs.CV"
+      ],
+      "domain": "Vision",
+      "pdf_downloaded": false,
+      "pdf_size_bytes": null,
+      "pdf_path": null
+    },
+    {
+      "id": "2607.20197",
+      "title": "RS-RIE-Bench: Benchmarking Reasoning-Guided Remote Sensing Image Editing",
+      "abstract": "Remote sensing image editing aims to modify remote sensing images according to natural language instructions while preserving geographic rules and sensor observation characteristics. Existing benchmarks mainly target natural images or general visual scenes, and thus may not fully capture the reasoning, regional control, and sensor-consistency abilities required in remote sensing editing. To fill this gap, we introduce RS-RIE-Bench, the first benchmark for reasoning-guided remote sensing image editing. RS-RIE-Bench organizes tasks into three categories: temporal reasoning, causal reasoning, and spatial reasoning. These categories capture temporal evolution, causal consequence, and spatial imaging consistency in remote sensing scenes. The evaluation protocol covers three dimensions: target region plausibility, non-target region preservation, and image quality consistency. We further demonstrate the feasibility of MLLM-based evaluation through cross-judge consistency analysis and stratified expert review. Systematic evaluation on eight open-source and closed-source image editing models shows that current models still have clear limitations in reasoning-guided remote sensing editing. Even the strongest model achieves only 24.28\\% overall accuracy under the strict joint-satisfaction criterion, while the mean relaxed joint-4 success rate across all eight models is 32.23\\%. Causal reasoning and spatial reasoning remain especially challenging, and several open-source models are close to zero in some categories. These results show that RS-RIE-Bench can effectively reveal the limitations of current models in geographic reasoning, regional control, and sensor-consistent generation. It also provides a standardized benchmark and a clear research direction for future remote sensing intelligent editing models.",
+      "authors": [
+        "Zihan Qin",
+        "Boao Xu",
+        "Zhao Dong",
+        "Yingping Sun",
+        "Ziheng Jiao",
+        "Junying Wang",
+        "Hongwei Wang"
+      ],
+      "published": "2026-07-22T14:20:40Z",
+      "updated": "2026-07-22T14:20:40Z",
+      "url": "https://arxiv.org/abs/2607.20197",
+      "pdf_url": "https://arxiv.org/pdf/2607.20197.pdf",
+      "primary_category": "cs.CV",
+      "categories": [
+        "cs.CV"
+      ],
+      "tags": [
+        "cs.CV"
+      ],
+      "domain": "Vision",
+      "pdf_downloaded": false,
+      "pdf_size_bytes": null,
+      "pdf_path": null
+    },
+    {
+      "id": "2607.20175",
+      "title": "PerceptDrive: Perception Prior World-Action Modeling with Adaptive Expert Routing for End-to-End Autonomous Driving",
+      "abstract": "Frozen perception foundation models encode rich geometric, semantic, and dynamic knowledge. Yet narrow conditioning interfaces may attenuate task-relevant cues, while static fusion cannot adjust expert contributions to each scene. We cast this challenge as the prior-to-plan transfer problem and introduce PerceptDrive, a perception prior world-action modeling framework with adaptive expert routing. PerceptDrive feeds teacher-distilled priors from a frozen, driving-adapted provider and dense observation latents from a frozen self-supervised video encoder into a trainable expert-routed world-action model. Expert-specific query branches process these signals, while a prior-retention objective anchors each branch to its prior. A router predicts soft gates from a shared scene representation and combines the expert conditions before trajectory generation. During training, privileged rule-based sub-metric estimates for branch-specific trajectory drafts provide soft-gate distillation targets. The predicted action-free future latent conditions a flow-matching actor. At inference, privileged components are absent; with one front-facing camera, PerceptDrive generates one trajectory per planning step without test-time scoring, reranking, or search. Experiments show that PerceptDrive achieves state-of-the-art performance with 90.4 PDMS on NAVSIM v1 and 90.2 EPDMS on NAVSIM v2, outperforming existing methods. Ablations confirm complementary gains from prior retention and scene-conditioned routing, alongside differential reliance on the three priors. These results demonstrate that preserving and adaptively routing perception priors improves direct planning without test-time candidate selection.",
+      "authors": [
+        "Yushan Liu",
+        "Tianxiong Lv",
+        "Bohua Wang",
+        "Hangqi Fan",
+        "Chenxu Zhao",
+        "He Zheng",
+        "Xuchang Zhong",
+        "Yifan Xie",
+        "Congyang Zhao",
+        "Zhihao Liao",
+        "Leigang Luo",
+        "Yang Cai",
+        "Xiao-Ping Zhang",
+        "Wenbo Ding"
+      ],
+      "published": "2026-07-22T14:09:15Z",
+      "updated": "2026-07-22T14:09:15Z",
+      "url": "https://arxiv.org/abs/2607.20175",
+      "pdf_url": "https://arxiv.org/pdf/2607.20175.pdf",
+      "primary_category": "cs.CV",
+      "categories": [
+        "cs.CV"
+      ],
+      "tags": [
+        "cs.CV"
+      ],
+      "domain": "Vision",
+      "pdf_downloaded": true,
+      "pdf_size_bytes": 4713945,
+      "pdf_path": "2026-07-23/vision/2607.20175.pdf"
+    },
+    {
+      "id": "2607.20174",
+      "title": "StreamHOI: Interaction-aware Temporal Memory Adaptation for Streaming HOI Video Generation",
+      "abstract": "Existing human--object interaction (HOI) video generation methods are largely limited to offline short-video generation with complex driving conditions, making them unsuitable for real-time interactive applications. We present \\emph{StreamHOI}, a low-latency streaming framework for long-duration HOI video generation. Instead of converting heavily conditioned HOI pipelines into streaming systems, we study how an image-to-video streaming generator should organize historical memory to preserve interactions under bounded latency. We find that the standard sink-local memory design faces a trade-off in streaming HOI generation, and different transformer blocks show different historical-memory preferences for HOI regions and surrounding regions. To match memory composition with block behavior, StreamHOI performs offline HOI-aware block profiling and applies bias-guided memory-specialized training to adapt the generator to block-specific memory layouts. We further introduce a memory distance scaling module to strengthen long-range access to early interaction states. Extensive comparisons with both long-video baselines and recent HOI generation methods demonstrate that StreamHOI achieves strong interaction plausibility, object fidelity, human quality and efficiency, reaching 17.6 FPS with 0.75s first-chunk latency.",
+      "authors": [
+        "Zejing Rao",
+        "Haoxian Zhang",
+        "Xiaoqiang Liu",
+        "Yiping Meng",
+        "Guoxin Zhang",
+        "Pengfei Wan",
+        "Fan Tang",
+        "Tong-Yee Lee"
+      ],
+      "published": "2026-07-22T14:06:39Z",
+      "updated": "2026-07-22T14:06:39Z",
+      "url": "https://arxiv.org/abs/2607.20174",
+      "pdf_url": "https://arxiv.org/pdf/2607.20174.pdf",
+      "primary_category": "cs.CV",
+      "categories": [
+        "cs.CV",
+        "cs.AI"
+      ],
+      "tags": [
+        "cs.AI",
+        "cs.CV"
+      ],
+      "domain": "Vision",
+      "pdf_downloaded": true,
+      "pdf_size_bytes": 21485354,
+      "pdf_path": "2026-07-23/vision/2607.20174.pdf"
+    },
+    {
+      "id": "2607.20159",
+      "title": "SHFormer: Dynamic Spectral Filtering Convolutional Neural Network and High-pass Kernel Generation Transformer for Adaptive MRI Reconstruction",
+      "abstract": "Attention Mechanism (AM) selectively focuses on essential information for imaging tasks and captures relationships between distant pixel neighborhoods to compute feature representations. Accelerated MRI reconstruction benefits from AM, as the imaging process involves Fourier domain measurements that influence image representation non-locally. However, AM-based models are more adept at capturing low-frequency information with limited capacity for high-frequency representations, restricting models to smooth reconstruction. Additionally, AM-based models need mode-specific retraining for multimodal MRI data, as their knowledge is restricted to local contextual variations that may be inadequate to capture transferable features across heterogeneous domains. To address these challenges, we propose a neuromodulation-based discriminative multi-spectral AM for scalable MRI reconstruction that can (i) propagate context-aware high-frequency details for high-quality reconstruction, and (ii) capture features reusable across deviated unseen domains in multimodal MRI. The proposed network consists of a spectral filtering CNN to capture mode-specific transferable features and a dynamic high-pass kernel generation transformer focusing on high-frequency details. We evaluate our model on comparative studies in supervised and self-supervised learning, diffusion model-based training, closed-set and open-set generalization under heterogeneous MRI data, and interpretation-based analysis. Our method offers scalable, high-quality reconstruction with best improvement margins of ~1 dB in PSNR and ~0.01 in SSIM under unseen scenarios. Code: https://github.com/sriprabhar/SHFormer",
+      "authors": [
+        "Sriprabha Ramanarayanan",
+        "Rahul G. S.",
+        "Mohammad Al Fahim",
+        "Keerthi Ram",
+        "Ramesh Venkatesan",
+        "Mohanasankar Sivaprakasam"
+      ],
+      "published": "2026-07-22T13:55:27Z",
+      "updated": "2026-07-22T13:55:27Z",
+      "url": "https://arxiv.org/abs/2607.20159",
+      "pdf_url": "https://arxiv.org/pdf/2607.20159.pdf",
+      "primary_category": "cs.CV",
+      "categories": [
+        "cs.CV"
+      ],
+      "tags": [
+        "cs.CV"
+      ],
+      "domain": "Vision",
+      "pdf_downloaded": true,
+      "pdf_size_bytes": 3718490,
+      "pdf_path": "2026-07-23/vision/2607.20159.pdf"
+    },
+    {
+      "id": "2607.20142",
+      "title": "Real-Time EEG Cap Electrode Detection for Guided Point-of-Care Placement",
+      "abstract": "We present a two-stage vision system that detects EEG cap electrodes in a live webcam stream and validates their anatomical placement in real time. A single-class YOLO detector localises electrodes; a geometric stage assigns each detection to a named 10-20 role from facial landmarks. Evaluating under subject-disjoint leave-one-subject-out (LOSO) cross-validation across five subjects wearing the clinically-validated Small/Medium/Large caps, the detector attains mAP@.5 = 0.94 +/- 0.07 across five held-out folds (0.96 pooled). A dedicated leave-one-cap-out axis, holding out every frame of a cap regardless of subject, leaves Medium and Large mAP@.5 within 0.01 of LOSO (0.97, 0.97) while Small drops to 0.72 +/- 0.28, a gap confounded with subject familiarity rather than cap style. Geometric augmentation (rotation, perspective, mixup) improves in-plane-roll robustness and temporal-electrode recall at no inference cost, and a landmark-driven head crop extends the usable distance range, lifting mAP@.5 from 0.23 to 0.45 at 0.6 x apparent scale. A compact mobile-candidate backbone (YOLOv10n) keeps the detector at real-time throughput (19 FPS) on a commodity CPU at 640 px.",
+      "authors": [
+        "William Lehn-Schi\u00f8ler",
+        "Mads Sverker Nilsson",
+        "Nicki Skafte Detlefsen"
+      ],
+      "published": "2026-07-22T13:44:22Z",
+      "updated": "2026-07-22T13:44:22Z",
+      "url": "https://arxiv.org/abs/2607.20142",
+      "pdf_url": "https://arxiv.org/pdf/2607.20142.pdf",
+      "primary_category": "cs.CV",
+      "categories": [
+        "cs.CV",
+        "eess.IV"
+      ],
+      "tags": [
+        "cs.CV",
+        "eess.IV"
+      ],
+      "domain": "Vision",
+      "pdf_downloaded": true,
+      "pdf_size_bytes": 1112697,
+      "pdf_path": "2026-07-23/vision/2607.20142.pdf"
+    },
+    {
+      "id": "2607.20125",
+      "title": "HeadCast: Casting Attention Heads for Efficient Autoregressive Video Generation",
+      "abstract": "Autoregressive (AR) video diffusion models have become a promising paradigm for long and streaming video synthesis, but the continuously growing Key-Value (KV) cache makes attention the dominant inference cost, especially at high resolution where each frame contributes many tokens. Existing remedies either evict the cache with coarse heuristics that cause inter-frame flickering, or require model re-training. We propose HeadCast, a training-free, plug-and-play acceleration framework built on the observation that a pre-trained AR model's attention heads exhibit stable, heterogeneous behaviors. After a short warm-up, HeadCast performs a one-time classification at the maximum-noise step that sorts every head into one of four archetypes: Sink, Dummy, Spatial, and Global, and restructures the monolithic KV cache into head-specific pathways. Crucially, it retains the Global heads that preserve the long-range temporal consistency aggressive eviction destroys. Because the Spatial pathway operates on a fixed-size grid, its savings grow with resolution: across state-of-the-art AR models, HeadCast accelerates inference by up to 1.62x at 720P and 1.95x at 1080P, while keeping VBench quality on par with full attention and largely flicker-free. Code is available at https://github.com/sjlgaga/HeadCast .",
+      "authors": [
+        "Jinliang Shen",
+        "Lianghao Su",
+        "Zheming Li",
+        "Kang He",
+        "ZiLiang Lai",
+        "Yanbing Jiang",
+        "Chengru Song"
+      ],
+      "published": "2026-07-22T13:29:35Z",
+      "updated": "2026-07-22T13:29:35Z",
+      "url": "https://arxiv.org/abs/2607.20125",
+      "pdf_url": "https://arxiv.org/pdf/2607.20125.pdf",
+      "primary_category": "cs.CV",
+      "categories": [
+        "cs.CV",
+        "cs.LG"
+      ],
+      "tags": [
+        "cs.CV",
+        "cs.LG"
+      ],
+      "domain": "Vision",
+      "pdf_downloaded": true,
+      "pdf_size_bytes": 18279217,
+      "pdf_path": "2026-07-23/vision/2607.20125.pdf"
+    },
+    {
+      "id": "2607.20116",
+      "title": "RIM: A Retrieval-In-Matching Framework for Cross-Domain Global Visual Localization of UAVs",
+      "abstract": "Global visual localization of unmanned aerial vehicles (UAVs) using remote-sensing reference maps has attracted increasing attention. However, acquisition-time and imaging-platform differences between UAV and reference imagery induce substantial cross-domain appearance and viewpoint shifts, challenging robust six-degree-of-freedom (6-DoF) pose estimation. We address these shifts by sampling UAV-viewpoint reference views from Google 3D Tiles across locations, altitudes, and orientations. A two-stage cross-domain fine-tuning recipe adapts SALAD using pose-near positives and geographically distant hard negatives, while local geometric consistency re-ranks the Top-K candidates. We further propose Retrieval-In-Matching (RIM), which freezes the adapted DINOv2-B retriever and distils a local-descriptor decoder that reuses its token field alongside a shallow VGG19 detail stream. One query-side DINOv2-B forward thus serves both SALAD retrieval and local description, eliminating a second foundation-model backbone while preserving retrieval descriptors by construction. We evaluate RIM zero-shot on the reconstructed EPFL Urbanscape and self-collected Chang'an Park datasets, both geographically disjoint from the training data. RIM outperforms ten recent retrieval baseline families. At 25/50 m under the full 3D distance metric, it improves Recall@1 over SALAD by 8.55/13.77 percentage points on EPFL and 4.45/8.94 points on Park. At Top-K=5, the complete measured localization query, including retrieval, candidate matching, and robust geometric verification, takes 67.9 ms end-to-end: 1.8 times faster than the strongest separate sparse-matching baseline and over 40 times faster than RoMa, while achieving comparable re-ranking accuracy. These results establish an efficient and deployable pipeline for UAV global visual localization in GNSS-challenged environments.",
+      "authors": [
+        "Xin Li",
+        "Siyuan Duan",
+        "Shang Wang",
+        "Zhimin Mao",
+        "Bingliang Hu",
+        "Geng Zhang"
+      ],
+      "published": "2026-07-22T13:20:26Z",
+      "updated": "2026-07-22T13:20:26Z",
+      "url": "https://arxiv.org/abs/2607.20116",
+      "pdf_url": "https://arxiv.org/pdf/2607.20116.pdf",
+      "primary_category": "cs.CV",
+      "categories": [
+        "cs.CV"
+      ],
+      "tags": [
+        "cs.CV"
+      ],
+      "domain": "Vision",
+      "pdf_downloaded": true,
+      "pdf_size_bytes": 12068975,
+      "pdf_path": "2026-07-23/vision/2607.20116.pdf"
+    },
+    {
+      "id": "2607.20092",
+      "title": "ENTRAP-VL: A Taxonomic Probe for Dual Contextual Entrainment in Vision-Language Models",
+      "abstract": "Contextual entrainment is the tendency of a model to let auxiliary context in its input pull its output, independently of whether that context is relevant, true, or even meaningful. Recently, it has been identified and given a mechanistic account in unimodal language models. Whether and how it manifests in vision-language models (VLMs) is, by contrast, largely unexamined, and the field lacks a purpose-built instrument with which to investigate it. We take the position that studying contextual entrainment in VLMs requires more than porting an existing text-only benchmark to the multimodal setting: it requires a taxonomically structured, dual-modality instrument whose conditions are constructed around the item at hand (the depicted image in the textual stream, the textual query in the visual stream). We argue that the move to VLMs is substantive rather than incremental. It makes entrainment a dual phenomenon, drivable independently by textual and by visual context, and it opens a veracity distinction (context that is false of the depicted scene yet possible in the world) that has no counterpart in the unimodal, world-knowledge-only formulation of prior work. To make this position concrete and actionable, we introduce ENTRAP-VL (ENTRainment Assessment Probe for Vision and Language), a manually curated dataset of 1,500 items across eight categories, organized by a taxonomy that spans two axes, i.e., the association of context with the item and its relationship to truth, and split into a textual-entrainment stream (eight context conditions) and a visual-entrainment stream (three context conditions). We do not claim to measure entrainment in any particular model; we provide the instrument, the taxonomy that motivates it, and the evaluation protocols it enables, so that the community can investigate the phenomenon rigorously. We will release the dataset and its documentation publicly.",
+      "authors": [
+        "Karan Goyal",
+        "Afreen Hossain",
+        "Debojyoti Das",
+        "Vishal Bhutani"
+      ],
+      "published": "2026-07-22T12:47:29Z",
+      "updated": "2026-07-22T12:47:29Z",
+      "url": "https://arxiv.org/abs/2607.20092",
+      "pdf_url": "https://arxiv.org/pdf/2607.20092.pdf",
+      "primary_category": "cs.CV",
+      "categories": [
+        "cs.CV",
+        "cs.AI",
+        "cs.CL"
+      ],
+      "tags": [
+        "cs.AI",
+        "cs.CL",
+        "cs.CV"
+      ],
+      "domain": "Vision",
+      "pdf_downloaded": true,
+      "pdf_size_bytes": 1879201,
+      "pdf_path": "2026-07-23/vision/2607.20092.pdf"
+    },
+    {
+      "id": "2607.20087",
+      "title": "Development of an automated, reliable, and clinically meaningful artificial intelligence (AI) tool for diagnosing cardiac disease from conventional cardiovascular magnetic resonance (CMR) images",
+      "abstract": "Aims: Cardiovascular magnetic resonance (CMR) imaging enables non-invasive assessment of myocardial structure, function, and pathology, but requires substantial experience in interpretation of CMR images that could be supported by artificial intelligence (AI)-based models. However, use of AI models for enhanced CMR reading is limited by labor-intensive data curation, suboptimal model performance, and unclear implementation pathways. Methods and results: We developed an automated data curation pipeline for CMR-based cardiovascular disease (CVD) diagnosis, integrating open-source locally-run large language models (LLMs) to extract diagnostic labels from narrative CMR reports and preprocessing multimodal imaging data, including cine and late-gadolinium-enhancement (LGE) CMR sequences. Three vision foundation models (DINO, VST, UMedPT) were fine-tuned across these modalities in a two-stage approach. The dataset comprised hypertrophic cardiomyopathy (HCM), dilated cardiomyopathy (DCM), ischemic cardiomyopathy (ICM), cardiac amyloidosis (CA), and normal controls (NOR). A total of 988 curated cases were randomly divided into 742 for training and 246 for validation. Fine-tuned AI-models achieved high discriminative diagnostic performance on an independent test set comprising 1067 patients , with individual AUC-ROC values of up to 0.937 for the correct diagnosis of HCM and 0.945 for cardiac amyloidosis. Ensemble strategies combining multiple models and modalities further improved AI-based diagnostic accuracy and robustness, achieving the highest overall diagnostic performance for HCM (AUC=0.959, CI [0.936-0.978]), CA (AUC=0.966, CI [0.939-0.986]), NOR (AUC=0.872, CI [0.852-0.894]), DCM (AUC=0.848, CI [0.808-0.885]) and ICM (AUC=0.840, CI [0.809-0.868]). All training and inference code, along with the trained model weights, are publicly available on https://github.com/sinaamirrajab/CMR_CVD.",
+      "authors": [
+        "Sina Amirrajab",
+        "Volker Vehof",
+        "Michael Bietenbeck",
+        "Nuriye Akyol",
+        "Redouane Bouras",
+        "Khuraman Isgandarova",
+        "Alexandru Zlibut",
+        "Philipp Stalling",
+        "Ali Yilmaz"
+      ],
+      "published": "2026-07-22T12:36:56Z",
+      "updated": "2026-07-22T12:36:56Z",
+      "url": "https://arxiv.org/abs/2607.20087",
+      "pdf_url": "https://arxiv.org/pdf/2607.20087.pdf",
+      "primary_category": "cs.CV",
+      "categories": [
+        "cs.CV"
+      ],
+      "tags": [
+        "cs.CV"
+      ],
+      "domain": "Vision",
+      "pdf_downloaded": true,
+      "pdf_size_bytes": 2182198,
+      "pdf_path": "2026-07-23/vision/2607.20087.pdf"
+    },
+    {
+      "id": "2607.20072",
+      "title": "Factor-Informed Uncertainty Distillation for Gaze Estimation",
+      "abstract": "Deep gaze estimation works well in controlled capture but degrades in unconstrained settings, where systems must reject unreliable predictions. Single-pass uncertainty (e.g., heteroscedastic regression) infers uncertainty from pixels without explicit input-validity cues, while sampling based methods are often too costly for real time use. We propose Factor-Informed Uncertainty Distillation (FIUD), a teacher-student framework that aligns uncertainty with interpretable image-quality failure modes. A gradient-boosting teacher predicts expected gaze error from factors such as illumination, sharpness, eye visibility and symmetry; a neural student distills these signals via curriculum learning and ranking supervision into a lightweight single-pass uncertainty head. Across ETH-XGaze, Gaze360, and MPIIFaceGaze (>300k samples), FIUD improves uncertainty, error rank correlation and selective prediction versus deterministic and sampling-based baselines, with the largest gains in unconstrained settings.",
+      "authors": [
+        "Mohammadreza Jamalifard",
+        "Yaxiong Lei",
+        "Javier Fumanal Idocin",
+        "Parastoo Azizinezhad",
+        "Tom Foulsham",
+        "Javier Andreu-Perez"
+      ],
+      "published": "2026-07-22T12:20:40Z",
+      "updated": "2026-07-22T12:20:40Z",
+      "url": "https://arxiv.org/abs/2607.20072",
+      "pdf_url": "https://arxiv.org/pdf/2607.20072.pdf",
+      "primary_category": "cs.CV",
+      "categories": [
+        "cs.CV",
+        "cs.HC"
+      ],
+      "tags": [
+        "cs.CV",
+        "cs.HC"
+      ],
+      "domain": "Vision",
+      "pdf_downloaded": true,
+      "pdf_size_bytes": 666663,
+      "pdf_path": "2026-07-23/vision/2607.20072.pdf"
+    },
+    {
+      "id": "2607.20071",
+      "title": "GaussianSeed: Hierarchical Gaussian Seeding for High-Resolution 3D Occupancy Prediction",
+      "abstract": "Vision-centric 3D occupancy prediction provides dense scene representations essential for autonomous driving and robotic navigation, yet existing methods struggle to scale to high voxel resolutions due to prohibitive computational costs. To address this, we introduce GaussianSeed, a progressive multi-scale Gaussian occupancy prediction framework that organizes primitives into a coarse-to-fine hierarchy. Benefiting from this hierarchical design, GaussianSeed effectively circumvents the memory bottlenecks inherent in dense representations, successfully scaling to a $0.1\\text{m}$ spatial resolution while maintaining real-time inference capabilities. To comprehensively evaluate high-resolution geometric perception, we further construct TJScenes, a panoramic six-camera occupancy dataset with highly detailed $0.1\\text{m}$ annotations. Extensive experiments on Occ3D-nuScenes and TJScenes demonstrate that GaussianSeed delivers the lowest latency among all evaluated methods while maintaining highly competitive accuracy, advancing the efficiency-quality frontier of high-resolution 3D occupancy prediction.",
+      "authors": [
+        "Xinzhuo Li",
+        "Xianghui Pan",
+        "Jiayuan Du",
+        "Wei Wei",
+        "Liuyi Wang",
+        "Chengju Liu",
+        "Qijun Chen"
+      ],
+      "published": "2026-07-22T12:18:30Z",
+      "updated": "2026-07-22T12:18:30Z",
+      "url": "https://arxiv.org/abs/2607.20071",
+      "pdf_url": "https://arxiv.org/pdf/2607.20071.pdf",
+      "primary_category": "cs.CV",
+      "categories": [
+        "cs.CV"
+      ],
+      "tags": [
+        "cs.CV"
+      ],
+      "domain": "Vision",
+      "pdf_downloaded": true,
+      "pdf_size_bytes": 4742750,
+      "pdf_path": "2026-07-23/vision/2607.20071.pdf"
+    },
+    {
+      "id": "2607.20048",
+      "title": "Importance-Aware OBS Pruning for Diffusion Models",
+      "abstract": "We propose importance-aware pruning for diffusion models, a training-free framework that prioritizes preserving parameters critical to semantically salient image regions. To do so, we incorporate spatial importance maps -- derived from conditioning signals or model attention -- into the pruning objective. This produces parameter rankings aligned with perceptual relevance rather than uniform reconstruction error. On MS-COCO dataset, our proposed approach consistently retains subject fidelity and structural correctness at high compression ratios where conventional pruning causes visible degradation. These results demonstrate that content-aware objectives are key to perceptually faithful compression of generative models.",
+      "authors": [
+        "Ba-Thinh Lam",
+        "Srijan Das",
+        "Hieu Le"
+      ],
+      "published": "2026-07-22T11:42:42Z",
+      "updated": "2026-07-22T11:42:42Z",
+      "url": "https://arxiv.org/abs/2607.20048",
+      "pdf_url": "https://arxiv.org/pdf/2607.20048.pdf",
+      "primary_category": "cs.CV",
+      "categories": [
+        "cs.CV"
+      ],
+      "tags": [
+        "cs.CV"
+      ],
+      "domain": "Vision",
+      "pdf_downloaded": true,
+      "pdf_size_bytes": 21522893,
+      "pdf_path": "2026-07-23/vision/2607.20048.pdf"
+    },
+    {
+      "id": "2607.20028",
+      "title": "A Systematic Benchmark of Intensity Normalisation Methods for 3D Knee MRI Segmentation and Cross-Domain Generalisability",
+      "abstract": "Robust out-of-the-box performance is essential for the clinical deployment of deep learning models in medical imaging. An important but underexplored factor affecting model generalisability is intensity normalisation, particularly for magnetic resonance imaging (MRI), where image intensities vary across scanners and protocols. In this study, we systematically compared seven normalisation methods and their impact on the performance of a 3D U-Net model for meniscus segmentation from knee MRI. The methods included standard scaling approaches, histogram-based techniques, and a Gaussian Mixture Model (GMM)-based method. Models were trained on the IWOAI 2019 dataset and evaluated on both internal and external test sets (SKM-TEA) to assess generalisability. Performance was similar internally but differences were significant on external data, with Z-score, Ny\u00fal histogram matching, and CLAHE showing greater robustness than other methods. However, these differences were small compared to the significant performance drop observed between datasets. Overall, while intensity normalisation had a measurable effect on model generalisability, its impact was limited relative to the effects of domain shift, highlighting the need for complementary strategies for robust deployment.",
+      "authors": [
+        "Oliver Mills",
+        "Philip Conaghan",
+        "Samuel Relton"
+      ],
+      "published": "2026-07-22T11:14:45Z",
+      "updated": "2026-07-22T11:14:45Z",
+      "url": "https://arxiv.org/abs/2607.20028",
+      "pdf_url": "https://arxiv.org/pdf/2607.20028.pdf",
+      "primary_category": "cs.CV",
+      "categories": [
+        "cs.CV",
+        "cs.AI"
+      ],
+      "tags": [
+        "cs.AI",
+        "cs.CV"
+      ],
+      "domain": "Vision",
+      "pdf_downloaded": true,
+      "pdf_size_bytes": 1230695,
+      "pdf_path": "2026-07-23/vision/2607.20028.pdf"
+    },
+    {
+      "id": "2607.19994",
+      "title": "Toward Seasonal Guidelines for Robust Deep-Learning Sentinel-2 Building Detection in Different Area Types",
+      "abstract": "Sentinel-2 imagery offers open access, global coverage, and frequent revisit times, making it attractive for practical building mapping at scale; however, its native 10m resolution makes building vs non-building classification challenging, particularly for small or sub-pixel buildings, and performance can vary with both seasonality and the heterogeneity of built-up environments. This paper introduces a Sentinel-2 building-detection framework designed to systematically quantify these effects and to support more formalised, practice-oriented model selection. We construct a dedicated multi-temporal Sentinel-2 dataset over the Warsaw region and derive binary ground-truth masks by rasterising official Polish topographic database (BDOT10k) building footprints onto the Sentinel-2 pixel grid. Using two established convolutional segmentation backbones (U-Net and DeepLabV3+), we first perform scene-specific fine-tuning to select a robust architecture and identify the best monthly models for L1C and L2A products separately. We then conduct cross-temporal inference by applying each best monthly model to all scenes, enabling an assessment of (i) which months provide favourable training and inference conditions, (ii) how performance transfers between seasons, (iii) the impact of processing level, and (iv) how these effects differ across built-up typologies. Based on these results, we provide practical guidance for routine Sentinel-2 building classification under varying acquisition periods and settlement characteristics.",
+      "authors": [
+        "Micha\u0142 Romaszewski",
+        "Kamil Drejer",
+        "Katarzyna Ko\u0142odziej",
+        "Anna Zawadzka",
+        "Stanis\u0142aw Lewi\u0144ski",
+        "Przemys\u0142aw G\u0142omb",
+        "Marek Ruci\u0144ski",
+        "Michal Krupi\u0144ski",
+        "Krzysztof Gryguc Przemys\u0142aw Seku\u0142aa",
+        "Szymon Sala"
+      ],
+      "published": "2026-07-22T10:26:22Z",
+      "updated": "2026-07-22T10:26:22Z",
+      "url": "https://arxiv.org/abs/2607.19994",
+      "pdf_url": "https://arxiv.org/pdf/2607.19994.pdf",
+      "primary_category": "cs.CV",
+      "categories": [
+        "cs.CV"
+      ],
+      "tags": [
+        "cs.CV"
+      ],
+      "domain": "Vision",
+      "pdf_downloaded": true,
+      "pdf_size_bytes": 19810202,
+      "pdf_path": "2026-07-23/vision/2607.19994.pdf"
+    },
+    {
+      "id": "2607.19986",
+      "title": "STEREOFLOW: Progressive Stereo Matching with StereoDiT and Transition Flow Matching",
+      "abstract": "Stereo matching is a fundamental task in 3D reconstruction. Despite remarkable advances, the prevailing paradigms formulate stereo matching as a deterministic regression problem, collapsing the multimodal distribution modeling into a single-point estimation. This formulation suffers from a regression-to-mean bias, frequently struggling with ambiguous regions. In contrast, we introduce a prior-guided generative framework that integrates deterministic matching regression and generative distribution modeling within a complementary formulation. Built upon this formulation, we introduce StereoFlow through three key components: (i) a two-stage progressive cascade matching network that progressively produces multi-resolution stereo conditions with complementary matching cues; (ii) a pixel diffusion transformer (termed StereoDiT) with a frequency-decoupled architecture for modeling correspondence ambiguity; (iii) a few-step flow matching objective (termed Transition Flow Matching) for efficient optimization. In summary, \\textsc{\\textbf{StereoFlow}} achieves strong geometric consistency and rich fine-grained details in ill-posed, discontinuous regions and under zero-shot generalization. Extensive experiments demonstrate that the proposed StereoFlow establishes multiple state-of-the-art results across benchmarks, including Scene Flow, KITTI, ETH3D, and Middlebury.",
+      "authors": [
+        "Hao Wang",
+        "Haoran Geng",
+        "Xiaotong Yang",
+        "Jing Tang",
+        "Songlin Wei",
+        "Linlong Lang",
+        "Yeying Jin",
+        "Zheng Zhu",
+        "Zhaoxin Fan",
+        "Biao Leng"
+      ],
+      "published": "2026-07-22T10:19:43Z",
+      "updated": "2026-07-22T10:19:43Z",
+      "url": "https://arxiv.org/abs/2607.19986",
+      "pdf_url": "https://arxiv.org/pdf/2607.19986.pdf",
+      "primary_category": "cs.CV",
+      "categories": [
+        "cs.CV"
+      ],
+      "tags": [
+        "cs.CV"
+      ],
+      "domain": "Vision",
+      "pdf_downloaded": true,
+      "pdf_size_bytes": 25236385,
+      "pdf_path": "2026-07-23/vision/2607.19986.pdf"
+    },
+    {
+      "id": "2607.19975",
+      "title": "Forecasting the Number of Harvest-ready Fruits of Sweet Peppers Using Multimodal Time-Series Data",
+      "abstract": "Accurate yield forecasting at the individual-plant level is critical for precision agriculture and supply-chain planning, yet public datasets capturing both visual growth dynamics and per-plant measurement labels are scarce. In this paper, we introduce a novel, annotated image time-series dataset of 691 sweet pepper plants monitored over two growing seasons, comprising 4837 images with per-plant fruit counts categorized by maturity. We propose a multimodal deep learning framework that fuses high-dimensional image features, extracted using the DinoV3 encoder, with numerical count measurements. Our architecture utilizes a Long Short-Term Memory (LSTM) network to model temporal dependencies and handles irregular sampling intervals common in greenhouse monitoring. Through quantitative experiments, we demonstrate that this multimodal approach reduces RMSE over a persistence baseline by 33% and 38% in the 2022 and 2023 seasons, respectively, with a further 1.2% average gain over a measurement-only model. Furthermore, we employ Deep Ensembles and Gaussian Negative Log-Likelihood (NLL) to provide calibrated uncertainty estimates, with an Uncertainty Calibration Error (UCE) ranging from 0.39 to 0.89 depending on the cross-season evaluation direction, offering a principled confidence signal for real-world agricultural decision-making. We release the dataset and code to support reproducible research and to accelerate development of data-driven yield forecasting methods for horticultural crops.",
+      "authors": [
+        "Enrico Pallotta",
+        "Mohamed Farag",
+        "Esra Guclu",
+        "Chris McCool",
+        "Ribana Roscher",
+        "Juergen Gall"
+      ],
+      "published": "2026-07-22T09:58:03Z",
+      "updated": "2026-07-22T09:58:03Z",
+      "url": "https://arxiv.org/abs/2607.19975",
+      "pdf_url": "https://arxiv.org/pdf/2607.19975.pdf",
+      "primary_category": "cs.CV",
+      "categories": [
+        "cs.CV"
+      ],
+      "tags": [
+        "cs.CV"
+      ],
+      "domain": "Vision",
+      "pdf_downloaded": true,
+      "pdf_size_bytes": 5945882,
+      "pdf_path": "2026-07-23/vision/2607.19975.pdf"
+    }
+  ]
+}
