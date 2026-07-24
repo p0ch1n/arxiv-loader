@@ -1,0 +1,670 @@
+{
+  "domain": "Vision",
+  "date": "2026-07-24",
+  "count": 24,
+  "papers": [
+    {
+      "id": "2607.21594",
+      "title": "Streaming Multi-Agent Autoregressive Diffusion Model with World State Registers",
+      "abstract": "Multi-agent interactive world models should not only generate consistent observations, but also maintain world states that persist across agents and evolve across views. Existing autoregressive video diffusion pipelines carry forward observation history as conditioning context, which makes shared state difficult to maintain in multi-agent and multi-view settings. We present WorldWeaver (W^2), a streaming multi-agent video diffusion model that augments rollout with cross-agent world state registers: learnable tokens that store shared world information, track individual agent status, and are dynamically updated after each generated chunk. We ground these registers with supervision signals spanning individual agent status, global state views including bird's-eye views, and scene text. We further improve the architecture with a Mixture-of-Transformers design that uses separate weights for world state modeling and visual frame modeling. Extensive experiments in two-agent Minecraft video generation show that explicit world-state modeling improves logical consistency and generation quality.",
+      "authors": [
+        "Sicheng Mo",
+        "Yuheng Li",
+        "Ziyang Leng",
+        "Krishna Kumar Singh",
+        "Bolei Zhou"
+      ],
+      "published": "2026-07-23T17:59:58Z",
+      "updated": "2026-07-23T17:59:58Z",
+      "url": "https://arxiv.org/abs/2607.21594",
+      "pdf_url": "https://arxiv.org/pdf/2607.21594.pdf",
+      "primary_category": "cs.CV",
+      "categories": [
+        "cs.CV"
+      ],
+      "tags": [
+        "cs.CV"
+      ],
+      "domain": "Vision",
+      "pdf_downloaded": true,
+      "pdf_size_bytes": 1837719,
+      "pdf_path": "2026-07-24/vision/2607.21594.pdf"
+    },
+    {
+      "id": "2607.21592",
+      "title": "Unified Video Dense Prediction from Disjoint Data",
+      "abstract": "Scene understanding requires simultaneous prediction about geometry, appearance, and semantics. However, existing task-specific annotations are fragmented across incompatible, domain-specific datasets. Current unified systems circumvent this by restricting training to fully co-annotated data, or by incurring the large computational cost of pseudo-labeling. To mitigate this, we introduce UniD, a unified video model that jointly predicts eight dense scene properties-depth, surface normals, semantic segmentation, boundaries, human parts, albedo, shading, and materials-all learned from disjoint, domain-specific datasets. We propose a simple yet effective distillation step in which per-task experts supervise a unified backbone through lightweight task projectors, eliminating the need for annotation overlap or pseudo-labeling. Our key insight is that the strong visual priors of a pretrained diffusion model are sufficient to bridge the domain gaps introduced by disjoint training sources, enabling robust generalization to scene-task combinations never seen during training. UniD achieves competitive performance against per-task specialists and multi-task baselines, with strong generalization to out-of-distribution scenarios and enhanced temporal and cross-task consistency. Code and video results are available at https://unid-video.github.io/.",
+      "authors": [
+        "Yihong Sun",
+        "Seoung Wug Oh",
+        "Jiahui Huang",
+        "Bharath Hariharan",
+        "Joon-Young Lee"
+      ],
+      "published": "2026-07-23T17:59:50Z",
+      "updated": "2026-07-23T17:59:50Z",
+      "url": "https://arxiv.org/abs/2607.21592",
+      "pdf_url": "https://arxiv.org/pdf/2607.21592.pdf",
+      "primary_category": "cs.CV",
+      "categories": [
+        "cs.CV"
+      ],
+      "tags": [
+        "cs.CV"
+      ],
+      "domain": "Vision",
+      "pdf_downloaded": true,
+      "pdf_size_bytes": 25437374,
+      "pdf_path": "2026-07-24/vision/2607.21592.pdf"
+    },
+    {
+      "id": "2607.21591",
+      "title": "Inference-Time Scaling of Diffusion Models via Progressive Seed Pruning",
+      "abstract": "Diffusion and flow-matching models dominate conditional image generation, yet inference-time scaling for these models is far less developed than for autoregressive language models. Because final quality is highly sensitive to the initial noise seed, many approaches spend extra compute on seed search or resampling under a black-box reward, but typically maintaining a constant memory footprint throughout inference. We show that relaxing this constraint enables an underexplored inference-time scaling axis: by front-loading exploration, evaluating many seeds early, and pruning aggressively, we can use a fixed compute budget more effectively. \\emph{Progressive Seed Pruning} (\\PSP) scores intermediate denoised estimates and progressively narrows the candidate set so that only promising trajectories are fully denoised, while keeping the total number of model evaluations fixed. Across diffusion and flow-matching backbones, \\PSP \\ consistently improves reward-guided selection and achieves higher GenEval scores (automated) and better human evaluation on prompt-alignment than best-of-$N$, importance-sampling, and tree-search baselines at matched compute. Project page: https://www.vision.caltech.edu/psp. Code: https://github.com/rogerioagjr/psp.",
+      "authors": [
+        "Rogerio Guimaraes",
+        "Pietro Perona"
+      ],
+      "published": "2026-07-23T17:59:46Z",
+      "updated": "2026-07-23T17:59:46Z",
+      "url": "https://arxiv.org/abs/2607.21591",
+      "pdf_url": "https://arxiv.org/pdf/2607.21591.pdf",
+      "primary_category": "cs.CV",
+      "categories": [
+        "cs.CV"
+      ],
+      "tags": [
+        "cs.CV"
+      ],
+      "domain": "Vision",
+      "pdf_downloaded": false,
+      "pdf_size_bytes": null,
+      "pdf_path": null
+    },
+    {
+      "id": "2607.21582",
+      "title": "Scale Up Strategically: Learning Compositional Generalization via Bias-Aware Evaluation and Data Collection for Robotic Manipulation",
+      "abstract": "Compositional generalization is essential for robot to follow diverse instructions. However, pretrained policies are known to take shortcuts, deferring to salient cues rather than grounding language. We introduce a diagnostic framework that localizes this failure to individual \\textit{instruction factors}, \\textit{e.g.,} reusable semantic components such as color, verb, object, size, and spatial attribute. Our framework formalizes instruction factor bias, the tendency of fine-tuned policies to over-rely on dominant factors as shortcuts, and quantifies it through two metrics: Factor Dominance Rate (FDR), capturing pairwise bias between factors, and Factor Dominance Hierarchy (FDH), aggregating these into a global ranking. Evaluation on six foundation policies reveals broadly consistent ordering, \\textit{i.e.}, color $\\geq$ object $\\geq$ spatial $\\geq$ verb $\\geq$ size, with color dominant, and verb and size most under-grounded. We further show the diagnosis is actionable: a bias-aware data collection strategy that reallocates a fixed budget toward under-grounded factors outperforms baselines in simulation and on a real robot using half the demonstrations, thereby enabling more sample-efficient and generalizable policy learning.",
+      "authors": [
+        "Yu Qi",
+        "Zhang Ye",
+        "Xinyi Xu",
+        "Yuxuan Lu",
+        "Amitoj Sandhu",
+        "Boce Hu",
+        "Haojie Huang",
+        "Jonathan Tremblay",
+        "Lawson L. S. Wong"
+      ],
+      "published": "2026-07-23T17:57:09Z",
+      "updated": "2026-07-23T17:57:09Z",
+      "url": "https://arxiv.org/abs/2607.21582",
+      "pdf_url": "https://arxiv.org/pdf/2607.21582.pdf",
+      "primary_category": "cs.RO",
+      "categories": [
+        "cs.RO",
+        "cs.CV"
+      ],
+      "tags": [
+        "cs.CV",
+        "cs.RO"
+      ],
+      "domain": "Vision",
+      "pdf_downloaded": true,
+      "pdf_size_bytes": 12777033,
+      "pdf_path": "2026-07-24/vision/2607.21582.pdf"
+    },
+    {
+      "id": "2607.21576",
+      "title": "Self-Supervised Learning of Structured Dynamics from Videos",
+      "abstract": "Understanding motion in video is a fundamental challenge for visual learning, as frame-to-frame change entangles two sources of dynamics: camera motion and object motion. This decomposition has remained underexplored in representation learning, partly because these factors are tightly coupled in natural videos and difficult to supervise separately. Yet recovering it is important for learning robust motion representations that separate meaningful object dynamics from camera-induced variation. We study whether such structured motion representations can be recovered from frozen features of a pretrained image vision transformer. We propose the Structured Dynamics Model (SDM), which explicitly separates the dominant source of temporal change from residual dynamics through future-feature prediction, rather than representing video change with a single entangled latent or with unstructured, spatially dense transition tokens. Training combines self-supervised learning on real video with weak supervision of scene dynamics on synthetic Kubric data. We evaluate SDM on ProbeMotion, a new evaluation suite spanning synthetic and real videos with camera motion, object motion, and combined dynamics. SDM outperforms backbone baselines using global CLS or average-pooled features, and compares favorably to strongly supervised representations such as VGGT on several probes, despite using substantially weaker supervision. These results suggest that pretrained image models can be readily repurposed into structured video-dynamics representations, providing a useful inductive bias for learning and analyzing latent video dynamics.",
+      "authors": [
+        "Lukas Knobel",
+        "Andrew Zisserman",
+        "Yuki M. Asano"
+      ],
+      "published": "2026-07-23T17:55:07Z",
+      "updated": "2026-07-23T17:55:07Z",
+      "url": "https://arxiv.org/abs/2607.21576",
+      "pdf_url": "https://arxiv.org/pdf/2607.21576.pdf",
+      "primary_category": "cs.CV",
+      "categories": [
+        "cs.CV"
+      ],
+      "tags": [
+        "cs.CV"
+      ],
+      "domain": "Vision",
+      "pdf_downloaded": true,
+      "pdf_size_bytes": 2037458,
+      "pdf_path": "2026-07-24/vision/2607.21576.pdf"
+    },
+    {
+      "id": "2607.21562",
+      "title": "Scene Parameter Saliency via Differentiable Light Transport",
+      "abstract": "Gradient-based saliency methods reveal which input features most influence a neural network's output, and are a standard tool for model interpretability. We observe that differentiable renderers, which are conventionally used for parameter optimisation, produce an analogous form of saliency: given any scalar metric evaluated on a rendered image, a single reverse-mode differentiation pass yields per-parameter gradients that identify which scene elements most influence the metric. We call these gradient fields metric saliency maps. Unlike neural saliency, which propagates attribution through learned weights, metric saliency propagates through the image formation process itself, including multi-bounce light transport, capturing parameter dependencies that are semi-opaque to manual inspection. We compute metric saliency maps for qualitatively different objectives: psychovisual glare indices, mean scene luminance, and neural perceptual scores. The saliency rankings differ substantially across metrics for the same scene, with parameters that dominate one objective being negligible for another. The saliency map is specific to the metric, not an intrinsic property of the scene. Our results suggest that differentiable renderers produce derivative images that are as informative for scene understanding as the primal images they were designed to generate.",
+      "authors": [
+        "Linas Beresna",
+        "Eugene Fiume"
+      ],
+      "published": "2026-07-23T17:46:26Z",
+      "updated": "2026-07-23T17:46:26Z",
+      "url": "https://arxiv.org/abs/2607.21562",
+      "pdf_url": "https://arxiv.org/pdf/2607.21562.pdf",
+      "primary_category": "cs.CV",
+      "categories": [
+        "cs.CV",
+        "cs.GR"
+      ],
+      "tags": [
+        "cs.CV",
+        "cs.GR"
+      ],
+      "domain": "Vision",
+      "pdf_downloaded": true,
+      "pdf_size_bytes": 6439884,
+      "pdf_path": "2026-07-24/vision/2607.21562.pdf"
+    },
+    {
+      "id": "2607.21553",
+      "title": "SANA-Video 2.0: Hybrid Linear Attention with Attention Residuals for Efficient Video Generation",
+      "abstract": "We introduce SANA-Video 2.0, a hybrid video diffusion transformer instantiated at 5B and 14B scales under a unified architecture. Designed to generate high-quality video up to 720p on a single GPU, SANA-Video 2.0 matches full-softmax video DiTs in quality while retaining the favorable long-sequence scaling of linear attention. To avoid quadratic attention throughout, Hybrid Linear-Softmax Attention combines gated linear attention for O(N)-dominated mixing with periodic gated-softmax anchors at a 3:1 ratio, restoring the full-rank token interactions that pure linear attention lacks. To propagate these refreshed representations across depth, Block Attention Residuals (AttnRes) route completed block summaries into later linear layers, enabling anchor-feature reuse and boosting deep-layer effective rank by ~12%. Through from-scratch training, SANA-Video 2.0 learns the complete hybrid directly rather than linearizing pretrained models, with reduced-resolution proxy studies establishing 25% softmax as the optimal quality-efficiency trade-off. With 40-step sampling, SANA-Video 2.0 achieves a VBench score of 84.30 in 13.2s at 480p on a single H100, remaining competitive with far larger softmax video DiTs at a fraction of the latency. Its compiled DiT forward pass is 3.2x faster than a matched full-softmax baseline at 720p/60s, a gap that expands with video duration. Furthermore, full-stack Sol-Engine optimization (kernel fusion, caching, and sparse attention) accelerates this hardware-friendly backbone by a further 3.58x, bringing the 5B pipeline to 13.06s at 720p/5s and making it 120x faster than Wan 2.2-A14B on one H100. Overall, our hybrid design recovers softmax-level expressiveness at substantially reduced cost, unlocking scalable long, high resolution video generation.",
+      "authors": [
+        "Junsong Chen",
+        "Jincheng Yu",
+        "Yitong Li",
+        "Shuchen Xue",
+        "Haozhe Liu",
+        "Jingyu Xin",
+        "Yuyang Zhao",
+        "Tian Ye",
+        "Zhangjie Wu",
+        "Zian Wang",
+        "Daquan Zhou",
+        "Ping Luo",
+        "Song Han",
+        "Enze Xie"
+      ],
+      "published": "2026-07-23T17:36:05Z",
+      "updated": "2026-07-23T17:36:05Z",
+      "url": "https://arxiv.org/abs/2607.21553",
+      "pdf_url": "https://arxiv.org/pdf/2607.21553.pdf",
+      "primary_category": "cs.CV",
+      "categories": [
+        "cs.CV"
+      ],
+      "tags": [
+        "cs.CV"
+      ],
+      "domain": "Vision",
+      "pdf_downloaded": false,
+      "pdf_size_bytes": null,
+      "pdf_path": null
+    },
+    {
+      "id": "2607.21546",
+      "title": "UnDA: Unpaired Domain Alignment for Cross-Modal Knowledge Transfer in Medical Imaging",
+      "abstract": "Multimodal based approaches often outperform single modality approaches in downstream tasks as the different modalities provide complementary information, yet acquiring paired clinical data remains a significant challenge in real world scenarios. While cross-modal knowledge distillation addresses this, existing methods often struggle with large modality gaps and the propagation of noise from uncertain source-domain predictions. To overcome these challenges, we propose UnDA, an anchor-guided framework for unpaired cross-modal distillation. Our approach introduces a backbone-agnostic Alignment Module that extracts semantically structured class tokens via an attention based pooling mechanism. To ensure robust knowledge transfer, we propose Uncertainty-Weighted Optimal Transport (UCT-OT), which dynamically weights feature-level alignment based on prediction confidence, effectively suppressing noisy supervision. Furthermore, a per-class ProtoNCE objective maintains stable prototype memories to enforce global discriminability across unpaired batches. Evaluations on representative segmentation tasks under strictly unpaired settings show consistent improvements in accuracy and boundary precision in the target modality, demonstrating that meaningful structural knowledge can be transferred across heterogeneous data sources without paired datasets.",
+      "authors": [
+        "Rafsan Jany",
+        "Shadab Tanjeed Ahmad",
+        "Ahsan Bulbul",
+        "Tahsinul Islam",
+        "Md Azam Hossain",
+        "Abu Raihan Mostofa Kamal"
+      ],
+      "published": "2026-07-23T17:33:29Z",
+      "updated": "2026-07-23T17:33:29Z",
+      "url": "https://arxiv.org/abs/2607.21546",
+      "pdf_url": "https://arxiv.org/pdf/2607.21546.pdf",
+      "primary_category": "cs.CV",
+      "categories": [
+        "cs.CV"
+      ],
+      "tags": [
+        "cs.CV"
+      ],
+      "domain": "Vision",
+      "pdf_downloaded": true,
+      "pdf_size_bytes": 609160,
+      "pdf_path": "2026-07-24/vision/2607.21546.pdf"
+    },
+    {
+      "id": "2607.21545",
+      "title": "Towards Robust Iris Recognition Through Occlusion Identification and Conditional Diffusion-Based Reconstruction",
+      "abstract": "Iris recognition is a reliable biometric approach that identifies individuals using the distinctive and stable texture of the iris. However, recognition performance can degrade when discriminative iris texture is partially occluded by eyelids, eyelashes, specular reflections, or other acquisition artifacts. Existing approaches often perform recognition directly on degraded samples or rely only on the remaining visible iris region, which may be inadequate when substantial texture is corrupted. To address this limitation, we propose an occlusion-aware iris recognition framework with three sequential modules: occlusion-type identification, diffusion-based reconstruction, and deep-learning-based recognition. First, a residual 2D CNN-based network determines whether an iris image is non-occluded or belongs to one of the controlled occlusion categories. Second, the occluded image, binary mask, and predicted occlusion type condition a denoising diffusion probabilistic model to reconstruct the corrupted region. Finally, VGG19-HPMNet, a modified VGG19 model with horizontal pyramid mapping, extracts discriminative global and part-wise local iris features for recognition. Experiments on the CASIA-Iris-Thousand dataset under a controlled synthetic-occlusion protocol show that the proposed framework improves iris recognition performance by identifying the occlusion type, reconstructing masked regions, and re-evaluating the restored iris samples.",
+      "authors": [
+        "Kamrul Hasan",
+        "Mylene C. Q. Farias",
+        "Oleg V. Komogortsev"
+      ],
+      "published": "2026-07-23T17:32:20Z",
+      "updated": "2026-07-23T17:32:20Z",
+      "url": "https://arxiv.org/abs/2607.21545",
+      "pdf_url": "https://arxiv.org/pdf/2607.21545.pdf",
+      "primary_category": "cs.CV",
+      "categories": [
+        "cs.CV"
+      ],
+      "tags": [
+        "cs.CV"
+      ],
+      "domain": "Vision",
+      "pdf_downloaded": true,
+      "pdf_size_bytes": 1494032,
+      "pdf_path": "2026-07-24/vision/2607.21545.pdf"
+    },
+    {
+      "id": "2607.21526",
+      "title": "Boosting Robustness for All-Weather Self-Supervised Depth Estimation in Autonomous Driving",
+      "abstract": "Self-supervised depth estimation is challenging for safe autonomous driving under various adverse weather conditions due to sensor perception degradation. These challenges arise from two main aspects. Firstly, adverse conditions can distort pixel correspondences and violate the assumptions embedded in the self-supervised loss function, leading to erroneous depth predictions. Secondly, while radar is a widely adopted sensor in adverse weather conditions, the sparse distribution of radar points in the Point of View (POV) poses challenges for self-supervised fusion. To address these issues, we introduce a novel self-training pipeline using unpaired real all-weather data through multi-teacher distillation and robust radar fusion. We propose the Uncertainty-Aware Multi-Teacher Distillation method to generate diverse teacher models with different adverse condition inputs, and then employ uncertainty modeling to weigh the knowledge distillation loss. Additionally, we design the POV-BEV Radar Fusion approach, which leverages camera-pixel ray constraints to establish connections between the camera's Point of View (POV) and the radar's Bird's-Eye View (BEV). This approach enables the utilization of denser radar points, effectively capturing the complementary perspectives of both POV and BEV. Extensive quantitative and qualitative experiments demonstrate the robustness of our proposed method on all-weather datasets, achieving state-of-the-art performance. Our code and models are available at https://github.com/MICLAB-BUPT/RobustDepth.",
+      "authors": [
+        "Mengshi Qi",
+        "Xiaoyang Bi",
+        "Xianlin Zhang",
+        "Huadong Ma"
+      ],
+      "published": "2026-07-23T17:11:33Z",
+      "updated": "2026-07-23T17:11:33Z",
+      "url": "https://arxiv.org/abs/2607.21526",
+      "pdf_url": "https://arxiv.org/pdf/2607.21526.pdf",
+      "primary_category": "cs.CV",
+      "categories": [
+        "cs.CV"
+      ],
+      "tags": [
+        "cs.CV"
+      ],
+      "domain": "Vision",
+      "pdf_downloaded": true,
+      "pdf_size_bytes": 8365186,
+      "pdf_path": "2026-07-24/vision/2607.21526.pdf"
+    },
+    {
+      "id": "2607.21504",
+      "title": "Texture++: Elevating 3D Asset Texture Resolution with a Region-Aware Diffusion Model",
+      "abstract": "Numerous 3D assets are discarded due to low texture resolution, while current super-resolution models ignore texture maps and focus on natural images. An efficient and generalizable texture super-resolution model can revitalize a large corpus of aging yet valuable assets across industries such as film and video games. We present Texture++, a novel framework for texture super-resolution, which enhances the low-resolution textures of assets to produce high-resolution, high-quality results. Specifically, we reformulate the task of super-resolution in UV space into performing it across multiple rendered views and merging the outputs. Firstly, to achieve more complete and continuous textures in the view space, we propose an adaptive view selection strategy to integrate textures dispersed across UV texture patches. Furthermore, we introduce a quadtree-based texture region organization method for combining super-resolved textures from different viewpoints, providing masks to distinguish regions that require improvement. Finally, we design a diffusion-based super-resolution model that enhances the texture resolution for specified masked regions, seamlessly integrating with surrounding regions. Through comprehensive evaluations, we demonstrate that our approach yields textures with substantially improved detail and coherence over existing methods.",
+      "authors": [
+        "Shuaiwei Wang",
+        "Shi Li",
+        "Jieting Xu",
+        "Yuchi Huo",
+        "Qi Wang",
+        "Wenting Zheng",
+        "Rengan Xie"
+      ],
+      "published": "2026-07-23T16:52:10Z",
+      "updated": "2026-07-23T16:52:10Z",
+      "url": "https://arxiv.org/abs/2607.21504",
+      "pdf_url": "https://arxiv.org/pdf/2607.21504.pdf",
+      "primary_category": "cs.CV",
+      "categories": [
+        "cs.CV"
+      ],
+      "tags": [
+        "cs.CV"
+      ],
+      "domain": "Vision",
+      "pdf_downloaded": true,
+      "pdf_size_bytes": 8519108,
+      "pdf_path": "2026-07-24/vision/2607.21504.pdf"
+    },
+    {
+      "id": "2607.21485",
+      "title": "Recurrent Sinusoidal INRs for Efficient High-Fidelity Representation",
+      "abstract": "We study sinusoidal recurrence as an iterative mechanism for harmonic spectral enrichment in implicit neural representations (INRs). Our analysis reveals that sinusoidal activations induce a harmonic line spectrum, providing a spectral account of how recurrent unrolling enriches the effective spectral support. We realize this principle with a shared sinusoidal block that iteratively refines the latent representation. We empirically validate the resulting spectral behavior against feed-forward INRs, non-sinusoidal recurrent variants, and equilibrium-style sinusoidal models. Complementing this analysis, we evaluate the proposed architecture across image and 3D representation tasks. On RGB image benchmarks, our method achieves higher fidelity than feed-forward baselines with fewer parameters and fewer optimization steps, and it further transfers favorably to super-resolution, NeRF, and SDF tasks.",
+      "authors": [
+        "Hyunmin Cho",
+        "Jaejun Yoo",
+        "Kyong Hwan Jin"
+      ],
+      "published": "2026-07-23T16:26:51Z",
+      "updated": "2026-07-23T16:26:51Z",
+      "url": "https://arxiv.org/abs/2607.21485",
+      "pdf_url": "https://arxiv.org/pdf/2607.21485.pdf",
+      "primary_category": "cs.CV",
+      "categories": [
+        "cs.CV"
+      ],
+      "tags": [
+        "cs.CV"
+      ],
+      "domain": "Vision",
+      "pdf_downloaded": true,
+      "pdf_size_bytes": 20770704,
+      "pdf_path": "2026-07-24/vision/2607.21485.pdf"
+    },
+    {
+      "id": "2607.21471",
+      "title": "Future Rendering $\\neq$ Future Surface: A Benchmark and Dataset for Dynamic Surface Reconstruction Beyond the Observed Window",
+      "abstract": "Dynamic-scene reconstruction is almost always evaluated inside the observed time window, yet deployment settings such as AR overlays, robot interaction, and anticipatory planning need the future surface: the geometry at times beyond those captured. No standard benchmark measures this. We introduce FutureSurf, a controlled diagnostic benchmark and dataset for future-time surface reconstruction that trades scene diversity for exact future ground truth and falsification controls. A method trains on the observed first 75% of a sequence; we score its extracted per-frame surface on the held-out future by Chamfer distance, reporting absolute future CD as the primary score and the future/observed gap as a diagnostic. The dataset contains eight analytically defined controlled motions, including three falsification controls, with exact per-frame ground-truth meshes. We also provide a ground-truth-side recoverability oracle. The release includes split files, scoring code, a benchmark card, and Croissant metadata. On the controlled motions, the DG-Mesh backbone leaves a 2.7-4.1$\\times$ gap even for futures predictable in principle (four of five recoverable from observed motion by a fixed rule), while the falsification controls behave as designed (the surface-invariant motion shows no gap). Beyond the contributed dataset, the gap persists across six animated DG-Mesh asset scenes and a second backbone, Deformable-3DGS (2.0-6.6$\\times$; both share a deformation-MLP temporal model). The benchmark also shows that future rendering quality and future-surface accuracy are statistically decoupled, so the novel-view-synthesis metrics the field reports do not track future geometry. The future error is structured, concentrating where the surface moves. The dataset, evaluation toolkit, and scoring code are available on Hugging Face and GitHub (https://github.com/Ricky-S/futuresurf).",
+      "authors": [
+        "Yukun Shi",
+        "Minglun Gong"
+      ],
+      "published": "2026-07-23T16:14:59Z",
+      "updated": "2026-07-23T16:14:59Z",
+      "url": "https://arxiv.org/abs/2607.21471",
+      "pdf_url": "https://arxiv.org/pdf/2607.21471.pdf",
+      "primary_category": "cs.CV",
+      "categories": [
+        "cs.CV"
+      ],
+      "tags": [
+        "cs.CV"
+      ],
+      "domain": "Vision",
+      "pdf_downloaded": true,
+      "pdf_size_bytes": 1149088,
+      "pdf_path": "2026-07-24/vision/2607.21471.pdf"
+    },
+    {
+      "id": "2607.21467",
+      "title": "CLUIE: Clustering-Aware Recurrent Propagation with Local Structural Compensation for Underwater Image Enhancement",
+      "abstract": "Underwater image enhancement remains challenging due to wavelength-dependent light absorption, scattering, and backscattering, which jointly cause color distortion, contrast degradation, and detail loss. Since these degradations vary with scene depth and imaging conditions, different regions within the same image often exhibit heterogeneous degradation patterns and thus require region-adaptive restoration. Although visual RWKV models offer an efficient linear-complexity solution for long-range dependency modeling, their predefined scanning orders are content-agnostic and therefore fail to adapt recurrent state propagation to spatially non-uniform restoration demands. To address this limitation, we propose a Clustering-aware RWKV framework, termed CRWKV, which reformulates the fixed recurrent propagation path of conventional RWKV into a content-adaptive token trajectory. Specifically, we introduce Clustering-aware Semantic Dynamic Reordering (CSDR), which groups tokens according to semantic feature similarity and derives a dynamic traversal order from inter-cluster contextual relations. This design enables WKV states to be accumulated along semantically correlated regions rather than fixed spatial or spectral orders. Since dynamic reordering may disrupt the local continuity of original spatial neighborhoods, we further propose Dark-response Modulated Local Propagation (DMLP), which extracts local structural responses via depth-wise convolution and adaptively modulates their propagation strength using a neighborhood-aware pseudo-dark response map. In this way, local structural cues are compensated before recurrent aggregation while preserving content-adaptive long-range modeling. Extensive experiments on multiple underwater image enhancement benchmarks demonstrate that CRWKV achieves state-of-the-art quantitative performance and superior visual quality.",
+      "authors": [
+        "Kui Jiang",
+        "Zefan Feng",
+        "Laibin Chang",
+        "Yan Luo",
+        "Junjun Jiang",
+        "Xiaopeng Fan"
+      ],
+      "published": "2026-07-23T16:09:36Z",
+      "updated": "2026-07-23T16:09:36Z",
+      "url": "https://arxiv.org/abs/2607.21467",
+      "pdf_url": "https://arxiv.org/pdf/2607.21467.pdf",
+      "primary_category": "cs.CV",
+      "categories": [
+        "cs.CV"
+      ],
+      "tags": [
+        "cs.CV"
+      ],
+      "domain": "Vision",
+      "pdf_downloaded": true,
+      "pdf_size_bytes": 3625837,
+      "pdf_path": "2026-07-24/vision/2607.21467.pdf"
+    },
+    {
+      "id": "2607.21456",
+      "title": "SPDCN: Strip-based Deformable Convolutional Network for Steel Surface Defect Segmentation",
+      "abstract": "Steel surface defect segmentation is critical for industrial quality inspection, yet existing methods struggle with elongated, anisotropic defects such as cracks and scratches due to the isotropic receptive fields of standard convolutions and rigid sampling grids that cannot adapt to irregular defect boundaries. To address these limitations, we propose Strip-based Predictor for Deformable Convolutional Networks (SPDCN) with two key innovations. The \\textbf{Fuzzy-enhanced Multi-scale Context Module (FMCM)} employs group-wise multi-branch convolutions with an intuitionistic fuzzy channel attention mechanism to adaptively capture multi-scale contextual information across varying defect sizes. The \\textbf{Adaptive Direction-Aware Deformable Convolution (ADADC)} replaces the conventional offset predictor with decoupled horizontal and vertical strip convolutions, enabling the deformable sampling grid to anisotropically align with the principal orientation of elongated defects. Extensive experiments on public steel surface defect benchmarks demonstrate that SPDCN consistently outperforms state-of-the-art methods, achieving 89.60\\% mIoU on NEU-Seg with only 3.54M parameters. The source code is publicly available at https://github.com/DWlzm .",
+      "authors": [
+        "Zhongming Liu",
+        "Bingbing Jiang",
+        "Guangxin Wan",
+        "Xiang Zou"
+      ],
+      "published": "2026-07-23T15:59:10Z",
+      "updated": "2026-07-23T15:59:10Z",
+      "url": "https://arxiv.org/abs/2607.21456",
+      "pdf_url": "https://arxiv.org/pdf/2607.21456.pdf",
+      "primary_category": "cs.CV",
+      "categories": [
+        "cs.CV"
+      ],
+      "tags": [
+        "cs.CV"
+      ],
+      "domain": "Vision",
+      "pdf_downloaded": true,
+      "pdf_size_bytes": 7644231,
+      "pdf_path": "2026-07-24/vision/2607.21456.pdf"
+    },
+    {
+      "id": "2607.21448",
+      "title": "GrainGS: Gradient-Decoupled Gaussian Splatting for Efficient Dynamic Novel View Synthesis",
+      "abstract": "Dynamic scene reconstruction with 3D Gaussian Splatting requires a balance between fine-grained motion modeling, structural stability, and compact representation. Existing per-primitive methods provide flexible local deformation but often suffer from redundant primitive growth, while anchor-based methods improve spatial regularity at the cost of suppressing locally varying motion. To address these issues, we present GrainGS, a dynamic Gaussian framework that combines a hierarchical anchor scaffold with per-Gaussian deformation. A static warm-up stage first establishes a time-invariant canonical representation from observations across all timestamps. During joint training, a stop-gradient operation blocks the deformation-mediated gradient pathway to the canonical positions while preserving their direct refinement through the reconstruction objective. Each Gaussian then predicts independent temporal offsets for position, rotation, and scale, enabling detailed local motion within a structurally constrained scaffold. A canonical-residual appearance decomposition further models frame-dependent photometric changes without forcing them into geometric deformation. Experiments on synthetic monocular and real-world multiview benchmarks show that GrainGS achieves high reconstruction quality, real-time novel view synthesis, and compact storage. Under the synthetic benchmark setting, it reaches an average peak signal-to-noise ratio of 36.98 decibels, renders at 435.6 frames per second, and requires 4.67 megabytes of storage.",
+      "authors": [
+        "Jiahao He",
+        "Yihua Shao",
+        "Zhengkai Zhao",
+        "Pan Gao",
+        "Fei Ma",
+        "Jingcai Guo",
+        "Hao Tang",
+        "Nicu Sebe",
+        "Qi Tian"
+      ],
+      "published": "2026-07-23T15:52:35Z",
+      "updated": "2026-07-23T15:52:35Z",
+      "url": "https://arxiv.org/abs/2607.21448",
+      "pdf_url": "https://arxiv.org/pdf/2607.21448.pdf",
+      "primary_category": "cs.CV",
+      "categories": [
+        "cs.CV"
+      ],
+      "tags": [
+        "cs.CV"
+      ],
+      "domain": "Vision",
+      "pdf_downloaded": true,
+      "pdf_size_bytes": 19023792,
+      "pdf_path": "2026-07-24/vision/2607.21448.pdf"
+    },
+    {
+      "id": "2607.21446",
+      "title": "KroQuant: Kronecker-Structured Block Transforms for Efficient Post-Training Quantization of Diffusion Transformers",
+      "abstract": "Post-training quantization (PTQ) of diffusion transformers (DiTs) to W4A4 severely degrades output quality, because activations entering each linear layer contain outliers that 4-bit formats cannot represent. The standard fix applies an invertible linear transform to the activations and its inverse to the weights before quantizing both. Normalization layers between blocks force this transform to run online at every denoising step, making its inference computation cost the binding design constraint. Existing options trade quantization quality for inference cost: per-channel scaling (SmoothQuant) is computationally cheap but impacts the magnitude of the channels, which can harm quantization accuracy; fixed Hadamard transforms yield better quantization accuracy but require large block sizes that incur a high online cost; learned full-$d$ invertible transforms calibrate best but entail a prohibitive dense $d \\times d$ matrix multiplication (GEMM) per layer per step. We propose KroQuant, a PTQ method that applies a learned Kronecker-structured invertible transform to each 32-element block of the activation, storing less than half the parameters of per-channel scaling. The block-local structure runs as small tensor-core GEMMs, and on an MI350 GPU the KroQuant quantizer kernel is up to $14\\%$ faster than the SmoothQuant kernel. Offline LoRaQ weight calibration then absorbs the residual per-weight quantization error. On PixArt-$\u03a3$, SANA, and FLUX.1-schnell at W4A4 (MXFP4e2), KroQuant produces outputs closer to the FP reference than SVDQuant and LoRaQ on MJHQ-30K and SDCI, while preserving or improving image quality.",
+      "authors": [
+        "Yann Bouquet",
+        "Alireza Khodamoradi",
+        "Kristof Denolf",
+        "Mathieu Salzmann"
+      ],
+      "published": "2026-07-23T15:52:20Z",
+      "updated": "2026-07-23T15:52:20Z",
+      "url": "https://arxiv.org/abs/2607.21446",
+      "pdf_url": "https://arxiv.org/pdf/2607.21446.pdf",
+      "primary_category": "cs.LG",
+      "categories": [
+        "cs.LG",
+        "cs.CV"
+      ],
+      "tags": [
+        "cs.CV",
+        "cs.LG"
+      ],
+      "domain": "Vision",
+      "pdf_downloaded": true,
+      "pdf_size_bytes": 11931698,
+      "pdf_path": "2026-07-24/vision/2607.21446.pdf"
+    },
+    {
+      "id": "2607.21438",
+      "title": "DAPM: UAV Monocular Depth Estimation from Any Height, Pitch, Roll and FOV",
+      "abstract": "Monocular depth estimation is a fundamental prerequisite for 3D reconstruction and autonomous navigation in Unmanned Aerial Vehicles (UAVs). In practical deployments, UAVs operate under highly dynamic camera poses characterized by continuous variations in height, pitch, roll, and field of view (FOV). Existing monocular depth estimation methods frequently fail to generalize across such diverse perspectives and the expansive scale of depth distributions inherent in aerial scenes. To address these challenges, we establish a quantitative representation of UAV viewing angles through rigorous theoretical analysis, deriving the geometric correspondence between viewing angles and view distances using the ground plane as a reference for observation. Building upon this, we propose Depth Estimation for Any Perspectives Model (DAPM), representing the first monocular framework specifically designed for UAV aerial imagery to jointly estimate camera pose and depth under continuously varying viewpoints. Specifically, we introduce an Ideal Ground Depth (IGD) module that leverages the derived geometric relationships between UAV perspectives and view distances to implement dense camera-pose supervision and enhance depth features. And we further develop a coarse-to-fine Progressive Quantization Bins (PQB) module. By incorporating progressive supervision and hierarchical quantization bins, the PQB module enables robust estimation in complex UAV aerial imagery. To evaluate the proposed framework, we present the UAV Any Perspectives Depth (UAPD) dataset, featuring comprehensive and continuous distributions of pose parameters. Experimental results on UAPD demonstrate that DAPM achieves state-of-the-art performance across both depth and camera-pose estimation metrics. The source code and datasets are available at: https://github.com/ThisIsLT/DAPM.",
+      "authors": [
+        "Tong Ling",
+        "Wenhui Diao",
+        "Yingchao Feng",
+        "Hanbo Bi",
+        "Zhongyan Hou",
+        "Xian Sun"
+      ],
+      "published": "2026-07-23T15:44:18Z",
+      "updated": "2026-07-23T15:44:18Z",
+      "url": "https://arxiv.org/abs/2607.21438",
+      "pdf_url": "https://arxiv.org/pdf/2607.21438.pdf",
+      "primary_category": "cs.CV",
+      "categories": [
+        "cs.CV"
+      ],
+      "tags": [
+        "cs.CV"
+      ],
+      "domain": "Vision",
+      "pdf_downloaded": false,
+      "pdf_size_bytes": null,
+      "pdf_path": null
+    },
+    {
+      "id": "2607.21434",
+      "title": "Adaptive Identity Anchoring: Closed-Loop Keyframe Placement for Synthetic Paired Supervision in Video Face Swapping",
+      "abstract": "Video face swapping has no natural paired supervision: no real footage exists of one person's face performing another person's video. The strongest current answer, DreamID-V's SyncID-Pipe, mints pairs by replacing the identity in exactly two frames of a real clip -- the first and the last -- and regenerating the rest from a pose sequence alone. Pose carries no appearance evidence of the swapped-in identity, so over long clips, occlusions, and extreme pose excursions the synthesized identity has a long unanchored span on which to drift; no published ablation examines anchor count or placement. We propose Adaptive Identity Anchoring (AIA): (i) generalize the synthesizer to arbitrary anchor sets, architecturally natural for diffusion-forcing-style transformers where conditioning on a frame is clamping its tokens to zero noise; (ii) place anchors by a closed feedback loop that scores every generated frame against the real reference identity and inserts an image-face-swapped anchor at the worst-scoring frame until the pair passes a threshold or exhausts a budget; (iii) reuse the loop's verdict as an automatic data filter. A second pathology, the beauty-filter look of over-smoothed skin, has the same root cause: micro-texture, like identity, is priced by none of the pipeline's objectives. We therefore pair AIA with Reality-Referenced Texture Restoration: matched re-graining from each real frame's non-face regions, band-split transfer of sub-identity micro-texture from the real footage, and a second, spectral acceptance channel refereed by the footage's own spectrum. Identity-anchor density, we argue, is a controllable quality dial, and we specify falsifiable experiments -- drift-versus-gap curves, uniform-versus-adaptive placement at matched budgets, student training on AIA-minted data, and texture ablations with a human beauty-filter study -- that would validate or refute the proposal.",
+      "authors": [
+        "Logan Robbins"
+      ],
+      "published": "2026-07-23T15:37:55Z",
+      "updated": "2026-07-23T15:37:55Z",
+      "url": "https://arxiv.org/abs/2607.21434",
+      "pdf_url": "https://arxiv.org/pdf/2607.21434.pdf",
+      "primary_category": "cs.CV",
+      "categories": [
+        "cs.CV",
+        "cs.AI"
+      ],
+      "tags": [
+        "cs.AI",
+        "cs.CV"
+      ],
+      "domain": "Vision",
+      "pdf_downloaded": true,
+      "pdf_size_bytes": 258366,
+      "pdf_path": "2026-07-24/vision/2607.21434.pdf"
+    },
+    {
+      "id": "2607.21417",
+      "title": "Towards Privacy-Preserving Federated Prompt Tuning under Data Heterogeneity: A Subspace-Decomposed Expert Approach",
+      "abstract": "Federated prompt tuning (FPT) enables collaborative adaptation of vision--language models (VLMs) using lightweight prompts. Existing methods often address heterogeneity and privacy through a split-prompt design under local differential privacy (DP), combining a shared prompt for global transfer with private prompts for local adaptation. However, a single shared prompt may over-smooth diverse transferable knowledge, weakening the balance between personalization and generalization. Multi-expert prompts (MEPs) can better capture this diversity, but enlarge the communicated space, increasing DP noise and communication cost while making robust expert composition more difficult. We propose FedSEPT, a privacy-preserving Fed}erated Subspace-decomposed Expert Prompt Tuning. Specifically, we employ Subspace-decomposed Expert Modeling (SEM) to parameterize multiple prompt experts with shared low-rank factors, a fixed public basis, and private residuals, thereby confining communication and DP perturbation to a compact factor space while enabling direct server aggregation in a common coordinate system. We further design Instance-aware Expert Fusion (IEF), which adaptively combines semantically complementary experts via on-device routing and performs efficient logit-level fusion using cached expert-specific text features. Extensive experiments on 11 heterogeneous benchmarks show that, under the same privacy constraints, FedSEPT achieves a better trade-off between local adaptation and global generalization than strong baselines.",
+      "authors": [
+        "Yuhua Wang",
+        "Xiaodong Li",
+        "Yihao Guo",
+        "Yuxiang Jia",
+        "Qinnan Zhang",
+        "Yifan Sun",
+        "Hainan Zhang",
+        "Yongxin Tong",
+        "Zhiming Zheng"
+      ],
+      "published": "2026-07-23T15:22:48Z",
+      "updated": "2026-07-23T15:22:48Z",
+      "url": "https://arxiv.org/abs/2607.21417",
+      "pdf_url": "https://arxiv.org/pdf/2607.21417.pdf",
+      "primary_category": "cs.CV",
+      "categories": [
+        "cs.CV"
+      ],
+      "tags": [
+        "cs.CV"
+      ],
+      "domain": "Vision",
+      "pdf_downloaded": true,
+      "pdf_size_bytes": 3155505,
+      "pdf_path": "2026-07-24/vision/2607.21417.pdf"
+    },
+    {
+      "id": "2607.21416",
+      "title": "GLAM-SLAM: Real-time Gaussian Large-scale Mapping via Flow Densification and Spatial Decomposition",
+      "abstract": "Existing Gaussian-splatting-based monocular Simultaneous Localization and Mapping (SLAM) systems are either tailored to short sequences, are not real-time, or suffer from prohibitive GPU memory requirements, limiting their applicability in realistic, long-horizon scenarios. To address this, we present GLAM-SLAM, a real-time, decoupled Gaussian-splatting SLAM system designed for large-scale outdoor scenes. We ensure lightweight tracking using a robust, feature-based SLAM frontend, while for mapping, we adopt a structured, sparse anchor grid representation that ensures scalable operation and maintains scene coherence across long-term sequences. To satisfy the dense initialization requirements of 3D Gaussian Splatting (3DGS), we introduce a geometry-based flow-densification anchoring strategy using epipolar constraints. Furthermore, by treating mapping as a multi-scene problem, we propose a scene-partitioning strategy that introduces a strong spatial inductive bias via MLP initializations to generate localized Gaussians. We evaluate our system on the challenging, long-sequence KITTI Odometry, Oxford RobotCar, and M'alaga datasets. Extensive ablations and comparisons demonstrate a 15% improvement in reconstruction quality over the second-best performer, while maintaining real-time performance and the ability to scale to longer sequences. Code is publicly available for the benefit of the community.",
+      "authors": [
+        "Panagiotis Mermigkas",
+        "Argyris Manetas",
+        "Petros Maragos"
+      ],
+      "published": "2026-07-23T15:22:42Z",
+      "updated": "2026-07-23T15:22:42Z",
+      "url": "https://arxiv.org/abs/2607.21416",
+      "pdf_url": "https://arxiv.org/pdf/2607.21416.pdf",
+      "primary_category": "cs.RO",
+      "categories": [
+        "cs.RO",
+        "cs.CV"
+      ],
+      "tags": [
+        "cs.CV",
+        "cs.RO"
+      ],
+      "domain": "Vision",
+      "pdf_downloaded": true,
+      "pdf_size_bytes": 3130109,
+      "pdf_path": "2026-07-24/vision/2607.21416.pdf"
+    },
+    {
+      "id": "2607.21401",
+      "title": "When Are Reasoning-Based Guardrails Not Efficient? ResponseGuard: A Fast Vision-Language Guard for Real-Time Moderation",
+      "abstract": "A vision-language AI assistant returns its answer as a stream of generated tokens. Therefore, a safety guard that watches that answer has to keep up with the stream and stop a harmful reply before a user reads it. Recent vision-language guardrails instead generate a chain of thought before they issue a verdict. They believe that step-by-step reasoning yields a safer guard. This design makes the guard heavy and slow, since the model must decode many tokens for harmfulness detection. We pose the question of whether a vision-language guard really needs to reason in order to screen a response. We answer with a guard that has no chain. ResponseGuard reads a harmful verdict from a single pooled representation of the request, the response, and the image in one forward pass. Across a standard multimodal guardrail benchmark, our 2B ResponseGuard outperforms a recent 3B reasoning-based vision-language guard on response harmfulness detection, without any reasoning and at about 150 times lower time cost. On request harmfulness the reasoning guard retains an overall lead, and the remaining gap on both tracks sits on the image-only cells. We observe that the gap may stem from the frozen vision encoders that both designs use rather than from the missing chain. We have also found the reasoning guard directs almost none of its verdict attention to the image. Based on a single-pass detection, ResponseGuard can screen an answer sentence by sentence as it streams and stop a harmful answer before it finishes. For guarding the response of a vision-language model, a calibrated single-pass label may provide a sufficient safety signal. We fully release all source code, trained models, and datasets at https://github.com/ndb796/ResponseGuard.",
+      "authors": [
+        "Dongbin Na"
+      ],
+      "published": "2026-07-23T15:02:24Z",
+      "updated": "2026-07-23T15:02:24Z",
+      "url": "https://arxiv.org/abs/2607.21401",
+      "pdf_url": "https://arxiv.org/pdf/2607.21401.pdf",
+      "primary_category": "cs.CV",
+      "categories": [
+        "cs.CV",
+        "cs.AI"
+      ],
+      "tags": [
+        "cs.AI",
+        "cs.CV"
+      ],
+      "domain": "Vision",
+      "pdf_downloaded": true,
+      "pdf_size_bytes": 419610,
+      "pdf_path": "2026-07-24/vision/2607.21401.pdf"
+    },
+    {
+      "id": "2607.21371",
+      "title": "DINOde: Continuous Vision-Text Alignment for Open-Vocabulary Semantic Segmentation",
+      "abstract": "Open-vocabulary semantic segmentation (OVSS) leverages textual semantics to segment objects beyond predefined categories. While the self-supervised model DINOv3 provides strong structured visual representations, its lack of native textual alignment hinders its direct application to OVSS. To bridge this gap, we propose DINOde, an ODE-based framework that continuously aligns CLIP text embeddings with the DINO visual manifold. Our approach employs two complementary components: (i) Semantic Text Flow (STF), which evolves text embeddings toward the DINO manifold through a continuous ODE trajectory, and (ii) Global Context Flow (GCF), which progressively refines the holistic image representation carried by DINO's CLS token. To preserve the hyperspherical geometry of the feature space during this evolution, we further introduce Velocity Tangent Projection, which constrains the learned velocity field to the tangent space. By modeling alignment as a continuous trajectory, DINOde avoids the manifold entanglement inherent in discrete MLP projections and yields more robust cross-modal alignment. Extensive experiments demonstrate that DINOde consistently outperforms existing methods and achieves state-of-the-art performance across multiple OVSS benchmarks. The code is available at https://github.com/yoon307/DINOde.",
+      "authors": [
+        "Sung-Hoon Yoon",
+        "Hoyong Kwon",
+        "Changgyoon Oh",
+        "Kuk-Jin Yoon"
+      ],
+      "published": "2026-07-23T14:37:27Z",
+      "updated": "2026-07-23T14:37:27Z",
+      "url": "https://arxiv.org/abs/2607.21371",
+      "pdf_url": "https://arxiv.org/pdf/2607.21371.pdf",
+      "primary_category": "cs.CV",
+      "categories": [
+        "cs.CV",
+        "cs.AI"
+      ],
+      "tags": [
+        "cs.AI",
+        "cs.CV"
+      ],
+      "domain": "Vision",
+      "pdf_downloaded": true,
+      "pdf_size_bytes": 6901914,
+      "pdf_path": "2026-07-24/vision/2607.21371.pdf"
+    },
+    {
+      "id": "2607.21370",
+      "title": "ASTRA-Net: Anatomy-Specific Transfer and Representation Alignment for Drug-Induced Sleep Endoscopy Segmentation",
+      "abstract": "Quantitative drug-induced sleep endoscopy (DISE) requires reliable airway boundaries at specific anatomical levels. Pixel-level DISE annotations are scarce, and manual contouring limits the scalability of quantitative assessment. To address this limitation, we developed ASTRA-Net for known-plane DISE segmentation with limited real annotations. Stage 1 aligned intermediate ConvNeXt-Base representations from 14,250 unlabeled virtual endoscopy frames derived from computed tomography and real DISE frames. Virtual images were used only for feature alignment. Stage 2 fine-tuned four independent UNet++ decoders on 401 real annotated frames. Structured zero-mask supervision constrained incompatible plane outputs and invalid frames. Six alignment configurations used maximum mean discrepancy, domain adversarial learning, or both objectives. On a hold-out evaluation set of 100 frames, the five-model MMD-only segmentation ensemble achieved a mean Dice of 0.8927, with a 95% image-level bootstrap interval of 0.8631 to 0.9160. The mean intersection over union was 0.8239. A classification- enabled variant of the same alignment configuration reached a restricted four-plane top-1 accuracy of 0.92 on the same hold-out frames. These results indicate that ASTRA-Net can support frame-level, plane-specific DISE boundary delineation when real annotations are limited.",
+      "authors": [
+        "Suhua Sun",
+        "Yuqiao Wang",
+        "Sheng Liu",
+        "Rui Fan",
+        "Jiajun Wang",
+        "Ruoyan Xu",
+        "Yixin Chen",
+        "Tao Li",
+        "Yan Yan"
+      ],
+      "published": "2026-07-23T14:37:17Z",
+      "updated": "2026-07-23T14:37:17Z",
+      "url": "https://arxiv.org/abs/2607.21370",
+      "pdf_url": "https://arxiv.org/pdf/2607.21370.pdf",
+      "primary_category": "cs.CV",
+      "categories": [
+        "cs.CV"
+      ],
+      "tags": [
+        "cs.CV"
+      ],
+      "domain": "Vision",
+      "pdf_downloaded": true,
+      "pdf_size_bytes": 2894764,
+      "pdf_path": "2026-07-24/vision/2607.21370.pdf"
+    }
+  ]
+}
