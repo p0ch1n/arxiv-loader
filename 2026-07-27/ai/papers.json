@@ -1,0 +1,881 @@
+{
+  "domain": "AI",
+  "date": "2026-07-27",
+  "count": 30,
+  "papers": [
+    {
+      "id": "2607.22534",
+      "title": "SM4RT: Learning Structured Motion Geometry for 4D Reconstruction",
+      "abstract": "Geometry Foundation Models (GFMs) have substantially advanced monocular 3D reconstruction, yet extending this capability to 4D dynamic understanding remains a fundamental challenge. Most existing motion perception methods (e.g., sparse tracking, dense point-wise flow) treat motion as independent point-wise displacements, ignoring the structured nature of physical motion. However, real-world objects usually obey rigid-body kinematics, and points thus usually move collectively, not in isolation. Motion itself possesses geometric structure: physical objects undergo a set of rigid-body transformations governed by SE(3), rather than unstructured point-wise displacements. Building on this insight, we propose SM4RT, a Structured Motion 4D Reconstruction Transformer for end-to-end 3D reconstruction and structured motion perception. SM4RT introduces Structure-of-Motion to represent scene dynamics, where scene motion is decomposed into a compact set of motion bases, each represented as a temporal sequence of 6D twists in SE(3). Dense scene motion is then recovered by sparse, time-shared per-pixel assignment weights over these bases, ensuring points on the same object share a common rigid-body motion trajectory. SM4RT introduces a parallel motion geometry encoder and decoder that jointly infer 3D geometry, world-coordinate motion, and scene kinematic structure in a single forward pass from monocular RGB video. SM4RT achieves strong motion reconstruction performance while preserving the geometric structure of scene motion.",
+      "authors": [
+        "Shing Ho J. Lin",
+        "Wenzhao Zheng",
+        "Dong Zhuo",
+        "Yuqi Wu",
+        "Jie Zhou",
+        "Jiwen Lu"
+      ],
+      "published": "2026-07-24T17:59:51Z",
+      "updated": "2026-07-24T17:59:51Z",
+      "url": "https://arxiv.org/abs/2607.22534",
+      "pdf_url": "https://arxiv.org/pdf/2607.22534.pdf",
+      "primary_category": "cs.CV",
+      "categories": [
+        "cs.CV",
+        "cs.AI",
+        "cs.RO"
+      ],
+      "tags": [
+        "cs.AI",
+        "cs.CV",
+        "cs.RO"
+      ],
+      "domain": "AI",
+      "pdf_downloaded": true,
+      "pdf_size_bytes": 14183122,
+      "pdf_path": "2026-07-27/ai/2607.22534.pdf"
+    },
+    {
+      "id": "2607.22525",
+      "title": "Explainable Reinforcement Learning for assisting Air Traffic Controllers",
+      "abstract": "To effectively integrate AI into high-stakes, critical environments such as healthcare, autonomous driving, and aviation--and to advance toward higher levels of automation and seamless human-AI collaboration--building trust in AI-driven solutions is essential. Trust, in turn, is closely linked to the explainability of AI systems. The rapid advancements in AI across various domains have underscored the challenges of establishing trust, raising increasing interest in AI explainability even more when applied to deep learning. In this context, the present work aims to explore the application of explainability techniques to Reinforcement Learning (RL) algorithms, specifically within the safety-critical domain of Air Traffic Control (ATC). Using a simplified ATC environment as an initial testbed, an intelligent agent is trained with a reinforcement learning algorithm to make decisions on alternative flight routes that avoid no-fly zones. As a preliminary explainability approach, a saliency map is employed, providing insights into the input features that most significantly influence the agent's decision-making process.",
+      "authors": [
+        "Anduel Mehmeti",
+        "Gabriella Gigante",
+        "Salvatore Venticinque"
+      ],
+      "published": "2026-07-24T17:56:38Z",
+      "updated": "2026-07-24T17:56:38Z",
+      "url": "https://arxiv.org/abs/2607.22525",
+      "pdf_url": "https://arxiv.org/pdf/2607.22525.pdf",
+      "primary_category": "cs.AI",
+      "categories": [
+        "cs.AI"
+      ],
+      "tags": [
+        "cs.AI"
+      ],
+      "domain": "AI",
+      "pdf_downloaded": true,
+      "pdf_size_bytes": 198338,
+      "pdf_path": "2026-07-27/ai/2607.22525.pdf"
+    },
+    {
+      "id": "2607.22520",
+      "title": "The Regression Tax: Decomposing Why Skills Help and Hurt LLM Agents",
+      "abstract": "Adding procedural skills to an LLM agent is typically evaluated by average improvement in task success. However, this metric hides an important cost: skills can also make agents worse. We measure both sides by comparing agents with and without skills across nearly 6,000 runs spanning two office automation benchmarks and three model harness stacks. This allows us to distinguish two outcomes. A regression is a task solved without skills but failed after skills are added. A residual failure is a task that fails both with and without skills. We find that regressions are substantial enough that the best performing skills outperform others primarily by regressing less, not by gaining more. We identify three causes of regression: (i) skill description osmosis, a skill changes an agent's behavior simply by being present in context, even when it is never invoked; (ii) grounding displacement, a skill's prescribed procedure overrides how the agent interprets its inputs; and (iii) verification displacement, where the procedure suppresses checks the agent would otherwise perform on its outputs. Analysing persistent failures reveals the same underlying pattern. Existing skills overemphasize procedural guidance the stage least often responsible for failure while under supporting grounding and verification, the dominant sources of remaining errors. After correcting evaluation artifacts and studying traces, we find many regressions and persistent failures recoverable through better grounding and verification. Procedural skills should be evaluated by decomposing their net effect into gains and regressions, not by aggregate improvement alone. We identify three regression modes skills should avoid, and find that reliability depends more on grounding and verification than on procedural skill choice.",
+      "authors": [
+        "Darshan Tank",
+        "Baran Nama"
+      ],
+      "published": "2026-07-24T17:50:03Z",
+      "updated": "2026-07-24T17:50:03Z",
+      "url": "https://arxiv.org/abs/2607.22520",
+      "pdf_url": "https://arxiv.org/pdf/2607.22520.pdf",
+      "primary_category": "cs.AI",
+      "categories": [
+        "cs.AI"
+      ],
+      "tags": [
+        "cs.AI"
+      ],
+      "domain": "AI",
+      "pdf_downloaded": true,
+      "pdf_size_bytes": 694749,
+      "pdf_path": "2026-07-27/ai/2607.22520.pdf"
+    },
+    {
+      "id": "2607.22518",
+      "title": "PinEqualizer: Full Funnel Content Exploration and Debiasing System at Pinterest",
+      "abstract": "In this paper, we propose a new solution for addressing the content cold-start problem in industry-scale search and recommender systems. Compared to prior approaches, we have made the following new contributions: 1) our solution spans the entire multi-stage funnel and generalizes well for both search and recommendation surfaces, 2) our solution reduces bias favoring existing content, allowing more accurate model prediction across content types and reducing short-term tradeoffs associated with high volumes of explicit content exploration, 3) our solution is evaluated with a scalable measurement framework that enables fast short-term experimentation while validating long-term impact. We have iteratively built and successfully deployed this new system at Pinterest in the past two years and observed significant improvements in fresh content exploration, overall user engagement, and content ecosystem health.",
+      "authors": [
+        "Olafur Gudmundsson",
+        "Bo Zhao",
+        "Huayi Liao",
+        "Anna Kiyantseva",
+        "Sai Xiao",
+        "Heath Vinicombe",
+        "Mostafa Keikha",
+        "Luke DeLuccia",
+        "Zihao Chen",
+        "Junpeng Hou",
+        "Weijie Jiang",
+        "Bhawna Juneja",
+        "Andreanne Lemay",
+        "Wei-Ting Lin",
+        "Keyvan Moghadam",
+        "Jiaxing Qu",
+        "Zhiqing Rao",
+        "Zhihua Zhang"
+      ],
+      "published": "2026-07-24T17:41:28Z",
+      "updated": "2026-07-24T17:41:28Z",
+      "url": "https://arxiv.org/abs/2607.22518",
+      "pdf_url": "https://arxiv.org/pdf/2607.22518.pdf",
+      "primary_category": "cs.IR",
+      "categories": [
+        "cs.IR",
+        "cs.LG"
+      ],
+      "tags": [
+        "cs.IR",
+        "cs.LG"
+      ],
+      "domain": "AI",
+      "pdf_downloaded": true,
+      "pdf_size_bytes": 701875,
+      "pdf_path": "2026-07-27/ai/2607.22518.pdf"
+    },
+    {
+      "id": "2607.22516",
+      "title": "Quantum Spectral Model: Data Reuploading with Input-Conditioned Frequency Support",
+      "abstract": "A central design principle in modern machine learning and artificial intelligence is to align a model's inductive bias with the structure of its input data. For matrix-valued inputs, relevant matrix-level relationships can be characterised through spectral values and spectral subspaces; however, common coordinate-wise rotation-gate data-encoding unitaries used in most quantum machine learning models do not explicitly construct such a matrix-level representation. We introduce Quantum Spectral Models (QSMs), in which we construct the generator of the data-encoding unitary directly from each input matrix. We study three QSM variants based on symmetric, global block, and non-overlapping patch-local block Hamiltonians. Their outputs admit truncated Fourier representations in which input-dependent spectral gaps supply candidate phase carriers, while spectral subspaces help determine their coefficients. We evaluate the QSMs and comparison quantum models on two matrix representations of Pendigits and two controlled synthetic tasks defined by spectral statistics. At the largest evaluated circuit depth, QSM variants lead the tested quantum models in mean test accuracy across all four benchmarks. The patch-local QSM leads on Pendigits, whereas the global block-Hamiltonian QSM leads on the controlled spectral tasks. Ablations show a task-dependent reversal: subspace-preserving controls perform better on Pendigits, whereas spectral-value-only controls lead among the tested ablations on the synthetic tasks. Together, these results shed new light on quantum machine-learning model design by showing how input-conditioned spectral representations can provide an analysable inductive bias, while offering a broader perspective on structure-aware model design in machine learning and artificial intelligence.",
+      "authors": [
+        "Peiyong Wang",
+        "Udaya Parampalli",
+        "Casey R. Myers"
+      ],
+      "published": "2026-07-24T17:39:14Z",
+      "updated": "2026-07-24T17:39:14Z",
+      "url": "https://arxiv.org/abs/2607.22516",
+      "pdf_url": "https://arxiv.org/pdf/2607.22516.pdf",
+      "primary_category": "quant-ph",
+      "categories": [
+        "quant-ph",
+        "cs.AI",
+        "cs.LG"
+      ],
+      "tags": [
+        "cs.AI",
+        "cs.LG",
+        "quant-ph"
+      ],
+      "domain": "AI",
+      "pdf_downloaded": true,
+      "pdf_size_bytes": 1653393,
+      "pdf_path": "2026-07-27/ai/2607.22516.pdf"
+    },
+    {
+      "id": "2607.22514",
+      "title": "Dysphagia Risk Stratification in Head and Neck Cancer via Two-Stage PRO-Clinical Stacking",
+      "abstract": "Dysphagia is a debilitating late effect of head and neck cancer (HNC) treatment, yet timely identification of at-risk patients remains challenging in survivorship care. Definitive assessment relies on videofluoroscopic imaging, as captured by the Dynamic Imaging Grade of Swallowing Toxicity (CTCAE-DIGEST), which, while validated, requires specialized equipment, trained personnel, and significant patient burden, limiting its routine use in surveillance. Patient-reported outcomes (PROs), by contrast, are low-cost, scalable, and easily collected at any clinical encounter, making them an attractive alternative signal for identifying patients who may warrant further evaluation. However, a clear clinical framework for translating PRO responses into actionable interventions is still evolving. In particular, uncertainty remains regarding when a patient's self-reported symptom burden should prompt escalation of care. This study addresses this gap by formulating a single-visit PRO-clinical prediction framework and introducing a clinically interpretable two-stage stacking model to predict swallowing impairment risk using PRO responses and structured clinical variables, without requiring videofluoroscopic imaging. The proposed framework quantifies the independent contributions of patient-reported symptoms and clinical factors within a unified and interpretable risk assessment model. Our findings demonstrate that individual MDADI responses contain predictive information beyond that captured by composite or global summary scores, while interpretability analyses reveal symptom patterns and clinical risk factors associated with swallowing impairment. Together, these results support the use of structured PRO-clinical integration as a practical, imaging-free approach for dysphagia risk stratification in HNC survivorship.",
+      "authors": [
+        "Siyuan Zhao",
+        "Eric Ababio Anyimadu",
+        "Zachary G. Brumm",
+        "Yue Ma",
+        "Clifton David Fuller",
+        "Xinhua Zhang",
+        "G. Elisabeta Marai",
+        "Guadalupe Canahuate"
+      ],
+      "published": "2026-07-24T17:34:26Z",
+      "updated": "2026-07-24T17:34:26Z",
+      "url": "https://arxiv.org/abs/2607.22514",
+      "pdf_url": "https://arxiv.org/pdf/2607.22514.pdf",
+      "primary_category": "cs.LG",
+      "categories": [
+        "cs.LG"
+      ],
+      "tags": [
+        "cs.LG"
+      ],
+      "domain": "AI",
+      "pdf_downloaded": true,
+      "pdf_size_bytes": 4087639,
+      "pdf_path": "2026-07-27/ai/2607.22514.pdf"
+    },
+    {
+      "id": "2607.22513",
+      "title": "Opaque Epistemic Mediation: How LLM Deployment Configurations Shape the Validation of Pseudo-Science",
+      "abstract": "Commercial large language models are increasingly used as knowledge references, yet their stance on contested scientific claims is neither stable nor transparent. We tested how four major LLM families (Claude, Grok, GPT, Gemini) evaluate ethnonationalist pseudo-science derived from Frank Salter's biosocial framework across four temporal snapshots (October 2025-February 2026), via both API and web interfaces. Grok's Fast versions (which power the default user experience on X) consistently assigned credibility scores of 70-75, two to five times higher than all other models (which scored 15-40). This pattern was absent from control prompts testing basic evolutionary consensus and refuted Lamarckian claims, where all models performed comparably. Three additional findings emerged: (1) a silent patch reversed Grok's behaviour from chaotic to stably high validation overnight, without any public documentation; (2) the same Grok model identifier produced radically divergent outputs via API (75) and web (5.5) three months later; (3) refusal to rate the pseudo-scientific claim, the most defensible response observed, appeared in two model families through different interfaces (Claude Opus 4.1 categorically via web, GPT-5.1 Chat intermittently via API) and eroded in the successor version of each. These results indicate that the epistemic stance of a commercial LLM is not a stable property of the model but a contingent effect of deployment configuration: system prompts, safety layers, interface routing, and silent updates. This remains opaque to users and researchers alike. We argue this constitutes a matter of public concern requiring new forms of epistemic accountability.",
+      "authors": [
+        "Davide Scarso",
+        "Hugo Noronha de Almeida",
+        "Joaquim Pina"
+      ],
+      "published": "2026-07-24T17:32:43Z",
+      "updated": "2026-07-24T17:32:43Z",
+      "url": "https://arxiv.org/abs/2607.22513",
+      "pdf_url": "https://arxiv.org/pdf/2607.22513.pdf",
+      "primary_category": "cs.CY",
+      "categories": [
+        "cs.CY",
+        "cs.AI",
+        "cs.CL"
+      ],
+      "tags": [
+        "cs.AI",
+        "cs.CL",
+        "cs.CY"
+      ],
+      "domain": "AI",
+      "pdf_downloaded": true,
+      "pdf_size_bytes": 349468,
+      "pdf_path": "2026-07-27/ai/2607.22513.pdf"
+    },
+    {
+      "id": "2607.22511",
+      "title": "CausalForge: A Formally Grounded, Self-Improving Agentic Framework for Automated Research in Causal Inference",
+      "abstract": "Automating theoretical research is constrained not only by the generation of candidate results, but also by their reliable evaluation. A common approach is to close the research loop with a large language model (LLM) reviewer. However, such reviewers remain empirically unreliable: they may accept fabricated papers and detect them at rates close to chance (Bad Scientist, 2025). We present CausalForge, a framework for automated theoretical research in causal inference grounded in the Lean proof assistant. CausalForge combines Causalean, a foundational Lean library for causal inference containing 7,035 machine-checked declarations developed with language-model assistance under human design and review, with CausalSmith, a self-improving agentic pipeline that selects research topics, proposes results, formalizes statements, constructs proofs, and presents the resulting artifacts for human inspection. Because a machine-checked proof establishes only that a formal statement follows from its assumptions, not that the statement faithfully captures the intended scientific claim, the pipeline augments kernel verification with a statement audit that compares each formal theorem against the informal claim it is intended to express. We evaluate the system using artifacts produced by completed autonomous research runs. The source code, formal library, and run records are available at https://github.com/Jiyuan-Tan/CausalForge.",
+      "authors": [
+        "Jiyuan Tan",
+        "Vasilis Syrgkanis"
+      ],
+      "published": "2026-07-24T17:32:35Z",
+      "updated": "2026-07-24T17:32:35Z",
+      "url": "https://arxiv.org/abs/2607.22511",
+      "pdf_url": "https://arxiv.org/pdf/2607.22511.pdf",
+      "primary_category": "stat.ML",
+      "categories": [
+        "stat.ML",
+        "cs.AI",
+        "cs.LG",
+        "econ.EM"
+      ],
+      "tags": [
+        "cs.AI",
+        "cs.LG",
+        "econ.EM",
+        "stat.ML"
+      ],
+      "domain": "AI",
+      "pdf_downloaded": true,
+      "pdf_size_bytes": 489939,
+      "pdf_path": "2026-07-27/ai/2607.22511.pdf"
+    },
+    {
+      "id": "2607.22508",
+      "title": "Interpretable EEG biomarkers with bag-of-waves: Spatial and temporal waveform dictionaries for low-data regimes",
+      "abstract": "Electroencephalography (EEG) is widely used to diagnose neurological conditions, but its analysis usually relies on either predefined spectral features or deep neural networks. Predefined features carry a strong bias, since they fix in advance what counts as informative, while deep neural networks and foundation models are hard to interpret and need large amounts of data and compute. We present bag-of-waves, an interpretable framework that learns a small dictionary of recurring EEG waveform templates, called atoms, using shift-invariant k-means without labels. The continuous EEG is then turned into a sequence of atom tokens, whose counts feed a simple downstream classifier or clustering step. We extend this representation in two ways: we add atom-to-atom transitions, which we call n- grams, to capture temporal structure, and we move from single-channel atoms to regional and cross-channel spatial atoms for the multichannel case. We test the method on three complementary datasets, each probing a different aspect: single-channel mouse genotype clustering with only sixteen animals (the low-data and temporal case), resting-state dementia classification (the spatial case), and the TUEV benchmark, a six-way classification of clinical EEG events (a high-data comparison against strong deep and foundation baselines). Across all three datasets, bag-of-waves achieves performance competitive with state-of-the-art deep and foundation models. Yet, it operates with a fraction of the parameter count and provides full interpretability: because every atom corresponds to an inspectable waveform, the method explicitly recovers known clinical morphologies that a neurophysiologist can directly validate. Its main advantage is that it works in the low-data regime where heavier models are a poor fit.",
+      "authors": [
+        "Athanasios Papastathopoulos-Katsaros",
+        "Steven T. Lee",
+        "Lin Yao",
+        "Ajay Thomas",
+        "Junseok Park",
+        "Matthew J. McGinley",
+        "Zhandong Liu"
+      ],
+      "published": "2026-07-24T17:27:43Z",
+      "updated": "2026-07-24T17:27:43Z",
+      "url": "https://arxiv.org/abs/2607.22508",
+      "pdf_url": "https://arxiv.org/pdf/2607.22508.pdf",
+      "primary_category": "cs.LG",
+      "categories": [
+        "cs.LG",
+        "eess.SP"
+      ],
+      "tags": [
+        "cs.LG",
+        "eess.SP"
+      ],
+      "domain": "AI",
+      "pdf_downloaded": true,
+      "pdf_size_bytes": 5108369,
+      "pdf_path": "2026-07-27/ai/2607.22508.pdf"
+    },
+    {
+      "id": "2607.22493",
+      "title": "The V-fold jackknife for semiparametric inference: variance estimation, confidence intervals, and simultaneous confidence bands",
+      "abstract": "For decades, the bootstrap has been a default tool for statistical inference because of its broad applicability and minimal analytic requirements. Although its validity is well understood for smooth parametric estimators, its theoretical properties for many modern semiparametric and machine-learning estimators remain largely unstudied. Nevertheless, bootstrap procedures are often used routinely in such settings, even when their validity is unknown and their computational cost is substantial. We develop the $V$-fold jackknife as a computationally efficient and theoretically justified alternative for semiparametric inference. It requires only $V$ leave-fold-out refits and uses the empirical dispersion of jackknife pseudo-values to quantify uncertainty, without deriving or evaluating an influence function. For regular asymptotically linear estimators of pathwise differentiable parameters, we show that, for fixed $V$, the Studentized $V$-fold jackknife statistic converges to a $t$-distribution with $V-1$ degrees of freedom, giving valid confidence intervals even though the jackknife variance estimator does not converge in probability. When $V\\to\\infty$, we establish consistency of the variance estimator at rate $V^{-1/2}$, allowing $V$ to diverge slowly, for example at rate $\\log n$. We also develop simultaneous confidence bands based on the correct componentwise-Studentized limiting distribution. Finally, we extend the theory to generalized asymptotically linear estimators with diverging influence-function variance and slower-than-$\\sqrt n$ convergence; scale invariance of Studentization eliminates the need to know the effective convergence rate. Simulations on the average treatment effect, Kaplan--Meier survival curve, and highly adaptive lasso dose-response curves confirm reliable inference, including where influence-function-based standard errors are anti-conservative or unstable.",
+      "authors": [
+        "Yi Li",
+        "Ashkan Ertefaie",
+        "Mark van der Laan"
+      ],
+      "published": "2026-07-24T17:05:54Z",
+      "updated": "2026-07-24T17:05:54Z",
+      "url": "https://arxiv.org/abs/2607.22493",
+      "pdf_url": "https://arxiv.org/pdf/2607.22493.pdf",
+      "primary_category": "stat.ME",
+      "categories": [
+        "stat.ME",
+        "math.ST",
+        "stat.CO",
+        "stat.ML"
+      ],
+      "tags": [
+        "math.ST",
+        "stat.CO",
+        "stat.ME",
+        "stat.ML"
+      ],
+      "domain": "AI",
+      "pdf_downloaded": true,
+      "pdf_size_bytes": 3247456,
+      "pdf_path": "2026-07-27/ai/2607.22493.pdf"
+    },
+    {
+      "id": "2607.22491",
+      "title": "Susceptible Reservoir Architectures for Regime-Conditional Volatility Forecasting",
+      "abstract": "Volatility forecasting is dominated by persistence and measurement noise, leaving limited residual structure for nonlinear models to exploit. We introduce Susceptible Architectures (SUSA), a reservoir-design principle for volatility forecasting, and its two concrete implementations, based on complex-valued open-chain and periodic reservoirs and regime-conditioned experts to interpret reservoir features across calm, onset, recovery, and persistent-stress states. We also implement open-system $q$-qubit counterparts in Qiskit while retaining a common AR-Ridge anchor and a bounded residual correction trained under QLIKE. We evaluate models on 16 U.S. equity and exchange-traded-fund series using three disjoint chronological training, validation, and test folds, a 12-observation input window, and a five-observation forecast horizon. The proposed models perform competitively with GARCH, achieving statistically significant QLIKE improvements for specific assets (IWM, XLP). Also models' forecasts complement HARQ-style predictions: a stacked ensemble improves mean QLIKE by 0.0116 over its strongest constituent and wins in 75% of test scenarios.",
+      "authors": [
+        "Aliaksei Kaliutau"
+      ],
+      "published": "2026-07-24T17:03:08Z",
+      "updated": "2026-07-24T17:03:08Z",
+      "url": "https://arxiv.org/abs/2607.22491",
+      "pdf_url": "https://arxiv.org/pdf/2607.22491.pdf",
+      "primary_category": "cs.LG",
+      "categories": [
+        "cs.LG"
+      ],
+      "tags": [
+        "cs.LG"
+      ],
+      "domain": "AI",
+      "pdf_downloaded": true,
+      "pdf_size_bytes": 426945,
+      "pdf_path": "2026-07-27/ai/2607.22491.pdf"
+    },
+    {
+      "id": "2607.22489",
+      "title": "\\k{appa}-LoRA: Condition Numbers Reveal Which LoRA Matrices Worth Updating",
+      "abstract": "Low-Rank Adaptation (LoRA) has become a widely adopted technique for efficient neural network fine-tuning, decomposing model updates into low-rank matrices. However, LoRA remains computationally costly because it updates all matrices uniformly, regardless of their actual contribution to adaptation. This cost is especially prohibitive for large-scale models with billions of parameters and for resource-constrained settings such as edge deployment and on-device fine-tuning. We show for the first time that not all LoRA matrices are equally worth tuning: matrices with smaller condition numbers (the ratio of largest to smallest singular value) are already well-balanced across directions and contribute only marginally to adaptation, whereas matrices with larger condition numbers contain underdeveloped directions that span richer subspaces and drive most of the performance gains. This observation itself is a key contribution of our work, and it motivates a more selective approach to fine-tuning. Building on this insight, we propose \\k{appa}-LoRA, a method that optimizes LoRA by focusing updates on the matrices with the largest condition numbers, which capture the most informative directions of change. By restricting LoRA updates to the top 50% of weight matrices ranked by condition number, \\k{appa}-LoRA halves the trainable parameter count and correspondingly reduces compute and memory cost. Extensive experiments across multiple benchmarks show that this design cuts fine-tuning time by 16.2% on average while matching the accuracy of standard LoRA and reducing memory cost by 4.5%. Further analysis reveals that the condition numbers of the selected matrices consistently decrease over training, suggesting that \\k{appa}-LoRA's effectiveness stems from targeted spectral rebalancing rather than parameter selection alone.",
+      "authors": [
+        "Jianghui Wang",
+        "Silong Yong",
+        "Francesco Orabona",
+        "Marco Canini",
+        "Katia P. Sycara",
+        "Yaqi Xie"
+      ],
+      "published": "2026-07-24T17:00:40Z",
+      "updated": "2026-07-24T17:00:40Z",
+      "url": "https://arxiv.org/abs/2607.22489",
+      "pdf_url": "https://arxiv.org/pdf/2607.22489.pdf",
+      "primary_category": "cs.LG",
+      "categories": [
+        "cs.LG",
+        "cs.AI"
+      ],
+      "tags": [
+        "cs.AI",
+        "cs.LG"
+      ],
+      "domain": "AI",
+      "pdf_downloaded": true,
+      "pdf_size_bytes": 410000,
+      "pdf_path": "2026-07-27/ai/2607.22489.pdf"
+    },
+    {
+      "id": "2607.22484",
+      "title": "Singular value soft-thresholding via the polar decomposition",
+      "abstract": "Singular value soft-thresholding can be computed via a reduction to the matrix polar decomposition, which allows one to exploit GPU-friendly algorithms for computing the polar decomposition. Empirically, there is a significant speed-up on GPUs compared to the standard approach using the SVD. We leave the investigation of robustness to future work, but note that due to the discontinuous nature of the sign function, the reduction to the polar decomposition is likely only suitable for low-accuracy applications.",
+      "authors": [
+        "Stephen Becker"
+      ],
+      "published": "2026-07-24T16:55:09Z",
+      "updated": "2026-07-24T16:55:09Z",
+      "url": "https://arxiv.org/abs/2607.22484",
+      "pdf_url": "https://arxiv.org/pdf/2607.22484.pdf",
+      "primary_category": "math.NA",
+      "categories": [
+        "math.NA",
+        "cs.LG",
+        "math.OC"
+      ],
+      "tags": [
+        "cs.LG",
+        "math.NA",
+        "math.OC"
+      ],
+      "domain": "AI",
+      "pdf_downloaded": true,
+      "pdf_size_bytes": 358745,
+      "pdf_path": "2026-07-27/ai/2607.22484.pdf"
+    },
+    {
+      "id": "2607.22474",
+      "title": "Beyond Negative-Ridge Endpoints: Mixed-Sign Spectral Regularization via Negative-Shifted Gradient Descent",
+      "abstract": "In overparameterized linear regression, many weak spectral directions act like a ridge penalty on the signal-bearing spectrum; negative ridge is the natural correction, pushing filters above one. The stable negative-ridge endpoint, however, is structurally limited: its pole must stay below the smallest nonzero empirical eigenvalue, and it anti-shrinks smaller eigenvalues more than larger ones. Early-stopped negative-shifted gradient descent escapes this constraint. Its filter is smooth at the would-be pole and mixed-sign-capable: above-ridgeless directions form a leading prefix, with lower directions shrunk or exposure-controlled while stopping sets the crossover. In a Gaussian spike-plus-flat model we discover a Marchenko-Pastur barrier: the shift that cancels the implicit penalty lies a bulk width above the smallest empirical eigenvalue, and the stopped path improves on every admissible endpoint by a polynomial factor in risk under explicit conditions. Our main theorem permits a general high-effective-rank tail: its trace sets the implicit floor, its squared spectrum controls exposure, and the floor-critical path recovers all head scales at once, beyond positive shrinkage and, once scales separate, every uniform rescaling of ridgeless. Handling the noncontractive shifted dynamics is the central technical challenge; localized Duhamel integrals control them. A finite-grid hold-out inequality transfers the separations to the validation-selected algorithm.",
+      "authors": [
+        "Peng Zhao"
+      ],
+      "published": "2026-07-24T16:42:46Z",
+      "updated": "2026-07-24T16:42:46Z",
+      "url": "https://arxiv.org/abs/2607.22474",
+      "pdf_url": "https://arxiv.org/pdf/2607.22474.pdf",
+      "primary_category": "cs.LG",
+      "categories": [
+        "cs.LG",
+        "math.ST",
+        "stat.ML"
+      ],
+      "tags": [
+        "cs.LG",
+        "math.ST",
+        "stat.ML"
+      ],
+      "domain": "AI",
+      "pdf_downloaded": true,
+      "pdf_size_bytes": 877625,
+      "pdf_path": "2026-07-27/ai/2607.22474.pdf"
+    },
+    {
+      "id": "2607.22471",
+      "title": "MineValiCoder: Reliable Code Generation with Test Case Quality Mining and Bipartite Graph-Based Mutual Validation",
+      "abstract": "Large Language Model (LLM)-based Test-Driven Development (TDD) has advanced automated code generation. However, existing approaches depend heavily on human-crafted test cases and cannot operate effectively when only natural-language requirements are available. Although recent work enables automatic test generation, it often overlooks the inherent stochasticity of LLMs, leading to two key defects: faulty tests generate misleading feedback that distorts code optimization, while mixed-quality test cases produce conflicting evaluation signals that hinder reliable code selection. To address these challenges, we propose MineValiCoder, a collaborative closed-loop TDD framework based on the mutual reinforcement of test-case quality and code quality. MineValiCoder comprises three modules. The Test Case Quality Mining (TCQM) module filters faulty test cases through self-validation, providing reliable optimization supervision. The Parallel TDD Refinement module iteratively optimizes code and generates diverse high-quality code candidates using validated test-case feedback. The Bipartite Graph-Based Code-Test Mutual Validation (BiCoTeV) module dynamically models code-test interactions and performs mutual validation scoring for stable and reliable optimal-code selection. Extensive evaluations across four LLMs and mainstream benchmarks show that MineValiCoder significantly outperforms state-of-the-art methods. Specifically, it achieves Pass@1 scores of 96.34% on HumanEval, 87.40% on MBPP, 64.00% on APPS, and 51.33% on LiveCodeBench. These results demonstrate the effectiveness of MineValiCoder in mitigating LLM stochasticity and improving the reliability of automated code generation.",
+      "authors": [
+        "Zhen Zhao",
+        "Qihang Yang",
+        "Feifei Dai",
+        "Xiangfang Li",
+        "Bo Li"
+      ],
+      "published": "2026-07-24T16:39:06Z",
+      "updated": "2026-07-24T16:39:06Z",
+      "url": "https://arxiv.org/abs/2607.22471",
+      "pdf_url": "https://arxiv.org/pdf/2607.22471.pdf",
+      "primary_category": "cs.SE",
+      "categories": [
+        "cs.SE",
+        "cs.AI"
+      ],
+      "tags": [
+        "cs.AI",
+        "cs.SE"
+      ],
+      "domain": "AI",
+      "pdf_downloaded": true,
+      "pdf_size_bytes": 629652,
+      "pdf_path": "2026-07-27/ai/2607.22471.pdf"
+    },
+    {
+      "id": "2607.22468",
+      "title": "Learning to Prepare Molecular Ground States with Transformer Models",
+      "abstract": "Quantum state preparation is a key component of many quantum algorithms. Performing this step efficiently is essential for realizing practical quantum advantage in quantum chemistry applications. Iterative algorithms like ADAPT-VQE can produce shallow ground-state preparation circuits, but become computationally prohibitive for the larger molecules relevant to materials science and pharmaceutical development. Here, we introduce ADAPT-GQE, a generative AI framework that learns to synthesize ground-state preparation circuits for electronic structure calculations. We first use ADAPT-VQE to generate high-quality reference circuits, which are then used as targets for training models for circuit generation. Once trained, the model can efficiently propose and score circuits, enabling reinforcement learning (RL) to drive circuit generation accuracy beyond the accuracy of the ADAPT-VQE training data. This pipeline achieves order-of-magnitude reductions in circuit generation time relative to ADAPT-VQE while maintaining comparable or improved state-preparation accuracy. We demonstrate ADAPT-GQE on imipramine, a well-established tricyclic antidepressant that serves as a representative, challenging target for computational modelling in drug stability protocols. We execute generated circuits on Quantinuum Helios-1, representing a milestone for AI-generated quantum chemistry circuits on state-of-the-art quantum hardware. These results establish a pathway toward automated quantum circuit synthesis for utility-scale quantum computational chemistry.",
+      "authors": [
+        "Alex Koziell-Pipe",
+        "Jasmine Brewer",
+        "Jem Guhit",
+        "Marwa H. Farag",
+        "Kripa Panchagnula",
+        "Gabriel Laude",
+        "Fabian Finger",
+        "Carlo Gaggioli",
+        "Ludmila Szulakowska",
+        "Oliver J. Backhouse",
+        "Christos Papalitsas",
+        "Jason G. Mustakis",
+        "Thomas Soini",
+        "David Munoz Ramo",
+        "Stephen Clark",
+        "Elica Kyoseva",
+        "Enrico Rinaldi"
+      ],
+      "published": "2026-07-24T16:32:40Z",
+      "updated": "2026-07-24T16:32:40Z",
+      "url": "https://arxiv.org/abs/2607.22468",
+      "pdf_url": "https://arxiv.org/pdf/2607.22468.pdf",
+      "primary_category": "quant-ph",
+      "categories": [
+        "quant-ph",
+        "cs.AI"
+      ],
+      "tags": [
+        "cs.AI",
+        "quant-ph"
+      ],
+      "domain": "AI",
+      "pdf_downloaded": true,
+      "pdf_size_bytes": 3062984,
+      "pdf_path": "2026-07-27/ai/2607.22468.pdf"
+    },
+    {
+      "id": "2607.22467",
+      "title": "Complexity Bounds and Approaches to Learning Projected Gradient Descent Solver Iterates",
+      "abstract": "Data scarcity poses a fundamental challenge in training generative models to produce initial guesses for parametric optimization problems that are otherwise numerically expensive to solve. We therefore study a $k$-neighborhood data collection strategy that augments datasets of converged solutions with intermediate solver iterates, increasing the amount of training data without additional solver runs. To understand the benefits of this approach, we derive a generalization bound based on Rademacher complexity that reveals the role of the $k$-neighborhoods and related parameters. To achieve this result, we focus on one-sided box-constrained quadratic programs solved by projected gradient descent. We illustrate the behavior of this solver on two examples. The approach proposed in this paper enables a more capable DDDAS paradigm by improving the efficiency of the data-model-optimization loop. We finish by discussing two views of learning solver-iterate data and connect our analysis with GLENS, a new data-efficient global search method.",
+      "authors": [
+        "Anjian Li",
+        "Ryne Beeson"
+      ],
+      "published": "2026-07-24T16:31:30Z",
+      "updated": "2026-07-24T16:31:30Z",
+      "url": "https://arxiv.org/abs/2607.22467",
+      "pdf_url": "https://arxiv.org/pdf/2607.22467.pdf",
+      "primary_category": "cs.LG",
+      "categories": [
+        "cs.LG"
+      ],
+      "tags": [
+        "cs.LG"
+      ],
+      "domain": "AI",
+      "pdf_downloaded": true,
+      "pdf_size_bytes": 603582,
+      "pdf_path": "2026-07-27/ai/2607.22467.pdf"
+    },
+    {
+      "id": "2607.22465",
+      "title": "TRACE-ROUTER: Task-Consistent and Adaptive Online Routing for Agentic AI",
+      "abstract": "Routing to select large language models (LLMs) with different cost-quality trade-offs has become a fundamental deployment feature of enterprise AI. Existing routers, primarily make independent routing decisions for each LLM call. However, agentic applications execute as long-horizon workflows whose quality is determined only by a delayed, task-level outcome. This mismatch prevents per-call routers from correctly attributing feedback to individual routing decisions. Towards mitigating this, we present TRACE-Router, a task-level routing framework that aligns routing with the unit of supervision. TRACE-Router assigns each task to a model once at admission using a contextual bandit, pins all subsequent LLM calls to the selected backend, and updates its policy using the task's terminal reward, jointly accounting for accuracy and latency. By leveraging delayed task feedback, TRACE-Router learns routing policies that adapt to the workload while avoiding explicit task-complexity estimation. Across three agentic benchmarks, TRACE-Router consistently improves the accuracy-latency trade-off, achieving non-dominated Pareto frontier points. On tau2-Bench, it outperforms latency-matched interpolation between individual models by 7-8 accuracy points, while on Terminal-Bench it achieves 7.1 higher accuracy points than the strongest single model baseline with 36% lower latency.",
+      "authors": [
+        "Ritik Raj",
+        "Souvik Kundu",
+        "Sarbartha Banerjee",
+        "Dheemanth Joshi",
+        "Ishita Vohra",
+        "Tushar Krishna"
+      ],
+      "published": "2026-07-24T16:29:06Z",
+      "updated": "2026-07-24T16:29:06Z",
+      "url": "https://arxiv.org/abs/2607.22465",
+      "pdf_url": "https://arxiv.org/pdf/2607.22465.pdf",
+      "primary_category": "cs.AI",
+      "categories": [
+        "cs.AI",
+        "cs.LG",
+        "cs.MA"
+      ],
+      "tags": [
+        "cs.AI",
+        "cs.LG",
+        "cs.MA"
+      ],
+      "domain": "AI",
+      "pdf_downloaded": true,
+      "pdf_size_bytes": 1289639,
+      "pdf_path": "2026-07-27/ai/2607.22465.pdf"
+    },
+    {
+      "id": "2607.22463",
+      "title": "Beyond Perspectives: A Trio-Ethnography of Interpretation Evolution in LLM-Supported Programming Education",
+      "abstract": "Generative AI is reshaping programming education, yet educators often infer students' AI-supported learning from classroom observations alone. This experience report presents a trio-ethnography involving two computing educators with different teaching philosophies and one undergraduate computer science student to examine how these interpretations evolve through dialogue. Across three conversations, the educators reflected on students' AI use, discussed changes to programming pedagogy, and revisited their assumptions after engaging with the student's lived experiences. Rather than simply confirming or contradicting the educators' perspectives, the student's narratives revealed learning processes that were largely invisible in the classroom, prompting both educators to reconsider assumptions about AI use, assessment, transparency, and programming instruction. We argue that trio-ethnography offers a valuable reflective approach for helping computing educators move beyond observable student behaviors toward a richer understanding of AI-supported learning and for informing instructional adaptation in the era of generative AI.",
+      "authors": [
+        "Jennie Ren",
+        "Jordan H. McDowell",
+        "Kyrie Zhixuan Zhou"
+      ],
+      "published": "2026-07-24T16:28:14Z",
+      "updated": "2026-07-24T16:28:14Z",
+      "url": "https://arxiv.org/abs/2607.22463",
+      "pdf_url": "https://arxiv.org/pdf/2607.22463.pdf",
+      "primary_category": "cs.HC",
+      "categories": [
+        "cs.HC",
+        "cs.AI"
+      ],
+      "tags": [
+        "cs.AI",
+        "cs.HC"
+      ],
+      "domain": "AI",
+      "pdf_downloaded": true,
+      "pdf_size_bytes": 457387,
+      "pdf_path": "2026-07-27/ai/2607.22463.pdf"
+    },
+    {
+      "id": "2607.22458",
+      "title": "Phylogenetic signal in marine mammal and bird vocalizations captured by audio foundation models: the limited benefit of domain-specific pretraining",
+      "abstract": "Do learned audio embeddings encode structure that nobody told them to encode? We probe four large pretrained audio models (AST, CLAP, BEATs-bio and BirdNET) with a downstream task none of them saw during training: recovering phylogenetic distance from species vocalizations. If the geometry of the embedding space tracks the tree of life, the representation is picking up something deeper than the labels the model was optimized for. We run Mantel tests across two independent radiations. In 32 marine mammal species (1,754 recordings from the Watkins Marine Mammal Sound Database) the foundation models recover strong phylogenetic signal within the 26 cetaceans (CLAP r=0.82, BEATs-bio r=0.82, AST r=0.74; all p<0.001), among the highest acoustic-phylogenetic correlations reported for any taxon. Hand-crafted MFCC features (105d) find nothing (r=0.040, p=0.338). The gap survives after PCA-projecting every embedding down to 105 dimensions, so it is not an artefact of representation size. It also survives a partial Mantel test controlling for dominant frequency (partial Mantel r=0.404, keeping 97% of the variance explained), so it is not just pitch in disguise. We repeat the analysis on 20 bird species using the Jetz et al. (2012) phylogeny, and this time add BirdNET, a classifier trained end-to-end on around 6,000 bird species. The general-purpose foundation models recover the signal again (AST r=0.55, CLAP r=0.52). The unexpected result is that neither BirdNET nor the bioacoustic BEATs-bio beat them (r around 0.32 to 0.36). Matching the training domain to the target taxon does not, by itself, help. Pretrained audio embeddings carry evolutionary information across two independent radiations, and domain-specific pretraining is not required for it to emerge.",
+      "authors": [
+        "V\u00edctor Rinc\u00f3n Yepes"
+      ],
+      "published": "2026-07-24T16:19:04Z",
+      "updated": "2026-07-24T16:19:04Z",
+      "url": "https://arxiv.org/abs/2607.22458",
+      "pdf_url": "https://arxiv.org/pdf/2607.22458.pdf",
+      "primary_category": "cs.LG",
+      "categories": [
+        "cs.LG",
+        "cs.AI"
+      ],
+      "tags": [
+        "cs.AI",
+        "cs.LG"
+      ],
+      "domain": "AI",
+      "pdf_downloaded": true,
+      "pdf_size_bytes": 989823,
+      "pdf_path": "2026-07-27/ai/2607.22458.pdf"
+    },
+    {
+      "id": "2607.22445",
+      "title": "Dynamic Capability Scoping for Enterprise AI Agents: A Synthetic Dataset and Three-Source Permission Architecture",
+      "abstract": "Enterprise AI agents are typically granted static credential sets at configuration time, holding every tool the role might need for every task they perform. This persistent over-privilege expands the attack surface. We argue that capability scoping must follow a dynamic least-privilege principle and be treated as a prevention mechanism before a detection one. A credential that does not exist in an agent's context cannot be misused regardless of the agent's reasoning or evasion sophistication. We outline a three-source architecture instantiating this principle: role-based ceilings, a task-context classifier, and policy-derived combination prohibitions creating a layered proactive defense against LLM agent misalignment and misuse cases. The architecture supports both enforcing and observe-only deployment; the latter records agent permission requests inconsistent with task context, producing a behavioral signal usable in misalignment research. As a first step toward evaluating this architecture, we contribute a synthetic dataset of 600 enterprise task prompts grounded in a multi-department company policy, labeled with minimum required permissions across a 15-permission tool-based taxonomy that maps directly to deployable credentials or enforceable guardrails. The dataset is constructed via a two-pass pipeline that separates prompt generation from permission labeling to avoid circularity, and is validated against a 60-record/688 decisions human-reviewed sample (Cohen's $\u03ba= 0.917$ pre-review and $\u03ba= 0.967$ post-review). Iterating between dataset and policy reduced ceiling violations from 46 to 3, a 93% reduction. This shows that synthetic prompt generation can drive policy refinement when the two are developed together. The dataset, environment specification, and generation pipeline are released to support evaluation of dynamic scoping mechanisms.",
+      "authors": [
+        "Halil Burak Noyan"
+      ],
+      "published": "2026-07-24T16:08:03Z",
+      "updated": "2026-07-24T16:08:03Z",
+      "url": "https://arxiv.org/abs/2607.22445",
+      "pdf_url": "https://arxiv.org/pdf/2607.22445.pdf",
+      "primary_category": "cs.AI",
+      "categories": [
+        "cs.AI",
+        "cs.CR"
+      ],
+      "tags": [
+        "cs.AI",
+        "cs.CR"
+      ],
+      "domain": "AI",
+      "pdf_downloaded": true,
+      "pdf_size_bytes": 200090,
+      "pdf_path": "2026-07-27/ai/2607.22445.pdf"
+    },
+    {
+      "id": "2607.22444",
+      "title": "Hyperball May Not Be a Free Lunch",
+      "abstract": "For scale-invariant deep networks, Hyperball-style optimizers have shown strong performance in large-scale training by fixing the norms of matrix-valued parameters and normalizing updates. However, the source of their advantage remains unclear. Starting from the angular displacement between consecutive parameter states, we derive an angular effective learning rate that accounts for the parameter-update angle, parameter norm, and update norm. We also show that the conventional norm-based measure is a special case under parameter-update orthogonality. We then decompose optimizer updates into radial and tangential components and analyze how radial updates affect one-step angular displacement. Under the training configurations considered, numerical results show that the radial component has only a limited direct effect on the angular effective learning rate. It therefore cannot explain why MuonH converges more slowly than MuonWD early in training but overtakes it later. To further isolate the underlying mechanism, we devise a heuristic experiment that modifies only the learning-rate schedule so that the dynamics of each optimizer reproduce those of the other. The results suggest that their main difference stems from the evolution of the effective step size rather than an intrinsically superior update direction induced by Hyperball. Our pretraining experiments further show that more aggressive learning-rate decay can accelerate MuonH early in training but may impair its later performance. Thus, maintaining a constant angular velocity does not eliminate the learning-rate-scheduling problem; careful scheduling remains essential to realizing the potential of Hyperball-style optimizers. Our code is publicly available at https://github.com/mangocrazz/hyperball-may-not-be-a-free-lunch.",
+      "authors": [
+        "Yihao Xiao",
+        "Jialong Sun",
+        "Zitian Gao",
+        "Zeming Wei",
+        "Chutian Wang",
+        "Ran Tao",
+        "Jiaye Teng",
+        "Bryan Dai"
+      ],
+      "published": "2026-07-24T16:06:38Z",
+      "updated": "2026-07-24T16:06:38Z",
+      "url": "https://arxiv.org/abs/2607.22444",
+      "pdf_url": "https://arxiv.org/pdf/2607.22444.pdf",
+      "primary_category": "cs.LG",
+      "categories": [
+        "cs.LG",
+        "cs.AI"
+      ],
+      "tags": [
+        "cs.AI",
+        "cs.LG"
+      ],
+      "domain": "AI",
+      "pdf_downloaded": true,
+      "pdf_size_bytes": 978106,
+      "pdf_path": "2026-07-27/ai/2607.22444.pdf"
+    },
+    {
+      "id": "2607.22436",
+      "title": "Graph-Based Correlation Matrix Generation: A Convex Optimization Approach",
+      "abstract": "This work addresses the generation of theoretical correlation matrices with prescribed sparsity patterns associated to graph structures. We propose a novel convex optimization framework in which an initial matrix is projected onto an elliptope under a positive semidefiniteness constraint. Several numerical schemes are implemented and compared. The problem falls within the broader class of matrix completion, where off-diagonal entries corresponding to absent edges are fixed to zero and diagonal entries are fixed to one. Beyond this structural constraint, the approach offers greater flexibility than existing methods by allowing control over the mean of the off-diagonal entry distribution, enabling the generation of correlation matrices that better reflect realistic data. This procedure is not designed to yield a uniform distribution over the feasible set; rather, it provides a principled and tunable way to construct correlation matrices suitable for benchmarking statistical methods for graphical model inference. Theoretical guarantees on the existence of solutions are established, both in the general setting and under the additional mean constraint. Simulation studies illustrate the properties of the generated matrices with respect to graph structure. The methodology is applied to two real-world datasets from neuroscience and finance, and a comparison with GAN-based correlation matrix generation is provided.",
+      "authors": [
+        "Ali Fakhar",
+        "K{\u00e9}vin Polisano",
+        "Ir{\u00e8}ne Gannaz",
+        "Sophie Achard"
+      ],
+      "published": "2026-07-24T15:54:23Z",
+      "updated": "2026-07-24T15:54:23Z",
+      "url": "https://arxiv.org/abs/2607.22436",
+      "pdf_url": "https://arxiv.org/pdf/2607.22436.pdf",
+      "primary_category": "stat.ML",
+      "categories": [
+        "stat.ML",
+        "cs.LG"
+      ],
+      "tags": [
+        "cs.LG",
+        "stat.ML"
+      ],
+      "domain": "AI",
+      "pdf_downloaded": true,
+      "pdf_size_bytes": 3924813,
+      "pdf_path": "2026-07-27/ai/2607.22436.pdf"
+    },
+    {
+      "id": "2607.22434",
+      "title": "Robot Learning to Communicate through Projected Visual Abstractions",
+      "abstract": "Humans routinely communicate through abstractions of their bodies, including shadows, silhouettes, and reflections. Yet robots remain largely confined to expressing themselves through their physical morphology. Enabling robots to communicate through such projected visual abstractions requires reasoning not only about bodily motion but also about how that motion is transformed into an external representation perceived by an observer. Among these abstractions, shadows provide a particularly compelling example because they emerge directly from the robot's embodiment while remaining visually distinct from the body itself. Here, we present a robotic system capable of dynamic shadow expression using a 21-degree-of-freedom dexterous hand with compliant soft skin and a learned shadow self-model. The soft-skinned embodiment reduces light leakage to produce visually continuous silhouettes, while the differentiable self-model learns the mapping between hand configurations and projected shadow appearance through task-agnostic self-exploration. Given a target shadow image or video, the robot optimizes its hand configurations through gradient-based search over 1 the learned self-model and refines the solution through collision-aware simulation to obtain physically feasible motions. For dynamic shadow performance, we further introduce expressive-region objectives, temporal smoothness regularization, and keyframe-based optimization to preserve visually important motion cues while reducing optimization complexity. We demonstrate robotic shadow expression across sign-language gestures, hand-shadow puppetry, and animal motion imitation in both simulation and physical experiments. These results establish a framework for enabling robots to manipulate projected visual abstractions of themselves for communication and visual storytelling.",
+      "authors": [
+        "Danyang Yan",
+        "Boyuan Wang",
+        "Jiaxun Liu",
+        "Boyuan Chen"
+      ],
+      "published": "2026-07-24T15:52:36Z",
+      "updated": "2026-07-24T15:52:36Z",
+      "url": "https://arxiv.org/abs/2607.22434",
+      "pdf_url": "https://arxiv.org/pdf/2607.22434.pdf",
+      "primary_category": "cs.RO",
+      "categories": [
+        "cs.RO",
+        "cs.AI"
+      ],
+      "tags": [
+        "cs.AI",
+        "cs.RO"
+      ],
+      "domain": "AI",
+      "pdf_downloaded": false,
+      "pdf_size_bytes": null,
+      "pdf_path": null
+    },
+    {
+      "id": "2607.22430",
+      "title": "On the Identifiability of Controlled World Models",
+      "abstract": "Learning world models that infer environment dynamics from high-dimensional observations and predict outcomes under candidate actions is central to planning and control. Joint-Embedding Predictive Architectures (JEPAs) provide a compelling framework for learning such models in representation space. Recent action-conditioned extensions perform promisingly in visual control and latent-space planning, but leave a fundamental question unresolved: when does controlled latent prediction identify both the underlying state and the controlled dynamics? This is challenging under nonlinear observations and behavior policies with limited conditional action variation, where state-dependent evolution and action effects can be statistically confounded. We establish a joint identifiability theory for controlled world models with Gaussian latent states under state-dependent Gaussian behavior policies. We identify two policy-dependent conditions: spectral separation of the predictable signal governs representation identifiability, while non-degenerate conditional action variation governs transition identifiability. We prove that when both conditions hold, every global minimizer of the JEPA objective identifies the latent state and controlled transition up to an orthogonal transformation. We further derive quantitative bounds on representation and transition identifiability under approximate optimization. Finally, we construct predictor perturbations along weakly excited action directions whose counterfactual-to-on-policy error ratio is the inverse transition-identifiability margin, revealing the cost of limited action coverage. Experiments across nonlinear observation maps and behavior policies corroborate the theory and demonstrate implications for transition identifiability, counterfactual prediction, and goal-conditioned latent planning.",
+      "authors": [
+        "Xiangteng Zhang",
+        "Yang Guan",
+        "Bo Zhang",
+        "Ya-Qin Zhang",
+        "Shengbo Eben Li"
+      ],
+      "published": "2026-07-24T15:49:12Z",
+      "updated": "2026-07-24T15:49:12Z",
+      "url": "https://arxiv.org/abs/2607.22430",
+      "pdf_url": "https://arxiv.org/pdf/2607.22430.pdf",
+      "primary_category": "cs.LG",
+      "categories": [
+        "cs.LG"
+      ],
+      "tags": [
+        "cs.LG"
+      ],
+      "domain": "AI",
+      "pdf_downloaded": true,
+      "pdf_size_bytes": 4533485,
+      "pdf_path": "2026-07-27/ai/2607.22430.pdf"
+    },
+    {
+      "id": "2607.22428",
+      "title": "Unboxing Diffusion Models for the Arts: Interactive Model Bending and Practice-Based Explainability",
+      "abstract": "Explainable AI (XAI) in creative practice can be less about technocentric explanation and more about enabling artists to inspect modify and debug models as part of making Yet largescale texttoimage diffusion systems are typically presented as opaque endtoend tools limiting this kind of material engagement We argue that even large models can function as creative materials when their internal structure is made visible and manipulable To support this we propose a handson approach to explainability centred on experimentation and intervention We instantiate this approach with a model bending and an interactive (inspection) interface integrated into ComfyUIs nodebased workflow including interactive layer selection and intervention controls Through qualitative and quantitative analysis of bending interventions in Stable Diffusion 15 we show how manipulating specific components of a diffusion pipeline produces relatively consistent families of visual effects allowing artists to build practical layerlevel intuition about how different parts of the model shape generated images",
+      "authors": [
+        "Ahmed M. Abuzuraiq",
+        "Philippe Pasquier"
+      ],
+      "published": "2026-07-24T15:48:38Z",
+      "updated": "2026-07-24T15:48:38Z",
+      "url": "https://arxiv.org/abs/2607.22428",
+      "pdf_url": "https://arxiv.org/pdf/2607.22428.pdf",
+      "primary_category": "cs.HC",
+      "categories": [
+        "cs.HC",
+        "cs.AI",
+        "cs.LG",
+        "cs.MM"
+      ],
+      "tags": [
+        "cs.AI",
+        "cs.HC",
+        "cs.LG",
+        "cs.MM"
+      ],
+      "domain": "AI",
+      "pdf_downloaded": false,
+      "pdf_size_bytes": null,
+      "pdf_path": null
+    },
+    {
+      "id": "2607.22422",
+      "title": "PRIMS: Physics-guided Representation for Fluid Identification in Multimodal Sensing",
+      "abstract": "Accurate on-device fluid identification is essential for microfluidic applications, yet maintaining reliability under varying flow, pressure, and temperature remains a key challenge. Existing learning-based methods often treat sensor signals as domain-agnostic features, neglecting the underlying physical relationships that govern fluid behavior, thereby limiting generalization and interpretability. To address this, we propose PRIMS, a physics-aware multimodal Transformer that integrates physical knowledge into representation learning and attention mechanisms through three dedicated modules: (1) Physics-based Token Vectorization transforms raw Coriolis and pressure sensor signals into physically meaningful token embeddings; (2) Physical Component Synthesizer models viscosity-related dependencies among flow, pressure, and density; and (3) Physics-guided Fusion captures cross-physical correlations through attention-based integration. By embedding these physics-based relationships directly into the model architecture, PRIMS bridges analytical fluid mechanics and deep learning, enabling interpretable, data-efficient, and resilient fluid classification. Evaluations on a five-fluid benchmark under dynamic flow, pressure, and temperature conditions show that PRIMS achieves 98.92% average F1-score with only 0.46 million parameters, a 14 times reduction compared to state-of-the-art Transformer-based methods. PRIMS also consistently outperforms prior SOTA models under out-of-distribution shifts to unseen temperature ranges and unseen flow-rate ranges, indicating strong robustness to operating conditions not observed during training. These findings suggest that designing architectures that explicitly mirror governing physical relationships can make them learn transferable, environment-independent representations, improving real-world reliability for microfluidic sensing.",
+      "authors": [
+        "Hai-Long Nguyen",
+        "Trung Thanh Nguyen",
+        "Lars Holm",
+        "Dennis Alveringh",
+        "Duc Viet Le"
+      ],
+      "published": "2026-07-24T15:46:28Z",
+      "updated": "2026-07-24T15:46:28Z",
+      "url": "https://arxiv.org/abs/2607.22422",
+      "pdf_url": "https://arxiv.org/pdf/2607.22422.pdf",
+      "primary_category": "physics.flu-dyn",
+      "categories": [
+        "physics.flu-dyn",
+        "cs.AI"
+      ],
+      "tags": [
+        "cs.AI",
+        "physics.flu-dyn"
+      ],
+      "domain": "AI",
+      "pdf_downloaded": true,
+      "pdf_size_bytes": 1816859,
+      "pdf_path": "2026-07-27/ai/2607.22422.pdf"
+    },
+    {
+      "id": "2607.22413",
+      "title": "Reflector: Arrangement-Aware Harmonic Retrieval for Sample-Based Composition",
+      "abstract": "Sample retrieval tools can help composers find harmonically compatible material, but querying from a fixed reference sample becomes less informative as arrangements evolve and the harmonic context shifts with each musical decision. We present Reflector, an interactive audio workstation that tracks harmonic combinations as they accumulate on the composer's timeline and adapts retrieval as the arrangement develops. The system is organized around a fixed interval-class oracle: a hand-designed table of weights that scores how pitch-class content combines between sources. An encoder trained entirely on synthetic audio learns to approximate the oracle in a 128-dimensional embedding space, where dot products stand in for compatibility scores at interactive speed. As the composer arranges material on a multi-track timeline, a sweep-line analysis discovers co-sounding regions, computes oracle-weighted centroids, and retrieves against the composite harmonic identity of the session as it evolves. Session centroids projected into a navigable 3-D space reveal structural harmonic relations across the composer's body of work. This paper is a systems account: we give the design rationale for each architectural decision, characterize Reflector's behavior through intrinsic measurements on a working sample library, and describe the implementation. The characterization yields a central finding: the learned embedding preserves the kernel's pairwise judgments while covering the whole library, something the kernel cannot do when used directly as a retrieval rule, because the embedding's normalized geometry cannot express the degenerate solutions that direct scoring favors. The entire pipeline runs locally with no copyrighted training data. Reflector is free, and the training pipeline is open source.",
+      "authors": [
+        "Austin Rockman"
+      ],
+      "published": "2026-07-24T15:30:30Z",
+      "updated": "2026-07-24T15:30:30Z",
+      "url": "https://arxiv.org/abs/2607.22413",
+      "pdf_url": "https://arxiv.org/pdf/2607.22413.pdf",
+      "primary_category": "cs.SD",
+      "categories": [
+        "cs.SD",
+        "cs.IR",
+        "cs.LG"
+      ],
+      "tags": [
+        "cs.IR",
+        "cs.LG",
+        "cs.SD"
+      ],
+      "domain": "AI",
+      "pdf_downloaded": true,
+      "pdf_size_bytes": 2430449,
+      "pdf_path": "2026-07-27/ai/2607.22413.pdf"
+    },
+    {
+      "id": "2607.22408",
+      "title": "LunarFM: A Shared Multimodal Representation of the Moon's Surface",
+      "abstract": "The renewed global focus on lunar exploration, driven by the prospect of in-situ resource utilization and a sustained human presence on the Moon, has created growing demand for accurate, large-scale characterization of the lunar surface. Although vast quantities of orbital remote-sensing data have been collected, scientific analysis and resource mapping remain fragmented by heterogeneous multiinstrument observations, sparse labels, and bespoke task-specific modelling workflows. Here we introduce LunarFM, a multimodal foundation model that learns a general representation of the lunar surface from diverse orbital measurements. LunarFM assimilates observations from six instruments across three lunar missions, mapping 18 input channels to a shared embedding space. We demonstrate that this embedding space supports a diverse range of downstream applications, including similarity search, few-shot resource mapping, mineral abundance regression, and geological unit classification, enabling efficient scientific investigation and resource-oriented analysis. We provide a machine-learning-ready dataset of co-registered multimodal observations spanning latitudes from 70\u00b0S to 70\u00b0N, a pretrained multimodal masked autoencoder, and a companion embedding dataset providing a joint 768-dimensional representation of lunar surface properties. All code and data are available at https://lunarfm.trillium.tech/",
+      "authors": [
+        "Marc Girona-Mata",
+        "Jakob Gawlikowski",
+        "Sumit Goski",
+        "Gautier Bardi de Fourtou",
+        "Valentin T. Bickel",
+        "Ben Moseley",
+        "Abigail Calzada-Diaz",
+        "Sylvester Kaczmarek",
+        "Ra\u00fal Ramos-Poll\u00e1n"
+      ],
+      "published": "2026-07-24T15:25:20Z",
+      "updated": "2026-07-24T15:25:20Z",
+      "url": "https://arxiv.org/abs/2607.22408",
+      "pdf_url": "https://arxiv.org/pdf/2607.22408.pdf",
+      "primary_category": "cs.LG",
+      "categories": [
+        "cs.LG"
+      ],
+      "tags": [
+        "cs.LG"
+      ],
+      "domain": "AI",
+      "pdf_downloaded": false,
+      "pdf_size_bytes": null,
+      "pdf_path": null
+    },
+    {
+      "id": "2607.22400",
+      "title": "A Self-Calibrating Agentic AI Framework for Autonomous Edge Resource Allocation",
+      "abstract": "Large Language Models (LLMs) are increasingly deployed as autonomous agents, transitioning from static conversational interfaces to dynamic systems capable of complex reasoning, tool execution, and decision-making. However, the operational reliability of these agentic AI systems is fundamentally challenged by the absence of reliable ground truth in open-ended environments and the risk of increasing operational drift over time. To address this challenge, we propose and experimentally evaluate an agentic AI framework, designed to enforce autonomous integrity within LLM-driven systems. We design a self-calibration mechanism that mitigates drift and dynamically approximates ground truth by incorporating an ARIMA forecaster, without requiring continuous human oversight. To demonstrate the effectiveness and reliability of our methodology, we apply it to the complex domain of profiling the resource usage of zero-knowledge workloads in edge computing networks. Experimental results show that the proposed self-calibrating agentic framework successfully profiles the zero-knowledge workloads, achieving a higher accuracy than baseline LLM agents by 91.7% for resource usage prediction and improving the prediction speed by 71.7% compared to pure profiling, establishing a robust foundation for deploying autonomous AI in decentralized infrastructures. Furthermore, the ground truth generation using the proposed ARIMA leaping algorithm is 52% faster than a standard ARIMA forecasting algorithm, while achieving the same accuracy.",
+      "authors": [
+        "Fin Gentzen",
+        "Marla Grunewald",
+        "Iulisloi Zacarias",
+        "Mounir Bensalem",
+        "Admela Jukan"
+      ],
+      "published": "2026-07-24T15:21:54Z",
+      "updated": "2026-07-24T15:21:54Z",
+      "url": "https://arxiv.org/abs/2607.22400",
+      "pdf_url": "https://arxiv.org/pdf/2607.22400.pdf",
+      "primary_category": "cs.NI",
+      "categories": [
+        "cs.NI",
+        "cs.AI"
+      ],
+      "tags": [
+        "cs.AI",
+        "cs.NI"
+      ],
+      "domain": "AI",
+      "pdf_downloaded": true,
+      "pdf_size_bytes": 3145835,
+      "pdf_path": "2026-07-27/ai/2607.22400.pdf"
+    }
+  ]
+}
