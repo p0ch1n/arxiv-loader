@@ -1,0 +1,727 @@
+{
+  "domain": "Agent",
+  "date": "2026-07-29",
+  "count": 25,
+  "papers": [
+    {
+      "id": "2607.26056",
+      "title": "INTACT: Isomorphic Intent-to-Action Learning for Search-Free World Models",
+      "abstract": "Forward latent world models predict how actions change a scene, but recover actions for a desired change only through expensive test-time search. We introduce INTACT (INtent-To-ACTion), an end-to-end JEPA that turns action-labeled, reward-free trajectories into a deployable intent-to-action interface. Each transition supplies physical intent $z_{t+1}-z_t$, while a future goal supplies deployment intent $\\operatorname{sg}(z_g)-z_t$. The architecture is isomorphic between the local and goal motion-intent backbone-input graphs through an identical four-slot grammar and shared parameters, and between supported local and goal motion-intent families through action-law semantics induced by the same predictor rather than pointwise latent equality. INTACT also provides intact transfer from RGB evidence to action-effective latent intent coordinates and from intent families to their corresponding action-law families. Asymmetric endpoint gradients ground physical successors and fix future goals as anchors, joining representation learning and control without pointwise latent matching or globally linear dynamics. The resulting coordinates support a robust distributional action law: its conditional mean serves directly as a search-free policy, while sampling remains available for diversity or optional verification. On the four official LeWM tasks, one-epoch, zero-search models reach 85.78\\%, 100.00\\%, 97.67\\%, and 97.89\\% success. Optional local CEM centered on the Direct plan reaches 96.86\\% macro success using 384 instead of 9,000 candidate sequences, reducing sampling by $23.44\\times$ while improving pure CEM by 16.00 points. One shared four-task encoder reaches 89.39\\% E5 Direct macro and improves every task over jointly trained LeWM, while predicted--expert action-family kNN tracks Direct success at $r=0.954$. Direct inference takes 2.9--5.5 ms.",
+      "authors": [
+        "Junhan Sun",
+        "Hao Zhao",
+        "Guofeng Zhang"
+      ],
+      "published": "2026-07-28T17:59:40Z",
+      "updated": "2026-07-28T17:59:40Z",
+      "url": "https://arxiv.org/abs/2607.26056",
+      "pdf_url": "https://arxiv.org/pdf/2607.26056.pdf",
+      "primary_category": "cs.RO",
+      "categories": [
+        "cs.RO"
+      ],
+      "tags": [
+        "cs.RO"
+      ],
+      "domain": "Agent",
+      "pdf_downloaded": true,
+      "pdf_size_bytes": 2223744,
+      "pdf_path": "2026-07-29/agent/2607.26056.pdf"
+    },
+    {
+      "id": "2607.26047",
+      "title": "S2A2: Audio-Visual Imitation Learning for Manipulation Tasks Using Acoustic Spatial Information",
+      "abstract": "Acoustic information provides rich cues about object location, material properties, and changes caused by contact or motion. This paper introduces a new set of acoustic-aware manipulation tasks for imitation learning, in which robots must use auditory cues to determine manipulation targets. These tasks require sound source localization and identification for active exploration in robotic manipulation. Also, we propose a multimodal imitation learning framework, Spatial-Spectral Audio Action (S2A2), that integrates visual features with acoustic spatial and acoustic signal information for the acoustic-aware manipulation tasks. We implemented S2A2 models that integrates policies such as ACT, Diffusion Policy, VQ-BeT, and $\u03c0_0$, into our framework. Simulation experiments showed that the proposed method is the most effective for tasks requiring both position and timbre. Furthermore, real-robot experiments confirm the applicability of the proposed tasks and framework to real-world manipulation.",
+      "authors": [
+        "Kaneyoshi Hiratsuka",
+        "Benjamin Yen",
+        "Ryosuke Kojima"
+      ],
+      "published": "2026-07-28T17:56:07Z",
+      "updated": "2026-07-28T17:56:07Z",
+      "url": "https://arxiv.org/abs/2607.26047",
+      "pdf_url": "https://arxiv.org/pdf/2607.26047.pdf",
+      "primary_category": "cs.RO",
+      "categories": [
+        "cs.RO"
+      ],
+      "tags": [
+        "cs.RO"
+      ],
+      "domain": "Agent",
+      "pdf_downloaded": true,
+      "pdf_size_bytes": 14324307,
+      "pdf_path": "2026-07-29/agent/2607.26047.pdf"
+    },
+    {
+      "id": "2607.25918",
+      "title": "DC-WAM: Dynamic-Centric Visual Supervision and Reasoning for World-Action Models",
+      "abstract": "World-Action Models (WAMs) augment robot policies with future visual prediction, but it remains unclear what the visual modality should learn for control. While photorealistic future prediction provides dense supervision, it also incurs substantial computation and can allocate capacity to texture, illumination, and background variations that are only weakly related to action selection. Recent efficient WAM variants suggest that the main benefit of the video branch may not lie in the rendered future itself, but in the control-relevant visual representations induced during training. In this work, we revisit future video prediction from a dynamic-centric perspective and ask whether an existing RGB-based WAM can be redirected from appearance-dominated reconstruction toward interaction-induced visual dynamics without introducing additional modality-specific predictions or online inputs at deployment. We propose DC-WAM, a dynamic-centric WAM framework that redistributes supervision and computation in the RGB video branch. At the supervision level, DC-WAM combines temporal-difference flow matching with trajectory-guided weighting, emphasizing dense temporal changes and localized regions where the gripper, manipulated objects, and contact areas move. At the reasoning level, DynaRoute predicts token-wise dynamic relevance and converts it into an attention bias, guiding the model toward control-relevant future tokens. Experiments in simulation and on real-world manipulation tasks show that DC-WAM consistently improves policy performance, especially under out-of-distribution perturbations in lighting, object appearance, and background texture.",
+      "authors": [
+        "Haoyuan Ji",
+        "Lingxiang Fan",
+        "Shang Su",
+        "Yinqiao Lu",
+        "Mengkai Shi",
+        "Jun Gao",
+        "Shuo Feng"
+      ],
+      "published": "2026-07-28T16:08:50Z",
+      "updated": "2026-07-28T16:08:50Z",
+      "url": "https://arxiv.org/abs/2607.25918",
+      "pdf_url": "https://arxiv.org/pdf/2607.25918.pdf",
+      "primary_category": "cs.RO",
+      "categories": [
+        "cs.RO"
+      ],
+      "tags": [
+        "cs.RO"
+      ],
+      "domain": "Agent",
+      "pdf_downloaded": true,
+      "pdf_size_bytes": 5183983,
+      "pdf_path": "2026-07-29/agent/2607.25918.pdf"
+    },
+    {
+      "id": "2607.25912",
+      "title": "SAM3D-Guided Object-Centric Representation Alignment for Vision-Language-Action Models",
+      "abstract": "Vision-Language-Action (VLA) models have shown strong potential for general robot manipulation, but most existing models rely on 2D visual-language backbones and lack fine-grained 3D understanding of target objects, especially under occlusion, pose variation, scale changes, and precise spatial interaction. We propose an object-centric 3D representation alignment framework built upon $\u03c0_0$, using SAM3D as a frozen 3D teacher to provide target-object 3D priors during training. Specifically, we localize task-relevant objects with object recognition models, generate corresponding object masks, and use SAM3D to extract dense object-level 3D representations, which are aligned with intermediate visual features of $\u03c0_0$. This enables the policy to internalize target-object 3D information while preserving the original RGB-language-to-action inference pipeline without requiring depth, point clouds, masks, SAM3D, or additional 3D modules at test time. Simulation experiments show consistent improvements, achieving 99.1\\% on LIBERO and an average length of 4.11 on CALVIN. Real-world experiments further demonstrate that our method is particularly effective in long-horizon manipulation scenarios where the robot must focus on different target objects across multiple subtasks.",
+      "authors": [
+        "Zonghe Liu",
+        "Shanyuan Jie",
+        "Xiaoquan Sun",
+        "Chen Cao",
+        "Zetian Xu",
+        "Zongsheng Liu",
+        "Jiayu Chen"
+      ],
+      "published": "2026-07-28T16:05:32Z",
+      "updated": "2026-07-28T16:05:32Z",
+      "url": "https://arxiv.org/abs/2607.25912",
+      "pdf_url": "https://arxiv.org/pdf/2607.25912.pdf",
+      "primary_category": "cs.RO",
+      "categories": [
+        "cs.RO",
+        "cs.AI"
+      ],
+      "tags": [
+        "cs.AI",
+        "cs.RO"
+      ],
+      "domain": "Agent",
+      "pdf_downloaded": true,
+      "pdf_size_bytes": 5554248,
+      "pdf_path": "2026-07-29/agent/2607.25912.pdf"
+    },
+    {
+      "id": "2607.25883",
+      "title": "Towards a Systems Foundation for Agentic Cloud Management",
+      "abstract": "Agentic cloud management is emerging as a practice to automate laborious operations, minimize toil, and improve responsiveness. Despite the rapid development of autonomous management agents, we argue that the fundamental missing piece is a systems foundation to enable safe, effective operations across agents and between agents and human operators. In this paper, we advocate for the need of such a systems foundation and share our efforts on developing CloudWeaver, an agentic management substrate that works across existing cloud-user interfaces and future agent-native interfaces. Specifically, we discuss how CloudWeaver (1) scopes the context of individual agent sessions with local views of cloud resources and (2) coordinates concurrent management operations on shared cloud resources. CloudWeaver offers strong safety guarantees and attributable feedback in the presence of conflicting intents, while preserving concurrency between independent operations. We validate CloudWeaver using a representative Azure API workload.",
+      "authors": [
+        "Minghao Li",
+        "Ziqian Liu",
+        "Ziyu Mao",
+        "Daqian Ding",
+        "Yu Kang",
+        "Qingwei Lin",
+        "Tianyin Xu",
+        "Yiming Qiu"
+      ],
+      "published": "2026-07-28T15:44:44Z",
+      "updated": "2026-07-28T15:44:44Z",
+      "url": "https://arxiv.org/abs/2607.25883",
+      "pdf_url": "https://arxiv.org/pdf/2607.25883.pdf",
+      "primary_category": "cs.MA",
+      "categories": [
+        "cs.MA"
+      ],
+      "tags": [
+        "cs.MA"
+      ],
+      "domain": "Agent",
+      "pdf_downloaded": true,
+      "pdf_size_bytes": 801754,
+      "pdf_path": "2026-07-29/agent/2607.25883.pdf"
+    },
+    {
+      "id": "2607.25865",
+      "title": "OmniQEC: discovering practical quantum error-correcting codes by an AI scientist",
+      "abstract": "Quantum error correction (QEC) is indispensable for scalable fault-tolerant quantum computing. However, discovering QEC codes that remain effective is challenging, as logical performance depends on the interplay between code structure, hardware, syndrome extraction, and decoding, which often impose competing requirements. Here we introduce OmniQEC, an efficient AI scientist for discovering QEC codes suited to deployment on modern quantum processors. OmniQEC formulates QEC design as an iterative discovery process in which an orchestrator, implemented by advanced large language models (LLMs), coordinates code generation, code-level screening, syndrome-extraction synthesis, and decoder-based circuit evaluation. At its core, OmniQEC combines a self-evolving reasoning mechanism with a slow--fast synergistic workflow: a fast loop explores candidates using inexpensive code-level proxies, whereas a slow loop performs physically grounded circuit-level evaluation and feeds the resulting evidence back into the search. We evaluate OmniQEC across four qLDPC construction families, three LLM backends, and $14$ total-physical-qubit budgets per backend. The discovered codes show steadily improving logical-error suppression with increasing physical-qubit budgets and outperform the BB codes with $[\\![72,12,6]\\!]$ and $[\\![144,12,12]\\!]$ under complete-implementation budgets of 98 and 240 physical qubits, respectively. The discovered codes are hardware-friendly and may be of independent interest for practical QEC implementation. These findings pave the way towards LLM-assisted QEC discovery grounded in physically informed code--circuit--decoder co-design.",
+      "authors": [
+        "Ge Yan",
+        "Shanchuan Li",
+        "Pengyue Ma",
+        "Qixin Zhang",
+        "Pingchuan Ma",
+        "Jianping Wang",
+        "Min-Hsiu Hsieh",
+        "Yuxuan Du"
+      ],
+      "published": "2026-07-28T15:31:26Z",
+      "updated": "2026-07-28T15:31:26Z",
+      "url": "https://arxiv.org/abs/2607.25865",
+      "pdf_url": "https://arxiv.org/pdf/2607.25865.pdf",
+      "primary_category": "quant-ph",
+      "categories": [
+        "quant-ph",
+        "cs.AI",
+        "cs.MA"
+      ],
+      "tags": [
+        "cs.AI",
+        "cs.MA",
+        "quant-ph"
+      ],
+      "domain": "Agent",
+      "pdf_downloaded": true,
+      "pdf_size_bytes": 1004617,
+      "pdf_path": "2026-07-29/agent/2607.25865.pdf"
+    },
+    {
+      "id": "2607.25825",
+      "title": "CHILL-Harness: Counterfactual Harness Learning for Efficient Reasoning in Long-Horizon Agents",
+      "abstract": "Agent harnesses have become the operational infrastructure of modern large language model agents, coordinating context, tools, verification, and execution control to translate latent model capability into reliable long-horizon behavior. However, reliable long-horizon behavior requires harness control to adapt to task demands, execution environments, and evolving execution states, whereas current harnesses predominantly rely on hand-crafted or globally fixed policies; this mismatch manifests as unnecessary computational overhead and, in adverse cases, reduced task success. To address this limitation, we formulate the task of enabling adaptive orchestration in harness systems as a causal learning problem and propose Counterfactual Harness Intervention Learning for Long-Horizon Agents (CHILL-Harness). CHILL-Harness intervenes at the orchestration layer to enable advantage-guided workflow adaptation, thereby improving reasoning and execution efficiency while preserving task performance. Specifically, we develop causal intervention effect learning as the effect-estimation component of CHILL-Harness to estimate intervention-relative workflow advantage from confidence-weighted execution evidence and identify advantageous workflow adaptations. We further introduce advantage-realizing causal orchestration as its realization component to adaptively allocate counterfactual reasoning and realize only workflow adjustments supported by sufficient expected advantage. Finally, we incorporate a success-preserving objective and advantage-margin authorization constraints into CHILL-Harness to promote reliable adaptation. Extensive experiments on heterogeneous long-horizon tasks spanning information seeking, software engineering, and terminal interaction show that CHILL-Harness consistently preserves or improves task success while substantially reducing token consumption and execution time.",
+      "authors": [
+        "Jiarun Fu",
+        "Lizhong Ding",
+        "Sida Chen",
+        "Honglei Xin",
+        "Chunhui Zhang",
+        "Pengqi Li",
+        "Qiuning Wei",
+        "Ye Yuan",
+        "Guoren Wang"
+      ],
+      "published": "2026-07-28T15:06:00Z",
+      "updated": "2026-07-28T15:06:00Z",
+      "url": "https://arxiv.org/abs/2607.25825",
+      "pdf_url": "https://arxiv.org/pdf/2607.25825.pdf",
+      "primary_category": "cs.MA",
+      "categories": [
+        "cs.MA"
+      ],
+      "tags": [
+        "cs.MA"
+      ],
+      "domain": "Agent",
+      "pdf_downloaded": true,
+      "pdf_size_bytes": 2328372,
+      "pdf_path": "2026-07-29/agent/2607.25825.pdf"
+    },
+    {
+      "id": "2607.25807",
+      "title": "Modular Robotic Catheters for Endovascular Aneurysm Repair",
+      "abstract": "Fenestrated/Branched endovascular aneurysm repair (FEVAR/BEVAR) require surgeons to navigate catheters and guidewires into various branches of the abdominal aorta, before deploying stent grafts to alleviate pressure on the aneurysm. Previous clinical studies suggests that surgeons continue to struggle with vessel access using standard commercial instruments, prolonging the procedural time and inducing further complications. In this work, we present two contributions to solving this problem: 1) A bespoke 2-segment steerable catheter, consisting of 4 degrees of freedom to enhance dexterity. 2) An expandable, modular tendon-driven actuation platform that can accommodate for the redundancies introduced in our system. To fabricate the catheter, we capitalized on thermal fiber drawing, a technique that creates high-aspect ratio devices at scale, and processed the catheter with laser micro-machining to soften its tip. We evaluated the system using simulations, where we investigated the catheter's bending stiffness, then its steerability with in-vitro experiments in vascular phantoms. This handheld, robotic steerable catheter system has the potential to shorten the length of future endovascular surgeries, and give clinicians the tools to resolve challenging clinical cases.",
+      "authors": [
+        "Alex Ranne",
+        "Jinshi Zhao",
+        "Ali Anil Demircali",
+        "Songli Moey",
+        "Ayhan Aktas",
+        "Burak Temelkuran",
+        "Nassir Navab",
+        "Ferdinando Rodriguez y Baena"
+      ],
+      "published": "2026-07-28T14:53:03Z",
+      "updated": "2026-07-28T14:53:03Z",
+      "url": "https://arxiv.org/abs/2607.25807",
+      "pdf_url": "https://arxiv.org/pdf/2607.25807.pdf",
+      "primary_category": "cs.RO",
+      "categories": [
+        "cs.RO"
+      ],
+      "tags": [
+        "cs.RO"
+      ],
+      "domain": "Agent",
+      "pdf_downloaded": true,
+      "pdf_size_bytes": 20170629,
+      "pdf_path": "2026-07-29/agent/2607.25807.pdf"
+    },
+    {
+      "id": "2607.25798",
+      "title": "Transformer Transformer: A Unified Model for Motion-Conditioned Robot Co-design",
+      "abstract": "An often overlooked factor of robot manipulation performance is the embodiment of the robot itself. Motivated by this problem, we study motion-conditioned robot co-design, where the goal is to generate complete robot designs that track target end-effector trajectories (from human demonstrations) while optimizing user-defined rewards. We introduce Transformer Transformer, a diffusion transformer trained on RoboTokens, a unified tokenization of robot embodiments, states, and actions. The same architecture can be used across embodiment spaces (e.g., wheeled bimanual, quadrupeds, humanoids) and use cases (embodiment generation, cross embodiment controller). Rather than overfitting to one reward function, Transformer Transformer is a dynamics model, whose reward-agnostic state and action predictions can be converted into reward-specific value predictions. These value predictions are used to steer embodiment diffusion towards high value robot designs, through a procedure we call Dynamics Self-Guidance. Experiments across multiple design spaces show zero-shot optimization of unseen rewards and trajectories, improving performance and runtime over the evolutionary baseline. Finally, we fabricated an optimized ALOHA design, which reduced tracking error by over 70% compared to the original design.",
+      "authors": [
+        "Huy Ha",
+        "C. Karen Liu",
+        "Shuran Song"
+      ],
+      "published": "2026-07-28T14:47:14Z",
+      "updated": "2026-07-28T14:47:14Z",
+      "url": "https://arxiv.org/abs/2607.25798",
+      "pdf_url": "https://arxiv.org/pdf/2607.25798.pdf",
+      "primary_category": "cs.RO",
+      "categories": [
+        "cs.RO"
+      ],
+      "tags": [
+        "cs.RO"
+      ],
+      "domain": "Agent",
+      "pdf_downloaded": true,
+      "pdf_size_bytes": 3860638,
+      "pdf_path": "2026-07-29/agent/2607.25798.pdf"
+    },
+    {
+      "id": "2607.25784",
+      "title": "Motion-Acceleration Calibration and Compensation in IMUs without External Equipment for Attitude Estimation Filters",
+      "abstract": "Attitude estimation based on inertial sensing requires measurements of local angular velocities and local gravity via gyroscopes and accelerometers. However, during the motion of a mobile system the inertial measurement unit (IMU) will be subject to additional accelerations which skews the measurement of local gravity. This effect gets amplified the further away the IMU is from the base of the system. Many attitude estimation filters, such as \"Madgwick\" or \"Mahony\", account for this by relying more on gyroscope integration for periods of high angular velocity. However, this approach is prone to accumulate long term error especially around the gravity vector. In this work we utilize the gyroscope measurements to compensate the additional accelerations induced by the motion of the system, i.e., centripetal- and tangential-accelerations. Additionally, we introduce a calibration method that estimates intrinsic IMU parameters such as axes misalignment, bias, scale, as well as the extrinsic base-to-IMU vector without the necessity for additional external equipment. Our evaluation in simulation as well as in the real-world shows that this method improves any attitude filter that relies on the direction of gravity. Furthermore we demonstrate the effectivenes on highly dynamic systems, and systems that are unable to put the IMU at the center of rotation, using our real-world spherical mobile mapping system.",
+      "authors": [
+        "Fabian Arzberger",
+        "Andreas N\u00fcchter"
+      ],
+      "published": "2026-07-28T14:37:46Z",
+      "updated": "2026-07-28T14:37:46Z",
+      "url": "https://arxiv.org/abs/2607.25784",
+      "pdf_url": "https://arxiv.org/pdf/2607.25784.pdf",
+      "primary_category": "cs.RO",
+      "categories": [
+        "cs.RO"
+      ],
+      "tags": [
+        "cs.RO"
+      ],
+      "domain": "Agent",
+      "pdf_downloaded": true,
+      "pdf_size_bytes": 6161074,
+      "pdf_path": "2026-07-29/agent/2607.25784.pdf"
+    },
+    {
+      "id": "2607.25781",
+      "title": "Tripody: An Overconstrained 3-SPR-like Parallel Robot for High-Reach Construction Tasks",
+      "abstract": "Many ceiling construction tasks still rely on heavy serial manipulators that are difficult to deploy in cluttered interiors, motivating lightweight, field-ready alternatives that reach ceiling height while maintaining millimeter-level accuracy and the stiffness demanded by overhead tool loads. We introduce Tripody, a wheeled 3-DoF parallel robot for high-reach tasks that replaces the base spherical joints of a classical 3-SPR (3 legs; S: base spherical joint; P: actuated prismatic joint; R: end-effector revolute joint) morphology with universal joints, intentionally overconstraining the mechanism; small, distributed elastic deflections absorb the resulting incompatibilities, preserving predominantly translational motion. The 33kg system extends from 1.7m to 3.4m in height, supports a continuous 32kg payload, and offers a modular end-effector interface for ceiling operations. We detail the mechanical design - including custom linear actuators and a kinematic-compatibility analysis - and a control stack for accurate positioning that combines SE(3) state estimation, forward kinematics, and task-space control. In experiments, Tripody exhibits similar in-plane stiffness to a spherical-base variant but substantially higher torsional stiffness - an increase of 67% at 1.7m, 196% at 2.6m, and 454% at 3.4m - while maintaining negligible cross-axis coupling. Closed-loop positioning with a total station converges below 0.6mm across the entire workspace; pure model extrapolation achieves a 95th-percentile error of 2.7mm (max 3.6mm). Finally, we demonstrate task-level ceiling-drilling feasibility in an open-loop study by drilling a 15-hole pattern with 4.5mm maximum relative hole-position error after rigid alignment. These results support overconstrained, compliance-absorbing 3-SPR-like architectures as a practical path to lightweight, high- reach, millimeter-accurate construction robots.",
+      "authors": [
+        "Julien Kindle",
+        "Jakub Raczy",
+        "Riccardo Balbi",
+        "Andrea Alessandretti",
+        "Cesar Cadena",
+        "Marco Hutter"
+      ],
+      "published": "2026-07-28T14:36:16Z",
+      "updated": "2026-07-28T14:36:16Z",
+      "url": "https://arxiv.org/abs/2607.25781",
+      "pdf_url": "https://arxiv.org/pdf/2607.25781.pdf",
+      "primary_category": "cs.RO",
+      "categories": [
+        "cs.RO"
+      ],
+      "tags": [
+        "cs.RO"
+      ],
+      "domain": "Agent",
+      "pdf_downloaded": true,
+      "pdf_size_bytes": 5562171,
+      "pdf_path": "2026-07-29/agent/2607.25781.pdf"
+    },
+    {
+      "id": "2607.25754",
+      "title": "Cooperative Multi-UAV Navigation in Complex Environments via Systematic Multi-Agent Deep Reinforcement Learning",
+      "abstract": "Cooperative navigation of multi-agent UAVs in complex environments faces key challenges including local optima traps, sparse rewards, learning imbalance among agents, and insufficient cross-scenario generalisation. This paper proposes a multi-agent deep reinforcement learning framework that addresses these issues through coordinated exploration, demonstration exploitation, safe curriculum scheduling, and structure-aware generalisation. First, a perception mechanism combining memory of visited states, directional novelty estimates, and penalty backpropagation enables agents to proactively detect and escape local optima. Second, a hierarchical collaborative demonstration buffer with tiered behaviour cloning manages trajectories by degree of team collaboration and applies differential supervision to the actor network, improving demonstration utilisation under sparse collaborative signals. Third, a safety-aware dual-condition curriculum scheduling mechanism reviews mastered scenarios through back-testing and experience pre-filling during training, suppressing catastrophic forgetting while ensuring both task performance and flight safety. For generalisation, local geometric features computed from sensor readings are abstracted into a domain parameter, through which a structure-aware gating network and mixture-of-experts mechanism condition the policy on local structural patterns rather than scenario-specific coordinates, enabling cross-scenario transfer without exposure to the target environment. The framework is further validated under mixed static-dynamic obstacle settings, showing robust adaptability to dynamic disturbances. Simulation results confirm strong performance in collaboration success rate, navigation robustness, zero-shot cross-scenario generalisation, and dynamic environment adaptability.",
+      "authors": [
+        "Yu Su",
+        "Nabil Aouf"
+      ],
+      "published": "2026-07-28T14:16:11Z",
+      "updated": "2026-07-28T14:16:11Z",
+      "url": "https://arxiv.org/abs/2607.25754",
+      "pdf_url": "https://arxiv.org/pdf/2607.25754.pdf",
+      "primary_category": "cs.RO",
+      "categories": [
+        "cs.RO"
+      ],
+      "tags": [
+        "cs.RO"
+      ],
+      "domain": "Agent",
+      "pdf_downloaded": true,
+      "pdf_size_bytes": 6073794,
+      "pdf_path": "2026-07-29/agent/2607.25754.pdf"
+    },
+    {
+      "id": "2607.25731",
+      "title": "Tri-Manual Visuomotor Imitation Learning of Robot Policies",
+      "abstract": "Bimanual teleoperation provides an effective way to collect robot demonstrations, but it assumes that the operator and robot have matching numbers of simultaneous control channels. This assumption breaks for tri-manual systems: the robot can coordinate three arms concurrently, whereas a single operator can continuously control only two. Pairwise mode switching may therefore record otherwise independent motions sequentially, causing behaviour cloning to reproduce delays imposed by the interface rather than required by the task. We present TriManPolicy, a tri-manual imitation learning system that allows one operator to demonstrate behaviours for three arms. Its central component is Dependency-Aware Tri-Arm Scheduling (DATS). The key idea is to preserve the demonstrated arm motions while reconsidering when they occur. DATS retimes demonstrations offline by preserving local sensorimotor segments of fixed duration and repositioning them according to constraints on task order and arm usage that are reviewed by a human. The resulting data train a single synchronous policy for all three arms, while deployment requires neither the dependency graph nor the scheduler. Across six challenging tasks performed in the real world, policies trained on demonstrations retimed by DATS exhibit more efficient coordination while maintaining comparable observed task success. Offline analysis further shows that DATS changes the supervision across arms rather than merely removing idle periods.",
+      "authors": [
+        "James Zhao",
+        "Mingyuan Ba",
+        "Weiming Zhi"
+      ],
+      "published": "2026-07-28T13:52:51Z",
+      "updated": "2026-07-28T13:52:51Z",
+      "url": "https://arxiv.org/abs/2607.25731",
+      "pdf_url": "https://arxiv.org/pdf/2607.25731.pdf",
+      "primary_category": "cs.RO",
+      "categories": [
+        "cs.RO"
+      ],
+      "tags": [
+        "cs.RO"
+      ],
+      "domain": "Agent",
+      "pdf_downloaded": true,
+      "pdf_size_bytes": 12040241,
+      "pdf_path": "2026-07-29/agent/2607.25731.pdf"
+    },
+    {
+      "id": "2607.25728",
+      "title": "Shared Voxel-Map-Based Cooperative Indoor UAV Guidance with a Multi-Agent Soft Actor-Critic Controller",
+      "abstract": "This paper presents a cooperative indoor UAV guidance framework that combines a shared voxel-map world model with a multi-agent Soft Actor-Critic (MASAC) controller. Multiple drones fuse 360 LiDAR observations into a common world-frame occupancy map, which is converted into a compact bird's-eye-view (BEV) representation and provided to each agent as an ego-aligned local crop. This integrate-in-world, act-in- ego design enables consistent multi-UAV spatial fusion whilst retaining decentralised continuous control. The policy combines BEV map features, near-field obstacle observations, and compact goal and peer-state information within a centralised-training, decentralised-execution framework. In simulation, the learned controller achieves a 90.3% success rate in corridor navigation, outperforming Astar planning, an artificial potential field controller, and a prior guidance method. To address residual sim-to-real mismatch, the simulation-trained policy is further adapted using offline imitation fine-tuning from real-world data. Real-world experiments in GNSS-denied indoor environments demonstrate stable two-UAV cooperative operation across increasingly chal- lenging obstacle layouts. The results show that shared voxel-map representations provide an effective and scalable spatial substrate for learned cooperative indoor UAV guidance.",
+      "authors": [
+        "Thomas Hickling",
+        "Dylan Wynne",
+        "Yu Su",
+        "Nabil Aouf"
+      ],
+      "published": "2026-07-28T13:52:12Z",
+      "updated": "2026-07-28T13:52:12Z",
+      "url": "https://arxiv.org/abs/2607.25728",
+      "pdf_url": "https://arxiv.org/pdf/2607.25728.pdf",
+      "primary_category": "cs.RO",
+      "categories": [
+        "cs.RO",
+        "cs.AI",
+        "cs.LG"
+      ],
+      "tags": [
+        "cs.AI",
+        "cs.LG",
+        "cs.RO"
+      ],
+      "domain": "Agent",
+      "pdf_downloaded": true,
+      "pdf_size_bytes": 3149455,
+      "pdf_path": "2026-07-29/agent/2607.25728.pdf"
+    },
+    {
+      "id": "2607.25647",
+      "title": "KQFuzz: Knowledge-Guided Fuzzing for Quantum Libraries via Large Language Models",
+      "abstract": "As quantum computing continually improves, ensuring the reliability and correctness of quantum libraries has become increasingly critical. To this end, many LLM-based fuzzing approaches towards quantum libraries have been proposed to uncover potential bugs. However, these methods still suffer from limitations such as insufficient flexibility and low efficiency, which hinder the progress of the quantum computing field. To address these challenges, we propose KQFuzz, a novel knowledge-guided fuzzer for quantum libraries. It leverages comprehensive codebase knowledge to ground LLM-based test generation, synergizing this with fitness-guided evaluation and two-level mutations to explore complex execution paths and trigger potential bugs. Firstly, KQFuzz introduces a novel prompting scheme tailored to quantum programs, which strategically incorporates knowledge of the codebase to efficiently generate high-quality quantum seed programs. Moreover, we develop evaluation and mutation strategies to handle the generated seed programs, facilitating efficient fuzzing execution while further enriching the diversity of the resulting test cases. We implement KQFuzz and conduct fuzzing on three popular quantum libraries, including Qiskit, PennyLane, and Cirq. Experimental results demonstrate that our approach significantly outperforms other state-of-the-art methods, with coverage improved by up to 18.44%. During the development of KQFuzz, we discovered 13 bugs, all of which have been confirmed and 12 have already been fixed by the developers.",
+      "authors": [
+        "Fuyuan Xia",
+        "Qixin Zhang",
+        "Chenhao Ying",
+        "Haojin Zhu",
+        "Shuai Wang",
+        "Yuan Luo",
+        "Pingchuan Ma",
+        "Yuxuan Du"
+      ],
+      "published": "2026-07-28T12:31:34Z",
+      "updated": "2026-07-28T12:31:34Z",
+      "url": "https://arxiv.org/abs/2607.25647",
+      "pdf_url": "https://arxiv.org/pdf/2607.25647.pdf",
+      "primary_category": "cs.SE",
+      "categories": [
+        "cs.SE",
+        "cs.AI",
+        "cs.MA",
+        "quant-ph"
+      ],
+      "tags": [
+        "cs.AI",
+        "cs.MA",
+        "cs.SE",
+        "quant-ph"
+      ],
+      "domain": "Agent",
+      "pdf_downloaded": true,
+      "pdf_size_bytes": 1491727,
+      "pdf_path": "2026-07-29/agent/2607.25647.pdf"
+    },
+    {
+      "id": "2607.25593",
+      "title": "When Does Legacy Data Start to Help? Emergent Transfer in Cross-Configuration Robot Learning",
+      "abstract": "Robotic hardware evolves over time, but demonstration data is often tied to a specific sensor and actuator configuration. This raises a practical and underexplored question: when does legacy data begin to benefit an upgraded robot? We study this question on a wheeled humanoid platform across two hardware generations, where both the camera and gripper are changed while the overall morphology remains fixed. Contrary to the common assumption that more cross-configuration data is always helpful, we observe a grokking-like transition: legacy data remains ineffective until the upgraded configuration acquires a minimum level of task competence, after which co-training gains rise sharply before diminishing near saturation. We hypothesize that this task-dependent transition is governed by a transfer threshold and characterize the resulting three-phase pattern. Across real-robot manipulation tasks, we observe all three phases: no measurable benefit at low competence ($10.0\\% \\rightarrow 10.0\\%$), a sharp gain after crossing the threshold ($23.3\\% \\rightarrow 86.7\\%$ on flower insertion), and diminishing returns at high competence ($85.0\\% \\rightarrow 93.3\\%$ on pen insertion). We provide a theoretical account based on gradient alignment and residual policy uncertainty, and derive a phase-aware rule for deciding when to collect more new-hardware data and when to reuse legacy demonstrations. We further validate this three-phase pattern on a mobile dual-arm watering task, with results consistent with our predictions.",
+      "authors": [
+        "Tao Wang",
+        "Hudson Hou",
+        "Yingdong Hu",
+        "Yufeng Liu",
+        "Qinghai Li",
+        "Yingjie Jiang",
+        "Yingzhi Wang",
+        "Cheng Ma",
+        "Richard Wang",
+        "Yang Gao"
+      ],
+      "published": "2026-07-28T11:24:52Z",
+      "updated": "2026-07-28T11:24:52Z",
+      "url": "https://arxiv.org/abs/2607.25593",
+      "pdf_url": "https://arxiv.org/pdf/2607.25593.pdf",
+      "primary_category": "cs.RO",
+      "categories": [
+        "cs.RO"
+      ],
+      "tags": [
+        "cs.RO"
+      ],
+      "domain": "Agent",
+      "pdf_downloaded": true,
+      "pdf_size_bytes": 1248724,
+      "pdf_path": "2026-07-29/agent/2607.25593.pdf"
+    },
+    {
+      "id": "2607.25566",
+      "title": "ARCHER: Agentic Rule and Compliance Harness for Executable Regulations",
+      "abstract": "Verifying building compliance requires validating thousands of rules against large Building Information Modeling (BIM) designs, which is laborious, capital-intensive, and unscalable. Existing Automated Compliance Checkers (ACCs) are often difficult to generalize across different scenarios, as they are typically developed for highly specific rule sets and use cases. In addition, many ACCs are proprietary, meaning the underlying verification code is not released to end users, so users cannot verify whether their regulatory intent can be accurately captured. We introduce ARCHER (Agentic Rule and Compliance Harness for Executable Regulations), a test-driven, deterministically orchestrated multi-agent program-synthesis harness that generates auditable verification code from regulatory Codes of Practice, enabling transparent, adaptable, and scalable compliance checking. To characterize what makes agentic synthesis work, we evaluate a taxonomy of six harnesses of increasing agentic sophistication across four backbone models, spanning realistic data-governance tiers (from frontier third-party APIs to a fully on-premise open-weights model) on a novel dataset derived from real-world compliance scenarios. ARCHER's deterministic multi-agent orchestration achieves the highest accuracy for every backbone, improving mean union accuracy by 82% over a naive single-pass prompting baseline. Our cost-accuracy analysis further shows that using the ARCHER harness, a self-hosted open-weights model can reach 97.8% of frontier-API accuracy at a quarter of the cost, making data-sovereign compliance checking practical.",
+      "authors": [
+        "Chiraag Singh Anand",
+        "Xue Wen Tan",
+        "Lionel Teo",
+        "Eric Tan"
+      ],
+      "published": "2026-07-28T10:54:28Z",
+      "updated": "2026-07-28T10:54:28Z",
+      "url": "https://arxiv.org/abs/2607.25566",
+      "pdf_url": "https://arxiv.org/pdf/2607.25566.pdf",
+      "primary_category": "cs.MA",
+      "categories": [
+        "cs.MA",
+        "cs.CE",
+        "cs.SE"
+      ],
+      "tags": [
+        "cs.CE",
+        "cs.MA",
+        "cs.SE"
+      ],
+      "domain": "Agent",
+      "pdf_downloaded": true,
+      "pdf_size_bytes": 4862341,
+      "pdf_path": "2026-07-29/agent/2607.25566.pdf"
+    },
+    {
+      "id": "2607.25541",
+      "title": "P3: Probabilistic Policy Propagation for Stable VAE-Based Robot Learning",
+      "abstract": "Variational Autoencoders are widely used to encode high-dimensional and noisy observations in robotics. However, their stochastic latent creates a mismatch with Proximal Policy Optimization (PPO): an effective policy marginalizes over the latent distribution, whereas former implementations estimate its probability ratio and KL divergence using only one latent sample. We identify a fundamental but overlooked theoretical cause: naive single-sample approximations in stochastic latent space induce significant variance and bias in the surrogate loss. To address this, we introduce P^3 (Probabilistic Policy Propagation), a distribution-aware optimization framework for VAE-based policies. $P^3$ couples moment-based probabilistic method for stable and efficient learning with sampling-based calibration for robust policy behavior under latent uncertainty. In our experiments, P^3 boosts data efficiency from 64.6% to >96%, reduces convergence steps by >20%. Furthermore, P^3 is evaluated on challenging humanoid parkour tasks and shows an effective foundation for VAE-based PPO. Code is available at https://github.com/ylyem9x/P3_Open.",
+      "authors": [
+        "Liyun Yan",
+        "Jianming Ma",
+        "Yang Zhang",
+        "Shengcheng Fu",
+        "Zhanxiang Cao",
+        "Keqi Zhu",
+        "Yizhi Chen",
+        "Yue Gao"
+      ],
+      "published": "2026-07-28T10:22:05Z",
+      "updated": "2026-07-28T10:22:05Z",
+      "url": "https://arxiv.org/abs/2607.25541",
+      "pdf_url": "https://arxiv.org/pdf/2607.25541.pdf",
+      "primary_category": "cs.RO",
+      "categories": [
+        "cs.RO"
+      ],
+      "tags": [
+        "cs.RO"
+      ],
+      "domain": "Agent",
+      "pdf_downloaded": true,
+      "pdf_size_bytes": 8314680,
+      "pdf_path": "2026-07-29/agent/2607.25541.pdf"
+    },
+    {
+      "id": "2607.25516",
+      "title": "A Causality-aware Infer-diagnose-refine Framework for Test-time Modality Adaptation in VLA Models",
+      "abstract": "Vision-language-action (VLA) models predict sequential actions to execute tasks specified by language instructions, conditioned on visual observations and proprioceptive states. However, how to fuse modalities in VLA models remains an open problem, since robot manipulation involves dynamic phases, such as long-distance movements and close-range interactions, in which the importance of visual observations may vary over time. In this paper, we propose an infer-diagnose-refine (IDR) framework, a model-agnostic framework that can be integrated with diverse VLA architectures for refining action predictions at test time. IDR first infers actions under factual and counterfactual scenarios of visual observations, and then diagnoses the causal effects of visual observations as the estimated dynamic importance, which is finally used to refine the action predictions in a training-free manner. We further design a causality-aware action refiner to realize the IDR framework, including zero-padding interventions for inferring counterfactual actions, norm-based quantification for diagnosing causal effects, and gated residual fusion for refining actions. Extensive experiments on both simulation benchmarks and real-world tasks show improvements in overall performance across multiple VLA backbones, demonstrating the efficacy of dynamically adjusting visual importance at test time.",
+      "authors": [
+        "Haoyu Zhang",
+        "Yuwei Wu",
+        "Jin Chen",
+        "Gao Zhi",
+        "Zhenxin Diao",
+        "Mingyang Gao",
+        "Kun Wu",
+        "Yongchun Liu",
+        "Fan Li"
+      ],
+      "published": "2026-07-28T09:56:42Z",
+      "updated": "2026-07-28T09:56:42Z",
+      "url": "https://arxiv.org/abs/2607.25516",
+      "pdf_url": "https://arxiv.org/pdf/2607.25516.pdf",
+      "primary_category": "cs.RO",
+      "categories": [
+        "cs.RO"
+      ],
+      "tags": [
+        "cs.RO"
+      ],
+      "domain": "Agent",
+      "pdf_downloaded": true,
+      "pdf_size_bytes": 4619624,
+      "pdf_path": "2026-07-29/agent/2607.25516.pdf"
+    },
+    {
+      "id": "2607.25514",
+      "title": "Learning Dynamics of Strategic Publishers in Generative AI Ecosystems",
+      "abstract": "Generative AI (GenAI) search systems are transforming how users access information. Unlike ranking-based search systems, where users observe a ranked list of documents, GenAI search systems, given a user's question, generate an answer, often accompanied by external sources (e.g., in the form of citations). Content creators (publishers) seeking to increase exposure might behave strategically and compete with other creators for users' attention. While publishers in ranking-based systems might strategically modify their content to improve its ranking, the incentives in generative systems take on a new form. Publishers may now gain exposure through generated responses and attributions to those responses. We introduce a novel game-theoretic model of the emerging GenAI ecosystem in which publishers compete for attribution-based exposure. We study the learning dynamics of strategic content creators under better-response dynamics. We associate the convergence of learning dynamics to equilibrium with ecosystem stability. Employing the notion of potential games, we study the stability of GenAI ecosystems under several known content selection mechanisms. We demonstrate the instability of mechanisms representing real-world modern systems and characterize a mechanism that induces a stable ecosystem. We conduct extensive simulations to analyze the stability and welfare of GenAI ecosystems under various mechanisms. The simulations support our theoretical findings and reveal an interplay among stability, publisher welfare, and user welfare. In particular, stable mechanisms do not necessarily maximize welfare, demonstrating an important trade-off for platform designers. We then introduce a study illustrating that the proper selection of the GenAI mechanism enables the manifestation of desired trade-offs between publisher welfare and the different sources of user welfare.",
+      "authors": [
+        "Sagie Dekel",
+        "Omer Madmon",
+        "Moshe Tennenholtz",
+        "Oren Kurland"
+      ],
+      "published": "2026-07-28T09:53:10Z",
+      "updated": "2026-07-28T09:53:10Z",
+      "url": "https://arxiv.org/abs/2607.25514",
+      "pdf_url": "https://arxiv.org/pdf/2607.25514.pdf",
+      "primary_category": "cs.GT",
+      "categories": [
+        "cs.GT",
+        "cs.IR",
+        "cs.MA"
+      ],
+      "tags": [
+        "cs.GT",
+        "cs.IR",
+        "cs.MA"
+      ],
+      "domain": "Agent",
+      "pdf_downloaded": true,
+      "pdf_size_bytes": 3536064,
+      "pdf_path": "2026-07-29/agent/2607.25514.pdf"
+    },
+    {
+      "id": "2607.25448",
+      "title": "Room-Mediated Co-occurrence for Zero-Shot Object-Centric Semantic Navigation via Frontier Scoring",
+      "abstract": "Zero-shot ObjectNav methods increasingly use vision-language priors, but direct object-object similarity in the latent space is often a weak proxy for spatial co-occurrence. We present an analytical, training-free semantic navigation pipeline that mediates object relationships through a compact room lexicon. Each object label is mapped to a CLIP-derived Room Probability Vector (RPV), and object-target co-occurrence is computed from RPV distribution overlap. These scores are projected onto a value map using geodesic flood-fill propagation (Fast Marching Method), with adaptive signal decay, and are used to rank frontiers by semantic score for navigation. Together, these components form an integrated, training-free, object-centric pipeline for open-vocabulary zero-shot navigation. Results show that our object-centric approach improves Success Rate (SR) and Success by weighted inverse Path Length (SPL) by a relative 3% and 1.3%, respectively, compared to image-holistic baselines on the HM3D dataset validation split, while preserving interpretability and open-vocabulary flexibility. Code is available at: uts-ri.github.io/RPV-SemNav.",
+      "authors": [
+        "Adam Scicluna",
+        "Gavin Paul",
+        "Alen Alempijevic"
+      ],
+      "published": "2026-07-28T08:36:26Z",
+      "updated": "2026-07-28T08:36:26Z",
+      "url": "https://arxiv.org/abs/2607.25448",
+      "pdf_url": "https://arxiv.org/pdf/2607.25448.pdf",
+      "primary_category": "cs.RO",
+      "categories": [
+        "cs.RO"
+      ],
+      "tags": [
+        "cs.RO"
+      ],
+      "domain": "Agent",
+      "pdf_downloaded": true,
+      "pdf_size_bytes": 2349003,
+      "pdf_path": "2026-07-29/agent/2607.25448.pdf"
+    },
+    {
+      "id": "2607.25447",
+      "title": "CoRenew: A large language model agent-based policy simulation platform for multifamily residential redevelopment",
+      "abstract": "The difficulty of collective action remains a central challenge in the design of policies for multifamily residential redevelopment. Stakeholders continually adjust their decisions in response to evolving negotiation contexts and the reactions of others, meaning that when a policy intervenes and which stakeholders it targets can substantially reshape collective outcomes. Assessing these adaptive responses ex ante remains difficult because existing simulation models often rely on predefined behavioral rules. Here, we present CoRenew, an open-source platform that uses LLM-based agents to simulate negotiations among multiple stakeholders and evaluate the effects of alternative policy combinations. Integrating open source geographic and demographic data, the platform can generate synthetic residents, simulate negotiation dynamics under alternative policy settings and compares policy performance across competing objectives. It supports both numerical and semantic policy inputs and includes built-in tools for visualization and result export. We validate its behavioral realism against survey responses from 324 residents and a nine-month observed negotiation process from a real redevelopment case. With its modular and adaptable architecture, CoRenew can be used to assess policies across different institutional and cultural contexts.",
+      "authors": [
+        "Yudi Zhang",
+        "Yuming Lin",
+        "Li Tian",
+        "Yu Wang",
+        "Jianghao Yu"
+      ],
+      "published": "2026-07-28T08:35:51Z",
+      "updated": "2026-07-28T08:35:51Z",
+      "url": "https://arxiv.org/abs/2607.25447",
+      "pdf_url": "https://arxiv.org/pdf/2607.25447.pdf",
+      "primary_category": "cs.MA",
+      "categories": [
+        "cs.MA"
+      ],
+      "tags": [
+        "cs.MA"
+      ],
+      "domain": "Agent",
+      "pdf_downloaded": true,
+      "pdf_size_bytes": 9388094,
+      "pdf_path": "2026-07-29/agent/2607.25447.pdf"
+    },
+    {
+      "id": "2607.25397",
+      "title": "Decompose and Reorganize: Planning with Primitives and Visuomotor Policies Learned from Demonstrations",
+      "abstract": "Successfully automating dexterous, long-horizon robotic manipulation requires frameworks capable of both high-level reasoning and fine-grained execution. Traditional task and motion planning (TAMP), while excellent at symbolic planning, is often brittle in contact-rich operations. Simultaneously, imitation learning (IL), while effective in manipulation tasks with visual feedback, is limited by its low capability in spatial generalization and multi-stage operation. To reconcile their complementary strengths and limitations, we propose DR-LfD (Decomposed and Reorganized Skills Learned from Demonstrations), a framework that seamlessly integrates visuomotor policies into a TAMP-gated decision-making system. Based on contact relationships, DR-LfD decomposes human demonstrations into atomic skills, which are reproduced as visuomotor policies or object-centric primitives. The initiation, termination, and constraints of the visuomotor policies are carefully modeled and implemented in a TAMP-compatible form, enabling reorganization of skills learned from different sources. DR-LfD transforms the learning problem from one requiring exponential demonstration data over possible skill sequences to one whose demonstration burden scales with the number of distinct skill types, with limited data for each skill. Through comprehensive real-world and simulation benchmarking across diverse scenarios, we demonstrate the strong performance of DR-LfD on tasks involving multiple steps, unseen setups, and physical constraints. Project website: https://dr-lfd.github.io/DR-LfD-website.",
+      "authors": [
+        "Yizhou Chen",
+        "Hang Xu",
+        "Dongjie Yu",
+        "Yupu Lu",
+        "Tengye Xu",
+        "Zeqing Zhang",
+        "Wei Zhang",
+        "Yi Ren",
+        "Ben M. Chen",
+        "Jia Pan"
+      ],
+      "published": "2026-07-28T07:57:09Z",
+      "updated": "2026-07-28T07:57:09Z",
+      "url": "https://arxiv.org/abs/2607.25397",
+      "pdf_url": "https://arxiv.org/pdf/2607.25397.pdf",
+      "primary_category": "cs.RO",
+      "categories": [
+        "cs.RO"
+      ],
+      "tags": [
+        "cs.RO"
+      ],
+      "domain": "Agent",
+      "pdf_downloaded": true,
+      "pdf_size_bytes": 18298723,
+      "pdf_path": "2026-07-29/agent/2607.25397.pdf"
+    },
+    {
+      "id": "2607.25389",
+      "title": "HOME: Robust Hough-space Matching Method for Structured and Textureless Videos",
+      "abstract": "Visual front-ends for robotic localization typically rely on point-based features such as Oriented FAST and Rotated BRIEF (ORB), which frequently fail in structured environments dominated by strong linear structures or textureless surfaces. While line-based Simultaneous Localization and Mapping (SLAM) systems mitigate this by utilizing line segments, conventional line extraction and description algorithms are computationally prohibitive for real-time edge robotics. To address this fundamental bottleneck, we propose HOME (Hough-space One-dimensional Matching of Extrema), an ultra-lightweight, training-free feature matching framework. HOME transforms images into Hough space, mapping global linear structures to stable local extrema, which serve as keypoints, thereby reformulating complex line matching into highly efficient one-dimensional point matching. The proposed 1D radial descriptor mathematically guarantees rotational and translational invariance without the overhead of explicit orientation estimation. As a proof of concept to validate the matching accuracy and efficiency of HOME, this paper focuses on homography estimation. Extensive evaluations demonstrate that HOME achieves robust registration in challenging scenarios where point-based methods fail, operating at a much faster speed than existing line-based methods. Extending this robust matching engine to full 3D pose estimation remains a highly promising future direction.",
+      "authors": [
+        "Masaki Satoh"
+      ],
+      "published": "2026-07-28T07:47:50Z",
+      "updated": "2026-07-28T07:47:50Z",
+      "url": "https://arxiv.org/abs/2607.25389",
+      "pdf_url": "https://arxiv.org/pdf/2607.25389.pdf",
+      "primary_category": "cs.CV",
+      "categories": [
+        "cs.CV",
+        "cs.RO"
+      ],
+      "tags": [
+        "cs.CV",
+        "cs.RO"
+      ],
+      "domain": "Agent",
+      "pdf_downloaded": true,
+      "pdf_size_bytes": 21416148,
+      "pdf_path": "2026-07-29/agent/2607.25389.pdf"
+    },
+    {
+      "id": "2607.25388",
+      "title": "SGTP: Sampling-based Game-Theoretic Planning for Real-Time Multi-Vehicle Autonomous Racing",
+      "abstract": "Autonomous multi-vehicle racing requires real-time planning of diverse competitive behaviors in intense interactions. Existing planners often struggle to balance strategic diversity and computational efficiency. To address this challenge, we propose Sampling-based Game-Theoretic Planning (SGTP), a real-time framework that combines game-theoretic reasoning with GPU-accelerated sampling of control sequences and dynamics rollouts. Sampled trajectories are ranked using a game-aware cost to capture competitive interactions and generate diverse racing behaviors. Our planner then performs feasibility selection by explicitly enforcing track-boundary and dynamic collision-avoidance constraints, ensuring safe and reliable transitions between racing strategies. Extensive simulations on challenging tracks show that SGTP achieves a 95.24% win rate and a 99.35% task-completion ratio in highly interactive races, with a mean computational time of 0.095 s over multiple iterative solving steps. We also demonstrate the successful application of SGTP in large-scale scenarios with up to 10 agents. We release our code and provide an open-source benchmark of multi-agent autonomous racing algorithms to facilitate future research. Project page: https://sgtp-racing.github.io/.",
+      "authors": [
+        "Zhouheng Li",
+        "Fangguo Zhao",
+        "Mattia Piccinini",
+        "Baha Zarrouki",
+        "Yuan Gao",
+        "Zitong Shan",
+        "Johannes Betz",
+        "Chen Lv",
+        "Lei Xie"
+      ],
+      "published": "2026-07-28T07:46:43Z",
+      "updated": "2026-07-28T07:46:43Z",
+      "url": "https://arxiv.org/abs/2607.25388",
+      "pdf_url": "https://arxiv.org/pdf/2607.25388.pdf",
+      "primary_category": "cs.RO",
+      "categories": [
+        "cs.RO"
+      ],
+      "tags": [
+        "cs.RO"
+      ],
+      "domain": "Agent",
+      "pdf_downloaded": true,
+      "pdf_size_bytes": 2868698,
+      "pdf_path": "2026-07-29/agent/2607.25388.pdf"
+    }
+  ]
+}
