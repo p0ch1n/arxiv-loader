@@ -1,0 +1,808 @@
+{
+  "domain": "Vision",
+  "date": "2026-08-18",
+  "count": 26,
+  "papers": [
+    {
+      "id": "2608.16887",
+      "title": "An Empirical Study of Training Pixel-Space Text-to-Image Diffusion Models",
+      "abstract": "This paper investigates an increasingly important topic in generative modeling: pixel-space diffusion models. Although numerous studies have explored this topic, most focus on small-scale or class-conditional settings. Consequently, a practical recipe for training pixel-space models that rival or exceed well-established latent-space counterparts remains elusive. Through a comprehensive empirical study, we first observe that direct large-scale pre-training in pixel space converges substantially more slowly than in latent space. This observation motivates a latent-to-pixel strategy that acquires generative priors efficiently in latent space and transitions to pixel space during post-training. We then systematically investigate the key design choices governing this transition, including weight initialization, data composition, prediction target, decoder architecture, and noise schedule, and identify a practical recipe that makes the resulting pixel-space models match or outperform their latent-space counterparts while delivering 3.18 to 4.75 times end-to-end inference speedups. We hope that our findings provide useful empirical insights and practical guidelines for future research on pixel-space generation.",
+      "authors": [
+        "Dengyang Jiang",
+        "Ruoyi Du",
+        "Zhennan Chen",
+        "Dongyang Liu",
+        "Zanyi Wang",
+        "Mingzhe Zheng",
+        "Xiangpeng Yang",
+        "Huanqia Cai",
+        "Aiming Hao",
+        "Yuming Jiang",
+        "Peng Gao",
+        "Harry Yang",
+        "Steven Hoi"
+      ],
+      "published": "2026-08-17T17:59:25Z",
+      "updated": "2026-08-17T17:59:25Z",
+      "url": "https://arxiv.org/abs/2608.16887",
+      "pdf_url": "https://arxiv.org/pdf/2608.16887.pdf",
+      "primary_category": "cs.CV",
+      "categories": [
+        "cs.CV"
+      ],
+      "tags": [
+        "cs.CV"
+      ],
+      "domain": "Vision",
+      "pdf_downloaded": true,
+      "pdf_size_bytes": 10118431,
+      "pdf_path": "2026-08-18/vision/2608.16887.pdf"
+    },
+    {
+      "id": "2608.16863",
+      "title": "SplatGuide: Geometric Priors from 3D Gaussians for Pose-Free Novel View Synthesis",
+      "abstract": "Generating photorealistic novel views from unposed images requires both 3D geometric understanding and the ability to synthesize unseen content. A natural strategy combines feed-forward 3DGS reconstruction with multi-view diffusion. Yet prior pipelines extract at most one signal from the reconstruction, either pixel rendering or learned features, while none exploits per-Gaussian visibility for occlusion-aware reference selection. This *information disconnect* leaves renderable geometry, visibility cues, and learned features unused. SplatGuide closes this disconnect by reusing a single 3DGS scene across three complementary roles. Rendered images provide pixel-aligned geometric conditioning. Per-Gaussian source-view indices are rendered into a target-view voting map for occlusion-aware reference selection. Reconstruction tokens supply feature-level guidance via cross-attention. All three signals derive from the same reconstruction forward pass. Across RealEstate10K, DL3DV, Tanks-and-Temples, and Mip-NeRF 360, SplatGuide achieves state-of-the-art pose-free novel view synthesis. On RealEstate10K, with a moderate number of input views, it surpasses the ground-truth-pose baseline.",
+      "authors": [
+        "Yejun Zhang",
+        "Zihan Wang",
+        "Xu Ji",
+        "Yihao Wang",
+        "Yuxin Hou",
+        "Junyuan Fang",
+        "Juho-Matti Kilpel\u00e4inen",
+        "Arno Solin",
+        "Hamed Rezazadegan Tavakoli",
+        "Esa Rahtu",
+        "Juho Kannala"
+      ],
+      "published": "2026-08-17T17:45:57Z",
+      "updated": "2026-08-17T17:45:57Z",
+      "url": "https://arxiv.org/abs/2608.16863",
+      "pdf_url": "https://arxiv.org/pdf/2608.16863.pdf",
+      "primary_category": "cs.CV",
+      "categories": [
+        "cs.CV"
+      ],
+      "tags": [
+        "cs.CV"
+      ],
+      "domain": "Vision",
+      "pdf_downloaded": true,
+      "pdf_size_bytes": 7729130,
+      "pdf_path": "2026-08-18/vision/2608.16863.pdf"
+    },
+    {
+      "id": "2608.16859",
+      "title": "HarnessEval-W: Agentifying the Evaluation of Visual Worlds",
+      "abstract": "A benchmark should deliver more than a scalar score: what makes an evaluation trustworthy is the reasoning that justifies the score. This is especially critical for world models, where judging a rollout requires understanding whether physics, causality, and world state evolve correctly. Humans spot such violations naturally, yet no existing benchmark automates this capability: metrics are computed brute-force, leaving no reasoning chain that can be examined or verified. We introduce HarnessEval-W, an agentified evaluation pipeline that brings the harness paradigm from the LLM ecosystem to world model benchmarking. Rather than applying a fixed rubric, HarnessEval-W interprets the context of each evaluation case, decomposes the evaluation question into measurable subproblems, and spawns specialized sub-agents, each equipped with tailored context and diagnostic tools to reason over its own subproblem. The parent agent then validates the gathered evidence and summarizes it into the final verdict. This hierarchical workflow turns every evaluation into a transparent evidence tree whose complete reasoning chain justifies the result. We apply HarnessEval-W to 18 representative world models over 330 evaluation cases. Its judgments closely align with human preferences while providing verifiable, fine-grained diagnoses of every generated rollout. We open-source the full pipeline as a live benchmark and invite the broad community to contribute to grow new skills and evaluation cases as world models evolve.",
+      "authors": [
+        "Weiliang Chen",
+        "Haowen Sun",
+        "Jun Gao",
+        "Jiawei Chi",
+        "Hanyang Wang",
+        "Qiyu Dai",
+        "Yihao Li",
+        "Hao Li",
+        "Jingnan Gao",
+        "Yi-Hsin Hung",
+        "Xingzhuo Guo",
+        "Shangchen Miao",
+        "Zhiyuan Shi",
+        "Xiang Li",
+        "Fengrui Tian",
+        "Weihua Du",
+        "Ziqi Huang",
+        "Shenyuan Gao",
+        "Siqiao Huang",
+        "Mingyu Liu",
+        "Yifei Li",
+        "Shizun Wang",
+        "Xi Wang",
+        "Tianqi Zhang",
+        "Xue Luo",
+        "Xiyin Ren",
+        "Jinshan Ren",
+        "Xiaoyang Shen",
+        "Xiaobo Hu",
+        "Zhiyang Dou",
+        "Mingyu Ding",
+        "Yichao Yan",
+        "Xinchao Wang",
+        "Yizhou Wang",
+        "Shilong Liu",
+        "Wenzhao Zheng",
+        "Yueqi Duan",
+        "Yuan Gong",
+        "Ziwei Liu",
+        "Ming-Yu Liu",
+        "Jialong Wu",
+        "Jiangran Lyu",
+        "Fangfu Liu"
+      ],
+      "published": "2026-08-17T17:43:24Z",
+      "updated": "2026-08-17T17:43:24Z",
+      "url": "https://arxiv.org/abs/2608.16859",
+      "pdf_url": "https://arxiv.org/pdf/2608.16859.pdf",
+      "primary_category": "cs.CV",
+      "categories": [
+        "cs.CV"
+      ],
+      "tags": [
+        "cs.CV"
+      ],
+      "domain": "Vision",
+      "pdf_downloaded": true,
+      "pdf_size_bytes": 5508421,
+      "pdf_path": "2026-08-18/vision/2608.16859.pdf"
+    },
+    {
+      "id": "2608.16855",
+      "title": "Can Unsupervised Methods Outperform Supervised Deep Learning When Ground Truth Is Sparse? A Case Study of Bronchovascular Bundle Segmentation in Low-Dose CT",
+      "abstract": "Background Lung cancer remains the deadliest cancer worldwide because it is often diagnosed too late. Effective treatment depends on detection at an early screening stage. However, the growing number of patients and the limited number of radiologists lead to prolonged diagnostic waiting times. In very early stage lung cancer, nodule visibility is further reduced by adjacent blood vessels and airway walls, because nodules are often connected to or supplied by these structures. Task-specific analysis of the bronchovascular bundle is therefore important for efficient nodule detection, and its removal can increase the diagnostic potential of lung cancer screening. Materials and Methods To assess the efficacy of the proposed method, we used series from widely utilized LDCT datasets, including the Duke Lung Cancer Screening (DLCS) dataset and the Pilot Pomeranian Lung Cancer Screening Program. The proposed bronchovascular bundle segmentation pipeline, RONALD, operates on computed tomography images and returns binary masks of vessels and bronchi located in the lung parenchyma. The method includes a preprocessing stage with lung, lobe, and mediastinum segmentation, followed by separate vessel and bronchial tree segmentation. Results The proposed pipeline segmented the bronchovascular bundle in low-dose computed tomography scans while improving nodule retention compared with other segmentation methods: from 93.98% and 90.36% to 100% in DLCS, and from 83.16% and 62.36% to 99.92% in the Pomeranian dataset. Conclusion The resulting segmentations can improve lung nodule detection in the very early stages of lung cancer.",
+      "authors": [
+        "Anna Mrukwa",
+        "Marek Socha",
+        "Aleksandra Suwalska",
+        "Agata Durawa",
+        "Malgorzata Jelitto",
+        "Katarzyna Dziadziuszko",
+        "Edyta Szurowska",
+        "Pawel Bozek",
+        "Michal Marczyk",
+        "Witold Rzyman",
+        "Rafal Dziadziuszko",
+        "Joanna Polanska"
+      ],
+      "published": "2026-08-17T17:38:22Z",
+      "updated": "2026-08-17T17:38:22Z",
+      "url": "https://arxiv.org/abs/2608.16855",
+      "pdf_url": "https://arxiv.org/pdf/2608.16855.pdf",
+      "primary_category": "cs.CV",
+      "categories": [
+        "cs.CV"
+      ],
+      "tags": [
+        "cs.CV"
+      ],
+      "domain": "Vision",
+      "pdf_downloaded": true,
+      "pdf_size_bytes": 12232469,
+      "pdf_path": "2026-08-18/vision/2608.16855.pdf"
+    },
+    {
+      "id": "2608.16812",
+      "title": "Unlocking the Potential of Image Editing via Concept Scaling and Dense Supervision",
+      "abstract": "Existing image editing frameworks predominantly follow the training paradigm of text-to-image diffusion models. However, extending this paradigm to image editing highlights two inherent discrepancies, specifically, the insufficient attention to edit concept granularity and the training inefficiency caused by sparse supervision signals. To address these issues, we establish a comprehensive hierarchical taxonomy featuring over 1,000 fine-grained edit concepts and build ConceptEdit-12M, a massive dataset of 12 million high-quality editing pairs via an improved synthesis framework. This library-driven approach effectively rectifies the distribution collapse of generated data while ensuring high data fidelity. Furthermore, we propose a dense supervision training strategy that synthesizes multiple non-interfering concepts into single image pairs. By providing richer learning signals, this strategy significantly enhances both training efficiency and overall model performance. Training results validate our strategy, significantly outperforming prior works. Finally, we present ConceptEdit-Bench, a granular evaluation suite designed to diagnose model capabilities across a vast array of real-world scenarios.",
+      "authors": [
+        "Long Cui",
+        "Xiaoqian Liu",
+        "Qi Qin",
+        "Yi Xin",
+        "Tao Lin",
+        "Jianguo Li",
+        "Linfeng Zhang"
+      ],
+      "published": "2026-08-17T17:04:25Z",
+      "updated": "2026-08-17T17:04:25Z",
+      "url": "https://arxiv.org/abs/2608.16812",
+      "pdf_url": "https://arxiv.org/pdf/2608.16812.pdf",
+      "primary_category": "cs.CV",
+      "categories": [
+        "cs.CV"
+      ],
+      "tags": [
+        "cs.CV"
+      ],
+      "domain": "Vision",
+      "pdf_downloaded": true,
+      "pdf_size_bytes": 9152540,
+      "pdf_path": "2026-08-18/vision/2608.16812.pdf"
+    },
+    {
+      "id": "2608.16793",
+      "title": "PixRestore: Unified Image Restoration via Pixel Diffusion Transformer",
+      "abstract": "Unified image restoration (UIR) aims to recover high-quality (HQ) content from low-quality (LQ) images with different degradations using a single model. Most recent methods adapt large pretrained text-to-image (T2I) latent diffusion models for their strong capacity and generative priors. However, the variational autoencoder (VAE) in latent T2I models may discard restoration-sensitive details, while the open-ended synthesis prior can introduce content-inconsistent artifacts. We present PixRestore, a VAE-free pixel-space Diffusion Transformer (DiT) for UIR, where the diffusion backbone is trained entirely from scratch, without relying on T2I pretraining. PixRestore performs flow matching directly on patchified pixels, preserving fine-grained details while keeping the token sequence tractable. To adapt to different degradations, PixRestore learns to predict the reliability of layer features using LQ--HQ DINO feature similarity. Features from more reliable layers are fused as dense conditioning, while less reliable layers receive stronger HQ-feature supervision to encourage degradation removal. We train PixRestore on a large-scale corpus of diverse scenes and degradations, and further finetune it into a one-step generator using DINO-based adversarial objectives for efficient inference. Experiments on public benchmarks and real-world test sets show that, with only about 50M parameters and single-step inference, PixRestore achieves the best overall fidelity, perceptual quality, and robustness to degradations among competing UIR models while being far more efficient. Larger PixRestore variants can further boost performance, demonstrating the scalability of our pixel-space design. Code and the curated benchmark can be found at https://github.com/csslc/PixRestore.",
+      "authors": [
+        "Lingchen Sun",
+        "Rongyuan Wu",
+        "Xiangtao Kong",
+        "Jixin Zhao",
+        "Qiaosi Yi",
+        "Yujing Sun",
+        "Shuaizheng Liu",
+        "Zhengqiang Zhang",
+        "Lei Zhang"
+      ],
+      "published": "2026-08-17T16:49:55Z",
+      "updated": "2026-08-17T16:49:55Z",
+      "url": "https://arxiv.org/abs/2608.16793",
+      "pdf_url": "https://arxiv.org/pdf/2608.16793.pdf",
+      "primary_category": "cs.CV",
+      "categories": [
+        "cs.CV"
+      ],
+      "tags": [
+        "cs.CV"
+      ],
+      "domain": "Vision",
+      "pdf_downloaded": true,
+      "pdf_size_bytes": 9083787,
+      "pdf_path": "2026-08-18/vision/2608.16793.pdf"
+    },
+    {
+      "id": "2608.16786",
+      "title": "Revisiting Classifier-Free Guidance Methods in Latent Diffusion Models",
+      "abstract": "Inference-time quality-enhancement methods are an effective and widely adopted means of improving diffusion models without expensive retraining. We study a family of training-free techniques conceptually rooted in Classifier-Free Guidance (CFG), most of which were originally proposed on older U-Net diffusion models and validated using metrics that assess image quality in isolation, without accounting for compositional alignment or semantic correspondence between the generated image and its associated text prompt. We re-evaluate eight such methods on two open-weight rectified-flow transformers under a fixed per-model protocol and three compositional-alignment benchmarks. No method consistently improves on CFG across the measured criteria. APG obtains several nominal best scores, but the corresponding gains often remain within the estimated evaluation uncertainty. Attention-perturbation methods provide isolated gains on SD3.5 Medium and more frequent degradations on FLUX.2 [klein] 4B Base, while CFG remains a competitive lower-cost baseline.",
+      "authors": [
+        "Artem Sergievskii",
+        "Artyom Turevich",
+        "Sergey Kastryulin"
+      ],
+      "published": "2026-08-17T16:40:54Z",
+      "updated": "2026-08-17T16:40:54Z",
+      "url": "https://arxiv.org/abs/2608.16786",
+      "pdf_url": "https://arxiv.org/pdf/2608.16786.pdf",
+      "primary_category": "cs.CV",
+      "categories": [
+        "cs.CV"
+      ],
+      "tags": [
+        "cs.CV"
+      ],
+      "domain": "Vision",
+      "pdf_downloaded": true,
+      "pdf_size_bytes": 5149375,
+      "pdf_path": "2026-08-18/vision/2608.16786.pdf"
+    },
+    {
+      "id": "2608.16785",
+      "title": "Calibration-Free Vehicle Speed Estimation: A Monocular Keypoint-Template Approach",
+      "abstract": "This paper proposes a calibration-free framework for reliably and effectively estimating vehicle speeds from monocular videos, without relying on roadway features, camera calibration, or roadway-feature-based reference objects. The proposed framework estimates vehicle speeds using a 36-keypoint vehicle template and a homography matrix updated at each frame. A YOLO-based keypoint detection module is trained on diverse datasets, and two estimation strategies are compared: keypoint-only tracking and warped optical flow with dense spatial aggregation. Speed is estimated by projecting displacements into metric space using the homography, with validation conducted on over 400 video clips from roadside and overhead datasets, covering speeds from 30 to 100 mph. The method achieves reliable speed estimation on the VS13 and BrnoCompSpeed datasets, with the warped optical flow method delivering MAEs of 15.0% and 9.7%, respectively, and 77.9% and 93.1% of estimates falling within +/-20% error. After applying a 10% trim to remove edge-of-frame outliers, performance improves to MAEs of 11.7% and 7.6%, with within-+/-20% accuracy increasing to 85.3% and 95.4%. This work addresses key limitations of existing vision-based approaches and enables low-cost and efficient speed enforcement using portable devices such as dashcams and smartphones, thereby supporting citizen-based enforcement programs for traffic safety.",
+      "authors": [
+        "Gaofeng Su",
+        "Keya Li",
+        "Raja Sengupta",
+        "Kara M. Kockelman"
+      ],
+      "published": "2026-08-17T16:39:06Z",
+      "updated": "2026-08-17T16:39:06Z",
+      "url": "https://arxiv.org/abs/2608.16785",
+      "pdf_url": "https://arxiv.org/pdf/2608.16785.pdf",
+      "primary_category": "cs.CV",
+      "categories": [
+        "cs.CV"
+      ],
+      "tags": [
+        "cs.CV"
+      ],
+      "domain": "Vision",
+      "pdf_downloaded": true,
+      "pdf_size_bytes": 3973012,
+      "pdf_path": "2026-08-18/vision/2608.16785.pdf"
+    },
+    {
+      "id": "2608.16765",
+      "title": "TRACE-Bench: Decomposing and Diagnosing Multi-Reference Image Generation",
+      "abstract": "Despite recent advances in unified multimodal models for multi-reference image generation, existing benchmarks remain organized around predefined task types (e.g., \"subject composition\"), which are ill-suited to this combinatorial setting and lead to fragmented coverage, uncontrolled complexity, and little diagnostic value. Recognizing that diverse multi-reference tasks share a common set of atomic operations, we adopt a capability-oriented perspective and formalize four operators: Anchor ($f$), Disentangle ($g$), Apply ($\\oplus$), and Compose ($C$). Any multi-reference prompt can then be represented as a compositional formula over these operators, whose structural complexity is quantified by the number of operator slots. Building on this formulation, we construct TRACE-Bench, comprising approximately 1,600 evaluation cases across slot counts 1--8, built from 631 formula templates and around 4,000 reference images spanning diverse artistic styles and real-world subjects. The formula structure directly drives an operator-aligned evaluation protocol for per-capability scoring and a diagnostic tree analysis for recursive failure localization. Evaluating 9 leading models reveals insights invisible to holistic scoring: the primary bottleneck lies in disentanglement ($g$) and attribute binding ($\\oplus$) rather than scene-level composition ($C$), with even the best model scoring only 0.74 on attribute fidelity. Project page: https://amuseum-whr.github.io/TraceBench",
+      "authors": [
+        "Haoran Wang",
+        "Chaofan Ma",
+        "Ran Yi",
+        "Lizhuang Ma"
+      ],
+      "published": "2026-08-17T16:15:50Z",
+      "updated": "2026-08-17T16:15:50Z",
+      "url": "https://arxiv.org/abs/2608.16765",
+      "pdf_url": "https://arxiv.org/pdf/2608.16765.pdf",
+      "primary_category": "cs.CV",
+      "categories": [
+        "cs.CV",
+        "cs.AI"
+      ],
+      "tags": [
+        "cs.AI",
+        "cs.CV"
+      ],
+      "domain": "Vision",
+      "pdf_downloaded": true,
+      "pdf_size_bytes": 9691711,
+      "pdf_path": "2026-08-18/vision/2608.16765.pdf"
+    },
+    {
+      "id": "2608.16756",
+      "title": "Binarized High-Efficiency RAW Video Restoration and Beyond",
+      "abstract": "RAW video restoration is fundamental to high-quality low-level perception and serves as the basis for a wide range of downstream vision applications. While binary neural networks (BNNs) enable efficient lightweight deployment for image enhancement, their deficiencies in modeling temporal coherence and activation value distributions hinder their effectiveness when applied to video scenarios. In this paper, we propose BinRVR, a binarized RAW video restoration framework that reduces computation and parameters by approximately 96% while incurring only about 4% performance degradation. Specifically, we present a Binarized Information Interaction Module (BIIM) to jointly model spatial and temporal information in an efficient and unified manner. Moreover, we develop a Distribution-Aware Binarized Convolution (DAB-Conv) that leverages the statistics of full-precision activations to mitigate quantization errors. The proposed framework further supports multi-bit quantization, enabling flexible accuracy-efficiency trade-offs across different hardware constraints. Extensive experiments demonstrate that our BinRVR achieves competitive performance compared with state-of-the-art binarized methods on RAW video restoration tasks, including low-light enhancement, denoising, deblurring, and super-resolution. We further explore the potential of our method on downstream video applications, including object detection and monocular depth estimation.",
+      "authors": [
+        "Tianyu Zhu",
+        "Ying Fu",
+        "Hesong Li",
+        "Gengchen Zhang",
+        "Xin Yuan",
+        "Yulun Zhang"
+      ],
+      "published": "2026-08-17T16:03:50Z",
+      "updated": "2026-08-17T16:03:50Z",
+      "url": "https://arxiv.org/abs/2608.16756",
+      "pdf_url": "https://arxiv.org/pdf/2608.16756.pdf",
+      "primary_category": "cs.CV",
+      "categories": [
+        "cs.CV"
+      ],
+      "tags": [
+        "cs.CV"
+      ],
+      "domain": "Vision",
+      "pdf_downloaded": true,
+      "pdf_size_bytes": 8122972,
+      "pdf_path": "2026-08-18/vision/2608.16756.pdf"
+    },
+    {
+      "id": "2608.16748",
+      "title": "Beyond Uncertainty: Generalizable Failure Monitoring for Surgical Segmentation under Acquisition Degradation",
+      "abstract": "Surgical segmentation networks can fail silently under acquisition degradation: predicted masks may be wrong even when model confidence remains high. Existing deployment-time monitors rely primarily on uncertainty estimates and can therefore miss confident failures. We present TCSR-Monitor (Temporal Conformal Surgical Risk Monitor), a post-hoc failure-monitoring framework that combines confidence with observable shape, temporal-consistency, and image-quality cues. TCSR-Monitor wraps a frozen segmentation model, requires no model internals, and operates without ground truth at deployment. We also introduce a validation protocol to assess whether alarms remain credible under distribution shift. On EndoVis 2017, leave-one-corruption-out evaluation shows that TCSR-Monitor generalizes to unseen acquisition degradations and substantially outperforms confidence-based baselines. A circularity control confirms that it predicts segmentation failure rather than simply detecting corrupted images. Mondrian conformal calibration balances miss-rates across degradation severities, but a single global threshold still produces false alarms on up to 40% of correctly segmented frames at moderate corruption. Zero-shot transfer to SAM2 demonstrates feature portability, although entropy outperforms the transferred monitor at both evaluated thresholds. Overall, reliable monitoring under acquisition degradation benefits from complementary observable signals beyond confidence alone, but substantial false-alarm and transfer limitations remain.",
+      "authors": [
+        "Hieu D. Pham",
+        "Dang P. M. Cao",
+        "Thanh Trung Huynh"
+      ],
+      "published": "2026-08-17T15:57:19Z",
+      "updated": "2026-08-17T15:57:19Z",
+      "url": "https://arxiv.org/abs/2608.16748",
+      "pdf_url": "https://arxiv.org/pdf/2608.16748.pdf",
+      "primary_category": "cs.CV",
+      "categories": [
+        "cs.CV"
+      ],
+      "tags": [
+        "cs.CV"
+      ],
+      "domain": "Vision",
+      "pdf_downloaded": true,
+      "pdf_size_bytes": 2428347,
+      "pdf_path": "2026-08-18/vision/2608.16748.pdf"
+    },
+    {
+      "id": "2608.16745",
+      "title": "VicEdit: Learning to Edit Videos from Visual In-Context Examples",
+      "abstract": "Despite progress in instruction-based video editing, unimodal textual instructions inherently struggle to convey fine-grained textures and complex dynamics. To bridge this perceptual gap, we propose Visual In-context Editing, a new paradigm elevating video editing from textual instructions to multi-modal visual guidance encompassing single image, image pair, and video pair. To facilitate this paradigm, we curate VicEdit-400K, the first large-scale dataset for visual in-context video editing. We develop an automated pipeline to generate 400K high-quality samples across ten task types, ensuring superior visual fidelity and semantic consistency through multi-dimensional filtering. Leveraging this foundation, we introduce VicEdit, a unified framework to bridge visual and textual contexts. To adaptively extract editing semantics from heterogeneous references, we design Modality-Adaptive Semantic Distillation, which produces modality-specific semantic tokens from visual references. These tokens are then synergistically integrated with textual instructions through Dual-Context Injection, enabling the generation process to benefit from both visual and textual signals. Extensive evaluations on VicEditBench demonstrate that VicEdit achieves state-of-the-art performance across both basic instruction editing and visual in-context editing tasks, establishing visual in-context learning as a powerful and controllable paradigm for video editing.",
+      "authors": [
+        "Yuji Wang",
+        "Teng Hu",
+        "Yuheng Chen",
+        "Ran Yi",
+        "Han Feng",
+        "Weijian Cao",
+        "Chengjie Wang",
+        "Lizhuang Ma",
+        "Jiangning Zhang"
+      ],
+      "published": "2026-08-17T15:55:40Z",
+      "updated": "2026-08-17T15:55:40Z",
+      "url": "https://arxiv.org/abs/2608.16745",
+      "pdf_url": "https://arxiv.org/pdf/2608.16745.pdf",
+      "primary_category": "cs.CV",
+      "categories": [
+        "cs.CV"
+      ],
+      "tags": [
+        "cs.CV"
+      ],
+      "domain": "Vision",
+      "pdf_downloaded": true,
+      "pdf_size_bytes": 24065782,
+      "pdf_path": "2026-08-18/vision/2608.16745.pdf"
+    },
+    {
+      "id": "2608.16725",
+      "title": "Unsupervised Anomaly Detection for Image Dataset Quality Assurance in Multi-Center Breast MRI",
+      "abstract": "Corrupted, inconsistent, or anomalous data silently threatens the safety and reliability of medical AI. Despite growing regulatory recognition of dataset quality assurance (QA) for high-risk medical AI, scalable automated detection remains underdeveloped. We employ unsupervised anomaly detection (AD) and out-of-distribution (OOD) detection as an automated dataset QA mechanism for multi-center dynamic contrast-enhanced breast MRI. We build a controlled AD benchmark of 17 realistic QA-relevant anomaly types from six public datasets (protocol violations, processing errors, incorrect anatomical regions) and propose a taxonomy of radiological image anomalies based on human visual perception, enabling fine-grained analysis of AD failure modes. The benchmark includes near-, medium-far-, far-OOD samples, as well as in-distribution and external normal data. Four methods are evaluated: a projection-based method extended with a domain-specific feature extractor and a novel positional encoding, a reconstruction-based approach extended to full 3D volumes with an augmented training objective, and two unmodified hybrid OOD detection methods. Medium-far- and far-OOD samples are detected reliably, whereas near-OOD samples and external normal data from unseen institutions expose method-specific differences. The 3D reconstruction-based approach best balances detection performance (AUROC: 0.936) and generalization to unseen institutions. The projection-based method with positional encoding achieves the highest overall detection performance (AUROC: 0.954). Both hybrid methods exhibit critical failure modes, confirming that methods validated for one modality or anatomy may not generalize without domain-specific adaptation. Implants and mastectomies remain an open challenge for all methods. Our results establish a foundation and practical guidance on scalable unsupervised QA in medical AI pipelines.",
+      "authors": [
+        "Chiara Tappermann",
+        "Steffen Renisch",
+        "Lars Ole Schwen",
+        "Hans Meine",
+        "Horst K. Hahn",
+        "Eike Petersen"
+      ],
+      "published": "2026-08-17T15:40:58Z",
+      "updated": "2026-08-17T15:40:58Z",
+      "url": "https://arxiv.org/abs/2608.16725",
+      "pdf_url": "https://arxiv.org/pdf/2608.16725.pdf",
+      "primary_category": "cs.CV",
+      "categories": [
+        "cs.CV",
+        "cs.AI"
+      ],
+      "tags": [
+        "cs.AI",
+        "cs.CV"
+      ],
+      "domain": "Vision",
+      "pdf_downloaded": true,
+      "pdf_size_bytes": 8702261,
+      "pdf_path": "2026-08-18/vision/2608.16725.pdf"
+    },
+    {
+      "id": "2608.16721",
+      "title": "GenRouter: Unified Workflow Routing for Agentic Image Generation",
+      "abstract": "The rapid evolution of text-to-image (T2I) generation models has effectively solved the foundational challenge of raw pixel synthesis, shifting the community's focus toward fulfilling increasingly intricate user requests. While recent agentic image generation workflows enhance static inference with advanced capabilities like external knowledge retrieval and iterative reasoning, they mostly operate in isolated silos with fixed ``one-size-fits-all\" topologies. This inevitably leads to severe compute-mismatch, where simple queries are forced through computationally heavy pipelines. To bridge this gap, we present GenRouter, the first unified workflow routing framework for agentic image generation. We first formulate GenCanvas, standardizing diverse agentic pipelines into a universal set of foundational primitives and executable templates. Operating over this unified space, GenRouter adaptively routes heterogeneous prompts to their optimal workflows via (i) demand profiling, (ii) experience matching, and (iii) Pareto filtering. Extensive experiments across diverse benchmarks demonstrate that GenRouter achieves superior visual alignment while reducing execution costs by over 95% and latency by 65% compared to heavyweight static pipelines. Furthermore, the system continuously self-evolves via accumulated experience, enabling robust zero-shot generalization that boosts performance and halves computational overhead.",
+      "authors": [
+        "Harold Haodong Chen",
+        "Zhiyu Hou",
+        "Wen-Jie Shu",
+        "Weilin Ruan",
+        "Yingjie Xu",
+        "Litao Guo",
+        "Ying-Cong Chen"
+      ],
+      "published": "2026-08-17T15:36:45Z",
+      "updated": "2026-08-17T15:36:45Z",
+      "url": "https://arxiv.org/abs/2608.16721",
+      "pdf_url": "https://arxiv.org/pdf/2608.16721.pdf",
+      "primary_category": "cs.CV",
+      "categories": [
+        "cs.CV"
+      ],
+      "tags": [
+        "cs.CV"
+      ],
+      "domain": "Vision",
+      "pdf_downloaded": false,
+      "pdf_size_bytes": null,
+      "pdf_path": null
+    },
+    {
+      "id": "2608.16718",
+      "title": "CytoFormer: A Molecularly Supervised Cell Foundation Model for Histopathology Cell Classification",
+      "abstract": "Identifying cell types directly from routine haematoxylin and eosin (H&E) histology would enable single-cell analysis at scale, but training such models has relied on manual pathologist annotations, which are slow, expensive and unreliable for many cell types. We instead supervise morphology with molecules. Imaging-based spatial transcriptomics profiles individual cells in situ on a section that can afterwards be stained with H&E, so that molecular identity and morphology are observed for the same physical cell. We assembled 81 such paired Xenium sections spanning 16 organs, derived per-cell labels by clustering, marker-gene annotation, organ-wise human review and quality control, and mapped them onto the cell types commonly reported in each organ. This yielded 15.4 million cells, each with a paired H&E image patch and one of 23 cell types, on which we trained CytoFormer, a cell foundation model with a multi-task, per-organ classification head. On spatially held-out tissue CytoFormer reached an accuracy of 0.85 and a macro-F1 of 0.78 across all 16 organs, and its predictions reproduced the tissue architecture of an entire held-out section. The representation also transfers: with the encoder frozen, a linear head on CytoFormer features performed better than six pathology foundation models on four expert-annotated benchmarks, including on organs and cell types that were not part of pretraining. Finally, in an interactive active-learning setting, CytoFormer's embeddings are markedly more label-efficient than existing pathology foundation models, detecting normal epithelium amid look-alike tumour with an F1 of 0.82 from only a few annotations and leading the strongest baseline by 0.13 in F1. CytoFormer turns paired H&E and spatial transcriptomics into a reusable, label-efficient representation for cell-level analysis of routine histology.",
+      "authors": [
+        "Jialu Yao",
+        "Songhao Li",
+        "Alina Yu",
+        "Zhi Huang"
+      ],
+      "published": "2026-08-17T15:35:03Z",
+      "updated": "2026-08-17T15:35:03Z",
+      "url": "https://arxiv.org/abs/2608.16718",
+      "pdf_url": "https://arxiv.org/pdf/2608.16718.pdf",
+      "primary_category": "cs.CV",
+      "categories": [
+        "cs.CV"
+      ],
+      "tags": [
+        "cs.CV"
+      ],
+      "domain": "Vision",
+      "pdf_downloaded": true,
+      "pdf_size_bytes": 1757011,
+      "pdf_path": "2026-08-18/vision/2608.16718.pdf"
+    },
+    {
+      "id": "2608.16717",
+      "title": "PersonaShot: Benchmarking Person-Centric Narrative Continuity in Multi-Shot Video Generation",
+      "abstract": "Video generation is rapidly evolving from single-shot clips to multi-shot narratives, where the human character serves as the core narrative anchor. However, existing benchmarks mainly assess character appearance or individual-shot quality, without measuring whether physical and emotional states remain coherent across cuts. They also rarely provide criterion-specific evaluation methods, although physical continuity, facial dynamics, and cinematic relations require different visual, temporal, and relational evidence. To address these limitations, we introduce PersonaShot, the first person-centric benchmark for narrative continuity in multi-shot video generation. PersonaShot contains approximately 1,000 multi-shot segments and 16 metrics spanning physical continuity, affective dynamics, and cinematic grammar. \\textbf{\\textit{1)} Narrative Continuity Benchmark:} We evaluate character coherence across three temporal levels: within-shot states, cross-shot transitions, and sequence-level trajectories. \\textbf{\\textit{2)} Human-Aligned Specialist Evaluators:} We distill reasoning from a large multimodal teacher into lightweight criterion-specific evaluators, each grounded in the visual, temporal, or relational evidence required by its metric, and align them with expert human judgments. \\textbf{\\textit{3)} Systematic Evaluation and Insights:} Our evaluation reveals distinct capability profiles across state-of-the-art models and a clear gap between perceptual quality and cross-shot narrative continuity. Even visually compelling videos frequently exhibit physical-state resets, abrupt affective shifts, and broken cinematic relations across shots. Human studies further demonstrate strong agreement between our evaluators and expert judgments.",
+      "authors": [
+        "Yuji Wang",
+        "Yuheng Chen",
+        "Teng Hu",
+        "Ran Yi",
+        "Yijia Hong",
+        "Han Feng",
+        "Weijian Cao",
+        "Chengjie Wang",
+        "Lizhuang Ma",
+        "Jiangning Zhang"
+      ],
+      "published": "2026-08-17T15:34:54Z",
+      "updated": "2026-08-17T15:34:54Z",
+      "url": "https://arxiv.org/abs/2608.16717",
+      "pdf_url": "https://arxiv.org/pdf/2608.16717.pdf",
+      "primary_category": "cs.CV",
+      "categories": [
+        "cs.CV"
+      ],
+      "tags": [
+        "cs.CV"
+      ],
+      "domain": "Vision",
+      "pdf_downloaded": true,
+      "pdf_size_bytes": 5876563,
+      "pdf_path": "2026-08-18/vision/2608.16717.pdf"
+    },
+    {
+      "id": "2608.16709",
+      "title": "MIRROR: Multimodal Intelligent Radiology Reasoning and Observation Reporter",
+      "abstract": "A radiologist reading a model's output faces two problems. The model returns a number and no reason, and any system that turns that number into readable prose can quietly add claims the model never made. MIRROR is a research prototype built to separate those failures. It chains a multi-label classifier, a Grad-CAM localizer that turns each positive finding into a named anatomical region, and a report writer that receives the labels, probabilities, and regions but never the image. Because the language layer cannot see pixels, it cannot assert a finding the classifier did not make. We are precise about what that buys: a MIRROR report's findings are auditable against the probability vector, while the sentences framing them are ordinary generated text, and we show one stating a cardiothoracic ratio the system never measured. One registry holds the taxonomy, anatomy, and phrasing for chest X-ray, brain MRI, and head CT, so adding a modality is a data change; all three are routed and tested, one is trained. On ChestMNIST that classifier reaches macro AUROC 0.729 and ranks better than chance on all 14 labels, at 1.6 to 6.8 times the precision a random ranker would get. Yet at the default 0.5 threshold it emits no positive prediction at all for 11 of them, and its excellent-looking Brier score of 0.045 sits beside the 0.047 earned by a predictor that ignores the image. The discrimination is real; the decisions are not. Under the class imbalance normal in radiology, aggregate metrics flatter models that do nothing, and should be reported against that floor.",
+      "authors": [
+        "Vignesh Nagarajan",
+        "Sriram Venkatapathy"
+      ],
+      "published": "2026-08-17T15:25:38Z",
+      "updated": "2026-08-17T15:25:38Z",
+      "url": "https://arxiv.org/abs/2608.16709",
+      "pdf_url": "https://arxiv.org/pdf/2608.16709.pdf",
+      "primary_category": "cs.CV",
+      "categories": [
+        "cs.CV",
+        "cs.AI",
+        "cs.LG"
+      ],
+      "tags": [
+        "cs.AI",
+        "cs.CV",
+        "cs.LG"
+      ],
+      "domain": "Vision",
+      "pdf_downloaded": true,
+      "pdf_size_bytes": 604295,
+      "pdf_path": "2026-08-18/vision/2608.16709.pdf"
+    },
+    {
+      "id": "2608.16690",
+      "title": "AnchorScore: A CLIP-Based Diagnostic of MLLM Annotation Difficulty",
+      "abstract": "Multimodal large language models (MLLMs) are widely used for automated annotation, yet their per-class accuracy varies widely (e.g., 12%-98% across the 13 classes of three classroom sub-datasets) and is expensive to measure: evaluating one 27B MLLM on 5,416 validation images takes roughly 14 hours, whereas a frozen-CLIP pass over the same images completes in about 3 minutes. A low-cost signal for ranking classes by expected MLLM annotation difficulty a priori remains underexplored. Building on the AnchorProxy construct (per-class zero-shot CLIP accuracy) introduced in the companion study, this paper systematically evaluates its full-frame formulation, termed AnchorScore here, as an a priori diagnostic that flags the classes MLLMs are least likely to annotate reliably. On classroom behavior data (SCB5, 13 classes, 6 MLLMs), AnchorScore correlates with per-class MLLM accuracy (Spearman rho = 0.769, p = 0.002, n = 13). None of the alternative difficulty predictors (DINOv2, ResNet-50, SigLIP, or MLLM self-verbalized uncertainty) showed a significant class-level correlation at n = 13. A cross-model consensus control suggests AnchorScore primarily captures a shared class-difficulty factor rather than a CLIP-specific signal. An independent replication on Stanford40 Actions yields a nearly identical effect (rho = 0.817, p < 0.001); the association is strongest on activity-recognition data and attenuates on medical and satellite imagery. Three practical applications follow: a deployable hybrid CLIP/MLLM routing strategy (predicted-class routing: up to +23 pp over CLIP-only at roughly 44% MLLM cost savings), prompt disambiguation on hard classes (exploratory), and review-priority prediction for human verification. AnchorScore does not estimate exact MLLM accuracy; it provides a low-cost ranking signal that directs expensive MLLM evaluation to the classes where it is most informative.",
+      "authors": [
+        "Yan Ma",
+        "Lizhuo Zhang"
+      ],
+      "published": "2026-08-17T15:10:33Z",
+      "updated": "2026-08-17T15:10:33Z",
+      "url": "https://arxiv.org/abs/2608.16690",
+      "pdf_url": "https://arxiv.org/pdf/2608.16690.pdf",
+      "primary_category": "cs.CV",
+      "categories": [
+        "cs.CV"
+      ],
+      "tags": [
+        "cs.CV"
+      ],
+      "domain": "Vision",
+      "pdf_downloaded": true,
+      "pdf_size_bytes": 733904,
+      "pdf_path": "2026-08-18/vision/2608.16690.pdf"
+    },
+    {
+      "id": "2608.16681",
+      "title": "Bridging the Gap between Labeled and Unlabeled Data via Unified Flow with Feature Memory Bank",
+      "abstract": "Although semi-supervised semantic segmentation ($\\text{S}^4$) utilizes abundant unlabeled data to reduce manual labeling burdens, independent training of labeled and unlabeled data causes the former to dominate, which severely degrades pseudo-label quality. To address this challenges, we propose a novel remote sensing (RS) $\\text{S}^4$ method via unified flow with feature memory bank (UFFM). Specifically, UFFM comprises two key innovations: unified flow (UF) and feature memory bank (FMB). The UF is a new training flow that generates less biased pseudo-labels by combining an external visual foundation model (VFM) with an RS domain teacher, and jointly optimizes labeled and pseudo-labeled data under a unified training objective. The FMB is a novel memory module for $\\text{S}^4$ that dynamically updates class-specific features during training and reduces the feature discrepancy between labeled and unlabeled data through class-feature alignment. To verify the effectiveness of our model, we conduct extensive experiments on RS datasets. The experimental results show the superiority of our method over SOTA $\\text{S}^4$ methods. Moreover, the results demonstrate the effectiveness of our contributions in bridging the optimization and feature representation gap between labeled and unlabeled data. Our code is released at \\href{https://github.com/wangshanwen001/RS-UFFM}{https://github.com/wangshanwen001/RS-UFFM}.",
+      "authors": [
+        "Shanwen Wang",
+        "Xin Sun",
+        "Danfeng Hong",
+        "Junyu Dong",
+        "Patrick Le Callet"
+      ],
+      "published": "2026-08-17T15:04:25Z",
+      "updated": "2026-08-17T15:04:25Z",
+      "url": "https://arxiv.org/abs/2608.16681",
+      "pdf_url": "https://arxiv.org/pdf/2608.16681.pdf",
+      "primary_category": "cs.CV",
+      "categories": [
+        "cs.CV",
+        "cs.AI"
+      ],
+      "tags": [
+        "cs.AI",
+        "cs.CV"
+      ],
+      "domain": "Vision",
+      "pdf_downloaded": true,
+      "pdf_size_bytes": 8109232,
+      "pdf_path": "2026-08-18/vision/2608.16681.pdf"
+    },
+    {
+      "id": "2608.16673",
+      "title": "How Sampling Strategy Affects Imbalance Mitigation in LiDAR Segmentation: A Study of Structured vs. Random Point-Based Architectures",
+      "abstract": "Class imbalance in LiDAR point clouds poses challenges for semantic segmentation in autonomous navigation and urban mapping. While 2D vision has numerous mitigation techniques, their effectiveness in 3D remains unclear. We benchmark six reweighting schemes and five imbalance-aware losses across three datasets (DALES, S3DIS, STPLS3D) using two architectures (KPConv, RandLA-Net). Inverse-frequency weighting degrades performance by up to 12% compared to uniform weighting, with catastrophic failures in minority classes. Uniform weighting performs within 2% of complex losses for structured sampling (KPConv) but benefits less for random sampling (RandLA-Net, up to 4.6% gap). Loss landscape analysis reveals a complex interplay: for structured sampling, imbalance ratio determines landscape geometry on real LiDAR data but decouples from it on synthetic data; for random sampling, landscapes show high sensitivity to dataset geometry regardless of imbalance ratio. For the two evaluated point-based architectures, these results suggest that the interaction between sampling strategy (structured vs. random), imbalance severity, and data acquisition characteristics shapes which mitigation approaches are effective.",
+      "authors": [
+        "Antonis Savva",
+        "Christos Kyrkou",
+        "Theocharis Theocharides"
+      ],
+      "published": "2026-08-17T15:00:55Z",
+      "updated": "2026-08-17T15:00:55Z",
+      "url": "https://arxiv.org/abs/2608.16673",
+      "pdf_url": "https://arxiv.org/pdf/2608.16673.pdf",
+      "primary_category": "cs.CV",
+      "categories": [
+        "cs.CV"
+      ],
+      "tags": [
+        "cs.CV"
+      ],
+      "domain": "Vision",
+      "pdf_downloaded": true,
+      "pdf_size_bytes": 5540838,
+      "pdf_path": "2026-08-18/vision/2608.16673.pdf"
+    },
+    {
+      "id": "2608.16669",
+      "title": "Concept-based explanation of gene expression prediction from H&E images",
+      "abstract": "Recent advances in pathology foundation models have enabled accurate prediction of spatial transcriptomics (ST) from routine H&E images. However, existing explainability methods for vision transformer (ViT)-based models are largely limited to local heatmaps and do not reveal how morphological concepts contribute to ST predictions. Here, we introduce an explainable framework that combines relevance propagation and concept discovery to link transcriptional programs to tissue morphology. We developed a ViT-based framework for virtual ST from H&E images that combines ViT-aware layer-wise relevance propagation with relaxed archetypal TopK sparse autoencoder-based concept discovery. This approach provides both local explanations and global insights into the morphological patterns associated with transcriptional programs. We applied the framework to colorectal cancer ST data from the HEST-1k cohort and evaluated its generalizability in TCGA COAD. Our architecture accurately predicts clinically relevant ST signatures and accompanying molecular phenotypes. Measured and predicted gene expression profiles reveal substantial spatial heterogeneity of the colorectal cancer subtypes iCMS2 and iCMS3 across a large number of samples. Spatially resolved and aggregated iCMS classification achieve weighted F1 scores of 0.872 and 0.819 (0.770 in TCGA COAD), respectively, and both stratify patient outcome. Beyond prediction, our framework establishes a relevance-based concept atlas linking molecular phenotypes to histopathological representations. Comparison of activation- with relevance-derived concepts demonstrates that relevances provide a more direct link between tissue morphology and downstream predictions. We establish a general strategy for concept-based explanation of spatial prediction, and our framework is readily applicable to a broad range of ViT-based pathology models.",
+      "authors": [
+        "Amos Muench",
+        "Jonathan Thielmann",
+        "Reduan Achtibat",
+        "Maximilian Dreyer",
+        "Philip Bischoff",
+        "Caroline Forsythe",
+        "Hamidreza Parand",
+        "Thomas Walter",
+        "David Horst",
+        "Sebastian Lapuschkin",
+        "Wojciech Samek",
+        "Teresa Gabriela Krieger"
+      ],
+      "published": "2026-08-17T14:58:56Z",
+      "updated": "2026-08-17T14:58:56Z",
+      "url": "https://arxiv.org/abs/2608.16669",
+      "pdf_url": "https://arxiv.org/pdf/2608.16669.pdf",
+      "primary_category": "cs.CV",
+      "categories": [
+        "cs.CV"
+      ],
+      "tags": [
+        "cs.CV"
+      ],
+      "domain": "Vision",
+      "pdf_downloaded": false,
+      "pdf_size_bytes": null,
+      "pdf_path": null
+    },
+    {
+      "id": "2608.16661",
+      "title": "Turning spectra into images improves plant trait retrieval with 2D-CNNs",
+      "abstract": "Hyperspectral reflectance spectroscopy enables non-destructive estimation of plant functional traits, yet current deep learning approaches process spectra as one-dimensional sequences, which limits how they capture long-range inter-band dependencies. We asked whether transforming 1D spectra into 2D image representations improves multi-trait prediction with convolutional neural networks (CNN). We compared nine transformations using EfficientNet-B0 on the GreenHyperSpectra dataset (7,897 labeled spectra, eight traits, 400-2450 nm), benchmarked against published 1D CNN results on the same split. Trained from scratch, the simplest transformation, a direct Reshape of the spectrum into a 2D grid, performed best ($R^2 = 0.684 \\pm 0.001$) and improved on the state-of-the-art 1D baseline ($R^2 = 0.587$, $+0.097$). We then pretrained a 2D masked autoencoder (MAE-2D) on 139,000 unlabeled spectral images. Linear probing, which freezes the encoder and trains only a multilayer perceptron head, reached $R^2 = 0.646$ and exceeded every 1D self-supervised counterpart, including the fine-tuned MAE-1D ($R^2 = 0.641$). Under cross-dataset evaluation all models lost most of their accuracy and none beat the 1D baseline significantly. To identify which wavelengths drive each prediction, we applied Integrated Gradients and Grad-CAM and unfolded band importance back to the spectral axis. Protein ($r = 0.45$) and leaf water ($r = 0.33$) agreed with sensitivities simulated by the PROSAIL radiative-transfer model, while carotenoids ($r = 0.06$) and leaf area index ($r = -0.11$) did not, showing that the model reads established leaf chemistry for traits with sharp absorption features. The representational advantage of 2D spectral images, rather than architectural complexity or ImageNet pretraining, drives the gain over 1D approaches.",
+      "authors": [
+        "Javier Lopatin",
+        "Teja Kattenborn",
+        "Eya Cherif",
+        "Sebasti\u00e1n Moreno"
+      ],
+      "published": "2026-08-17T14:53:56Z",
+      "updated": "2026-08-17T14:53:56Z",
+      "url": "https://arxiv.org/abs/2608.16661",
+      "pdf_url": "https://arxiv.org/pdf/2608.16661.pdf",
+      "primary_category": "cs.CV",
+      "categories": [
+        "cs.CV",
+        "cs.LG"
+      ],
+      "tags": [
+        "cs.CV",
+        "cs.LG"
+      ],
+      "domain": "Vision",
+      "pdf_downloaded": true,
+      "pdf_size_bytes": 6004324,
+      "pdf_path": "2026-08-18/vision/2608.16661.pdf"
+    },
+    {
+      "id": "2608.16658",
+      "title": "X$^2$Localizer: Cross-grained Alignment for Progressive Cross-view Video Geo-localization",
+      "abstract": "Cross-view Video Geo-localization (CVG) aims to localize ground-view videos by retrieving their corresponding geo-tagged aerial images. However, CVG approaches rely on fixed-length inputs and post-hoc refinement, hindering online-oriented localization under partial or dynamic observations. In this work, we formulate Progressive Cross-view Video Geo-localization (PCVG) as a deployment-oriented extension and evaluation protocol of CVG, enabling localization under varying temporal budgets, prefix-based inference, random-start evaluation, and long-range localization with interruptions. To explore PCVG, we introduce X$^2$Localizer, a cross-grained alignment framework that jointly supervises global prefix-to-aerial retrieval and token-aggregated frame--aerial-tile matching with a budget-dependent asymmetric objective. Furthermore, we introduce a Sliding-Window Re-Localization (SWRL) strategy that dynamically refreshes candidate regions for failure recovery and long-range deployment without full-sequence reprocessing. Extensive experiments show that X$^2$Localizer preserves conventional full-video performance, with marginal gains of +0.1 Recall@1 and +0.3 Recall@10, while substantially improving early localization. In the challenging single-frame setting, X$^2$Localizer improves coarse retrieval by +4.7 Recall@1 and +11.5 Recall@10 over the previous state-of-the-art method. With SWRL, our approach further enables robust progressive localization under random-start and long-distance scenarios, narrowing the gap between benchmark evaluation and real-world deployment.",
+      "authors": [
+        "Zichao Zeng",
+        "Weijia Fan",
+        "Yufan Chen",
+        "June Moh Goo",
+        "Junwei Zheng",
+        "Ruiping Liu",
+        "Kunyu Peng",
+        "Jiaming Zhang",
+        "Rainer Stiefelhagen",
+        "Jan Boehm"
+      ],
+      "published": "2026-08-17T14:53:13Z",
+      "updated": "2026-08-17T14:53:13Z",
+      "url": "https://arxiv.org/abs/2608.16658",
+      "pdf_url": "https://arxiv.org/pdf/2608.16658.pdf",
+      "primary_category": "cs.CV",
+      "categories": [
+        "cs.CV",
+        "cs.AI",
+        "cs.RO"
+      ],
+      "tags": [
+        "cs.AI",
+        "cs.CV",
+        "cs.RO"
+      ],
+      "domain": "Vision",
+      "pdf_downloaded": true,
+      "pdf_size_bytes": 6778076,
+      "pdf_path": "2026-08-18/vision/2608.16658.pdf"
+    },
+    {
+      "id": "2608.16646",
+      "title": "Training-Free Reconstruction-Based AI-Generated Image Detectors Are Inherently Vulnerable to Adversarial Examples",
+      "abstract": "The impressive visual quality and ubiquity of AI-generated images call for reliable and robust detection methods. Reconstruction-based detectors have emerged as a promising direction for transparent and training-free identification of synthetic images. However, due to their fundamentally different mode of operation (compared to standard, classifier-based methods), little is known about their adversarial robustness. In this work, we propose two novel attack methods targeted at detectors that leverage autoencoder reconstruction error. We find that by constructing imperceptible adversarial examples, the distance between original and reconstruction can be artificially increased, causing fake images to be wrongly classified as real. Our evaluation including images from three state-of-the-art generators and three detectors demonstrates that detection performance is significantly decreased, even if attacked images additionally undergo real-world degradations. Critically, our adversarial examples naturally transfer across detectors, as they all share the same principle, pointing towards an inherent vulnerability of reconstruction-based detectors.",
+      "authors": [
+        "Roman Demchenko",
+        "Jonas Ricker",
+        "Asja Fischer"
+      ],
+      "published": "2026-08-17T14:45:53Z",
+      "updated": "2026-08-17T14:45:53Z",
+      "url": "https://arxiv.org/abs/2608.16646",
+      "pdf_url": "https://arxiv.org/pdf/2608.16646.pdf",
+      "primary_category": "cs.CV",
+      "categories": [
+        "cs.CV"
+      ],
+      "tags": [
+        "cs.CV"
+      ],
+      "domain": "Vision",
+      "pdf_downloaded": true,
+      "pdf_size_bytes": 1016579,
+      "pdf_path": "2026-08-18/vision/2608.16646.pdf"
+    },
+    {
+      "id": "2608.16632",
+      "title": "DRAFE: Domain-Robust Asymmetric Fusion of Heterogeneous Detection Transformers for Cross-City Fine-Grained Traffic Object Detection",
+      "abstract": "Deep learning-based object detectors are fundamental to intelligent transportation systems, enabling traffic monitoring, vehicle analytics, and infrastructure management. However, achieving both fine-grained vehicle recognition and robust cross-city domain generalization remains challenging. We present the Domain-Robust Asymmetric Fusion Ensemble (DRAFE), which combines independently trained LW-DETR and RF-DETR detectors for cross-city fine-grained traffic object detection. DRAFE employs a two-stage training strategy that first pretrains complementary detectors on diverse public traffic datasets using pseudo-label expansion and human-in-the-loop annotation refinement, producing a curated corpus of 6,049 images and 203,619 annotations, before challenge-compliant fine-tuning on the Project Hafnia Track 6 dataset. At inference, DRAFE applies anchor-conditioned class-consistent matching, reliability-weighted coordinate fusion, agreement-aware confidence recalibration, and complementary hypothesis recovery. On AI City Challenge 2026 Track 6, DRAFE achieves 0.4022 mAP, ranks sixth among 25 participating teams, and improves by 0.0553 mAP over a preliminary ensemble evaluated under identical benchmark conditions.",
+      "authors": [
+        "Divine Yao Agbobli",
+        "Geoffery Eyram Agorku",
+        "Israel Afriyie",
+        "Kwadwo Amankwah-Nkyi",
+        "Marvin Osei-Kuffour",
+        "Richmond Owusu Duah",
+        "Bright Seglah",
+        "Kelvin Asamoah Terkper",
+        "Kwabena Amoako Adjei"
+      ],
+      "published": "2026-08-17T14:32:03Z",
+      "updated": "2026-08-17T14:32:03Z",
+      "url": "https://arxiv.org/abs/2608.16632",
+      "pdf_url": "https://arxiv.org/pdf/2608.16632.pdf",
+      "primary_category": "cs.CV",
+      "categories": [
+        "cs.CV"
+      ],
+      "tags": [
+        "cs.CV"
+      ],
+      "domain": "Vision",
+      "pdf_downloaded": true,
+      "pdf_size_bytes": 7894532,
+      "pdf_path": "2026-08-18/vision/2608.16632.pdf"
+    },
+    {
+      "id": "2608.16622",
+      "title": "HarmTrace: Anchor-Calibrated Decoupled Optimization for Fine-Grained Target Identification in Harmful Memes",
+      "abstract": "Multimodal harmful meme detection is typically formulated as image--text harmfulness classification. A model may correctly predict harmfulness while misidentifying the attacked target or its supporting evidence. We therefore extend harmful meme detection with fine-grained target identification, asking what type of target is attacked, who is targeted, and where the target appears in the meme. The model predicts harmfulness for every meme and, for harmful memes, outputs the target category, target entity, textual mention, and visual region. To support this task, we introduce Meme3W, which unifies multiple public harmful meme datasets and provides human-verified annotations for harmful instances. We further introduce Joint Record Accuracy (JRA), a strict record-level metric requiring the harmfulness label and all target-identification fields to be jointly correct. Experiments with representative multimodal large language models reveal a substantial gap between harmfulness accuracy and JRA. To narrow this gap, we propose HarmTrace, an anchor-calibrated decoupled optimization framework. HarmTrace strengthens target-entity supervision through entity-aware supervised fine-tuning. It then applies Conditional Target-identification Policy Optimization (CTPO) to decouple harmfulness and target-identification advantages, restricting target-identification optimization to label-correct responses for harmful examples. CTPO uses a Virtual Positive Anchor (VPA) as a fully correct reference for target-identification advantage normalization. HarmTrace improves both JRA and harmfulness accuracy across the evaluated backbones, with JRA on the Qwen3-VL-8B backbone increasing from 17.58\\% to 52.51\\%. Our code is publicly available at https://github.com/llly1234/HarmTrace-for-Harmful-Memes.",
+      "authors": [
+        "Yujia Li",
+        "Yiqun Zhang",
+        "Zihan Cheng",
+        "Yijie Huang",
+        "Tenglong Ye",
+        "Zihan Wang",
+        "Xiaocui Yang",
+        "Shi Feng",
+        "Yifei Zhang",
+        "Daling Wang"
+      ],
+      "published": "2026-08-17T14:21:41Z",
+      "updated": "2026-08-17T14:21:41Z",
+      "url": "https://arxiv.org/abs/2608.16622",
+      "pdf_url": "https://arxiv.org/pdf/2608.16622.pdf",
+      "primary_category": "cs.CV",
+      "categories": [
+        "cs.CV",
+        "cs.AI"
+      ],
+      "tags": [
+        "cs.AI",
+        "cs.CV"
+      ],
+      "domain": "Vision",
+      "pdf_downloaded": true,
+      "pdf_size_bytes": 6139480,
+      "pdf_path": "2026-08-18/vision/2608.16622.pdf"
+    }
+  ]
+}
