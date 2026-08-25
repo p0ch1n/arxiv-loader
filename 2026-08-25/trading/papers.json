@@ -1,0 +1,97 @@
+{
+  "domain": "Trading",
+  "date": "2026-08-25",
+  "count": 3,
+  "papers": [
+    {
+      "id": "2608.23053",
+      "title": "tse_tick: A Python Library for Parsing and Querying Nikkei NEEDS Tick Data from the Tokyo Stock Exchange",
+      "abstract": "Tick-level trade-and-quote data for the Tokyo Stock Exchange is distributed through the Nikkei NEEDS service as thousands of zipped CSV archives spanning four data types with era-dependent schemas and Japanese-language layouts. We present tse_tick, an open-source Python library that converts these raw archives into clean, typed Polars DataFrames and a Hive-partitioned Parquet store queryable through DuckDB. The library offers two access paths sharing one parse-and-clean core: a one-shot reader that returns a ticker- and time-filtered DataFrame directly from raw ZIP files, and a two-stage ingest-then-query pipeline with resume-safe, memory-aware parallel ingestion, part-pruning, and a materialized intraday time key for row-group pruning. The engineering, more than the parsing, is what the library contributes: ingestion runs in per-date atomic units whose completion is recorded by coverage markers rather than inferred from file existence, writes stream in bounded morsels so that peak memory is independent of trading-day size (24.5 GB to 2.4 GB on the worst measured day), a RAM-aware process pool sizes itself to available memory, and part-pruning opens only the archive parts a ticker can occupy. Full English and Japanese column definitions ship for all four types, and a translation layer maps yfinance, Polygon, and ccxt names onto their tse_tick equivalents. In benchmarks on a commodity 16-thread workstation, parsing a representative 4.8-million-row archive part, one of a trading day's nine parts, is 59.8x faster than the original pandas prototype (34.3x against an engine-matched pandas baseline), and a single-ticker time-window query from the store completes roughly 410x faster than a pandas scan of the equivalent CSV. tse_tick is available on PyPI (pip install tse-tick) under the MIT license.",
+      "authors": [
+        "Kazumi Li",
+        "Masataka Hayashi",
+        "Teruo Nakatsuma",
+        "Peter Romero"
+      ],
+      "published": "2026-08-24T09:56:18Z",
+      "updated": "2026-08-24T09:56:18Z",
+      "url": "https://arxiv.org/abs/2608.23053",
+      "pdf_url": "https://arxiv.org/pdf/2608.23053.pdf",
+      "primary_category": "q-fin.TR",
+      "categories": [
+        "q-fin.TR"
+      ],
+      "tags": [
+        "q-fin.TR"
+      ],
+      "domain": "Trading",
+      "pdf_downloaded": true,
+      "pdf_size_bytes": 223265,
+      "pdf_path": "2026-08-25/trading/2608.23053.pdf"
+    },
+    {
+      "id": "2608.22852",
+      "title": "Your AI, On a Dial: Controlling Investment Bias in LLMs with a Single Neuron",
+      "abstract": "Large language models (LLMs) are increasingly used in investment decision-making, yet prior work shows that they exhibit systematic, model-specific investment preferences. We study whether a model's overall investment stance can be calibrated to a specified direction and strength. We introduce an investment-bias dial, an inference-time intervention on a single neuron that continuously adjusts a model-level decision prior---its overall tendency toward buying or selling---without targeting specific firms or investment attributes. Using matched positive and negative evidence, we evaluate five open-weight LLMs and find that the dial produces monotonic changes in investment stance without modifying prompts or model parameters. At the response level, the dial shifts both investment decisions and the evidential emphasis of generated rationales under identical inputs. In an agentic retrieval setting, the dial also changes what information the model searches for, which evidence it selects, and which evidence is reflected in its final analysis. In a long-context evaluation, the dial maintains stable stance control as context length increases, whereas a matched system-prompt instruction progressively attenuates. We further show that changes in the dial propagate to security rankings and downstream portfolio composition in an exploratory backtest. Overall, our results show that an LLM's aggregate investment stance can be calibrated toward a specified target at inference time.",
+      "authors": [
+        "Sahong Park",
+        "Suhwan Park",
+        "Hoyoung Lee",
+        "Gakyung Kwon",
+        "Wonbin Ahn",
+        "Jaewon Choi",
+        "Alejandro Lopez-Lira",
+        "Yoon Kim",
+        "Chanyeol Choi",
+        "Hyeongwoo Kong",
+        "Yongjae Lee"
+      ],
+      "published": "2026-08-24T06:33:02Z",
+      "updated": "2026-08-24T06:33:02Z",
+      "url": "https://arxiv.org/abs/2608.22852",
+      "pdf_url": "https://arxiv.org/pdf/2608.22852.pdf",
+      "primary_category": "cs.AI",
+      "categories": [
+        "cs.AI",
+        "cs.CL",
+        "q-fin.GN"
+      ],
+      "tags": [
+        "cs.AI",
+        "cs.CL",
+        "q-fin.GN"
+      ],
+      "domain": "Trading",
+      "pdf_downloaded": true,
+      "pdf_size_bytes": 3711529,
+      "pdf_path": "2026-08-25/trading/2608.22852.pdf"
+    },
+    {
+      "id": "2608.22768",
+      "title": "The Loop-Gain Matrix: Coupled Rebalancing Feedback and the Blind Spots of Scalar Stability Monitoring",
+      "abstract": "The stability of markets hosting leveraged exchange-traded products is governed not by any single product's loop gain but by the spectral radius of a loop-gain matrix, and scalar per-product monitoring underestimates system feedback by construction. Recent work measures the self-reinforcement of a leveraged fund's daily close rebalancing through a scalar loop gain and treats cross-asset spillovers as bias. We model complexes on correlated underlyings as a coupled feedback system with matrix gain L and show that scalar monitoring has two blind spots: (i) cycle amplification, since rho(L) >= max_i l_ii for nonnegative coupling, strict under two-way coupling; and (ii) transmitted displacement, which arises already under one-way coupling and is invisible to the receiver's own gain. We give a reduced-form estimator of L requiring only prices and public fund assets -- no signed order flow -- via cross-asset overnight reversals, reporting its measurement-convention sensitivity explicitly. In simulation the spectral radius is recovered with RMSE 0.005 at T=250, a lead-lag confounder yields a 2% false-alarm rate, and in a calibrated blind-spot configuration the scalar monitor reports \"safe\" and the matrix monitor \"unsafe\" on 100% of paths. In the 2026 Korean single-stock LETF episode we detect transmission from the SK Hynix complex into Samsung Electronics' closing price (DiD z=-2.82; exact randomization p=0.0055 against 182 control pairs), scaling with the sender's rebalancing capital; conservatively, about 41% of Samsung's closing displacement variance is imported -- invisible to its own \"moderate\" gain of 0.24. The same estimator returns nulls for the U.S. MSTR-Bitcoin-Coinbase complex, whose capital is comparable but whose closing venue is far deeper. Monitoring should be organized around the (complex x venue) matrix, not around products.",
+      "authors": [
+        "Jihwan Woo"
+      ],
+      "published": "2026-08-24T03:43:09Z",
+      "updated": "2026-08-24T03:43:09Z",
+      "url": "https://arxiv.org/abs/2608.22768",
+      "pdf_url": "https://arxiv.org/pdf/2608.22768.pdf",
+      "primary_category": "physics.soc-ph",
+      "categories": [
+        "physics.soc-ph",
+        "eess.SP",
+        "q-fin.TR"
+      ],
+      "tags": [
+        "eess.SP",
+        "physics.soc-ph",
+        "q-fin.TR"
+      ],
+      "domain": "Trading",
+      "pdf_downloaded": true,
+      "pdf_size_bytes": 495625,
+      "pdf_path": "2026-08-25/trading/2608.22768.pdf"
+    }
+  ]
+}
