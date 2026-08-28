@@ -1,0 +1,806 @@
+{
+  "domain": "Agent",
+  "date": "2026-08-28",
+  "count": 28,
+  "papers": [
+    {
+      "id": "2608.27384",
+      "title": "FlashVLA: Streaming Action Decoding for Fast and Asynchronous VLA Inference",
+      "abstract": "Vision-Language-Action (VLA) models are increasingly promising for robotic manipulation, yet their real-world deployment remains bottlenecked by high inference latency and unstable asynchronous execution. This challenge is particularly pronounced in flow-matching-based VLA models, where action decoding requires multiple iterative steps conditioned on the VLM context. While efficient inference methods improve control frequency and asynchronous methods reduce execution idle time, existing approaches often fail to jointly achieve low-latency inference and accurate, temporally consistent asynchronous execution. We introduce \\textbf{FlashVLA}, a streaming action decoding framework that addresses both challenges in a unified formulation. FlashVLA maintains a streaming action buffer with multiple chunks at different noise levels and decodes them using chunk-wise causal attention. This design allows FlashVLA to produce one executable action chunk per inference step. Moreover, its chunk-wise autoregressive formulation implicitly preserves action continuity, enabling smooth asynchronous execution without extra future-state conditioning. Across extensive simulated and real-world experiments, FlashVLA substantially improves inference speed while maintaining strong task performance. It can achieve $\\geq$30\\,Hz control frequency on a single GPU with smooth asynchronous inference in real-world deployment.",
+      "authors": [
+        "Zekai Li",
+        "Jiaming Tang",
+        "Zhijian Liu"
+      ],
+      "published": "2026-08-27T17:19:29Z",
+      "updated": "2026-08-27T17:19:29Z",
+      "url": "https://arxiv.org/abs/2608.27384",
+      "pdf_url": "https://arxiv.org/pdf/2608.27384.pdf",
+      "primary_category": "cs.RO",
+      "categories": [
+        "cs.RO"
+      ],
+      "tags": [
+        "cs.RO"
+      ],
+      "domain": "Agent",
+      "pdf_downloaded": true,
+      "pdf_size_bytes": 4875032,
+      "pdf_path": "2026-08-28/agent/2608.27384.pdf"
+    },
+    {
+      "id": "2608.27371",
+      "title": "Embodied Scene Rearrangement Planning",
+      "abstract": "This paper introduces Embodied Scene Rearrangement Planning (ESRP), a novel task requiring embodied agents to rearrange furniture in 3D scenes to match a target configuration using only egocentric observations and a top-down target layout. Unlike prior rearrangement tasks, ESRP precludes global state access and introduces mutual object occlusions, reflecting the practical constraints of real-world robotic deployment. These factors make aligning partial egocentric observations with the global target layout particularly challenging for long-horizon planning. To facilitate research, we present ESRP-Bench, a comprehensive benchmark built on OmniGibson featuring over 5,400 scene pairs and 8,200 objects. We define three multi-level metrics to evaluate rearrangement quality and provide four baselines: a hierarchical task-and-motion planning method, a vision-language-model-based method, and two learning-based approaches (IL and RL). Experimental results demonstrate that current methods struggle to complete the task efficiently, highlighting ESRP as a challenging frontier for embodied agents in scene understanding and long-horizon task planning. This work serves as a stepping stone toward deploying intelligent agents in real-world scenarios. Project page: https://pie-lab.cn/ESRP/.",
+      "authors": [
+        "Canzhi Chen",
+        "Zan Wang",
+        "Siqi Zhu",
+        "Qi Wu",
+        "Yixuan Li",
+        "Wei Liang"
+      ],
+      "published": "2026-08-27T17:08:40Z",
+      "updated": "2026-08-27T17:08:40Z",
+      "url": "https://arxiv.org/abs/2608.27371",
+      "pdf_url": "https://arxiv.org/pdf/2608.27371.pdf",
+      "primary_category": "cs.RO",
+      "categories": [
+        "cs.RO"
+      ],
+      "tags": [
+        "cs.RO"
+      ],
+      "domain": "Agent",
+      "pdf_downloaded": true,
+      "pdf_size_bytes": 4031913,
+      "pdf_path": "2026-08-28/agent/2608.27371.pdf"
+    },
+    {
+      "id": "2608.27338",
+      "title": "One Model, Many Minds: Unlocking Multi-Agent Synergy in a Single Agent via Mixture of Roles",
+      "abstract": "Specializing Large Language Models (LLMs) toward distinct abilities underpins successes ranging from personalized assistants to multi-agent systems (MAS). Single-agent paradigms rely on pre-defined personas or steering vectors to induce specialization, yet they impose a single fixed specialization that fails to adapt to diverse queries. Conversely, MAS achieves dynamic multi-perspective problem solving by orchestrating agents with distinct text-based roles, but fusing these specializations requires multi-turn interactions that inflate context length and inference cost. To address these limitations, we propose Mixture of Roles (MoRe), which adaptively composes multiple specializations into a single steering vector for single-turn inference. Specifically, MoRe learns a diversified codeboox of steering vectors, each of which encodes a latent role. A query-aware router dynamically fuses the codebook into a steering vector that encompasses multiple roles. By steering the backbone LLM with the composed vector, MoRe enables multi-perspective specialization in a single-agent, single-turn inference process. The proposed MoRe can be efficiently trained via a three-stage SFT curriculum and GRPO post-training, while the backbone LLM remains frozen. Experiments across reasoning and personality benchmarks show that MoRe outperforms single-agent baselines by 2.2% on average, and achieves performance on par with MAS while reducing token cost by 20x.",
+      "authors": [
+        "Zhichen Zeng",
+        "Huiyuan Chen",
+        "Jingru Cheng",
+        "Juan Zha",
+        "Ming Liu",
+        "Ying Chen",
+        "Xiyuan Yang",
+        "Chaosheng Dong",
+        "Haiyang Zhang",
+        "Hanghang Tong"
+      ],
+      "published": "2026-08-27T16:40:28Z",
+      "updated": "2026-08-27T16:40:28Z",
+      "url": "https://arxiv.org/abs/2608.27338",
+      "pdf_url": "https://arxiv.org/pdf/2608.27338.pdf",
+      "primary_category": "cs.MA",
+      "categories": [
+        "cs.MA"
+      ],
+      "tags": [
+        "cs.MA"
+      ],
+      "domain": "Agent",
+      "pdf_downloaded": true,
+      "pdf_size_bytes": 3054199,
+      "pdf_path": "2026-08-28/agent/2608.27338.pdf"
+    },
+    {
+      "id": "2608.27271",
+      "title": "Marine Autonomous Vehicle Fleet Scheduling to Maximise Scientific Impact",
+      "abstract": "The marine science community increasingly relies on Marine Autonomous Vehicles (MAVs) to collect the critical environmental data required to understand global ocean systems. However, as these operations scale, manually routing and planning large autonomous fleets becomes exponentially complex and time-consuming. To address this, we propose a mixed-integer linear programming (MILP) model designed to automate and optimise MAV deployment schedules. The model accounts for strict operational constraints, including battery capacities and time windows for data collection, while aiming to maximise total data collection and minimise both the number of deployed vehicles and their energy consumption. A key novelty of this framework is integrating conventional ship itineraries, allowing MAVs to support vessels with mid-mission battery swapping or accelerated transit between waypoints. Computational experiments demonstrate that the model is highly scalable, solving routing problems for fleets of dozens of MAVs in seconds, and scaling to hundreds of vehicles in only a few minutes. Beyond operational scheduling, the framework serves as a robust simulation tool for evaluating 'what-if' scenarios and analysing the impact of varying parameters on deployment strategies. Finally, the solution generates a suite of visualisations designed to enhance explainability and support strategic decision-making for stakeholders.",
+      "authors": [
+        "Mehdi El Krari",
+        "Jonathan Smith",
+        "Maria Fox"
+      ],
+      "published": "2026-08-27T15:49:49Z",
+      "updated": "2026-08-27T15:49:49Z",
+      "url": "https://arxiv.org/abs/2608.27271",
+      "pdf_url": "https://arxiv.org/pdf/2608.27271.pdf",
+      "primary_category": "math.OC",
+      "categories": [
+        "math.OC",
+        "cs.RO"
+      ],
+      "tags": [
+        "cs.RO",
+        "math.OC"
+      ],
+      "domain": "Agent",
+      "pdf_downloaded": true,
+      "pdf_size_bytes": 2784419,
+      "pdf_path": "2026-08-28/agent/2608.27271.pdf"
+    },
+    {
+      "id": "2608.27225",
+      "title": "STEP: State-Aware Task Estimation and Planning with Multi-Modal LLMs for Human-Robot Collaboration",
+      "abstract": "Effective human-robot collaboration in industrial settings requires robots to understand human intentions and assist with task planning, reducing workload. Recent works have explored the use of Multi-modal Large Language Models (MM-LLMs) for task planning in such data-scarce scenarios, leveraging in-context learning to interpret user actions and generate long-horizon action plans in natural language. However, MM-LLMs inherently lack an understanding of system states and do not track state transitions, often leading to hallucinated actions that deviate from the intended goal. Additionally, generating action plans in natural language tends to limit the generated plans to a high level, introducing ambiguity in action execution. To address these limitations, we propose the State-aware Task Estimator and Planner (STEP), which prompts a MM-LLM to explicitly estimate the state of the system and predict the state transitions resulting from executed actions. By forecasting future states alongside actions, STEP ensures task-convergent planning while also providing additional assistance parameters necessary for executing the predicted actions. We evaluate STEP in a simulated environment using a robot assembly task. Our approach outperforms the state-of-the-art by 32.8% in action executability and 14.8% in final-state error.",
+      "authors": [
+        "Maitrey Gramopadhye",
+        "Prakash Baskaran",
+        "Xiao Liu",
+        "Songpo Li",
+        "Soshi Iba"
+      ],
+      "published": "2026-08-27T15:08:36Z",
+      "updated": "2026-08-27T15:08:36Z",
+      "url": "https://arxiv.org/abs/2608.27225",
+      "pdf_url": "https://arxiv.org/pdf/2608.27225.pdf",
+      "primary_category": "cs.RO",
+      "categories": [
+        "cs.RO",
+        "cs.AI"
+      ],
+      "tags": [
+        "cs.AI",
+        "cs.RO"
+      ],
+      "domain": "Agent",
+      "pdf_downloaded": true,
+      "pdf_size_bytes": 2515445,
+      "pdf_path": "2026-08-28/agent/2608.27225.pdf"
+    },
+    {
+      "id": "2608.27221",
+      "title": "Tensegrity Continuum Robots Enable Task-Adaptive Morphologies for Cooperative Behaviors",
+      "abstract": "Robots that can change their morphologies and behaviors for different tasks and environments hold great promise for adaptable, multifunctional systems. Modular reconfigurable robots (MRRs) can achieve such functionalities by docking and rearranging individual units, but most rely on rigid modules that lack structural compliance, resulting in limited capabilities. Continuum robots offer compliance through flexible backbones, yet they cannot self-reconfigure into task-adaptive multi-robot configurations. Here, we introduce an MRR that unifies the advantages of both architectures by combining a tensegrity-based compliant body with claw-based connection mechanisms. Each robot can manipulate and locomote independently, and multiple robots can self-reconfigure into different morphologies (e.g., chains, loops, branches) for cooperative manipulation and locomotion. We demonstrate the robots' capability across diverse tasks and environments, including coordinated object manipulation and transport, multimodal locomotion, and loco-manipulation in real-world scenarios. These results lay a foundation for adaptable and multifunctional robotic collectives, with broad potential applications in manufacturing, space exploration, and search-and-rescue operations.",
+      "authors": [
+        "Mahmud Hasan Saikot",
+        "Sydney Spiegel",
+        "Sudheera Akalanka Kariyawasam",
+        "Andrew Stefka",
+        "Josh Chrisler",
+        "Jianguo Zhao"
+      ],
+      "published": "2026-08-27T15:05:30Z",
+      "updated": "2026-08-27T15:05:30Z",
+      "url": "https://arxiv.org/abs/2608.27221",
+      "pdf_url": "https://arxiv.org/pdf/2608.27221.pdf",
+      "primary_category": "cs.RO",
+      "categories": [
+        "cs.RO"
+      ],
+      "tags": [
+        "cs.RO"
+      ],
+      "domain": "Agent",
+      "pdf_downloaded": true,
+      "pdf_size_bytes": 14780517,
+      "pdf_path": "2026-08-28/agent/2608.27221.pdf"
+    },
+    {
+      "id": "2608.27186",
+      "title": "Task-space model-based control of pneumatic soft actuators",
+      "abstract": "Soft actuators enable dexterous and compliant interaction, but closed-loop task-space control remains challenging due to strong nonlinearities, distributed deformation, and uncertainty in their dynamics. This paper presents a real-time dynamic-model-based task-space feedback and estimation framework based on a non-minimal coordinate discrete elastic rod model formulated in absolute coordinates with holonomic constraints. The resulting structure preserves distributed mechanics while maintaining computational efficiency through sparse system matrices, enabling real-time control with up to 10 discretized rods. A quasi-static feedforward inverse model is combined with a task-space PI controller and a dynamic observer that fuses measurement residuals as virtual forces, enabling full-state estimation from sparse sensing. The approach is experimentally validated on three planar pneumatic soft actuators with varying geometries. Across five tasks, including drawing the digits 0-9 across the workspace (3-18 mm/s tip speed), tracking periodic motion (up to 37 cm/s), cross-platform generalization, reduced sensing conditions, and real-time user-defined references, our method achieves 1.5-2.3 mm root mean square error (RMSE) for precision motions and 5.5-12.4 mm RMSE at 1-2 Hz. Results demonstrate that structured, non-minimal dynamic models can enable real-time, high-precision, moderate-bandwidth task-space control of planar soft pneumatic actuators in free space.",
+      "authors": [
+        "Nithin S. Kumar",
+        "Joshua Gaston",
+        "D. Caleb Rucker",
+        "Eric J. Barth"
+      ],
+      "published": "2026-08-27T14:32:07Z",
+      "updated": "2026-08-27T14:32:07Z",
+      "url": "https://arxiv.org/abs/2608.27186",
+      "pdf_url": "https://arxiv.org/pdf/2608.27186.pdf",
+      "primary_category": "cs.RO",
+      "categories": [
+        "cs.RO"
+      ],
+      "tags": [
+        "cs.RO"
+      ],
+      "domain": "Agent",
+      "pdf_downloaded": true,
+      "pdf_size_bytes": 5517203,
+      "pdf_path": "2026-08-28/agent/2608.27186.pdf"
+    },
+    {
+      "id": "2608.27151",
+      "title": "Planning a Shared Modular Fixture Layout Across Robotic Disassembly Stages",
+      "abstract": "Stable support remains challenging in robotic disassembly of irregularly shaped products. As components are progressively removed, the available support surfaces, mass distribution, and task loads change throughout the process. A fixture layout designed for one workpiece state may therefore become infeasible at later stages, motivating unified support planning over the complete disassembly sequence. This paper presents a modular vacuum-based fixturing system that plans one shared support configuration for the complete disassembly sequence of a screwdriver or shaver, allowing each sequence to proceed without fixture reconfiguration. To search the mixed continuous--discrete layout space under repeated cross-stage evaluation, a denoising diffusion probabilistic model generates physics-informed initial configurations that are refined through Bayesian optimization. Robotic screw and component-removal experiments verified the disassembly feasibility of the planned layouts, while 11 directional-load tests quantified their stability. Comparisons between the measured operational loads and directional responses yielded mean empirical stability margins of 66.9% for the screwdriver and 81.6% for the shaver. These results demonstrate that a product-specific shared layout can provide stable support throughout the tested robotic disassembly sequence.",
+      "authors": [
+        "Haohui Pan",
+        "Takuya Kiyokawa",
+        "Kensuke Harada"
+      ],
+      "published": "2026-08-27T14:03:43Z",
+      "updated": "2026-08-27T14:03:43Z",
+      "url": "https://arxiv.org/abs/2608.27151",
+      "pdf_url": "https://arxiv.org/pdf/2608.27151.pdf",
+      "primary_category": "cs.RO",
+      "categories": [
+        "cs.RO"
+      ],
+      "tags": [
+        "cs.RO"
+      ],
+      "domain": "Agent",
+      "pdf_downloaded": true,
+      "pdf_size_bytes": 17744675,
+      "pdf_path": "2026-08-28/agent/2608.27151.pdf"
+    },
+    {
+      "id": "2608.27088",
+      "title": "Active sensing to characterize the heterogeneity of plant stress",
+      "abstract": "While most phenotyping platforms rely primarily on image-based measurements, advanced plant characterization requires the integration of active physiological sensing modali- ties such as chlorophyll fluorescence. We present an autonomous robotic platform designed to perform targeted fluorescence measurements on plant leaves. The system combines 3D plant reconstruction, geometric analysis, and motion planning to localize suitable measurement points and generate collision-free trajectories for a robotic manipulator. A dense 3D model of the plant is reconstructed from multi-view data and used to extract candidate leaf surfaces based on orientation, accessibility, and sensing constraints. These targets are then integrated into a task-level planning framework that guides the end-effector to precise contact or near-contact configurations required for point-based fluorescence acquisition. The platform enables automated, repeatable, and spatially resolved physiological measurements that go beyond passive imaging. By tightly coupling perception, geometric reasoning, and manipulation, the proposed system provides a robotics-driven approach to high-resolution plant phenotyping and opens new directions for autonomous agricultural inspection and plant-aware manipulation.",
+      "authors": [
+        "Ayman Laaroussi",
+        "Peter Hanappe",
+        "David Colliaux"
+      ],
+      "published": "2026-08-27T13:11:13Z",
+      "updated": "2026-08-27T13:11:13Z",
+      "url": "https://arxiv.org/abs/2608.27088",
+      "pdf_url": "https://arxiv.org/pdf/2608.27088.pdf",
+      "primary_category": "cs.RO",
+      "categories": [
+        "cs.RO",
+        "cs.AI"
+      ],
+      "tags": [
+        "cs.AI",
+        "cs.RO"
+      ],
+      "domain": "Agent",
+      "pdf_downloaded": true,
+      "pdf_size_bytes": 2719326,
+      "pdf_path": "2026-08-28/agent/2608.27088.pdf"
+    },
+    {
+      "id": "2608.27086",
+      "title": "A Contract-Centered Architecture for Scalable and Manageable Agentic Runtimes",
+      "abstract": "Enterprise AI deployment is a coordination problem across business units, application and AI teams, testing, platform engineering, infrastructure, security, operations, and data governance. Use-case benchmarks show whether one agent completes one task, but not how changing capabilities, models, runtime mechanisms, capacity, and enterprise data should be owned, changed, admitted, or evidenced together. We present four responsibility objects as shared organizational contracts: Skill (reusable, versioned capability and workflow asset), Harness (runtime compiler and governor), Scaffold (execution/control boundary and NFR owner), and a stack-external data substrate under independent CIO-governed semantics and telemetry. The runtime core is A = <S, H, X>, with the data substrate outside that stack. The central contribution is one bounded, falsifiable hypothesis, P1 (cost-aware capability-capacity separability): within a declared operating region, changing activated capability preserves the capacity-response interaction within a preregistered equivalence margin, while changing compatible Scaffold capacity preserves capability semantics up to a non-inferiority margin, and the required controls stay within a declared enforcement budget. Six design conditions become measured obligations whose coverage, violations, uncertainty, cost, and exclusions determine whether P1 is decidable. We propose a cluster-period randomized crossover experiment (balanced order, reset/washout, repeated seeds and failure regimes, cluster-aware uncertainty) with a four-state verdict: supported, falsified, conditional-engineering, or inconclusive. This paper contributes a contract-bounded runtime architecture, a source-preserving data substrate, and a falsifiable measurement protocol. It reports no completed implementation, experiment, dataset, or measured result.",
+      "authors": [
+        "Yaxiao Liu",
+        "Pengbo Liu",
+        "Yiwen Liu",
+        "Yihua Guan",
+        "Zhenghe Hou",
+        "Jiaxing Song"
+      ],
+      "published": "2026-08-27T13:09:49Z",
+      "updated": "2026-08-27T13:09:49Z",
+      "url": "https://arxiv.org/abs/2608.27086",
+      "pdf_url": "https://arxiv.org/pdf/2608.27086.pdf",
+      "primary_category": "cs.AI",
+      "categories": [
+        "cs.AI",
+        "cs.MA",
+        "cs.SE"
+      ],
+      "tags": [
+        "cs.AI",
+        "cs.MA",
+        "cs.SE"
+      ],
+      "domain": "Agent",
+      "pdf_downloaded": true,
+      "pdf_size_bytes": 11571319,
+      "pdf_path": "2026-08-28/agent/2608.27086.pdf"
+    },
+    {
+      "id": "2608.27085",
+      "title": "Pass the Bucket: Efficient, Robust, Local Load Balancing for Teams of Heterogeneous Robots",
+      "abstract": "We study the problem of decentralized, self-organized task sharing for a swarm of heterogeneous robots that collaborate in transportation or other objectives that require coordinated motion planning. To this end, we present theoretical and practical results for the simple but effective mechanism of \\emph{bucket brigades} for load balancing, in which a team of heterogenous robots share a spatial task in a confined, one-dimensional space, while only being able to sense collisions with neighbors or walls. The goal is to optimize throughput of the overall system, without central control or information, aiming at an interval partition proportional to robot velocities. We address possible chaotic system behavior by developing a stabilization mechanism based on simple local aid, a ``token'', that temporarily decelerates robots after an encounter. This purely local change eliminates persistent oscillations, resulting in convergence towards a stable system state. We accelerate system convergence by comparing a single boundary token to ubiquitous two-directional tokens and optimizing the deceleration factor. Event-driven simulations report convergence times and robustness: For a large variety of perturbations (such as robot deletion, position or velocity jittering), the system reliably re-converges. The results suggest a local, practical mechanism for robust load balancing for heterogeneous teams of robots that promises an effective tool as basis for more complex scenarios.",
+      "authors": [
+        "Tobias Wallner",
+        "Dominik Krupke",
+        "Arne Schmidt",
+        "S\u00e1ndor P. Fekete"
+      ],
+      "published": "2026-08-27T13:09:45Z",
+      "updated": "2026-08-27T13:09:45Z",
+      "url": "https://arxiv.org/abs/2608.27085",
+      "pdf_url": "https://arxiv.org/pdf/2608.27085.pdf",
+      "primary_category": "cs.RO",
+      "categories": [
+        "cs.RO"
+      ],
+      "tags": [
+        "cs.RO"
+      ],
+      "domain": "Agent",
+      "pdf_downloaded": true,
+      "pdf_size_bytes": 1182870,
+      "pdf_path": "2026-08-28/agent/2608.27085.pdf"
+    },
+    {
+      "id": "2608.27079",
+      "title": "GRAFT: Grounded and Efficient Online Reinforcement Adaptation for Fine-Grained Robot Manipulation",
+      "abstract": "Pretrained vision-language-action (VLA) policies provide strong priors for robot manipulation, yet adapting them online to fine-grained biomedical tasks remains challenging. Task success often hinges on subtle, view-dependent visual cues, while task-level rewards provide little guidance about which regions matter, making it difficult to learn task-relevant visual grounding from limited real-robot interaction. Online adaptation is further constrained by the computational cost of VLA inference and replay-based updates. We introduce GRAFT (Grounded Reinforcement Adaptation for Fast Task Learning), a framework for efficient online VLA adaptation through grounded perception. GRAFT uses region-level supervision to learn view-specific visual anchors that focus perception on task-relevant local cues without requiring region proposals at deployment. It further combines single-step action generation with cached visual-language prefix reuse to accelerate online learning. Across four biomedical manipulation tasks, GRAFT improves success rates by 25 percentage points under matched adaptation budgets, while reducing the computational overhead of online policy updates.",
+      "authors": [
+        "Yibo Qiu",
+        "Haoliang Ye",
+        "Shu'ang Sun",
+        "Zan Huang",
+        "Ronald X Xu",
+        "Mingzhai Sun"
+      ],
+      "published": "2026-08-27T13:04:51Z",
+      "updated": "2026-08-27T13:04:51Z",
+      "url": "https://arxiv.org/abs/2608.27079",
+      "pdf_url": "https://arxiv.org/pdf/2608.27079.pdf",
+      "primary_category": "cs.RO",
+      "categories": [
+        "cs.RO"
+      ],
+      "tags": [
+        "cs.RO"
+      ],
+      "domain": "Agent",
+      "pdf_downloaded": true,
+      "pdf_size_bytes": 8108394,
+      "pdf_path": "2026-08-28/agent/2608.27079.pdf"
+    },
+    {
+      "id": "2608.27073",
+      "title": "SpatialCrafter: Single Image World Modeling with Generative 3D Proxies",
+      "abstract": "Explorable image-to-scene generation is essential for applications in gaming, robotics, and virtual reality. Existing methods based on video diffusion model (VDM) commonly rely on incomplete conditioning signals such as sparse point clouds or 2D panoramas, leading to stochastic hallucinations, long-term drifts and suboptimal 3D consistency. We present SpatialCrafter, a novel two-stage framework that addresses these issues by introducing a global 3D proxy for high-fidelity image-to-scene generation. Specifically, we decompose the generation process into global proxy generation and appearance refinement. For proxy generation, we propose a Point-anchored Sparse Structure~(PaSS) Flow module that predicts a spatially aligned and geometrically consistent 3D proxy. For appearance refinement, we re-frame the VDM as a Generative Deferred Refiner which synthesizes high-frequency photorealistic details upon proxy-defined scene geometry. To better integrate the proxy with the pre-trained VDM, we introduce Parallel Geometry Injection and Proxy-Aware Corruption training strategies, which improve robustness to proxy artifacts without disrupting the pretrained generative manifold. Furthermore, as no suitable dataset exists for this explorable scene generation task, we construct a new large-scale dataset of 115K scenes. To the best of our knowledge, it is the first hybrid dataset for image-to-scene generation. Extensive experiments on both synthetic and real-world datasets show that SpatialCrafter outperforms state-of-the-art methods, mitigates long-term drift, and remains robust and consistent under rapid camera motion and extreme viewpoint changes. Code, models, and the newly constructed dataset will be publicly released. See more at https://fangchuan.github.io/SpatialCrafter/.",
+      "authors": [
+        "Chuan Fang",
+        "Lingteng Qiu",
+        "Yixun Liang",
+        "Rui Chen",
+        "Kunming Luo",
+        "Zhaohua Zheng",
+        "Tongyuan Bai",
+        "Feipeng Tian",
+        "Zilong Dong",
+        "Zihan Zhou",
+        "Ping Tan"
+      ],
+      "published": "2026-08-27T12:58:37Z",
+      "updated": "2026-08-27T12:58:37Z",
+      "url": "https://arxiv.org/abs/2608.27073",
+      "pdf_url": "https://arxiv.org/pdf/2608.27073.pdf",
+      "primary_category": "cs.CV",
+      "categories": [
+        "cs.CV",
+        "cs.RO"
+      ],
+      "tags": [
+        "cs.CV",
+        "cs.RO"
+      ],
+      "domain": "Agent",
+      "pdf_downloaded": true,
+      "pdf_size_bytes": 10853937,
+      "pdf_path": "2026-08-28/agent/2608.27073.pdf"
+    },
+    {
+      "id": "2608.27033",
+      "title": "Riemann-1.0: An Embodied World Action Model for Physical AI",
+      "abstract": "We introduce Riemann-1.0, a fully causal autoregressive World Action Model for embodied intelligence. Riemann-1.0 jointly models multi-view visual observations, robot states, and embodiment-specific actions within a unified causal autoregressive sequence, representing robot actions and world evolution as causal state transitions. Unlike existing WAMs based on joint generation, video-first prediction, or decoupled modeling paradigms, Riemann-1.0 unifies online robot policy execution and action-conditioned world simulation within a single model, enabling it to function as both an executable robot policy and a multi-embodiment visual world simulator. To scale embodied experience across heterogeneous data sources, we further develop a progressive embodied pretraining framework that unifies learning from egocentric human videos, handheld-gripper demonstrations, and heterogeneous robot trajectories under a shared World Action Modeling objective. Built upon 200K+ hours of interaction data, Riemann-1.0 progressively transfers large-scale embodied experience into executable robot manipulation capabilities. Riemann-1.0 achieves state-of-the-art performance across both simulation benchmarks and real-world manipulation tasks. It achieves success rates of 94.3% on RoboTwin2.0, 99.0% on LIBERO, and 62.6% on the long-horizon compositional benchmark RoboCasa-365, outperforming the previous best method by 8.4% On long-horizon real-world manipulation tasks, Riemann-1.0 achieves a Success Rate (SR) of 85.0% and a Progress Success Rate (PSR) of 94.4%, exceeding the strongest open-source baseline by 15% in SR. These results demonstrate that unified World Action Modeling together with progressive embodied pretraining effectively transforms large-scale embodied experience into generalizable robot manipulation capabilities.",
+      "authors": [
+        "Haofeng Sun",
+        "Jiangbo Pei",
+        "Fei Kang",
+        "Zexiang Liu",
+        "Yaokun Li",
+        "Boyi Jiang",
+        "Hua Xue",
+        "Cindy Zhou",
+        "Wei Li",
+        "Yichen Wei",
+        "Mengyin An",
+        "Fanliang Zhao",
+        "Biao Jiang",
+        "Zile Wang",
+        "Yang Liu",
+        "Yangguang Li"
+      ],
+      "published": "2026-08-27T12:21:26Z",
+      "updated": "2026-08-27T12:21:26Z",
+      "url": "https://arxiv.org/abs/2608.27033",
+      "pdf_url": "https://arxiv.org/pdf/2608.27033.pdf",
+      "primary_category": "cs.RO",
+      "categories": [
+        "cs.RO"
+      ],
+      "tags": [
+        "cs.RO"
+      ],
+      "domain": "Agent",
+      "pdf_downloaded": true,
+      "pdf_size_bytes": 14787566,
+      "pdf_path": "2026-08-28/agent/2608.27033.pdf"
+    },
+    {
+      "id": "2608.27000",
+      "title": "Arbitrary-Order Hermite Interpolation of Rigid-Motion Jets via Hyper-Multidual Quaternions",
+      "abstract": "We study bilateral interpolation of finite-order rigid-motion jets represented by unit dual quaternions. An order-$n$ multidual (MD) algebra is the truncated polynomial algebra $\\mathbb{R}[\\varepsilon]/(\\varepsilon^{n+1})$; hyper-multidual (HMD) quaternions are dual quaternions with coefficients in this algebra. Temporal HMD transforms encode a pose and its derivatives, whereas a generic HMD curve need not be the temporal jet of its pose projection; we call this requirement holonomicity. We show that a temporal transform and its relative descriptor are unitary and derive recursive coefficient constraints, together with a local realizability converse in an admissible logarithm chart. We then extend screw linear interpolation (ScLERP) algebraically to unit HMD quaternions. Although it matches complete endpoint transforms, direct HMD--ScLERP is generically non-holonomic for arbitrary endpoint jets. We give a coefficient criterion and explicit endpoint and first-order interior contact defects. A holonomic alternative is obtained by mapping endpoint transforms to logarithmic dual-quaternion coordinates, applying the degree-$(2n+1)$ Hermite polynomial that matches derivatives through order $n$, and lifting by the exponential. HMD arithmetic also recovers higher-order rigid-motion acceleration fields without explicit differentiation of $\\mathrm{dexp}$. Rotation and full $\\mathrm{SE}(3)$ tests through second order, with an additional third-order polynomial check, reproduce the stated defects and endpoint jets.",
+      "authors": [
+        "Daniel Condurache"
+      ],
+      "published": "2026-08-27T11:46:29Z",
+      "updated": "2026-08-27T11:46:29Z",
+      "url": "https://arxiv.org/abs/2608.27000",
+      "pdf_url": "https://arxiv.org/pdf/2608.27000.pdf",
+      "primary_category": "cs.RO",
+      "categories": [
+        "cs.RO"
+      ],
+      "tags": [
+        "cs.RO"
+      ],
+      "domain": "Agent",
+      "pdf_downloaded": true,
+      "pdf_size_bytes": 387010,
+      "pdf_path": "2026-08-28/agent/2608.27000.pdf"
+    },
+    {
+      "id": "2608.26990",
+      "title": "DSA: Evidence-Aware LLM-Agent Orchestration for Multi-Market Stock Research",
+      "abstract": "Large language models can summarize financial information, but an operational stock-research system must first assemble heterogeneous evidence, expose unavailable data and model capabilities, and control how generated opinions affect a final report. We present DSA, an evidence-aware orchestration framework for multi-market stock research with large language model (LLM) agents. DSA organizes the workflow into evidence acquisition, structured context construction, model-routed analysis, optional role and Strategy Skill reasoning, and report generation with selected context and diagnostics. A default report profile and an optional agentic profile share evidence and model-routing services but use profile-specific output validation and risk safeguards. In the agentic profile, core role outputs are processed by role-specific parsers, whereas Strategy Skill opinions undergo an additional signal-eligibility partition before synthesis; disagreement is supplied explicitly to the decision agent, followed by a conservative risk override. The reference implementation includes six regional market paths, fifteen bundled Strategy Skills, hosted and local model routes, and multiple execution and delivery surfaces. At a frozen software snapshot, a selected manifest of 1,457 portable offline backend contract tests passed; 596 cases were retrospectively mapped to six contract families central to the reported LLM-agent architecture. This evidence establishes implementation conformance for the tested software contracts, not superior report quality, forecasting accuracy, or investment returns.",
+      "authors": [
+        "Linsen Zhu",
+        "Yi Shi"
+      ],
+      "published": "2026-08-27T11:37:13Z",
+      "updated": "2026-08-27T11:37:13Z",
+      "url": "https://arxiv.org/abs/2608.26990",
+      "pdf_url": "https://arxiv.org/pdf/2608.26990.pdf",
+      "primary_category": "cs.AI",
+      "categories": [
+        "cs.AI",
+        "cs.MA"
+      ],
+      "tags": [
+        "cs.AI",
+        "cs.MA"
+      ],
+      "domain": "Agent",
+      "pdf_downloaded": true,
+      "pdf_size_bytes": 210127,
+      "pdf_path": "2026-08-28/agent/2608.26990.pdf"
+    },
+    {
+      "id": "2608.26947",
+      "title": "4DSynth: Controllable Procedural World Synthesis for Dynamic Embodied Simulation",
+      "abstract": "Embodied agents need environments that are visually diverse, physically interactive, and changing over time. Procedural simulators can generate large interactive scene collections, and recent 4D generators produce compelling visual dynamics. Combining these properties in one environment, however, still demands extensive manual effort, and the result is rarely editable or controllable enough to reuse at scale. We present 4DSynth, a controllable procedural system that turns a natural-language description, a blueprint mask, or a single photograph into an editable 4D environment with explicit geometry, animated actors, collision-free trajectories, and physics-ready simulation state. Multiple scene routes share one geometry-grounded representation, so the same pipeline handles animation, camera planning, rendering, and task generation. To validate the full pipeline, we construct 4DSynth-Nav, an interactive navigation benchmark generated entirely from 4DSynth's procedural scenes. Two vision-language models evaluated across three difficulty tiers both fail the majority of tasks and stall after early subtasks. The same procedural controllability that produces these environments also makes each failure reproducible and each difficulty axis independently tunable. This paper presents both a controllable generation pipeline and the scalable benchmark it enables, offering a practical foundation for developing and evaluating embodied agents.",
+      "authors": [
+        "Zehao Qi",
+        "Haochen Luo",
+        "Jia-Wang Bian",
+        "Zeyu Ma",
+        "Shuyang Sun"
+      ],
+      "published": "2026-08-27T10:49:20Z",
+      "updated": "2026-08-27T10:49:20Z",
+      "url": "https://arxiv.org/abs/2608.26947",
+      "pdf_url": "https://arxiv.org/pdf/2608.26947.pdf",
+      "primary_category": "cs.RO",
+      "categories": [
+        "cs.RO",
+        "cs.CV"
+      ],
+      "tags": [
+        "cs.CV",
+        "cs.RO"
+      ],
+      "domain": "Agent",
+      "pdf_downloaded": false,
+      "pdf_size_bytes": null,
+      "pdf_path": null
+    },
+    {
+      "id": "2608.26939",
+      "title": "Dynamic Haven Selection for Multi-Agent Pickup and Delivery in Constrained Warehouses",
+      "abstract": "Space-efficient warehouse layouts often contain single-agent-width aisles and dead-end workstations where robots have few places to wait without blocking others. In Multi-Agent Pickup and Delivery (MAPD) on such constrained layouts, robots must accept online pickup-delivery tasks while preserving protected waiting locations called Havens. The Safe HAven Retreat Planner (SHARP) introduced a mechanism that extends each committed task path with a validated retreat to the agent's dedicated initial Haven, but fixed-Haven commitments can send agents toward distant Havens after deliveries. We present A-sharp (Adaptive SHARP), which changes an agent's retreat target at task assignment time. A naive switch can cause two agents to rely on the same waiting location or let another committed path pass through a location that is still occupied or reserved. A-sharp prevents these failures with an availability test for candidate Havens and a pending-release rule that keeps the previous Haven protected until the agent departs. Under explicit Haven-structure and Safe Interval Path Planning (SIPP) assumptions, we prove invariant preservation and finite-release completeness: every task in any finite release sequence is delivered in finite time. Across 72,000 runs on 14,400 paired map-agent-count-rate-seed cases over four maps, both SHARP and A-sharp complete their respective 14,400 runs. For makespan (final delivery time), a prespecified paired comparison with Holm correction over all 138 configurations with more Havens than agents finds A-sharp significantly better in 107 configurations and never significantly worse than SHARP; on the tested tree map, the median reduction is 16.7%.",
+      "authors": [
+        "Taisei Hirayama",
+        "Kohei Yoshida",
+        "Hiroki Sakaji",
+        "Itsuki Noda"
+      ],
+      "published": "2026-08-27T10:40:15Z",
+      "updated": "2026-08-27T10:40:15Z",
+      "url": "https://arxiv.org/abs/2608.26939",
+      "pdf_url": "https://arxiv.org/pdf/2608.26939.pdf",
+      "primary_category": "cs.MA",
+      "categories": [
+        "cs.MA",
+        "cs.RO"
+      ],
+      "tags": [
+        "cs.MA",
+        "cs.RO"
+      ],
+      "domain": "Agent",
+      "pdf_downloaded": true,
+      "pdf_size_bytes": 2842865,
+      "pdf_path": "2026-08-28/agent/2608.26939.pdf"
+    },
+    {
+      "id": "2608.26932",
+      "title": "Contact-Aided Factor-Graph Localization for Underwater Sampling",
+      "abstract": "Accurate state estimation for autonomous underwater vehicles performing close-range seafloor sampling remains challenging. In low-altitude operation, down-looking cameras over featureless planar seabeds produce scale ambiguity, lateral degeneracy, and inconsistent feature tracking. Meanwhile, inertial-Doppler Velocity Log (DVL) fusion alone provides no mechanism for structural drift correction. We propose a Contact-Aided Factor-Graph Localization framework that treats physical interaction as an informative geometric constraint within a smoothing-based localization formulation. The method tightly fuses suction-based manipulator contact events with adaptive visual odometry, learned object detections, and on-board sensors. Visual odometry relative-pose factors and landmark bearing-range factors are uncertainty-scaled according to inlier statistics to prevent visually weak frames from destabilizing the estimator, while contact events are modeled as high-confidence factors that induce implicit loop closures without appearance-based place recognition. Furthermore, the system can fully initialize online during motion. Experimental evaluation in tanks, harbor, and simulation environments demonstrates that contact-induced constraints significantly reduce trajectory drift and improve object revisit accuracy compared to filtering-based navigation and contact-free graph formulations. These results highlight the role of embodied physical interaction as a localization primitive in perception-degraded underwater environments",
+      "authors": [
+        "Michele Grimaldi",
+        "Yosaku Maeda",
+        "Hitoshi Kakami",
+        "Ignacio Carlucho",
+        "Yvan R. Petillot",
+        "Tomoya Inoue"
+      ],
+      "published": "2026-08-27T10:34:22Z",
+      "updated": "2026-08-27T10:34:22Z",
+      "url": "https://arxiv.org/abs/2608.26932",
+      "pdf_url": "https://arxiv.org/pdf/2608.26932.pdf",
+      "primary_category": "cs.RO",
+      "categories": [
+        "cs.RO"
+      ],
+      "tags": [
+        "cs.RO"
+      ],
+      "domain": "Agent",
+      "pdf_downloaded": true,
+      "pdf_size_bytes": 3914429,
+      "pdf_path": "2026-08-28/agent/2608.26932.pdf"
+    },
+    {
+      "id": "2608.26896",
+      "title": "AI agents in Algorithmic Electricity Markets: On the Emergence of Tacit Collusion",
+      "abstract": "As electricity market participants increasingly adopt learning-based agents for their bidding strategies, electricity markets are becoming algorithmic. Evidence from algorithmic markets in other domains shows that tacit collusion can arise purely through independent learning. Moreover, electricity markets are typically oligopolistic and feature repeated interaction among a small number of participants, making them structurally susceptible to non-competitive behavior. In the face of these observations, this paper investigates the hypothesis that tacit collusion may emerge in electricity markets where participants' actions are controlled by autonomous learning-based algorithms. We model strategic bidding as a repeated game with imperfect public monitoring, and model the participants' emergent behavior using multi-agent reinforcement learning. We propose a multi-dimensional set of criteria (going beyond profit comparisons against Nash equilibria) to assess whether the resulting behavior constitutes tacit collusion. Our experimental results showcase that such a danger is realistic for electricity markets: there are cases where agents do learn to sustain supra-competitive outcomes that are supportive of tacit collusion indicators, even though the agents were never instructed to collude.",
+      "authors": [
+        "Jakub Seredy\u0144ski",
+        "Georgios Tsaousoglou"
+      ],
+      "published": "2026-08-27T09:51:48Z",
+      "updated": "2026-08-27T09:51:48Z",
+      "url": "https://arxiv.org/abs/2608.26896",
+      "pdf_url": "https://arxiv.org/pdf/2608.26896.pdf",
+      "primary_category": "cs.AI",
+      "categories": [
+        "cs.AI",
+        "cs.GT",
+        "cs.MA",
+        "eess.SY"
+      ],
+      "tags": [
+        "cs.AI",
+        "cs.GT",
+        "cs.MA",
+        "eess.SY"
+      ],
+      "domain": "Agent",
+      "pdf_downloaded": true,
+      "pdf_size_bytes": 593844,
+      "pdf_path": "2026-08-28/agent/2608.26896.pdf"
+    },
+    {
+      "id": "2608.26888",
+      "title": "Beyond Shallow-Water Photorealism: Physically and Sensor-Grounded Simulation for Deep-Sea Robotics",
+      "abstract": "Many recent underwater simulators emphasize visual realism at the expense of physical fidelity, focusing on shallow-water effects with limited relevance in deep-water environments and high computational cost. In this work, we shift the focus toward deep-sea physical and sensor realism. We present a physics- and sensor-grounded extension of the Stonefish simulator that augments its hydrodynamic models with stochastic IMU and DVL drift, magnetometer disturbances, higher-order hydrodynamics, terramechanics, pressure-driven environmental variability, and physically based underwater optics. These additions are designed to better capture the forces and measurements shaping the behavior of deep-ocean AUVs, ROVs, landers, ASVs, and gliders, while remaining compatible with real-time simulation. This work advances underwater simulation toward more representative deep-sea operating conditions, which is particularly relevant for long-duration navigation and learning-based autonomy, where inaccurate sensor and environmental models introduce non-physical artifacts and overly optimistic performance. While challenges remain, including complex fluid-structure interactions and full environmental stochasticity, the proposed framework provides a practical foundation for navigation, perception, and autonomy research under deep-sea conditions.",
+      "authors": [
+        "Michele Grimaldi",
+        "Enrico Di Maria",
+        "Ignacio Carlucho",
+        "Yvan R. Petillot"
+      ],
+      "published": "2026-08-27T09:45:40Z",
+      "updated": "2026-08-27T09:45:40Z",
+      "url": "https://arxiv.org/abs/2608.26888",
+      "pdf_url": "https://arxiv.org/pdf/2608.26888.pdf",
+      "primary_category": "cs.RO",
+      "categories": [
+        "cs.RO"
+      ],
+      "tags": [
+        "cs.RO"
+      ],
+      "domain": "Agent",
+      "pdf_downloaded": true,
+      "pdf_size_bytes": 3384611,
+      "pdf_path": "2026-08-28/agent/2608.26888.pdf"
+    },
+    {
+      "id": "2608.26883",
+      "title": "Active Surface-Driven Reconfigurable Gripper: Robust Grasping and Sequential Manipulation of Thin Objects",
+      "abstract": "Robotic grippers face substantial challenges in grasping and manipulating thin objects. Most existing grippers rely on highly precise approach and grasp motions, which limits robustness and reduces applicability. This paper explores thin-object grasping using books as a representative example. Here, we propose a novel solution that integrates an active surface with underactuated compliance to achieve stable grasping of thin objects without complex control. First, an underactuated gripper with an active surface is designed. The active-surface thumb performs in-hand repositioning of the target book without requiring adjustments of the robot arm or the other fingers, while the underactuated fingers establish compliant contact conditions with the environment, and the reconfigurable structure enables reliable grasping of books under different configurations. Second, we establish a kinematic model of the gripper, and determine the initial grasp postures for two representative scenarios (books lying flat on a desktop and books vertically packed in a shelf). Third, by analyzing the physical model of a book lying on a table and its interaction with the gripper and the environment, we systematically optimize the structural parameters and grasping strategy. Finally, extensive experiments validate the effectiveness of the proposed gripper and strategy. The results demonstrate strong robustness and adaptability when grasping thin objects placed flat (including books, paper, fabric, plastic film, and mouse pad), as well as a high success rate when grasping vertically packed books. Moreover, the proposed gripper can reliably complete long sequential \"grasp-place\" tasks.",
+      "authors": [
+        "Ziyi Zheng",
+        "Keqi Zhu",
+        "Hao Wu",
+        "Yanzhe Wang",
+        "Huixu Dong"
+      ],
+      "published": "2026-08-27T09:40:56Z",
+      "updated": "2026-08-27T09:40:56Z",
+      "url": "https://arxiv.org/abs/2608.26883",
+      "pdf_url": "https://arxiv.org/pdf/2608.26883.pdf",
+      "primary_category": "cs.RO",
+      "categories": [
+        "cs.RO"
+      ],
+      "tags": [
+        "cs.RO"
+      ],
+      "domain": "Agent",
+      "pdf_downloaded": false,
+      "pdf_size_bytes": null,
+      "pdf_path": null
+    },
+    {
+      "id": "2608.26868",
+      "title": "CGS-SLAM: Collaborative Gaussian Splatting based SLAM for Multi-Agent Reconstruction",
+      "abstract": "Recent advances in SLAM have leveraged 3DGS for photorealistic reconstruction and novel view synthesis. However, most methods rely on RGB-D input, which is unavailable on consumer-grade smartphones, and few integrate 3DGS within a collaborative framework. Therefore, we present CGS-SLAM, a hybrid decentralized/centralized system enabling multi-agent 3DGS SLAM using only RGB and inertial data. Each agent performs local tracking with inertial data as a motion prior and reconstructs a scaled map using a metric monocular depth estimator (Depth Pro). Keyframe encodings are shared among agents, enabling dynamic keyframing in regions of spatial overlaps with other agents, enhancing submap alignment. Afterwards, a central server aligns submaps using VGGT as a view alignment model. This bidirectional communication keeps communication cost low during mapping and global reconstruction in difficult GNSS-denied environments. Experiments on multiple datasets demonstrate competitive tracking performance, improved rendering quality over state-of-the-art methods, and accurate submap alignment.",
+      "authors": [
+        "Jean-Daniel de Ambrogi",
+        "Aladine Chetouani",
+        "Vincent Nguyen",
+        "Aur\u00e9lien Chateigner"
+      ],
+      "published": "2026-08-27T09:31:18Z",
+      "updated": "2026-08-27T09:31:18Z",
+      "url": "https://arxiv.org/abs/2608.26868",
+      "pdf_url": "https://arxiv.org/pdf/2608.26868.pdf",
+      "primary_category": "cs.CV",
+      "categories": [
+        "cs.CV",
+        "cs.RO"
+      ],
+      "tags": [
+        "cs.CV",
+        "cs.RO"
+      ],
+      "domain": "Agent",
+      "pdf_downloaded": true,
+      "pdf_size_bytes": 16196676,
+      "pdf_path": "2026-08-28/agent/2608.26868.pdf"
+    },
+    {
+      "id": "2608.26849",
+      "title": "LiveSim: Simulating Environment-Shaped Users in Multi-Agent Live-Stream Ecosystems",
+      "abstract": "User behavior simulation with large language models~(LLMs) is increasingly used to support multi-agent ecosystem simulation. Existing simulators typically rely on static user profiles inferred from historical observations, which become inadequate in socially intensive environments such as live streaming where interaction dynamics continuously reshape user behavior. We propose \\textbf{LiveSim}, an LLM-based framework for live-stream ecosystem simulation. It represents users as editable behavioral hypotheses and progressively refines them through trajectory-grounded interactions, where discrepancies between simulated and observed trajectories reveal missing environmental shaping effects. These signals are further extracted as transferable environment-behavior patterns and accumulated in a collective behavioral memory to improve user-level behavioral fidelity and support ecosystem-level simulation. Experiments on real-world live-stream risk-control data validate the effectiveness of LiveSim in improving user-level behavioral fidelity and enabling ecosystem-level analysis of risk evolution and platform intervention effects.",
+      "authors": [
+        "Jiaqi Xu",
+        "Yiran Qiao",
+        "Jing Chen",
+        "Qiwei Zhong",
+        "Xiang Ao",
+        "Xueqi Cheng"
+      ],
+      "published": "2026-08-27T09:16:29Z",
+      "updated": "2026-08-27T09:16:29Z",
+      "url": "https://arxiv.org/abs/2608.26849",
+      "pdf_url": "https://arxiv.org/pdf/2608.26849.pdf",
+      "primary_category": "cs.AI",
+      "categories": [
+        "cs.AI",
+        "cs.CY",
+        "cs.MA"
+      ],
+      "tags": [
+        "cs.AI",
+        "cs.CY",
+        "cs.MA"
+      ],
+      "domain": "Agent",
+      "pdf_downloaded": true,
+      "pdf_size_bytes": 4429975,
+      "pdf_path": "2026-08-28/agent/2608.26849.pdf"
+    },
+    {
+      "id": "2608.26821",
+      "title": "TemporalFlow-VLA: Learning Physically Grounded Execution History for Long-Horizon Robot Manipulation",
+      "abstract": "Vision-language-action (VLA) models leverage pretrained vision-language representations for robot control, yet simply adding historical frames does not reliably capture recent physical change. This is especially problematic in multi-stage manipulation, where visually similar states may require different actions depending on prior execution. To address this challenge, we present TemporalFlow-VLA, which learns compact execution history through physically grounded temporal supervision. Using recorded robot states, robot geometry, and calibrated cameras, we construct robot-surface temporal flow as a training-only target and supervise two execution-aligned temporal queries that provide structured history to the action expert. The geometric supervision path is not evaluated at deployment. TemporalFlow-VLA achieves 97.63 +/- 0.26% average success on LIBERO, including 96.60 +/- 0.87% on LIBERO Long, and 85.5%/84.2% Clean/Randomized success across 12 RoboTwin tasks. It shows its clearest advantage over prior methods on longer-horizon, multi-stage manipulation. Controlled history interventions show that action prediction depends on both historical content and temporal order. With asynchronous feature caching, temporal conditioning maintains single-frame-level server-side sampling latency without additional historical-encoding overhead. Overall, TemporalFlow-VLA provides a compact, physically grounded interface for exploiting ordered execution history without explicit motion estimation or geometric processing at deployment.",
+      "authors": [
+        "Jiarui Yang",
+        "Yehao Lu",
+        "Yuning Su",
+        "Yu Zhong",
+        "Yufeng Xie",
+        "Yazhou Zhang",
+        "Haiyu Lan",
+        "Kaixiang Lu",
+        "Peiwen Lin",
+        "Chuang Wang",
+        "Junwei Liang",
+        "Enyu Li"
+      ],
+      "published": "2026-08-27T09:00:56Z",
+      "updated": "2026-08-27T09:00:56Z",
+      "url": "https://arxiv.org/abs/2608.26821",
+      "pdf_url": "https://arxiv.org/pdf/2608.26821.pdf",
+      "primary_category": "cs.RO",
+      "categories": [
+        "cs.RO"
+      ],
+      "tags": [
+        "cs.RO"
+      ],
+      "domain": "Agent",
+      "pdf_downloaded": true,
+      "pdf_size_bytes": 5662552,
+      "pdf_path": "2026-08-28/agent/2608.26821.pdf"
+    },
+    {
+      "id": "2608.26819",
+      "title": "CLIPPER: Replayable Shortlisted Optimization for Repeated Spatial Coverage Planning",
+      "abstract": "Operational requirements developed with the City of Braunschweig frame municipal micromobility planning under geofenced exclusions, mandatory retained sites, spacing rules, and area-level caps. Each policy edit requires a new feasible plan; full-set greedy takes tens of seconds per alternative at city scale. We present CLIPPER (Constraint-exact Low-latency Iterative Planning with Pooled Evaluation and Replay). It forms bounded candidate pools but recomputes exact current gains and checks every active constraint before selection. Coverage from each candidate alone sets the initial order. Offline full-set scans measure gains omitted by the pool; online, a conservative bound triggers expansion or audit. CLIPPER-F gives each proposal group the same number of candidate slots. Across Braunschweig, Munich, and Berlin, its mean coverage over complete chains stays within 0.245 percentage points of full-set greedy under the same policy, with 13.6--28.9 times lower mean rollout time. CLIPPER-A instead distributes one shared candidate budget across the groups. Under its coverage-prioritized policy, it uses 9--15% of full-set greedy's rollout time under the same policy, with mean gaps of 1.82 percentage points in Braunschweig, 0.12 in Munich, and 0.27 in Berlin. Together, CLIPPER enables rapid, replayable comparison of recorded city-scale planning states while enforcing every encoded model constraint.",
+      "authors": [
+        "Julian Teusch",
+        "J\u00f6rg Philipp M\u00fcller",
+        "Monika Sester"
+      ],
+      "published": "2026-08-27T08:55:16Z",
+      "updated": "2026-08-27T08:55:16Z",
+      "url": "https://arxiv.org/abs/2608.26819",
+      "pdf_url": "https://arxiv.org/pdf/2608.26819.pdf",
+      "primary_category": "cs.RO",
+      "categories": [
+        "cs.RO",
+        "cs.CG",
+        "cs.DS"
+      ],
+      "tags": [
+        "cs.CG",
+        "cs.DS",
+        "cs.RO"
+      ],
+      "domain": "Agent",
+      "pdf_downloaded": true,
+      "pdf_size_bytes": 4245938,
+      "pdf_path": "2026-08-28/agent/2608.26819.pdf"
+    },
+    {
+      "id": "2608.26800",
+      "title": "Rapid On-Robot Learning for Dynamic Manipulation Skills: Robot Juggling",
+      "abstract": "We present an online learning framework that enables a bimanual robot to acquire diverse juggling patterns directly on physical hardware within minutes, even with a significant sim2real gap. One of the most important lessons from this work is that a model, even when far from reality, can be extremely useful for learning. This motivates a central philosophy of our approach: learning should build upon the robot's current knowledge rather than replace it. Our regularized memory-based learning puts this principle into practice by learning a local model from accumulated experience while retaining the global prior model to extrapolate where experience is sparse. This enables efficient and stable online learning from each new experience without resorting to uninformed exploration over a vast space of possible behaviors. Equally important to continual on-robot learning is safety, allowing the robot to repeatedly practice and improve in the real world. We construct a mutually reachable set that allows safe transitions between successive throws and catches, without driving either arm into a state from which its next action would require violating the robot's joint or actuator limits. Together, these ideas enable a bimanual robot with multi-fingered hands and onboard vision to safely learn and compose five canonical three-ball juggling patterns, including cascade, tennis, half-shower, shower, and box, within less than 5 minutes of real-world interaction. More broadly, this work points toward robots that build upon imperfect prior knowledge and continually refine their behavior through their own real-world experience.",
+      "authors": [
+        "Taeyoon Lee",
+        "Chunpeng Wang",
+        "Christopher G. Atkeson",
+        "Alfred A. Rizzi",
+        "Nicolas Rojas"
+      ],
+      "published": "2026-08-27T08:39:00Z",
+      "updated": "2026-08-27T08:39:00Z",
+      "url": "https://arxiv.org/abs/2608.26800",
+      "pdf_url": "https://arxiv.org/pdf/2608.26800.pdf",
+      "primary_category": "cs.RO",
+      "categories": [
+        "cs.RO"
+      ],
+      "tags": [
+        "cs.RO"
+      ],
+      "domain": "Agent",
+      "pdf_downloaded": true,
+      "pdf_size_bytes": 17064433,
+      "pdf_path": "2026-08-28/agent/2608.26800.pdf"
+    },
+    {
+      "id": "2608.26789",
+      "title": "Online Joint Calibration of Steering Offset and Planar LiDAR Extrinsics for Wheeled Mobile Robots",
+      "abstract": "Accurate steering sensing and LiDAR-to-vehicle extrinsics are crucial for reliable path tracking in warehouse mobile robots (WMRs); miscalibration often leads to snaking, weaving, and elevated cross-track error (CTE). In practice, steering ``zero'' is commonly set manually (e.g., eyeballing straightness via a PS4 joystick), while LiDAR extrinsics are assumed from CAD and may drift after maintenance. Such static, manual procedures frequently cause miscalibration in safety-critical environments. This paper presents an Extended Kalman Filter (EKF)--based method for online estimation of steering offset and planar LiDAR extrinsics within a bicycle-kinematics model, providing a principled alternative to manual calibration. Experiments on real datasets show that correcting steering offset reduces CTE substantially, validating the effectiveness of the proposed approach.",
+      "authors": [
+        "Subodh Mishra",
+        "Arindam Dhar",
+        "Suprotim Majumdar",
+        "Naveen Arulselvan"
+      ],
+      "published": "2026-08-27T08:19:06Z",
+      "updated": "2026-08-27T08:19:06Z",
+      "url": "https://arxiv.org/abs/2608.26789",
+      "pdf_url": "https://arxiv.org/pdf/2608.26789.pdf",
+      "primary_category": "cs.RO",
+      "categories": [
+        "cs.RO"
+      ],
+      "tags": [
+        "cs.RO"
+      ],
+      "domain": "Agent",
+      "pdf_downloaded": true,
+      "pdf_size_bytes": 4201526,
+      "pdf_path": "2026-08-28/agent/2608.26789.pdf"
+    }
+  ]
+}
