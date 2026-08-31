@@ -1,0 +1,282 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>批次掃描比較報告 — 12 檔標的（完整版，2026-08-31 補齊）</title>
+<style>
+  :root {
+    --bg: #0d0f14; --surface: #141720; --surface2: #1c2030; --border: #252b3a;
+    --text: #e2e8f0; --text-dim: #8892a4; --accent: #4f8ef7;
+    --hold: #f59e0b; --buy: #10b981; --sell: #ef4444;
+    --bear-red: #ff4d6d; --bull-green: #06d6a0; --warn: #f59e0b; --ext: #a78bfa;
+  }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body { background: var(--bg); color: var(--text); font-family: -apple-system,"PingFang TC","Noto Sans TC","SF Mono",monospace,sans-serif; font-size: 13px; line-height: 1.7; padding: 24px; }
+  .header { border-bottom: 1px solid var(--border); padding-bottom: 20px; margin-bottom: 24px; }
+  h1 { font-size: 28px; font-weight: 700; }
+  .sub { color: var(--text-dim); font-size: 12px; margin-top: 6px; }
+  .sub.ok { color: var(--bull-green); }
+  .section-title { font-size: 10px; font-weight: 700; letter-spacing: 2px; text-transform: uppercase; color: var(--text-dim); margin: 28px 0 12px; display: flex; align-items: center; gap: 8px; }
+  .section-title::after { content: ''; flex: 1; height: 1px; background: var(--border); }
+  .section-title.warn-title { color: var(--warn); }
+  .section-title.warn-title::after { background: rgba(245,158,11,0.3); }
+  table { width: 100%; border-collapse: collapse; background: var(--surface); border: 1px solid var(--border); border-radius: 8px; overflow: hidden; font-size: 11.5px; }
+  th, td { padding: 9px 10px; text-align: left; border-bottom: 1px solid var(--border); vertical-align: top; }
+  th { background: var(--surface2); color: var(--text-dim); font-size: 10px; text-transform: uppercase; letter-spacing: 0.5px; }
+  tr:last-child td { border-bottom: none; }
+  .action-buy { color: var(--bull-green); font-weight: 700; }
+  .action-hold { color: var(--hold); font-weight: 700; }
+  .action-reject { color: var(--bear-red); font-weight: 700; }
+  .action-na { color: #6b7280; font-weight: 700; }
+  .up { color: var(--bull-green); } .down { color: var(--bear-red); } .neutral-c { color: var(--hold); } .ext-c { color: var(--ext); }
+  .card { background: var(--surface); border: 1px solid var(--border); border-radius: 8px; padding: 16px; margin-bottom: 14px; }
+  .card h3 { font-size: 13px; color: var(--accent); margin-bottom: 8px; }
+  .card p, .card li { color: var(--text-dim); font-size: 12px; line-height: 1.75; }
+  .card ul { padding-left: 18px; margin: 6px 0; }
+  .card strong { color: var(--text); }
+  .finding { border-left: 3px solid var(--bear-red); background: rgba(255,77,109,0.06); border-radius: 0 6px 6px 0; padding: 12px 16px; margin-bottom: 12px; }
+  .finding.fix { border-left-color: var(--warn); background: rgba(245,158,11,0.06); }
+  .finding.good { border-left-color: var(--bull-green); background: rgba(6,214,160,0.06); }
+  .finding-title { font-size: 12px; font-weight: 700; color: var(--text); margin-bottom: 6px; }
+  .finding p { color: var(--text-dim); font-size: 12px; line-height: 1.75; margin-bottom: 4px; }
+  .finding strong { color: var(--text); }
+  .badge { font-size: 9px; font-weight: 700; padding: 2px 8px; border-radius: 3px; letter-spacing: 0.5px; text-transform: uppercase; }
+  .badge-crit { background: rgba(239,68,68,0.2); color: #fca5a5; }
+  .badge-med  { background: rgba(245,158,11,0.2); color: #fcd34d; }
+  .badge-good { background: rgba(16,185,129,0.2); color: #6ee7b7; }
+  .src-tag { font-size: 9.5px; color: #6b7280; }
+  code { background: var(--surface2); padding: 1px 5px; border-radius: 3px; font-size: 11px; }
+  .timeline { font-family: 'SF Mono',monospace; font-size: 11px; background: var(--surface); border: 1px solid var(--border); border-radius: 8px; padding: 14px 18px; }
+  .timeline div { padding: 3px 0; color: var(--text-dim); }
+  .timeline .t { color: var(--accent); display: inline-block; width: 70px; }
+</style>
+</head>
+<body>
+
+<div class="header">
+  <h1>批次掃描比較報告 — 12 檔標的（完整版）</h1>
+  <div class="sub">第一階段：2026-08-28 23:50 起（跨夜至 08-29 05:18）&nbsp;|&nbsp; <code>run.py --scan</code> ASTS,AAPL,GOOG,MU,KLIC,NET,OKTA,GEV,6187,3131,2472,2330 → 完成 9/12</div>
+  <div class="sub">第二階段：2026-08-31 23:55 ~ 00:04（隔日）&nbsp;|&nbsp; 針對卡住的 3131 / 2472 / 2330 改用「單檔逐一執行 + 緊迫逾時（無進展即 kill 換下一檔）」策略補跑</div>
+  <div class="sub ok">✓ 12/12 全部完成 — 這次 3 檔全部在約 1 分鐘內乾淨跑完，未再出現先前的長時間掛起（詳見下方發現 #2 追蹤更新）</div>
+</div>
+
+<!-- ═══ SUMMARY TABLE ═══ -->
+<div class="section-title">總覽比較表</div>
+<div style="overflow-x:auto;">
+<table>
+<tr>
+  <th>標的</th><th>系統決策</th><th>ML(Sage)</th><th>聚合信心</th><th>VaR95/Kelly</th><th>SL / TP</th><th>外部分析師觀點</th><th>內外比較</th>
+</tr>
+<tr>
+  <td><strong>ASTS</strong><br><span class="src-tag">AST SpaceMobile</span></td>
+  <td><span class="action-reject">REJECT</span><br><span class="src-tag">熊市硬停損 27.7% below MA200</span></td>
+  <td>NEUTRAL 60%</td>
+  <td>—</td>
+  <td>0.66% / 7.5%</td>
+  <td>49.66 / 72.81</td>
+  <td>Hold 共識，均價 $80.48（現價下 +11.9%空間），近期多家券商互相調降目標價，衛星部署執行風險</td>
+  <td>方向一致：系統因技術面破位直接擋單，外部也是分歧/中性評等，非明確多頭</td>
+</tr>
+<tr>
+  <td><strong>AAPL</strong></td>
+  <td><span class="action-hold">HOLD</span></td>
+  <td>NEUTRAL 59%</td>
+  <td>0%</td>
+  <td>0.20% / 23.75%(核准8.0%)</td>
+  <td>307.54 / 343.26</td>
+  <td>Buy 共識，均價 ~$326-339，Q3財報EPS優於預期但股價重挫7.4%（關稅退稅一次性因素、毛利率展望下修）</td>
+  <td>一致偏保守：系統 HOLD 呼應外部「財報數字好看但展望疑慮」的情緒</td>
+</tr>
+<tr>
+  <td><strong>GOOG</strong></td>
+  <td><span class="action-hold">HOLD</span></td>
+  <td>NEUTRAL 68%</td>
+  <td>0%</td>
+  <td>0.26% / 25%(核准9.6%)</td>
+  <td>342.17*/368.30<br><span class="src-tag">*Chandelier下修</span></td>
+  <td>Strong Buy 共識，均價 ~$427，雲端營收+82% YoY 強勁，但資本支出暴增、FCF 轉負引發疑慮</td>
+  <td>系統較外部保守：外部強力看多但系統中性，資本支出/FCF風險系統未在報告中明確呈現（見發現#5）</td>
+</tr>
+<tr>
+  <td><strong>MU</strong></td>
+  <td><span class="action-hold">HOLD</span></td>
+  <td>NEUTRAL 74%</td>
+  <td>0%</td>
+  <td>0.56% / 25%(核准9.7%)</td>
+  <td>801.38 / 1103.62</td>
+  <td>Buy 共識，均價 ~$1,261，HBM訂單滿到2026年、市值破兆，但多方來源明確示警「泡沫」與2018年NAND崩跌前例</td>
+  <td>系統中性剛好避開兩極：外部同時存在「最強成長股」與「明確泡沫警告」的極端分歧，HOLD 相對穩健</td>
+</tr>
+<tr>
+  <td><strong>KLIC</strong></td>
+  <td><span class="action-hold">HOLD</span></td>
+  <td>NEUTRAL 59%</td>
+  <td>0%</td>
+  <td>0.44% / 8.33%(核准4.2%)</td>
+  <td>81.14*/97.97<br><span class="src-tag">*Chandelier下修</span></td>
+  <td>覆蓋稀薄，評等/目標價來源不一致（$37~$107），營收+123% YoY 優於預期，AI封裝需求推動</td>
+  <td>外部資料品質差（連 fork 都標註「數字不可信」），系統的保守 HOLD 反而是合理應對稀薄覆蓋的做法</td>
+</tr>
+<tr>
+  <td><strong>NET</strong></td>
+  <td><span class="action-hold">HOLD</span></td>
+  <td>NEUTRAL 64%</td>
+  <td>0%</td>
+  <td>0.41% / 22.92%(核准5.4%)</td>
+  <td>269.93 / 351.69</td>
+  <td>Buy 共識，均價 ~$333.55，8月密集調升目標價（Citi $400），營收+36% YoY 加速，但內部人賣超7.33億美元、零買進</td>
+  <td>系統看不到「內部人零買進」這個訊號（Finnhub insider 對台股/部分美股不一定完整），屬於分析盲點</td>
+</tr>
+<tr>
+  <td><strong>OKTA</strong></td>
+  <td><span class="action-hold">HOLD</span></td>
+  <td>NEUTRAL 58%</td>
+  <td>0%</td>
+  <td>0.37% / 25%(核准10.0%)</td>
+  <td>152.15 / 197.37</td>
+  <td>Buy 共識，均價 $146（部分新目標已達$190-200），8/26財報EPS優於預期+22%，併購Permiso強化資安護城河</td>
+  <td>系統落後於最新消息：財報是2天前（8/26）發布的優於預期結果，系統技術面尚未完全反映</td>
+</tr>
+<tr>
+  <td><strong>GEV</strong></td>
+  <td><span class="action-hold">HOLD</span></td>
+  <td>NEUTRAL 69%</td>
+  <td>0%</td>
+  <td>0.47% / 15.83%(核准9.6%)</td>
+  <td>917.94*/1061.22<br><span class="src-tag">*Chandelier下修</span></td>
+  <td>Buy 共識，均價 ~$1,233，燃氣渦輪機訂單能見度到2031年、AI用電需求超級循環，但估值46倍前瞻本益比、上季EPS明顯不如預期</td>
+  <td>系統的 Chandelier 停損下修正好呼應外部「估值過高、執行風險」的隱憂，風控機制與外部觀點方向一致</td>
+</tr>
+<tr style="background:rgba(16,185,129,0.05);">
+  <td><strong>6187</strong><br><span class="src-tag">萬潤 ALL RING TECH</span></td>
+  <td><span class="action-buy">BUY 10股</span><br><span class="src-tag">@1365.68（模擬單，08-28）</span></td>
+  <td>LONG 82%</td>
+  <td>41%</td>
+  <td>0.81% / 9.03%(核准2.5%)</td>
+  <td>1151.95 / 1684.58</td>
+  <td>覆蓋極稀薄，唯一找到的評等（富邦）目標價 800 元，遠低於近期成交價 1120~1365 區間；股價短線劇烈震盪（單日曾-8.3%）</td>
+  <td><strong>⚠️ 明顯分歧：</strong>系統執行了真實下單，但外部唯一可查券商目標價僅是現價的6成，且股價本身波動極大，這筆交易的外部驗證基礎薄弱（見發現#1）</td>
+</tr>
+<tr>
+  <td><strong>3131</strong><br><span class="src-tag">弘塑</span></td>
+  <td><span class="action-hold">HOLD</span><br><span class="src-tag">補跑於 08-31 23:56，約50秒完成</span></td>
+  <td>NEUTRAL 58%</td>
+  <td>0%</td>
+  <td>0.61% / 25%(核准7.8%)</td>
+  <td>2067.64 / 2923.54</td>
+  <td>高盛上調目標價 2400→3500，看好SoIC先進封裝2027年後放量，近期月營收年增僅+7%（遠低於目標價漲幅暗示的成長性）</td>
+  <td><strong>⚠️ 與先前部分結果不同：</strong>08-28 卡住前的中途進度顯示 LONG 72%/聚合36%，但這次完整跑完後翻轉為 NEUTRAL 58%/聚合0%。方向不同但結論一致（皆未觸發下單），凸顯 Sage 多重採樣在不同執行之間本身就有變動性（見發現#7）</td>
+</tr>
+<tr style="background:rgba(16,185,129,0.05);">
+  <td><strong>2472</strong><br><span class="src-tag">立隆電</span></td>
+  <td><span class="action-buy">BUY 10股</span><br><span class="src-tag">@232.62（模擬單，08-31，⚠資料3天前）</span></td>
+  <td>LONG 66%</td>
+  <td>33%</td>
+  <td>0.50% / 2.36%(核准1.0%)</td>
+  <td>199.39 / 282.17</td>
+  <td>月營收年增+30%，唯一評等（兆豐證券）中立、目標價256元（日期偏舊），「傳產電容廠轉型AI伺服器/車用高階電容」題材尚待驗證</td>
+  <td><strong>⚠️ 低信心自動放行 + 報價落差：</strong>聚合信心僅33%（低於60%人工複核門檻）仍因無 checkpoint 而自動下單（與6187同一模式，見發現#1）；且下單用的收盤價232.5與系統另一處記錄的「即時報價」224.0相差3.7%（見發現#7）</td>
+</tr>
+<tr>
+  <td><strong>2330</strong><br><span class="src-tag">台積電 TSMC</span></td>
+  <td><span class="action-hold">HOLD</span><br><span class="src-tag">補跑於 08-31 00:04，⚠資料3天前</span></td>
+  <td>LONG 73%</td>
+  <td>37%</td>
+  <td>0.22% / 5.56%(核准4.4%)</td>
+  <td>2325.24 / 2562.14</td>
+  <td>現價約2,415元（8/28），多數新目標價集中在2,300~3,000+元（略高於現價），2奈米製程+CoWoS先進封裝擴產為主要動能</td>
+  <td><strong>✓ 正確管理既有部位：</strong>系統早在 2026-08-05 就已建立 10 股多單（進場價2406.20），這次聚合訊號 LONG 37%（一樣低於複核門檻、一樣被自動放行），但投資組合經理判斷「已有部位、不追加」，維持 HOLD 而非再買進——是本次少數風控/部位管理邏輯正確攔下低信心加碼的案例（見發現#6）</td>
+</tr>
+</table>
+</div>
+
+
+<!-- ═══ REFLECTION ═══ -->
+<div class="section-title warn-title">⚠ 本次執行反思 — 交易程式改善機會</div>
+
+<div class="finding">
+  <div class="finding-title"><span class="badge badge-crit">CRITICAL</span> &nbsp;發現 #1：低確信度訊號在無人值守下被自動放行並實際下單（本次再現一次，共2檔）</div>
+  <p>6187（08-28）與 2472（08-31）的聚合訊號確信度分別只有 <strong>41%</strong> 與 <strong>33%</strong>（皆低於 60% 的人工複核門檻），系統正確觸發了 <code>human_review_required</code>，但在沒有 <code>--checkpoint</code> 的批次模式下都只印出一行 WARNING 然後照樣下單：</p>
+  <div class="timeline">
+    <div><span class="t">01:34:13</span>WARNING Human review triggered for 6187 — reasons: [conviction=0.41 &lt; 0.60]</div>
+    <div><span class="t">01:34:21</span>Portfolio decision: BUY 6187 qty=10.00 → <strong>Simulated fill: BUY 6187 @ 1365.6825</strong></div>
+    <div><span class="t">00:01:03</span>WARNING Human review triggered for 2472 — reasons: [conviction=0.33 &lt; 0.60]</div>
+    <div><span class="t">00:01:05</span>Portfolio decision: BUY 2472 qty=10.00 → <strong>Simulated fill: BUY 2472 @ 232.6162</strong></div>
+  </div>
+  <p style="margin-top:8px;">兩筆交易都是在<strong>沒有任何人核准</strong>的情況下真的下了單。有意思的對照組是 <strong>2330</strong>：同樣是 37% 低信心、同樣自動放行複核，但投資組合經理因為「已有既有部位」而選擇不加碼（見發現#6）——代表低信心自動放行這個洞，只有在「開新倉」情境下才會直接變成一筆交易，管理既有部位時多一層保護。</p>
+  <p><strong>建議：</strong>在 <code>graph/edges.py</code> 的 <code>should_approve_risk</code> 中，當 <code>human_review_required=True</code> 且未啟用 checkpoint 時，預設應該<strong>降級為 HOLD 並跳過下單</strong>，而不是靜默放行；若要允許批次模式下單，應該要求明確的 <code>--auto-approve-low-conviction</code> 旗標，讓「自動核准低信心交易」變成一個需要使用者主動選擇的行為，而非目前的隱性預設。</p>
+</div>
+
+<div class="finding">
+  <div class="finding-title"><span class="badge badge-crit">CRITICAL</span> &nbsp;發現 #2：長時間網路/LLM 呼叫掛起，無逾時保護，拖垮整個批次（08-31 追蹤更新：問題未再現）</div>
+  <p>08-28 那次掃描期間，觀察到 <strong>3 次獨立的長時間掛起事件</strong>，都發生在「看起來已建立連線、但遲遲沒有回應」的狀態，CPU 幾乎零使用率（代表是在等待網路，而非在運算）：</p>
+  <div class="timeline">
+    <div><span class="t">GEV</span>特徵計算完成 23:56:04 → Sage ML 完成 00:47:03（<strong class="down">間隔 51 分鐘</strong>，Sage 內部計時器卻只顯示 93 秒）</div>
+    <div><span class="t">3131 #1</span>研究備忘錄產出 01:34 → 卡在分析師 LLM 呼叫，<strong class="down">2 小時後仍無進展</strong>（CPU time 全程未增加），最終手動 kill</div>
+    <div><span class="t">3131 #2</span>重啟後又在下一階段卡住 <strong class="down">近 50 分鐘</strong>，再次手動 kill</div>
+  </div>
+  <p style="margin-top:8px;"><strong>根因：</strong>用 <code>curl</code> 直接測試 Yahoo Finance 端點，回應是 <strong>HTTP 429（Too Many Requests）</strong>——整晚對 12 檔標的反覆呼叫 yfinance，最終把這台機器的 IP 給 Yahoo 限流了。<code>yfinance</code> 函式庫內部的重試/退避機制會靜默等待，<strong>沒有任何逾時、沒有任何 log 輸出</strong>，導致整個 LangGraph 流程看起來像「卡死」。</p>
+  <p style="margin-top:8px;"><strong>08-31 追蹤更新：</strong>間隔 3 天後，改用「單檔逐一執行、無 log 進展就直接 kill 換下一檔」的操作性緩解策略，重跑 3131/2472/2330，<strong class="up">三檔全部在 50~90 秒內乾淨完成，完全沒有再遇到掛起</strong>。這支持了「Yahoo 429 是 IP 層級、有時間窗口會自動解除」的假設，但也代表<strong>目前完全沒有程式層級的修復</strong>——下次若在短時間內重複掃描同一批標的，很可能會再次觸發限流並卡住。</p>
+  <p><strong>建議（仍未實作，維持原建議）：</strong>
+    (a) 在 <code>data/ingestion/sources/yfinance_source.py</code> 加上明確的 request timeout 與有上限的重試次數；
+    (b) 跨標的的批次掃描層級加入節流/快取，同一天同一標的的資料只抓一次；
+    (c) 把 QuestDB 實際啟動起來作為快取層（本次日誌仍顯示 <code>QuestDB unavailable...</code>，代表快取層完全沒發揮作用）；
+    (d) <code>core/llm.py</code> 的 <code>complete()</code>/<code>complete_json()</code> 也應加上 request timeout + 有限重試。</p>
+</div>
+
+<div class="finding fix">
+  <div class="finding-title"><span class="badge badge-med">MEDIUM</span> &nbsp;發現 #3：TWStockSource 對 TPEx 官方端點的逾時設定形同虛設</div>
+  <p>3131 的籌碼面資料擷取時，log 顯示：<code>HTTPSConnectionPool(host='www.tpex.org.tw'...): Read timed out. (read timeout=15)</code>——但從前一行 log 到這行錯誤，實際經過了超過 6 分鐘，遠超過設定的 15 秒逾時。這代表程式碼裡雖然<strong>設定了逾時</strong>，但外層可能還有重試邏輯把多次 15 秒逾時疊加成好幾分鐘，且中途完全沒有輸出任何「正在重試」的 log。</p>
+  <p><strong>建議：</strong>在 <code>twstock_source.py</code> 的重試迴圈中，每次重試前印出一行 INFO log（例如「第 N 次重試 tpex.org.tw，將於 X 秒後...」），讓使用者至少能從 log 判斷「這是在重試」而非「卡死了」。</p>
+</div>
+
+<div class="finding good">
+  <div class="finding-title"><span class="badge badge-good">運作良好</span> &nbsp;發現 #4：風控安全機制本次確實發揮作用</div>
+  <ul>
+    <li><strong>熊市硬停損（ASTS）：</strong>價格低於 MA200 達 27.7%（超過 25% 硬性門檻），系統<strong>直接拒絕交易</strong>，完全不進入辯論／下單流程，正確防止了在破位股上加碼——外部研究也顯示 ASTS 評等分歧、執行風險高，方向一致。</li>
+    <li><strong>Chandelier Exit 動態收緊停損：</strong>本次在 GOOG、KLIC、GEV 三檔標的上，都因為「股價已跌破移動停損線一定比例」而自動把停損從原本的 ATR 停損<strong>進一步收緊</strong>（例如 GEV 從 830.11 收緊到 917.94），這是風控機制主動偵測到「趨勢可能已轉弱」並縮小虧損容忍度的正確行為。</li>
+    <li><strong>台股主板/上櫃自動路由 + 資料新鮮度備援：</strong>6187、3131、2472、2330 皆先嘗試 <code>.TW</code>/<code>.TWO</code>，遇到 yfinance 資料延遲時，自動改用 TWSE/TPEX 官方即時報價補上最新一天的 K 棒（freshness fallback），避免因資料延遲而做出過時判斷。</li>
+  </ul>
+</div>
+
+<div class="finding good">
+  <div class="finding-title"><span class="badge badge-good">運作良好</span> &nbsp;發現 #6：既有部位管理正確攔下一次低信心加碼（2330）</div>
+  <p>2330 的聚合訊號 LONG 37%（同樣低於 60% 複核門檻、同樣因無 checkpoint 而被自動放行），但投資組合經理最終決策是 <strong>HOLD 而非加碼買進</strong>，理由是「已有既有多單部位（2026-08-05 進場，10股 @2406.20）」。這代表發現 #1 的風控破口在<strong>開新倉</strong>情境下會直接變成一筆交易，但在<strong>管理既有部位</strong>時，投資組合經理的邏輯多提供了一層合理的保守判斷——雖然不能取代「人工複核」本身該有的把關，但至少證明系統沒有無腦地對每個低信心多頭訊號都加碼。</p>
+</div>
+
+<div class="finding fix">
+  <div class="finding-title"><span class="badge badge-med">MEDIUM</span> &nbsp;發現 #5：Sage ML 訊號呈現地區性分佈差異，值得留意但尚未確認成因</div>
+  <p>8 檔美股（ASTS/AAPL/GOOG/MU/KLIC/NET/OKTA/GEV）Sage 模型<strong>全數輸出 NEUTRAL</strong>（信心 58~74%），而台股中 6187、2472、2330 輸出 <strong>LONG</strong>（信心 66~82%），僅 3131 這次為 NEUTRAL（58%，且與 08-28 部分進度的 LONG 72% 不同，見發現#7）。檢查 wiki 知識庫後發現：AAPL/ASTS/MU/KLIC 有專屬側寫檔卻仍得到 NEUTRAL，多數台股標的完全沒有側寫檔卻常給出高信心 LONG，代表<strong>wiki 知識庫的有無並不能解釋這個美股/台股的分歧</strong>，比較可能反映市場當下真實的技術面差異，但也不能排除 prompt 或取樣機制對「小型、近期漲勢明確」標的存在系統性偏多傾向。</p>
+  <p><strong>建議：</strong>(a) 修正 <code>_load_wiki()</code> 或 sources_config，讓 GOOG 也能對應到 GOOGL.md；(b) 另外找 5~10 檔「近期無強烈趨勢」的台股與「近期強勢上漲」的美股做對照測試，觀察 Sage 的方向分佈是否還是呈現地區性分裂。</p>
+</div>
+
+<div class="finding fix">
+  <div class="finding-title"><span class="badge badge-med">MEDIUM</span> &nbsp;發現 #7（新）：同一標的重跑後 ML 訊號方向可能翻轉；以及「即時報價」與「實際下單價」出現落差卻未被交叉檢查</div>
+  <p><strong>7a. 3131 訊號跨執行不穩定：</strong>08-28 該次因後續步驟卡住而被 kill，但在卡住之前的 log 已顯示 Sage 給出 <strong>LONG 72%</strong>／聚合 36%；08-31 完整重跑同一標的，卻得到 <strong>NEUTRAL 58%</strong>／聚合 0%。兩次執行相隔 3 天，市場資訊本身也可能有變化，不能單純歸咎於模型隨機性，但 Sage 的 3-sample majority-vote 機制本身在溫度取樣下確實存在跨執行變動的空間，值得留意「同一天內重跑兩次是否也會給出不同方向」。</p>
+  <p><strong>7b. 「live price refreshed」與下單價不一致：</strong>2472 執行時，<code>yfinance_source</code> 記錄了一筆 <code>STALE DATA: 2472 last valid bar is 4 days old (live price refreshed: 224.0)</code>，但緊接著 <code>TWSE/TPEX freshness fallback</code> 補上的官方 K 棒收盤價是 <strong>232.5</strong>，且後續 ATR/風控/下單全部使用 232.5（實際成交 232.6162）——與「即時報價」224.0 相差 <strong>3.7%</strong>。2330 也有類似情況但落差較小（即時報價2405.0 vs 使用的232.5→2420.0，約0.6%）。目前這個「即時報價」欄位只被寫進 log、並未實際參與風控或下單價格的計算，也沒有任何邏輯去檢查兩者是否嚴重背離。</p>
+  <p><strong>建議：</strong>(a) 對 3131 這類案例，記錄下每次 <code>run.py</code> 執行時 Sage 的完整投票明細（含各溫度的原始輸出），方便日後追查「訊號翻轉」是市場資訊變化還是取樣噪音；(b) 在 <code>yfinance_source.py</code> 或 <code>graph/nodes.py</code> 中，當「即時報價」與「freshness fallback 收盤價」的落差超過某個門檻（例如 2%）時，應該額外記錄一筆 WARNING 甚至觸發人工複核，而不是讓兩個數字各自存在、只有其中一個被真正拿去下單。</p>
+</div>
+
+
+<!-- ═══ EXECUTION SUMMARY ═══ -->
+<div class="section-title">本次實際交易（共 2 筆，皆為模擬單）</div>
+<div class="card">
+  <h3>6187 萬潤（ALL RING TECH）— BUY 10 股 @ NT$1,365.68（08-28）</h3>
+  <p>ML 訊號 LONG 82%（3/3 一致），聚合確信度 41%，觸發人工複核但因未使用 <code>--checkpoint</code> 而自動放行（見發現#1）。</p>
+  <p><strong>外部驗證薄弱：</strong>網路研究只找到一份券商（富邦）評等，目標價 800 元，遠低於進場價 1365.68 元；股價近期單日曾大漲 +7.1% 又重挫 -8.3%，波動劇烈。5月營收年增 +43.77% 屬於強勁成長，但目標價與現價的巨大落差，加上覆蓋券商只有一家，代表這筆交易缺乏足夠的外部專業意見交叉驗證。</p>
+</div>
+<div class="card">
+  <h3>2472 立隆電（Lelon Electronics）— BUY 10 股 @ NT$232.62（08-31）</h3>
+  <p>ML 訊號 LONG 66%（3/3 一致），聚合確信度僅 33%，同樣因無 checkpoint 而自動放行。資料標記為「3天前」的舊資料（TWSE/TPEX 官方K棒補上 08-28 收盤 232.5），且系統另有一筆「即時報價 224.0」的紀錄未被拿來交叉驗證（見發現#7b）。</p>
+  <p><strong>外部驗證同樣薄弱：</strong>唯一評等來源（兆豐證券）為中立、目標價 256 元且日期偏舊，「傳產電容廠轉型 AI 伺服器/車用高階電容」的成長題材本身仍待驗證；月營收年增 +30% 是正向訊號，但覆蓋券商只有一家、且評等本身並非明確買進。</p>
+  <p><strong>建議操作：</strong>兩筆都是模擬單，可保留觀察；若未來要接上真實下單，建議至少人工確認一次「單一券商覆蓋 + 目標價/評等與系統訊號方向不一致」這種訊號品質偏弱的情境，而不是讓 30~40% 信心的交易自動成交。</p>
+</div>
+
+
+<div class="src-tag" style="display:block;margin-top:20px;padding:10px;background:var(--surface);border-radius:6px;border:1px solid var(--border);">
+  ⚡ 本報告整合 TradingBot 內部 <code>run.py</code> 執行結果（第一階段 2026-08-28 23:50 起跨夜掃描 9/12 完成；第二階段 2026-08-31 23:55~00:04 以逐檔緊迫逾時策略補齊剩餘 3131/2472/2330，12/12 全數完成）與外部網路研究（涵蓋美股與台股最新法人評等、財報、產業動態）。所有時間戳記均取自實際執行 log；反思章節中的每一項發現都有對應的 log 證據或可重現的 curl 測試支持。僅供研究與系統改善參考，不構成投資建議。
+</div>
+
+</body>
+</html>
