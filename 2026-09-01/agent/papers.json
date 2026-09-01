@@ -1,0 +1,765 @@
+{
+  "domain": "Agent",
+  "date": "2026-09-01",
+  "count": 25,
+  "papers": [
+    {
+      "id": "2608.30983",
+      "title": "Autonomously Acquiring Robot Manipulation Skills with Language-Driven Quality-Diversity",
+      "abstract": "Quality-diversity (QD) algorithms have been gaining traction in robot learning, where diverse motion primitive libraries allow robots to adapt zero-shot to constraints at deployment time. However, such methods typically require expert designers to write the success condition, fitness and diversity metrics, and this strongly limits the robot's autonomy. On the other hand, existing LLM-based reward-shaping techniques allow robots to learn autonomously but only output single high-performing solutions, limiting the robot's adaptability. In this paper, we propose an approach designed to output diverse motion primitive archives by autonomously leveraging quality-diversity algorithms, only requiring a free-form description of the task in common language. To address the difficulty of designing relevant fitness and diversity metrics, we propose an autonomous exploration mechanism able to reliably output sets of functionals covering the fitness and behavior descriptor (BD) space. First, we pose policy exploration as a functional design problem, where the functional spaces are lower-dimensional than the full BD and fitness spaces, and propose an LLM-based exploration scheme to sample from these low-dimensional spaces without any task-specific prompts, fine-tuning or expert intervention. We adapt a multi-BD variant of the MAP-Elites success (MES) algorithm, designed to leverage the heterogeneous BD samples. Finally, through experiments based on the genesis simulator, we show that our method effectively generates archives of diverse motion primitives, outperforming classical QD algorithms with inferred and hand-written parametrizations on a set of $4$ robotic manipulation tasks.",
+      "authors": [
+        "\u00c9miland Garrab\u00e9",
+        "Mahdi Khoramshahi",
+        "St\u00e9phane Doncieux"
+      ],
+      "published": "2026-08-31T15:42:20Z",
+      "updated": "2026-08-31T15:42:20Z",
+      "url": "https://arxiv.org/abs/2608.30983",
+      "pdf_url": "https://arxiv.org/pdf/2608.30983.pdf",
+      "primary_category": "cs.RO",
+      "categories": [
+        "cs.RO"
+      ],
+      "tags": [
+        "cs.RO"
+      ],
+      "domain": "Agent",
+      "pdf_downloaded": true,
+      "pdf_size_bytes": 1597302,
+      "pdf_path": "2026-09-01/agent/2608.30983.pdf"
+    },
+    {
+      "id": "2608.30938",
+      "title": "Evidence, Logic, and Compliance: Multi-Agent Structured Graph Reasoning with Expert Arbitration for Medical Referral",
+      "abstract": "Medical referral (directing patients to the appropriate hospital department) is a complex decision-making process requiring the synthesis of multimodal data, including patient narratives, laboratory indicators, and radiology imaging. While Large Language Models (LLMs) have advanced medical dialogue systems, they struggle with real-world referral tasks due to two primary limitations: (1) Information Overload, where models fixate on high-frequency disease terms while overlooking subtle but critical urgency indicators; and (2) Unstructured Collaboration, where existing multi-agent frameworks rely on loose dialogue that leads to semantic drift and confirmation bias. To address these challenges, we introduce MASGR (Multi-Agent Structured Graph Reasoning), a framework that treats referral not as a classification task but as a structured graph construction problem. MASGR deploys specialized agents to extract evidence from distinct modalities and coordinates them through a clinical reasoning graph. This graph forces agents to establish explicit logical connections between conflicting evidence. Furthermore, we integrate a knowledge-guided arbitration mechanism that prioritizes patient safety rules over standard diagnostic classification. Extensive experiments on real-world medical records demonstrate that MASGR significantly outperforms state-of-the-art LLMs and existing multi-agent systems, particularly in complex cases requiring the balancing of chronic disease management and emergency intervention. The AI contribution lies in the Multi-Agent Structured Graph Reasoning framework that transforms unstructured multi-agent dialogue into a verifiable logical graph construction. The engineering application is demonstrated through its deployment in a complex healthcare decision-making system to optimize the precision of complex medical referrals.",
+      "authors": [
+        "Qi Peng",
+        "Yi Cai",
+        "Jialin Cui",
+        "Tong Zhu",
+        "Yujuan Ding",
+        "Qingbao Huang",
+        "Tao Wang",
+        "Jiayuan Xie",
+        "Changmeng Zheng",
+        "Qing Li"
+      ],
+      "published": "2026-08-31T15:11:05Z",
+      "updated": "2026-08-31T15:11:05Z",
+      "url": "https://arxiv.org/abs/2608.30938",
+      "pdf_url": "https://arxiv.org/pdf/2608.30938.pdf",
+      "primary_category": "cs.MA",
+      "categories": [
+        "cs.MA"
+      ],
+      "tags": [
+        "cs.MA"
+      ],
+      "domain": "Agent",
+      "pdf_downloaded": true,
+      "pdf_size_bytes": 4805421,
+      "pdf_path": "2026-09-01/agent/2608.30938.pdf"
+    },
+    {
+      "id": "2608.30935",
+      "title": "LightNav-0: Eliciting VLM Spatial Intelligence for Generalist Embodied Navigation",
+      "abstract": "Embodied navigation requires agents to translate heterogeneous goals and visual observations into actions across tasks, environments, and robot embodiments. Modern vision-language models (VLMs) already encode spatial priors for visual grounding, spatial reasoning, and pointing, but these capabilities are rarely elicited directly for robot control. Existing navigation systems instead rely on task- or embodiment-specific components, fragmenting perception, reasoning, and action while offering limited generalization. Here we present LightNav-0, a compact generalist embodied navigation model that elicits the spatial intelligence of a pretrained VLM and aligns it with navigation, without task-specific prediction heads. LightNav-0 represents diverse navigation tasks through a unified token interface: dual-channel pointing expresses task-, scene-, and embodiment-agnostic spatial intent, while a residual vector-quantized action tokenizer maps this intent to precise, embodiment-specific trajectories. Together with temporally aware visual history compression, ER mid-training, supervised fine-tuning, and reinforcement learning, this formulation supports instruction following, open-vocabulary object navigation, and visual tracking within a single model. The navigation training corpus spans 2K+ scenes and 4K+ hours of embodied navigation data. LightNav-ER, the embodied-reasoning checkpoint used to initialize LightNav-0, attains the highest complete-set average across 8 embodied-reasoning benchmarks, while LightNav-0 achieves state-of-the-art monocular success rates across all 10 public navigation simulation settings. Real-world evaluations further demonstrate zero-shot generalization across robot embodiments, diverse scenes, and static and dynamic targets. These results establish compact VLMs as a unified and transferable backbone for generalist embodied navigation.",
+      "authors": [
+        "Shaoan Wang",
+        "Aocheng Luo",
+        "Fei Huang",
+        "Jingyi Xu",
+        "Xiaoyang Wang",
+        "Yueyu Wang",
+        "Qianli Ma",
+        "Fan Yang",
+        "Ran Mei",
+        "Jia Wei",
+        "Jiangpeng Hu",
+        "Xuhao Liu",
+        "Hongming Chen",
+        "Yuanbin Shao",
+        "Yiyang Lin",
+        "Ziliang Li",
+        "Liang Pan",
+        "Xinhang Liu",
+        "Yuntao Ma",
+        "Tingxiang Fan"
+      ],
+      "published": "2026-08-31T15:08:53Z",
+      "updated": "2026-08-31T15:08:53Z",
+      "url": "https://arxiv.org/abs/2608.30935",
+      "pdf_url": "https://arxiv.org/pdf/2608.30935.pdf",
+      "primary_category": "cs.RO",
+      "categories": [
+        "cs.RO",
+        "cs.AI"
+      ],
+      "tags": [
+        "cs.AI",
+        "cs.RO"
+      ],
+      "domain": "Agent",
+      "pdf_downloaded": true,
+      "pdf_size_bytes": 15246687,
+      "pdf_path": "2026-09-01/agent/2608.30935.pdf"
+    },
+    {
+      "id": "2608.30900",
+      "title": "The Structure of Merging Turbulent Jets Beneath a Small Quadrotor",
+      "abstract": "The downwash wake of a hovering quadrotor governs both the vehicle's own performance and the safe spacing of multi-rotor formations. Prior measurements have largely characterized the mean flow, using single-point anemometry, volumetric tracking, or planar cuts through part of the rotor system. Higher-order turbulent statistics of the merged wake, and how they relate to canonical jet scaling, have remained unresolved, particularly for small quadrotors at the low-Reynolds-number end of the size range. Here, we present a detailed particle image velocimetry (PIV) study of the downwash of a hovering Crazyflie 2.1 quadrotor (arm length, $l = 46$ mm), sampled along a diagonal cut, passing through rotors along the symmetry axis of the quadrotor, and a front-rotor cut, passing through adjacent rotors. The four rotor jets merge into a single column by $z/l \\approx 5$, beyond which the mean velocity profiles progressively approach the canonical round-jet self-similar form, collapsing by $z/l \\approx 13$ when scaled by the local centerline velocity and half-width. Centerline decay and half-width growth follow canonical scaling laws with an effective source diameter $D_\\text{eff} = 2.29\\,l$, effective Reynolds number $Re_{D_\\text{eff}} = 3 \\times 10^4$, at the low end of the range over which canonical jet scaling has been established, and spreading and decay constants nonetheless within the canonical round-jet range. Resolving both cuts shows that the turbulent normal stresses retain a bimodal, cut-dependent signature of the four-rotor source throughout the measurement domain.",
+      "authors": [
+        "Anoop Kiran",
+        "Nora Ayanian",
+        "Kenneth Breuer"
+      ],
+      "published": "2026-08-31T14:50:54Z",
+      "updated": "2026-08-31T14:50:54Z",
+      "url": "https://arxiv.org/abs/2608.30900",
+      "pdf_url": "https://arxiv.org/pdf/2608.30900.pdf",
+      "primary_category": "physics.flu-dyn",
+      "categories": [
+        "physics.flu-dyn",
+        "cs.RO"
+      ],
+      "tags": [
+        "cs.RO",
+        "physics.flu-dyn"
+      ],
+      "domain": "Agent",
+      "pdf_downloaded": true,
+      "pdf_size_bytes": 9696005,
+      "pdf_path": "2026-09-01/agent/2608.30900.pdf"
+    },
+    {
+      "id": "2608.30883",
+      "title": "SleepWalking: Privileged Representation Shaping for End-to-End Blind Locomotion in Legged Robots",
+      "abstract": "Partially observable locomotion requires a policy to act when task-relevant properties of the robot--environment state are not fully specified by instantaneous observations. Existing approaches often address this challenge by explicitly estimating missing physical variables or processing extended observation histories through structured architectures. We take a different view: partial observability is fundamentally an information-retention problem. The decisive question is not how task-relevant information enters the network, but whether the policy's internal state retains it. Guided by this perspective, we propose SleepWalking for Robot Locomotion (SWAQ), a one-stage end-to-end framework that uses next-step privileged physical reconstruction to shape what a recurrent history representation retains during policy learning, while the deployed actor uses only a direct history-to-action pathway. Under aligned training settings, SWAQ achieves a 15.0\\% higher peak mean terrain level than DWAQ, the strongest non-exteroceptive baseline, while using 44.4\\% fewer inference MACs per control step. Layerwise probes further show that information associated with the reconstructed physical variables remains linearly decodable through the policy head up to the layer preceding the action output. Complementary theoretical analysis relates privileged-variable recoverability to the achievable-return gap between history-based and privileged-information policy classes. These results suggest that semantic objectives can structure learning without requiring a corresponding architectural decomposition of the deployed controller.",
+      "authors": [
+        "Zheng Pan",
+        "Tenghui Wang",
+        "Peilin Li",
+        "Shiyu Zhou",
+        "Hao Sun",
+        "Yan Ma",
+        "Liang Yu",
+        "Liang He"
+      ],
+      "published": "2026-08-31T14:42:03Z",
+      "updated": "2026-08-31T14:42:03Z",
+      "url": "https://arxiv.org/abs/2608.30883",
+      "pdf_url": "https://arxiv.org/pdf/2608.30883.pdf",
+      "primary_category": "cs.RO",
+      "categories": [
+        "cs.RO"
+      ],
+      "tags": [
+        "cs.RO"
+      ],
+      "domain": "Agent",
+      "pdf_downloaded": true,
+      "pdf_size_bytes": 8284132,
+      "pdf_path": "2026-09-01/agent/2608.30883.pdf"
+    },
+    {
+      "id": "2608.30880",
+      "title": "Zeva: In-Context Causal Learning for Generalizable Embodied Manipulation",
+      "abstract": "Generalizable embodied manipulation remains difficult to achieve through pretraining alone, due to unseen physical conditions in the real world. We argue that robots need to learn from their own physical interactions on the fly during real-world deployment and use this knowledge to inform subsequent actions. We present Zeva, the first framework that enables in-context learning from a robot's own physical interaction experience while keeping the policy model frozen. Zeva employs a Causal Interaction Extractor to encode an executed action and its induced state change into a causal interaction signal, which is stored in a dual-timescale causal memory. For subsequent actions, relevant causal interaction signals are retrieved from memory and injected into the frozen policy model as context. Experiments in simulation and real-world manipulation demonstrate that Zeva achieves the best performance among the compared frontier VLAs and WAMs and, more importantly, enables self-evolution during deployment without gradient updates. Its success rate continues to improve as the robot accumulates interaction experience. Furthermore, the acquired interaction experience can generalize across tasks.",
+      "authors": [
+        "Fu Chen",
+        "Xin Ding",
+        "Bingjia Huang",
+        "Xiangyu Li",
+        "Mingju Wang",
+        "Jiawei He",
+        "Kun Li",
+        "Wei Sun",
+        "Yunxin Liu",
+        "Hao Wu",
+        "Ting Cao"
+      ],
+      "published": "2026-08-31T14:39:00Z",
+      "updated": "2026-08-31T14:39:00Z",
+      "url": "https://arxiv.org/abs/2608.30880",
+      "pdf_url": "https://arxiv.org/pdf/2608.30880.pdf",
+      "primary_category": "cs.RO",
+      "categories": [
+        "cs.RO"
+      ],
+      "tags": [
+        "cs.RO"
+      ],
+      "domain": "Agent",
+      "pdf_downloaded": true,
+      "pdf_size_bytes": 14439274,
+      "pdf_path": "2026-09-01/agent/2608.30880.pdf"
+    },
+    {
+      "id": "2608.30874",
+      "title": "Provably Safe Decentralized Contingency MPC under State-Only Information and Limited Sensing for Nonlinear Multi-agent Systems",
+      "abstract": "This paper considers decentralized contingency MPC for multi-agent control under a state-only information pattern, with particular focus on limited sensing and plug-and-play operation. The objective is to retain recursive feasibility, safety, and Lyapunov-type convergence while reducing conservatism in local interaction handling. The framework relies on agent-wise fallback regions (safe sets) in which a feasible contingency maneuver to a safe equilibrium is always available. A novel safe-set update mechanism is introduced that supports less conservative decentralized interaction while preserving the underlying guarantees. This, in turn, enables memory-free local interaction and finite sensing ranges without requiring agents to reconstruct the exact neighbor geometry. The resulting scheme remains fully decentralized and preserves the shared-first-input contingency MPC structure. Theoretical guarantees and simulation results illustrate the effectiveness of the approach in dense multi-agent scenarios.",
+      "authors": [
+        "Max Studt",
+        "Georg Schildbach"
+      ],
+      "published": "2026-08-31T14:33:59Z",
+      "updated": "2026-08-31T14:33:59Z",
+      "url": "https://arxiv.org/abs/2608.30874",
+      "pdf_url": "https://arxiv.org/pdf/2608.30874.pdf",
+      "primary_category": "math.OC",
+      "categories": [
+        "math.OC",
+        "cs.MA",
+        "cs.RO",
+        "eess.SY"
+      ],
+      "tags": [
+        "cs.MA",
+        "cs.RO",
+        "eess.SY",
+        "math.OC"
+      ],
+      "domain": "Agent",
+      "pdf_downloaded": true,
+      "pdf_size_bytes": 475222,
+      "pdf_path": "2026-09-01/agent/2608.30874.pdf"
+    },
+    {
+      "id": "2608.30832",
+      "title": "A Dual-Cam Parallel Elastic Actuator with Shared Gas-Spring Compensation for Humanoid Ankles",
+      "abstract": "To improve torque capacity and energy efficiency of humanoid ankles, this paper proposes a 2-DoF parallel elastic actuator (PEA). The main novelty of the proposed design lies in its dual-cam, single-gas-spring architecture, which enables torque compensation in both pitch and roll using a shared elastic element, thereby improving structural compactness compared with conventional multi-element compensation schemes. By leveraging parallel gas springs and customized cam modules, the proposed architecture provides dual-axis torque assistance tailored to specific task requirements. The second key contribution is the formulation of a coupled 2-DoF mathematical model that explicitly captures the interdependence between the two compensation units through the shared spring. Based on this model, an optimization-based design framework is developed to synthesize customized cam profiles from prescribed torque references, establishing a systematic link from task requirements to hardware realization. The complete lower-leg CAD integration is presented in detail. Static FEA and kinematic simulations confirm the design's feasibility and torque-relief effectiveness. The results highlight the proposed design as a compact, customizable solution for 2-DoF humanoid ankle torque compensation.",
+      "authors": [
+        "Jingcheng Jiang",
+        "Yifang Zhang",
+        "Nikos G. Tsagarakis"
+      ],
+      "published": "2026-08-31T14:06:21Z",
+      "updated": "2026-08-31T14:06:21Z",
+      "url": "https://arxiv.org/abs/2608.30832",
+      "pdf_url": "https://arxiv.org/pdf/2608.30832.pdf",
+      "primary_category": "cs.RO",
+      "categories": [
+        "cs.RO"
+      ],
+      "tags": [
+        "cs.RO"
+      ],
+      "domain": "Agent",
+      "pdf_downloaded": true,
+      "pdf_size_bytes": 3258859,
+      "pdf_path": "2026-09-01/agent/2608.30832.pdf"
+    },
+    {
+      "id": "2608.30773",
+      "title": "Learning to infer and manipulate through distributed whole-arm interaction in a soft robot",
+      "abstract": "In animals such as elephants and octopuses, acquiring non-visual information about an object and physically engaging with it are inseparable processes mediated by rich, large-area interactions between compliant appendages and the environment. Soft robots provide a natural platform for translating this principle into engineered systems. Yet current robotic intelligence makes limited use of physical interaction, treating it primarily as a disturbance to be rejected or, at best, as a means of compensating for object misalignment. Here, we introduce a physical intelligence framework in which distributed compliant interactions jointly reveal task-relevant information and organize manipulation behavior. This results in an intrinsically partially observable problem: key task-relevant information is never measured directly, but must instead be inferred from the history of physical interactions. We propose a reinforcement-learning architecture that addresses this challenge by learning a memory-based control policy end-to-end. The key innovations making this possible are (i) a pretrained exploration policy that provides a reference for broad workspace exploration, (ii) joint optimization that integrates exploration and grasping objectives within a single recurrent policy, and (iii) a two-stage sim-to-real adaptation including observation mapping and policy fine-tuning. We demonstrate this principle through blind whole-arm grasping with a hybrid rigid-soft robotic arm that we equip with IMUs embedded directly within its compliant structure, providing its only source of proprioceptive sensing. The learned policy successfully identifies and grasps various objects by autonomously coordinating workspace exploration, object encounter and localization, inference of grasp-relevant properties, and stable whole-arm wrapping.",
+      "authors": [
+        "Chuhan Zhang",
+        "Ebrahim Shahabi",
+        "Kseniia Khomenko",
+        "Wei Pan",
+        "Cosimo Della Santina"
+      ],
+      "published": "2026-08-31T13:35:00Z",
+      "updated": "2026-08-31T13:35:00Z",
+      "url": "https://arxiv.org/abs/2608.30773",
+      "pdf_url": "https://arxiv.org/pdf/2608.30773.pdf",
+      "primary_category": "cs.RO",
+      "categories": [
+        "cs.RO"
+      ],
+      "tags": [
+        "cs.RO"
+      ],
+      "domain": "Agent",
+      "pdf_downloaded": true,
+      "pdf_size_bytes": 18220991,
+      "pdf_path": "2026-09-01/agent/2608.30773.pdf"
+    },
+    {
+      "id": "2608.30690",
+      "title": "Failure or Drift? Evaluating Monocular SLAM under Synthetic and Real-World Corruptions",
+      "abstract": "Visual SLAM is commonly evaluated on clean trajectories, although deployment failures are often caused by adverse weather, illumination, blur, and sensor artifacts. Controlled corruptions are attractive because they isolate such factors, but a synthetic stress test is useful only when it leads to the same engineering conclusion as the condition it is intended to approximate. This work examines that question for monocular SLAM. We evaluate a classical feature-based system and two learned trackers under image-space, geometry-aware, and compound corruptions, and compare their behavior with adverse conditions from 4Seasons. Rather than reducing robustness to a single trajectory error, the evaluation separates explicit tracking failure from drift accumulated by methods that remain active. The results show that learned trackers largely replace catastrophic loss with sustained, and sometimes severe, drift. More importantly, the apparent ordering of the learned systems changes with the physical fidelity of the corruption: structured rain and fog proxies preserve the real-world ordering, whereas a simple illumination proxy does not. Code is available at: https://github.com/abhaythomas/master_thesis_vslamlab_robustness.",
+      "authors": [
+        "Abhay Skaria Thomas",
+        "Shashank Agnihotri",
+        "Margret Keuper"
+      ],
+      "published": "2026-08-31T12:28:26Z",
+      "updated": "2026-08-31T12:28:26Z",
+      "url": "https://arxiv.org/abs/2608.30690",
+      "pdf_url": "https://arxiv.org/pdf/2608.30690.pdf",
+      "primary_category": "cs.CV",
+      "categories": [
+        "cs.CV",
+        "cs.RO"
+      ],
+      "tags": [
+        "cs.CV",
+        "cs.RO"
+      ],
+      "domain": "Agent",
+      "pdf_downloaded": true,
+      "pdf_size_bytes": 422929,
+      "pdf_path": "2026-09-01/agent/2608.30690.pdf"
+    },
+    {
+      "id": "2608.30673",
+      "title": "CIG-RL: Curiosity-Driven Information-Guided Reinforcement Learning for Source Term Estimation in Uncertain Environments",
+      "abstract": "Source term estimation (STE), which aims to estimate key properties of the gas source, is essential for identifying hazardous gas releases. Information-theoretic approaches have been adopted for autonomous STE using mobile sensors due to robustness in noisy environments, yet their online action selection incurs substantial computational cost. Deep reinforcement learning (DRL) provides a promising alternative with its fast decision-making capability. In DRL-based STE, the agent selects actions based on belief states of the source term updated from noisy measurement sequences. However, existing methods rely on random exploration or solely on belief uncertainty reduction without an effective exploration strategy in DRL, which can limit policy robustness in noisy environments. To address this, we propose a curiosity-driven information-guided reinforcement learning for robust and efficient STE. The proposed method promotes active exploration of novel belief state transitions that have not been sufficiently explored during training. We further introduce an uncertainty-adaptive active perception reward to guide efficient source search under uncertainty. Simulations under high-noise conditions and real-world experiments demonstrate the robustness and feasibility of the proposed framework, highlighting its potential for practical STE problems.",
+      "authors": [
+        "Junhee Lee",
+        "Seunghwan Kim",
+        "Hongro Jang",
+        "Hyungjin Kim",
+        "Hyoungho Park",
+        "Changseung Kim",
+        "Hyondong Oh"
+      ],
+      "published": "2026-08-31T12:13:55Z",
+      "updated": "2026-08-31T12:13:55Z",
+      "url": "https://arxiv.org/abs/2608.30673",
+      "pdf_url": "https://arxiv.org/pdf/2608.30673.pdf",
+      "primary_category": "cs.RO",
+      "categories": [
+        "cs.RO"
+      ],
+      "tags": [
+        "cs.RO"
+      ],
+      "domain": "Agent",
+      "pdf_downloaded": true,
+      "pdf_size_bytes": 8712705,
+      "pdf_path": "2026-09-01/agent/2608.30673.pdf"
+    },
+    {
+      "id": "2608.30672",
+      "title": "HiRS-Agent: A Hierarchical Multi-Agent System for Reliable Long-Horizon Remote Sensing Task Solving",
+      "abstract": "Recent advances in large language models and multimodal models have pushed remote sensing (RS) processing from simple perception models to agentic systems designed to tackle complex, long-horizon RS tasks. However, existing systems often rely on monolithic decision-making frameworks, which fail to accommodate the multi-stage, interdependent nature of RS tasks. This centralized approach leads to challenges such as unstable task execution, incorrect tool usage, and error propagation across stages. To address these issues, we propose HiRS-Agent, a hierarchical multi-agent system for long-horizon RS task solving. HiRS-Agent adopts a two-level collaborative architecture: the Manager Layer handles dynamic routing, step-level verification, replanning, and termination control, while the Specialist Layer organizes domain-specific tools according to the RS workflow and is responsible for subtask reasoning and tool execution. To further enhance the system's capability, we introduce a two-stage supervised tuning strategy and a verification-guided hierarchical reinforcement learning stage to jointly optimize coordination and tool-use policies. Experiments on Earth-Agent Benchmark and ThinkGeo show that HiRS-Agent substantially improves long-horizon tool-use capability and final-task correctness, demonstrating the effectiveness of structured multi-agent collaboration for reliable RS agents. The code is publicly available at https://github.com/IntelliSensing/HiRS-Agent.",
+      "authors": [
+        "Boyang Mu",
+        "Zhiwei Wei",
+        "Mugen Peng",
+        "Wenjia Xu"
+      ],
+      "published": "2026-08-31T12:13:41Z",
+      "updated": "2026-08-31T12:13:41Z",
+      "url": "https://arxiv.org/abs/2608.30672",
+      "pdf_url": "https://arxiv.org/pdf/2608.30672.pdf",
+      "primary_category": "cs.AI",
+      "categories": [
+        "cs.AI",
+        "cs.MA",
+        "cs.MM"
+      ],
+      "tags": [
+        "cs.AI",
+        "cs.MA",
+        "cs.MM"
+      ],
+      "domain": "Agent",
+      "pdf_downloaded": true,
+      "pdf_size_bytes": 2186377,
+      "pdf_path": "2026-09-01/agent/2608.30672.pdf"
+    },
+    {
+      "id": "2608.30659",
+      "title": "LLM-based Hardware Development with Hierarchical IRs and End-to-End Multi-Agent Workflow",
+      "abstract": "Large language models (LLMs) are increasingly used in software development, but their use in complex hardware design remains limited. This gap stems from both the scarcity of public hardware training data and the fundamentally different methodologies used in hardware design. In particular, applying LLMs to hardware requires more than direct RTL generation: the model must understand module boundaries, inter-module connections, and verification requirements. In this paper, we present an LLM-based hardware development framework with hierarchical intermediate representations (IRs) and an end-to-end multi-agent workflow. The core idea is to provide an abstraction of hardware design to LLMs through two structured IRs: Architectural Sketch, which captures module topology and interconnection, and Operational Specification, which defines per-module functionality and interfaces. Our framework uses these IRs to decompose a complex design into sub-modules, specify the per-block functionality, and derive how each module should be tested and verified. We incorporate a multi-agent debug loop in the framework, allowing agents to get the error feedback and control the debug details such as the signals to be probed for simulation. We evaluate our framework on Verilog-Eval benchmark, achieving a pass@5 rate of 95.5%, which surpasses current state-of-the-art LLM generation frameworks. To better assess performance on complex, realistic designs, we introduce a new case study spanning applications from general-purpose processors to digital signal processing systems. Experimental results indicate that such complex designs exceed the capabilities of existing approaches, whereas our framework is the only one capable of producing functional end-to-end design. Our generated RTL follows all industry-standard design rules, is lint-clean, functionally correct and fully synthesizable.",
+      "authors": [
+        "Chenyang Yin",
+        "Agasthi Haputhanthri",
+        "Aditya Anirudh Jonnalagadda",
+        "Zhenyu Bai",
+        "Yuanming Song",
+        "Saranyu Chattopadhyay",
+        "Mohammad Fadiheh",
+        "Tom Zelazny",
+        "Subhasish Mitra",
+        "Tulika Mitra"
+      ],
+      "published": "2026-08-31T11:57:37Z",
+      "updated": "2026-08-31T11:57:37Z",
+      "url": "https://arxiv.org/abs/2608.30659",
+      "pdf_url": "https://arxiv.org/pdf/2608.30659.pdf",
+      "primary_category": "cs.AR",
+      "categories": [
+        "cs.AR",
+        "cs.MA",
+        "cs.SE"
+      ],
+      "tags": [
+        "cs.AR",
+        "cs.MA",
+        "cs.SE"
+      ],
+      "domain": "Agent",
+      "pdf_downloaded": true,
+      "pdf_size_bytes": 614989,
+      "pdf_path": "2026-09-01/agent/2608.30659.pdf"
+    },
+    {
+      "id": "2608.30643",
+      "title": "Temporal Forcing: 4D Representation Alignment for Vision-Language-Action Models",
+      "abstract": "Recent vision-language-action (VLA) methods improve manipulation performance by aligning their representations with 3D scene geometry. However, these methods often struggle with long-horizon manipulation and observation aliasing between visually similar states due to a lack of temporal information: the 3D scene geometry captures only the current state, rather than how it has evolved over time. To resolve this, we present Temporal Forcing, a 4D representation alignment method for VLA models. Specifically, we first introduce a history pathway that enables a vanilla VLA model to summarize observation history into temporally aware latent representations. Then, the latent representations are aligned with the geometric features extracted by a pretrained 4D foundation model, which captures the evolving 3D world through temporally consistent geometric representations, enabling a deeper understanding of dynamic environments. Temporal Forcing reaches 98.8% on LIBERO, outperforming its base model by 2.2 points. On a physical hidden-placement task, it raises full-task success from 20.0% to 43.3%. Code will be publicly available.",
+      "authors": [
+        "Xingyu Ding",
+        "Yuzhong Zhao",
+        "Chunhai Zhao",
+        "Yinghuan Shi",
+        "Chaoyang Zhao",
+        "Yifan Zhang"
+      ],
+      "published": "2026-08-31T11:47:29Z",
+      "updated": "2026-08-31T11:47:29Z",
+      "url": "https://arxiv.org/abs/2608.30643",
+      "pdf_url": "https://arxiv.org/pdf/2608.30643.pdf",
+      "primary_category": "cs.RO",
+      "categories": [
+        "cs.RO"
+      ],
+      "tags": [
+        "cs.RO"
+      ],
+      "domain": "Agent",
+      "pdf_downloaded": true,
+      "pdf_size_bytes": 2998965,
+      "pdf_path": "2026-09-01/agent/2608.30643.pdf"
+    },
+    {
+      "id": "2608.30536",
+      "title": "Behavior-Skill: A Fine-Grained Benchmark for Evaluating Vision-Language-Action Policies in Long-Horizon Tasks",
+      "abstract": "Reliable execution of long-horizon mobile manipulation tasks remains challenging because overall task success depends on the successful completion of multiple constituent skills. Existing benchmarks, however, still rely primarily on full-task rollouts and aggregate task-level metrics, making intermediate failures difficult to observe and analyze. We present Behavior-Skill, a benchmark that reformulates the learning and evaluation of long-horizon tasks around executable constituent skills. It contains 235,492 skill instances from 10,000 demonstrations across 50 household tasks and 34 semantic skill categories. Each instance pairs a skill instruction with an aligned observation-action segment, and is further associated with a restorable intermediate state and a skill success condition to enable independent evaluation under valid preconditions. We further introduce trajectory-level and skill-level metrics to characterize policy capability beyond aggregate task success. Extensive experiments across representative VLA policies including pi0.5 and GR00T on the complete 50-task benchmark show that failures are highly non-uniform across skills, with contact-rich manipulation skills forming persistent bottlenecks. These results demonstrate that Behavior-Skill complements full-task evaluation by exposing intermediate capability profiles for analyzing and improving long-horizon VLA policies. Behavior-Skill is publicly available at https://github.com/nubot-nudt/Behavior-Skill.",
+      "authors": [
+        "Chunyun Ma",
+        "Lun Luo",
+        "Xingjian Luo",
+        "Xiexing Feng",
+        "Hang Zhang",
+        "Wei Liu",
+        "Feng Qiao",
+        "Yaonan Wang",
+        "Huimin Lu",
+        "Xieyuanli Chen"
+      ],
+      "published": "2026-08-31T10:03:48Z",
+      "updated": "2026-08-31T10:03:48Z",
+      "url": "https://arxiv.org/abs/2608.30536",
+      "pdf_url": "https://arxiv.org/pdf/2608.30536.pdf",
+      "primary_category": "cs.RO",
+      "categories": [
+        "cs.RO"
+      ],
+      "tags": [
+        "cs.RO"
+      ],
+      "domain": "Agent",
+      "pdf_downloaded": true,
+      "pdf_size_bytes": 6343868,
+      "pdf_path": "2026-09-01/agent/2608.30536.pdf"
+    },
+    {
+      "id": "2608.30506",
+      "title": "Anomaly Detection on Small Industrial Components via Vision-Based Tactile Sensing",
+      "abstract": "Automated inspection of small industrial components, including sub-centimetre-scale parts where defects are geometry-driven and poorly resolved by standard optical cameras, calls for sensing modalities that can directly capture fine surface geometry. Vision-based tactile sensors address this need by converting contact imprints into high-resolution image-like data compatible with existing deep-learning pipelines, yet their effective use for industrial anomaly detection (AD) remains largely unexplored. This work systematically evaluates unsupervised AD methods on a real tactile dataset covering five genuine industrial components acquired with a GelSight Mini sensor mounted on a collaborative robot. Four feature-embedding methods, SPADE, PaDiM, FAPM, and InReaCh, are compared under three validations explicitly motivated by the deployment constraints of contact-based sensing: a Good Fraction analysis establishing the minimum number of nominal contacts for stable performance, directly bounded by gel wear since every acquisition degrades the soft interface; a cross-position evaluation assessing generalization across different contact locations observing the same recurring surface pattern; and a low- versus high-resolution comparison evaluating the cost-benefit of higher-resolution tactile acquisition. Overall, this systematic benchmarking study provides practical guidance for researchers and practitioners adopting vision-based tactile sensing for industrial AD and shows how this modality can serve as a viable alternative for industrial quality-control tasks.",
+      "authors": [
+        "G. F. Preziosa",
+        "M. Casiglia",
+        "M. Faroni",
+        "A. M. Zanchettin",
+        "P. Rocco"
+      ],
+      "published": "2026-08-31T09:40:35Z",
+      "updated": "2026-08-31T09:40:35Z",
+      "url": "https://arxiv.org/abs/2608.30506",
+      "pdf_url": "https://arxiv.org/pdf/2608.30506.pdf",
+      "primary_category": "cs.RO",
+      "categories": [
+        "cs.RO"
+      ],
+      "tags": [
+        "cs.RO"
+      ],
+      "domain": "Agent",
+      "pdf_downloaded": true,
+      "pdf_size_bytes": 5305168,
+      "pdf_path": "2026-09-01/agent/2608.30506.pdf"
+    },
+    {
+      "id": "2608.30471",
+      "title": "HorizonNet for visual terrain navigation",
+      "abstract": "This paper investigates the problem of position estimation of unmanned surface vessels (USVs) operating in coastal areas or in the archipelago. We propose a position estimation method where the horizon line is extracted in a 360 degree panoramic image around the USV. We design a CNN architecture to determine an approximate horizon line in the image and implicitly determine the camera orientation (the pitch and roll angles). The panoramic image is warped to compensate for the camera orientation and to generate an image from an approximately level camera. A second CNN architecture is designed to extract the pixelwise horizon line in the warped image. The extracted horizon line is correlated with digital elevation model (DEM) data in the Fourier domain using a MOSSE correlation filter. Finally, we determine the location of the maximum correlation score over the search area to estimate the position of the USV. Comprehensive experiments are performed in a field trial in the archipelago. Our approach provides promising results by achieving position estimates with GPS-level accuracy.",
+      "authors": [
+        "Bertil Grelsson",
+        "Andreas Robinson",
+        "Michael Felsberg",
+        "Fahad Shahbaz Khan"
+      ],
+      "published": "2026-08-31T08:58:13Z",
+      "updated": "2026-08-31T08:58:13Z",
+      "url": "https://arxiv.org/abs/2608.30471",
+      "pdf_url": "https://arxiv.org/pdf/2608.30471.pdf",
+      "primary_category": "cs.CV",
+      "categories": [
+        "cs.CV",
+        "cs.RO"
+      ],
+      "tags": [
+        "cs.CV",
+        "cs.RO"
+      ],
+      "domain": "Agent",
+      "pdf_downloaded": true,
+      "pdf_size_bytes": 2743926,
+      "pdf_path": "2026-09-01/agent/2608.30471.pdf"
+    },
+    {
+      "id": "2608.30433",
+      "title": "A Hybrid PEM-GP Framework for Uncertainty-Aware System Identification of Quadcopters",
+      "abstract": "Accurate dynamic models play a central role in achieving reliable control of quadcopters. Classical system identification methods remain widely used, mainly because of their interpretability. However, they often fail to capture important nonlinear effects, especially in small-scale aerial platforms where such effects become more pronounced. Data-driven approaches offer a different perspective. They can represent complex nonlinear dynamics more effectively, but this comes at the cost of reduced interpretability and the absence of well-calibrated uncertainty estimates. In this work, we propose a framework that combines physics-based modeling with data-driven learning, while explicitly accounting for uncertainty. A physics-based model is first identified using the Prediction Error Method (PEM), which captures the main structure of the system. The remaining dynamics are then modeled using a Gaussian Process (GP), allowing the residual behavior to be learned directly from data. This separation makes it possible to distinguish between known physical effects and unmodeled dynamics. The proposed framework is validated on a Duckiedrone-like experimental setup. The results show that the PEM-GP model achieves prediction accuracy comparable to that of a Long Short-Term Memory (LSTM) network, while additionally providing calibrated uncertainty estimates. This combination improves model reliability and supports uncertainty-aware decision-making.",
+      "authors": [
+        "Abdallah Ghoul",
+        "Ismail Khalil Bousserhane",
+        "Kadri Boufeldja"
+      ],
+      "published": "2026-08-31T08:26:03Z",
+      "updated": "2026-08-31T08:26:03Z",
+      "url": "https://arxiv.org/abs/2608.30433",
+      "pdf_url": "https://arxiv.org/pdf/2608.30433.pdf",
+      "primary_category": "cs.RO",
+      "categories": [
+        "cs.RO"
+      ],
+      "tags": [
+        "cs.RO"
+      ],
+      "domain": "Agent",
+      "pdf_downloaded": true,
+      "pdf_size_bytes": 2050342,
+      "pdf_path": "2026-09-01/agent/2608.30433.pdf"
+    },
+    {
+      "id": "2608.30396",
+      "title": "Scaffolding Foundation Models into Physical-World Agents Pushes the Frontier of Long-Horizon Navigation",
+      "abstract": "Long-horizon physical-world agents must reason over distant goals while grounding decisions in reliable closed-loop behavior. Today's foundation models split these capabilities: vision-language models (VLMs) infer missing information and adapt high-level plans but remain brittle and inefficient at repeated navigation grounding, while navigation foundation models (NFMs) robustly execute semantic goals but operate as bounded episodes without persistent task-level reasoning. We introduce NavMCP, an agentic scaffolding framework that couples a VLM reasoning agent with an NFM executor for long-horizon exploration. The VLM decides what evidence to seek, where to search, and when to stop, while the NFM grounds each semantic sub-goal into closed-loop navigation. Three channels structure their collaboration: intent translates evidence needs into navigation calls, observation converts rollouts into source-grounded trajectory evidence, and memory accumulates findings, negative evidence, and unresolved goals across calls. This design turns isolated navigation rollouts into persistent embodied interaction without retraining either model. On Embodied Question Answering, NavMCP achieves state-of-the-art results on HM-EQA, MT-HM3D, and EXPRESS-Bench. Under matched agent and executor backbones, it outperforms an episodic interface by 14.9 percentage points on HM-EQA. On a Unitree Go2, NavMCP reaches 78.3% success, with its margin over the strongest baseline growing from 10 to 45 points as the task horizon increases. These results demonstrate the potential of scaffolding complementary foundation models into long-horizon physical-world agents.",
+      "authors": [
+        "Zixing Lei",
+        "Gengze Zhou",
+        "Xiong-Hui Chen",
+        "Jiazhao Zhang",
+        "Yiyang Huang",
+        "Hang Yin",
+        "Haoqi Yuan",
+        "Qi Wu",
+        "Weixin Li",
+        "Siheng Chen"
+      ],
+      "published": "2026-08-31T07:50:16Z",
+      "updated": "2026-08-31T07:50:16Z",
+      "url": "https://arxiv.org/abs/2608.30396",
+      "pdf_url": "https://arxiv.org/pdf/2608.30396.pdf",
+      "primary_category": "cs.AI",
+      "categories": [
+        "cs.AI",
+        "cs.RO"
+      ],
+      "tags": [
+        "cs.AI",
+        "cs.RO"
+      ],
+      "domain": "Agent",
+      "pdf_downloaded": true,
+      "pdf_size_bytes": 11493991,
+      "pdf_path": "2026-09-01/agent/2608.30396.pdf"
+    },
+    {
+      "id": "2608.30378",
+      "title": "PAVE: Predictive Alignment and Value-Guided Evolution for World-Action Policies",
+      "abstract": "Direct vision-language-action policies generate continuous robot actions efficiently, but standard behavior cloning leaves two complementary gaps: their representations are not explicitly required to describe how the scene evolves over multiple time scales, and deployment trajectories of unequal quality are often reused without separating useful dynamics from undesirable behavior. We introduce \\method, a direct world-action policy that combines outcome-agnostic predictive learning with outcome-aware policy improvement. \\method first retains a local fixed-offset JEPA objective and adds trajectory-relative multi-horizon transition alignment at 25%, 50%, 75%, and 100% of the remaining episode. These training-only targets require the current policy representation to preserve both local physical changes and longer-range task progress, without supplying explicit future tokens to the action head. \\method then trains an independent distributional value critic on cumulative deployment trajectories, computes action-chunk-aligned $N$-step advantages, and converts them into positive, negative, or null text conditions for a flow-matching actor. Thus, every valid trajectory can teach what physically happened, while the actor is deployed only under the condition associated with relatively better actions. The multi-horizon predictor and critic are removed from online execution, preserving direct action generation from the current observation, language instruction, and proprioception. \\redclaim{Across the three simulation benchmarks, \\method achieves the strongest overall performance while preserving the direct actor's online execution path.}",
+      "authors": [
+        "Botong Zhao",
+        "Fang Yu",
+        "Tim",
+        "Senhua Zhu",
+        "Xinyuan Chen",
+        "Yue Lu"
+      ],
+      "published": "2026-08-31T07:36:11Z",
+      "updated": "2026-08-31T07:36:11Z",
+      "url": "https://arxiv.org/abs/2608.30378",
+      "pdf_url": "https://arxiv.org/pdf/2608.30378.pdf",
+      "primary_category": "cs.RO",
+      "categories": [
+        "cs.RO",
+        "cs.AI"
+      ],
+      "tags": [
+        "cs.AI",
+        "cs.RO"
+      ],
+      "domain": "Agent",
+      "pdf_downloaded": true,
+      "pdf_size_bytes": 2696563,
+      "pdf_path": "2026-09-01/agent/2608.30378.pdf"
+    },
+    {
+      "id": "2608.30368",
+      "title": "SpectraTac: A Compact Camera-Free Optical Tactile Sensor with Distributed Color Sensing",
+      "abstract": "Tactile sensing is essential for physical interaction in robotics and human--machine systems. However, combining rich tactile information with compact hardware, low cost, and low computational overhead remains challenging. This work presents SpectraTac, a compact, camera-free optical tactile sensor that combines active red--green--blue (RGB) illumination with spatially distributed color sensing. Contact deforms a compliant transparent elastomer and modulates its internal light field, producing spatially differentiated changes in color and intensity. Three distributed color sensors capture these responses as low-dimensional spatio-spectral features, avoiding cameras, imaging optics, and high-dimensional image processing. The device measures 19.2 mm in diameter and 4 mm in height, with a material cost below USD~5. A data-driven decoding framework simultaneously estimates three-dimensional (3D) force and the contact region from the optical measurements. For 3D force prediction, the sensor achieved mean absolute errors (MAEs) of 0.161, 0.164, and 0.429 N along the x-, y-, and z-axes, respectively. The nine-region contact-classification accuracy was 99.9%. We further evaluated real-time 3D force tracking and contact-region-based human--machine interaction through an interactive control task. These results indicate that distributed color-resolved optical sensing offers a compact, low-cost alternative to camera-based tactile sensing for robotics, wearable sensing, and interactive systems.",
+      "authors": [
+        "Hao Wu",
+        "Haotian Guo",
+        "Yu Feng",
+        "Yutong Wang",
+        "Yanzhe Wang",
+        "Jianshu Zhou"
+      ],
+      "published": "2026-08-31T07:25:51Z",
+      "updated": "2026-08-31T07:25:51Z",
+      "url": "https://arxiv.org/abs/2608.30368",
+      "pdf_url": "https://arxiv.org/pdf/2608.30368.pdf",
+      "primary_category": "cs.RO",
+      "categories": [
+        "cs.RO"
+      ],
+      "tags": [
+        "cs.RO"
+      ],
+      "domain": "Agent",
+      "pdf_downloaded": true,
+      "pdf_size_bytes": 6036992,
+      "pdf_path": "2026-09-01/agent/2608.30368.pdf"
+    },
+    {
+      "id": "2608.30344",
+      "title": "Proximity3D: Shape from Capacitive Proximity on Sensing Manifold",
+      "abstract": "Most shape reconstruction methods assume measurements defined over planar sensing domains, such as RGB images or depth maps. In this paper, we use a curved capacitive textile as a shape sensor, treating its surface as a non-planar sensing manifold. Each scan is represented as a capacitive proximity field on this manifold, induced by the interaction between the curved electrode layout and nearby object geometry. We introduce a multi-view feedforward reconstruction model that aggregates these fields across known sensor views and recovers the observed object shape. Simulated and physical experiments demonstrate robust reconstruction from capacitive proximity signals acquired on curved sensing surfaces, pointing toward a new route to robotic near-field geometric awareness via embodied sensing.",
+      "authors": [
+        "Hao Chen",
+        "Chenming Wu",
+        "Chun Ping Lam",
+        "Xiangjia Chen",
+        "Guoxin Fang",
+        "Charlie C. L. Wang",
+        "Yeung Yam",
+        "Juncong Lin",
+        "Chengkai Dai"
+      ],
+      "published": "2026-08-31T07:00:19Z",
+      "updated": "2026-08-31T07:00:19Z",
+      "url": "https://arxiv.org/abs/2608.30344",
+      "pdf_url": "https://arxiv.org/pdf/2608.30344.pdf",
+      "primary_category": "cs.CV",
+      "categories": [
+        "cs.CV",
+        "cs.CG",
+        "cs.GR",
+        "cs.RO"
+      ],
+      "tags": [
+        "cs.CG",
+        "cs.CV",
+        "cs.GR",
+        "cs.RO"
+      ],
+      "domain": "Agent",
+      "pdf_downloaded": false,
+      "pdf_size_bytes": null,
+      "pdf_path": null
+    },
+    {
+      "id": "2608.30301",
+      "title": "Data-Centric Neuromotor Interfaces for Portable Human-Machine Interaction",
+      "abstract": "Dexterous human-machine interaction requires intuitive and expressive interfaces that can be efficiently deployed on constrained edge devices. Flexible material-based neuromotor interfaces hold considerable promise, as they decode human movement intention into natural control. Although emerging flexible electronic skins enable wearable high-fidelity data acquisition, practical deployment inevitably involves trade-offs between computational resources and portability. We present a data-centric paradigm where physiological features yield fundamental separability, providing sufficient discriminative cues for recognition. A wireless, high-bandwidth system developed for collecting various electrophysiological signals, when integrated with muscle-specific electrodes, forms a surface electromyography-based interface. Exploiting highly separable data, a 2,210-parameter model achieves 94.36% accuracy across 34 gestures and can be rapidly deployed on edge devices, establishing a new thousand-parameter benchmark for dexterous decoding. The underlying data-algorithm interactions in the data-centric paradigm are further clarified, demonstrating its feasibility in real-world scenarios. This study provides a principled and validated pathway for practical deployment of reliable neuromotor interfaces.",
+      "authors": [
+        "Jiaxuan Li",
+        "Di Wu",
+        "Jianhua Liu",
+        "Yuxin Zhao",
+        "Jinnuo Li",
+        "Xiao Zhang",
+        "Zhenzhi Ying",
+        "Changsheng Dai",
+        "Xiang Li",
+        "Liming Shu"
+      ],
+      "published": "2026-08-31T06:17:46Z",
+      "updated": "2026-08-31T06:17:46Z",
+      "url": "https://arxiv.org/abs/2608.30301",
+      "pdf_url": "https://arxiv.org/pdf/2608.30301.pdf",
+      "primary_category": "cs.RO",
+      "categories": [
+        "cs.RO"
+      ],
+      "tags": [
+        "cs.RO"
+      ],
+      "domain": "Agent",
+      "pdf_downloaded": true,
+      "pdf_size_bytes": 1895377,
+      "pdf_path": "2026-09-01/agent/2608.30301.pdf"
+    },
+    {
+      "id": "2608.30289",
+      "title": "CometVLA: Co-Training on an Embodied Data Pyramid towards Physical Understanding",
+      "abstract": "Vision-language-action (VLA) models remain brittle in manipulation tasks that require physical commonsense. Current physical VQA data is typically disembodied and misaligned with robot action domains. Egocentric videos are used only as auxiliary pre-training. It remains unclear whether improved VLM physical understanding actually benefits downstream action generation. Therefore, we present CometVLA to close this gap. We construct CometData and CometBench, an embodied physical VQA corpus and benchmark strictly aligned with the robot's action data and embodiment. We introduce Global Action Prior (GAP) tokens, a compact learnable bottleneck that isolates task-agnostic motion regularities and lets the action head consume physical commonsense without corrupting the pre-trained VLM backbone. We co-train CometVLA across the embodied data pyramid, spanning teleoperation, simulation, egocentric trajectories, and VQA layers. On real-world manipulation tasks and RoboTwin simulation, CometVLA consistently outperforms strong VLA baselines. Correlation analysis shows that stronger VLM performance on CometBench indicates higher VLA success rates. Results demonstrate that physical understanding pre-training genuinely benefits downstream manipulation.",
+      "authors": [
+        "Hanwen Wan",
+        "Dafeng Chi",
+        "Linbo Zhai",
+        "Tianao Shen",
+        "Yuzheng Zhuang",
+        "Tianle Zhang",
+        "Peidong Liu",
+        "Liang Lin",
+        "Xiaoqiang Ji"
+      ],
+      "published": "2026-08-31T05:55:34Z",
+      "updated": "2026-08-31T05:55:34Z",
+      "url": "https://arxiv.org/abs/2608.30289",
+      "pdf_url": "https://arxiv.org/pdf/2608.30289.pdf",
+      "primary_category": "cs.RO",
+      "categories": [
+        "cs.RO"
+      ],
+      "tags": [
+        "cs.RO"
+      ],
+      "domain": "Agent",
+      "pdf_downloaded": true,
+      "pdf_size_bytes": 11976515,
+      "pdf_path": "2026-09-01/agent/2608.30289.pdf"
+    },
+    {
+      "id": "2608.30277",
+      "title": "SimCRAFT: Distilling Remote Sensing Agents via Synthetic Trajectories and Contextual Retrieval-Augmented Fine-Tuning",
+      "abstract": "The unprecedented surge in Earth observation data volume and diversity has exposed a critical bottleneck for traditional manual workflows, catalyzing the emergence of Remote Sensing (RS) Agents. However, the practical deployment of these advanced agents is severely hindered by their heavy reliance on large-scale general-purpose LLMs, which lack deep domain expertise and impose prohibitive infrastructure demands. To resolve this, we propose SimCRAFT, a model-agnostic framework that distills sophisticated RS orchestration capabilities into a compact 7B-scale model. Addressing data scarcity, we first pair a multiagent synthesis engine with a Mock Execution Engine that checks schema correctness, inter-tool dependencies, and sensor/tool compatibility, producing SimRS-14k, a large-scale, constraint-validated workflow planning corpus. Second, we propose Contextual Retrieval-Augmented Fine-Tuning (CRAFT) that finetunes the model to reason analogically by adapting retrieved Standard Operating Procedures to novel queries under a noise-robust objective, generalizing RAFT to multi-step RS workflow planning without mechanical copying. Extensive experiments demonstrate that SimCRAFT-7B significantly outperforms openweights LLMs and rivals advanced closedsource models and specialized RS agents, while reproducing across three 7B backbones. This work contributes a competitive open-weights baseline for lightweight RS intelligence, enabling efficient autonomous deployment under resource-constrained or resource-conserving conditions.",
+      "authors": [
+        "Haoran Wang",
+        "Jing Yao",
+        "Xu Yang",
+        "Zeqing Wang",
+        "Yang Zhang",
+        "Pedram Ghamisi",
+        "Zhengchao Chen"
+      ],
+      "published": "2026-08-31T05:45:33Z",
+      "updated": "2026-08-31T05:45:33Z",
+      "url": "https://arxiv.org/abs/2608.30277",
+      "pdf_url": "https://arxiv.org/pdf/2608.30277.pdf",
+      "primary_category": "cs.AI",
+      "categories": [
+        "cs.AI",
+        "cs.MA"
+      ],
+      "tags": [
+        "cs.AI",
+        "cs.MA"
+      ],
+      "domain": "Agent",
+      "pdf_downloaded": true,
+      "pdf_size_bytes": 3058904,
+      "pdf_path": "2026-09-01/agent/2608.30277.pdf"
+    }
+  ]
+}
