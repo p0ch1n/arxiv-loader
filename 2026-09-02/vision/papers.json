@@ -1,0 +1,783 @@
+{
+  "domain": "Vision",
+  "date": "2026-09-02",
+  "count": 27,
+  "papers": [
+    {
+      "id": "2609.01607",
+      "title": "Uncovering Understanding-Generation Synergy in Native Unified Multimodal Models: From Representation, Task to System",
+      "abstract": "While unified multimodal models (UMMs) jointly perform visual understanding and generation within a single model, functional unification does not guarantee learning synergy: the two objectives may reinforce each other, compete for capacity, or merely coexist. We investigate their relationship at the representation, task, and system levels in a controlled, structurally native setting without pretrained vision priors. At the representation level, we find that each objective provides useful signal to the other: generation enriches the visual features learned for understanding, while understanding strengthens vision--language alignment for generation. However, when both objectives are forced through the same computation path, one tends to dominate. A task-decoupled architecture that specializes conflicting visual computation while preserving semantic interaction avoids this asymmetric degradation. At the task level, through three case studies, we find positive bidirectional transfer when understanding and generation tasks rely on shared knowledge. At the system level, we show that an end-to-end UMM outperforms a matched planner--executor pipeline on complex tasks that explicitly require both image understanding and generation. Together, these results show that the value of UMMs extends beyond a unified interface: appropriate specialization, shared task knowledge, and end-to-end optimization can turn coexistence into synergy.",
+      "authors": [
+        "Penghao Wu",
+        "Haiwen Diao",
+        "Weichen Fan",
+        "Lewei Lu",
+        "Dahua Lin",
+        "Ziwei Liu"
+      ],
+      "published": "2026-09-01T17:59:59Z",
+      "updated": "2026-09-01T17:59:59Z",
+      "url": "https://arxiv.org/abs/2609.01607",
+      "pdf_url": "https://arxiv.org/pdf/2609.01607.pdf",
+      "primary_category": "cs.CV",
+      "categories": [
+        "cs.CV"
+      ],
+      "tags": [
+        "cs.CV"
+      ],
+      "domain": "Vision",
+      "pdf_downloaded": true,
+      "pdf_size_bytes": 2258532,
+      "pdf_path": "2026-09-02/vision/2609.01607.pdf"
+    },
+    {
+      "id": "2609.01598",
+      "title": "UI-VISA: U-Net Initialized Vascular Image Segmentation Architecture",
+      "abstract": "Accurate segmentation of vascular structures in digital subtraction angiography (DSA) images remains challenging due to the thin, elongated, and branching nature of blood vessels. Pixel-wise deep learning approaches such as U-Net achieve strong general-purpose segmentation performance but often produce fragmented or discontinuous predictions in fine vascular regions, since they do not explicitly enforce structural connectivity. Region growing algorithms preserve spatial context and topological continuity, but are highly sensitive to seed point initialization and can be computationally expensive. We propose UI-VISA (U-Net Initialized Vascular Image Segmentation Architecture), a hybrid pipeline that combines the complementary strengths of both approaches. UI-VISA uses U-Net's foreground predictions as informed seed points for a CNN-guided region growing algorithm, which then iteratively refines the segmentation by enforcing local connectivity and recovering fine vessel details that U-Net alone tends to miss or over-predict. We evaluate UI-VISA against standalone U-Net and a prior region-growing-based method (VISA) using 5-fold cross-validation on 26 DSA images. UI-VISA achieves the highest mean Dice and clDice scores across folds, and a paired Wilcoxon signed-rank test shows the improvement in clDice is statistically significant ($p=0.023$), consistent with the method's design goal of preserving vascular connectivity, while the improvement in Dice does not reach significance ($p=0.104$).",
+      "authors": [
+        "Asees Kaur",
+        "Suzanne S. Sindi",
+        "Erica M. Rutter"
+      ],
+      "published": "2026-09-01T17:58:54Z",
+      "updated": "2026-09-01T17:58:54Z",
+      "url": "https://arxiv.org/abs/2609.01598",
+      "pdf_url": "https://arxiv.org/pdf/2609.01598.pdf",
+      "primary_category": "cs.CV",
+      "categories": [
+        "cs.CV"
+      ],
+      "tags": [
+        "cs.CV"
+      ],
+      "domain": "Vision",
+      "pdf_downloaded": true,
+      "pdf_size_bytes": 982056,
+      "pdf_path": "2026-09-02/vision/2609.01598.pdf"
+    },
+    {
+      "id": "2609.01584",
+      "title": "A Benchmark for Vehicle Attribute Classification in Cross-Domain Surveillance Scenarios",
+      "abstract": "Vehicle attribute analysis is a key component of Intelligent Transportation Systems (ITS), supporting applications such as vehicle identification, traffic monitoring, and forensic investigation. However, models trained under controlled conditions often degrade in real surveillance scenarios due to changes in viewpoint, occlusion, illumination, and sensor characteristics. This paper introduces Unconstrained Vehicle Identification Benchmark (UVIB), a benchmark for evaluating three operational vehicle-analysis tasks: front/rear orientation, occlusion-related suitability for Vehicle Make and Model Recognition (VMMR), and color clarity. The benchmark contains 84,835 vehicle images from seven public Brazilian datasets, grouped into surveillance and general acquisition domains, with unified binary annotations that were not jointly available in the original sources. Four representative architectures, EfficientNetV2-S, ResNet-50, ViT/B-16, and YOLO11s-cls, are evaluated under mixed-domain, cross-domain, and cross-dataset protocols. The results show that domain shift has a stronger impact than architecture choice, with substantial degradation in cross-domain settings, especially for VMMR suitability and color clarity. While orientation generalizes more reliably, VMMR suitability remains affected by class imbalance and ambiguous occlusions, and color clarity is highly sensitive to illumination and sensor modality. These findings highlight the need for benchmarks and evaluation protocols that explicitly measure operational robustness beyond standard in-domain accuracy. The proposed benchmark is publicly available at https://github.com/UFPR-IPASP-PR/uvib-vehicle-attributes/.",
+      "authors": [
+        "Sergio M. Silva",
+        "Otavio T. Remer",
+        "Gabriel E. Lima",
+        "Lucas Wojcik",
+        "Rayson Laroca",
+        "David Menotti"
+      ],
+      "published": "2026-09-01T17:48:10Z",
+      "updated": "2026-09-01T17:48:10Z",
+      "url": "https://arxiv.org/abs/2609.01584",
+      "pdf_url": "https://arxiv.org/pdf/2609.01584.pdf",
+      "primary_category": "cs.CV",
+      "categories": [
+        "cs.CV"
+      ],
+      "tags": [
+        "cs.CV"
+      ],
+      "domain": "Vision",
+      "pdf_downloaded": true,
+      "pdf_size_bytes": 3103930,
+      "pdf_path": "2026-09-02/vision/2609.01584.pdf"
+    },
+    {
+      "id": "2609.01582",
+      "title": "SpatialGuard: Harness-Guided Verifiable Spatial Reasoning for Text-to-Image Generation",
+      "abstract": "Complex 3D spatial text to image generation requires models to convert natural language into stable visual geometry, not merely semantic appearance. Existing prompt-driven or layout-conditioned methods improve controllability, but often lack an optimizable and verifiable spatial intermediary before visual sampling. As a result, object relations, occlusion, visibility, and camera constraints can decay during multi-round generation. This paper presents SpatialGuard, a structured layout-guided framework for complex 3D spatial text-to-image generation. SpatialGuard parses prompts into image synthesis-oriented 3D layouts through a Spatial Layout Architect, realizes them as visual conditions and candidate images through a Visual Realizer, and uses a Visual Alignment Critic to validate consistency among prompt, layout, and image. To keep constraints stable across iterations, SpatialGuard introduces a Layout Harness that organizes rule constraints, tool invocation, shared knowledge, and feedback loops around the editable layout state. This design turns complex spatial generation from implicit prompt following into a verifiable process of planning, realization, validation, and repair. Comprehensive experiments show that SpatialGuard achieves state-of-the-art performance in complex 3D spatial layout generation and improves spatial faithfulness over existing text-to-image and layout control baselines.",
+      "authors": [
+        "Ziyun Qian",
+        "Zizhi Chen",
+        "Yizhou Liu",
+        "Mingyang Sun",
+        "Dingkang Yang",
+        "Lihua Zhang"
+      ],
+      "published": "2026-09-01T17:47:00Z",
+      "updated": "2026-09-01T17:47:00Z",
+      "url": "https://arxiv.org/abs/2609.01582",
+      "pdf_url": "https://arxiv.org/pdf/2609.01582.pdf",
+      "primary_category": "cs.CV",
+      "categories": [
+        "cs.CV"
+      ],
+      "tags": [
+        "cs.CV"
+      ],
+      "domain": "Vision",
+      "pdf_downloaded": true,
+      "pdf_size_bytes": 5629649,
+      "pdf_path": "2026-09-02/vision/2609.01582.pdf"
+    },
+    {
+      "id": "2609.01551",
+      "title": "What, Where, and How: Probing Spatiotemporal Representations in Video Foundation Models",
+      "abstract": "Self-supervised video foundation models learn rich spatiotemporal representations, yet it remains unclear what visual concepts these representations encode, where they emerge across transformer layers, and how they are geometrically organized. In this work, we tackle these three questions through a systematic layer-wise analysis of V-JEPA 2 and VideoMAE-v2. We leverage lightweight probes trained to discover three temporally grounded properties: (i) camera motion understanding, (ii) intuitive physics, and (iii) anomaly detection. Both models encode camera motion, with best results ($>90$ ROC AUC) emerging at 60-70% of network depth, and achieve moderate anomaly detection performance ($>60$ ROC AUC), but remain near chance on intuitive-physics tasks, suggesting a limited encoding of deeper physical reasoning. Beyond classification, we find that temporal features from individual videos form smooth low-dimensional trajectories in representation space, suggesting that camera motion is not only linearly decodable but also geometrically organized. Based on these results, we apply geometry-aware spline-based steering in the model's latent representations to interpolate camera motion, yielding steered videos with smoother trajectories and more coherent temporal progression than linear interpolation.",
+      "authors": [
+        "Sharon S. Musa",
+        "Fereshteh Forghani",
+        "Harrish Thasarathan",
+        "Sonia Joseph",
+        "Matthew Kowal",
+        "Konstantinos G. Derpanis"
+      ],
+      "published": "2026-09-01T17:17:04Z",
+      "updated": "2026-09-01T17:17:04Z",
+      "url": "https://arxiv.org/abs/2609.01551",
+      "pdf_url": "https://arxiv.org/pdf/2609.01551.pdf",
+      "primary_category": "cs.CV",
+      "categories": [
+        "cs.CV"
+      ],
+      "tags": [
+        "cs.CV"
+      ],
+      "domain": "Vision",
+      "pdf_downloaded": true,
+      "pdf_size_bytes": 8348586,
+      "pdf_path": "2026-09-02/vision/2609.01551.pdf"
+    },
+    {
+      "id": "2609.01530",
+      "title": "Revisiting Cross-View Completion: Self-Supervised Pre-Training via Reconstruction Error Comparison",
+      "abstract": "Self-supervised pre-training via cross-view completion learns strong features for 3D vision from co-visible regions of image pairs. However, the reference view provides little information for reconstructing non-co-visible patches, implicitly yielding a monocular training signal in these regions. We introduce Gekko, which turns this limitation into a useful signal. The relative improvement of the cross-view reconstruction error over a masked-autoencoder error is a self-supervised proxy for co-visibility: large improvements indicate co-visible regions, negligible ones non-co-visible areas. Gekko is a network, trained from scratch, that jointly performs cross-view completion, masked autoencoding, and per-pixel prediction of this relative improvement, providing an additional binocular signal for all masked regions without any ground-truth 3D annotation. Under identical architectures and training data, Gekko consistently outperforms CroCo on zero-shot correspondence estimation, relative pose estimation, and pointmap regression, with up to 6 times higher accuracy at the strictest relative-pose threshold and a 22% drop in end-point error on ETH3D. The extra channel it learns is itself a strong co-visibility detector on unseen scenes, and Gekko's frozen features outperform released cross-view backbones of comparable or larger size. It can also be trained directly from raw videos with a simple stride-based curriculum, removing the cumbersome 3D preprocessing prior methods require while matching models trained on curated data. Code and pre-trained models are publicly available.",
+      "authors": [
+        "Thibaut Loiseau",
+        "Guillaume Bourmaud",
+        "Vincent Lepetit"
+      ],
+      "published": "2026-09-01T16:57:46Z",
+      "updated": "2026-09-01T16:57:46Z",
+      "url": "https://arxiv.org/abs/2609.01530",
+      "pdf_url": "https://arxiv.org/pdf/2609.01530.pdf",
+      "primary_category": "cs.CV",
+      "categories": [
+        "cs.CV"
+      ],
+      "tags": [
+        "cs.CV"
+      ],
+      "domain": "Vision",
+      "pdf_downloaded": true,
+      "pdf_size_bytes": 4257229,
+      "pdf_path": "2026-09-02/vision/2609.01530.pdf"
+    },
+    {
+      "id": "2609.01516",
+      "title": "DualDiff3D: Dual Structure-Appearance Diffusion Priors for Reliability-Enhanced 3D Gaussian Splatting",
+      "abstract": "While 3D Gaussian Splatting (3DGS) has revolutionized 3D reconstruction and novel-view synthesis, scenarios with limited input views often lead to poor reconstruction quality and artifacts in rendered novel views. Recent efforts attempt to utilize powerful diffusion priors, yet they typically process rendered and reference views concatenated along an additional dimension in a single network. These methods overlook an inherent nature that different views should maintain appearance similarity but differ in structure due to view shifts, leading to blur caused by conflicts between the two properties. In this paper, we propose DualDiff, a novel pipeline that leverages dual diffusion priors with a Structure-Appearance Attention (SAA) module to introduce reference guidance for refining low-quality novel views rendered from flawed 3D representations. Specifically, we retain one diffusion branch to focus on extracting structural information from the low-quality novel views, while introducing another branch to ensure appearance consistency with reference views. Furthermore, we present a 3D reconstruction framework named DualDiff3D, which integrates a reliability-enhanced Render-Refine-Optimize (RRO) loop to progressively and robustly incorporate the refined novel views, yielding more accurate 3DGS. Extensive experiments demonstrate that our approach outperforms state-of-the-art methods even in the inference-only setting, with further performance gains achievable through training. Our code and pre-trained weights are available at https://github.com/Akaneqwq/DualDiff3D.",
+      "authors": [
+        "Qian Wang",
+        "Yu Wang",
+        "Weiqi Li",
+        "Xinhua Cheng",
+        "Xiandong Meng",
+        "Ronggang Wang",
+        "Jian Zhang"
+      ],
+      "published": "2026-09-01T16:45:53Z",
+      "updated": "2026-09-01T16:45:53Z",
+      "url": "https://arxiv.org/abs/2609.01516",
+      "pdf_url": "https://arxiv.org/pdf/2609.01516.pdf",
+      "primary_category": "cs.CV",
+      "categories": [
+        "cs.CV"
+      ],
+      "tags": [
+        "cs.CV"
+      ],
+      "domain": "Vision",
+      "pdf_downloaded": true,
+      "pdf_size_bytes": 17357415,
+      "pdf_path": "2026-09-02/vision/2609.01516.pdf"
+    },
+    {
+      "id": "2609.01514",
+      "title": "A Sensor-Adaptive Incremental Learning Framework for Artifact Detection in Satellite Precipitation Data",
+      "abstract": "Historically, retrieving rainfall data from satellite imagery has been the domain of space agencies. However, in recent years, the development of cheaper, more compact satellites (SmallSats) capable of detecting rainfall proxies has led to a significant increase in private-sector initiatives for satellite launch and surface precipitation products. This rapid growth has yet to be matched by data validation efforts. Consequently, the need for a robust tool to detect anomalies in near-real-time data before it is disseminated to the public has become critical. In this paper, we present the development of an anomaly-detection system to identify artifacts in global satellite-based rainfall products. The developed framework leverages pre-trained computer vision models and incorporates scarce human-labeled data to detect specific anomalies. Our proposed anomaly detection strategy is tested on data from the Special Sensor Microwave Imager (SSMI) and the Special Sensor Microwave Imager/Sounder (SSMIS). Results demonstrate the efficacy of our approach at separating regular orbits from artifact-containing orbits for each satellite, with performance comparable to state-of-the-art in-place methods. Additionally, the framework offers explainability and the capacity for iterative refinement following false-positive or false-negative classifications.",
+      "authors": [
+        "Andres F. Monsalve",
+        "Hernan A. Moreno",
+        "Christian D. Kummerow"
+      ],
+      "published": "2026-09-01T16:43:27Z",
+      "updated": "2026-09-01T16:43:27Z",
+      "url": "https://arxiv.org/abs/2609.01514",
+      "pdf_url": "https://arxiv.org/pdf/2609.01514.pdf",
+      "primary_category": "physics.ao-ph",
+      "categories": [
+        "physics.ao-ph",
+        "cs.CV",
+        "stat.AP"
+      ],
+      "tags": [
+        "cs.CV",
+        "physics.ao-ph",
+        "stat.AP"
+      ],
+      "domain": "Vision",
+      "pdf_downloaded": true,
+      "pdf_size_bytes": 7817878,
+      "pdf_path": "2026-09-02/vision/2609.01514.pdf"
+    },
+    {
+      "id": "2609.01511",
+      "title": "Benchmarking Spatial, Spectral, and Self-Supervised Cues for Face Forgery Detection under Realistic Degradation",
+      "abstract": "Face forgery detectors often achieve strong results on controlled benchmarks, but their reliability under realistic image degradations remains limited. This paper presents a standardized benchmark for face forgery detection using the Multi-Dimensional Face Forgery Image (MFFI) dataset and evaluates performance on both clean and degraded test partitions. We compare six model families, including convolutional networks, transformer-based models, and a frozen self-supervised DINOv3 backbone, across spatial, spectral, and hybrid input representations. The results show that clean-set performance is not a reliable indicator of robustness under compression, resizing, and blurring. Xception with RGB obtains the best clean performance, reaching 0.884 mean ROC-AUC, but degrades substantially on the harder partition. In contrast, frozen DINOv3 achieves the strongest degraded-set result, with 0.726 mean ROC-AUC, while training only a linear classification head. The representation analysis indicates that Fourier-domain cues are most useful when combined with RGB information, whereas purely spectral inputs consistently underperform spatial representations. Qualitative attribution maps further suggest that convolutional detectors focus on localized artifacts, while DINOv3 relies on broader facial structure. These findings reinforce the need for degraded evaluation protocols and highlight self-supervised visual representations as a promising direction for robust face forgery detection. Our source code is publicly available at https://github.com/lucasdocunha/FaceForgery-Benchmark/.",
+      "authors": [
+        "Lucas Cunha",
+        "Lucas Sotomaior",
+        "Lucas Gasperin",
+        "Beatriz Caldas",
+        "Eduardo Pianovski",
+        "Rayson Laroca"
+      ],
+      "published": "2026-09-01T16:41:55Z",
+      "updated": "2026-09-01T16:41:55Z",
+      "url": "https://arxiv.org/abs/2609.01511",
+      "pdf_url": "https://arxiv.org/pdf/2609.01511.pdf",
+      "primary_category": "cs.CV",
+      "categories": [
+        "cs.CV"
+      ],
+      "tags": [
+        "cs.CV"
+      ],
+      "domain": "Vision",
+      "pdf_downloaded": true,
+      "pdf_size_bytes": 2509168,
+      "pdf_path": "2026-09-02/vision/2609.01511.pdf"
+    },
+    {
+      "id": "2609.01479",
+      "title": "CameraEditor: Camera-Controlled Image Editing via Video-Prior Sequential Modeling",
+      "abstract": "Beyond semantic content, camera parameters play a pivotal role in dictating the geometric perspective and appearance of any given image. While recent image editing models excel at semantic and stylistic manipulation, they struggle with explicit camera parameter control. When handling large perspective shifts, instruction-driven models face a dilemma: they either suffer from structural tearing or generate conservative outputs that ignore geometric instructions. To address this, we introduce CameraEditor, a framework that reformulates camera-controlled editing from a spatial problem into a temporal sequence prediction task. By leveraging the temporal coherence of video diffusion models, our approach integrates an explicit geometric perception module with a dynamic reference routing mechanism. This allows us to construct geometrically rigorous visual reference pairs via dynamic panorama cropping, overcoming the ambiguity of text-based instructions. Furthermore, CameraEditor strategically inserts intermediate transition frames to decompose large perspective shifts, providing a robust temporal buffer that preserves content identity and spatial coherence. We construct a training dataset of 5,760 instances. As an independent contribution, we introduce CamEditor-Bench, a model-agnostic evaluation suite of 462 test cases. Extensive experiments demonstrate that CameraEditor achieves state-of-the-art camera control precision and source identity preservation, outperforming existing methods.",
+      "authors": [
+        "Xin Shen",
+        "Chengyou Jia",
+        "Keshuo Xing",
+        "Zifeng Zhu",
+        "Changliang Xia",
+        "Bowen Ping",
+        "Zhuohang Dang",
+        "Hangwei Qian",
+        "Minnan Luo"
+      ],
+      "published": "2026-09-01T16:16:06Z",
+      "updated": "2026-09-01T16:16:06Z",
+      "url": "https://arxiv.org/abs/2609.01479",
+      "pdf_url": "https://arxiv.org/pdf/2609.01479.pdf",
+      "primary_category": "cs.CV",
+      "categories": [
+        "cs.CV"
+      ],
+      "tags": [
+        "cs.CV"
+      ],
+      "domain": "Vision",
+      "pdf_downloaded": true,
+      "pdf_size_bytes": 24599894,
+      "pdf_path": "2026-09-02/vision/2609.01479.pdf"
+    },
+    {
+      "id": "2609.01470",
+      "title": "RadMatch: Auditable Radiology Report Evaluation via Finding-Level Matching",
+      "abstract": "As AI systems are increasingly used to draft radiology reports, reliably evaluating their clinical quality remains a critical challenge. Large language model (LLM)-based metrics are now the best-correlated with radiologist judgment, yet they output a single opaque score that neither a clinician nor a model builder can easily interpret or audit. We introduce RadMatch, a multi-stage, LLM-based metric that decomposes report comparison into a structured finding-level matching with significance-aware scoring and error characterization across seven clinical attribute dimensions (status, location, severity, morphology, certainty, longitudinal comparison, and measurement). The main score is the actionable-error count, both interpretable and auditable. Candidate findings are graded correct, partial, or incorrect, and unmatched findings are counted as missed or hallucinated. Triage and actionable safety recall/precision and per-subset views add complementary, deployment-oriented lenses. Across two expert benchmarks, RadMatch is the most clinically aligned metric, matching inter-radiologist agreement on ReXVal and more than doubling the best prior metric on the harder RadEvalExpert. Relying only on few-shot prompting, it is designed to extend to other modalities and anatomies. We will release RadMatch as open-source code with an interactive dashboard for inspecting results.",
+      "authors": [
+        "Charles Corbi\u00e8re",
+        "L\u00e9o Machado",
+        "Aubin Charley",
+        "Baptiste Callard",
+        "Pierre Manceron",
+        "Corentin Dancette"
+      ],
+      "published": "2026-09-01T16:05:17Z",
+      "updated": "2026-09-01T16:05:17Z",
+      "url": "https://arxiv.org/abs/2609.01470",
+      "pdf_url": "https://arxiv.org/pdf/2609.01470.pdf",
+      "primary_category": "cs.CV",
+      "categories": [
+        "cs.CV"
+      ],
+      "tags": [
+        "cs.CV"
+      ],
+      "domain": "Vision",
+      "pdf_downloaded": true,
+      "pdf_size_bytes": 944159,
+      "pdf_path": "2026-09-02/vision/2609.01470.pdf"
+    },
+    {
+      "id": "2609.01433",
+      "title": "Gaussian Core LoRA: Distribution-Aware Dynamic Adaptation for Broad Concept Erasure",
+      "abstract": "Concept erasure aims to suppress unsafe, privacy-sensitive, or undesirable generations in text-to-image diffusion models while preserving benign semantics, visual quality, and deployment efficiency. Existing adapter-based methods, such as Low-Rank Adaptation (LoRA), typically freeze the diffusion backbone and learn lightweight parameter updates to steer generation away from target semantics. However, these methods usually assign a static semantic erasure direction to each target concept. This assumption is overly coarse for broad and complex target concepts, since a concept often contains multiple latent semantic prototypes involving different objects, scenes, or relations, and requires different local erasure directions. A single LoRA update averages these heterogeneous erasure demands, leading to under-erasure on difficult prototypes and over-editing of nearby benign semantics. To address this limitation, we propose Gaussian Core LoRA, a distribution-aware low-rank adaptation framework. It fits a Gaussian mixture model in the prompt feature space to estimate latent semantic prototypes within the target concept. During inference, each input prompt is projected into this feature space to compute its Gaussian posterior responsibilities, which condition the core generator to produce a prompt-specific, norm-bounded residual reconfiguration of the shared LoRA rank space. This enables prototype-adaptive erasure with a single lightweight adapter. Compared with the strongest baseline on each metric, Gaussian Core LoRA reduces average Attack Success Rate (ASR) by 7.95%, lowers COCO Fr'echet Inception Distance (FID) by 14.72%, and improves CLIP Score by 4.98%. Further experiments show robustness to adversarial prompts, scalability to multi-identity and multi-style erasure, and compatibility with SDXL and FLUX.",
+      "authors": [
+        "Qinghui Gong",
+        "Xunlei Chen",
+        "Yu-Xuan Zhang",
+        "Hua Meng",
+        "Zhengchun Zhou"
+      ],
+      "published": "2026-09-01T15:42:11Z",
+      "updated": "2026-09-01T15:42:11Z",
+      "url": "https://arxiv.org/abs/2609.01433",
+      "pdf_url": "https://arxiv.org/pdf/2609.01433.pdf",
+      "primary_category": "cs.CV",
+      "categories": [
+        "cs.CV"
+      ],
+      "tags": [
+        "cs.CV"
+      ],
+      "domain": "Vision",
+      "pdf_downloaded": true,
+      "pdf_size_bytes": 12781889,
+      "pdf_path": "2026-09-02/vision/2609.01433.pdf"
+    },
+    {
+      "id": "2609.01427",
+      "title": "Pix2Rep-v2: Data-Efficient Representation Learning for Dense Medical Imaging Applications",
+      "abstract": "Dense self-supervised learning (SSL) is a powerful paradigm for learning without annotations the local descriptors required to solve dense medical imaging tasks. We present Pix2Rep-v2, a framework for SSL of pixel- and voxel-level representations suitable for few-shot downstream applications. Pix2Rep-v2 addresses the main challenges of dense SSL by leveraging a redundancy reduction objective at the pixel-level with a principle of equivariance of dense representations, that scales efficiently to 3D or wide field-of-view applications. We evaluate our method on four datasets, across multiple tasks, multiple modalities and anatomical structures using multiple backbones in 2D and 3D, and under various data regimes. As an alternative to linear probing or full fine-tuning on the downstream task, we also propose an in-context variant, without downstream training, based on a dense prototype approach. Pix2Rep-v2 shows substantially higher data-efficiency in few-shot scenarios compared to fully supervised baselines, and is competitive with the state-of-the-art e.g., +9.3 Dice points in one-shot segmentation on the M&Ms-2 dataset. Our code and pre-trained models are publicly available at https://github.com/BioMedTP/pix2rep-v2.",
+      "authors": [
+        "S. Sifaoui",
+        "E. Angelini",
+        "S. Toupin",
+        "T. Pezel",
+        "L. Le Folgoc"
+      ],
+      "published": "2026-09-01T15:39:42Z",
+      "updated": "2026-09-01T15:39:42Z",
+      "url": "https://arxiv.org/abs/2609.01427",
+      "pdf_url": "https://arxiv.org/pdf/2609.01427.pdf",
+      "primary_category": "cs.CV",
+      "categories": [
+        "cs.CV"
+      ],
+      "tags": [
+        "cs.CV"
+      ],
+      "domain": "Vision",
+      "pdf_downloaded": true,
+      "pdf_size_bytes": 6364402,
+      "pdf_path": "2026-09-02/vision/2609.01427.pdf"
+    },
+    {
+      "id": "2609.01426",
+      "title": "Semantic-Guided Multimodal Preprocessing for Vision Transformer-Based Clear Cell Renal Cell Carcinoma Grading",
+      "abstract": "Clear cell renal cell carcinoma (CCRCC) grading is essential for treatment planning, yet existing approaches either analyze patch-level images directly or focus solely on nuclei-level classification, without linking to final tumor grading. We propose a semantic-guided multimodal preprocessing method that integrates nuclei classification maps from existing pre-trained models with RGB histopathology images for Vision Transformer (ViT)-based CCRCC grading. Our approach employs classification map channel concatenation and multiplicative modulation, with optimized overlays to leverage nuclei grading information, while preserving RGB textural features. Evaluation of multiple preprocessing strategies demonstrates that semantic-guided enhancement achieves 0.916 balanced accuracy, outperforming RGB-only baseline (0.707) and max-voting aggregation from prior studies (0.427). Sensitivity analysis reveals that this 21 percentage point improvement over baseline persists even under simulated perturbation at rates matching current state-of-the-art nuclei classification model error thresholds, suggesting both effective semantic utilization and practical robustness. These findings show that preprocessing-based multimodal fusion can leverage the diagnostic potential of existing imperfect nuclei classifiers, effectively bridging previously isolated fine-grained nuclear-level analysis with coarse-grained ViT-based patch classification. Per-class recall was consistent across grades (0.93, 0.91, 0.91), indicating that gains are not concentrated in the majority class. Because the sensitivity analysis perturbs ground-truth maps rather than predictions from an actual nuclei model, this result characterizes robustness under simulated error rather than deployment with a real upstream model, which remains for future work.",
+      "authors": [
+        "Fatemeh Javadian",
+        "Zhu Chen",
+        "Zahra Aminparast",
+        "Johannes Stegmaier"
+      ],
+      "published": "2026-09-01T15:39:14Z",
+      "updated": "2026-09-01T15:39:14Z",
+      "url": "https://arxiv.org/abs/2609.01426",
+      "pdf_url": "https://arxiv.org/pdf/2609.01426.pdf",
+      "primary_category": "cs.CV",
+      "categories": [
+        "cs.CV",
+        "cs.AI",
+        "cs.LG",
+        "eess.IV"
+      ],
+      "tags": [
+        "cs.AI",
+        "cs.CV",
+        "cs.LG",
+        "eess.IV"
+      ],
+      "domain": "Vision",
+      "pdf_downloaded": true,
+      "pdf_size_bytes": 5843419,
+      "pdf_path": "2026-09-02/vision/2609.01426.pdf"
+    },
+    {
+      "id": "2609.01423",
+      "title": "MegaStyle++: Scaling Image Style Space through Hierarchical Style Definition",
+      "abstract": "Image style is a highly abstract, human-constructed concept shaped by a range of visual factors and intrinsically entangled with content, yet a unified and explicit definition of image style remains lacking. In this work, we first discuss the fundamental question of what is style and then propose a hierarchical style definition that describes image style from an overall style identity to fine-grained visual attributes, providing a more structured, transferable, and interpretable style representation. Based on this definition, we refine the style annotation pipeline of MegaStyle and construct MegaStyle++-8M, a large-scale style dataset containing 150K overall style identities, 1M fine-grained style prompts, and 8M stylized images. Extensive analyses demonstrate that our hierarchical definition substantially expands the style space in both diversity and semantic breadth, while precisely capturing intrinsic visual style of reference images. The dataset and code will be updated at https://github.com/Tencent/MegaStyle, we hope MegaStyle++ provides a scalable foundation for studying and modeling diverse image styles.",
+      "authors": [
+        "Junyao Gao",
+        "Sibo Liu",
+        "Jiaxing Li",
+        "Yanan Sun",
+        "Weidong Zhang",
+        "Cairong Zhao",
+        "Jun Zhang"
+      ],
+      "published": "2026-09-01T15:37:09Z",
+      "updated": "2026-09-01T15:37:09Z",
+      "url": "https://arxiv.org/abs/2609.01423",
+      "pdf_url": "https://arxiv.org/pdf/2609.01423.pdf",
+      "primary_category": "cs.CV",
+      "categories": [
+        "cs.CV"
+      ],
+      "tags": [
+        "cs.CV"
+      ],
+      "domain": "Vision",
+      "pdf_downloaded": true,
+      "pdf_size_bytes": 2647677,
+      "pdf_path": "2026-09-02/vision/2609.01423.pdf"
+    },
+    {
+      "id": "2609.01409",
+      "title": "EdiTikZ: Scientific Figure Editing from Revision Trajectories",
+      "abstract": "Vision-language models (VLMs) have shown strong performance in generating scientific figures from text or images. However, producing publication-ready figures requires iterative refinement, making scientific figure editing an important yet largely unexplored task. Existing approaches rely on costly proprietary agentic systems, focus primarily on evaluation, or construct training supervision from synthetically generated edits. Instead, we leverage naturally occurring scientific revision and development trajectories as a scalable source of supervision. To this end, we introduce DaEdiTikZ, the first large-scale dataset of revision-derived scientific figure edits, constructed by mining 391K plausible TikZ edit pairs from arXiv, GitHub, and TeX SE and inferring 781K directed edit instructions with a VLM conditioned on rendered figures and TikZ code. We further introduce DaEdiTikZ-Bench, a human-refined benchmark with 790 instances, and train two compact Qwen3.5-based EdiTikZ models (4B and 9B) by jointly learning reconstruction and editing, followed by reinforcement learning (RL) with complementary rewards for rendered fidelity and edit application. Automatic evaluation places our 9B model above all tested baselines, while human evaluation with 9 annotators and 4,320 ratings places it above GPT-5.6-Sol and on par with Gemini-3.1-Pro. Under severe out-of-distribution shifts, it remains competitive with GPT-5.6-Sol near its 2K training sequence-length regime. Models and datasets will be released.",
+      "authors": [
+        "Christian Greisinger",
+        "Zhixue Zhao",
+        "Steffen Eger"
+      ],
+      "published": "2026-09-01T15:29:52Z",
+      "updated": "2026-09-01T15:29:52Z",
+      "url": "https://arxiv.org/abs/2609.01409",
+      "pdf_url": "https://arxiv.org/pdf/2609.01409.pdf",
+      "primary_category": "cs.AI",
+      "categories": [
+        "cs.AI",
+        "cs.CL",
+        "cs.CV"
+      ],
+      "tags": [
+        "cs.AI",
+        "cs.CL",
+        "cs.CV"
+      ],
+      "domain": "Vision",
+      "pdf_downloaded": true,
+      "pdf_size_bytes": 7019986,
+      "pdf_path": "2026-09-02/vision/2609.01409.pdf"
+    },
+    {
+      "id": "2609.01408",
+      "title": "Neuro-Symbolic Geometric Abstraction (NeuSOGA): From Observations to Symbolic Mathematical Representations",
+      "abstract": "A fundamental challenge in artificial intelligence is the transformation of observations into explicit symbolic representations suitable for abstraction, interpretation, and reasoning. While modern AI systems achieve remarkable perceptual capabilities through large-scale statistical learning, the resulting knowledge is typically encoded within latent parameters that are difficult to inspect or manipulate analytically. Inspired by Neuro-Symbolic AI and theories of human abstraction, this paper investigates the formation of symbolic mathematical representations from geometric observations. We propose NeuSOGA (Neuro-Symbolic Geometric Abstraction), a framework that progressively transforms observations into topological abstractions, geometric abstractions, and ultimately symbolic mathematical representations. The architecture combines topology-guided structural discovery using Euclidean Distance Transforms, foundation-model perception using Segment Anything, adaptive multi-scale geometric abstraction, and symbolic synthesis through Implicit Area Splines. The resulting representation is an analytical implicit model supporting arbitrary-order smoothness, additive composition, and closed-form evaluation. Unlike neural latent encodings, the generated representation remains interpretable, editable, and mathematically explicit. Experiments on ModelNet40 point clouds, arbitrary-view projections, and segmented optical observations demonstrate that NeuSOGA transforms diverse observations into compact symbolic representations while preserving essential geometric and topological structure across sensing modalities and viewing directions. NeuSOGA provides an interpretable and explainable pathway from observation to symbol and establishes",
+      "authors": [
+        "Qingde Li",
+        "Qingqi Hong",
+        "Jie Tian"
+      ],
+      "published": "2026-09-01T15:29:30Z",
+      "updated": "2026-09-01T15:29:30Z",
+      "url": "https://arxiv.org/abs/2609.01408",
+      "pdf_url": "https://arxiv.org/pdf/2609.01408.pdf",
+      "primary_category": "cs.AI",
+      "categories": [
+        "cs.AI",
+        "cs.CV",
+        "cs.GR"
+      ],
+      "tags": [
+        "cs.AI",
+        "cs.CV",
+        "cs.GR"
+      ],
+      "domain": "Vision",
+      "pdf_downloaded": true,
+      "pdf_size_bytes": 9336317,
+      "pdf_path": "2026-09-02/vision/2609.01408.pdf"
+    },
+    {
+      "id": "2609.01392",
+      "title": "Scale-based Approach for Active Wildfire Segmentation on Satellite Imagery",
+      "abstract": "Active wildfire mapping from satellite imagery is challenging due to the sparse and highly imbalanced nature of fire pixels, especially in early-stage or low-density fire observations. This work investigates the use of multispectral Landsat-8 imagery for active-fire segmentation under multi-scale wildfire size conditions. We propose a data-driven protocol to characterize fire-region size distributions through connected-component analysis and an interquartile range criterion, enabling the evaluation of model robustness across different local fire-region densities. Three segmentation architectures, U-Net, DeepLabV3+, and SegFormer, are evaluated under different SWIR-based spectral configurations. Results show that U-Net achieves the strongest robustness across the evaluated conditions, SegFormer provides competitive performance, and DeepLabV3+ tends to produce conservative predictions with reduced recall. Across architectures, SWIR2 consistently achieves the strongest or near-best results, highlighting its importance for active-fire segmentation in Landsat-8 imagery. These findings suggest that both spectral band selection and architectural design are critical for robust satellite-based active wildfire mapping trained on low active fire-pixel density images.",
+      "authors": [
+        "Matheus F. Kovaleski",
+        "Cristiano Premebida",
+        "Jo\u00e3o Ruivo Paulo"
+      ],
+      "published": "2026-09-01T15:20:19Z",
+      "updated": "2026-09-01T15:20:19Z",
+      "url": "https://arxiv.org/abs/2609.01392",
+      "pdf_url": "https://arxiv.org/pdf/2609.01392.pdf",
+      "primary_category": "cs.CV",
+      "categories": [
+        "cs.CV"
+      ],
+      "tags": [
+        "cs.CV"
+      ],
+      "domain": "Vision",
+      "pdf_downloaded": true,
+      "pdf_size_bytes": 372782,
+      "pdf_path": "2026-09-02/vision/2609.01392.pdf"
+    },
+    {
+      "id": "2609.01390",
+      "title": "Multimodal RGB-Infrared Combination for UAV-Based Wildfire Segmentation: A Comparative Study on FLAME3",
+      "abstract": "Unmanned Aerial Vehicles (UAVs) have emerged as a promising platform for firefighting operations due to their flexibility, low operational cost, and ability to acquire high-resolution imagery in locations that may be difficult or dangerous to access using conventional methods. Recent advances in deep learning have significantly improved the capabilities of UAV-based wildfire monitoring systems. The present work investigates RGB-infrared fusion for binary wildfire segmentation on the FLAME3 dataset. In this Study, RGB and Infrared baselines are compared with three representative fusion strategies across three segmentation architectures, including U-Net, DeepLabV3+, and SegFormer. The key motivation of this work is to analyze the contribution of each modality, evaluate the impact of fusion timing, and examine how different network architectures exploit multimodal information for UAV wildfire delineation. The findings indicate that thermal information plays a dominant role in UAV segmentation and that feature-level multimodal fusion combined with transformer-based architectures offers the most promising direction for future research.",
+      "authors": [
+        "Matheus F. Kovaleski",
+        "Lu\u00eds Garrote",
+        "Cristiano Premebida",
+        "J\u00e9r\u00f4me Mendes",
+        "Jo\u00e3o Ruivo Paulo"
+      ],
+      "published": "2026-09-01T15:18:33Z",
+      "updated": "2026-09-01T15:18:33Z",
+      "url": "https://arxiv.org/abs/2609.01390",
+      "pdf_url": "https://arxiv.org/pdf/2609.01390.pdf",
+      "primary_category": "cs.CV",
+      "categories": [
+        "cs.CV"
+      ],
+      "tags": [
+        "cs.CV"
+      ],
+      "domain": "Vision",
+      "pdf_downloaded": true,
+      "pdf_size_bytes": 550869,
+      "pdf_path": "2026-09-02/vision/2609.01390.pdf"
+    },
+    {
+      "id": "2609.01383",
+      "title": "InSight: A Benchmark for Agentic Claim Verification in Interactive Visualizations",
+      "abstract": "Vision Language Models have demonstrated remarkable proficiency in interpreting static visual artifacts, but modern data analysis is inherently dynamic, requiring the active interrogation of interactive environments. Existing benchmarks are predominantly constrained to static imagery and one-shot question answering and fail to capture the epistemic demands of this domain, where evidence is frequently occluded, distributed across linked views, or conditionally revealed through user agency. In this paper, we introduce InSight, a benchmark for agentic claim verification over interactive visualizations. The dataset consists of 21,349 claims derived from human-authored analytical narratives and grounded in fully interactive web-based environments. Agents must navigate these environments to determine whether a natural language claim is supported, refuted or not verifiable given the available evidence. Unlike traditional evaluations, InSight treats interaction traces as intrinsic proxies for reasoning, enabling a rigorous audit of how models seek and synthesize visual evidence. We evaluate state-of-the-art models, revealing that interactive verification remains a non-trivial challenge. We release InSight at https://github.com/maevehutch/insight.",
+      "authors": [
+        "Maeve Hutchinson",
+        "Syed Mahbubul Huq",
+        "Mohammad Albinhassan",
+        "Radu Jianu",
+        "Aidan Slingsby",
+        "Pranava Madhyastha"
+      ],
+      "published": "2026-09-01T15:15:30Z",
+      "updated": "2026-09-01T15:15:30Z",
+      "url": "https://arxiv.org/abs/2609.01383",
+      "pdf_url": "https://arxiv.org/pdf/2609.01383.pdf",
+      "primary_category": "cs.CL",
+      "categories": [
+        "cs.CL",
+        "cs.CV",
+        "cs.HC"
+      ],
+      "tags": [
+        "cs.CL",
+        "cs.CV",
+        "cs.HC"
+      ],
+      "domain": "Vision",
+      "pdf_downloaded": true,
+      "pdf_size_bytes": 4443410,
+      "pdf_path": "2026-09-02/vision/2609.01383.pdf"
+    },
+    {
+      "id": "2609.01375",
+      "title": "IntroConformal: Conformal Factuality Guarantees for Large Vision-Language Models via Introspective Signals",
+      "abstract": "Large Vision-Language Models (LVLMs) have achieved strong multimodal performance, yet ensuring the factual correctness of generated content remains challenging. Existing methods that provide statistical guarantees on factuality typically rely on external verifiers or generation-time confidence signals, which introduce auxiliary dependencies or often fail for confident but incorrect outputs. We argue that reliable factuality control can instead be achieved through introspective signals derived from the model itself. We introduce IntroConformal, a training-free Conformal Risk Control (CRC) framework that provides finite-sample, distribution-free factuality guarantees. We first instantiate it with layer-wise semantic stability, a conformity score derived from hidden-state representations, and then propose verification probability, a stronger score capturing the model's self-administered judgment on claim factuality. Across multiple LVLM architectures, IntroConformal satisfies the conformal risk guarantee while substantially reducing abstention and achieving competitive or superior claim-level discrimination relative to external verifier-based baselines.",
+      "authors": [
+        "Md. Atabuzzaman",
+        "Christian Alexander",
+        "Chris Thomas"
+      ],
+      "published": "2026-09-01T15:09:56Z",
+      "updated": "2026-09-01T15:09:56Z",
+      "url": "https://arxiv.org/abs/2609.01375",
+      "pdf_url": "https://arxiv.org/pdf/2609.01375.pdf",
+      "primary_category": "cs.CV",
+      "categories": [
+        "cs.CV",
+        "cs.CL"
+      ],
+      "tags": [
+        "cs.CL",
+        "cs.CV"
+      ],
+      "domain": "Vision",
+      "pdf_downloaded": true,
+      "pdf_size_bytes": 1100015,
+      "pdf_path": "2026-09-02/vision/2609.01375.pdf"
+    },
+    {
+      "id": "2609.01370",
+      "title": "Diffusion Based Unpaired Data Learning for Inverse Problems",
+      "abstract": "Data is important in many deep learning-based inverse problem solvers. However, obtaining sufficient paired data in many scenarios remains highly challenging, while unpaired data is cheap. To maximize data utilization, this paper proposes LUD-DIF, a diffusion-based approach for solving inverse problems with unpaired data. Starting from the evidence lower bound (ELBO) of the joint distribution, we decouple it into two independent diffusion processes under the weak-coupling assumption. The method provides theoretical support from a variational inference perspective, derives the loss function, quantitatively analyzes the error bound introduced by the assumption, and offers a theorem-motivated heuristic for hyperparameter selection. Experimental results demonstrate that LUD-DIF achieves outstanding performance on multiple image inverse problems, validating its effectiveness and generalization capability in unpaired inverse problem settings.",
+      "authors": [
+        "Chenglong Bao",
+        "Yiming Dang",
+        "Chenguang Duan",
+        "Yuling Jiao",
+        "Defeng Sun"
+      ],
+      "published": "2026-09-01T15:07:42Z",
+      "updated": "2026-09-01T15:07:42Z",
+      "url": "https://arxiv.org/abs/2609.01370",
+      "pdf_url": "https://arxiv.org/pdf/2609.01370.pdf",
+      "primary_category": "cs.CV",
+      "categories": [
+        "cs.CV"
+      ],
+      "tags": [
+        "cs.CV"
+      ],
+      "domain": "Vision",
+      "pdf_downloaded": true,
+      "pdf_size_bytes": 2880718,
+      "pdf_path": "2026-09-02/vision/2609.01370.pdf"
+    },
+    {
+      "id": "2609.01368",
+      "title": "Accurate Reconstruction of Gas Turbine Blade Geometry Using 3D/2D Rigid Registration and CT View Optimization",
+      "abstract": "Non-destructive X-ray and computed tomography (CT) testing are essential for ensuring the dimensional accuracy of manufactured components with complex internal structures, such as the cooling channels in gas turbine blades, which directly affect thermal performance and service life. This study presents a multipart 3D-2D rigid registration approach for aligning CAD models with X-ray projections as an alternative to CT reconstruction for part inspection and measurement. A greedy registration algorithm sequentially aligns the blade's exterior before registering its internal components by maximizing the mutual information between simulated and acquired X-ray images. This stepwise approach reduces problem complexity and improves alignment accuracy. View angles are optimized using a greedy method that iteratively selects angles to minimize dimensional measurement errors. The results indicate that a small number of oblique views provides the best accuracy, although a broad range of angles yields acceptable results. The method achieves subpixel registration accuracy, with errors below one-fifth of the magnified detector-pixel pitch. Image noise and defects reduce registration precision, but direct registration in projection space mitigates these effects compared with CT reconstruction. Appropriate view selection can therefore preserve acceptable subpixel accuracy in the presence of image noise and defects.",
+      "authors": [
+        "Hristo Valtchanov",
+        "Nicolas Pich\u00e9",
+        "Vladimir Brailovski",
+        "Justin Byers",
+        "Catherine D\u00e9srosiers",
+        "Fran\u00e7ois Guibault"
+      ],
+      "published": "2026-09-01T15:06:11Z",
+      "updated": "2026-09-01T15:06:11Z",
+      "url": "https://arxiv.org/abs/2609.01368",
+      "pdf_url": "https://arxiv.org/pdf/2609.01368.pdf",
+      "primary_category": "cs.CV",
+      "categories": [
+        "cs.CV"
+      ],
+      "tags": [
+        "cs.CV"
+      ],
+      "domain": "Vision",
+      "pdf_downloaded": true,
+      "pdf_size_bytes": 739475,
+      "pdf_path": "2026-09-02/vision/2609.01368.pdf"
+    },
+    {
+      "id": "2609.01344",
+      "title": "ExBind: A Controlled Diagnostic Benchmark for Visual-to-Executable Correspondence",
+      "abstract": "Multimodal coding and editing systems must map a visible or semantic referent to the exact executable object that can be edited. A wrong reference may select a valid but incorrect DOM node, SVG element, graph endpoint, hierarchy member, or table cell, while final execution success alone does not reveal the source of the failure. ExBind isolates this visual-to-executable correspondence layer as a controlled diagnostic benchmark between semantic localization and action execution. It samples representation-independent latent binding instances and compiles them into SVG, DOM, canvas, tree, graph, and table cases with deterministic mappings to executable references. Models output only a strict reference; the evaluator maps predictions back to latent structure and scores structural constraints without requiring reasoning traces. The release contains a 250-case broad suite, a disjoint 240-case targeted suite, and 50 paired latent groups. Qwen2.5-VL-3B achieves 98.4% candidate validity but 76.4% exact accuracy, while Qwen3-VL-4B achieves 100.0% validity and 98.8% exact accuracy. In the targeted table suite, all Qwen2.5-VL-3B residual errors are valid correct-row/wrong-column selections. Candidate-order perturbations change case-level outcomes while preserving this error pattern. ExBind is designed for controlled diagnosis rather than population-scale ranking or end-to-end editing evaluation. Code and benchmark records are available at https://github.com/Daerwang2020/Exbind and https://huggingface.co/datasets/Ziqianwwww/ExBind.",
+      "authors": [
+        "Ziqian Wang",
+        "Yuxiao Cheng",
+        "Tingxiong Xiao",
+        "Jinli Suo"
+      ],
+      "published": "2026-09-01T14:52:57Z",
+      "updated": "2026-09-01T14:52:57Z",
+      "url": "https://arxiv.org/abs/2609.01344",
+      "pdf_url": "https://arxiv.org/pdf/2609.01344.pdf",
+      "primary_category": "cs.CV",
+      "categories": [
+        "cs.CV"
+      ],
+      "tags": [
+        "cs.CV"
+      ],
+      "domain": "Vision",
+      "pdf_downloaded": true,
+      "pdf_size_bytes": 770369,
+      "pdf_path": "2026-09-02/vision/2609.01344.pdf"
+    },
+    {
+      "id": "2609.01318",
+      "title": "Reliability Challenges in Diffusion Vision-Language Models",
+      "abstract": "Diffusion-based Large Vision-Language Models (dLVLMs) have recently emerged as a compelling alternative to autoregressive (AR) LVLMs, offering advantages in parallel decoding, bidirectional context, and controllable generation. Despite rapid progress, their reliability properties remain largely uncharacterized. We present the first systematic reliability evaluation of hallucination and bias in dLVLMs, benchmarking six diffusion models against competitive AR baselines across four dimensions. Our key findings are: (1) dLVLMs reverse the yes-bias of AR models in binary visual queries; (2) they achieve competitive hallucination rates yet exhibit degraded linguistic quality; (3) they collapse to near-zero accuracy on underrepresented racial groups with opposite-polarity gender bias; and (4) they exhibit accuracy collapse in multiple-choice settings when the correct option is shorter than its distractors, associated with a length prior that emerges at the first denoising step. Tokens committed at late denoising steps with low confidence further correlate with hallucinated content, pointing to a mechanistic signal unique to diffusion generation. These patterns vary across model families, suggesting reliability is shaped by the generative paradigm together with training data.",
+      "authors": [
+        "Md. Atabuzzaman",
+        "Chris Thomas"
+      ],
+      "published": "2026-09-01T14:38:50Z",
+      "updated": "2026-09-01T14:38:50Z",
+      "url": "https://arxiv.org/abs/2609.01318",
+      "pdf_url": "https://arxiv.org/pdf/2609.01318.pdf",
+      "primary_category": "cs.CV",
+      "categories": [
+        "cs.CV",
+        "cs.CL"
+      ],
+      "tags": [
+        "cs.CL",
+        "cs.CV"
+      ],
+      "domain": "Vision",
+      "pdf_downloaded": true,
+      "pdf_size_bytes": 668116,
+      "pdf_path": "2026-09-02/vision/2609.01318.pdf"
+    },
+    {
+      "id": "2609.01316",
+      "title": "MIDR: Enrichment-Augmented Indexing for Multimodal Document Retrieval",
+      "abstract": "Retrieval over visually rich documents has a representation problem: important content often lives in tables, charts, figures, and layout relations that plain OCR linearizes, corrupts, or omits. ColPali-family visual retrievers address this with patch-level multi-vector indexes and late-interaction scoring, keeping image-derived retrieval on the query-time serving path. We introduce MIDR (Multimodal Indexing for Document Retrieval), a training-free framework for enrichment-augmented indexing that shifts multimodal reasoning to index time. During ingestion, a multimodal LLM converts rendered pages into verified textual fields that are indexed with BM25F and optionally fused with dense retrieval, enabling text-centric serving over multimodally grounded evidence. On ViDoRe V3, MIDR Hybrid achieves 0.6219 average nDCG across five English domains, a 23.0% relative gain over BM25, remaining competitive with ColQwen2.5. On two French-document domains, enrichment bridges English queries and French page text, lifting BM25 from 0.1532 to 0.5448 nDCG and outperforming ColQwen2.5. Across all seven domains, MIDR leads ColQwen2.5 on four while using approximately 9x smaller index memory and approximately 2x lower query latency. These results establish index-time multimodal reasoning as a compelling accuracy-deployment alternative to serving-time visual late interaction.",
+      "authors": [
+        "Debanjan Mahata",
+        "Atharva Tendle",
+        "Daniel Preotiuc-Pietro",
+        "Yong Zhuang",
+        "Ozan Irsoy"
+      ],
+      "published": "2026-09-01T14:38:39Z",
+      "updated": "2026-09-01T14:38:39Z",
+      "url": "https://arxiv.org/abs/2609.01316",
+      "pdf_url": "https://arxiv.org/pdf/2609.01316.pdf",
+      "primary_category": "cs.IR",
+      "categories": [
+        "cs.IR",
+        "cs.AI",
+        "cs.CL",
+        "cs.CV",
+        "cs.LG"
+      ],
+      "tags": [
+        "cs.AI",
+        "cs.CL",
+        "cs.CV",
+        "cs.IR",
+        "cs.LG"
+      ],
+      "domain": "Vision",
+      "pdf_downloaded": true,
+      "pdf_size_bytes": 2418075,
+      "pdf_path": "2026-09-02/vision/2609.01316.pdf"
+    },
+    {
+      "id": "2609.01310",
+      "title": "GazeRefine: Expert Gaze as a Test-Time Prompt for Training-Free Medical Image Segmentation",
+      "abstract": "Medical image segmentation remains difficult to scale because high-performing methods typically rely on dense expert annotations and task-specific training. We introduce GazeRefine, a training-free framework that uses gaze as an inference-time prompt for zero-shot medical image segmentation. Sparse, duration-weighted fixations are converted into foreground and background priors that initialize semantic prototypes in frozen DINOv3 feature space. These prototypes are iteratively refined through foreground-background discrimination, feature-space affinity propagation, and anchoring to the initial gaze guidance, allowing segmentation to extend beyond directly fixated regions while limiting semantic drift. GazeRefine requires no segmentation masks, fine-tuning, adapters, prompt encoders, or gradient updates. We evaluate the method on gaze-annotated polyp segmentation and prostate MRI segmentation. The results show strong performance on colonoscopy images and competitive performance on prostate MRI, supporting gaze-guided prototype refinement as a promising approach for segmentation-label-efficient, human-in-the-loop medical image segmentation. Our tools and code can be found in the following repository: https://github.com/MohammedOussamaBEN/GazeRefine.git",
+      "authors": [
+        "Mohammed Oussama Benyahia",
+        "Marouane Tliba",
+        "Mohamed Amine Kerkouri",
+        "Taifour Yousra",
+        "Bin Wang",
+        "Max Bengtsson",
+        "Gorkem Durak",
+        "Elif Keles",
+        "Zuheng Ming",
+        "Marek Penhaker",
+        "Azeddine Beghdadi",
+        "Ulas Bagci",
+        "Aladine Chetouani"
+      ],
+      "published": "2026-09-01T14:34:59Z",
+      "updated": "2026-09-01T14:34:59Z",
+      "url": "https://arxiv.org/abs/2609.01310",
+      "pdf_url": "https://arxiv.org/pdf/2609.01310.pdf",
+      "primary_category": "eess.IV",
+      "categories": [
+        "eess.IV",
+        "cs.AI",
+        "cs.CV",
+        "cs.HC",
+        "cs.LG"
+      ],
+      "tags": [
+        "cs.AI",
+        "cs.CV",
+        "cs.HC",
+        "cs.LG",
+        "eess.IV"
+      ],
+      "domain": "Vision",
+      "pdf_downloaded": true,
+      "pdf_size_bytes": 4093881,
+      "pdf_path": "2026-09-02/vision/2609.01310.pdf"
+    }
+  ]
+}
