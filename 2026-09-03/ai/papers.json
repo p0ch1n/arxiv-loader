@@ -1,0 +1,870 @@
+{
+  "domain": "AI",
+  "date": "2026-09-03",
+  "count": 30,
+  "papers": [
+    {
+      "id": "2609.02887",
+      "title": "A Common Measure of Communication for Speech Brain-Computer Interfaces",
+      "abstract": "Speech brain-computer interfaces (speech BCIs) translate neural activity into language, offering a path towards restoring speech for people with paralysis and, more broadly, enabling new forms of natural human-computer interaction. Despite this promise, the field lacks a common measure of progress because systems use different datasets, recording methods, types of speech, and vocabularies, so their reported scores are rarely comparable. Underlying this measurement problem are two unresolved questions: (i) what distribution of words should a speech BCI enable a user to communicate, and (ii) how much information from this distribution can a system convey. We address both by deriving open-vocabulary mutual information (OVMI), an information-theoretic quantity that measures the information conveyed by a decoder relative to a reference distribution over the words a user may wish to communicate. This allows capabilities measured under different conditions, such as distinct vocabularies, to be evaluated on a common communication scale. We show that ordinarily reported accuracy, word error rate (WER), and other metrics computed only over the words a system supports can overstate how much of a user's intended speech the system can communicate. We then use OVMI to compare existing systems, expose trade-offs between how much of the user's language a system supports and how accurately it decodes those words, show that these comparisons depend on what the user is expected to communicate, and demonstrate that selecting a vocabulary to maximise OVMI yields up to 16.3% relative improvement in accuracy across three speech domains. OVMI therefore provides the speech BCI community with a principled way to compare heterogeneous systems, improve vocabulary design, and measure progress in the field.",
+      "authors": [
+        "Dulhan Jayalath",
+        "Benjamin Ballyk",
+        "Oiwi Parker Jones"
+      ],
+      "published": "2026-09-02T17:59:46Z",
+      "updated": "2026-09-02T17:59:46Z",
+      "url": "https://arxiv.org/abs/2609.02887",
+      "pdf_url": "https://arxiv.org/pdf/2609.02887.pdf",
+      "primary_category": "cs.LG",
+      "categories": [
+        "cs.LG",
+        "q-bio.NC"
+      ],
+      "tags": [
+        "cs.LG",
+        "q-bio.NC"
+      ],
+      "domain": "AI",
+      "pdf_downloaded": true,
+      "pdf_size_bytes": 1136390,
+      "pdf_path": "2026-09-03/ai/2609.02887.pdf"
+    },
+    {
+      "id": "2609.02885",
+      "title": "Discriminative World Models for Web Agents",
+      "abstract": "Recent web agents use world models for test-time action selection by sampling candidate actions, predicting the resulting web states, and ranking them with a ranker model or a Process Reward Model (PRM). These world models are typically trained via supervised next-state prediction to generate fixed representations like HTML or AXTree snapshots. However, this objective is misaligned with the downstream ranker, which relies on predicted states being discriminative across candidates to accurately score them. To address this, we introduce predicted-state matching, a training objective where the predicted representation must distinguish the true resulting state from those reached by alternative actions. We train these models using a branching web-agent dataset derived from WebArena Go-Browse trajectories, where every decision point contains multiple alternative actions and their resulting states. Experiments on our held-out predicted-state matching benchmark show that our approach outperforms world models trained with supervised next-state prediction. We further show that our approach improves PRM-style action ranking on WebPRMBench compared with action-only PRMs and PRMs augmented with supervised-next-state world models. Finally, on WebArena-Lite, using our world model for test-time action selection improves end-to-end task success. Our project page is available at: https://dhruvpendharkar.github.io/dwm/.",
+      "authors": [
+        "Kelvin Li",
+        "Dhruv Pendharkar",
+        "Anish Pahilajani",
+        "Chuyi Shang",
+        "Leon Oks",
+        "Leonid Karlinsky",
+        "Rogerio Feris",
+        "Trevor Darrell",
+        "Roei Herzig"
+      ],
+      "published": "2026-09-02T17:59:40Z",
+      "updated": "2026-09-02T17:59:40Z",
+      "url": "https://arxiv.org/abs/2609.02885",
+      "pdf_url": "https://arxiv.org/pdf/2609.02885.pdf",
+      "primary_category": "cs.AI",
+      "categories": [
+        "cs.AI",
+        "cs.LG"
+      ],
+      "tags": [
+        "cs.AI",
+        "cs.LG"
+      ],
+      "domain": "AI",
+      "pdf_downloaded": true,
+      "pdf_size_bytes": 1356829,
+      "pdf_path": "2026-09-03/ai/2609.02885.pdf"
+    },
+    {
+      "id": "2609.02881",
+      "title": "Graph Machine: Towards Better Pretraining via Edges",
+      "abstract": "We introduce the Graph Machine (GM), an architecture that maintains an $O(n)$-sized state and accesses it through sparse, dynamic routing. Unlike methods with fixed-size states or sparse but static routing, GM preserves $O(n)$ complexity in its sparse layers without restricting the potentially accessible state size to $O(1)$. Instead, GM uses edges - pointer-like objects updated differentiably by a referral mechanism resembling pointer chasing. We replace 75% of the dense Transformer layers in Qwen3-0.6B with GM sparse layers and pretrain from scratch on 15.7B tokens. With only 2 of 4,096 tokens retrieved per KV head in each sparse layer, loss degrades only slightly; with 4, the best model marginally improves loss.",
+      "authors": [
+        "Lintai Hou"
+      ],
+      "published": "2026-09-02T17:56:41Z",
+      "updated": "2026-09-02T17:56:41Z",
+      "url": "https://arxiv.org/abs/2609.02881",
+      "pdf_url": "https://arxiv.org/pdf/2609.02881.pdf",
+      "primary_category": "cs.LG",
+      "categories": [
+        "cs.LG"
+      ],
+      "tags": [
+        "cs.LG"
+      ],
+      "domain": "AI",
+      "pdf_downloaded": true,
+      "pdf_size_bytes": 646268,
+      "pdf_path": "2026-09-03/ai/2609.02881.pdf"
+    },
+    {
+      "id": "2609.02876",
+      "title": "GRADSOLVE: fast exact gradients for ODE ensembles on GPUs",
+      "abstract": "Ordinary differential equations (ODEs) underlie models in science and engineering, and many applications need derivatives of their solutions with respect to parameters. Ensembles of independent trajectories suit graphics processing units (GPUs), but current GPU software forces a trade-off: the fastest ensemble solvers cannot be differentiated in reverse mode at the speed they solve, and the solvers built for differentiation solve more slowly. No single tool has yet offered a reverse-mode gradient at the speed of a fused-kernel solve. We present GRADSOLVE, an open-source JAX library for solving and reverse-mode differentiating low-dimensional ODE ensembles on NVIDIA GPUs. It records the steps an adaptive solver accepts and differentiates a fixed-step replay of them; the returned gradient is the exact discrete adjoint of those steps, the same derivative Diffrax returns by default, obtained more cheaply from a fixed-length chain than from an adaptive loop. It targets ensembles differentiated many times against one recorded mesh, keeps Diffrax as a fallback, and supports explicit and Rosenbrock integrators. Used as a solver, GRADSOLVE's forward-only kernel ran 2.8x faster than DiffEqGPU.jl; used for gradients, once a record exists, it computed them 5.6-14.1x faster than Diffrax's checkpointed adjoint at matched forward-state accuracy across three GPU generations, the advantage narrowing on large ensembles and, on stiff systems, down to parity at tight accuracy. GRADSOLVE is released at https://github.com/ECLIPSE-AI4Science/gradsolve.",
+      "authors": [
+        "Alessio Spurio Mancini"
+      ],
+      "published": "2026-09-02T17:56:10Z",
+      "updated": "2026-09-02T17:56:10Z",
+      "url": "https://arxiv.org/abs/2609.02876",
+      "pdf_url": "https://arxiv.org/pdf/2609.02876.pdf",
+      "primary_category": "cs.MS",
+      "categories": [
+        "cs.MS",
+        "cs.DC",
+        "cs.LG",
+        "math.NA"
+      ],
+      "tags": [
+        "cs.DC",
+        "cs.LG",
+        "cs.MS",
+        "math.NA"
+      ],
+      "domain": "AI",
+      "pdf_downloaded": true,
+      "pdf_size_bytes": 824878,
+      "pdf_path": "2026-09-03/ai/2609.02876.pdf"
+    },
+    {
+      "id": "2609.02861",
+      "title": "Towards Trustworthy Autonomous Robots: An Explainable AI-Based Decision Framework",
+      "abstract": "Autonomous robots powered by deep learning face a fundamental auditability challenge: when incidents occur, investigators cannot reconstruct why the system made specific decisions. This paper presents TRACE (Transparent Reasoning Architecture for Credible Execution), a decision framework that ensures every autonomous action can be traced back to sensor evidence through documented causal chains. The framework organizes decision-making into four auditable layers: Semantic Perception for evidence-grounded entity recognition, Belief Reasoning for probabilistic state estimation with causal graphs, Action Synthesis for constraint-aware planning with counterfactual documentation, and Execution Verification for compliance monitoring. TRACE is model-agnostic yet designed to integrate learning-based perception modules (CNNs, transformers) while preserving decision-level auditability. We evaluate the framework using three objective metrics: Evidence Traceability (sensor-to-decision linkage), Decision Reconstructability (post-hoc analysis capability), and Temporal Continuity (audit trail completeness). Experimental evaluation on warehouse robot navigation demonstrates that TRACE achieves 98.6% evidence traceability, 99.0% temporal continuity, and 98.1% decision reconstructability across 500 simulated decision cycles. Post-hoc methods like LIME provide feature attributions but lack the artifact structure needed for decision-level reconstruction. The framework addresses EU AI Act requirements for high-risk system transparency and contributes to Explainable AI for safety-critical autonomous systems.",
+      "authors": [
+        "Cagri Temel"
+      ],
+      "published": "2026-09-02T17:44:25Z",
+      "updated": "2026-09-02T17:44:25Z",
+      "url": "https://arxiv.org/abs/2609.02861",
+      "pdf_url": "https://arxiv.org/pdf/2609.02861.pdf",
+      "primary_category": "cs.RO",
+      "categories": [
+        "cs.RO",
+        "cs.AI"
+      ],
+      "tags": [
+        "cs.AI",
+        "cs.RO"
+      ],
+      "domain": "AI",
+      "pdf_downloaded": true,
+      "pdf_size_bytes": 272646,
+      "pdf_path": "2026-09-03/ai/2609.02861.pdf"
+    },
+    {
+      "id": "2609.02855",
+      "title": "Improved Gradient Descent Lower Bounds Beyond Nesterov",
+      "abstract": "We study how far gradient descent (GD) can be accelerated by predetermined stepsizes in smooth convex optimization. Going beyond the classical $\u03a9(n^{-2})$ first-order oracle lower bound of Nemirovsky and Yudin, we prove an $\u03a9(n^{-1.6342})$ non-anytime lower bound and an $\u03a9(n^{-1.2408})$ anytime lower bound. These improve the recent $\u03a9(n^{-1.932})$ non-anytime lower bound of Ma and Chen and the $\u03a9(n^{-4/3})$ anytime lower bound of Tsai et al., respectively. Together with the non-anytime $O(n^{-\\log_2(1+\\sqrt{2})})$ rate achieved by silver schedules, our anytime lower bound establishes a strict separation between the achievable convergence exponents in the two settings.",
+      "authors": [
+        "Yuhan Ye",
+        "Kaizhao Liu"
+      ],
+      "published": "2026-09-02T17:39:52Z",
+      "updated": "2026-09-02T17:39:52Z",
+      "url": "https://arxiv.org/abs/2609.02855",
+      "pdf_url": "https://arxiv.org/pdf/2609.02855.pdf",
+      "primary_category": "math.OC",
+      "categories": [
+        "math.OC",
+        "cs.LG",
+        "stat.ML"
+      ],
+      "tags": [
+        "cs.LG",
+        "math.OC",
+        "stat.ML"
+      ],
+      "domain": "AI",
+      "pdf_downloaded": true,
+      "pdf_size_bytes": 435702,
+      "pdf_path": "2026-09-03/ai/2609.02855.pdf"
+    },
+    {
+      "id": "2609.02852",
+      "title": "The Implications of Linguistic Illegibility for LLM Security",
+      "abstract": "LLMs are trained to generate natural language. However, various strands of evidence indicate that an LLM's externalized linguistic outputs and mechanistically-extracted linguistic features can be an unreliable lens for understanding internal model computation. We introduce the term ``linguistic illegibility'' to broadly refer to scenarios in which an LLM's externalized or mechanistically-probed language artifacts fail to represent how the model actually thinks. We argue that the specter of linguistic illegibility is unavoidable for LLMs whose internal computations are not directly expressed via language, but rather math over activation spaces (with lossy translations between activation spaces and natural language happening at the bookends). If linguistic illegibility is always possible, then security mechanisms that rely on a model's linguistic self-reporting (e.g., chain-of-thought monitoring, constitutional self-critique, activation probing for linguistically-defined feature vectors) can never be completely sound; the model sandbox will always need isolation techniques whose guarantees do not depend on reading a model's linguistic state at all. We argue that observing a model's outputs using taint tracking is a promising approach for an effective sandbox: regardless of how a model linguistically self-reports, a taint tracking policy can define, a priori, various pieces of system state that should never be influenced by model-produced data. We also discuss several additional sandboxing mechanisms (e.g., robust virtualization, third-party auditing of sandboxing configurations) which collectively provide a critical floor beneath linguistic monitoring, and would have mitigated recent sandbox exploits by frontier models.",
+      "authors": [
+        "James Mickens"
+      ],
+      "published": "2026-09-02T17:37:22Z",
+      "updated": "2026-09-02T17:37:22Z",
+      "url": "https://arxiv.org/abs/2609.02852",
+      "pdf_url": "https://arxiv.org/pdf/2609.02852.pdf",
+      "primary_category": "cs.LG",
+      "categories": [
+        "cs.LG",
+        "cs.CR"
+      ],
+      "tags": [
+        "cs.CR",
+        "cs.LG"
+      ],
+      "domain": "AI",
+      "pdf_downloaded": true,
+      "pdf_size_bytes": 218798,
+      "pdf_path": "2026-09-03/ai/2609.02852.pdf"
+    },
+    {
+      "id": "2609.02849",
+      "title": "Post-Training Language Models for Gold-Medal Performance in Coding Competitions",
+      "abstract": "Competitive programming has become a key test of large language model reasoning, with international competitions such as IOI and ICPC representing its most challenging settings. We present an end-to-end specialization pipeline combining large-scale problem curation, synthetic reasoning traces, supervised fine-tuning (SFT), and reinforcement learning (RL). Using 22,000 curated problems, we train Nemotron-3-Nano-CC (30B-A3B) with SFT and RL and Nemotron-3-Ultra-CC (550B-A55B) with SFT alone. We further introduce GenCorrect, a feedback-driven test-time compute strategy that iteratively generates, evaluates, and refines diverse solutions. On IOI 2025, Nano-CC improves from 130 points to 291 after post-training and to 468 with GenCorrect, exceeding the gold threshold of 438.3 while Ultra-CC reaches 502. Guided by these results, we develop a competition-specific Ultra-CC system and evaluate it prospectively during IOI 2026. Under the same time, internet-access, and submission constraints as human contestants, it scores 535.4 out of 600, exceeding both the gold threshold of 361.12 and the top human score of 498.27. To our knowledge, this is the first AI system to outscore the highest-scoring human contestant on an IOI problem set.",
+      "authors": [
+        "Aleksander Ficek",
+        "Sean Narenthiran",
+        "Mehrzad Samadi",
+        "Somshubra Majumdar",
+        "Boris Ginsburg"
+      ],
+      "published": "2026-09-02T17:33:37Z",
+      "updated": "2026-09-02T17:33:37Z",
+      "url": "https://arxiv.org/abs/2609.02849",
+      "pdf_url": "https://arxiv.org/pdf/2609.02849.pdf",
+      "primary_category": "cs.LG",
+      "categories": [
+        "cs.LG",
+        "cs.AI",
+        "cs.CL",
+        "cs.MA",
+        "cs.SE"
+      ],
+      "tags": [
+        "cs.AI",
+        "cs.CL",
+        "cs.LG",
+        "cs.MA",
+        "cs.SE"
+      ],
+      "domain": "AI",
+      "pdf_downloaded": true,
+      "pdf_size_bytes": 696079,
+      "pdf_path": "2026-09-03/ai/2609.02849.pdf"
+    },
+    {
+      "id": "2609.02846",
+      "title": "UE5M3 FP4 Block Scaling for Stable Language Model Pretraining",
+      "abstract": "Stable 4-bit floating-point (FP4) pretraining is difficult because the E2M1 payload represents only a narrow range of magnitudes. NVIDIA's Transformer Engine \\nv{} recipe addresses this with current-tensor scaling, a randomized Hadamard transform (RHT), and bfloat16 (BF16) final layers, adding work outside the FP4 matrix multiplications. We instead pair E2M1 payloads with unsigned E5M3 (\\ue{}) block scales. Their wider range permits periodic tensor scaling, while our recipe applies selective stochastic rounding to backward gradients, omits RHT, and uses FP4 in all eligible internal linears. We pretrain a Nemotron-H 8B model for nearly 190 billion tokens. Compared with Transformer Engine \\nv{}, the proposed block-16 recipe finishes with lower final-window training loss and, under their respective quantized-inference policies, lower validation loss measured as held-out negative log-likelihood. Its quantized-inference downstream point estimates are also higher on all three reported aggregates. A native \\nv{} execution ablation that jointly removes RHT and the BF16 final-block exemption increases measured model-body token throughput by 21.2\\%. These results demonstrate end-to-end software-emulated \\uefp{} pretraining with a simpler recipe and motivate native support for \\ue{} block scaling.",
+      "authors": [
+        "Robert Hu",
+        "Carlo Luschi",
+        "Paul Balanca"
+      ],
+      "published": "2026-09-02T17:32:07Z",
+      "updated": "2026-09-02T17:32:07Z",
+      "url": "https://arxiv.org/abs/2609.02846",
+      "pdf_url": "https://arxiv.org/pdf/2609.02846.pdf",
+      "primary_category": "cs.LG",
+      "categories": [
+        "cs.LG"
+      ],
+      "tags": [
+        "cs.LG"
+      ],
+      "domain": "AI",
+      "pdf_downloaded": true,
+      "pdf_size_bytes": 945148,
+      "pdf_path": "2026-09-03/ai/2609.02846.pdf"
+    },
+    {
+      "id": "2609.02833",
+      "title": "Learning Spectral-Like Mesh-Free Discretisations",
+      "abstract": "Meshfree methods such as smoothed particle hydrodynamics (SPH) with kernel corrections, radial basis function-generated finite differences (RBF-FD), and the local anisotropic basis function method (LABFM) construct discrete differential operators by imposing polynomial consistency on a local stencil. For stencils containing more nodes than there are consistency constraints, the resulting linear system is underdetermined, and the remaining degrees of freedom are fixed implicitly by the choice of kernel, basis preconditioning, or a minimum-norm condition. Polynomial consistency constrains the operator only in the low-wavenumber limit, and no part of the construction selects for accuracy at the wavenumbers where fine-scale content resides. We introduce Spectral-like Neural Discretisation (SpeND), in which the choice of those degrees of freedom is cast as a learning problem: stencil weights are parametrised by a neural network conditioned on the local node geometry, trained to approximate the modal response of a spectral operator over the resolvable band. A hard-constrained projection layer maps the network output onto the affine subspace of consistent weights, so that polynomial consistency holds exactly by construction rather than as a penalty. Training is self-supervised and physics-agnostic, requiring no reference solutions; the objective minimises dispersion and dissipation error over a prescribed band-limited function space. Modal analysis on disordered two-dimensional node distributions shows that the learned fourth-order operator follows the exact response over a substantially wider band than either explicit LABFM at equal stencil size or fourth-order finite differences on a structured grid, whilst recovering the expected fourth-order convergence rate under refinement.",
+      "authors": [
+        "Lucas Gerken Starepravo",
+        "Henry Broadley",
+        "Steven Lind",
+        "Jack R. C. King"
+      ],
+      "published": "2026-09-02T17:16:16Z",
+      "updated": "2026-09-02T17:16:16Z",
+      "url": "https://arxiv.org/abs/2609.02833",
+      "pdf_url": "https://arxiv.org/pdf/2609.02833.pdf",
+      "primary_category": "physics.comp-ph",
+      "categories": [
+        "physics.comp-ph",
+        "cs.LG"
+      ],
+      "tags": [
+        "cs.LG",
+        "physics.comp-ph"
+      ],
+      "domain": "AI",
+      "pdf_downloaded": true,
+      "pdf_size_bytes": 1081661,
+      "pdf_path": "2026-09-03/ai/2609.02833.pdf"
+    },
+    {
+      "id": "2609.02832",
+      "title": "Copula Transformations for Data-Consistent Inversion",
+      "abstract": "Data-consistent inversion (DCI) constructs probability measures whose push-forward distributions agree with observed data, while iterative data-consistent inversion (iDCI) extends this framework to generalized stochastic inverse problems by enforcing multiple push-forward constraints sequentially. Although iDCI avoids the direct approximation of high-dimensional joint densities, its relationship to the original joint DCI solution has remained unclear. In this work, we establish this relationship through copula theory. Using Sklar's theorem, we derive a factorization of the DCI update into separate marginal and dependence transformations and show that the discrepancy remaining after convergence of the iDCI algorithm is entirely characterized by the copulas associated with the observed and predicted joint distributions. This characterization motivates a copula-transformed iDCI solution, and we prove that an exact copula transformation recovers the original DCI solution. We further establish convergence results for approximate copula transformations under converging sequences of reference measures and progressively enriched feasible sets. Numerical examples demonstrate how the geometry induced by the quantity-of-interest map governs the importance of the copula transformation, illustrate an adaptive reference-measure refinement strategy for improving computational accuracy under a fixed sampling budget, and demonstrate the progressive refinement of generalized stochastic inverse problems through heterogeneous, asynchronously acquired experiments.",
+      "authors": [
+        "Troy Butler",
+        "Tianyi Jiang",
+        "Jo\u00e3o Silva",
+        "Harri Hakula",
+        "Timothy Wildey"
+      ],
+      "published": "2026-09-02T17:15:48Z",
+      "updated": "2026-09-02T17:15:48Z",
+      "url": "https://arxiv.org/abs/2609.02832",
+      "pdf_url": "https://arxiv.org/pdf/2609.02832.pdf",
+      "primary_category": "stat.ML",
+      "categories": [
+        "stat.ML",
+        "math.OC",
+        "math.PR",
+        "math.ST"
+      ],
+      "tags": [
+        "math.OC",
+        "math.PR",
+        "math.ST",
+        "stat.ML"
+      ],
+      "domain": "AI",
+      "pdf_downloaded": true,
+      "pdf_size_bytes": 1867373,
+      "pdf_path": "2026-09-03/ai/2609.02832.pdf"
+    },
+    {
+      "id": "2609.02821",
+      "title": "AI Contextual Measurement for Recovering Individual and Group-Level Effects: Validation Against Survey Measures and an Occupational Application",
+      "abstract": "Researchers increasingly use artificial intelligence to construct measures of social, organizational, and occupational characteristics that are absent from conventional surveys. We propose AICOME, AI COntextual MEasurement, a framework for evaluating whether AI-derived respondent-level measures can recover individual and group-level effects in contextual models. The key idea is that an AI measure constructed at the respondent level can be used to derive its group-level aggregate and its individual deviation, allowing researchers to estimate both between-group and within-group associations rather than treating AI measurement as response prediction alone. We validate the framework using the 2022 China Family Panel Studies (CFPS), where occupations provide the empirical grouping structure and several job-related survey variables provide validation benchmarks. For computer use, foreign-language use, weekly hours, and management responsibilities, we compare survey measures with AI-derived measures in response-level, model-level, contextual, and boundary-condition validations. The results show that AI contextual measurement can recover much of the contextual-model information contained in observed survey variables when rich respondent and job characteristics are available. Weekly hours provides the strongest validation case, with AI-derived measures reproducing the large negative between- and within-occupation associations with satisfaction observed in CFPS. The framework also identifies clear boundary conditions: performance deteriorates when information is restricted to occupation and basic demographics, and recovery is weaker when several related concepts are treated as simultaneously unobserved. The findings suggest that AICOME is most useful for recovering a limited number of theoretically important constructs from rich existing datasets.",
+      "authors": [
+        "Wenxin Jiang",
+        "Xuyang Wang",
+        "Yuxiao Wu"
+      ],
+      "published": "2026-09-02T17:09:30Z",
+      "updated": "2026-09-02T17:09:30Z",
+      "url": "https://arxiv.org/abs/2609.02821",
+      "pdf_url": "https://arxiv.org/pdf/2609.02821.pdf",
+      "primary_category": "cs.AI",
+      "categories": [
+        "cs.AI",
+        "cs.LG"
+      ],
+      "tags": [
+        "cs.AI",
+        "cs.LG"
+      ],
+      "domain": "AI",
+      "pdf_downloaded": true,
+      "pdf_size_bytes": 460501,
+      "pdf_path": "2026-09-03/ai/2609.02821.pdf"
+    },
+    {
+      "id": "2609.02817",
+      "title": "Cliff: Learning Process Rewards from the First Mistake",
+      "abstract": "Reinforcement learning with verifiable rewards (RLVR) has emerged as a powerful paradigm for large language model (LLM) post-training, but its reliance on coarse outcome rewards leads to limited guidance on intermediate reasoning processes. Existing approaches such as process reward modeling and on-policy distillation introduce additional constraints, such as reliance on a specialized reward model or assuming identical reasoning patterns between teacher and student. Nevertheless, we observe that once a reasoning process first goes wrong, evaluating the subsequent reasoning provides limited additional information, as it is already conditioned on an invalid prefix. Therefore, we propose Cliff, a reward shaping strategy that utilizes an off-the-shelf LLM as a teacher to identify the first mistake in each rollout. As a result, the rollout is naturally decomposed into two parts: a correct prefix and an incorrect suffix. Cliff then converts this signal into token-level advantages, assigning positive advantages for the correct prefix and negative feedback afterward. Experiments across 12 different scenarios demonstrate that Cliff consistently improves reasoning performance, outperforming on-policy distillation by 15% and standard GRPO by 7%, even with teachers of modest capability. Furthermore, we analyse the role of ``ground truth'' in Cliff and investigate its training dynamics. These results establish Cliff as a simple, general and effective approach for improving RLVR with richer, fine-grained supervision.",
+      "authors": [
+        "Peixuan Han",
+        "Runhui Wang",
+        "Ketan Ramaneti",
+        "Jie Hao",
+        "Gerald Friedland",
+        "Chris Kong"
+      ],
+      "published": "2026-09-02T17:03:42Z",
+      "updated": "2026-09-02T17:03:42Z",
+      "url": "https://arxiv.org/abs/2609.02817",
+      "pdf_url": "https://arxiv.org/pdf/2609.02817.pdf",
+      "primary_category": "cs.LG",
+      "categories": [
+        "cs.LG"
+      ],
+      "tags": [
+        "cs.LG"
+      ],
+      "domain": "AI",
+      "pdf_downloaded": true,
+      "pdf_size_bytes": 630126,
+      "pdf_path": "2026-09-03/ai/2609.02817.pdf"
+    },
+    {
+      "id": "2609.02805",
+      "title": "Large Language Models (LLMs) for Telecom Root Cause Analysis (RCA): A Structured Reasoning Framework for Evidence-Grounded Diagnosis",
+      "abstract": "Root cause analysis (RCA) is a critical task in telecom network operations, but diagnosing performance degradations in modern 5G and emerging 6G networks remains challenging due to complex cross-layer dependencies. While large language models (LLMs) offer promising capabilities for reasoning and knowledge integration, directly applying vanilla LLMs to telecom RCA often leads to hallucination, unstable reasoning, and poor alignment with structured network evidence. This work first reviews the evolution of telecom RCA from rule-based and machine learning (ML) approaches to emerging LLM-enabled techniques, and provides an overview of recent paradigms, including structured reasoning, retrieval-augmented knowledge grounding, agentic orchestration, and verifiable reasoning. Building upon these insights, we propose a structured reasoning framework for LLM-enabled telecom RCA that aligns diagnostic reasoning with telecom-specific evidence and domain knowledge. The proposed approach first organizes heterogeneous network telemetry into canonical contexts, and then enforces decision-path reasoning during diagnosis, and finally generates evidence-grounded explanations for reliable fault identification. Experimental results on two 5G RCA datasets, TeleLogs and TelecomTS, demonstrate that the proposed framework consistently improves diagnostic accuracy and decision consistency compared with baseline techniques. These cross-dataset results highlight the importance of structured reasoning design for practical LLM-based RCA systems in next-generation telecom networks.",
+      "authors": [
+        "Hao Zhou",
+        "Mandar Kulkarni",
+        "Hao Chen",
+        "Yan Xin",
+        "Charlie",
+        "Zhang"
+      ],
+      "published": "2026-09-02T16:43:22Z",
+      "updated": "2026-09-02T16:43:22Z",
+      "url": "https://arxiv.org/abs/2609.02805",
+      "pdf_url": "https://arxiv.org/pdf/2609.02805.pdf",
+      "primary_category": "cs.AI",
+      "categories": [
+        "cs.AI"
+      ],
+      "tags": [
+        "cs.AI"
+      ],
+      "domain": "AI",
+      "pdf_downloaded": true,
+      "pdf_size_bytes": 4064826,
+      "pdf_path": "2026-09-03/ai/2609.02805.pdf"
+    },
+    {
+      "id": "2609.02804",
+      "title": "frb100-40 After Two Decades: An Optimality Certificate and a Preregistered Search Study",
+      "abstract": "For more than 20 years, the Model-RB benchmark frb100-40 remained an open challenge; since 2014, its public record had stood at 99 of 100 variables. We give a directly checkable 100-vertex independent set for its 4,000-vertex graph. Together with a verified partition into 100 cliques of size 40, the witness proves that the maximum independent-set size is 100 and the minimum vertex-cover size is 3,900. The stochastic run that found the witness is kept separate from this proof. We evaluated its added pair and triple repair operators in a preregistered campaign comprising 8,668 valid runs. The primary comparison found no detectable acceleration over base ULSA (hazard ratio 0.967, 95% confidence interval 0.915-1.023; p=0.248), and the factorial ablation reached the same conclusion. On a smaller FRB suite, the group-aware CSP pipeline solved 2,500/2,500 runs, compared with 2,391/2,500 for LibMVC-NuMVC. On frb100-40, full ULSA, base ULSA, and NuMVC each produced 0/56 new certificates. With no events, the planned cross-solver hazard ratios remain unidentified. NuMVC ended with cover size 3,902 in 40 runs and 3,903 in 16. Exhaustive enumeration showed that none of the 108 unique recorded conflict-two states had a strictly improving group-aware CSP neighbor within Hamming radius three. The certificate settles the instance. The experiments characterize the search barrier, and the preregistered comparisons show no heuristic advantage.",
+      "authors": [
+        "Onur U\u011furlu"
+      ],
+      "published": "2026-09-02T16:40:46Z",
+      "updated": "2026-09-02T16:40:46Z",
+      "url": "https://arxiv.org/abs/2609.02804",
+      "pdf_url": "https://arxiv.org/pdf/2609.02804.pdf",
+      "primary_category": "cs.DM",
+      "categories": [
+        "cs.DM",
+        "cs.AI"
+      ],
+      "tags": [
+        "cs.AI",
+        "cs.DM"
+      ],
+      "domain": "AI",
+      "pdf_downloaded": true,
+      "pdf_size_bytes": 311238,
+      "pdf_path": "2026-09-03/ai/2609.02804.pdf"
+    },
+    {
+      "id": "2609.02797",
+      "title": "Dutch Books for Language Models",
+      "abstract": "People increasingly use language models to support life decisions. Many such decisions involve a probabilistic forecast: How likely is a major life event, a natural disaster, or an economic outcome? Users of language models may implicitly trust that these forecasts fall out of a coherent world model. In this paper, we evaluate the coherence of language model probabilistic forecasts through a procedure that builds on a theorem due to de Finetti. We elicit forecasts from language models across events generated from stock returns data. We then use linear programs to compute the largest Dutch-book profit - the profit an arbitrageur could guarantee by betting against model-generated probabilities - which we use as a measure of incoherence. Our procedure does not require outcome labels, so we can evaluate coherence even in settings where outcomes are not observed or have not yet resolved. We find substantial evidence of incoherence in language model forecasts. Such incoherence increases when there are richer logical relationships between events, and irrelevant contextual details can increase incoherence by an order of magnitude. We conclude by discussing how alternative training strategies may improve probabilistic coherence.",
+      "authors": [
+        "Isaiah Andrews",
+        "Suproteem Sarkar"
+      ],
+      "published": "2026-09-02T16:31:47Z",
+      "updated": "2026-09-02T16:31:47Z",
+      "url": "https://arxiv.org/abs/2609.02797",
+      "pdf_url": "https://arxiv.org/pdf/2609.02797.pdf",
+      "primary_category": "econ.GN",
+      "categories": [
+        "econ.GN",
+        "cs.AI",
+        "cs.CL",
+        "cs.LG"
+      ],
+      "tags": [
+        "cs.AI",
+        "cs.CL",
+        "cs.LG",
+        "econ.GN"
+      ],
+      "domain": "AI",
+      "pdf_downloaded": true,
+      "pdf_size_bytes": 332847,
+      "pdf_path": "2026-09-03/ai/2609.02797.pdf"
+    },
+    {
+      "id": "2609.02790",
+      "title": "Full-Model Optimality for Tunable Linear Generative Priors in Compressed Sensing",
+      "abstract": "Generative models have been studied experimentally and theoretically as priors for inverse problems such as compressed sensing. Recent work by Gunn et al. studied the use of generative priors with tunable complexity, where a family of generative priors with varying complexity is maintained and a specific complexity can be selected at inversion time. They demonstrated that lower reconstruction errors can be experimentally attained for a variety of inverse problems by appropriately tuning the complexity of the generative prior. In the present paper, we establish theory for compressed sensing in the setting of a tunable family of linear generative priors naturally related through their singular value decompositions. We prove that in noiseless Gaussian compressed sensing, the full-dimensional linear prior attains the minimum expected reconstruction error over the entire family of linear priors. Thus, in this idealized linear noiseless setting, tuning to a lower-complexity prior does not improve the expected reconstruction error. This result is in contract to the behavior of denoising, where lower complexity priors attain lower reconstruction errors due to a standard bias-variance tradeoff. This result indicates that the experimental benefits of tunability in compressed sensing with neural network priors arises due to nonlinearities in the generative models.",
+      "authors": [
+        "Zhaoming Li",
+        "Paul Hand"
+      ],
+      "published": "2026-09-02T16:22:26Z",
+      "updated": "2026-09-02T16:22:26Z",
+      "url": "https://arxiv.org/abs/2609.02790",
+      "pdf_url": "https://arxiv.org/pdf/2609.02790.pdf",
+      "primary_category": "stat.ML",
+      "categories": [
+        "stat.ML",
+        "cs.LG"
+      ],
+      "tags": [
+        "cs.LG",
+        "stat.ML"
+      ],
+      "domain": "AI",
+      "pdf_downloaded": true,
+      "pdf_size_bytes": 650906,
+      "pdf_path": "2026-09-03/ai/2609.02790.pdf"
+    },
+    {
+      "id": "2609.02786",
+      "title": "SafeEvolve: Harness-Policy Co-Evolution from Agent Experience for Safety Alignment",
+      "abstract": "The performance of LLM-based agents is jointly shaped by the base model and the harness used when interacting with the environment. This exposes them to safety risks in both harmful final responses and multi-step execution trajectories. Existing safety alignment mechanisms often rely on either external harness updates or policy optimization, yet applying either paradigm in isolation fails to bridge runtime control with intrinsic safety. We propose SafeEvolve, an experience-driven self-evolving framework for agent safety alignment. SafeEvolve leverages safety experience from completed on-policy trajectories to drive a continual loop of harness-policy co-evolution. On the harness side, SafeEvolve converts trajectory-level safety evidence into bounded, component-level updates across safety prompt and hierarchical skills, yielding auditable and reversible harness artifacts. On the policy side, SafeEvolve follows a two-stage SFT-RL paradigm, where harness-use SFT bootstraps the policy to actively leverage evolved harness artifacts, and harness-augmented RL further shapes autonomous safety behaviors during multi-step exploration via verifier-decomposed rewards. Through harness-policy co-evolution, SafeEvolve converts safety experience into an evolved runtime harness and improved policy behavior. Experiments on agentic safety benchmarks show that SafeEvolve achieves a stronger safety-utility tradeoff than existing baselines. For Qwen3.5-4B, SafeEvolve achieves a $3\\times$ ASR reduction on AgentDojo while improving benign utility from 59.79% to 61.86%.",
+      "authors": [
+        "Qinghua Mao",
+        "Wanying Qu",
+        "Dadi Guo",
+        "Leitao Yuan",
+        "Qingyu Liu",
+        "Yu Li",
+        "Guanxu Chen",
+        "Yanwei Fu",
+        "Xi Lin",
+        "Xia Hu",
+        "Dongrui Liu"
+      ],
+      "published": "2026-09-02T16:19:54Z",
+      "updated": "2026-09-02T16:19:54Z",
+      "url": "https://arxiv.org/abs/2609.02786",
+      "pdf_url": "https://arxiv.org/pdf/2609.02786.pdf",
+      "primary_category": "cs.AI",
+      "categories": [
+        "cs.AI",
+        "cs.CR"
+      ],
+      "tags": [
+        "cs.AI",
+        "cs.CR"
+      ],
+      "domain": "AI",
+      "pdf_downloaded": true,
+      "pdf_size_bytes": 10425193,
+      "pdf_path": "2026-09-03/ai/2609.02786.pdf"
+    },
+    {
+      "id": "2609.02774",
+      "title": "CodePoisonRAG: Knowledge Poisoning Attacks on Retrieval-Augmented Code Generation",
+      "abstract": "Retrieval-Augmented Code Generation (RACG) improves LLM-based software development by retrieving external code artifacts, documentation, and patches, and incorporating them into the generation context. This reliance on external knowledge introduces a critical trust boundary: poisoned artifacts can influence generated code without modifying the underlying LLM. Prior work shows that selecting existing vulnerable examples can increase the general vulnerability rate of RACG outputs, but leaves open whether a black-box attacker can construct a single task-matched artifact that propagates an attacker-selected weakness. We introduce CodePoisonRAG, a targeted upstream knowledge-poisoning framework that transforms benign fixed-code entries into poisoned artifacts. Its attack chain combines CWE-specific Vulnerability Injection, which embeds a selected source-to-sink flow while retaining task alignment, with Semantic Mislabeling, which adds false safety claims without repairing the vulnerable behavior. The attacker has no access to the victim's deployed knowledge base, retriever, re-ranker, generator, prompt, or defense mechanism and injects at most one artifact per anticipated programming task. We construct 85 poisoned artifacts covering ten CWE classes across Java and C, yielding an aggregate corpus-poisoning ratio of 0.7%. Across three generators, all 85 artifacts appear among the Top-3 results for their corresponding queries, and CodePoisonRAG achieves attack success rates between 0.80 and 0.93. Against CodeGuarder, which injects vulnerability-specific security knowledge into the generation context, the attack retains success rates between 0.40 and 0.71. These results show that RACG poisoning extends beyond the incidental propagation of existing vulnerabilities to the targeted construction and propagation of attacker-selected weaknesses.",
+      "authors": [
+        "Varun Gadey",
+        "Ziad Marey",
+        "Alexandra Dmitrienko"
+      ],
+      "published": "2026-09-02T16:11:01Z",
+      "updated": "2026-09-02T16:11:01Z",
+      "url": "https://arxiv.org/abs/2609.02774",
+      "pdf_url": "https://arxiv.org/pdf/2609.02774.pdf",
+      "primary_category": "cs.CR",
+      "categories": [
+        "cs.CR",
+        "cs.LG"
+      ],
+      "tags": [
+        "cs.CR",
+        "cs.LG"
+      ],
+      "domain": "AI",
+      "pdf_downloaded": true,
+      "pdf_size_bytes": 389078,
+      "pdf_path": "2026-09-03/ai/2609.02774.pdf"
+    },
+    {
+      "id": "2609.02771",
+      "title": "From Reweighting to Rewriting: Unlocking the Intervention Effects of Influential Samples in Training Data Attribution",
+      "abstract": "Training data attribution (TDA) aims to identify training examples that shape model behavior, but its intervention value depends on both which examples are selected and how they are modified. Influence functions (IF) estimate behavioral changes under infinitesimal reweighting, yet IF-selected examples often show limited advantages over random selection under conventional weight-based interventions. This raises the question of whether influential examples lack intervention value or whether reweighting fails to realize their behavioral leverage.We introduce influence-guided response rewriting, which uses IF to identify intervention targets and replaces their responses with behavior-aligned or behavior-opposed supervision while keeping instructions fixed. Across four open-weight LLMs, we compare rewriting and reweighting on the same influence-selected examples using epistemic abstention as our primary testbed. Response rewriting produces stronger, more persistent, and bidirectional behavioral shifts, while reweighting the same examples yields weak and inconsistent effects. Further analyses show that influence-selected examples provide greater rewriting leverage than alternative selectors, with changes remaining concentrated on target-relevant behaviors. The same qualitative contrast extends to safety refusal. These results distinguish the local reweighting effects captured by influence estimates from the broader intervention leverage of the examples they identify, motivating intervention-aware evaluation of TDA methods.",
+      "authors": [
+        "Yuzhang Luo",
+        "Chenpeng Wang",
+        "Jianhui Chen",
+        "Liangming Pan"
+      ],
+      "published": "2026-09-02T16:07:21Z",
+      "updated": "2026-09-02T16:07:21Z",
+      "url": "https://arxiv.org/abs/2609.02771",
+      "pdf_url": "https://arxiv.org/pdf/2609.02771.pdf",
+      "primary_category": "cs.CL",
+      "categories": [
+        "cs.CL",
+        "cs.AI",
+        "cs.LG"
+      ],
+      "tags": [
+        "cs.AI",
+        "cs.CL",
+        "cs.LG"
+      ],
+      "domain": "AI",
+      "pdf_downloaded": true,
+      "pdf_size_bytes": 1248809,
+      "pdf_path": "2026-09-03/ai/2609.02771.pdf"
+    },
+    {
+      "id": "2609.02766",
+      "title": "Do Tabular Foundation Models Know Physics? Contamination, Units, and the Deterministic Limit",
+      "abstract": "Tabular foundation models (TFMs) learn to fill in tables the way language models fill in text, and tables are arguably the format in which most physical measurement arrives. Did they learn any physics in the process? They are Bayesian by construction, so the question is what their prior contains. We probe it directly, evaluating four of them (TabPFN-3, TabICLv2, TabDPT and Real-TabPFN-2.5) against six baselines on datasets sampled from 316 physical equations, in and out of domain. TFMs dominate, out of the box and after tuning. But we show that their prior can represent neither a noiseless mechanism nor physical units, which is why they interpolate physics without yet being able to act as physical models.",
+      "authors": [
+        "Wassim Tenachi",
+        "Yashar Hezaveh",
+        "Laurence Perreault Levasseur",
+        "Pierre-Luc Bacon"
+      ],
+      "published": "2026-09-02T16:05:40Z",
+      "updated": "2026-09-02T16:05:40Z",
+      "url": "https://arxiv.org/abs/2609.02766",
+      "pdf_url": "https://arxiv.org/pdf/2609.02766.pdf",
+      "primary_category": "cs.LG",
+      "categories": [
+        "cs.LG",
+        "astro-ph.IM"
+      ],
+      "tags": [
+        "astro-ph.IM",
+        "cs.LG"
+      ],
+      "domain": "AI",
+      "pdf_downloaded": true,
+      "pdf_size_bytes": 2138235,
+      "pdf_path": "2026-09-03/ai/2609.02766.pdf"
+    },
+    {
+      "id": "2609.02760",
+      "title": "Measurement-Driven Sub-Network Selection for On-Premise Retrieval-Augmented Factory Agents",
+      "abstract": "On-premise assistants can give factory workers conversational access to machine documentation, but models capable of the task rarely fit shop-floor hardware. We show that after structural compression and retrieval-grounded adaptation, model size is no longer a reliable predictor of adapted answer quality: general capability falls almost linearly with parameter count, while judged retrieval-augmented answer quality does not. We therefore treat deployment as a post-adaptation selection problem, committing one sub-network per device on judged answer quality and measured on-device throughput under a configurable general-capability floor and memory budget; rules that optimize size, speed, or quality alone each give up capability or throughput. A weight-shared supernetwork trained with sandwich-style in-place distillation keeps this selection inexpensive. In a manufacturing-manual case study, extraction costs 13.7 percent of the unpruned model's judged quality and retrieval-grounded distillation returns it to within 4.6 percent, recovering two thirds of the loss, and the same assistant runs across three heterogeneous edge tiers at 1.3 to 5 watts standby.",
+      "authors": [
+        "Vasileios Rizeakos",
+        "Georgios Paisios",
+        "Alexandros Machairas",
+        "Michael Birbas",
+        "Athanasios Bachoumis"
+      ],
+      "published": "2026-09-02T16:00:05Z",
+      "updated": "2026-09-02T16:00:05Z",
+      "url": "https://arxiv.org/abs/2609.02760",
+      "pdf_url": "https://arxiv.org/pdf/2609.02760.pdf",
+      "primary_category": "cs.AI",
+      "categories": [
+        "cs.AI"
+      ],
+      "tags": [
+        "cs.AI"
+      ],
+      "domain": "AI",
+      "pdf_downloaded": true,
+      "pdf_size_bytes": 1020055,
+      "pdf_path": "2026-09-03/ai/2609.02760.pdf"
+    },
+    {
+      "id": "2609.02754",
+      "title": "Untangling the Mechanisms of Misleading Context in Medical Question Answering",
+      "abstract": "Large language models now answer medical questions with expert-level performance. However, the context these systems act on can be misleading, and misleading context can corrupt a model's medical judgment. To understand how misleading context corrupts this judgment, we examine the model's susceptibility to the context, disclosure of it, mechanism of corrupted reasoning, and monitorability of the decision. On the medical reasoning subset of MedMisBench, a clinician-reviewed question-answering benchmark of 8,627 questions, we inject two types of misleading context cues, fabricated evidence and a bare assertion. We test three reasoning models, two that expose their full reasoning trace and one frontier model that exposes only its response. All three are more susceptible to the assertion than to the fabricated evidence, adopting the asserted answer 10 to 27 points more often. The misleading cues are disclosed in 81 to 98% of traces but only 7 to 90% of responses, and the assertion is disclosed less often than evidence based cues. Resampling from reasoning traces without disclosure shows the two cues corrupt reasoning differently, evidence entering early and accumulating while the assertion redirects the conclusion near its end. An LLM monitor catches 78% of corrupted decisions at 5% false positives when reading an open model's trace with guidance, against at most 32% from any response. The misleading context that models are most susceptible to is disclosed least, and was caught reliably only from an open reasoning trace, which frontier providers withhold.",
+      "authors": [
+        "Robin Linzmayer",
+        "No\u00e9mie Elhadad"
+      ],
+      "published": "2026-09-02T15:55:56Z",
+      "updated": "2026-09-02T15:55:56Z",
+      "url": "https://arxiv.org/abs/2609.02754",
+      "pdf_url": "https://arxiv.org/pdf/2609.02754.pdf",
+      "primary_category": "cs.CL",
+      "categories": [
+        "cs.CL",
+        "cs.AI",
+        "cs.LG"
+      ],
+      "tags": [
+        "cs.AI",
+        "cs.CL",
+        "cs.LG"
+      ],
+      "domain": "AI",
+      "pdf_downloaded": true,
+      "pdf_size_bytes": 1168082,
+      "pdf_path": "2026-09-03/ai/2609.02754.pdf"
+    },
+    {
+      "id": "2609.02750",
+      "title": "Bilevel Coordinated Reflection: A Game-Theoretic Approach to Multi-Agent LLM Systems",
+      "abstract": "Multi-agent LLM systems commonly use an orchestrator to decompose a task for a team of workers and then improve through textual reflection. Despite strong empirical results, these systems lack a unified account of coordination, memory improvement, and the role of external verification. We model orchestrator-worker interaction as a bilevel coordination game: under bounded coupling, the workers' local-update game is an approximate potential game whose equilibrium slack is controlled by decomposition quality. We then analyse reflection as stochastic movement over semantic memory states. For free-form reflection, we derive a finite-time upper bound, prove worst-case tightness, and give a positive lower bound under a falsifiable persistent-harm condition. We further prove an information-theoretic impossibility result: no gate that observes only the generated transcript can improve uniformly over text-indistinguishable environments, whereas an environment-grounded gate can. Motivated by this separation, we introduce Stochastic Reflective Memory Ascent (SRMA), which accepts a candidate memory only after a grounded evaluation risk strictly decreases. Under calibration and non-degenerate corrective mass, SRMA converges exactly, geometrically or polynomially; matching constructions show that both rate regimes are order-tight. We also provide confidence gating for stochastic evaluation and re-anchoring guarantees for piecewise-stationary environments. Experiments instantiate these objects with environment-grounded metrics and test the predicted coordination and drift laws. On 500 SWE-bench instances, the complete Kimi-based system resolves 72.2% versus a 70.8% public mini-SWE-agent reference. Code: https://github.com/YihangChen9/Bilevel-Coordinated-Reflection",
+      "authors": [
+        "Yihang Chen",
+        "Yuxiang Chen",
+        "Yuxuan Huang",
+        "Meng Fang",
+        "Weilin Luo",
+        "Jun Wang"
+      ],
+      "published": "2026-09-02T15:50:10Z",
+      "updated": "2026-09-02T15:50:10Z",
+      "url": "https://arxiv.org/abs/2609.02750",
+      "pdf_url": "https://arxiv.org/pdf/2609.02750.pdf",
+      "primary_category": "cs.AI",
+      "categories": [
+        "cs.AI"
+      ],
+      "tags": [
+        "cs.AI"
+      ],
+      "domain": "AI",
+      "pdf_downloaded": true,
+      "pdf_size_bytes": 475540,
+      "pdf_path": "2026-09-03/ai/2609.02750.pdf"
+    },
+    {
+      "id": "2609.02749",
+      "title": "Repo-To-Skill: Distilling GitHub Repositories Into AI4AI Skills",
+      "abstract": "Autonomous agents are beginning to carry out machine-learning (ML) research end to end. These agents combine a model backbone with a harness for planning, execution, memory, and verification, but this architecture still leaves domain-specific know-how outside the agent. We call this missing layer operational knowledge, the know-how that separates knowing a method from making it work. That knowledge is not absent from the field. It appears in repositories and papers, but in forms written for human readers and too large to load during a task. Once distilled into compact, verified skills, this knowledge can be reused across tasks rather than rediscovered during each run. We present DisCo, a skill-powered research agent that creates skills and uses them during research. Its distillation runs in two complementary forms: task-agnostic, condensing the field's widely used repositories into reusable skills, and task-oriented, producing the skills a concrete task calls for. The former, applied across the open ecosystem, yields the AREX-Skill Library, with 5,000+ verified skills distilled from 1,000 widely used ML repositories and organized into 20 areas and 178 capability families. With the GPT-5.5 backbone, research harness, and downstream execution budget held fixed, the skill-equipped research agent scores 134.3% higher on MLE-bench, 34.4% higher on PaperBench, 9.2% higher on FrontierCS, and 14.0% higher on PassNet than the same agent without skills. These gains come from adding distilled operating context under that fixed setup.",
+      "authors": [
+        "Jianlyu Chen",
+        "Yuyang Hu",
+        "Hongjin Qian",
+        "Jiawei Liu",
+        "Wenqing Wei",
+        "Xiaolong Chen",
+        "Defu Lian",
+        "Zhicheng Dou",
+        "Chaozhuo Li",
+        "Qiwei Ye",
+        "Zheng Liu"
+      ],
+      "published": "2026-09-02T15:49:41Z",
+      "updated": "2026-09-02T15:49:41Z",
+      "url": "https://arxiv.org/abs/2609.02749",
+      "pdf_url": "https://arxiv.org/pdf/2609.02749.pdf",
+      "primary_category": "cs.AI",
+      "categories": [
+        "cs.AI",
+        "cs.CL"
+      ],
+      "tags": [
+        "cs.AI",
+        "cs.CL"
+      ],
+      "domain": "AI",
+      "pdf_downloaded": true,
+      "pdf_size_bytes": 4149917,
+      "pdf_path": "2026-09-03/ai/2609.02749.pdf"
+    },
+    {
+      "id": "2609.02746",
+      "title": "HiPoly: a hierarchical polymer-native AI framework for property prediction and generative design",
+      "abstract": "Polymeric materials are central to modern technologies, with applications ranging from energy to health and transportation. Although AI has made significant advances in materials discovery, the hierarchical structure of polymers across multiple length scales makes them inherently difficult to represent in a unified and physically meaningful way. Here we introduce HiPoly, a polymer-native AI framework that processes complete polymer descriptions through a three-level hierarchical graph architecture built on the G2RINS representation. HiPoly encodes stochastic inter-monomer connectivity, composition, and molecular weight directly within its architecture, using physically motivated design principles that mirror the multi-scale nature of polymeric systems. The framework establishes an end-to-end AI-driven workflow from experimental formulation data to property prediction, generative molecular design, and physics-based validation through molecular simulations, all unified by a single polymer representation. We demonstrate state-of-the-art prediction accuracy for thermophysical properties of multi-component polymer systems, with ablation studies confirming that each hierarchical design choice contributes independently to model performance. As an example, the generative design pathway is applied here to the discovery of sustainable alternatives to persistent fluorinated polymers, where it is possible to identify and independently validate PFAS-free candidates with target surface-energy properties. This work demonstrates how polymer-native AI can accelerate discovery by linking representation, prediction, and design across complex polymer chemistries.",
+      "authors": [
+        "Ge Sun",
+        "Gervasio Zaldivar",
+        "Yuan Tian",
+        "Gustavo Perez Lemus",
+        "Juhae Park",
+        "Dasha Safarian",
+        "Ming Han",
+        "Juan J. de Pablo"
+      ],
+      "published": "2026-09-02T15:48:11Z",
+      "updated": "2026-09-02T15:48:11Z",
+      "url": "https://arxiv.org/abs/2609.02746",
+      "pdf_url": "https://arxiv.org/pdf/2609.02746.pdf",
+      "primary_category": "physics.chem-ph",
+      "categories": [
+        "physics.chem-ph",
+        "cond-mat.mtrl-sci",
+        "cs.AI",
+        "cs.LG",
+        "physics.comp-ph"
+      ],
+      "tags": [
+        "cond-mat.mtrl-sci",
+        "cs.AI",
+        "cs.LG",
+        "physics.chem-ph",
+        "physics.comp-ph"
+      ],
+      "domain": "AI",
+      "pdf_downloaded": true,
+      "pdf_size_bytes": 12116819,
+      "pdf_path": "2026-09-03/ai/2609.02746.pdf"
+    },
+    {
+      "id": "2609.02741",
+      "title": "SPADE: SPaT Attack Detection from the Connected Vehicle's Perspective",
+      "abstract": "Signal Phase and Timing (SPaT) messages are a cornerstone of connected vehicle (CV) safety, enabling CVs to perceive and respond to intersection state through Vehicle-to-Infrastructure (V2I) and Vehicle-to-Vehicle (V2V) communication. The integrity of these messages is threatened by a range of application-layer attacks that can bypass conventional authentication when a roadside unit or peer vehicle is compromised. Existing intrusion detection research either defends the infrastructure side or targets V2V Basic Safety Message (BSM) / Cooperative Awareness Message (CAM) misbehavior, leaving the onboard CV perspective on SPaT integrity unaddressed.To close this gap, we introduce SPADE --- the SPaT Attack Detection and Evaluation dataset --- a labelled, multi-modal, simulation-based dataset designed specifically for deep learning IDS research in this space. SPADE is generated through Eclipse MOSAIC using runtime attack injection at the SAE J2735 application layer across six attack classes and one benign class. By combining four intersection geometries, six operating conditions, and five independent random-seed repetitions, SPADE comprises 180 unique base scenario runs, yielding $\\sim$1,890,000 labelled timestep records (270,000 per class). Each record fuses SPaT message fields, onboard camera confidence scores, and cooperative V2V peer data across 40 features, reflecting the multi-modal signal space required to distinguish deliberate attacks from environmental degradation. The dataset, generation code, and scenario configurations are released publicly to support reproducible and comparative IDS research in C-V2X security. The developed toolbox, instructions, and dataset link are publicly available on GitHub: https://github.com/jdinovo/SPADE.",
+      "authors": [
+        "James Di Novo",
+        "Hany Ragab",
+        "Sylvain P. Leblanc"
+      ],
+      "published": "2026-09-02T15:46:55Z",
+      "updated": "2026-09-02T15:46:55Z",
+      "url": "https://arxiv.org/abs/2609.02741",
+      "pdf_url": "https://arxiv.org/pdf/2609.02741.pdf",
+      "primary_category": "cs.CR",
+      "categories": [
+        "cs.CR",
+        "cs.LG"
+      ],
+      "tags": [
+        "cs.CR",
+        "cs.LG"
+      ],
+      "domain": "AI",
+      "pdf_downloaded": true,
+      "pdf_size_bytes": 303158,
+      "pdf_path": "2026-09-03/ai/2609.02741.pdf"
+    },
+    {
+      "id": "2609.02737",
+      "title": "Language Models Can Control Their Own Attention",
+      "abstract": "Language models spend most of their attention on a small fraction of context, yet they read the entire KV cache to find the few tokens that matter. If the user asks about a previous detail in a 1M-token conversation, global attention layers must scan the full context to generate each token of the reply. A prominent approach mitigates this cost by pre-selecting relevant tokens via lightweight proxy scores, but this extrinsic scoring still incurs O(N) per step. We take an intrinsic approach motivated by the simple question: wouldn't the model already know which parts of the context are relevant? To this end, we introduce Declarative Attention (DA), a protocol that elicits the model to declare where it needs to attend within its chain-of-thought, partitioning generation into three modes: <global> (full context), <focus> (a specific region), and <local> (recent output only). The inference engine parses these declarations like tool calls and skips most of the KV cache read. Under zero-shot evaluation across 15 long-context tasks, DA on off-the-shelf models (Gemma-4-31B, Qwen-3.6-27B) significantly reduces total attended tokens during decoding (52.0%, 31.1%) with modest accuracy drops (1.27pp, 2.75pp) that shrink with model scale. DA unlocks a new axis of sparse attention, with further potential under training-based methods that future work can explore.",
+      "authors": [
+        "Namgyu Ho",
+        "Huzama Ahmad",
+        "Woosung Koh",
+        "Se-Young Yun",
+        "Tal Schuster",
+        "Cicero Nogueira dos Santos"
+      ],
+      "published": "2026-09-02T15:43:38Z",
+      "updated": "2026-09-02T15:43:38Z",
+      "url": "https://arxiv.org/abs/2609.02737",
+      "pdf_url": "https://arxiv.org/pdf/2609.02737.pdf",
+      "primary_category": "cs.CL",
+      "categories": [
+        "cs.CL",
+        "cs.AI",
+        "cs.LG"
+      ],
+      "tags": [
+        "cs.AI",
+        "cs.CL",
+        "cs.LG"
+      ],
+      "domain": "AI",
+      "pdf_downloaded": true,
+      "pdf_size_bytes": 941780,
+      "pdf_path": "2026-09-03/ai/2609.02737.pdf"
+    },
+    {
+      "id": "2609.02734",
+      "title": "LoRA-TSD: Tangent-Space Spectral Descent for LoRA via Muon-Style Updates",
+      "abstract": "Low-rank adaptation (LoRA) is the standard way to fine-tune large models, yet when its two factors are trained independently, the update ignores the geometry of the low-rank weight change it induces. We introduce LoRA-TSD, an optimizer that treats every LoRA step as a tangent vector of the fixed-rank matrix manifold and takes the spectral-norm steepest-descent step of Muon inside that tangent space, mapping the result back to the factors through a retraction native to the LoRA parametrization. The step avoids expensive operations on full weight matrices, and its retraction is up to $2.8\\times$ cheaper than the truncated-SVD retraction used by prior manifold methods. We prove that the Frobenius-norm version of our surrogate recovers LoRA-Pro, and we identify the tangent-projected gradient, the Riemannian gradient of the manifold, as the stationarity measure natural to LoRA training and computable from the factor gradients alone. Under this measure we give the first global convergence guarantees for both LoRA-Pro and LoRA-TSD, with rates that drive the factor-gradient norms to zero. Across six commonsense and natural-language-inference benchmarks with Llama-3.2-1B, Llama-3.1-8B and Qwen3-32B, LoRA-TSD outperforms every competing LoRA optimizer and stays robust to the adapter rank. Code is available at https://github.com/brain-lab-research/LoRA-TSD.",
+      "authors": [
+        "Dmitrii Andriianov",
+        "Andrey Veprikov",
+        "Aleksandr Beznosikov"
+      ],
+      "published": "2026-09-02T15:41:45Z",
+      "updated": "2026-09-02T15:41:45Z",
+      "url": "https://arxiv.org/abs/2609.02734",
+      "pdf_url": "https://arxiv.org/pdf/2609.02734.pdf",
+      "primary_category": "cs.LG",
+      "categories": [
+        "cs.LG"
+      ],
+      "tags": [
+        "cs.LG"
+      ],
+      "domain": "AI",
+      "pdf_downloaded": true,
+      "pdf_size_bytes": 855560,
+      "pdf_path": "2026-09-03/ai/2609.02734.pdf"
+    },
+    {
+      "id": "2609.02731",
+      "title": "RVSD: Retrieval Vision Sparse Decoding for Mitigating Visual Hallucinations in Large Vision-Language Models",
+      "abstract": "Large vision-language models have achieved remarkable success in vision-language tasks. However, they remain prone to Visual Hallucinations (VHs), undermining their reliability in real-world applications. Existing solutions typically require curated datasets, additional training, or multi-round decoding, resulting in considerable computational overhead. In this paper, we propose \\textbf{RVSD} (\\underline{R}etrieval \\underline{V}ision \\underline{S}parse \\underline{D}ecoding), a training-free and plug-and-play decoding framework that, for the first time, unifies token sparsification and \\textbf{Semantic-Space Visual Retrieval} (SSVR) within a single decoding pass. Within RVSD, we introduce a \\textbf{semantics-directed token selection} strategy that selectively sparsifies redundant tokens while preserving critical visual information. We further propose the SSVR mechanism, which reformulates visual compensation as an on-demand cross-modal retrieval process within a shared semantic space. Extensive experiments demonstrate that RVSD achieves state-of-the-art performance in mitigating VHs while maintaining robust suppression capabilities under long-context generation settings. Our code is available here.\\footnote{https://github.com/canjie-liu/RVSD}",
+      "authors": [
+        "Canjie Liu",
+        "Jiawen Kang",
+        "Jinbo Wen",
+        "Zishao Zhong"
+      ],
+      "published": "2026-09-02T15:40:40Z",
+      "updated": "2026-09-02T15:40:40Z",
+      "url": "https://arxiv.org/abs/2609.02731",
+      "pdf_url": "https://arxiv.org/pdf/2609.02731.pdf",
+      "primary_category": "cs.CV",
+      "categories": [
+        "cs.CV",
+        "cs.AI"
+      ],
+      "tags": [
+        "cs.AI",
+        "cs.CV"
+      ],
+      "domain": "AI",
+      "pdf_downloaded": true,
+      "pdf_size_bytes": 2688986,
+      "pdf_path": "2026-09-03/ai/2609.02731.pdf"
+    }
+  ]
+}
