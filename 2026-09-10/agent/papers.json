@@ -1,0 +1,678 @@
+{
+  "domain": "Agent",
+  "date": "2026-09-10",
+  "count": 24,
+  "papers": [
+    {
+      "id": "2609.10509",
+      "title": "Avatar: Toward Autonomous End-to-End Orchestration of Scientific Workflows using LLMs",
+      "abstract": "Scientific workflow management (WMSs) systems automate execution, yet orchestrate using fixed, hand-tuned rules. LLM agents promise more autonomous orchestration, but it remains unclear where to introduce agentic reasoning, how to bound its risk, and when it actually helps. We present Avatar, an actor-based architecture comprising an orchestrator, an executor, and a provenance monitor. Each actor's decision policy is pluggable (rule-based or LLM-backed) via a single adapter-validated action catalog, so conventional and agentic control run on the same core across different WMSs. We present an implementation using the Academy framework and evaluate Avatar across three workloads. We observe that Avatar's rule mode reproduces native execution, with a single unchanged core running all three. Moreover, LLM-backed Avatar reports a reduction of compute wastage by $55\\%$ and cuts GPU-busy time by $40\\%$. Overall, we envision Avatar as a step toward workflow systems that reason about their own orchestration rather than follow pre-fixed rules.",
+      "authors": [
+        "Suman Raj",
+        "Hai Duc Nguyen",
+        "Haochen Pan",
+        "Ryan Chard",
+        "Kyle Chard",
+        "Ian Foster"
+      ],
+      "published": "2026-09-09T17:45:36Z",
+      "updated": "2026-09-09T17:45:36Z",
+      "url": "https://arxiv.org/abs/2609.10509",
+      "pdf_url": "https://arxiv.org/pdf/2609.10509.pdf",
+      "primary_category": "cs.DC",
+      "categories": [
+        "cs.DC",
+        "cs.MA"
+      ],
+      "tags": [
+        "cs.DC",
+        "cs.MA"
+      ],
+      "domain": "Agent",
+      "pdf_downloaded": true,
+      "pdf_size_bytes": 433724,
+      "pdf_path": "2026-09-10/agent/2609.10509.pdf"
+    },
+    {
+      "id": "2609.10484",
+      "title": "Coastal Environment Generation with HoloOcean",
+      "abstract": "Marine robotic simulation provides a safe and inexpensive method of developing and testing algorithms for unmanned underwater vehicle (UUV) and unmanned surface vessel (USV) autonomy and perception before full field deployment. However, these simulations are often limited by the availability of simulated environments. Current marine robotics simulation suites offer manual ways to edit or create environments, but they require existing data or specialized knowledge of the environment system. To address these issues, we introduce a novel Unreal Engine 5 level generation pipeline that enables automatic creation of coastal environments for HoloOcean. Our pipeline relies on a user-provided overhead image of a coastal scene. The pipeline then uses the image to generate height map data, as well as automatically select assets and place them in the environment.",
+      "authors": [
+        "Abigail Austin",
+        "Brady Moon",
+        "Joshua G. Mangelson"
+      ],
+      "published": "2026-09-09T17:25:05Z",
+      "updated": "2026-09-09T17:25:05Z",
+      "url": "https://arxiv.org/abs/2609.10484",
+      "pdf_url": "https://arxiv.org/pdf/2609.10484.pdf",
+      "primary_category": "cs.RO",
+      "categories": [
+        "cs.RO"
+      ],
+      "tags": [
+        "cs.RO"
+      ],
+      "domain": "Agent",
+      "pdf_downloaded": true,
+      "pdf_size_bytes": 7563159,
+      "pdf_path": "2026-09-10/agent/2609.10484.pdf"
+    },
+    {
+      "id": "2609.10430",
+      "title": "Glyph: A Multi-Strategy Agentic System for Column Description and Sensitivity-Ontology Tagging of Enterprise Data Catalogs",
+      "abstract": "Enterprise data lakes accumulate tables faster than human stewards can document or classify them, leaving columns with missing descriptions and unassigned governance labels. This documentation debt undermines data discovery, access control, and regulatory compliance. We present Glyph, a production system that frames two coupled problems, column description generation and column type annotation for data classification, as cooperating LLM agents orchestrated as stateful graphs. The Descriptor grounds generation in the pipeline source code that produces each column, retrieved on demand from an enterprise GitHub via a reasoning--acting tool loop (active Retrieval-Augmented Generation). The Tagger assigns labels from a governed 275-leaf Data Classification Ontology by running three complementary strategies in parallel (a description tagger, a line-of-business regex tagger, and a metadata tagger backed by a fine-tuned contrastive encoder over a vector database), then fuses their ranked outputs with Reciprocal Rank Fusion (RRF). We fine-tune a 6-layer MiniLM metadata encoder with an in-batch contrastive objective, lifting same-tag retrieval on an in-distribution held-out split from NDCG@10 0.55 to 0.92 (MAP@100 $0.19 \\rightarrow 0.90$) relative to the stock base encoder. We report end-to-end multi-label tagging quality under a recall-weighted F2 objective across three evaluation groups, an ablation isolating each strategy and the RRF fusion, and the engineering decisions that distinguish Glyph from prior column-type-annotation work and from commercial value/regex sensitivity scanners: value-free and code-grounded design, per-tag provenance, and graceful degradation. Together these make multi-agent LLM cataloging auditable and operable as a production service.",
+      "authors": [
+        "Kostia Kudriavtsev",
+        "Parvez Rafi",
+        "Sha Sundaram"
+      ],
+      "published": "2026-09-09T16:43:26Z",
+      "updated": "2026-09-09T16:43:26Z",
+      "url": "https://arxiv.org/abs/2609.10430",
+      "pdf_url": "https://arxiv.org/pdf/2609.10430.pdf",
+      "primary_category": "cs.MA",
+      "categories": [
+        "cs.MA",
+        "cs.IR"
+      ],
+      "tags": [
+        "cs.IR",
+        "cs.MA"
+      ],
+      "domain": "Agent",
+      "pdf_downloaded": true,
+      "pdf_size_bytes": 379505,
+      "pdf_path": "2026-09-10/agent/2609.10430.pdf"
+    },
+    {
+      "id": "2609.10405",
+      "title": "Frequency-Conditioned Flow Matching for Vision-Language-Action Models",
+      "abstract": "Robot actions are temporally correlated trajectories whose frequency components encode motion at different scales with highly non-uniform energy distributions. Yet Flow Matching--based vision-language-action (VLA) models typically generate actions in temporal coordinates, without explicitly modeling or systematically leveraging this frequency heterogeneity. We introduce \\emph{FreqFM}, a frequency-conditioned Flow Matching framework for VLA models. It raises action frequency from an implicit trajectory property to an explicit conditioning dimension that spans the entire generation pipeline. Concretely, in DCT frequency coordinates, FreqFM constructs a spectrum-matched source distribution, adaptively balances the objective across frequencies, and constrains per-frequency guidance residuals using the corresponding reference transport scales. FreqFM integrates into existing Flow Matching action experts without changing the VLA backbone. Across LIBERO, LIBERO-Plus, and VLA-Arena, FreqFM consistently improves performance, including a 9.3-point gain on LIBERO-Plus, and further demonstrates its effectiveness on six real-robot tasks.",
+      "authors": [
+        "Haochen Niu",
+        "Shengye Dong",
+        "Hao Liu",
+        "Peiwen Lin",
+        "Wang Chuang"
+      ],
+      "published": "2026-09-09T16:24:40Z",
+      "updated": "2026-09-09T16:24:40Z",
+      "url": "https://arxiv.org/abs/2609.10405",
+      "pdf_url": "https://arxiv.org/pdf/2609.10405.pdf",
+      "primary_category": "cs.RO",
+      "categories": [
+        "cs.RO"
+      ],
+      "tags": [
+        "cs.RO"
+      ],
+      "domain": "Agent",
+      "pdf_downloaded": true,
+      "pdf_size_bytes": 2596270,
+      "pdf_path": "2026-09-10/agent/2609.10405.pdf"
+    },
+    {
+      "id": "2609.10400",
+      "title": "A traffic management system for large and heterogeneous vehicles in narrow industrial environments",
+      "abstract": "The coordination of Automated Guided Vehicles (AGVs) in high-density industrial environments represents a critical challenge within Logistics 4.0, as traditional traffic management methods often lead to inefficiencies caused by negotiation-based priority assignment. To overcome the resulting limitations, this paper presents an innovative AGV traffic management system based on a Lifelong Multi-Agent Path Finding (L-MAPF) algorithm operating on roadmaps generated with Non-Uniform Rational B-Splines (NURBS) curves. The approach guarantees locally optimal coordination and ensures safe operation of large and heterogeneous AGVs. Building on this concept, the proposed framework integrates a modified version of the Bounded Horizon Conflict Based Search (CBS) technique within a Rolling Horizon Conflict Resolution strategy, utilizing an extended time horizon for each agent to enable effective conflict resolution in corridors identified by a topological map. In contrast to state-of-the-art methods for AGV fleet traffic management, the proposed solution is designed for real-world, non-standardized (i.e., non-grid-like) industrial settings characterized by narrow bidirectional corridors and high-traffic density, where AGVs of various sizes and capabilities operate simultaneously. Key contributions include an anytime conflict resolution strategy with adaptive time horizon regulation, an execution layer for safe and standard-compliant interaction with real AGVs, and an advanced mechanism for deadlock detection and resolution. Experimental results obtained in realistic industrial environments demonstrate higher throughput, with improvements of up to 11% over a conventional rule-based traffic management system, a state-of-the-art industrial method, and a priority-based L-MAPF variant, while maintaining continuous operation and improved efficiency.",
+      "authors": [
+        "Alessandro Bonetti",
+        "Silvia Proia",
+        "Simone Guidetti",
+        "Lorenzo Sabattini"
+      ],
+      "published": "2026-09-09T16:20:51Z",
+      "updated": "2026-09-09T16:20:51Z",
+      "url": "https://arxiv.org/abs/2609.10400",
+      "pdf_url": "https://arxiv.org/pdf/2609.10400.pdf",
+      "primary_category": "cs.RO",
+      "categories": [
+        "cs.RO",
+        "cs.MA"
+      ],
+      "tags": [
+        "cs.MA",
+        "cs.RO"
+      ],
+      "domain": "Agent",
+      "pdf_downloaded": true,
+      "pdf_size_bytes": 6676173,
+      "pdf_path": "2026-09-10/agent/2609.10400.pdf"
+    },
+    {
+      "id": "2609.10339",
+      "title": "A Confidence-Aware Multimodal Fusion Framework for Industrial Human-Robot Collaboration",
+      "abstract": "A confidence-aware multimodal fusion framework (CAMF) is proposed to realize reliable human intention prediction for industrial human-robot collaboration. This framework fuses four heterogeneous modalities including object 6D pose, gaze, skeletal motion and IMU-based hand motion. It embeds a confidence-trend-driven dynamic fusion mechanism into BiLSTM to adaptively balance bidirectional temporal features according to real-time modality reliability. A confidence-guided balanced learning strategy combined with a confidence freezing mechanism is further adopted to adjust network gradients dynamically, suppress noise from low-quality modalities and mitigate cross-modal learning bias. A physical platform based on the UR3 collaborative robot is built for experimental validation. Comparative results show that the proposed method reaches an intention recognition accuracy of 91.86% and outperforms existing multimodal fusion approaches in overall performance and stability. It also maintains satisfactory accuracy under low light and partial occlusion interference. In practical assembly tasks, the framework enables proactive and stable human-robot cooperation with strong environmental adaptability.",
+      "authors": [
+        "Xinyu Liu",
+        "Qiqi Dong",
+        "Boya Jia",
+        "Yi Zhang",
+        "Binbin Lian"
+      ],
+      "published": "2026-09-09T15:36:22Z",
+      "updated": "2026-09-09T15:36:22Z",
+      "url": "https://arxiv.org/abs/2609.10339",
+      "pdf_url": "https://arxiv.org/pdf/2609.10339.pdf",
+      "primary_category": "cs.RO",
+      "categories": [
+        "cs.RO",
+        "cs.HC"
+      ],
+      "tags": [
+        "cs.HC",
+        "cs.RO"
+      ],
+      "domain": "Agent",
+      "pdf_downloaded": true,
+      "pdf_size_bytes": 1831543,
+      "pdf_path": "2026-09-10/agent/2609.10339.pdf"
+    },
+    {
+      "id": "2609.10336",
+      "title": "Odometer-Agnostic Drift Correction Using OpenStreetMap Lane Geometry",
+      "abstract": "Despite significant progress in odometry estimation, long-term drift remains a fundamental limitation of incremental pose integration, especially in large-scale or loop-free environments. Existing map-assisted methods can reduce drift, but often depend on dense maps, sensor-specific processing, or complex matching pipelines. We propose a lightweight open-source, odometry-agnostic correction method that aligns short trajectory segments to OpenStreetMap (OSM) lane centerlines. By formulating drift correction as a direct alignment between recent odometry and sparse lane geometry, the method enables efficient online operation without dense priors or expensive preprocessing. Experiments with LiDAR and visual odometry backends demonstrate consistent improvements, with particularly strong gains under severe drift.",
+      "authors": [
+        "Joaquin Caballero",
+        "Emilio Garcia-Fidalgo",
+        "Alberto Ortiz",
+        "Jarno Ralli"
+      ],
+      "published": "2026-09-09T15:33:40Z",
+      "updated": "2026-09-09T15:33:40Z",
+      "url": "https://arxiv.org/abs/2609.10336",
+      "pdf_url": "https://arxiv.org/pdf/2609.10336.pdf",
+      "primary_category": "cs.RO",
+      "categories": [
+        "cs.RO"
+      ],
+      "tags": [
+        "cs.RO"
+      ],
+      "domain": "Agent",
+      "pdf_downloaded": true,
+      "pdf_size_bytes": 777098,
+      "pdf_path": "2026-09-10/agent/2609.10336.pdf"
+    },
+    {
+      "id": "2609.10308",
+      "title": "Deformable Object Manipulation under Partial Observability via Real-Time Full-Shape Estimation",
+      "abstract": "Manipulating deformable objects (DOs) is challenging due to their high-dimensional state space, underactuated dynamics, and partial observability. In this paper, we propose cRVAE, a lightweight conditional recurrent variational autoencoder that estimates the full DO state from only partial corner-node observations during inference. The resulting model is used as the forward model in a receding-horizon optimal control framework for obstacle-aware collaborative DO manipulation. In simulation on rope and fabric, cRVAE estimates the full DO state from the available corner-node measurements alone, matching the accuracy of a parameter-identified XPBD model. At inference it uses no physical parameters as model inputs and performs no online parameter identification. It also runs approximately 350 times faster on the rope and over 1500 times faster on the fabric per forward pass, keeping horizon-based planning within the 100 ms control budget where XPBD exceeds it already at short horizons. Full-shape estimation from corner sensing at in-loop speed is what makes the model deployable on hardware, which we demonstrate on a Unitree Go2 robot.",
+      "authors": [
+        "Kosar Behnia",
+        "Ville Kyrki",
+        "Gokhan Alcan"
+      ],
+      "published": "2026-09-09T15:17:30Z",
+      "updated": "2026-09-09T15:17:30Z",
+      "url": "https://arxiv.org/abs/2609.10308",
+      "pdf_url": "https://arxiv.org/pdf/2609.10308.pdf",
+      "primary_category": "cs.RO",
+      "categories": [
+        "cs.RO"
+      ],
+      "tags": [
+        "cs.RO"
+      ],
+      "domain": "Agent",
+      "pdf_downloaded": true,
+      "pdf_size_bytes": 1482032,
+      "pdf_path": "2026-09-10/agent/2609.10308.pdf"
+    },
+    {
+      "id": "2609.10286",
+      "title": "Learning Terrain-Adaptive Humanoid Locomotion on Granular Terrain",
+      "abstract": "Humanoid locomotion on granular terrain remains a significant challenge due to its complex foot-terrain interaction dynamics that are difficult to model. Existing approaches either ignore granular contact dynamics or incorporate simplified normal force models with heuristic tangential components. In this work, we present a physics-grounded granular contact model based on three-dimensional resistive force theory (3D RFT) and efficiently simulate granular terrain for reinforcement learning (RL) training. Unlike traditional rigid contact models and simplified granular contact models with ad-hoc heuristics, our contact solver produces physically accurate granular intrusion dynamics without resorting to heuristics. It captures realistic penetration and tangential drag during training, enabling the policy to learn behaviors that transfer reliably to real-world granular terrain where rigid contact models fail. To adapt to varying terrain conditions, we train a terrain-adaptive locomotion controller via teacher-student RL, using a variational autoencoder to encode terrain information into a compact latent representation. Simulation studies using material point method (MPM) with NVIDIA Newton demonstrate that our method generalizes to unseen granular terrains, achieves a significantly higher success rate than baselines, and demonstrates zero-shot terrain identification and adaptation. We further validate our approach through extensive hardware experiments across diverse real-world granular terrains including basalt, dry sand, and beach sand. To the best of our knowledge, this is the first demonstration of agile humanoid locomotion on real-world granular terrain. Project page: https://humanoid-gm-locomotion.github.io/HUMANOID-GM/",
+      "authors": [
+        "Junnosuke Kamohara",
+        "Feiyang Wu",
+        "Andy Ningan Zong",
+        "Daniel I. Goldman",
+        "Yashwanth Nakka",
+        "Seth Hutchinson",
+        "Ye Zhao"
+      ],
+      "published": "2026-09-09T15:03:16Z",
+      "updated": "2026-09-09T15:03:16Z",
+      "url": "https://arxiv.org/abs/2609.10286",
+      "pdf_url": "https://arxiv.org/pdf/2609.10286.pdf",
+      "primary_category": "cs.RO",
+      "categories": [
+        "cs.RO"
+      ],
+      "tags": [
+        "cs.RO"
+      ],
+      "domain": "Agent",
+      "pdf_downloaded": true,
+      "pdf_size_bytes": 8283445,
+      "pdf_path": "2026-09-10/agent/2609.10286.pdf"
+    },
+    {
+      "id": "2609.10283",
+      "title": "SwingBot: Learning Whole-Body Brachiation for Humanoid Robots",
+      "abstract": "Brachiation enables primates to move across overhead supports when ground paths are blocked, suggesting a complementary locomotion mode for robots operating in cluttered or hazardous environments. Bringing this capabil?ity to high-DoF humanoid robots is difficult because the controller must discover a long-horizon release-swing-capture sequence, coordinate alternating contacts with whole-body momentum, and act without reliable measurements of segment?relative displacement or hook-contact state. We present SwingBot, a learning framework for continuous humanoid brachiation with passive wrist hooks. Swing?Bot makes the task trainable by organizing learning around the structure of brachi?ation: biomimetic keyframes make rare release-swing-capture transitions reach?able during early exploration, and recurrent privileged-state estimation provides compact position and contact latents for deployment. Hardware experiments demonstrate continuous bar traversal and robustness to payload, external distur?bances and different bar spacings, showing that this formulation offers a practical route to whole-body robotic brachiation.",
+      "authors": [
+        "Yujie Xiong",
+        "Peng Zhai",
+        "Taixian Hou",
+        "Quancheng Qian",
+        "Cunwang Liu",
+        "Kangmai Hu",
+        "Long Yang",
+        "Zhiyan Dong",
+        "Lihua Zhang"
+      ],
+      "published": "2026-09-09T15:01:12Z",
+      "updated": "2026-09-09T15:01:12Z",
+      "url": "https://arxiv.org/abs/2609.10283",
+      "pdf_url": "https://arxiv.org/pdf/2609.10283.pdf",
+      "primary_category": "cs.RO",
+      "categories": [
+        "cs.RO"
+      ],
+      "tags": [
+        "cs.RO"
+      ],
+      "domain": "Agent",
+      "pdf_downloaded": true,
+      "pdf_size_bytes": 7094471,
+      "pdf_path": "2026-09-10/agent/2609.10283.pdf"
+    },
+    {
+      "id": "2609.10277",
+      "title": "How neighbourhood ideology shapes misinformation belief in densely tied social networks",
+      "abstract": "With the rapid spread of news on social media, understanding the propagation of misinformation is becoming increasingly important. One factor that affects individuals' vulnerability to false information is their ideological predisposition. Despite the large number of agent-based models that focus on social influence as a driver of the spread of false claims, they often fail to explicitly integrate personal ideological biases into belief formation. In this work, we explore how misinformation spreads through the interaction between individuals' ideological biases and social influence. Our model accounts for both the strength of individuals' ideological biases and the extent to which a false claim aligns with their ideology. Social influence modifies the effects of ideological intensity and false claim alignment through network interactions. Notably, the influence of neighbours' ideological intensity on belief is strongly affected by how well those neighbours are connected to one another. These results highlight the importance of considering both network structure and personal ideological biases when modelling misinformation propagation.",
+      "authors": [
+        "Soroush Karimi",
+        "Marcos Oliveira",
+        "Diogo Pacheco"
+      ],
+      "published": "2026-09-09T14:58:41Z",
+      "updated": "2026-09-09T14:58:41Z",
+      "url": "https://arxiv.org/abs/2609.10277",
+      "pdf_url": "https://arxiv.org/pdf/2609.10277.pdf",
+      "primary_category": "cs.SI",
+      "categories": [
+        "cs.SI",
+        "cs.MA",
+        "physics.soc-ph"
+      ],
+      "tags": [
+        "cs.MA",
+        "cs.SI",
+        "physics.soc-ph"
+      ],
+      "domain": "Agent",
+      "pdf_downloaded": true,
+      "pdf_size_bytes": 4043587,
+      "pdf_path": "2026-09-10/agent/2609.10277.pdf"
+    },
+    {
+      "id": "2609.10273",
+      "title": "Frame-Coded Legged Locomotion over Noisy Terrain",
+      "abstract": "Open-loop multilegged locomotion over rough terrain has been interpreted as matter transport over a noisy channel: leg-ground interactions are discrete basic active contacts, terrain deletes or perturbs those contacts, and spatial redundancy concentrates the resulting thrust and arrival time. That construction is repetition-like because every module carries the same scalar locomotion task. It consequently provides neither a positive task rate nor a decoder that changes with the surviving contact set. Here we formulate locomotion instead as a quantized finite-frame expansion with erasures. A d-dimensional body-level command is mapped into N>d heterogeneous local contact commands. Rough terrain erases or corrupts frame coefficients, while a contact-gated compliant morphology physically realizes the weighted active-subframe decoder. For a linear-Gaussian model, mechanical equilibrium is exactly the posterior mean, tangent stiffness is posterior precision, and mechanical compliance is posterior covariance. Equal-norm Parseval frames are shown to be minimax optimal against one missing contact, two-contact robustness is governed by frame coherence, and a harmonic frame gives a directly realizable gait family. For independently surviving contacts of probability q, random Gaussian gait frames admit exact reconstruction at every analog dimension rate R<q, with a binomial reliability exponent, whereas recovery of arbitrary commands is impossible for R>q. Residual contact noise yields an asymptotic per-mode amplification 1/(q-R) and a vanishing mechanical stiffness margin at the threshold. An information-locomotion inequality and an exact incremental-redundancy rule direct the next gait component toward the softest task-relevant unresolved mode. The resulting analog frame-coding theorem establishes a finite relative redundancy and converse as part of a fundamental limit theory of legged locomotion.",
+      "authors": [
+        "Lav R. Varshney"
+      ],
+      "published": "2026-09-09T14:55:58Z",
+      "updated": "2026-09-09T14:55:58Z",
+      "url": "https://arxiv.org/abs/2609.10273",
+      "pdf_url": "https://arxiv.org/pdf/2609.10273.pdf",
+      "primary_category": "cs.IT",
+      "categories": [
+        "cs.IT",
+        "cs.RO",
+        "eess.SY"
+      ],
+      "tags": [
+        "cs.IT",
+        "cs.RO",
+        "eess.SY"
+      ],
+      "domain": "Agent",
+      "pdf_downloaded": true,
+      "pdf_size_bytes": 459986,
+      "pdf_path": "2026-09-10/agent/2609.10273.pdf"
+    },
+    {
+      "id": "2609.10243",
+      "title": "FolDeX: A Physical-World Benchmark for Long-Horizon Robotic Manipulation of Deformable Objects",
+      "abstract": "Embodied AI, including vision-language-action and world-action models, must operate reliably in the physical world. Yet methods that perform well in simulation can degrade substantially on real robots, especially in long-horizon deformable-object manipulation, where policies must track changing states and execute reliable multi-stage bimanual interactions. Existing real-robot benchmarks mainly focus on short-horizon rigid-object tasks and offer limited coverage of long-horizon deformable manipulation. We introduce FolDeX, a physical-world benchmark built entirely from real-robot data, with garment folding as its primary task. Since real-robot data collection is costly, FolDeX studies how heterogeneous physical experience can be reused efficiently. The benchmark is organized around four research axes: leveraging human intervention and recovery data collected during deployment; transferring data across tasks, including across garment categories and from rigid to deformable-object manipulation; reusing data across scenes with changes in lighting, background, and layout; and transferring data across robotic embodiments. FolDeX provides 2,000+ hours of real-robot data spanning 20+ tasks and 10+ embodiments. We also establish a fair real-robot evaluation platform for externally submitted policies, with standardized tasks, held-out physical objects, controlled initializations, and a unified execution protocol. The platform is publicly accessible at https://ai.midea.com/#/fold-challenge. We hope FolDeX will serve as a unified testbed for heterogeneous real-robot data reuse and reliable long-horizon deformable manipulation.",
+      "authors": [
+        "Chenhuan Liu",
+        "Yi Xu",
+        "Feng Wu",
+        "Hanyang Wang",
+        "Wenxiao Kuai",
+        "Weihao Ding",
+        "Shan Wang",
+        "Yang Liu",
+        "Shuyong Gao",
+        "Wenqiang Zhang"
+      ],
+      "published": "2026-09-09T14:33:44Z",
+      "updated": "2026-09-09T14:33:44Z",
+      "url": "https://arxiv.org/abs/2609.10243",
+      "pdf_url": "https://arxiv.org/pdf/2609.10243.pdf",
+      "primary_category": "cs.RO",
+      "categories": [
+        "cs.RO"
+      ],
+      "tags": [
+        "cs.RO"
+      ],
+      "domain": "Agent",
+      "pdf_downloaded": true,
+      "pdf_size_bytes": 3132095,
+      "pdf_path": "2026-09-10/agent/2609.10243.pdf"
+    },
+    {
+      "id": "2609.10230",
+      "title": "CougarTail & CUB: A General-Purpose Mast and Central Utility Board for Cylindrical Underwater Enclosures",
+      "abstract": "Cylindrical watertight enclosures are widely used across various underwater systems, from unmanned underwater vehicles (UUVs), to remotely operated vehicles (ROVs), to various sensor platforms. However, electronics are typically built on rectangular PCBs arranged in horizontal stacks, which inefficiently occupy the circular cross-section volume that is critical for both payload capacity and buoyancy management. This paper presents CUB (Central Utility Board) and CougarTail, a general-purpose system designed to address this gap. CUB is a circular PCB sized for 4-inch-diameter enclosures that consolidates a Raspberry Pi Compute Module 5 (CM5) and an STM32 microcontroller, while also providing power management features and auxiliary connections. Mounted coaxially, CUB reduces the electronics stack of our CougUV from 200 mm of tube length and 709 g to 25 mm and 156 g, returning that length and mass budget to payload and buoyancy trim. CougarTail is an open-source companion sensor mast that houses a GPS antenna and two dual-band (2.4 and 5 GHz) omnidirectional PCB antennas. Both components are validated through bench testing and integration on a CougUV platform, our small open-sourced torpedo UUVs.",
+      "authors": [
+        "Ben Washburn",
+        "Clayton Smith",
+        "Eli Gaskin",
+        "Brighton Anderson",
+        "Braden Meyers",
+        "Brady Moon",
+        "Joshua Mangelson"
+      ],
+      "published": "2026-09-09T14:25:40Z",
+      "updated": "2026-09-09T14:25:40Z",
+      "url": "https://arxiv.org/abs/2609.10230",
+      "pdf_url": "https://arxiv.org/pdf/2609.10230.pdf",
+      "primary_category": "cs.RO",
+      "categories": [
+        "cs.RO",
+        "eess.SY"
+      ],
+      "tags": [
+        "cs.RO",
+        "eess.SY"
+      ],
+      "domain": "Agent",
+      "pdf_downloaded": true,
+      "pdf_size_bytes": 2614425,
+      "pdf_path": "2026-09-10/agent/2609.10230.pdf"
+    },
+    {
+      "id": "2609.10215",
+      "title": "Adaptive Shared Control with Online Bounded-Rational Human Behavior Estimation",
+      "abstract": "This work considers adaptive shared human-robot control for nonlinear control-affine systems, where the assumption of a fully rational human is relaxed and the robot adapts its assistance to observed boundedly rational human behavior. We use a level-k bounded-rationality model of the two-player game to construct a finite bank of candidate human and robot policies through alternating best-response computations, with the associated value functions and policies approximated using adaptive dynamic programming. During the shared-control interaction, state-transition residuals compare the measured system evolution with the trajectories predicted by the candidate human policies. The residuals are accumulated using a forgetting factor and mapped to a probabilistic human-behavior model over the finite candidate bank. Rather than selecting a single candidate or averaging stored robot policies, the robot computes a distribution-aware one-step best response by minimizing an expected cooperative cost over the complete estimated human behavior distribution. For a quadratic terminal-value approximation and Euler state propagation, this response admits a closed-form solution expressed in terms of the expected human input. The proposed methods are evaluated in simulations of a benchmark nonlinear system stabilization task, and of a planar manipulator shared control setup. The reported results show decreasing Kullback-Leibler divergence between the estimated and simulated human behavior distributions, and a lower accumulated running cost for the robot agent over the shared control interaction period, than the maximum-probability and probability-weighted alternative policies baseline.",
+      "authors": [
+        "Henry Ascencio Trejo",
+        "Roel Pieters",
+        "Gokhan Alcan"
+      ],
+      "published": "2026-09-09T14:15:11Z",
+      "updated": "2026-09-09T14:15:11Z",
+      "url": "https://arxiv.org/abs/2609.10215",
+      "pdf_url": "https://arxiv.org/pdf/2609.10215.pdf",
+      "primary_category": "cs.RO",
+      "categories": [
+        "cs.RO",
+        "eess.SY"
+      ],
+      "tags": [
+        "cs.RO",
+        "eess.SY"
+      ],
+      "domain": "Agent",
+      "pdf_downloaded": true,
+      "pdf_size_bytes": 2075917,
+      "pdf_path": "2026-09-10/agent/2609.10215.pdf"
+    },
+    {
+      "id": "2609.10202",
+      "title": "IMU-Centric Moving Horizon Estimation for Lateral Dynamics Estimation Across Vehicles and Grip Conditions",
+      "abstract": "Accurate estimation of lateral vehicle dynamics near the adhesion limit is important for stability control and high-performance driving, but lateral velocity is rarely measured directly because sensors such as optical sensors are costly. This paper presents an inertial measurement unit (IMU)-centric Moving Horizon Estimation framework that reconstructs lateral velocity using standard onboard signals, without relying on exteroceptive odometry or detailed tire-parameter tuning. Experimental validation on human-driven sports cars and an autonomous open-wheel race car across tracks, maneuvers, and conditions demonstrates accurate and robust lateral velocity and lateral acceleration estimates. The proposed framework is available at https://github.com/Aseuffo/IMU-Centric-MHE",
+      "authors": [
+        "Seuffo Akouan ha Ngoune",
+        "Alessandro Toschi",
+        "Paolo Burgio",
+        "Marko Bertogna"
+      ],
+      "published": "2026-09-09T14:05:17Z",
+      "updated": "2026-09-09T14:05:17Z",
+      "url": "https://arxiv.org/abs/2609.10202",
+      "pdf_url": "https://arxiv.org/pdf/2609.10202.pdf",
+      "primary_category": "eess.SY",
+      "categories": [
+        "eess.SY",
+        "cs.RO"
+      ],
+      "tags": [
+        "cs.RO",
+        "eess.SY"
+      ],
+      "domain": "Agent",
+      "pdf_downloaded": true,
+      "pdf_size_bytes": 6839558,
+      "pdf_path": "2026-09-10/agent/2609.10202.pdf"
+    },
+    {
+      "id": "2609.10169",
+      "title": "Multi-Robot Scanner for Automated Full-Body Dermoscopic Imaging",
+      "abstract": "This paper outlines the specifications and design approach used to construct a full body imaging scanner capable of capturing skin lesions at a dermatoscopic level using cameras mounted on the end-effectors of four UR10 manipulators. The system possesses a view-planning algorithm capable of appropriately selecting the best camera position to acquire images of moles, a high-level controller to allow the manipulators to work simultaneously and a collision-detector that halts the manipulators when they make contact with an object or a person. We evaluate the system through real-patient full-body scans, comparing acquired images against contact dermoscopy and an existing total-body photography system (Vectra) across clinically relevant lesion features, and quantify true optical resolving power using a USAF 1951 resolution target, yielding a smallest resolvable feature size of 22.1 microns for our scanner compared to 8.8 microns for contact dermoscopy. Results show the scanner consistently outperforms Vectra across most clinically relevant features and achieves comparable performance to contact dermoscopy for the majority of features assessed. By acquiring dermatoscopic-quality images automatically and without contact, and without requiring a separate manual dermoscopic examination, the scanner closes part of the gap between total-body photography and handheld dermoscopy, suggesting potential for future integration into screening workflows.",
+      "authors": [
+        "Valerio Franchi",
+        "Rafael Garcia",
+        "Nuno Gracias",
+        "Ricard Campos",
+        "Josep Quintana",
+        "Sandra Gonz\u00e1lez-Vill\u00e0",
+        "Mark Ventura",
+        "Nuria Ferrera",
+        "Cl\u00e9ment Lenoir",
+        "Josep Malvehy"
+      ],
+      "published": "2026-09-09T13:41:37Z",
+      "updated": "2026-09-09T13:41:37Z",
+      "url": "https://arxiv.org/abs/2609.10169",
+      "pdf_url": "https://arxiv.org/pdf/2609.10169.pdf",
+      "primary_category": "cs.RO",
+      "categories": [
+        "cs.RO"
+      ],
+      "tags": [
+        "cs.RO"
+      ],
+      "domain": "Agent",
+      "pdf_downloaded": true,
+      "pdf_size_bytes": 23425253,
+      "pdf_path": "2026-09-10/agent/2609.10169.pdf"
+    },
+    {
+      "id": "2609.10166",
+      "title": "Future-Aware Flow Planning for Safe UAV Target Following",
+      "abstract": "UAV target following in cluttered environments is inherently predictive: current-state followers can lag behind turns, choose blocked corridors, or trade tracking for unsafe near-horizon motion. We propose a future-aware flow planning framework for state-informed UAV target following. Predicted target futures guide clean UAV trajectory generation as horizon-aligned residual signals, while risk-scored executable-prefix repair is embedded inside the sampling loop. On fixed ID/OOD receding-horizon benchmarks, the planner improves the intended safety--tracking trade-off rather than dominating every metric: it matches zero measured ID collision rate with the highest ID safe-tracking time, and gives the lowest OOD macro collision rate and final tracking error among the displayed methods, while Future-MPC remains smoother and stronger on some thresholded OOD success metrics under its hand-designed objective. Ablations show that future adaptation improves candidate generation before safety repair, and simulator-facing stress tests probe interface, sensing, and controller-execution effects. These results support horizon-aligned future adaptation and embedded prefix repair as complementary ingredients for safe UAV target following under the tested simulation conditions.",
+      "authors": [
+        "Boning Feng",
+        "Haoran Zhang",
+        "Xiaowen Bi",
+        "Yanzhen Zhang",
+        "Xiaodan Shi"
+      ],
+      "published": "2026-09-09T13:40:09Z",
+      "updated": "2026-09-09T13:40:09Z",
+      "url": "https://arxiv.org/abs/2609.10166",
+      "pdf_url": "https://arxiv.org/pdf/2609.10166.pdf",
+      "primary_category": "cs.RO",
+      "categories": [
+        "cs.RO"
+      ],
+      "tags": [
+        "cs.RO"
+      ],
+      "domain": "Agent",
+      "pdf_downloaded": true,
+      "pdf_size_bytes": 6859534,
+      "pdf_path": "2026-09-10/agent/2609.10166.pdf"
+    },
+    {
+      "id": "2609.10137",
+      "title": "Assembling Two Parts in One Hand",
+      "abstract": "A hallmark of human dexterity is the cooperative use of fingers, where different fingers take on distinct yet coordinated roles to accomplish fine manipu- lation, such as capping a pen with the hand that holds it. We study this finger-level coordination through in-hand assembly: mating two rigid objects within a single dexterous hand, with no second arm and no fixture. We present a reinforcement learning formulation to solve this problem in a unified framework, which is driven by a goal relative pose between the two parts. Finger coordination is shaped by a function-based auxiliary reward and regularized toward a single human reference pose, while domain randomization and a fusion of historical proprioception and object observation confer robustness to occlusion-induced estimation noise. The same recipe solves three different assembly tasks (Bottle, Syringe, and Marker). Trained purely in simulation, the policies transfer zero-shot to hardware with a single camera, demonstrating robustness to state-estimation errors caused by oc- clusion. Our experiments also reveal that in-hand assembly places demands on hand morphology and can serve as a benchmark for modern robotic hand systems. Videos and code are available at https://ltbgbird.github.io/in-hand-assembly-page/.",
+      "authors": [
+        "Liuao Pei",
+        "Tianyue Wu",
+        "Hui Zhang",
+        "Ping Luo",
+        "Jie Song"
+      ],
+      "published": "2026-09-09T13:17:34Z",
+      "updated": "2026-09-09T13:17:34Z",
+      "url": "https://arxiv.org/abs/2609.10137",
+      "pdf_url": "https://arxiv.org/pdf/2609.10137.pdf",
+      "primary_category": "cs.RO",
+      "categories": [
+        "cs.RO"
+      ],
+      "tags": [
+        "cs.RO"
+      ],
+      "domain": "Agent",
+      "pdf_downloaded": true,
+      "pdf_size_bytes": 15420323,
+      "pdf_path": "2026-09-10/agent/2609.10137.pdf"
+    },
+    {
+      "id": "2609.10082",
+      "title": "Automatic Reproducible Camera Intrinsic Calibration",
+      "abstract": "Accurate camera intrinsic calibration is fundamental to robot perception, and the accuracy depends on the quality of the collected images. However, existing target-based calibration methods often require the practitioner to manually filter out high-quality images and to specify an appropriate radial distortion order. This paper presents a fully automatic intrinsic calibration pipeline that determines both from the collected data. We adopt an iterative rejection scheme that estimates parameters on a candidate image set and removes views whose mean residual exceeds a multiple of the median. Crucially, this process runs independently under each candidate distortion order, so that the retained image set is consistent with the residual scale of that order. Further, the distortion order is selected on held-out images, with the intrinsics and distortion fixed and only the board pose re-estimated, ensuring that an added coefficient is supported by independent observations. Finally, we integrate both steps into an interactive calibration tool that supports full-pipeline data inspection and parameter estimation. Experiments on our own camera data and five public real-world datasets show that image filtering reduces the held-out reprojection error by 25\\%, the order selection further by 5\\%, achieving the lowest held-out mean among four compared configurations without manual image selection. We will release the code and data to facilitate future research.",
+      "authors": [
+        "Xiangcheng Hu"
+      ],
+      "published": "2026-09-09T12:05:17Z",
+      "updated": "2026-09-09T12:05:17Z",
+      "url": "https://arxiv.org/abs/2609.10082",
+      "pdf_url": "https://arxiv.org/pdf/2609.10082.pdf",
+      "primary_category": "cs.RO",
+      "categories": [
+        "cs.RO",
+        "cs.CV"
+      ],
+      "tags": [
+        "cs.CV",
+        "cs.RO"
+      ],
+      "domain": "Agent",
+      "pdf_downloaded": true,
+      "pdf_size_bytes": 917611,
+      "pdf_path": "2026-09-10/agent/2609.10082.pdf"
+    },
+    {
+      "id": "2609.10050",
+      "title": "Grounding Generated Video Plans in Simulation Towards Versatile Dexterous Controllers",
+      "abstract": "Generated hand-object interaction (HOI) videos provide a controllable way to propose manipulation motions. Simulation-based HOI tracking can translate such kinematic references into feasible low-level control, but its scalability is limited by the lack of reliable reference motions. We therefore combine generated videos with simulation-based HOI grounding: during training, generated videos provide diverse motion references for learning a multi-object, multi-trajectory HOI tracker, and at deployment, the video model produces motion plans that are executed by the learned tracker. In particular, we propose a method that enables scalable reference generation by HOI reconstruction with minimal manual intervention and successfully grounds more than 1,500 generated videos in simulation, achieving success rates over 25 percentage points higher than those of baselines during simulation-based training. In real-world closed-loop experiments, it achieves diverse grasps, including functional grasps, non-prehensile manipulation, and post-grasp object-pose tracking. Videos and code are available at https://boyuan-an.github.io/GALATEA/.",
+      "authors": [
+        "Tianyue Wu",
+        "Boyuan An",
+        "Shuqi Zhao",
+        "Heyu Guo",
+        "Wanli Xing",
+        "Yi Ma",
+        "Kaifeng Zhang",
+        "Ruihai Wu",
+        "Masayoshi Tomizuka"
+      ],
+      "published": "2026-09-09T11:26:25Z",
+      "updated": "2026-09-09T11:26:25Z",
+      "url": "https://arxiv.org/abs/2609.10050",
+      "pdf_url": "https://arxiv.org/pdf/2609.10050.pdf",
+      "primary_category": "cs.RO",
+      "categories": [
+        "cs.RO"
+      ],
+      "tags": [
+        "cs.RO"
+      ],
+      "domain": "Agent",
+      "pdf_downloaded": true,
+      "pdf_size_bytes": 9619325,
+      "pdf_path": "2026-09-10/agent/2609.10050.pdf"
+    },
+    {
+      "id": "2609.10036",
+      "title": "Belief-State Engine: Augmenting LLMs for Principled Planning Under Partial Observability",
+      "abstract": "Large language model agents produce fluent action sequences across a wide range of tasks, yet they fail in characteristic ways once the environment becomes partially observable. Ambiguous feedback pushes them into premature commitments. A single informative observation can collapse their uncertainty onto the wrong hypothesis. Policies drift as the history grows. We trace these symptoms to a common structural cause. An LLM agent, as commonly deployed, is a history-conditioned policy with no explicit belief over hidden state. We propose an architectural fix. The Belief-State Engine (BSE) is an inference module placed outside the LLM. It maintains a Bayesian posterior over the latent states of a given POMDP (Partially Observable Markov Decision Process) model, and at each decision step it exposes only that posterior to the LLM. The raw action-observation log is not shown. We set out a minimal four-axiom specification of what a belief-consistent internal state must satisfy, and prove that the LLM paired with the BSE is a sound Markov policy on the belief MDP induced by the underlying POMDP. It therefore inherits the Bellman optimality guarantees of classical POMDP theory, provided the LLM is never exposed to the raw history. We evaluate the architecture on the Tiger POMDP and a red-team attack-graph task, against six baselines: a reactive LLM, Chain-of-Thought, ReAct, a natural-language belief tracker, QMDP, and POMCP. Across both domains, the BSE-augmented agent improves task return, belief calibration, and decision consistency. Ten targeted ablations isolate the contribution of each architectural choice confirms that the effect is not specific to any one model. Code, environment specifications, prompt templates, and seed logs accompany this paper.",
+      "authors": [
+        "Arnab Chattopadhayay",
+        "Debdipta Halder"
+      ],
+      "published": "2026-09-09T11:07:47Z",
+      "updated": "2026-09-09T11:07:47Z",
+      "url": "https://arxiv.org/abs/2609.10036",
+      "pdf_url": "https://arxiv.org/pdf/2609.10036.pdf",
+      "primary_category": "cs.AI",
+      "categories": [
+        "cs.AI",
+        "cs.LG",
+        "cs.RO"
+      ],
+      "tags": [
+        "cs.AI",
+        "cs.LG",
+        "cs.RO"
+      ],
+      "domain": "Agent",
+      "pdf_downloaded": true,
+      "pdf_size_bytes": 684679,
+      "pdf_path": "2026-09-10/agent/2609.10036.pdf"
+    },
+    {
+      "id": "2609.10033",
+      "title": "What Symmetry Buys a Learned Motion Planner",
+      "abstract": "Learning-based motion planners pay at training what classical planners pay per query. Trained in world coordinates, they relearn the same motion at every position and orientation. Existing work restores the missing rigid-body equivariance in the training data, in the inference operator, or in the weights, and each carries a cost. We ask how much of that equivariance the planning query supplies for free. A start s and a goal g determine a frame in closed form, with origin at their midpoint and first axis along g-s. Expressing trajectory and obstacles in that frame removes three translations and two rotations of SE(3), at initialisation, for one cross product per query and with no constraint on the architecture. A single rotation about the start-goal axis remains, and no continuous rule removes it. On a cluttered 3D benchmark, holding architecture, data and budget fixed, the frame raises the held-out collision-free rate from 14.60% to 51.10%, where a straight segment from start to goal scores 15.6% and the world-frame model does not beat it. We build all three mechanisms for the residual rotation and each is worth under a point, though the equivariant backbone reaches any given level two to three times sooner. What the representation supplies therefore dominates what any mechanism enforces, and the standard diagnostic does not see the difference: two models with indistinguishable non-equivariance residuals differ by 28 points. Calibrated against a non-symmetry intervention, the frame is not even the largest effect available, since local geometry is worth +40.0 where the frame is worth +36.5.",
+      "authors": [
+        "Andrea Emir Sevincel"
+      ],
+      "published": "2026-09-09T11:05:24Z",
+      "updated": "2026-09-09T11:05:24Z",
+      "url": "https://arxiv.org/abs/2609.10033",
+      "pdf_url": "https://arxiv.org/pdf/2609.10033.pdf",
+      "primary_category": "cs.RO",
+      "categories": [
+        "cs.RO"
+      ],
+      "tags": [
+        "cs.RO"
+      ],
+      "domain": "Agent",
+      "pdf_downloaded": true,
+      "pdf_size_bytes": 319836,
+      "pdf_path": "2026-09-10/agent/2609.10033.pdf"
+    },
+    {
+      "id": "2609.10024",
+      "title": "AXON: A ROS 2 RMW with Shared-Memory/QUIC Transport and QKD/ML-KEM Key Establishment",
+      "abstract": "Robot Operating System 2 (ROS 2) standardizes application code against a middleware interface (RMW) whose reference implementations are built on the Data Distribution Service (DDS). We present AXON, an alternative ROS 2 RMW implementation that separates transport policy by deployment scope. A Rust core and C++ adapter use POSIX shared-memory rings for same-host communication, QUIC for remote communication, and a daemon for discovery and graph synchronization. We then describe two fail-closed TLS 1.3 key-establishment configurations for remote traffic. The classic configuration offers only the hybrid X25519MLKEM768 group, preventing negotiation of a classical-only group. The qkd configuration imports a 256-bit key obtained through the ETSI GS QKD 014 API as a pairwise external PSK and offers no Diffie-Hellman group. Its default messages10 strategy additionally protects remote application messages with AES-256-GCM, rotating KME material after ten outgoing messages and using a fresh nonce per envelope; session relies on QUIC protection alone. The external-PSK path requires a narrow extension to rustls, now bundled with AXON. We define the threat model, distinguish peer authentication in the two configurations, and delimit the implementation-level validation from ROS 2 conformance, comparative performance, and physical-QKD validation.",
+      "authors": [
+        "Sergio S\u00e1nchez de la Fuente",
+        "Miguel \u00c1ngel Gonz\u00e1lez-Santamarta",
+        "Francisco Javier Rodr\u00edguez-Lera",
+        "Vicente Matell\u00e1n Olivera",
+        "\u00c1ngel Manuel Guerrero-Higueras"
+      ],
+      "published": "2026-09-09T10:57:13Z",
+      "updated": "2026-09-09T10:57:13Z",
+      "url": "https://arxiv.org/abs/2609.10024",
+      "pdf_url": "https://arxiv.org/pdf/2609.10024.pdf",
+      "primary_category": "cs.RO",
+      "categories": [
+        "cs.RO"
+      ],
+      "tags": [
+        "cs.RO"
+      ],
+      "domain": "Agent",
+      "pdf_downloaded": true,
+      "pdf_size_bytes": 260952,
+      "pdf_path": "2026-09-10/agent/2609.10024.pdf"
+    }
+  ]
+}
